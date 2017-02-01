@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="AdMob Plugin" verbose="1">
+    <test name="SmokeTests">
+        <classes>
+            <class name="plugins.admob.Tests.SmokeTests"/>
+        </classes>
+    </test>
+</suite>

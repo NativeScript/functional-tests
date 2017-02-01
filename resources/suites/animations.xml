@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Animation Tests" verbose="1">
+    <test name="Animations Tests">
+        <classes>
+            <class name="animations.Tests.Animations.AnimationsTests"/>
+        </classes>
+    </test>
+    <test name="Slide In Effect Tests">
+        <classes>
+            <class name="animations.Tests.Animations.SlideInEffectTests"/>
+        </classes>
+    </test>
+    <test name="Animation Curves Tests">
+        <classes>
+            <class name="animations.Tests.AnimationCurves.AnimationCurvesTests"/>
+        </classes>
+    </test>
+    <test name="Css Animation Tests">
+        <classes>
+            <class name="animations.Tests.CssAnimations.CssAnimationsTests"/>
+        </classes>
+    </test>
+</suite>

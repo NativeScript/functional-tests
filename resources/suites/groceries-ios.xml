@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Groceries Tests" verbose="1">
+    <test name="Groceries Tests">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="groceries.Tests"/>
+        </packages>
+    </test>
+</suite>

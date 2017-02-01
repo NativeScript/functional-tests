@@ -1,0 +1,47 @@
+package uitests.Tests.TabView;
+
+import functional.tests.core.element.UIRectangle;
+import org.testng.annotations.Test;
+
+public class TabViewTests extends TabViewBaseTest {
+
+    @Test(groups = {"android", "ios"})
+    public void tabView_01() throws Exception {
+        this.homePageExtended.navigateTo("tabStyle");
+
+        this.compareScreens(5, 0.01);
+        this.assertImagesResults();
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void tabView_02_more() throws Exception {
+        this.homePageExtended.navigateTo("tabmore");
+
+        this.compareScreens(5, 0.01);
+        this.assertImagesResults();
+    }
+
+    @Test(groups = {"ios"})
+    public void tabView_03_tabViewIcons() throws Exception {
+        this.homePageExtended.navigateTo("tab-view-icons");
+        this.compareScreens(5);
+        UIRectangle rect = new UIRectangle(this.find.byText("undefined").getUIRectangle());
+        rect.extendRectangle(10, 10, 0, 0);
+        rect.tap();
+        this.compareScreens(5);
+        rect.tap();
+        this.compareScreens(5);
+        rect.tap();
+        this.compareScreens(5);
+        this.assertImagesResults();
+    }
+
+//    @Test(groups = {"android", "ios"})
+//    public void tabView_03_font() throws Exception {
+//        GalleryHomePage.loaded();
+//        GalleryHomePage.navigateTo("tabfont");
+//        FontTabPage.loaded();
+//        // TODO: Assert
+//        FontTabPage.navigateBack();
+//    }
+}

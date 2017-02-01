@@ -1,0 +1,53 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="NativeScript Angular Tests" verbose="1">
+    <test name="ActionBar Tests">
+        <groups>
+            <run>
+                <include name="android"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="testsappng.Tests.ActionBar"/>
+        </packages>
+    </test>
+    <test name="Router Tests">
+        <groups>
+            <run>
+                <include name="android"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="testsappng.Tests.Router"/>
+        </packages>
+    </test>
+    <test name="Binding Tests">
+        <groups>
+            <run>
+                <include name="android"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="testsappng.Tests.Bindings"/>
+        </packages>
+    </test>
+    <test name="ListView">
+        <groups>
+            <run>
+                <include name="android"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="testsappng.Tests.ListView"/>
+        </packages>
+    </test>
+    <test name="Modals Tests">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="testsappng.Tests.Modals"/>
+        </packages>
+    </test>
+</suite>

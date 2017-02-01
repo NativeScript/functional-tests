@@ -1,0 +1,33 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="QSF Tests" verbose="1">
+    <test name="General Tests">
+        <groups>
+            <run>
+                <include name="android"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="nativescriptdemo.Tests.QsfGeneralTests"/>
+        </classes>
+    </test>
+    <test name="SideDrawer Tests">
+        <groups>
+            <run>
+                <include name="android"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="nativescriptdemo.Tests.SideDrawerTests"/>
+        </classes>
+    </test>
+    <test name="Demos Tests">
+        <groups>
+            <run>
+                <include name="android"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="nativescriptdemo.Tests.QsfDemosTests"/>
+        </classes>
+    </test>
+</suite>

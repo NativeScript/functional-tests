@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="CocoaPods Tests" verbose="1">
+    <test name="CocoaPods Tests">
+        <classes>
+            <class name="pods.Tests.GoogleMapsTests" />
+        </classes>
+    </test>
+</suite>

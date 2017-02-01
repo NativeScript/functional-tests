@@ -1,0 +1,5 @@
+<root>
+    <item name='functional.tests.core.Exceptions.AppiumException'>
+        <annotation name='java.lang.Deprecated'/>
+    </item>
+</root>

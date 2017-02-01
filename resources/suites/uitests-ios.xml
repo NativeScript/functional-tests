@@ -1,0 +1,133 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="UI Tests" verbose="1">
+    <test name="UI Tests - Components">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.Component"/>
+        </packages>
+    </test>
+    <test name="UI Tests - Dialogs">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.Dialogs"/>
+        </packages>
+    </test>
+    <test name="UI Tests - Css">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.Css"/>
+        </packages>
+    </test>
+    <test name="UI Tests - Fonts">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.Fonts"/>
+        </packages>
+    </test>
+    <test name="UI Tests - Layouts">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.Layouts"/>
+        </packages>
+    </test>
+    <test name="UI Tests - Flexbox">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.Flexbox"/>
+        </packages>
+    </test>
+    <test name="UI Tests - ImageView">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.ImageView"/>
+        </packages>
+    </test>
+    <test name="UI Tests - Page events">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.PagesEvents"/>
+        </packages>
+    </test>
+    <test name="UI Tests - Segmented Style">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.SegmentedStyle"/>
+        </packages>
+    </test>
+    <test name="UI Tests - Tab view">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.TabView"/>
+        </packages>
+    </test>
+    <test name="UI Tests - TimePicker">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.TimePicker"/>
+        </packages>
+    </test>
+    <test name="UI Tests - Issues">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.Issues"/>
+        </packages>
+    </test>
+    <test name="UI Tests - Page">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.Page"/>
+        </packages>
+    </test>
+</suite>

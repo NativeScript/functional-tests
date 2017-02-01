@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Plugins-CameraModule" verbose="1">
+    <test name="Camera modules tests">
+        <classes>
+            <class name="plugins.cameramodule.CameraModuleTests"/>
+        </classes>
+    </test>
+</suite>

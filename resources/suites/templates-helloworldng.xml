@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Templates-HelloWorldNg" verbose="1">
+    <test name="Smoke Tests">
+        <classes>
+            <class name="templates.helloworldng.Tests.SmokeTests"/>
+        </classes>
+    </test>
+</suite>

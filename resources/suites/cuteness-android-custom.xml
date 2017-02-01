@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Cuteness Tests" verbose="1">
+    <test name="Cuteness Tests">
+        <groups>
+            <run>
+                <include name="android"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="cuteness.Tests.CutenessSmokeTests">
+                <methods>
+                    <include name="cuteness_01_home" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
