@@ -781,50 +781,6 @@
             </properties>
         </profile>
 
-        <!--groceries start branch profiles-->
-        <profile>
-            <id>groceriesstartjs.emu.default.api19</id>
-            <properties>
-                <app.config>groceries/groceriesstartjs.emu.default.api19.properties</app.config>
-                <testsuite>groceries-start-js</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>groceriesstartjs.emu.default.api23</id>
-            <properties>
-                <app.config>groceries/groceriesstartjs.emu.default.api23.properties</app.config>
-                <testsuite>groceries-start-js</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>groceriesstartjs.sim.iphone7.ios100</id>
-            <properties>
-                <app.config>groceries/groceriesstartjs.sim.iphone7.ios100.properties</app.config>
-                <testsuite>groceries-start-js</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>groceriesstartng.emu.default.api19</id>
-            <properties>
-                <app.config>groceries/groceriesstartng.emu.default.api19.properties</app.config>
-                <testsuite>groceries-start-ng</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>groceriesstartng.emu.default.api23</id>
-            <properties>
-                <app.config>groceries/groceriesstartng.emu.default.api23.properties</app.config>
-                <testsuite>groceries-start-ng</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>groceriesstartng.sim.iphone7.ios100</id>
-            <properties>
-                <app.config>groceries/groceriesstartng.sim.iphone7.ios100.properties</app.config>
-                <testsuite>groceries-start-ng</testsuite>
-            </properties>
-        </profile>
-
         <!--galleryapp profiles-->
         <profile>
             <id>galleryapp.dev.nexus5.api19</id>
