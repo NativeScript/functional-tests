@@ -17,6 +17,10 @@ public class ActionBarPage extends HomePageExtended {
             int index = 2;
             if (this.settings.platformVersion >= 7) {
                 index = 0;
+                long startTime = System.currentTimeMillis();
+                while (this.find.elementsByLocator(this.locators.viewGroupLocator()).size() < 4 && (System.currentTimeMillis() - startTime) < 3000) {
+                    this.log.info("Elemenst count: " + this.find.elementsByLocator(this.locators.viewGroupLocator()).size());
+                }
             }
             return this.find.elementsByLocator(this.locators.viewGroupLocator()).get(index);
         } else if (this.settings.platform == PlatformType.iOS) {
