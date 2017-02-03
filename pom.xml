@@ -199,6 +199,13 @@
                 <testsuite>uitests-ios</testsuite>
             </properties>
         </profile>
+        <profile>
+            <id>uitests.dev.ipad.ios10</id>
+            <properties>
+                <app.config>uitests/uitests.dev.ipad.ios10.properties</app.config>
+                <testsuite>uitests-ios</testsuite>
+            </properties>
+        </profile>
 
         <!--todomvc profiles-->
         <profile>
