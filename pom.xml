@@ -200,7 +200,7 @@
             </properties>
         </profile>
         <profile>
-            <id>uitests.dev.ipad2.ios10.properties</id>
+            <id>uitests.dev.ipad2.ios10</id>
             <properties>
                 <app.config>uitests/uitests.dev.ipad2.ios10.properties</app.config>
                 <testsuite>uitests-ios</testsuite>
