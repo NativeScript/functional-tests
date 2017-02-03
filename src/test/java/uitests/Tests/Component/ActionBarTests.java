@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uitests.Screens.Components.ActionBarPage;
 
+
 public class ActionBarTests extends UIBaseTest {
     private ActionBarPage actionBarPage;
 
@@ -152,6 +153,18 @@ public class ActionBarTests extends UIBaseTest {
         btnGoToRect.tap();
         this.compareScreens(10);
         this.actionBarPage.navigateTo(this.find.byTextContains("go to"));
+
+        this.assertImagesResults();
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void actionBar_transparentBackGround_3570() throws Exception {
+        this.actionBarPage.navigateTo("actTransparentBgCss");
+        this.compareScreens(3);
+        this.actionBarPage.find.byText("go to cleared page").tap();
+        this.compareScreens(3);
+        this.actionBarPage.tapActionItem();
+        this.compareScreens(3);
 
         this.assertImagesResults();
     }
