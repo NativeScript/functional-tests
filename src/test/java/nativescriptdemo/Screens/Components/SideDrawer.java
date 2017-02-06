@@ -29,7 +29,7 @@ public class SideDrawer extends BasePage {
     }
 
     private UIElement verifiedPlugins() {
-        return this.find.byText("Verified plugins");
+        return this.wait.waitForVisible(this.locators.byText("Verified plugins"));
     }
 
     private UIElement documentation() {
