@@ -788,6 +788,13 @@
             </properties>
         </profile>
         <profile>
+            <id>groceries.dev.nexus5x.api24</id>
+            <properties>
+                <app.config>groceries/groceries.dev.nexus5x.api24.properties</app.config>
+                <testsuite>groceries-android</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>groceries.sim.iphone6.ios91</id>
             <properties>
                 <app.config>groceries/groceries.sim.iphone6.ios91.properties</app.config>
