@@ -46,7 +46,7 @@ public class GetStartedPage extends BasePage {
         if (this.settings.platform == PlatformType.iOS) {
             UIElement btnAllow;
             if (this.settings.platformVersion < 10) {
-                btnAllow = this.find.byLocator(By.id("OK"));
+                btnAllow = this.wait.waitForVisible(By.id("OK"));
             } else {
                 btnAllow = this.wait.waitForVisible(this.locators.byText("Allow", false, false));
             }
