@@ -109,6 +109,13 @@
             </properties>
         </profile>
         <profile>
+            <id>uitests.dev.asus.api18</id>
+            <properties>
+                <app.config>uitests/uitests.dev.asus.api18.properties</app.config>
+                <testsuite>uitests-android</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>uitests.emu.arm.api17</id>
             <properties>
                 <app.config>uitests/uitests.emu.arm.api17.properties</app.config>
