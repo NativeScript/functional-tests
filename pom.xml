@@ -618,6 +618,13 @@
             </properties>
         </profile>
         <profile>
+            <id>ccuteness.dev.galaxy4s.api19</id>
+            <properties>
+                <app.config>cuteness/cuteness.dev.galaxy4s.api19.properties</app.config>
+                <testsuite>cuteness-android</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>cuteness.dev.iphone5.ios10</id>
             <properties>
                 <app.config>cuteness/cuteness.dev.iphone5.ios10.properties</app.config>
