@@ -803,6 +803,15 @@
         </profile>
 
         <!--galleryapp profiles-->
+
+        <profile>
+            <id>ggalleryapp.dev.asus.api18</id>
+            <properties>
+                <app.config>galleryapp/galleryapp.dev.asus.api18.properties</app.config>
+                <testsuite>galleryapp</testsuite>
+            </properties>
+        </profile>
+
         <profile>
             <id>galleryapp.dev.nexus5.api19</id>
             <properties>
