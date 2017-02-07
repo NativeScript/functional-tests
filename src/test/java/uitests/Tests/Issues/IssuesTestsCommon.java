@@ -169,8 +169,11 @@ public class IssuesTestsCommon extends IssuesBaseTest {
             Wait.sleep(this.settings.defaultTimeout * 850);
             this.issuesBasePage.navigateBack();
         }
-
-        this.compareScreens(30);
+        double diff = 0D;
+        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 10) {
+            diff = 4.0D;
+        }
+        this.compareScreens(30, diff);
 
         this.app.restart();
         this.context.navigationManager.resetNavigationMainPage();
