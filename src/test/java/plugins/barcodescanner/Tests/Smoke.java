@@ -16,6 +16,10 @@ public class Smoke extends UIBaseTest {
     @BeforeClass(alwaysRun = true)
     public void beforeSmokeTestClass() {
         this.homePage = new HomePage();
+        UIElement demo = this.wait.waitForVisible(this.locators.byText("DEMO"));
+        if (demo != null) {
+            demo.tap();
+        }
     }
 
     @Test
