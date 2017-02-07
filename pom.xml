@@ -805,7 +805,7 @@
         <!--galleryapp profiles-->
 
         <profile>
-            <id>ggalleryapp.dev.asus.api18</id>
+            <id>galleryapp.dev.asus.api18</id>
             <properties>
                 <app.config>galleryapp/galleryapp.dev.asus.api18.properties</app.config>
                 <testsuite>galleryapp</testsuite>
