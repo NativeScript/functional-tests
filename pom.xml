@@ -1089,7 +1089,13 @@
                 <testsuite>nativescriptdemo-ios</testsuite>
             </properties>
         </profile>
-
+        <profile>
+            <id>nativescriptdemo.dev.ipad2.ios10</id>
+            <properties>
+                <app.config>nativescriptdemo/nativescriptdemo.dev.ipad2.ios10.properties</app.config>
+                <testsuite>nativescriptdemo-ios</testsuite>
+            </properties>
+        </profile>
         <!--sdkexamples profiles-->
         <profile>
             <id>sdkexamples.dev.nexus5.api23</id>
