@@ -809,6 +809,13 @@
             </properties>
         </profile>
 
+        <profile>
+            <id>groceries.dev.ipad2.ios10</id>
+            <properties>
+                <app.config>groceries/groceries.dev.ipad2.ios10.properties</app.config>
+                <testsuite>groceries-ios</testsuite>
+            </properties>
+        </profile>
         <!--galleryapp profiles-->
 
         <profile>
