@@ -34,7 +34,7 @@ public class Smoke extends UIBaseTest {
             if (this.settings.isRealDevice) {
                 this.demoPage.backCameraWithFlip();
                 this.dialogRequestPermissions.allowPermissions();
-                this.compareScreens(5);
+                this.compareScreens(5, 0.15D);
                 this.demoPage.exitBarcodeScanner();
             }
         } else if (this.settings.platform == PlatformType.Andorid) {
@@ -46,7 +46,7 @@ public class Smoke extends UIBaseTest {
             }
             this.demoPage.backCameraWithFlip();
             if (this.settings.isRealDevice) {
-                this.compareScreens(5);
+                this.compareScreens(5, 0.15D);
             } else {
                 demoPage.assertBarcodeScannerIsLoaded();
             }
