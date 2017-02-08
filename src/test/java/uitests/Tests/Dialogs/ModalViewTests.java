@@ -46,11 +46,7 @@ public class ModalViewTests extends UIBaseTest {
     public void modalView_03_popUpBack() throws Exception {
         this.modalViewPage.tapPopUpBtn();
         NavigationHelper.navigateBack(this.context);
-        UIElement el = this.wait.waitForVisible(this.locators.byText("undefined/undefined"));
-        if (el == null) {
-            NavigationHelper.navigateBack(this.context);
-            el = this.wait.waitForVisible(this.locators.byText("undefined/undefined"));
-        }
+        UIElement el = this.navigateBackIfElementNotExists("undefined/undefined");
         Assert.assertEquals(el.getText(), "undefined/undefined");
     }
 
@@ -60,6 +56,18 @@ public class ModalViewTests extends UIBaseTest {
         this.modalViewPage.wait.waitForVisible(this.locators.byText("Login", false, false));
 
         NavigationHelper.navigateBack(this.context);
+
+        this.navigateBackIfElementNotExists("undefined/undefined");
         Assert.assertEquals(this.modalViewPage.textView().getText(), "undefined/undefined");
+    }
+
+    private UIElement navigateBackIfElementNotExists(String text) {
+        UIElement el = this.wait.waitForVisible(this.locators.byText(text));
+        if (el == null) {
+            NavigationHelper.navigateBack(this.context);
+            el = this.wait.waitForVisible(this.locators.byText("undefined/undefined"), true);
+        }
+
+        return el;
     }
 }
