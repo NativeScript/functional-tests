@@ -145,10 +145,14 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         UIElement changeTranslucent = this.issuesBasePage.find.byText("changeTranslucent");
         changeTranslucent.tap();
 
+        double tollerance = 0;
+        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 10) {
+            tollerance = 2;
+        }
         UIElement navBar = this.issuesBasePage.find.byLocator(this.locators.navigationBarLocator());
-        this.compareElements(navBar, 5);
+        this.compareElements(navBar, 5, tollerance);
         changeTranslucent.tap();
-        this.compareElements(navBar, 5);
+        this.compareElements(navBar, 5, tollerance);
 
         this.issuesBasePage.find.byText("change speed to very slow").tap();
         Wait.sleep(3);
