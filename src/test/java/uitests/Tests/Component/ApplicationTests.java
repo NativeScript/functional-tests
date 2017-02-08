@@ -12,6 +12,7 @@ public class ApplicationTests extends UIBaseTest {
     @Test(groups = {"android", "ios"})
     public void application_01_launch_resume() throws Exception {
         if (this.settings.platform == PlatformType.Andorid) {
+            this.app.restart();
             this.context.getDevice().assertLogContains("### Launched application with:");
         } else {
             Assert.assertTrue(IOSDeviceLog.getDeviceLog(this.context.getDevice().getId()).contains("### Launched application with:"));
