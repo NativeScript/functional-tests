@@ -98,7 +98,7 @@ public class ActionBarTests extends UIBaseTest {
         this.actionBarPage.navigateBack();
 
         if (this.settings.platform == PlatformType.Andorid && this.settings.platformVersion >= 7) {
-            this.compareElements("actionBar_21_actionView", this.actionBarPage.find.elementsByLocator(this.locators.viewGroupLocator()).get(1), 10, 1.5);
+            this.compareScreens("actionBar_21_actionView", 10, 1.5);
         } else {
             this.compareElements("actionBar_21_actionView", this.actionBarPage.actionBar(), 10, 1.5);
         }
