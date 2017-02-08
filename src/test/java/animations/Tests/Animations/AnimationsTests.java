@@ -35,7 +35,8 @@ public class AnimationsTests extends AnimationsBaseTest {
 
     @Test(groups = {"android", "ios"}, dataProvider = "demo")
     public void animations(String demo) throws Exception {
-        this.homePage.navigateTo(demo);
+        this.homePage.navigateTo(demo, null);
+
         this.demoPage.loaded();
         this.log.logScreen(demo, demo, 320, 240);
 
