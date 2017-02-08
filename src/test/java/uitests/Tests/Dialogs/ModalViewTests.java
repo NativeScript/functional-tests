@@ -47,6 +47,10 @@ public class ModalViewTests extends UIBaseTest {
         this.modalViewPage.tapPopUpBtn();
         NavigationHelper.navigateBack(this.context);
         UIElement el = this.wait.waitForVisible(this.locators.byText("undefined/undefined"));
+        if (el == null) {
+            NavigationHelper.navigateBack(this.context);
+            el = this.wait.waitForVisible(this.locators.byText("undefined/undefined"));
+        }
         Assert.assertEquals(el.getText(), "undefined/undefined");
     }
 
