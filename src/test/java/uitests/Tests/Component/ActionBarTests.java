@@ -79,7 +79,7 @@ public class ActionBarTests extends UIBaseTest {
         this.actionBarPage.navigateTo("actView");
 
         if (this.settings.automationName == "UIAutomator2") {
-            this.verifyElement(this.actionBarPage.find.elementsByLocator(this.locators.viewGroupLocator()).get(1));
+            this.compareScreens(3);
         } else {
             this.verifyElement(this.actionBarPage.actionBar());
         }
