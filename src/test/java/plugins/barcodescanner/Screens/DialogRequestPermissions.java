@@ -2,12 +2,12 @@ package plugins.barcodescanner.Screens;
 
 import functional.tests.core.basepage.BasePage;
 import functional.tests.core.element.UIElement;
+import functional.tests.core.enums.PlatformType;
 
 public class DialogRequestPermissions extends BasePage {
 
-    public DialogRequestPermissions( ) {
+    public DialogRequestPermissions() {
         super();
-        this.loaded();
     }
 
     public UIElement title() {
@@ -24,27 +24,45 @@ public class DialogRequestPermissions extends BasePage {
 
     public void tapDeny() {
         this.denyButton().click();
-       this.log.info("Tap Deny.");
+        this.log.info("Tap Deny.");
     }
 
-    public void tapAllow() throws InterruptedException {
-        this.allowButton().click();
-       this.log.info("Tap allow");
+    public void allowPermissions() throws InterruptedException {
+        if (settings.platform == PlatformType.Andorid) {
+            this.allowButton().click();
+        } else {
+            UIElement btnOk = this.wait.waitForVisible(this.locators.byText("OK"));
+            if (btnOk != null) {
+                btnOk.tap();
+            }
+        }
+    }
+
+    public void assertIsAvailable() {
+        this.wait.waitForVisible(this.locators.findByTextLocator("YES", true), true);
+    }
+
+    public void submitDialog(String bntContent) {
+        this.wait.waitForVisible(this.locators.byText(bntContent)).tap();
     }
 
     /**
      * Verify the home page has loaded
      **/
-    public void loaded() {
+    public void reuestDialogLoaded() {
         this.title();
-       this.log.info("RequestPermissions dialog page loaded.");
+        this.log.info("RequestPermissions dialog page loaded.");
     }
 
     /**
      * Verify the home page has loaded
      **/
     public void unloaded() {
-        this.wait.waitForNotVisible(this.locators.findByTextLocator("Allow demo to take pictures and record video?", true), this.settings.shortTimeout, true);
-       this.log.info("HasPermissions dialog unloaded.");
+        if (this.settings.platform == PlatformType.Andorid) {
+            this.wait.waitForNotVisible(this.locators.findByTextLocator("Allow demo to take pictures and record video?", true), this.settings.shortTimeout, true);
+            this.log.info("HasPermissions dialog unloaded.");
+        } else {
+
+        }
     }
 }

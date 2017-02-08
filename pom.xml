@@ -1648,6 +1648,13 @@
             </properties>
         </profile>
         <profile>
+            <id>plugin.barcodescanner.nexus5x.api24</id>
+            <properties>
+                <app.config>plugins/plugin.barcodescanner.nexus5x.api24.properties</app.config>
+                <testsuite>plugins-barcodescanner</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>plugin.barcodescanner.sim.iphone5.ios81</id>
             <properties>
                 <app.config>plugins/plugin.barcodescanner.sim.iphone5.ios81.properties</app.config>
@@ -1665,6 +1672,13 @@
             <id>plugin.barcodescanner.sim.iphone7.ios100</id>
             <properties>
                 <app.config>plugins/plugin.barcodescanner.sim.iphone7.ios100.properties</app.config>
+                <testsuite>plugins-barcodescanner</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>plugin.barcodescanner.dev.ipad2.ios10</id>
+            <properties>
+                <app.config>plugins/plugin.barcodescanner.dev.ipad2.ios10.properties</app.config>
                 <testsuite>plugins-barcodescanner</testsuite>
             </properties>
         </profile>

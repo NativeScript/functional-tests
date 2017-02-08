@@ -145,9 +145,9 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         UIElement changeTranslucent = this.issuesBasePage.find.byText("changeTranslucent");
         changeTranslucent.tap();
 
-        double tollerance = 0;
+        double tollerance = 1D;
         if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 10) {
-            tollerance = 2;
+            tollerance = 3D;
         }
         UIElement navBar = this.issuesBasePage.find.byLocator(this.locators.navigationBarLocator());
         this.compareElements(navBar, 5, tollerance);

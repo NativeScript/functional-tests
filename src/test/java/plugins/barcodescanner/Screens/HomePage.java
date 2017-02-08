@@ -2,6 +2,10 @@ package plugins.barcodescanner.Screens;
 
 import functional.tests.core.basepage.BasePage;
 import functional.tests.core.element.UIElement;
+import functional.tests.core.enums.PlatformType;
+import io.appium.java_client.SwipeElementDirection;
+
+import java.awt.*;
 
 public class HomePage extends BasePage {
 
@@ -19,7 +23,7 @@ public class HomePage extends BasePage {
     }
 
     public UIElement demoButton() {
-        return this.find.byText("Demo");
+        return this.wait.waitForVisible(this.locators.byText("Demo", false, false));
     }
 
     public void tapAbout() {
@@ -28,9 +32,14 @@ public class HomePage extends BasePage {
     }
 
     public DemoPage tapDemo() {
-        this.demoButton().click();
-        this.log.info("Tap Demo.");
-
+        if (this.settings.platform == PlatformType.iOS) {
+            this.demoButton().tap();
+            this.log.info("Tap Demo.");
+        } else {
+            Rectangle window = new Rectangle(2, 200, this.context.getDevice().getWindowSize().width, this.context.getDevice().getWindowSize().height);
+            this.gestures.swipeInRectangle(SwipeElementDirection.RIGHT, window, 500, 500);
+            this.app.slideBack();
+        }
         return new DemoPage();
     }
 
