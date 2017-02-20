@@ -1,7 +1,7 @@
 package plugins.push.Screens;
 
-import functional.tests.core.basepage.BasePage;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.settings.Settings;
 import org.openqa.selenium.By;
@@ -13,7 +13,7 @@ public class HomePage extends BasePage {
     }
 
     private UIElement enableButton() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.find.byText("Enable Notifications");
         } else {
             return this.find.byLocator(By.id("Enable Notifications"));
@@ -21,7 +21,7 @@ public class HomePage extends BasePage {
     }
 
     private UIElement disableButton() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.find.byText("Disable Notifications");
         } else {
             return this.find.byLocator(By.id("Disable Notifications"));

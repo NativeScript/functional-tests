@@ -1,9 +1,9 @@
 package nativescriptdemo.Screens.Pages;
 
-import functional.tests.core.basepage.BasePage;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
-import functional.tests.core.helpers.NavigationHelper;
+import functional.tests.core.mobile.helpers.NavigationHelper;
 import io.appium.java_client.SwipeElementDirection;
 import io.appium.java_client.remote.AutomationName;
 import org.openqa.selenium.By;
@@ -26,7 +26,7 @@ public class HomePage extends BasePage {
     private UIElement btnSideDrawer() {
         if (this.settings.platform == PlatformType.iOS) {
             return this.find.byLocator(By.id("ic_menu_main"));
-        } else if (this.settings.platform == PlatformType.Andorid) {
+        } else if (this.settings.platform == PlatformType.Android) {
             return this.wait.waitForVisible(this.locators.imageButtonLocator());
         } else {
             return null;
@@ -71,7 +71,7 @@ public class HomePage extends BasePage {
     @Override
     public boolean navigateTo(String example) {
         UIElement element;
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             element = this.gestures.swipeInWindowToElement(SwipeElementDirection.DOWN, this.locators.byText(example), 5, 250, 0);
         } else {
             element = NavigationHelper.scrollTo(example, this.context, 5);
@@ -82,7 +82,7 @@ public class HomePage extends BasePage {
 
     private UIElement getMenuButton() {
         UIElement element;
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             element = this.wait.waitForVisible(this.locators.imageButtonLocator(), waitTimeOut, false);
         } else if (this.settings.platform == PlatformType.iOS) {
             element = this.wait.waitForVisible(By.id("ic_menu_main"), waitTimeOut, false);

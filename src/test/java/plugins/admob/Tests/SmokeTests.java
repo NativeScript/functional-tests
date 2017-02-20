@@ -1,11 +1,11 @@
 package plugins.admob.Tests;
 
-import functional.tests.core.basetest.UIBaseTest;
-import functional.tests.core.find.Wait;
+import functional.tests.core.mobile.basetest.MobileTest;
+import functional.tests.core.mobile.find.Wait;
 import org.testng.annotations.Test;
 import plugins.admob.Screens.HomePage;
 
-public class SmokeTests extends UIBaseTest {
+public class SmokeTests extends MobileTest {
 
     @Test(groups = {"android", "ios"})
     public void adMob() throws Exception {

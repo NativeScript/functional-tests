@@ -1,7 +1,7 @@
 package testsapptransitions.Tests;
 
 import functional.tests.core.enums.PlatformType;
-import functional.tests.core.find.Wait;
+import functional.tests.core.mobile.find.Wait;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import testsapptransitions.Screens.TransitionsPage;

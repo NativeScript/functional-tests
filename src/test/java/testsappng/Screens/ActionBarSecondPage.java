@@ -1,14 +1,14 @@
 package testsappng.Screens;
 
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import org.openqa.selenium.By;
 
 public class ActionBarSecondPage extends HomePage {
     public static final String actionBarTwo = "ActionBar2";
 
-    public ActionBarSecondPage(Context context) {
+    public ActionBarSecondPage(MobileContext context) {
         super(ActionBarSecondPage.actionBarTwo, context);
     }
 
@@ -17,7 +17,7 @@ public class ActionBarSecondPage extends HomePage {
     }
 
     private UIElement itemBack() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.find.byLocator(this.locators.imageButtonLocator());
         }
         if (this.settings.platform == PlatformType.iOS) {
@@ -69,7 +69,7 @@ public class ActionBarSecondPage extends HomePage {
     }
 
     public UIElement labelTap() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.find.byTextContains(" tap");
         }
         if (this.settings.platform == PlatformType.iOS) {

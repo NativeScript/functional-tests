@@ -1,6 +1,6 @@
 package plugins.cameramodule;
 
-import functional.tests.core.basepage.BasePage;
+import functional.tests.core.mobile.basepage.BasePage;
 
 public class CameraModulePage extends BasePage {
     public CameraModulePage() {

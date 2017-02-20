@@ -16,7 +16,7 @@ public class WhiteSpaceTests extends CssBaseTest {
 
     @Test(groups = {"android", "ios"})
     public void whiteSpace_01_normal() throws Exception {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             this.compareElements(this.whiteSpacePage.stackLayout(), 2, 3.0);
         } else {
             this.compareElements(this.whiteSpacePage.stackLayout(), 2, 0.1);
@@ -27,7 +27,7 @@ public class WhiteSpaceTests extends CssBaseTest {
     @Test(groups = {"android", "ios"})
     public void whiteSpace_02_nowrap() throws Exception {
         this.whiteSpacePage.tapChangeBtn();
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             this.compareElements(this.whiteSpacePage.stackLayout(), 3, 1.0);
         } else {
             this.compareElements(this.whiteSpacePage.stackLayout(), 3, 0.1);

@@ -1,15 +1,15 @@
 package uitests.Screens.Page;
 
-import functional.tests.core.basetest.Context;
+import functional.tests.core.mobile.basetest.MobileContext;
 import uitests.Screens.HomePageExtended;
 
 public class PageBasePage extends HomePageExtended {
 
-    public PageBasePage(Context context) {
+    public PageBasePage(MobileContext context) {
         super("page", context);
     }
 
-    public PageBasePage(String page, Context context) {
+    public PageBasePage(String page, MobileContext context) {
         this(context);
         this.navigateTo(page);
     }

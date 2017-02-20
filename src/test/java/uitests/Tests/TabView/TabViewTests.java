@@ -1,6 +1,6 @@
 package uitests.Tests.TabView;
 
-import functional.tests.core.element.UIRectangle;
+import functional.tests.core.mobile.element.UIRectangle;
 import org.testng.annotations.Test;
 
 public class TabViewTests extends TabViewBaseTest {

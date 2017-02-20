@@ -1,14 +1,14 @@
 package uitests.Screens.Dialogs;
 
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import org.testng.Assert;
 import uitests.Screens.HomePageExtended;
 
 public class ModalViewPage extends HomePageExtended {
 
-    public ModalViewPage(String example, Context context) {
+    public ModalViewPage(String example, MobileContext context) {
         super(example, context);
         this.basePageLoaded();
     }
@@ -37,7 +37,7 @@ public class ModalViewPage extends HomePageExtended {
     }
 
     public UIElement textView() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             this.wait.waitForVisible(this.locators.textViewLocator());
             return this.find.elementsByLocator(this.locators.textViewLocator()).get(1);
         } else if (this.settings.platform == PlatformType.iOS) {

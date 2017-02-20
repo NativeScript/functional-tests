@@ -1,7 +1,7 @@
 package cuteness.Screens;
 
-import functional.tests.core.basepage.BasePage;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.settings.Settings;
 import org.testng.Assert;
 

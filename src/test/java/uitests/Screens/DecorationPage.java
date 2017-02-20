@@ -1,7 +1,7 @@
 package uitests.Screens;
 
-import functional.tests.core.element.UIElement;
-import functional.tests.core.find.Find;
+import functional.tests.core.mobile.element.UIElement;
+import functional.tests.core.mobile.find.Find;
 import org.testng.Assert;
 import uitests.Screens.Css.CssBasePage;
 

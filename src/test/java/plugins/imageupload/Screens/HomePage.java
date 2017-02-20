@@ -1,8 +1,8 @@
 package plugins.imageupload.Screens;
 
-import functional.tests.core.basepage.BasePage;
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.settings.Settings;
 import org.openqa.selenium.By;
@@ -10,12 +10,12 @@ import org.openqa.selenium.By;
 
 public class HomePage extends BasePage {
 
-    public HomePage(Context context) {
+    public HomePage(MobileContext context) {
         super(context);
     }
 
     private By pickSingleLocator() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.locators.findByTextLocator("Pick Single", true);
         } else {
             return By.id("Pick Single");
@@ -23,7 +23,7 @@ public class HomePage extends BasePage {
     }
 
     private By pickMultipleLocator() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.locators.findByTextLocator("Pick Multiple", true);
         } else {
             return By.id("Pick Multiple");

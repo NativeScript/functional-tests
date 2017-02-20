@@ -1,7 +1,7 @@
 package plugins.socialshare.Screens;
 
-import functional.tests.core.basepage.BasePage;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import org.testng.Assert;
 
@@ -43,7 +43,7 @@ public class HomePage extends BasePage {
      * Verify share text dialog loaded
      **/
     public void verifyShareTextDialog() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             if (this.settings.platformVersion.toString().contains("4.")) {
                 UIElement mail = this.find.byText("Email", this.settings.defaultTimeout);
                 Assert.assertNotNull(mail, "Share dialog not loaded.");
@@ -69,7 +69,7 @@ public class HomePage extends BasePage {
      * Verify share image dialog loaded
      **/
     public void verifyShareImageDialog() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             if (this.settings.platformVersion.toString().contains("4.")) {
                 UIElement mail = this.find.byText("Email", this.settings.defaultTimeout);
                 Assert.assertNotNull(mail, "Share dialog not loaded.");

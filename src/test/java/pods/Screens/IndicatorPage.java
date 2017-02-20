@@ -1,12 +1,12 @@
 package pods.Screens;
 
-import functional.tests.core.basepage.BasePage;
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 
 public class IndicatorPage extends BasePage {
 
-    public IndicatorPage(Context context) {
+    public IndicatorPage(MobileContext context) {
         super(context);
     }
 

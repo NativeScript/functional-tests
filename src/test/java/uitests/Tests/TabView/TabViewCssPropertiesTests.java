@@ -1,6 +1,6 @@
 package uitests.Tests.TabView;
 
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -30,7 +30,7 @@ public class TabViewCssPropertiesTests extends TabViewBaseTest {
     @BeforeClass(alwaysRun = true)
     public void TabViewCssPropertiesTestsClass() {
         String tabView = "tabViewCss";
-        if (this.settings.platform == PlatformType.Andorid && this.settings.platformVersion >= 7) {
+        if (this.settings.platform == PlatformType.Android && this.settings.platformVersion >= 7) {
             tabView = "TABVIEWCSS";
         }
 

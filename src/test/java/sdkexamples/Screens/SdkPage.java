@@ -1,11 +1,11 @@
 package sdkexamples.Screens;
 
-import functional.tests.core.basepage.BasePageExtended;
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basepage.BasePageExtended;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.enums.Position;
-import functional.tests.core.find.Wait;
+import functional.tests.core.mobile.find.Wait;
 import io.appium.java_client.SwipeElementDirection;
 
 import java.util.*;
@@ -15,13 +15,13 @@ public class SdkPage extends BasePageExtended {
     Set<String> allLinks = new HashSet<String>();
     TreeSet<String> allSortedLinks = new TreeSet<String>();
 
-    public SdkPage(Context context) {
+    public SdkPage(MobileContext context) {
         super("", context);
     }
 
     public List<UIElement> getLinks() {
         List<UIElement> elements = null;
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             elements = this.find.elementsByLocator(this.locators.textFieldLocator());
         } else if (this.settings.platform == PlatformType.iOS) {
             elements = this.find.elementsByLocator(this.locators.labelLocator());
@@ -60,7 +60,7 @@ public class SdkPage extends BasePageExtended {
         Set<String> setAllLinks = new HashSet<String>();
         int count = 0;
 
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             while (count < 4) {
 
                 // Get the visible links
@@ -111,7 +111,7 @@ public class SdkPage extends BasePageExtended {
     }
 
     public void logScreenshot(String value) {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             this.log.info("Waiting for 1 second ...");
             Wait.sleep(1000);
             if (this.settings.isRealDevice) {

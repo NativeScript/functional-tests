@@ -1,10 +1,10 @@
 package galleryapp.Screens;
 
-import functional.tests.core.basetest.Context;
-import functional.tests.core.basetest.TestContextSetupManager;
-import functional.tests.core.element.UIElement;
-import functional.tests.core.find.Find;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
+import functional.tests.core.mobile.find.Find;
 import functional.tests.core.log.Log;
+import functional.tests.core.mobile.basetest.MobileSetupManager;
 import org.testng.Assert;
 
 public class TabViewPage {
@@ -12,7 +12,7 @@ public class TabViewPage {
     private Log log;
 
     public TabViewPage() {
-        Context tc = TestContextSetupManager.getTestSetupManager().context;
+        MobileContext tc = MobileSetupManager.getTestSetupManager().getContext();
         this.find = tc.find;
         this.log = tc.log;
     }

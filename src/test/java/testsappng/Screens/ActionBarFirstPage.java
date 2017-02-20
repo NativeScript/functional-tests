@@ -1,23 +1,23 @@
 package testsappng.Screens;
 
-import functional.tests.core.basepage.BasePageExtended;
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basepage.BasePageExtended;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
-import functional.tests.core.helpers.NavigationManager;
+import functional.tests.core.mobile.helpers.NavigationManager;
 import org.openqa.selenium.By;
 
 public class ActionBarFirstPage extends BasePageExtended {
     public static final String actionBarOne = "ActionBar1";
 
-    public ActionBarFirstPage(Context context) {
+    public ActionBarFirstPage(MobileContext context) {
         super(context);
         UIElement btnElement = this.wait.waitForVisible(this.locators.byText(actionBarOne, false, false), 4, true);
         this.navigateTo(btnElement, actionBarOne);
         this.navigationManager.setMainPage(actionBarOne);
     }
 
-    public ActionBarFirstPage(Context context, NavigationManager navigationManager) {
+    public ActionBarFirstPage(MobileContext context, NavigationManager navigationManager) {
         super(context, navigationManager);
     }
 
@@ -30,7 +30,7 @@ public class ActionBarFirstPage extends BasePageExtended {
     }
 
     private UIElement itemShare() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             this.wait.waitForVisible(this.locators.labelLocator());
             return this.find.elementsByLocator(this.locators.labelLocator()).get(1);
 
@@ -43,7 +43,7 @@ public class ActionBarFirstPage extends BasePageExtended {
     }
 
     private UIElement itemDelete() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             this.find.byLocator(this.locators.imageLocator()).click();
         }
 

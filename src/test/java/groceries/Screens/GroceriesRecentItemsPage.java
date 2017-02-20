@@ -1,7 +1,7 @@
 package groceries.Screens;
 
-import functional.tests.core.basepage.BasePage;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.element.UIElement;
 import org.openqa.selenium.By;
 
 public class GroceriesRecentItemsPage extends BasePage {

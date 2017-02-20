@@ -1,8 +1,8 @@
 package testsappng.Screens;
 
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
-import functional.tests.core.helpers.NavigationManager;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
+import functional.tests.core.mobile.helpers.NavigationManager;
 import org.testng.Assert;
 
 public class FirstComponentPage extends HomePage {
@@ -11,15 +11,15 @@ public class FirstComponentPage extends HomePage {
     public static String secondComponentString = "Second";
     public static String bntGoToSecond = "GO TO SECOND";
 
-    public FirstComponentPage(Context context) {
+    public FirstComponentPage(MobileContext context) {
         this("", context);
     }
 
-    public FirstComponentPage(Context context, NavigationManager navigationManager) {
+    public FirstComponentPage(MobileContext context, NavigationManager navigationManager) {
         super(context, navigationManager);
     }
 
-    public FirstComponentPage(String mainPage, Context context) {
+    public FirstComponentPage(String mainPage, MobileContext context) {
         super(mainPage, context);
     }
 

@@ -1,6 +1,6 @@
 package plugins.imageupload.Tests;
 
-import functional.tests.core.basetest.UIBaseTest;
+import functional.tests.core.mobile.basetest.MobileTest;
 import functional.tests.core.enums.PlatformType;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -8,7 +8,7 @@ import plugins.imageupload.Screens.HomePage;
 import plugins.imageupload.Screens.PickerPage_Android;
 import plugins.imageupload.Screens.PickerPage_iOS;
 
-public class Smoke extends UIBaseTest {
+public class Smoke extends MobileTest {
     String sdCardBasePath = "/storage/sdcard/";
     private HomePage homePage;
 
@@ -49,7 +49,7 @@ public class Smoke extends UIBaseTest {
     public void pickSingle() throws Exception {
         this.homePage.pickSingleImage();
 
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             PickerPage_Android pickerPage_android = new PickerPage_Android(this.context);
             pickerPage_android.loaded();
             pickerPage_android.pickImages(1);
@@ -72,7 +72,7 @@ public class Smoke extends UIBaseTest {
         homePage.loaded();
         homePage.pickMultipleImages();
 
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             PickerPage_Android pickerPage_android = new PickerPage_Android(this.context);
             pickerPage_android.loaded();
             pickerPage_android.pickImages(2);

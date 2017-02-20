@@ -1,7 +1,7 @@
 package uitests.Screens.Fonts;
 
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -9,7 +9,7 @@ import uitests.Screens.HomePageExtended;
 
 public class NordicPage extends HomePageExtended {
 
-    public NordicPage(String example, Context context) {
+    public NordicPage(String example, MobileContext context) {
         super(example, context);
     }
 
@@ -23,7 +23,7 @@ public class NordicPage extends HomePageExtended {
 
 
     public UIElement label() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.find.elementsByLocator(this.locators.textViewLocator()).get(1);
         } else if (this.settings.platform == PlatformType.iOS) {
             return this.find.byLocator(this.locators.labelLocator());
@@ -33,7 +33,7 @@ public class NordicPage extends HomePageExtended {
     }
 
     public By labelLocator() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.locators.textViewLocator();
         } else if (this.settings.platform == PlatformType.iOS) {
             return this.locators.labelLocator();
@@ -43,7 +43,7 @@ public class NordicPage extends HomePageExtended {
     }
 
     public UIElement button() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.find.byLocator(this.locators.buttonLocator());
         } else if (this.settings.platform == PlatformType.iOS) {
             return this.find.elementsByLocator(this.locators.buttonLocator()).get(2);

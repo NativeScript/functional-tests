@@ -1,12 +1,12 @@
 package sdkexamples;
 
-import functional.tests.core.basetest.UIBaseTest;
+import functional.tests.core.mobile.basetest.MobileTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sdkexamples.Screens.SdkHomePage;
 
-public class SdkExamplesSmokeTests extends UIBaseTest {
+public class SdkExamplesSmokeTests extends MobileTest {
 
     protected SdkHomePage homePage;
 

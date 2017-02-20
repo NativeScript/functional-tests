@@ -1,11 +1,11 @@
 package todomvc.Tests;
 
-import functional.tests.core.basetest.UIBaseTest;
 import functional.tests.core.exceptions.AppiumException;
+import functional.tests.core.mobile.basetest.MobileTest;
 import org.testng.annotations.BeforeClass;
 import todomvc.Screens.HomePage;
 
-public class TodoMvcBaseTest extends UIBaseTest {
+public class TodoMvcBaseTest extends MobileTest {
     protected static int count;
     protected static String testTask = "test";
 

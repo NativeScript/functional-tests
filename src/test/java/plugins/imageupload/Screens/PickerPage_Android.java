@@ -1,9 +1,9 @@
 package plugins.imageupload.Screens;
 
-import functional.tests.core.basepage.BasePage;
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
-import functional.tests.core.find.Wait;
+import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
+import functional.tests.core.mobile.find.Wait;
 import functional.tests.core.settings.Settings;
 import org.openqa.selenium.By;
 
@@ -11,7 +11,7 @@ import java.util.List;
 
 public class PickerPage_Android extends BasePage {
 
-    public PickerPage_Android(Context context) {
+    public PickerPage_Android(MobileContext context) {
         super(context);
     }
 

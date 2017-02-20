@@ -1,11 +1,11 @@
 package nativescriptdemo.Screens;
 
-import functional.tests.core.basepage.BasePage;
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
-import functional.tests.core.element.UIRectangle;
+import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
+import functional.tests.core.mobile.element.UIRectangle;
 import functional.tests.core.enums.PlatformType;
-import functional.tests.core.find.Wait;
+import functional.tests.core.mobile.find.Wait;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
@@ -15,14 +15,14 @@ public class Browser extends BasePage {
 
     private UIRectangle iosWebBackBtnRect;
 
-    public Browser(Context context) {
+    public Browser(MobileContext context) {
         super(context);
     }
 
     private void loaded(String content) {
         UIElement element;
-        if (this.settings.platform == PlatformType.Andorid) {
-            if (this.settings.platform == PlatformType.Andorid && this.settings.platformVersion == 5.0) {
+        if (this.settings.platform == PlatformType.Android) {
+            if (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 5.0) {
                 if (this.client.getDriver().getContextHandles().contains("WEBVIEW_com.android.browser")) {
                     this.log.info("Browser loaded.");
                     return;
@@ -44,7 +44,7 @@ public class Browser extends BasePage {
 
     private void unloaded(String content) {
         Boolean isVisible;
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             isVisible = this.wait.waitForNotVisible(this.locators.byText(content, false, false), this.settings.shortTimeout, true);
         } else if (this.settings.platform == PlatformType.iOS) {
             isVisible = this.wait.waitForNotVisible(By.id("URL"), this.settings.shortTimeout, true);
@@ -60,7 +60,7 @@ public class Browser extends BasePage {
     }
 
     private void closeWithBackNavigation() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             this.navigateBack();
             Wait.sleep(500);
         } else if (this.settings.platform == PlatformType.iOS) {
@@ -79,7 +79,7 @@ public class Browser extends BasePage {
     }
 
     public void handle(String elementText, String screenshotName) {
-        if (this.settings.platform == PlatformType.Andorid && this.settings.platformVersion >= 7.1) {
+        if (this.settings.platform == PlatformType.Android && this.settings.platformVersion >= 7.1) {
             // Android 7.1 emulator open a dialog that prompt for browser here.
         } else {
             this.loaded(elementText);
@@ -87,7 +87,7 @@ public class Browser extends BasePage {
         this.log.logScreen(screenshotName, screenshotName);
         this.closeWithBackNavigation();
         // Hack to fix tests on Api17 and Api18 emulators
-        if (this.settings.platform == PlatformType.Andorid && this.settings.platformVersion <= 4.3) {
+        if (this.settings.platform == PlatformType.Android && this.settings.platformVersion <= 4.3) {
             this.closeWithBackNavigation();
         }
         this.unloaded(elementText);

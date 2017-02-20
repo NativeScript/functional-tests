@@ -1,8 +1,8 @@
 package plugins.geolocation.Tests.ios;
 
-import functional.tests.core.basetest.UIBaseTest;
-import functional.tests.core.element.UIElement;
-import functional.tests.core.find.Wait;
+import functional.tests.core.mobile.basetest.MobileTest;
+import functional.tests.core.mobile.element.UIElement;
+import functional.tests.core.mobile.find.Wait;
 import org.openqa.selenium.html5.Location;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import plugins.geolocation.Screens.GeolocationPage;
 
-public class GeolocationTests extends UIBaseTest {
+public class GeolocationTests extends MobileTest {
 
     // latitude, longitude, altitude
     private final Location LOCATION_BOS = new Location(42.360082, -71.058881, 25); // Boston

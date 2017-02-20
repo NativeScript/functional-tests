@@ -1,7 +1,7 @@
 package sdkexamples.Screens;
 
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.enums.Position;
 import io.appium.java_client.SwipeElementDirection;
@@ -10,7 +10,7 @@ import org.testng.Assert;
 
 public class SdkMainPage extends SdkHomePage {
 
-    public SdkMainPage(String page, Context context) {
+    public SdkMainPage(String page, MobileContext context) {
         super(context);
         UIElement mainPage = null;
         if (this.settings.platformVersion <= 4.4) {
@@ -38,7 +38,7 @@ public class SdkMainPage extends SdkHomePage {
     }
 
     public UIElement btnBack() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.find.byLocator(this.locators.imageButtonLocator(), 3);
         } else if (this.settings.platform == PlatformType.iOS) {
             return this.find.byLocator(By.id("Back"));

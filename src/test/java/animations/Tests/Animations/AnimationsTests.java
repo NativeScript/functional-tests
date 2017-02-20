@@ -3,7 +3,7 @@ package animations.Tests.Animations;
 import animations.Screens.DemoPage;
 import animations.Screens.HomePage;
 import animations.Tests.AnimationsBaseTest;
-import functional.tests.core.find.Wait;
+import functional.tests.core.mobile.find.Wait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

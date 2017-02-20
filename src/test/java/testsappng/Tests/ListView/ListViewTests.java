@@ -1,6 +1,6 @@
 package testsappng.Tests.ListView;
 
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -70,7 +70,7 @@ public class ListViewTests extends TestsAppNgBase {
     }
 
     private boolean checkIfAndoridAndApiLevel24() {
-        return this.settings.platform == PlatformType.Andorid && this.settings.platformVersion >= 7;
+        return this.settings.platform == PlatformType.Android && this.settings.platformVersion >= 7;
     }
 }
 

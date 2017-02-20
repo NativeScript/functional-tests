@@ -1,8 +1,8 @@
 package uitests.Screens;
 
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
-import functional.tests.core.find.Find;
+import functional.tests.core.mobile.find.Find;
 import org.testng.Assert;
 import uitests.Screens.Css.CssBasePage;
 
@@ -26,7 +26,7 @@ public class TransformPage {
     }
 
     public UIElement label() {
-        if (this.cssBasePage.settings.platform == PlatformType.Andorid) {
+        if (this.cssBasePage.settings.platform == PlatformType.Android) {
             return this.find.elementsByLocator((this.cssBasePage.locators.textViewLocator())).get(1);
         } else if (this.cssBasePage.settings.platform == PlatformType.iOS) {
             return this.find.byLocator(this.cssBasePage.locators.labelLocator());
@@ -46,7 +46,7 @@ public class TransformPage {
     }
 
     public UIElement textField() {
-        if (this.cssBasePage.settings.platform == PlatformType.Andorid) {
+        if (this.cssBasePage.settings.platform == PlatformType.Android) {
             return this.find.elementsByLocator(this.cssBasePage.locators.editTextLocator()).get(0);
         } else if (this.cssBasePage.settings.platform == PlatformType.iOS) {
             return this.find.byLocator(this.cssBasePage.locators.editTextLocator());
@@ -56,7 +56,7 @@ public class TransformPage {
     }
 
     public UIElement textView() {
-        if (this.cssBasePage.settings.platform == PlatformType.Andorid) {
+        if (this.cssBasePage.settings.platform == PlatformType.Android) {
             return this.find.elementsByLocator(this.cssBasePage.locators.editTextLocator()).get(1);
         } else if (this.cssBasePage.settings.platform == PlatformType.iOS) {
             return this.find.byLocator(this.cssBasePage.locators.textViewLocator());

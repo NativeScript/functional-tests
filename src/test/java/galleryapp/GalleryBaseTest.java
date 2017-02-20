@@ -1,10 +1,10 @@
 package galleryapp;
 
-import functional.tests.core.basetest.UIBaseTest;
+import functional.tests.core.mobile.basetest.MobileTest;
 import org.openqa.selenium.By;
 import org.testng.annotations.BeforeClass;
 
-public class GalleryBaseTest extends UIBaseTest {
+public class GalleryBaseTest extends MobileTest {
 
     protected GalleryHomePage homePage;
 

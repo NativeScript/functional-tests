@@ -1,6 +1,6 @@
 package uitests.Tests.Css;
 
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.DeviceType;
 import io.appium.java_client.SwipeElementDirection;
 import org.testng.annotations.Test;

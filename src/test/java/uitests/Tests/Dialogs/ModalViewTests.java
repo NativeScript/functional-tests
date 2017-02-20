@@ -1,14 +1,14 @@
 package uitests.Tests.Dialogs;
 
-import functional.tests.core.basetest.UIBaseTest;
-import functional.tests.core.element.UIElement;
-import functional.tests.core.helpers.NavigationHelper;
+import functional.tests.core.mobile.basetest.MobileTest;
+import functional.tests.core.mobile.element.UIElement;
+import functional.tests.core.mobile.helpers.NavigationHelper;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uitests.Screens.Dialogs.ModalViewPage;
 
-public class ModalViewTests extends UIBaseTest {
+public class ModalViewTests extends MobileTest {
     protected ModalViewPage modalViewPage;
 
     protected void waitForScreen(double tolerance) throws Exception {

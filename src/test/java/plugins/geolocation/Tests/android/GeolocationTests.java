@@ -1,8 +1,8 @@
 package plugins.geolocation.Tests.android;
 
-import functional.tests.core.basetest.UIBaseTest;
-import functional.tests.core.device.android.Adb;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.device.android.Adb;
+import functional.tests.core.mobile.element.UIElement;
+import functional.tests.core.mobile.basetest.MobileTest;
 import org.openqa.selenium.html5.Location;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -12,7 +12,7 @@ import plugins.geolocation.Screens.GeolocationPage;
 
 import java.util.List;
 
-public class GeolocationTests extends UIBaseTest {
+public class GeolocationTests extends MobileTest {
 
     // TODO: Uncomment geolocations Adb.isAppRunning
     // latitude, longitude, altitude

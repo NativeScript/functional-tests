@@ -1,9 +1,8 @@
 package uitests.Screens;
 
-import functional.tests.core.element.UIElement;
 import functional.tests.core.enums.PlatformType;
-import functional.tests.core.find.Find;
-import functional.tests.core.find.Locators;
+import functional.tests.core.mobile.element.UIElement;
+import functional.tests.core.mobile.find.Find;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import uitests.Screens.Css.CssBasePage;
@@ -29,7 +28,7 @@ public class BackgroundPage {
     }
 
     public UIElement testElement() {
-        if (this.cssBasePage.settings.platform == PlatformType.Andorid) {
+        if (this.cssBasePage.settings.platform == PlatformType.Android) {
             List<UIElement> elements = this.find.elementsByLocator(this.cssBasePage.locators.viewGroupLocator());
             int index = 4;
             if (this.cssBasePage.settings.platformVersion >= 7) {

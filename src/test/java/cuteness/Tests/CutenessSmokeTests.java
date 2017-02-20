@@ -3,14 +3,14 @@ package cuteness.Tests;
 import cuteness.Screens.AboutPage;
 import cuteness.Screens.DetailsPage;
 import cuteness.Screens.HomePage;
-import functional.tests.core.basetest.UIBaseTest;
 import functional.tests.core.enums.PlatformType;
-import functional.tests.core.find.Wait;
+import functional.tests.core.mobile.find.Wait;
+import functional.tests.core.mobile.basetest.MobileTest;
 import io.appium.java_client.SwipeElementDirection;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class CutenessSmokeTests extends UIBaseTest {
+public class CutenessSmokeTests extends MobileTest {
 
     protected HomePage homePage;
 
@@ -22,7 +22,7 @@ public class CutenessSmokeTests extends UIBaseTest {
 
     @Test(groups = {"android", "ios"})
     public void cuteness_01_home() throws Exception {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             this.compareScreens("homepage", this.settings.shortTimeout, 0.1);
         } else if (this.settings.platform == PlatformType.iOS) {
             if (this.settings.platformVersion == 9) {
@@ -36,7 +36,7 @@ public class CutenessSmokeTests extends UIBaseTest {
 
     @Test(groups = {"android", "ios"})
     public void cuteness_02_details() throws Exception {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             this.homePage.tapListViewItem(2).loaded();
         } else {
             this.homePage.tapListView().loaded();
@@ -86,7 +86,7 @@ public class CutenessSmokeTests extends UIBaseTest {
     public void cuteness_21_navigation_home_details() throws Exception {
         DetailsPage detailsPage = new DetailsPage();
         for (int i = 0; i < 3; i++) {
-            if (this.settings.platform == PlatformType.Andorid) {
+            if (this.settings.platform == PlatformType.Android) {
                 this.homePage.tapListViewItem(i);
             } else {
                 this.homePage.tapListView();

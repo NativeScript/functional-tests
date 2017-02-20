@@ -1,24 +1,24 @@
 package uitests.Tests.Component;
 
-import functional.tests.core.basetest.UIBaseTest;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
+import functional.tests.core.mobile.basetest.MobileTest;
 import org.testng.annotations.Test;
 import uitests.Screens.HomePageExtended;
 
-public class WebViewTests extends UIBaseTest {
+public class WebViewTests extends MobileTest {
 
     @Test(groups = {"android", "ios"})
     public void webView_01() throws Exception {
         String webView = "webview";
         String webTest = "webtest";
-        if (this.settings.platformVersion >= 7 && this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platformVersion >= 7 && this.settings.platform == PlatformType.Android) {
             webView = "WEBVIEW";
         }
         HomePageExtended homePage = new HomePageExtended(webView, this.context);
         UIElement element = this.find.byTextContains(webTest);
         homePage.navigateTo(element);
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             homePage.wait.waitForVisible(this.locators.webViewLocator(), 6, true);
         } else if (this.settings.platform == PlatformType.iOS) {
             homePage.find.byLocator(this.locators.labelLocator());

@@ -1,9 +1,9 @@
 package uitests.Screens;
 
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
-import functional.tests.core.find.Find;
-import functional.tests.core.find.Locators;
+import functional.tests.core.mobile.find.Find;
+import functional.tests.core.mobile.find.Locators;
 import org.testng.Assert;
 import uitests.Screens.Css.CssBasePage;
 
@@ -22,7 +22,7 @@ public class WhiteSpacePage {
     }
 
     public UIElement stackLayout() {
-        if (this.cssBasePage.settings.platform == PlatformType.Andorid) {
+        if (this.cssBasePage.settings.platform == PlatformType.Android) {
             return this.find.getParent(this.btnChange());
         } else {
             return this.find.byLocator(this.cssBasePage.locators.scrollViewLocator());

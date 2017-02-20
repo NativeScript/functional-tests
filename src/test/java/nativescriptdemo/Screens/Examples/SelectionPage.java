@@ -1,13 +1,13 @@
 package nativescriptdemo.Screens.Examples;
 
-import functional.tests.core.basepage.BasePage;
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 import org.testng.Assert;
 
 public class SelectionPage extends BasePage {
 
-    public SelectionPage(Context context) {
+    public SelectionPage(MobileContext context) {
         super(context);
     }
 

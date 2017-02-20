@@ -1,7 +1,7 @@
 package testsappng;
 
-import functional.tests.core.basetest.UIBaseTest;
+import functional.tests.core.mobile.basetest.MobileTest;
 
-public class TestsAppNgBase extends UIBaseTest {
+public class TestsAppNgBase extends MobileTest {
 
 }
