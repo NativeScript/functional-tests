@@ -2,6 +2,7 @@ package uitests.Tests.Css;
 
 import functional.tests.core.element.UIElement;
 import functional.tests.core.enums.DeviceType;
+import io.appium.java_client.SwipeElementDirection;
 import org.testng.annotations.Test;
 
 public class CssCommonTests extends CssBaseTest {
@@ -142,5 +143,13 @@ public class CssCommonTests extends CssBaseTest {
         this.compareScreens(compareScreens,5);
 
         this.assertImagesResults();
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void cssListPicker() throws Exception {
+        this.cssBasePage.navigateTo("list-picker");
+        this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 250, 100);
+        this.wait.waitForVisible(this.locators.listPicker()).swipeInElement(SwipeElementDirection.DOWN, 0, 6);
+        this.assertScreen(this.settings.defaultTimeout);
     }
 }
