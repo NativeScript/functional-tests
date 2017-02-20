@@ -20,10 +20,8 @@ public class ListViewTests extends CssBaseTest {
         this.assertImagesResults();
     }
 
-
-    // Uncomment when the example is added
-    //@Test(groups = {"android", "ios"})
-    public void cssListPicker_issue() throws Exception {
+    @Test(groups = {"android", "ios"})
+    public void cssListPicker_issue_3233() throws Exception {
         this.cssBasePage.navigateTo("list-picker");
         this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 250, 100);
         this.wait.waitForVisible(this.locators.listPicker()).swipeInElement(SwipeElementDirection.DOWN, 0, 6);
