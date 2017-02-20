@@ -1,6 +1,6 @@
 package sdkexamples.Tests;
 
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -31,13 +31,13 @@ public class SdkTextViewTests extends SdkBaseTest {
             String text = "This is very long text. This is very long text. This is very long text. " +
                     "This is very long text. This is very long text.";
             UIElement textField = null;
-            if (this.settings.platform == PlatformType.Andorid) {
+            if (this.settings.platform == PlatformType.Android) {
                 textField = this.mainPage.find.byLocator(this.locators.editTextLocator());
             } else {
                 textField = this.mainPage.find.byType("UIATextView");
             }
             textField.setText(text);
-            if (this.settings.platform == PlatformType.Andorid) {
+            if (this.settings.platform == PlatformType.Android) {
                 this.mainPage.hideKeyboard();
             }
             this.mainPage.logScreenshot("Basic TextView with very long text.");

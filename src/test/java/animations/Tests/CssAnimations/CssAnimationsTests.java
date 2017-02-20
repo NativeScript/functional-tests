@@ -1,6 +1,6 @@
 package animations.Tests.CssAnimations;
 
-import functional.tests.core.find.Wait;
+import functional.tests.core.mobile.find.Wait;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 

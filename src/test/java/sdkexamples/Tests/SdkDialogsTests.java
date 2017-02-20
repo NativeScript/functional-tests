@@ -1,6 +1,6 @@
 package sdkexamples.Tests;
 
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import org.openqa.selenium.By;
 import org.testng.annotations.DataProvider;

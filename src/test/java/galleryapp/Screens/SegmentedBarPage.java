@@ -1,15 +1,15 @@
 package galleryapp.Screens;
 
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
-import functional.tests.core.find.Find;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
+import functional.tests.core.mobile.find.Find;
 import functional.tests.core.log.Log;
 
 public class SegmentedBarPage {
     private Find find;
     private Log log;
 
-    public SegmentedBarPage(Context context) {
+    public SegmentedBarPage(MobileContext context) {
         this.find = context.find;
         this.log = context.log;
     }

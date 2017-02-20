@@ -1,8 +1,8 @@
 package uitests.Screens.Bindings;
 
-import functional.tests.core.basepage.BasePageExtended;
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basepage.BasePageExtended;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 
 public class BindingsBasePage extends BasePageExtended {
 
@@ -10,7 +10,7 @@ public class BindingsBasePage extends BasePageExtended {
     public BindingBasicsPage bindingBasicsPage;
     public BindingXmlBasicsPage bindingXmlBasicsPage;
 
-    public BindingsBasePage(Context context) {
+    public BindingsBasePage(MobileContext context) {
         super(BINDINGS, context);
         this.navigateToBindings();
         this.bindingBasicsPage = new BindingBasicsPage();

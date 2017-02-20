@@ -1,8 +1,8 @@
 package plugins.imageupload.Screens;
 
-import functional.tests.core.basepage.BasePage;
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.settings.Settings;
 import org.openqa.selenium.By;
 
@@ -10,7 +10,7 @@ import java.util.List;
 
 public class PickerPage_iOS extends BasePage {
 
-    public PickerPage_iOS(Context contex) {
+    public PickerPage_iOS(MobileContext contex) {
         super(contex);
     }
 

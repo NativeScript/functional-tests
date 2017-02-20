@@ -1,7 +1,7 @@
 package testsappng.Tests.Router;
 
 import functional.tests.core.enums.PlatformType;
-import functional.tests.core.find.Wait;
+import functional.tests.core.mobile.find.Wait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -31,7 +31,7 @@ public class NavOptionsTests extends TestsAppNgBase {
     public void navOption_01_clearHistory_navigateBack() throws Exception {
         this.clearHistoryAndUpdate("0", "1");
 
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             try {
                 this.navOptionsPage.navigateBack();
             } catch (Exception ex) {
@@ -66,7 +66,7 @@ public class NavOptionsTests extends TestsAppNgBase {
     @Test(groups = {"android", "ios"})
     public void navOption_03_pageTransition() throws Exception {
         double tollerance = 6;
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             this.navOptionsPage.resetNavigationToLastPage();
         } else {
             Wait.sleep(2000);

@@ -1,6 +1,6 @@
 package nativescriptdemo.Tests;
 
-import functional.tests.core.element.UIRectangle;
+import functional.tests.core.mobile.element.UIRectangle;
 import nativescriptdemo.Screens.Browser;
 import nativescriptdemo.Screens.Components.SideDrawer;
 import nativescriptdemo.Screens.Pages.AboutPage;

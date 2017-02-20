@@ -1,6 +1,6 @@
 package unittests.Tests;
 
-import functional.tests.core.basetest.UIBaseTest;
+import functional.tests.core.mobile.basetest.MobileTest;
 import functional.tests.core.enums.DeviceType;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.utils.OSUtils;
@@ -10,14 +10,14 @@ import unittests.Screens.HomePage;
 
 import java.util.HashMap;
 
-public class SmokeTests extends UIBaseTest {
+public class SmokeTests extends MobileTest {
 
     @Test(groups = {"android", "ios"})
     public void runTests() throws Exception {
         HomePage homePage = new HomePage();
 
         // Allow tests to access photos, media, and files on the device
-        if (this.settings.platform == PlatformType.Andorid && this.settings.platformVersion >= 6.0) {
+        if (this.settings.platform == PlatformType.Android && this.settings.platformVersion >= 6.0) {
             homePage.find.byText("Allow").click();
         }
 
@@ -38,7 +38,7 @@ public class SmokeTests extends UIBaseTest {
                 pathTestResults = paths.get(5.0).toString();
             }
 
-            if (this.settings.platform == PlatformType.Andorid) {
+            if (this.settings.platform == PlatformType.Android) {
                 this.device.pullFile(pathTestResults, null);
             }
 

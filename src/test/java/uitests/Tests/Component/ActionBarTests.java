@@ -1,15 +1,15 @@
 package uitests.Tests.Component;
 
-import functional.tests.core.basetest.UIBaseTest;
-import functional.tests.core.element.UIElement;
-import functional.tests.core.element.UIRectangle;
 import functional.tests.core.enums.PlatformType;
+import functional.tests.core.mobile.basetest.MobileTest;
+import functional.tests.core.mobile.element.UIElement;
+import functional.tests.core.mobile.element.UIRectangle;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uitests.Screens.Components.ActionBarPage;
 
 
-public class ActionBarTests extends UIBaseTest {
+public class ActionBarTests extends MobileTest {
     private ActionBarPage actionBarPage;
 
     private void verifyElement(UIElement element) {
@@ -97,7 +97,7 @@ public class ActionBarTests extends UIBaseTest {
     public void actionBar_23_actionView() throws Exception {
         this.actionBarPage.navigateBack();
 
-        if (this.settings.platform == PlatformType.Andorid && this.settings.platformVersion >= 7) {
+        if (this.settings.platform == PlatformType.Android && this.settings.platformVersion >= 7) {
             this.compareScreens("actionBar_21_actionView", 10, 1.5);
         } else {
             this.compareElements("actionBar_21_actionView", this.actionBarPage.actionBar(), 10, 1.5);

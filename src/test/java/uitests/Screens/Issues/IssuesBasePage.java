@@ -1,11 +1,11 @@
 package uitests.Screens.Issues;
 
-import functional.tests.core.basetest.Context;
+import functional.tests.core.mobile.basetest.MobileContext;
 import uitests.Screens.HomePageExtended;
 
 public class IssuesBasePage extends HomePageExtended {
 
-    public IssuesBasePage(Context context) {
+    public IssuesBasePage(MobileContext context) {
         super("issues", context);
     }
 

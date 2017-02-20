@@ -1,14 +1,14 @@
 package nativescriptdemo.Screens.Components;
 
-import functional.tests.core.basepage.BasePage;
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 import io.appium.java_client.SwipeElementDirection;
 import org.testng.Assert;
 
 public class SideDrawer extends BasePage {
 
-    public SideDrawer(Context context) {
+    public SideDrawer(MobileContext context) {
         super(context);
     }
 

@@ -1,6 +1,6 @@
 package sdkexamples.Tests;
 
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -26,12 +26,12 @@ public class SdkLocationModuleTests extends SdkBaseTest {
     @Test(dataProvider = "example")
     public void sdkLocationModuleTest(String example) throws Exception {
         this.mainPage.navigateTo(example);
-        if (this.settings.platformVersion <= 4.4 && this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platformVersion <= 4.4 && this.settings.platform == PlatformType.Android) {
             UIElement el = this.mainPage.wait.waitForVisible(this.locators.byText("RECENT LOCATION REQUESTS", false, false), 6, false);
             if (el != null) {
                 this.app.navigateBack();
             }
-        } else if (example == "Basic location" && ((this.settings.platform == PlatformType.Andorid && this.settings.platformVersion > 5.1) || settings.platform == PlatformType.iOS)) {
+        } else if (example == "Basic location" && ((this.settings.platform == PlatformType.Android && this.settings.platformVersion > 5.1) || settings.platform == PlatformType.iOS)) {
             UIElement btn = this.mainPage.wait.waitForVisible(this.locators.byText("Allow"), 6, false);
             if (btn != null) {
                 btn.tap();

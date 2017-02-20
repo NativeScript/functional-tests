@@ -1,16 +1,16 @@
 package testsappng.Screens;
 
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
-import functional.tests.core.find.Wait;
+import functional.tests.core.mobile.find.Wait;
 
 public class NavOptionsPage extends HomePage {
     public static String framStackString = "frameStack";
     public static String navOptionsPage = "nav-options";
     public static String pageTransitions = "page-trasnitions";
 
-    public NavOptionsPage(Context context) {
+    public NavOptionsPage(MobileContext context) {
         super(navOptionsPage, context);
     }
 
@@ -67,7 +67,7 @@ public class NavOptionsPage extends HomePage {
 
     public String getFrameStack() {
         UIElement label = this.find.byTextContains("frameStack");
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return label.getText();
         } else {
             return label.getAttribute("value");
@@ -76,7 +76,7 @@ public class NavOptionsPage extends HomePage {
 
     public String getLocationStack() {
         UIElement label = this.find.byTextContains("locationStack");
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return label.getText();
         } else {
             return label.getAttribute("value");

@@ -1,8 +1,8 @@
 package testsappng.Screens;
 
-import functional.tests.core.basepage.BasePageExtended;
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basepage.BasePageExtended;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 import org.testng.Assert;
 
 public class SecondComponentPage extends BasePageExtended {
@@ -11,7 +11,7 @@ public class SecondComponentPage extends BasePageExtended {
     public static String firstComponentString = "First";
     public static String bntGoToFirst = "GO TO FIRST";
 
-    public SecondComponentPage(Context context) {
+    public SecondComponentPage(MobileContext context) {
         super(context, context.navigationManager);
     }
 

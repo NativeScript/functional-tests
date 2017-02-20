@@ -1,7 +1,7 @@
 package todomvc.Screens;
 
-import functional.tests.core.basepage.BasePage;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.exceptions.AppiumException;
 import org.testng.Assert;
 

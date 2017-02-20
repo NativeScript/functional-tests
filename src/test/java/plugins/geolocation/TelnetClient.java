@@ -1,6 +1,6 @@
 package plugins.geolocation;
 
-import functional.tests.core.basetest.BaseTest;
+import functional.tests.core.mobile.basetest.BaseTest;
 
 import java.io.BufferedReader;
 import java.io.IOException;

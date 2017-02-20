@@ -1,13 +1,13 @@
 package uitests.Screens.Fonts;
 
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 import org.testng.Assert;
 import uitests.Screens.HomePageExtended;
 
 public class FontPage extends HomePageExtended {
 
-    public FontPage(String example, Context context) {
+    public FontPage(String example, MobileContext context) {
         super(example, context);
         this.basePageLoaded();
     }

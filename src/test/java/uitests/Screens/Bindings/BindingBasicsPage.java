@@ -1,16 +1,16 @@
 package uitests.Screens.Bindings;
 
-import functional.tests.core.basetest.Context;
-import functional.tests.core.basetest.TestContextSetupManager;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.basetest.MobileSetupManager;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import org.testng.Assert;
 
 public class BindingBasicsPage {
-    private Context context;
+    private MobileContext context;
 
     public BindingBasicsPage() {
-        this.context = TestContextSetupManager.getTestSetupManager().context;
+        this.context = MobileSetupManager.getTestSetupManager().getContext();
     }
 
     public UIElement btnSetText() {

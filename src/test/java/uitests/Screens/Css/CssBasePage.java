@@ -1,11 +1,11 @@
 package uitests.Screens.Css;
 
-import functional.tests.core.basetest.Context;
+import functional.tests.core.mobile.basetest.MobileContext;
 import uitests.Screens.HomePageExtended;
 
 public class CssBasePage extends HomePageExtended {
 
-    public CssBasePage(Context context) {
+    public CssBasePage(MobileContext context) {
         super("css", context);
     }
 

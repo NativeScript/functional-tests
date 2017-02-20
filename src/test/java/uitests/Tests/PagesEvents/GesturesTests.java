@@ -1,6 +1,6 @@
 package uitests.Tests.PagesEvents;
 
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.enums.Position;
 import io.appium.java_client.SwipeElementDirection;
@@ -58,7 +58,7 @@ public class GesturesTests extends PagesEventsBaseTest {
         this.gesturesPage.lblPan().pan(SwipeElementDirection.RIGHT, 3000);
         Assert.assertNotNull(this.homePageExtended.find.byTextContains("Pan deltaX:"), "Pan on left NOT detected.");
         Assert.assertNotNull(this.homePageExtended.find.byTextContains("deltaY:0"), "Pan on left detected, but with wrong Y coordinate.");
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             Assert.assertNotNull(this.homePageExtended.find.byTextContains("Pan deltaX:-"), "Pan on left detected, but with wrong X coordinate.");
         }
         Assert.assertNotNull(this.homePageExtended.find.byTextContains("true"), "Args.object is NOT correct.");
@@ -71,7 +71,7 @@ public class GesturesTests extends PagesEventsBaseTest {
             this.gesturesPage.navigateToGestures();
 
             this.gesturesPage.lblPinch().pinch();
-            if (this.settings.platform == PlatformType.Andorid) {
+            if (this.settings.platform == PlatformType.Android) {
                 Assert.assertNotNull(this.homePageExtended.find.byTextContains("Pinch Scale: 1"), "Pinch NOT detected.");
             }
             if (this.settings.platform == PlatformType.iOS) {

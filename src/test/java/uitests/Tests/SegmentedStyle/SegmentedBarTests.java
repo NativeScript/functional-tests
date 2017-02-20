@@ -1,12 +1,12 @@
 package uitests.Tests.SegmentedStyle;
 
-import functional.tests.core.basetest.UIBaseTest;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.element.UIElement;
+import functional.tests.core.mobile.basetest.MobileTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uitests.Screens.SegmentedBarPage;
 
-public class SegmentedBarTests extends UIBaseTest {
+public class SegmentedBarTests extends MobileTest {
     private SegmentedBarPage segmentedBarPage;
 
     @BeforeClass(alwaysRun = true)

@@ -1,7 +1,5 @@
 package todomvc.Tests;
 
-import functional.tests.core.app.App;
-import functional.tests.core.log.Log;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

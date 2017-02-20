@@ -1,13 +1,13 @@
 package testsappng.Screens;
 
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import org.openqa.selenium.By;
 
 public class BindingPage extends HomePage {
 
-    public BindingPage(String mainPage, Context context) {
+    public BindingPage(String mainPage, MobileContext context) {
         super(mainPage, context);
     }
 
@@ -25,7 +25,7 @@ public class BindingPage extends HomePage {
 
     public UIElement lbCurlyBracketBinding() {
         int index = 0;
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             index = 1;
         }
         return this.find.elementsByLocator(this.locators.labelLocator()).get(index);
@@ -66,7 +66,7 @@ public class BindingPage extends HomePage {
 
     public UIElement lbDate() {
         int index = 1;
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             index = 2;
         }
         return this.find.elementsByLocator(this.locators.labelLocator()).get(index);

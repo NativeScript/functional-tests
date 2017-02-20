@@ -15,7 +15,7 @@ public class DecorationTests extends CssBaseTest {
 
     @Test(groups = {"android", "ios"})
     public void decoration_01_none() throws Exception {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             this.compareScreens(2, 0.2);
         } else {
             this.compareScreens(2, 0.1);
@@ -28,7 +28,7 @@ public class DecorationTests extends CssBaseTest {
     public void decoration_02_underline() throws Exception {
         this.decorationPage.tapChangeBtn();
 
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             this.compareScreens(2, 0.2);
         } else {
             this.compareScreens(2, 0.1);
@@ -41,7 +41,7 @@ public class DecorationTests extends CssBaseTest {
     public void decoration_03_lineThrough() throws Exception {
         this.decorationPage.tapChangeBtn();
 
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             this.compareScreens(2, 0.2);
         } else {
             this.compareScreens(2, 0.1);
@@ -53,7 +53,7 @@ public class DecorationTests extends CssBaseTest {
     @Test(groups = {"android", "ios"})
     public void decoration_04_lineThroughUnderline() throws Exception {
         this.decorationPage.tapChangeBtn();
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             this.compareScreens(2, 0.2);
         } else {
             this.compareScreens(2, 0.1);
@@ -65,7 +65,7 @@ public class DecorationTests extends CssBaseTest {
     @Test(groups = {"android", "ios"})
     public void decoration_05_lineThroughUnderlineNone() throws Exception {
         this.decorationPage.tapChangeBtn();
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             this.compareScreens("decoration_01_none",2, 0.2);
         } else {
             this.compareScreens("decoration_01_none",2, 0.1);
@@ -80,7 +80,7 @@ public class DecorationTests extends CssBaseTest {
             this.decorationPage.tapChangeBtn();
         }
 
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             this.compareScreens(2, 1.0);
         } else {
             this.compareScreens(2, 0.1);

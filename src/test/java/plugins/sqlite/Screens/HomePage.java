@@ -1,7 +1,7 @@
 package plugins.sqlite.Screens;
 
-import functional.tests.core.basepage.BasePage;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.settings.Settings;
 import org.openqa.selenium.By;
@@ -14,7 +14,7 @@ public class HomePage extends BasePage {
     }
 
     private By titleLocator() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.locators.findByTextLocator("NativeScript SQLite Example", true);
         } else {
             return By.id("NativeScript SQLite Example");
@@ -22,7 +22,7 @@ public class HomePage extends BasePage {
     }
 
     private UIElement listViewItem(String itemName) {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.find.byText(itemName);
         } else {
             return this.find.byLocator(By.id(itemName), this.settings.shortTimeout);
@@ -30,7 +30,7 @@ public class HomePage extends BasePage {
     }
 
     private UIElement textBox() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.find.byType("android.widget.EditText");
         } else {
             By textBoxLocator = By.className("UIATextField");
@@ -39,7 +39,7 @@ public class HomePage extends BasePage {
     }
 
     private UIElement addButton() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.find.byTextContains("Add");
         } else {
             By textBoxLocator = By.id("Add");

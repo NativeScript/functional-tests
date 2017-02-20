@@ -1,25 +1,25 @@
 package testsappng.Screens;
 
-import functional.tests.core.basepage.BasePageExtended;
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
-import functional.tests.core.helpers.NavigationManager;
+import functional.tests.core.mobile.basepage.BasePageExtended;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
+import functional.tests.core.mobile.helpers.NavigationManager;
 import org.testng.Assert;
 
 public class HomePage extends BasePageExtended {
 
-    public HomePage(String mainPage, Context context) {
+    public HomePage(String mainPage, MobileContext context) {
         super(mainPage, context);
         if (!mainPage.isEmpty()) {
             this.testsAppNgHomeNavigateToPage(mainPage);
         }
     }
 
-    public HomePage(Context context, NavigationManager navigationManager) {
+    public HomePage(MobileContext context, NavigationManager navigationManager) {
         super(context, navigationManager);
     }
 
-    public HomePage(String testPage, String waitForElement, Context context) {
+    public HomePage(String testPage, String waitForElement, MobileContext context) {
         super(testPage, context);
         this.testsAppNgHomeNavigateToPage(waitForElement);
     }

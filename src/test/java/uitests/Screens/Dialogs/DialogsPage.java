@@ -1,7 +1,7 @@
 package uitests.Screens.Dialogs;
 
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import org.testng.Assert;
 import uitests.Screens.HomePageExtended;
@@ -11,14 +11,14 @@ public class DialogsPage extends HomePageExtended {
     public static final String name0 = "Harold Finch";
     public static final String name1 = "John Reese";
 
-    public DialogsPage(String example, Context context) {
+    public DialogsPage(String example, MobileContext context) {
         super(example, context);
         this.basePageLoaded();
     }
 
     public UIElement label() {
         this.wait.waitForVisible(this.locators.labelLocator(), 6, true);
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.find.elementsByLocator(this.locators.labelLocator()).get(1);
         } else if (this.settings.platform == PlatformType.iOS) {
             return this.find.byLocator(this.locators.labelLocator());

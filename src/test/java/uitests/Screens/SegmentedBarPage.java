@@ -1,13 +1,13 @@
 package uitests.Screens;
 
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import org.testng.Assert;
 
 public class SegmentedBarPage extends HomePageExtended {
 
-    public SegmentedBarPage(Context context) {
+    public SegmentedBarPage(MobileContext context) {
         super("segStyle", context);
         this.loaded();
     }
@@ -40,7 +40,7 @@ public class SegmentedBarPage extends HomePageExtended {
     }
 
     private java.util.List<UIElement> getSegmentedBars() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             if (this.settings.platformVersion >= 7) {
                 this.wait.waitForVisible(this.locators.tabWidgetLocator(), 6, true);
                 return this.find.elementsByLocator(this.locators.tabHostLocator());

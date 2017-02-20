@@ -1,8 +1,8 @@
 package groceries.Tests;
 
-import functional.tests.core.basetest.UIBaseTest;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.extensions.ExecutionOrder;
+import functional.tests.core.mobile.basetest.MobileTest;
 import groceries.Screens.ErrorDialog;
 import groceries.Screens.LoginPage;
 import groceries.Screens.SecondaryLoginPage;
@@ -14,7 +14,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 @Listeners(ExecutionOrder.class)
-public class LoginFormPage extends UIBaseTest {
+public class LoginFormPage extends MobileTest {
 
     private LoginPage loginPage;
     private SecondaryLoginPage secondaryLoginPage;
@@ -82,7 +82,7 @@ public class LoginFormPage extends UIBaseTest {
         this.secondaryLoginPage.showForgotPasswordDialog();
         ErrorDialog errorDialog = this.secondaryLoginPage.ok();
 
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             try {
                 this.secondaryLoginPage.hideKeyboard();
             } catch (Exception e) {

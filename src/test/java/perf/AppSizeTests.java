@@ -1,6 +1,6 @@
 package perf;
 
-import functional.tests.core.basetest.BaseTest;
+import functional.tests.core.mobile.basetest.BaseTest;
 import functional.tests.core.utils.FileSystem;
 import org.testng.Assert;
 import org.testng.annotations.Test;

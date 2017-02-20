@@ -1,7 +1,7 @@
 package groceries.Screens;
 
-import functional.tests.core.basepage.BasePage;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.exceptions.AppiumException;
 import org.openqa.selenium.By;
@@ -57,7 +57,7 @@ public class SecondaryLoginPage extends BasePage {
 
     public void insertUserName(String text) {
         this.userField().setText(text);
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             hideKeyboard();
         } else {
             this.find.byLocator(this.locators.byText("Done")).click();
@@ -66,7 +66,7 @@ public class SecondaryLoginPage extends BasePage {
 
     public void insertPassword(String text) {
         this.passwordField().setText(text);
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             hideKeyboard();
         } else {
             this.find.byLocator(this.locators.byText("Done")).click();
@@ -153,7 +153,7 @@ public class SecondaryLoginPage extends BasePage {
     private By passwordLocator() {
         if (this.settings.platform == PlatformType.iOS) {
             return By.className("UIASecureTextField");
-        } else if (this.settings.platform == PlatformType.Andorid) {
+        } else if (this.settings.platform == PlatformType.Android) {
             return By.xpath("//android.widget.EditText[2]");
         } else {
             return null;

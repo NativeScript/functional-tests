@@ -1,14 +1,13 @@
 package erroractivity.Tests;
 
-import functional.tests.core.basetest.UIBaseTest;
-import functional.tests.core.element.UIElement;
-import functional.tests.core.find.Locators;
+import erroractivity.Screens.HomePage;
+import functional.tests.core.mobile.element.UIElement;
+import functional.tests.core.mobile.basetest.MobileTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import erroractivity.Screens.HomePage;
 
-public class SmokeTests extends UIBaseTest {
+public class SmokeTests extends MobileTest {
 
     private UIElement exception;
     private HomePage homePage;

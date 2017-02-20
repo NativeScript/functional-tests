@@ -1,12 +1,12 @@
 package uitests.Tests.Component;
 
-import functional.tests.core.basetest.UIBaseTest;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.element.UIElement;
+import functional.tests.core.mobile.basetest.MobileTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import uitests.Screens.HomePageExtended;
 
-public class HtmlViewTests extends UIBaseTest {
+public class HtmlViewTests extends MobileTest {
 
     HomePageExtended homePage;
 

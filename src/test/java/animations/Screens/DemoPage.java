@@ -1,8 +1,8 @@
 package animations.Screens;
 
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.exceptions.AppiumException;
-import functional.tests.core.find.Find;
+import functional.tests.core.mobile.find.Find;
 import functional.tests.core.log.Log;
 import org.testng.Assert;
 

@@ -1,11 +1,11 @@
 package pods.Tests;
 
-import functional.tests.core.basetest.UIBaseTest;
+import functional.tests.core.mobile.basetest.MobileTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pods.Screens.GoogleMapsPage;
 
-public class GoogleMapsTests extends UIBaseTest {
+public class GoogleMapsTests extends MobileTest {
 
 	@Test(groups = {"android", "ios"})
 	public void homePage() throws Exception {

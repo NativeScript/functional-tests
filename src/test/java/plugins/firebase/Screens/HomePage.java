@@ -1,7 +1,7 @@
 package plugins.firebase.Screens;
 
-import functional.tests.core.basepage.BasePage;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.settings.Settings;
 
@@ -14,7 +14,7 @@ public class HomePage extends BasePage {
     }
 
     private By titleLocator() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.locators.findByTextLocator("Firebase plugin demo", true);
         } else {
             return By.id("Firebase plugin demo");

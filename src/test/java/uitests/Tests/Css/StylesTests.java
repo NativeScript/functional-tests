@@ -1,11 +1,11 @@
 package uitests.Tests.Css;
 
-import functional.tests.core.basetest.UIBaseTest;
+import functional.tests.core.mobile.basetest.MobileTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uitests.Screens.Css.CssBasePage;
 
-public class StylesTests extends UIBaseTest {
+public class StylesTests extends MobileTest {
 
     private CssBasePage cssBasePage;
 

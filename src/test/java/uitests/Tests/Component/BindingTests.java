@@ -1,14 +1,14 @@
 package uitests.Tests.Component;
 
-import functional.tests.core.basetest.UIBaseTest;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
+import functional.tests.core.mobile.basetest.MobileTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uitests.Screens.Bindings.BindingsBasePage;
 
-public class BindingTests extends UIBaseTest {
+public class BindingTests extends MobileTest {
 
     private BindingsBasePage bindingsBasePage;
 
