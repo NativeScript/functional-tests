@@ -20,8 +20,8 @@ public class ListViewTests extends CssBaseTest {
     }
 
     @Test(groups = {"android", "ios"})
-    public void listView_issue_3233_3574() throws Exception {
-        this.cssBasePage.navigateTo("listvicker");
+    public void listview_bg_separator_color_3233_3574() throws Exception {
+        this.cssBasePage.navigateTo("listview_bg_separator_color");
         this.assertScreen(this.settings.defaultTimeout);
     }
 }
