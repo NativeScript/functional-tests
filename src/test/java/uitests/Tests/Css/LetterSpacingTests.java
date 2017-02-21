@@ -10,6 +10,5 @@ public class LetterSpacingTests extends CssBaseTest {
             this.cssBasePage.navigateTo("spacing");
             this.compareScreens(10);
             this.assertImagesResults();
-        }
     }
 }
