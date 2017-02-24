@@ -1,8 +1,8 @@
 package groceries.Screens;
 
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIRectangle;
-import functional.tests.core.find.Wait;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIRectangle;
+import functional.tests.core.mobile.find.Wait;
 import org.openqa.selenium.Point;
 
 import java.awt.*;
@@ -12,9 +12,9 @@ public class GroceriesItem extends UIRectangle {
     private UIRectangle text;
     private UIRectangle deleteIcon;
     private org.openqa.selenium.Point center;
-    private Context context;
+    private MobileContext context;
 
-    public GroceriesItem(Rectangle rectangle, Context context) {
+    public GroceriesItem(Rectangle rectangle, MobileContext context) {
         super(rectangle);
         this.context = context;
         this.center = new Point((this.getRectangle().x + this.getRectangle().width / 2), this.getRectangle().y + this.getRectangle().height / 2);

@@ -1,8 +1,8 @@
 package plugins.cameramodule;
 
-import functional.tests.core.basetest.UIBaseTest;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
+import functional.tests.core.mobile.basetest.MobileTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ScreenOrientation;
 import org.testng.Assert;
@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import java.awt.*;
 
-public class CameraModuleTests extends UIBaseTest {
+public class CameraModuleTests extends MobileTest {
 
     private CameraModulePage cameraModulePage;
 
@@ -87,7 +87,7 @@ public class CameraModuleTests extends UIBaseTest {
         if (allow == null) {
             return;
         }
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             allow.tap();
         }
 
@@ -95,7 +95,7 @@ public class CameraModuleTests extends UIBaseTest {
     }
 
     private void snapshot() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             UIElement btn = this.cameraModulePage.wait.waitForVisible(this.locators.byText("shutter_button", false, false), 6, false);
             btn.tap();
             //onscreen_scene_indicator
@@ -141,7 +141,7 @@ public class CameraModuleTests extends UIBaseTest {
     }
 
     private UIElement btnCancel() {
-        String cancel = (this.settings.platformVersion >= 7 && this.settings.platform == PlatformType.Andorid) ? "closeButton" : "Cancel";
+        String cancel = (this.settings.platformVersion >= 7 && this.settings.platform == PlatformType.Android) ? "closeButton" : "Cancel";
 
         return this.find.byLocator(this.locators.byText(cancel, false, false));
     }

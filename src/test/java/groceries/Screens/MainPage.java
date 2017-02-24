@@ -1,16 +1,16 @@
 package groceries.Screens;
 
-import functional.tests.core.basepage.BasePage;
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
-import functional.tests.core.find.Wait;
+import functional.tests.core.mobile.find.Wait;
 import org.openqa.selenium.By;
 
 public class MainPage extends BasePage {
     private UIElement addItemTextEdit;
 
-    public MainPage(Context context) {
+    public MainPage(MobileContext context) {
         super(context);
     }
 
@@ -23,7 +23,7 @@ public class MainPage extends BasePage {
         this.addItemTextEdit.sendKeys(text);
 
         UIElement addBtn = this.find.elementsByLocator(this.locators.imageLocator()).get(1);
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             addBtn.click();
         } else {
             addBtn.tap();
@@ -72,7 +72,7 @@ public class MainPage extends BasePage {
     }
 
     public void tapOnMenu() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             this.find.elementsByLocator(menuLocator()).get(0).click();
         } else {
             this.find.byLocator(menuLocator()).click();
@@ -83,7 +83,7 @@ public class MainPage extends BasePage {
         UIElement button;
         this.wait.waitForVisible(btnLogOffLocator());
 
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             button = this.find.elementsByLocator(this.btnLogOffLocator()).get(2);
         } else {
             button = this.find.byLocator(this.btnLogOffLocator());
@@ -94,7 +94,7 @@ public class MainPage extends BasePage {
     public By menuLocator() {
         if (this.settings.platform == PlatformType.iOS) {
             return By.id("menu");
-        } else if (this.settings.platform == PlatformType.Andorid) {
+        } else if (this.settings.platform == PlatformType.Android) {
             return this.locators.imageLocator();
         }
 
@@ -106,7 +106,7 @@ public class MainPage extends BasePage {
     }
 
     private By btnLogOffLocator() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.locators.textViewLocator();
         } else if (this.settings.platform == PlatformType.iOS) {
             return this.locators.byText("Log Off", false, false);

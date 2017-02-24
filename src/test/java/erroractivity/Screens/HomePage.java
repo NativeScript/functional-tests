@@ -1,19 +1,19 @@
 package erroractivity.Screens;
 
-import functional.tests.core.basepage.BasePage;
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
 import functional.tests.core.enums.PlatformType;
+import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 import org.openqa.selenium.By;
 
 public class HomePage extends BasePage {
 
-    public HomePage(Context context) {
+    public HomePage(MobileContext context) {
         super(context);
     }
 
     private UIElement tapButton() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.find.byText("TAP");
         } else {
             return this.find.byLocator(By.id("TAP"));
@@ -21,7 +21,7 @@ public class HomePage extends BasePage {
     }
 
     public UIElement exceptionButton() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             UIElement exception = this.find.byText("Exception", this.settings.shortTimeout);
             // TODO: Remove this if after {N} 2.3 release.
             if (exception == null) {

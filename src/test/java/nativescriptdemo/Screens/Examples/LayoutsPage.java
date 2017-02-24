@@ -1,8 +1,8 @@
 package nativescriptdemo.Screens.Examples;
 
-import functional.tests.core.basepage.BasePage;
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import org.testng.Assert;
 
@@ -10,7 +10,7 @@ import java.util.List;
 
 public class LayoutsPage extends BasePage {
 
-    public LayoutsPage(Context context) {
+    public LayoutsPage(MobileContext context) {
         super(context);
     }
 
@@ -19,7 +19,7 @@ public class LayoutsPage extends BasePage {
     }
 
     public UIElement itemStack() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.items().get(0);
         } else if (this.settings.platform == PlatformType.iOS) {
             return this.find.byText("Stack");
@@ -29,7 +29,7 @@ public class LayoutsPage extends BasePage {
     }
 
     public UIElement itemGrid() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.items().get(1);
         } else if (this.settings.platform == PlatformType.iOS) {
             return this.find.byText("Grid");
@@ -39,7 +39,7 @@ public class LayoutsPage extends BasePage {
     }
 
     public UIElement itemWrap() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.items().get(2);
         } else if (this.settings.platform == PlatformType.iOS) {
             return this.find.byText("Wrap");
@@ -49,7 +49,7 @@ public class LayoutsPage extends BasePage {
     }
 
     public UIElement itemDock() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.items().get(3);
         } else if (this.settings.platform == PlatformType.iOS) {
             return this.find.byText("Dock");
@@ -59,7 +59,7 @@ public class LayoutsPage extends BasePage {
     }
 
     public UIElement itemAbsolute() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.items().get(4);
         } else if (this.settings.platform == PlatformType.iOS) {
             return this.find.byText("Absolute");

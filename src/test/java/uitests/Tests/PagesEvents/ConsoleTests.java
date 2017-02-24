@@ -1,7 +1,7 @@
 package uitests.Tests.PagesEvents;
 
 import functional.tests.core.enums.PlatformType;
-import functional.tests.core.find.Locators;
+import functional.tests.core.mobile.find.Locators;
 import org.testng.annotations.Test;
 
 public class ConsoleTests extends PagesEventsBaseTest {
@@ -20,7 +20,7 @@ public class ConsoleTests extends PagesEventsBaseTest {
         this.device.assertLogContains("text");
         this.device.assertLogContains("[object Object]"); // Object {name: "John", age: 34}
 
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             this.device.assertLogContains("number: -1");
             this.device.assertLogContains("string: text");
             this.device.assertLogContains("text -1.000000");
@@ -39,7 +39,7 @@ public class ConsoleTests extends PagesEventsBaseTest {
             this.device.assertLogContains("\"abc\": \"Hello\",");
             this.device.assertLogContains("\"circular\": \"#CR:[object Object]\""); // #CR:Object {name: "John", age: 34}
 
-            this.device.assertLogContains("\"_view\": \"#CR:Button");
+            this.device.assertLogContains("\"view\": \"#CR:Button");
             this.device.assertLogContains("constructor()");
 
             this.device.assertLogContains("Stack Trace:");

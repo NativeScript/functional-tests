@@ -1,8 +1,8 @@
 package uitests.Screens;
 
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
-import functional.tests.core.find.Find;
+import functional.tests.core.mobile.find.Find;
 
 import java.util.ArrayList;
 import java.util.regex.Matcher;
@@ -28,7 +28,7 @@ public class PanEventPage {
 
     public String output() {
         UIElement element = null;
-        if (this.homePageExtended.settings.platform == PlatformType.Andorid) {
+        if (this.homePageExtended.settings.platform == PlatformType.Android) {
             element = this.find.byLocator(this.homePageExtended.locators.editTextLocator());
         } else if (this.homePageExtended.settings.platform == PlatformType.iOS) {
             element = this.find.byText("output");

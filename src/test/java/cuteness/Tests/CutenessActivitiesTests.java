@@ -2,22 +2,22 @@ package cuteness.Tests;
 
 import cuteness.Screens.DetailsPage;
 import cuteness.Screens.HomePage;
-import functional.tests.core.basetest.UIBaseTest;
-import functional.tests.core.device.android.Adb;
-import functional.tests.core.element.UIElement;
-import functional.tests.core.find.Wait;
+import functional.tests.core.mobile.basetest.MobileTest;
+import functional.tests.core.mobile.device.android.Adb;
+import functional.tests.core.mobile.element.UIElement;
+import functional.tests.core.mobile.find.Wait;
 import io.appium.java_client.SwipeElementDirection;
 import io.appium.java_client.android.AndroidDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class CutenessActivitiesTests extends UIBaseTest {
+public class CutenessActivitiesTests extends MobileTest {
 
     private static String option; // The single quote below is different.
     private static String optionApi19 = "Don't keep activities";
     private static String optionApi23 = "Don’t keep activities";
-    private String activity = "com.tns.NativeScriptActivity";
     protected HomePage homePage;
+    private String activity = "com.tns.NativeScriptActivity";
 
     private void enableOption(String optionName) {
         this.log.info("Swiping to \"" + optionName + "\" option.");

@@ -1,10 +1,10 @@
 package plugins.sqlite.Tests;
 
-import functional.tests.core.basetest.UIBaseTest;
+import functional.tests.core.mobile.basetest.MobileTest;
 import org.testng.annotations.Test;
 import plugins.sqlite.Screens.HomePage;
 
-public class Smoke extends UIBaseTest {
+public class Smoke extends MobileTest {
 
     @Test(groups = {"android", "ios"})
     public void addItems() throws Exception {

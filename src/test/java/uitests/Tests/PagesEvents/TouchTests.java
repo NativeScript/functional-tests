@@ -1,8 +1,8 @@
 package uitests.Tests.PagesEvents;
 
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
-import functional.tests.core.find.Wait;
+import functional.tests.core.mobile.find.Wait;
 import org.testng.annotations.Test;
 
 public class TouchTests extends PagesEventsBaseTest {
@@ -27,7 +27,7 @@ public class TouchTests extends PagesEventsBaseTest {
     }
 
     public UIElement testElement() {
-//        if (this.settings.platform == PlatformType.Andorid) {
+//        if (this.settings.platform == PlatformType.Android) {
 //            return this.homePageExtended.find.elementsByLocator(Locators.viewGroupLocator()).get(4);
 //        } else if (this.settings.platform == PlatformType.iOS) {
         return this.homePageExtended.find.byText("target");

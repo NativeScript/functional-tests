@@ -76,7 +76,7 @@ public class GalleryViewsTests extends GalleryBaseTest {
     public void view_10_searchbar() throws Exception {
         this.homePage.navigateTo("SearchBar", this.locators.searchBoxLocator());
         this.compareScreens(this.settings.shortTimeout, 0.25);
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             this.homePage.hideKeyboard();
             this.homePage.wait.waitForVisible(this.locators.searchBoxLocator(), this.settings.shortTimeout, true);
         }
@@ -127,7 +127,7 @@ public class GalleryViewsTests extends GalleryBaseTest {
     @Test(groups = {"android", "ios"})
     public void view_16_segmentedbar() throws Exception {
         this.homePage.navigateTo("SegmentedBar", this.getElementByText("Item 3"));
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             // Play with items and verify if tap change isSelected property
             SegmentedBarPage segmentedBarPage = new SegmentedBarPage(this.context);
             segmentedBarPage.item2().tap();

@@ -16,7 +16,7 @@ public class ActionBarSecondTests extends TestsAppNgBase {
     }
 
     private String getTextFromLabelTap() {
-        if (this.settings.platform == PlatformType.Andorid && this.settings.platformVersion >= 7) {
+        if (this.settings.platform == PlatformType.Android && this.settings.platformVersion >= 7) {
             return this.actionBarSecondPage.labelTap().getText().toUpperCase();
         }
 
@@ -42,7 +42,7 @@ public class ActionBarSecondTests extends TestsAppNgBase {
     @Test(groups = {"android", "ios"})
     public void secondActionBar_03_tapBtnHide() throws Exception {
         this.actionBarSecondPage.tapHideBtn();
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             Assert.assertNull(this.actionBarSecondPage.itemCustom());
         }
         if (this.settings.platform == PlatformType.iOS) {
@@ -66,7 +66,7 @@ public class ActionBarSecondTests extends TestsAppNgBase {
         this.actionBarSecondPage.tapCustomItem();
         Assert.assertEquals(getTextFromLabelCustom(), "3 custom taps");
         this.log.logScreen(this.context.getTestName(), this.context.getTestName(), 320, 240);
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             this.actionBarSecondPage.navigateBack();
         }
         if (this.settings.platform == PlatformType.iOS) {

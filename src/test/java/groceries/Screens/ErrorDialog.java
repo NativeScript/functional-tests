@@ -1,12 +1,12 @@
 package groceries.Screens;
 
-import functional.tests.core.basetest.Context;
+import functional.tests.core.mobile.basetest.MobileContext;
 import org.openqa.selenium.By;
 
 public class ErrorDialog {
-    private Context context;
+    private MobileContext context;
 
-    public ErrorDialog(Context context) {
+    public ErrorDialog(MobileContext context) {
         this.context = context;
     }
 

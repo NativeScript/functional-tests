@@ -1,7 +1,7 @@
 package plugins.barcodescanner.Screens;
 
-import functional.tests.core.basepage.BasePage;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 
 public class DialogHasPermissions extends BasePage {
@@ -24,7 +24,7 @@ public class DialogHasPermissions extends BasePage {
     }
 
     private UIElement resultTextBox() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.find.byType("android.widget.ScrollView//android.widget.TextView");
         } else {
             return this.find.byType("UIAScrollView//UIAStaticText");

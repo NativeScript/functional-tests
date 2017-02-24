@@ -1,10 +1,10 @@
 package animations.Screens;
 
-import functional.tests.core.basepage.BasePageExtended;
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
 import functional.tests.core.exceptions.AppiumException;
-import functional.tests.core.find.Find;
+import functional.tests.core.mobile.basepage.BasePageExtended;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
+import functional.tests.core.mobile.find.Find;
 
 public class CssAnimationsPage extends BasePageExtended {
 
@@ -15,7 +15,7 @@ public class CssAnimationsPage extends BasePageExtended {
     // does not work on API24 due to the navigateToMainPage() call,
     // which misteriously does not cause problems on the rest API levels.
     // TODO: Think about restructuring of the app and/or a better abstraction.
-    public CssAnimationsPage(HomePage homePage, Context context) {
+    public CssAnimationsPage(HomePage homePage, MobileContext context) {
         super(context);
         this.find = homePage.find;
 

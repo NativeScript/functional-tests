@@ -1,9 +1,9 @@
 package plugins.firebase.Screens;
 
-import functional.tests.core.basepage.BasePage;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
-import functional.tests.core.find.Wait;
+import functional.tests.core.mobile.find.Wait;
 import functional.tests.core.settings.Settings;
 import org.openqa.selenium.By;
 
@@ -14,7 +14,7 @@ public class DemoPage extends BasePage {
     }
 
     private By initButtonLocator() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.locators.findByTextLocator("init firebase - do this first", true);
         } else {
             return By.id("init firebase - do this first");
@@ -22,7 +22,7 @@ public class DemoPage extends BasePage {
     }
 
     private By storeByPushLocator() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.locators.findByTextLocator("store by push", true);
         } else {
             return By.id("store by push");
@@ -30,7 +30,7 @@ public class DemoPage extends BasePage {
     }
 
     private By addChildButtonLocator() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.locators.findByTextLocator("add childlistener", true);
         } else {
             return By.id("add childlistener");
@@ -38,7 +38,7 @@ public class DemoPage extends BasePage {
     }
 
     private By removePathButtonLocator() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.locators.findByTextLocator("remove path", true);
         } else {
             return By.id("remove path");

@@ -1,11 +1,11 @@
 package uitests.Tests.Fonts;
 
-import functional.tests.core.basetest.UIBaseTest;
+import functional.tests.core.mobile.basetest.MobileTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uitests.Screens.CustomFontsPage;
 
-public class CustomFontsTests extends UIBaseTest {
+public class CustomFontsTests extends MobileTest {
     protected CustomFontsPage customFontsPage;
 
     protected void waitForScreen(double tolerance) throws Exception {

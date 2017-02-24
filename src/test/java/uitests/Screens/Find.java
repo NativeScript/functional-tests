@@ -1,12 +1,12 @@
 package uitests.Screens;
 
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.element.UIElement;
 import org.openqa.selenium.By;
 
 public class Find {
 //
 //    public static UIElement find(String str) {
-//        if (this.settings.platform == PlatformType.Andorid) {
+//        if (this.settings.platform == PlatformType.Android) {
 //            return findByText(str);
 //        } else if (this.settings.platform == PlatformType.iOS) {
 //            return findElementByLocator(By.id(str));

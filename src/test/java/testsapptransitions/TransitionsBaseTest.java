@@ -1,17 +1,16 @@
 package testsapptransitions;
 
-import functional.tests.core.basetest.UIBaseTest;
 import functional.tests.core.enums.PlatformType;
-import functional.tests.core.find.Wait;
+import functional.tests.core.mobile.find.Wait;
+import functional.tests.core.mobile.basetest.MobileTest;
 import org.testng.annotations.BeforeClass;
 import testsapptransitions.Screens.TransitionsPage;
 
-public class TransitionsBaseTest extends UIBaseTest {
+public class TransitionsBaseTest extends MobileTest {
+    protected TransitionsPage transitionsPage;
     private int retryCount = 15;
     private int defaultSleep = 1000;
     private double defaultAppTollerance = 18.05;
-
-    protected TransitionsPage transitionsPage;
 
     @BeforeClass(alwaysRun = true)
     public void beforeClassTransitionsBaseTest() {
@@ -21,7 +20,7 @@ public class TransitionsBaseTest extends UIBaseTest {
     protected void compareTransitions(String transitionName, Integer... values) throws Exception {
         this.transitionsPage.executeTransition(transitionName);
         boolean isIos10 = this.settings.platform == PlatformType.iOS && this.settings.platformVersion >= 10;
-        if (this.settings.platform == PlatformType.Andorid || isIos10) {
+        if (this.settings.platform == PlatformType.Android || isIos10) {
             for (int i = 0; i < values.length; i++) {
                 int waitTimeBeforeSnapshot = isIos10 ? (values[i] == 0 ? 1500 : values[i]) * 10 : values[i];
                 this.log.info("Time to wait before snapshot: " + waitTimeBeforeSnapshot);

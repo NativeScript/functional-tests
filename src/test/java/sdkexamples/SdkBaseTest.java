@@ -1,13 +1,12 @@
 package sdkexamples;
 
-import functional.tests.core.basetest.UIBaseTest;
-import io.appium.java_client.TouchAction;
+import functional.tests.core.mobile.basetest.MobileTest;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import sdkexamples.Screens.SdkMainPage;
 
-public abstract class SdkBaseTest extends UIBaseTest {
+public abstract class SdkBaseTest extends MobileTest {
 
     protected SdkMainPage mainPage;
 

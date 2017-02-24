@@ -1,13 +1,13 @@
 package uitests.Tests.Dialogs;
 
 
-import functional.tests.core.basetest.UIBaseTest;
+import functional.tests.core.mobile.basetest.MobileTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uitests.Screens.Dialogs.DialogsPage;
 
-public class DialogsTests extends UIBaseTest {
+public class DialogsTests extends MobileTest {
 
     protected DialogsPage dialogsPage;
 

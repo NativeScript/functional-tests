@@ -1,18 +1,18 @@
 package animations.Screens;
 
-import functional.tests.core.basepage.BasePageExtended;
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.exceptions.AppiumException;
-import functional.tests.core.helpers.NavigationHelper;
+import functional.tests.core.mobile.basepage.BasePageExtended;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
+import functional.tests.core.mobile.helpers.NavigationHelper;
 import io.appium.java_client.SwipeElementDirection;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
 public class HomePage extends BasePageExtended {
 
-    public HomePage(String mainTestPage, Context context) {
+    public HomePage(String mainTestPage, MobileContext context) {
         super(mainTestPage, context);
         if (mainTestPage != "") {
             this.navigateTo(mainTestPage);
@@ -39,7 +39,7 @@ public class HomePage extends BasePageExtended {
         this.navigationManager.navigateToMainPage();
 
         UIElement element;
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             element = this.gestures.swipeInWindowToElement(SwipeElementDirection.DOWN, this.locators.byText(example), 10, 250, 250);
         } else {
             element = NavigationHelper.scrollTo(example, this.context, 5);

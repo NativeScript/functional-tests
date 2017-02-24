@@ -1,9 +1,9 @@
 package templates.helloworld;
 
-import functional.tests.core.basetest.UIBaseTest;
+import functional.tests.core.mobile.basetest.MobileTest;
 import org.testng.annotations.Test;
 
-public class SmokeTests extends UIBaseTest {
+public class SmokeTests extends MobileTest {
 
     @Test(groups = {"android", "ios"})
     public void test_01_smoke() throws Exception {

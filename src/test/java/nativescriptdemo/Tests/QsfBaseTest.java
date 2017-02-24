@@ -1,13 +1,13 @@
 package nativescriptdemo.Tests;
 
-import functional.tests.core.basetest.UIBaseTest;
 import functional.tests.core.enums.PlatformType;
+import functional.tests.core.mobile.basetest.MobileTest;
 import nativescriptdemo.Screens.Pages.GetStartedPage;
 import nativescriptdemo.Screens.Pages.HomePage;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
-public class QsfBaseTest extends UIBaseTest {
+public class QsfBaseTest extends MobileTest {
 
     public GetStartedPage getStartedPage;
     public HomePage homePage;

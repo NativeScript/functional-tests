@@ -1,13 +1,13 @@
 package uitests.Screens;
 
-import functional.tests.core.basetest.Context;
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 import org.testng.Assert;
 
 public class FlexboxPage extends HomePageExtended {
 
-    public FlexboxPage(String maingPage, Context context) {
+    public FlexboxPage(String maingPage, MobileContext context) {
         super(maingPage, context);
         this.loadedMainPage();
     }

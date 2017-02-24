@@ -1,14 +1,14 @@
 package uitests.Screens.Layouts;
 
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import uitests.Screens.HomePageExtended;
 
 public class LayoutsPage extends HomePageExtended {
-    public LayoutsPage(String example, Context context) {
+    public LayoutsPage(String example, MobileContext context) {
         super(example, context);
         this.basePageLoaded();
     }
@@ -46,7 +46,7 @@ public class LayoutsPage extends HomePageExtended {
     // i (id="itemWidthItemHeight") set itemWidth and itemHeight properties of wrap layout
 
     private UIElement findButton(String byText, String byName) {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.find.byText(byText);
         } else if (this.settings.platform == PlatformType.iOS) {
             return this.find.byLocator(By.id(byName));

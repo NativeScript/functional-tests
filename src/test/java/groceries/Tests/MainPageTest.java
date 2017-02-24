@@ -1,9 +1,9 @@
 package groceries.Tests;
 
-import functional.tests.core.basetest.UIBaseTest;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.extensions.ExecutionOrder;
+import functional.tests.core.mobile.basetest.MobileTest;
 import groceries.Screens.*;
 import org.testng.Assert;
 import org.testng.ITestResult;
@@ -13,7 +13,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 @Listeners(ExecutionOrder.class)
-public class MainPageTest extends UIBaseTest {
+public class MainPageTest extends MobileTest {
     private static final String PASSWORD = "password";
     private static java.lang.String testText = "t123";
     private MainPage mainPage;
@@ -107,7 +107,7 @@ public class MainPageTest extends UIBaseTest {
     @Test(groups = {"android", "ios"}, dependsOnMethods = {"groceries_02_removeItem"})
     public void groceries_04_logOut() throws Exception {
         this.mainPage.tapOnMenu();
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             this.compareElements("logOffDialog", this.mainPage.logScreen(), 5, 0.1);
         } else {
             this.compareScreens(5, 0.1);

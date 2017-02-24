@@ -1,7 +1,7 @@
 package plugins.barcodescanner.Screens;
 
-import functional.tests.core.basepage.BasePage;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 
 public class DialogRequestPermissions extends BasePage {
@@ -28,7 +28,7 @@ public class DialogRequestPermissions extends BasePage {
     }
 
     public void allowPermissions() throws InterruptedException {
-        if (settings.platform == PlatformType.Andorid) {
+        if (settings.platform == PlatformType.Android) {
             this.allowButton().click();
         } else {
             UIElement btnOk = this.wait.waitForVisible(this.locators.byText("OK"));
@@ -58,7 +58,7 @@ public class DialogRequestPermissions extends BasePage {
      * Verify the home page has loaded
      **/
     public void unloaded() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             this.wait.waitForNotVisible(this.locators.findByTextLocator("Allow demo to take pictures and record video?", true), this.settings.shortTimeout, true);
             this.log.info("HasPermissions dialog unloaded.");
         } else {

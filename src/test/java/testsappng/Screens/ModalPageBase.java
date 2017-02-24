@@ -1,7 +1,7 @@
 package testsappng.Screens;
 
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 
 public class ModalPageBase extends HomePage {
     public static final String BTN_MAIN_PAGE = "Modals";
@@ -10,7 +10,7 @@ public class ModalPageBase extends HomePage {
     public static final String BTN_SHOW_COMPONENT = "show component";
     public static final String BTN_SHOW_COMPONENT_ASYNC = "show component (async)";
 
-    public ModalPageBase(Context context) {
+    public ModalPageBase(MobileContext context) {
         super("", context);
         this.testsAppNgHomeNavigateToPage(ModalPageBase.BTN_MAIN_PAGE);
     }

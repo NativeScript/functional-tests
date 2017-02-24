@@ -1,8 +1,8 @@
 package plugins.barcodescanner.Screens;
 
-import functional.tests.core.basepage.BasePage;
-import functional.tests.core.element.UIElement;
 import functional.tests.core.enums.PlatformType;
+import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.element.UIElement;
 import io.appium.java_client.SwipeElementDirection;
 
 import java.awt.*;

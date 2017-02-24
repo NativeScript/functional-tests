@@ -117,7 +117,7 @@ public class SmokeTests extends TodoMvcBaseTest {
 
     // This is a work around for fix https://github.com/NativeScript/NativeScript/commit/25a7f131b26543bae9b725757b9290fa6dfa084c
     private void hideKeyBoard() {
-        if (this.settings.platformVersion <= 5.1 && this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platformVersion <= 5.1 && this.settings.platform == PlatformType.Android) {
             this.homePage.hideKeyboard();
         }
     }

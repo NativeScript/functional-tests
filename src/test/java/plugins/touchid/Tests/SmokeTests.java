@@ -1,10 +1,10 @@
 package plugins.touchid.Tests;
 
-import functional.tests.core.basetest.UIBaseTest;
+import functional.tests.core.mobile.basetest.MobileTest;
 import org.testng.annotations.Test;
 import plugins.touchid.Screens.HomePage;
 
-public class SmokeTests extends UIBaseTest {
+public class SmokeTests extends MobileTest {
 
     @Test(groups = {"android", "ios"})
     public void touchId() throws Exception {

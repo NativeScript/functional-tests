@@ -1,10 +1,10 @@
 package testsapptransitions.Screens;
 
-import functional.tests.core.basepage.BasePage;
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.ClickType;
-import functional.tests.core.helpers.NavigationHelper;
+import functional.tests.core.mobile.helpers.NavigationHelper;
 import org.openqa.selenium.Point;
 import org.testng.Assert;
 
@@ -22,7 +22,7 @@ public class TransitionsPage extends BasePage {
     private static final String fadeTrans = "fade trans";
     private static final String curlTrans = "curl trans";
 
-    public TransitionsPage(Context context) {
+    public TransitionsPage(MobileContext context) {
         super(context);
     }
 

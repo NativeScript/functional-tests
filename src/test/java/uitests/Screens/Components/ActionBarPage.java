@@ -1,19 +1,19 @@
 package uitests.Screens.Components;
 
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import org.testng.Assert;
 import uitests.Screens.HomePageExtended;
 
 public class ActionBarPage extends HomePageExtended {
 
-    public ActionBarPage(Context context) {
+    public ActionBarPage(MobileContext context) {
         super("action-bar", context);
     }
 
     public UIElement actionBar() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             int index = 2;
             if (this.settings.platformVersion >= 7) {
                 index = 0;
@@ -43,7 +43,7 @@ public class ActionBarPage extends HomePageExtended {
     }
 
     public UIElement greenActionView() {
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             return this.find.byText("Green");
         } else {
             return this.find.elementsByLocator(this.locators.buttonLocator()).get(2);

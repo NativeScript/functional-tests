@@ -1,9 +1,9 @@
 package uitests.Tests.Issues;
 
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.ClickType;
 import functional.tests.core.enums.PlatformType;
-import functional.tests.core.find.Wait;
+import functional.tests.core.mobile.find.Wait;
 import io.appium.java_client.SwipeElementDirection;
 import org.openqa.selenium.ScreenOrientation;
 import org.testng.annotations.Test;
@@ -38,7 +38,7 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         this.compareScreens(15, 0.40);
 
         UIElement btn3rd = null;
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             btn3rd = this.find.byTextContains("3rd");
             btn3rd.tap();
             this.compareScreens(15, 0.20);
@@ -50,7 +50,7 @@ public class IssuesTestsCommon extends IssuesBaseTest {
             textFieldSecond.sendKeys("3");
             this.compareScreens(15, 0.03);
 
-            if (this.settings.platform == PlatformType.Andorid) {
+            if (this.settings.platform == PlatformType.Android) {
                 btn3rd.tap();
             }
         }

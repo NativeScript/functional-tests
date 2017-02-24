@@ -1,13 +1,13 @@
 package perf;
 
-import functional.tests.core.basetest.BaseTest;
+import functional.tests.core.mobile.basetest.MobileTest;
 import functional.tests.core.utils.FileSystem;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.File;
 
-public class AppSizeTests extends BaseTest {
+public class AppSizeTests extends MobileTest {
 
     private String BASE_PATH = this.settings.BASE_TEST_APP_DIR + File.separator;
 

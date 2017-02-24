@@ -1,7 +1,7 @@
 package plugins.admob.Screens;
 
-import functional.tests.core.basepage.BasePage;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.element.UIElement;
 import org.testng.Assert;
 
 public class HomePage extends BasePage {

@@ -1,15 +1,15 @@
 package plugins.geolocation.Screens;
 
-import functional.tests.core.basepage.BasePage;
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 import org.testng.Assert;
 
 import java.util.List;
 
 public class GeolocationPage extends BasePage {
 
-    public GeolocationPage(Context context) {
+    public GeolocationPage(MobileContext context) {
         super(context);
         this.loaded();
     }

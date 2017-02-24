@@ -1,13 +1,13 @@
 package plugins.socialshare.Tests;
 
-import functional.tests.core.basetest.UIBaseTest;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
+import functional.tests.core.mobile.basetest.MobileTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import plugins.socialshare.Screens.HomePage;
 
-public class Smoke extends UIBaseTest {
+public class Smoke extends MobileTest {
     private HomePage homePage;
 
     @BeforeClass(alwaysRun = true)
@@ -21,7 +21,7 @@ public class Smoke extends UIBaseTest {
         this.homePage.tapShareTextButton();
         this.homePage.verifyShareTextDialog();
         this.log.logScreen("ShareText", "ShareText");
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             this.homePage.navigateBack();
             if ((this.settings.platformVersion.toString().contains("5.")) || (this.settings.platformVersion.toString().contains("6."))) {
                 // Navigate back one more time to hide keyboard

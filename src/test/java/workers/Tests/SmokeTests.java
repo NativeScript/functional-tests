@@ -1,10 +1,10 @@
 package workers.Tests;
 
-import functional.tests.core.basetest.UIBaseTest;
 import functional.tests.core.enums.PlatformType;
+import functional.tests.core.mobile.basetest.MobileTest;
 import org.testng.annotations.Test;
 
-public class SmokeTests extends UIBaseTest {
+public class SmokeTests extends MobileTest {
 
     protected workers.Screens.HomePage homePage;
 
@@ -13,7 +13,7 @@ public class SmokeTests extends UIBaseTest {
         this.homePage = new workers.Screens.HomePage();
         this.homePage.loaded();
         this.homePage.startProcessing();
-        if (this.settings.platform == PlatformType.Andorid) {
+        if (this.settings.platform == PlatformType.Android) {
             this.homePage.verifyProcessed();
         }
         this.log.logScreen("workers", "workers");

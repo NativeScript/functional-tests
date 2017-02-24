@@ -1,6 +1,6 @@
 package testsappng.Tests.Modals;
 
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.element.UIElement;
 import org.testng.annotations.BeforeClass;
 import testsappng.Screens.ModalPageBase;
 import testsappng.TestsAppNgBase;

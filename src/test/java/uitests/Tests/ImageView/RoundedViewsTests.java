@@ -1,12 +1,12 @@
 package uitests.Tests.ImageView;
 
-import functional.tests.core.basetest.UIBaseTest;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basetest.MobileTest;
+import functional.tests.core.mobile.element.UIElement;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uitests.Screens.HomePageExtended;
 
-public class RoundedViewsTests extends UIBaseTest {
+public class RoundedViewsTests extends MobileTest {
     private HomePageExtended homePageExtended;
 
     @BeforeClass(alwaysRun = true)

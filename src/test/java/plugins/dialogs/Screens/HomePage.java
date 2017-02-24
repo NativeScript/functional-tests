@@ -1,12 +1,12 @@
 package plugins.dialogs.Screens;
 
-import functional.tests.core.basepage.BasePage;
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 
 public class HomePage extends BasePage {
 
-    public HomePage(Context context) {
+    public HomePage(MobileContext context) {
         super(context);
     }
 

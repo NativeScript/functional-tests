@@ -1,14 +1,14 @@
 package plugins.barcodescanner.Tests;
 
-import functional.tests.core.basetest.UIBaseTest;
 import functional.tests.core.enums.PlatformType;
+import functional.tests.core.mobile.basetest.MobileTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import plugins.barcodescanner.Screens.DemoPage;
 import plugins.barcodescanner.Screens.DialogRequestPermissions;
 import plugins.barcodescanner.Screens.HomePage;
 
-public class Smoke extends UIBaseTest {
+public class Smoke extends MobileTest {
     private HomePage homePage;
     private DemoPage demoPage;
     private DialogRequestPermissions dialogRequestPermissions;
@@ -37,7 +37,7 @@ public class Smoke extends UIBaseTest {
                 this.compareScreens(5, 0.15D);
                 this.demoPage.exitBarcodeScanner();
             }
-        } else if (this.settings.platform == PlatformType.Andorid) {
+        } else if (this.settings.platform == PlatformType.Android) {
             this.demoPage.requestPermissionsButton();
             if (this.settings.platformVersion >= 6) {
                 this.dialogRequestPermissions.reuestDialogLoaded();

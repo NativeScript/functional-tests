@@ -1,7 +1,7 @@
 package uitests.Screens.TabView;
 
-import functional.tests.core.basetest.Context;
-import functional.tests.core.element.UIElement;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 import uitests.Screens.HomePageExtended;
 
 public class TabViewCssPropertiesPage extends HomePageExtended {
@@ -16,7 +16,7 @@ public class TabViewCssPropertiesPage extends HomePageExtended {
     public static final String All = "All";
     public static final String Reset = "Reset";
 
-    public TabViewCssPropertiesPage(String tabView, Context context) {
+    public TabViewCssPropertiesPage(String tabView, MobileContext context) {
         super(tabView, context);
     }
 
