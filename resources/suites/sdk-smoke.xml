@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SDK Smoke Tests" verbose="1">
+    <test name="Color">
+        <classes>
+            <class name="sdkexamples.Tests.SdkColorTests"/>
+        </classes>
+    </test>
+    <test name="Label">
+        <classes>
+            <class name="sdkexamples.Tests.SdkLabelTests"/>
+        </classes>
+    </test>
+    <test name="Slider">
+        <classes>
+            <class name="sdkexamples.Tests.SdkSliderTests"/>
+        </classes>
+    </test>
+</suite>

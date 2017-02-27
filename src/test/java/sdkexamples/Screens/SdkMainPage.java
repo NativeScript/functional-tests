@@ -1,10 +1,9 @@
 package sdkexamples.Screens;
 
-import functional.tests.core.mobile.basetest.MobileContext;
-import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.enums.Position;
-import io.appium.java_client.SwipeElementDirection;
+import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.element.UIElement;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
@@ -12,20 +11,9 @@ public class SdkMainPage extends SdkHomePage {
 
     public SdkMainPage(String page, MobileContext context) {
         super(context);
-        UIElement mainPage = null;
-        if (this.settings.platformVersion <= 4.4) {
-            mainPage = this.gestures.swipeInWindowToElement(SwipeElementDirection.DOWN, this.locators.byText(page), 2, 250, 50);
-        } else if (this.settings.platformVersion < 10 && this.settings.platform == PlatformType.iOS) {
-            mainPage = this.gestures.swipeInWindowToElement(SwipeElementDirection.DOWN, this.locators.byText(page), 2, 1250, 50);
-        } else {
-
-            UIElement commonListView = this.wait.waitForVisible(this.locators.listViewLocator());
-            mainPage = commonListView.scrollInElementToElement(SwipeElementDirection.DOWN, Position.FromQuarter, this.locators.byText(page), 0, 2);
-        }
-
-        this.navigateTo(mainPage);
+        UIElement containerListView = this.wait.waitForVisible(this.locators.listViewLocator());
+        this.scrollDownToElement(containerListView, page, Position.FromCenter);
         this.navigationManager.setMainPage(page);
-
         loadedMainPage(page);
     }
 

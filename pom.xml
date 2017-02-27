@@ -1147,6 +1147,13 @@
             </properties>
         </profile>
         <profile>
+            <id>sdksmoke.emu.default.api23</id>
+            <properties>
+                <app.config>sdkexamples/sdkexamples.emu.default.api23.properties</app.config>
+                <testsuite>sdk-smoke</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>sdkexamples.emu.default.api24</id>
             <properties>
                 <app.config>sdkexamples/sdkexamples.emu.default.api24.properties</app.config>
