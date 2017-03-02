@@ -29,7 +29,7 @@ public class TransformPage {
         if (this.cssBasePage.settings.platform == PlatformType.Android) {
             return this.find.elementsByLocator((this.cssBasePage.locators.textViewLocator())).get(1);
         } else if (this.cssBasePage.settings.platform == PlatformType.iOS) {
-            return this.find.byLocator(this.cssBasePage.locators.labelLocator());
+            return this.find.elementsByLocator(this.cssBasePage.locators.labelLocator()).get(1);
         } else {
             return null;
         }
