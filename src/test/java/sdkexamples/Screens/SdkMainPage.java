@@ -12,7 +12,7 @@ public class SdkMainPage extends SdkHomePage {
     public SdkMainPage(String page, MobileContext context) {
         super(context);
         UIElement containerListView = this.wait.waitForVisible(this.locators.listViewLocator());
-        this.scrollDownToElement(containerListView, page, Position.FromCenter);
+        this.scrollDownToElement(containerListView, page, Position.FromCorner);
         this.navigationManager.setMainPage(page);
         loadedMainPage(page);
     }

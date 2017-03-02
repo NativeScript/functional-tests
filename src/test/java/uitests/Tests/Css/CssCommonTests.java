@@ -1,7 +1,7 @@
 package uitests.Tests.Css;
 
-import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.DeviceType;
+import functional.tests.core.mobile.element.UIElement;
 import io.appium.java_client.SwipeElementDirection;
 import org.testng.annotations.Test;
 
@@ -138,9 +138,9 @@ public class CssCommonTests extends CssBaseTest {
     public void margins_paddings_with_percentage_15() throws Exception {
         this.cssBasePage.navToPage("margins-paddings-with-percentage");
         UIElement btn = this.cssBasePage.wait.waitForVisible(this.locators.byText("css", false, false), 6, true);
-        this.compareScreens(compareScreens,5);
+        this.compareScreens(compareScreens, 5);
         btn.tap();
-        this.compareScreens(compareScreens,5);
+        this.compareScreens(compareScreens, 5);
 
         this.assertImagesResults();
     }
@@ -151,5 +151,14 @@ public class CssCommonTests extends CssBaseTest {
         this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 250, 100);
         this.wait.waitForVisible(this.locators.listPicker()).swipeInElement(SwipeElementDirection.DOWN, 0, 6);
         this.assertScreen(this.settings.defaultTimeout);
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void textView_hint_text_color() throws Exception {
+        this.cssBasePage.navigateTo("textview-hint-color");
+        this.compareScreens(3);
+        this.cssBasePage.find.byLocator(this.locators.byText("Change text and color")).tap();
+        this.compareScreens(3);
+        this.assertImagesResults();
     }
 }
