@@ -14,7 +14,6 @@ public class AwesomeFontTest extends MobileTest {
         this.fontPage = new FontPage("fonts", this.context);
         this.fontPage.navigateTo("awesome-3654");
         this.fontPage.context.navigationManager.setMainPage("awesome-3654");
-        this.fontPage.context.navigationManager.setCurrentPage("awesome-3654");
     }
 
 
