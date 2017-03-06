@@ -13,16 +13,16 @@ public class AwesomeFontTest extends MobileTest {
     public void beforeAwesomeFontTestClass() {
         this.fontPage = new FontPage("fonts", this.context);
         this.fontPage.navigateTo("awesome-3654");
-        this.fontPage.context.navigationManager.setMainPage("awesome-3654");
     }
 
 
     @Test(groups = {"android", "ios"})
     public void fonts_01_awesomefont_3654() throws Exception {
         this.compareScreens(3);
-        this.fontPage.find.byLocator(this.locators.byText("font-awesome", false, false)).tap();
+        this.fontPage.navigateTo(this.fontPage.find.byLocator(
+                this.locators.byText("font-awesome", false, false)));
         if (this.settings.platform == PlatformType.iOS) {
-            this.app.slideBack();
+            this.fontPage.getNavigationManager().slideBack();
         } else {
             this.fontPage.navigateBack();
         }
