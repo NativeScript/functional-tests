@@ -65,12 +65,7 @@ public class DecorationTests extends CssBaseTest {
     @Test(groups = {"android", "ios"})
     public void decoration_05_lineThroughUnderlineNone() throws Exception {
         this.decorationPage.tapChangeBtn();
-        if (this.settings.platform == PlatformType.Android) {
-            this.compareScreens("decoration_01_none",2, 0.2);
-        } else {
-            this.compareScreens("decoration_01_none",2, 0.1);
-        }
-
+        this.compareScreens("decoration_01_none", 2);
         this.assertImagesResults();
     }
 

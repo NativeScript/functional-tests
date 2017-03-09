@@ -1,8 +1,8 @@
 package uitests.Screens.Dialogs;
 
+import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.basetest.MobileContext;
 import functional.tests.core.mobile.element.UIElement;
-import functional.tests.core.enums.PlatformType;
 import org.testng.Assert;
 import uitests.Screens.HomePageExtended;
 
@@ -22,12 +22,7 @@ public class ModalViewPage extends HomePageExtended {
     }
 
     public void tapPopUpBtn() {
-        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion >= 10) {
-            this.btnPopUp().tap();
-        } else {
-            this.btnPopUp().click();
-        }
-
+        this.btnPopUp().tap();
         this.log.info("Tap on 'pop-up' button.");
     }
 
