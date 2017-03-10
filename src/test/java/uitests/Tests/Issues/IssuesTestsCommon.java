@@ -1,8 +1,8 @@
 package uitests.Tests.Issues;
 
-import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.ClickType;
 import functional.tests.core.enums.PlatformType;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.mobile.find.Wait;
 import io.appium.java_client.SwipeElementDirection;
 import org.openqa.selenium.ScreenOrientation;
@@ -75,6 +75,15 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         this.compareScreens(15, 0.05);
         this.hideKeyBoard();
         this.client.getDriver().rotate(ScreenOrientation.PORTRAIT);
+
+        this.assertImagesResults();
+    }
+
+    @Test(groups = {"android"})
+    public void issue_2942_hideSoftKeyBoard() throws Exception {
+        this.issuesBasePage.navToPage("2942");
+        this.find.byTextContains("hide keyboard").tap();
+        this.compareScreens(15, 0.05);
 
         this.assertImagesResults();
     }
