@@ -1,9 +1,11 @@
 package uitests.Screens;
 
+import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.basetest.MobileContext;
 import functional.tests.core.mobile.element.UIElement;
-import functional.tests.core.enums.PlatformType;
 import org.testng.Assert;
+
+import java.awt.*;
 
 public class SegmentedBarPage extends HomePageExtended {
 
@@ -13,7 +15,12 @@ public class SegmentedBarPage extends HomePageExtended {
     }
 
     public UIElement segmentedBar1() {
-        return this.getSegmentedBars().get(0);
+        UIElement element = this.getSegmentedBars().get(0);
+        Rectangle rect = this.getSegmentedBars().get(0).getUIRectangle();
+        this.log.info("Segmented bar 1 location: ");
+        this.log.info("x: " + rect.getX() + " y: " + rect.getY() + " width: " + rect.getWidth() + " height: " + rect.getHeight());
+
+        return element;
     }
 
     public UIElement segmentedBar2() {
