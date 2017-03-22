@@ -149,7 +149,7 @@ public class CssCommonTests extends CssBaseTest {
     public void cssListPicker() throws Exception {
         this.cssBasePage.navigateTo("list-picker");
         this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 250, 100);
-        this.wait.waitForVisible(this.locators.listPicker()).swipeInElement(SwipeElementDirection.DOWN, 0, 6);
+        this.wait.waitForVisible(this.locators.listPicker()).scrollInElementToElement(SwipeElementDirection.DOWN, this.locators.byText("name6"), 100, 6);
         this.assertScreen(this.settings.defaultTimeout);
     }
 
