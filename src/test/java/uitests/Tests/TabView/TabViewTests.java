@@ -25,7 +25,7 @@ public class TabViewTests extends TabViewBaseTest {
     public void tabView_03_tabViewIcons() throws Exception {
         this.homePageExtended.navigateTo("tab-view-icons");
         this.compareScreens(5);
-        UIRectangle rect = new UIRectangle(this.find.byText("undefined").getUIRectangle());
+        UIRectangle rect = new UIRectangle(this.find.byText("automatic").getUIRectangle());
         rect.extendRectangle(10, 10, 0, 0);
         rect.tap();
         this.compareScreens(5);
