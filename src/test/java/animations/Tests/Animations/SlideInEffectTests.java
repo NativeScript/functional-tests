@@ -1,7 +1,6 @@
 package animations.Tests.Animations;
 
 import animations.Screens.DemoPage;
-import animations.Screens.HomePage;
 import animations.Tests.AnimationsBaseTest;
 import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.mobile.find.Wait;
@@ -14,8 +13,7 @@ public class SlideInEffectTests extends AnimationsBaseTest {
 
     @BeforeClass(alwaysRun = true)
     public void beforeSlideInEffectTestsClass() {
-        this.homePage = new HomePage(slideInEffects, this.context);
-        this.demoPage = new DemoPage(this.homePage);
+        this.demoPage = new DemoPage("", this.context);
     }
 
     @Test(groups = {"android", "ios"})
@@ -26,7 +24,7 @@ public class SlideInEffectTests extends AnimationsBaseTest {
 
     @Test(groups = {"android", "ios"})
     public void slide_in_effect_02_animate() throws Exception {
-        UIElement btnAddItem = this.homePage.find.byText("Add Item");
+        UIElement btnAddItem = this.demoPage.context.find.byText("Add Item");
         for (int i = 0; i < 3; i++) {
             btnAddItem.click();
             Wait.sleep(1);
@@ -38,7 +36,7 @@ public class SlideInEffectTests extends AnimationsBaseTest {
 
     @Test(groups = {"android", "ios"})
     public void slide_in_effect_03_reset() throws Exception {
-        this.homePage.find.byText("Clear").click();
+        this.demoPage.context.find.byText("Clear").click();
         Wait.sleep(1);
         String testName = "slide_in_effect_03_reset";
         this.log.logScreen(testName, testName, 320, 240);

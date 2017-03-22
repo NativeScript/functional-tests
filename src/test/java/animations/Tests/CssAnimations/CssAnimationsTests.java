@@ -43,9 +43,9 @@ public class CssAnimationsTests extends CssAnimationsBaseTest {
         this.log.logScreen(demo, demo, 320, 240);
 
         if (demo == backgroundColor) {
-            this.demoPage.tapBtn(btnTouchMe);
+            this.cssAnimationsPage.tapBtn(btnTouchMe);
         } else if (demo == visualStates) {
-            this.demoPage.longPressBtn(btnTouchMe);
+            this.cssAnimationsPage.longPressBtn(btnTouchMe);
         }
 
         this.compareScreens(demo);
@@ -55,12 +55,12 @@ public class CssAnimationsTests extends CssAnimationsBaseTest {
     @Test(groups = {"android", "ios"}, dataProvider = "animate")
     public void css_02_animations(String animate) throws Exception {
         this.cssAnimationsPage.navigateTo(animate);
-        this.demoPage.btn(btnAnimate);
+        this.cssAnimationsPage.btn(btnAnimate);
         this.log.logScreen(animate, animate, 320, 240);
 
-        this.demoPage.tapAnimateBtn();
+        this.cssAnimationsPage.tapAnimateBtn();
         Wait.sleep(5);
-        this.demoPage.btnAnimate();
+        this.cssAnimationsPage.btnAnimate();
 
         this.compareScreens(animate);
         this.assertImagesResults();

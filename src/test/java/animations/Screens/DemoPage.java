@@ -1,74 +1,16 @@
 package animations.Screens;
 
-import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.exceptions.AppiumException;
-import functional.tests.core.mobile.find.Find;
 import functional.tests.core.log.Log;
+import functional.tests.core.mobile.basetest.MobileContext;
 import org.testng.Assert;
 
-public class DemoPage {
-    private Find find;
+public class DemoPage extends CssAnimationsPage {
     public Log log;
 
-    public DemoPage(HomePage homePage) {
-        this.find = homePage.find;
-        this.log = homePage.log;
-    }
-
-    public UIElement btnAnimate() {
-        try {
-            return this.find.byText("Animate");
-        } catch (Exception e) {
-            Assert.fail("Failed to find 'Animate' button.");
-            return null;
-        }
-    }
-
-    public UIElement btnReset() {
-        try {
-            return this.find.byText("Reset");
-        } catch (Exception e) {
-            Assert.fail("Failed to find 'Reset' button.");
-            return null;
-        }
-    }
-
-    public UIElement btnAddItem() {
-        try {
-            return this.find.byText("Add Item");
-        } catch (Exception e) {
-            Assert.fail("Failed to find 'Animate' button.");
-            return null;
-        }
-    }
-
-    public UIElement btn(String text) {
-        try {
-            return this.find.byText(text);
-        } catch (Exception e) {
-            Assert.fail("Failed to find '" + text + "' button.");
-            return null;
-        }
-    }
-
-    public void tapAnimateBtn() {
-        this.btnAnimate().click();
-        this.log.info("Tap on 'Animate' button.");
-    }
-
-    public void tapResetBtn() {
-        this.btnReset().click();
-        this.log.info("Tap on 'Reset' button.");
-    }
-
-    public void tapBtn(String text) {
-        this.btn(text).click();
-        this.log.info("Tap on '" + text + "' button.");
-    }
-
-    public void longPressBtn(String text) {
-        this.btn(text).longPress(3000);
-        this.log.info("Tap on '" + text + "' button.");
+    public DemoPage(String page, MobileContext context) {
+        super(page, context);
+        this.log = context.log;
     }
 
     public Boolean loaded() throws AppiumException {

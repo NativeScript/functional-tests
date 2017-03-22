@@ -3,7 +3,6 @@ package galleryapp.Tests;
 import functional.tests.core.enums.PlatformType;
 import galleryapp.GalleryBaseTest;
 import galleryapp.Screens.SegmentedBarPage;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -11,28 +10,36 @@ public class GalleryViewsTests extends GalleryBaseTest {
 
     @Test(groups = {"android", "ios"})
     public void view_01_button() throws Exception {
-        this.homePage.navigateTo("Button", this.getElementByText("button"));
+        this.homePage.navigateTo(
+                "Button",
+                this.locators.findByTextLocator(this.context.uiElementClass.buttonLocator(), "button", false, false));
         this.compareScreens(2, 0.1);
         this.assertImagesResults();
     }
 
     @Test(groups = {"android", "ios"})
     public void view_02_label() throws Exception {
-        this.homePage.navigateTo("Label", this.getElementByText("The quick brown fox jumps over the lazy dog"));
+        this.homePage.navigateTo(
+                "Label",
+                this.locators.findByTextLocator(this.context.uiElementClass.labelLocator(), "The quick brown fox jumps over the lazy dog", false, false));
         this.compareScreens(2, 0.1);
         this.assertImagesResults();
     }
 
     @Test(groups = {"android", "ios"})
     public void view_03_textfield() throws Exception {
-        this.homePage.navigateTo("TextField", this.getElementByText("Enter text"));
+        this.homePage.navigateTo(
+                "TextField",
+                this.locators.findByTextLocator(this.context.uiElementClass.labelLocator(), "Enter text", false, false));
         this.compareScreens(this.settings.shortTimeout, 0.1);
         this.assertImagesResults();
     }
 
     @Test(groups = {"android", "ios"})
     public void view_04_textview() throws Exception {
-        this.homePage.navigateTo("TextView", this.getElementByText("The quick"));
+        this.homePage.navigateTo(
+                "TextView",
+                this.locators.findByTextLocator(this.context.uiElementClass.labelLocator(), "The quick", false, false));
         this.compareScreens(this.settings.shortTimeout, 0.1);
         this.assertImagesResults();
     }

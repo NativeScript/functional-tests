@@ -1,7 +1,6 @@
 package animations.Tests.Animations;
 
 import animations.Screens.DemoPage;
-import animations.Screens.HomePage;
 import animations.Tests.AnimationsBaseTest;
 import functional.tests.core.mobile.find.Wait;
 import org.testng.annotations.BeforeClass;
@@ -12,8 +11,7 @@ public class AnimationsTests extends AnimationsBaseTest {
 
     @BeforeClass(alwaysRun = true)
     public void beforeSlideInEffectTestsClass() {
-        this.homePage = new HomePage("", this.context);
-        this.demoPage = new DemoPage(this.homePage);
+        this.demoPage = new DemoPage("", this.context);
     }
 
     @DataProvider(name = "demo")
@@ -35,7 +33,7 @@ public class AnimationsTests extends AnimationsBaseTest {
 
     @Test(groups = {"android", "ios"}, dataProvider = "demo")
     public void animations(String demo) throws Exception {
-        this.homePage.navigateTo(demo, null);
+        this.demoPage.navigateTo(demo);
 
         this.demoPage.loaded();
         this.log.logScreen(demo, demo, 320, 240);

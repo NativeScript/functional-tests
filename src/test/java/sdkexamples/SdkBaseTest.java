@@ -1,6 +1,7 @@
 package sdkexamples;
 
 import functional.tests.core.mobile.basetest.MobileTest;
+import functional.tests.core.mobile.element.UIElement;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -26,7 +27,12 @@ public abstract class SdkBaseTest extends MobileTest {
             this.log.info("Set test result from SKIP to FAILURE.");
         }
         try {
-            this.mainPage.navigateBack(this.mainPage.btnBack());
+            UIElement btnBack = this.mainPage.btnBack();
+            if (btnBack != null) {
+                this.mainPage.navigateBack(btnBack);
+            }else {
+
+            }
         } catch (Exception ex) {
             this.log.error(ex.getMessage());
             result.setStatus(ITestResult.FAILURE);
