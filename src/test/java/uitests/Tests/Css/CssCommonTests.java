@@ -161,4 +161,11 @@ public class CssCommonTests extends CssBaseTest {
         this.compareScreens(3);
         this.assertImagesResults();
     }
+
+    @Test(groups = {"android", "ios"})
+    public void pixels_perfect() throws Exception {
+        this.cssBasePage.navToPage("pixels");
+        this.cssBasePage.wait.waitForVisible(this.locators.byText("Button", true, false), 6, true);
+        this.assertScreen();
+    }
 }

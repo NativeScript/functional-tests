@@ -63,13 +63,6 @@ public class DecorationTests extends CssBaseTest {
     }
 
     @Test(groups = {"android", "ios"})
-    public void decoration_05_lineThroughUnderlineNone() throws Exception {
-        this.decorationPage.tapChangeBtn();
-        this.compareScreens("decoration_01_none", 2);
-        this.assertImagesResults();
-    }
-
-    @Test(groups = {"android", "ios"})
     public void decoration_06_changeText() throws Exception {
         for (int i = 0; i < 3; i++) {
             this.decorationPage.tapChangeBtn();
