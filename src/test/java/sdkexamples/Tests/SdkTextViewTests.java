@@ -1,7 +1,7 @@
 package sdkexamples.Tests;
 
-import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
+import functional.tests.core.mobile.element.UIElement;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import sdkexamples.SdkBaseTest;
@@ -40,7 +40,7 @@ public class SdkTextViewTests extends SdkBaseTest {
             if (this.settings.platform == PlatformType.Android) {
                 this.mainPage.hideKeyboard();
             }
-            this.mainPage.logScreenshot("Basic TextView with very long text.");
+            this.mainPage.log.logScreen("Basic TextView with very long text.");
         }
     }
 }

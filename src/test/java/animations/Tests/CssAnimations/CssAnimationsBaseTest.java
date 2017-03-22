@@ -1,8 +1,6 @@
 package animations.Tests.CssAnimations;
 
 import animations.Screens.CssAnimationsPage;
-import animations.Screens.DemoPage;
-import animations.Screens.HomePage;
 import animations.Tests.AnimationsBaseTest;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -14,9 +12,7 @@ public class CssAnimationsBaseTest extends AnimationsBaseTest {
 
     @BeforeClass(alwaysRun = true)
     public void beforeCssBaseTestClass() {
-        this.homePage = new HomePage(cssAnimations, this.context);
-        this.demoPage = new DemoPage(this.homePage);
-        this.cssAnimationsPage = new CssAnimationsPage(this.homePage, this.context);
+        this.cssAnimationsPage = new CssAnimationsPage(cssAnimations, this.context);
     }
 
     @BeforeMethod

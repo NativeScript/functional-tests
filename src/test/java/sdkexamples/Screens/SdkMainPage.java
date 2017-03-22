@@ -1,24 +1,52 @@
 package sdkexamples.Screens;
 
 import functional.tests.core.enums.PlatformType;
-import functional.tests.core.enums.Position;
+import functional.tests.core.extensions.ScrollableListObject;
+import functional.tests.core.mobile.basepage.BasePageExtended;
 import functional.tests.core.mobile.basetest.MobileContext;
 import functional.tests.core.mobile.element.UIElement;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-public class SdkMainPage extends SdkHomePage {
+public class SdkMainPage extends BasePageExtended {
 
     public SdkMainPage(String page, MobileContext context) {
-        super(context);
-        UIElement containerListView = this.wait.waitForVisible(this.locators.listViewLocator());
-        this.scrollDownToElement(containerListView, page, Position.FromCorner);
-        this.navigationManager.setMainPage(page);
-        loadedMainPage(page);
+        super(page, context);
+        this.init(page, context);
     }
 
-    private UIElement btnOk() {
-        return this.find.byText("OK", this.settings.defaultTimeout);
+    private void init(String page, MobileContext context) {
+        if (this.settings.platform == PlatformType.Android) {
+            ScrollableListObject scrollableListObject = new ScrollableListObject(context) {
+                @Override
+                public String getMainContainerLocatorName() {
+                    return context.uiElementClass.listViewLocator();
+                }
+
+                @Override
+                public String getMainContainerItemsName() {
+                    return context.uiElementClass.textViewLocator();
+                }
+            };
+
+            this.context.navigationManager.setScrollToRectangleMethod((p) -> scrollableListObject.scrollTo(p));
+            if (page != null && !page.isEmpty()) {
+                this.context.navigationManager.navigateTo(page);
+                this.context.navigationManager.setMainPage(page);
+                this.context.navigationManager.setHomePageLocator(context.locators.byText(page));
+            }
+
+        } else {
+            this.context.navigationManager.setNavigation((p) -> {
+                UIElement el = this.wait.forElements(By.xpath("//" + this.context.uiElementClass.staticTextLocator() + "[@value='" + p + "']"), 5).get(0);
+                if (el != null) {
+                    el.tap();
+                    this.navigationManager.setCurrentPage(p);
+                }
+            });
+
+            this.navigateTo(page);
+        }
     }
 
     public By btnOkLocator() {
@@ -35,13 +63,9 @@ public class SdkMainPage extends SdkHomePage {
         }
     }
 
-    public void tapOkBtn() {
-        this.btnOk().tap();
-    }
-
-    public void loadedMainPage(String page) {
-        if (this.wait.waitForVisible(this.locators.byText(page), this.settings.shortTimeout / 3, false) != null) {
-            this.log.info(page + " page loaded.");
+    public void pageLoaded(String page) {
+        if (this.context.wait.waitForVisible(this.context.locators.byText(page), this.context.settings.shortTimeout / 3, false) != null) {
+            this.context.log.info(page + " page loaded.");
         } else {
             Assert.fail(page + " page NOT loaded!");
         }

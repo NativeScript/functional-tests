@@ -25,7 +25,7 @@ public class SdkTabViewTests extends SdkBaseTest {
     public void sdkTabViewTest(String example) throws Exception {
         this.mainPage.navigateTo(example);
         if (example == "TabView items") {
-            this.mainPage.find.byText("OK", 30).click();
+            this.mainPage.find.byText("OK", 3).click();
         }
     }
 }

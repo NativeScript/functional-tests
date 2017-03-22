@@ -26,7 +26,7 @@ public class SdkButtonTests extends SdkBaseTest {
     public void sdkButtonTest_01_tap() throws Exception {
         this.mainPage.navigateTo(pageButtonTap);
         this.mainPage.find.byText("Tap me!").click();
-        this.mainPage.logScreenshot(pageButtonTap);
+        this.mainPage.log.logScreen(pageButtonTap);
         this.mainPage.find.byText("OK").click();
     }
 

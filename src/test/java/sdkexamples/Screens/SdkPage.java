@@ -1,10 +1,10 @@
 package sdkexamples.Screens;
 
+import functional.tests.core.enums.PlatformType;
+import functional.tests.core.enums.Position;
 import functional.tests.core.mobile.basepage.BasePageExtended;
 import functional.tests.core.mobile.basetest.MobileContext;
 import functional.tests.core.mobile.element.UIElement;
-import functional.tests.core.enums.PlatformType;
-import functional.tests.core.enums.Position;
 import functional.tests.core.mobile.find.Wait;
 import io.appium.java_client.SwipeElementDirection;
 

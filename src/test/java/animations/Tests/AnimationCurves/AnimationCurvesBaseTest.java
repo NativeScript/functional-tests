@@ -14,8 +14,7 @@ public class AnimationCurvesBaseTest extends AnimationsBaseTest {
 
     @BeforeClass
     public void beforeAnimationCurvesBaseTestClass() throws Exception {
-        this.homePage = new HomePage(animationCurves, this.context);
-        this.animationCurvesPage = new AnimationCurvesPage(this.homePage);
+        this.animationCurvesPage = new AnimationCurvesPage(animationCurves, this.context);
     }
 
     public void assertCurveScreen() throws Exception {

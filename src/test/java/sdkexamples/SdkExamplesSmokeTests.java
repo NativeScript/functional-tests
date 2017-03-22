@@ -4,15 +4,15 @@ import functional.tests.core.mobile.basetest.MobileTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import sdkexamples.Screens.SdkHomePage;
+import sdkexamples.Screens.SdkPage;
 
 public class SdkExamplesSmokeTests extends MobileTest {
 
-    protected SdkHomePage homePage;
+    protected SdkPage homePage;
 
     @BeforeClass
     public void beforeSdkExampleTestsClass() {
-        this.homePage = new SdkHomePage(this.context);
+        this.homePage = new SdkPage(this.context);
     }
 
     @Test(groups = {"android"})
