@@ -26,6 +26,7 @@ public class TransformTests extends CssBaseTest {
 
         this.transformPage.tapChangeBtn();
         this.compareScreens("lowercase", 5);
+        this.assertImagesResults();
     }
 
     @Test(groups = {"android", "ios"})
@@ -39,9 +40,7 @@ public class TransformTests extends CssBaseTest {
 
         // Change text
         this.transformPage.tapChangeTextBtn();
-        Assert.assertEquals(this.transformPage.label().getText(), "CHANGE TEXT");
-        Assert.assertEquals(this.transformPage.button().getText(), "CHANGE TEXT");
-        Assert.assertEquals(this.transformPage.textField().getText(), "CHANGE TEXT");
-        Assert.assertEquals(this.transformPage.textView().getText(), "CHANGE TEXT");
+        this.compareScreens("upper_case", 5);
+        this.assertImagesResults();
     }
 }
