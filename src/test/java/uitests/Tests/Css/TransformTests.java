@@ -15,43 +15,21 @@ public class TransformTests extends CssBaseTest {
     }
 
     @Test(groups = {"android", "ios"})
-    public void transform_01_none() throws Exception {
-        Assert.assertEquals(this.transformPage.label().getText(), "label Label");
-        Assert.assertEquals(this.transformPage.button().getText().toLowerCase(), "button button");
-        Assert.assertEquals(this.transformPage.textField().getText(), "textField textField");
-        Assert.assertEquals(this.transformPage.textView().getText(), "textView textView");
-    }
+    public void transform_01() throws Exception {
+        this.compareScreens("none", 5);
 
-    @Test(groups = {"android", "ios"})
-    public void transform_02_capitalize() throws Exception {
         this.transformPage.tapChangeBtn();
-        Assert.assertEquals(this.transformPage.label().getText(), "Label Label");
-        Assert.assertEquals(this.transformPage.button().getText(), "Button Button");
-        Assert.assertEquals(this.transformPage.textField().getText(), "Textfield Textfield");
-        Assert.assertEquals(this.transformPage.textView().getText(), "Textview Textview");
-    }
+        this.compareScreens("capitalize", 5);
 
-    @Test(groups = {"android", "ios"})
-    public void transform_03_uppercase() throws Exception {
         this.transformPage.tapChangeBtn();
-        Assert.assertEquals(this.transformPage.label().getText(), "LABEL LABEL");
-        Assert.assertEquals(this.transformPage.button().getText(), "BUTTON BUTTON");
-        Assert.assertEquals(this.transformPage.textField().getText(), "TEXTFIELD TEXTFIELD");
-        Assert.assertEquals(this.transformPage.textView().getText(), "TEXTVIEW TEXTVIEW");
-    }
+        this.compareScreens("uppercase", 5);
 
-    @Test(groups = {"android", "ios"})
-    public void transform_04_lowercase() throws Exception {
         this.transformPage.tapChangeBtn();
-        Assert.assertEquals(this.transformPage.label().getText(), "label label");
-        Assert.assertEquals(this.transformPage.button().getText(), "button button");
-        Assert.assertEquals(this.transformPage.textField().getText(), "textfield textfield");
-        Assert.assertEquals(this.transformPage.textView().getText(), "textview textview");
-        this.transformPage.navigateBack();
+        this.compareScreens("lowercase", 5);
     }
 
     @Test(groups = {"android", "ios"})
-    public void transform_05_changeText() throws Exception {
+    public void transform_02_changeText() throws Exception {
         this.transformPage.navigateTo("transform");
         this.transformPage.loaded();
 
