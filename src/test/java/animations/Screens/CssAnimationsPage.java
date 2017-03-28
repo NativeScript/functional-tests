@@ -43,7 +43,7 @@ public class CssAnimationsPage extends BasePageExtended {
             }
         } else {
             this.context.navigationManager.setNavigation((p) -> {
-                UIElement el = this.wait.forElements(By.xpath("//" + this.getMainContainerItemsNameAsString() + "[@label='" + p + "']"), 5).get(0);
+                UIElement el = this.wait.waitForVisible(By.xpath("//" + this.getMainContainerItemsNameAsString() + "[@label='" + p + "']"));
                 if (el != null) {
                     el.tap();
                     this.navigationManager.setCurrentPage(p);
