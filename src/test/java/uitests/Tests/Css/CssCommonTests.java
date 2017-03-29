@@ -149,8 +149,8 @@ public class CssCommonTests extends CssBaseTest {
 
     @Test(groups = {"android", "ios"})
     public void cssListPicker() throws Exception {
-        this.compareScreens(3);
         this.cssBasePage.navigateTo("list-picker");
+        this.compareScreens(3);
         if (this.settings.platform == PlatformType.Android) {
             this.wait.waitForVisible(this.locators.byText("name1", false, false), 2, false)
                     .dragAndDrop(20, -200, 0);
