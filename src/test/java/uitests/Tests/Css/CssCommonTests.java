@@ -1,6 +1,8 @@
 package uitests.Tests.Css;
 
 import functional.tests.core.enums.DeviceType;
+import functional.tests.core.enums.PlatformType;
+import functional.tests.core.enums.Position;
 import functional.tests.core.mobile.element.UIElement;
 import io.appium.java_client.SwipeElementDirection;
 import org.testng.annotations.Test;
@@ -147,9 +149,18 @@ public class CssCommonTests extends CssBaseTest {
 
     @Test(groups = {"android", "ios"})
     public void cssListPicker() throws Exception {
+        this.compareScreens(3);
         this.cssBasePage.navigateTo("list-picker");
-        this.wait.waitForVisible(this.locators.listPicker()).scrollInElementToElement(SwipeElementDirection.DOWN, this.locators.byText("name6"), 100, 6);
-        this.assertScreen(this.settings.defaultTimeout);
+        if (this.settings.platform == PlatformType.Android) {
+            this.wait.waitForVisible(this.locators.byText("name1", false, false), 2, false)
+                    .dragAndDrop(20, -200, 0);
+        } else {
+            this.wait.waitForVisible(this.locators.byText("name0", false, false), 2, false)
+                    .scrollInElementToElement(SwipeElementDirection.DOWN, Position.FromCenter, ((CssCommonTests) this).locators.byText("name3"), 10, 5);
+        }
+
+        this.compareScreens(3);
+        this.assertImagesResults();
     }
 
     @Test(groups = {"android", "ios"})

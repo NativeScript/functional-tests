@@ -1,7 +1,7 @@
 package testsappng.Tests.Router;
 
 import functional.tests.core.enums.PlatformType;
-import functional.tests.core.mobile.find.Wait;
+import functional.tests.core.mobile.element.UIElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -69,8 +69,8 @@ public class NavOptionsTests extends TestsAppNgBase {
         if (this.settings.platform == PlatformType.Android) {
             this.navOptionsPage.resetNavigationToLastPage();
         } else {
-            Wait.sleep(2000);
-            this.navOptionsPage.navigateTo(NavOptionsPage.navOptionsPage);
+            UIElement btnNavOptions = this.wait.waitForVisible(this.locators.byText(NavOptionsPage.navOptionsPage), 3, true);
+            this.navOptionsPage.navigateTo(btnNavOptions);
             tollerance = 19;
         }
 
