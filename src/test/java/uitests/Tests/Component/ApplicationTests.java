@@ -32,7 +32,8 @@ public class ApplicationTests extends MobileTest {
     public void application_02_suspend_resume() throws Exception {
         this.log.info("Run the application in background.");
         this.app.runInBackground(2);
-        Wait.sleep(7);
+        this.wait.waitForVisible(this.locators.byText("TestApp"), 15, true);
+        Wait.sleep(10);
         this.device.assertLogContains("#1# SuspendEvent");
         if (this.settings.platform != PlatformType.iOS && !this.settings.platformVersion.toString().startsWith("9")) {
             this.device.assertLogContains("#2# ResumeEvent");
