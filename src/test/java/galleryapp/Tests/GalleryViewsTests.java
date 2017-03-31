@@ -12,7 +12,7 @@ public class GalleryViewsTests extends GalleryBaseTest {
     public void view_01_button() throws Exception {
         this.homePage.navigateTo(
                 "Button",
-                this.locators.findByTextLocator(this.context.uiElementClass.buttonLocator(), "button", false, false));
+                this.locators.findByTextLocator("button", false));
         this.compareScreens(2, 0.1);
         this.assertImagesResults();
     }
@@ -21,7 +21,7 @@ public class GalleryViewsTests extends GalleryBaseTest {
     public void view_02_label() throws Exception {
         this.homePage.navigateTo(
                 "Label",
-                this.locators.findByTextLocator(this.context.uiElementClass.labelLocator(), "The quick brown fox jumps over the lazy dog", false, false));
+                this.locators.findByTextLocator("The quick brown fox jumps over the lazy dog", false));
         this.compareScreens(2, 0.1);
         this.assertImagesResults();
     }
@@ -30,7 +30,7 @@ public class GalleryViewsTests extends GalleryBaseTest {
     public void view_03_textfield() throws Exception {
         this.homePage.navigateTo(
                 "TextField",
-                this.locators.findByTextLocator(this.context.uiElementClass.labelLocator(), "Enter text", false, false));
+                this.locators.findByTextLocator("Enter text", false));
         this.compareScreens(this.settings.shortTimeout, 0.1);
         this.assertImagesResults();
     }
@@ -39,7 +39,7 @@ public class GalleryViewsTests extends GalleryBaseTest {
     public void view_04_textview() throws Exception {
         this.homePage.navigateTo(
                 "TextView",
-                this.locators.findByTextLocator(this.context.uiElementClass.labelLocator(), "The quick", false, false));
+                this.locators.findByTextLocator("The quick", false));
         this.compareScreens(this.settings.shortTimeout, 0.1);
         this.assertImagesResults();
     }

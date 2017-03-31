@@ -8,6 +8,8 @@ import functional.tests.core.mobile.element.UIElement;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
+import java.util.function.Predicate;
+
 public class GalleryHomePage extends BasePageExtended {
 
     public GalleryHomePage(String homePage, MobileContext context) {
@@ -28,7 +30,12 @@ public class GalleryHomePage extends BasePageExtended {
                     return getMainContainerItemsNameAsString();
                 }
             };
-
+            scrollableListObject.setExcludeElementsFilter(new Predicate<UIElement>() {
+                @Override
+                public boolean test(UIElement uiElement) {
+                    return !uiElement.isVisible();
+                }
+            });
             this.context.navigationManager.setScrollToRectangleMethod((p) -> scrollableListObject.scrollTo(p));
 
             if (page != null && !page.isEmpty()) {
@@ -38,7 +45,7 @@ public class GalleryHomePage extends BasePageExtended {
             }
         } else {
             this.context.navigationManager.setNavigation((p) -> {
-                UIElement el = this.wait.waitForVisible(By.xpath("//" + this.getMainContainerItemsNameAsString() + "[@label='" + p + "']"));
+                UIElement el = this.find.byLocator(By.xpath("//" + this.getMainContainerItemsNameAsString() + "[@label='" + p + "']"));
                 if (el != null) {
                     el.tap();
                     this.navigationManager.setCurrentPage(p);
@@ -60,7 +67,7 @@ public class GalleryHomePage extends BasePageExtended {
         super.navigateTo(example);
 
         if (locator != null) {
-            this.wait.waitForVisible(locator, 2, true);
+            this.wait.waitForVisible(locator, 5, true);
         }
     }
 

@@ -38,7 +38,7 @@ public class SdkMainPage extends BasePageExtended {
 
         } else {
             this.context.navigationManager.setNavigation((p) -> {
-                UIElement el = this.wait.waitForVisible(By.xpath("//" + this.context.uiElementClass.staticTextLocator() + "[@value='" + p + "']"));
+                UIElement el = this.find.byLocator(By.xpath("//" + this.context.uiElementClass.staticTextLocator() + "[@value='" + p + "']"));
                 if (el != null) {
                     el.tap();
                     this.navigationManager.setCurrentPage(p);
