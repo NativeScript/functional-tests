@@ -178,4 +178,19 @@ public class CssCommonTests extends CssBaseTest {
         this.cssBasePage.wait.waitForVisible(this.locators.byText("Button", true, false), 6, true);
         this.assertScreen();
     }
+
+    @Test(groups = {"android", "ios"})
+    public void hint_text_color() throws Exception {
+        this.cssBasePage.navToPage("hint-text-color");
+        this.wait.waitForVisible(this.locators.byText("set text")).tap();
+        this.compareScreens(3);
+        this.wait.waitForVisible(this.locators.byText("reset text")).tap();
+        this.compareScreens(3);
+        this.wait.waitForVisible(this.locators.byText("reset style")).tap();
+        this.compareScreens(3);
+        this.wait.waitForVisible(this.locators.byText("set text")).tap();
+        this.compareScreens(3);
+
+        this.assertImagesResults();
+    }
 }
