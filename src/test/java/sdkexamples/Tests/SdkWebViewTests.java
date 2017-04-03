@@ -1,6 +1,5 @@
 package sdkexamples.Tests;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import sdkexamples.SdkBaseTest;
@@ -19,16 +18,20 @@ public class SdkWebViewTests extends SdkBaseTest {
     @DataProvider(name = "example")
     public Object[][] data() {
         return new Object[][]{
-                {pageWebViewCode, this.mainPage.btnOkLocator()},
+                {pageWebViewCode, "OK"},
                 {pageWebViewHtml, null},
         };
     }
 
     @Test(dataProvider = "example")
-    public void sdkWebViewTest(String example, By locator) throws Exception {
+    public void sdkWebViewTest(String example, String btn) throws Exception {
         this.mainPage.navigateTo(example);
-        if (locator != null) {
-            this.wait.waitForVisible(locator, settings.shortTimeout, false).tap();
+        if (btn != null) {
+            this.wait.waitForVisible(this.locators.byText(btn), settings.shortTimeout, false).tap();
+            if (!this.wait.waitForNotVisible(this.locators.byText("OK"))) {
+                this.wait.waitForVisible(this.locators.byText(btn), settings.shortTimeout, false).tap();
+
+            }
         }
         this.log.logScreen(example);
     }
