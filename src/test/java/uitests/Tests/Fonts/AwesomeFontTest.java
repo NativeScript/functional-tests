@@ -18,7 +18,7 @@ public class AwesomeFontTest extends MobileTest {
 
     @Test(groups = {"android", "ios"})
     public void fonts_01_awesomefont_3654() throws Exception {
-        this.compareScreens(3);
+        this.compareScreens(10);
         this.fontPage.navigateTo(this.fontPage.find.byLocator(
                 this.locators.byText("font-awesome", false, false)));
         if (this.settings.platform == PlatformType.iOS) {
@@ -27,7 +27,7 @@ public class AwesomeFontTest extends MobileTest {
             this.fontPage.navigateBack();
         }
 
-        this.compareScreens(3);
+        this.compareScreens(10);
 
         this.assertImagesResults();
     }
