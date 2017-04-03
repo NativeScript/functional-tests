@@ -9,7 +9,7 @@ public class SmokeTests extends MobileTest {
     public void test_01_smoke() throws Exception {
         HomePage homePage = new HomePage();
         homePage.loaded();
-        this.compareScreens();
+        this.compareScreens(5);
         this.assertImagesResults();
         for (int i = 0; i < 10; i++) {
             homePage.button().tap();
