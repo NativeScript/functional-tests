@@ -150,7 +150,7 @@ public class CssCommonTests extends CssBaseTest {
     @Test(groups = {"android", "ios"})
     public void cssListPicker() throws Exception {
         this.cssBasePage.navigateTo("list-picker");
-        this.compareScreens(3);
+        this.compareScreens(10);
         if (this.settings.platform == PlatformType.Android) {
             this.wait.waitForVisible(this.locators.byText("name1", false, false), 2, false)
                     .dragAndDrop(20, -200, 0);
@@ -159,7 +159,7 @@ public class CssCommonTests extends CssBaseTest {
                     .scrollInElementToElement(SwipeElementDirection.DOWN, Position.FromCenter, ((CssCommonTests) this).locators.byText("name3"), 10, 5);
         }
 
-        this.compareScreens(3);
+        this.compareScreens(10);
         this.assertImagesResults();
     }
 
