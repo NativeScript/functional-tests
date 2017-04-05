@@ -30,24 +30,31 @@ public class SdkMainPage extends BasePageExtended {
             };
 
             this.context.navigationManager.setScrollToRectangleMethod((p) -> scrollableListObject.scrollTo(p));
-            if (page != null && !page.isEmpty()) {
-                this.context.navigationManager.navigateTo(page);
-                this.context.navigationManager.setMainPage(page);
-                this.context.navigationManager.setHomePageLocator(context.locators.byText(page));
-            }
-
         } else {
-            this.context.navigationManager.setNavigation((p) -> {
-                UIElement el = this.find.byLocator(By.xpath("//" + this.context.uiElementClass.staticTextLocator() + "[@value='" + p + "']"));
-                if (el != null) {
-                    el.tap();
-                    this.navigationManager.setCurrentPage(p);
+            ScrollableListObject scrollableListObject = new ScrollableListObject(context) {
+                @Override
+                public String getMainContainerLocatorName() {
+                    return context.uiElementClass.listViewLocator();
                 }
-            });
 
-            this.navigateTo(page);
+                @Override
+                public String getMainContainerItemsName() {
+                    return context.uiElementClass.staticTextLocator();
+                }
+            };
+
+            scrollableListObject.setSpecificElementLocator((p) -> By.xpath("//" + this.context.uiElementClass.staticTextLocator() + "[@value='" + p + "']"));
+            this.context.navigationManager.setScrollToRectangleMethod((p) -> scrollableListObject.scrollTo(p));
         }
+
+        if (page != null && !page.isEmpty()) {
+            this.context.navigationManager.navigateTo(page);
+            this.context.navigationManager.setMainPage(page);
+            this.context.navigationManager.setHomePageLocator(context.locators.byText(page));
+        }
+        this.navigateTo(page);
     }
+
 
     public By btnOkLocator() {
         return this.locators.byText("OK");
