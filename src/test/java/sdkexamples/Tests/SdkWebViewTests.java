@@ -27,11 +27,7 @@ public class SdkWebViewTests extends SdkBaseTest {
     public void sdkWebViewTest(String example, String btn) throws Exception {
         this.mainPage.navigateTo(example);
         if (btn != null) {
-            this.wait.waitForVisible(this.locators.byText(btn), settings.shortTimeout, false).tap();
-            if (!this.wait.waitForNotVisible(this.locators.byText("OK"))) {
-                this.wait.waitForVisible(this.locators.byText(btn), settings.shortTimeout, false).tap();
-
-            }
+            this.wait.waitForVisible(this.locators.byText(btn), settings.defaultTimeout, false).tap();
         }
         this.log.logScreen(example);
     }
