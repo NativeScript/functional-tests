@@ -19,7 +19,7 @@ public class HomePage extends BasePage {
     }
 
     private By locatorNotFailed() {
-        return this.locators.byText(strNotFailed, false, false);
+        return this.locators.byText(strNotFailed, true, false);
     }
 
     public boolean waitForTestsToComplete() {
