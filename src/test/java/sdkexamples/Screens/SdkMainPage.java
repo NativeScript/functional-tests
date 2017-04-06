@@ -52,9 +52,7 @@ public class SdkMainPage extends BasePageExtended {
             this.context.navigationManager.setMainPage(page);
             this.context.navigationManager.setHomePageLocator(context.locators.byText(page));
         }
-        this.navigateTo(page);
     }
-
 
     public By btnOkLocator() {
         return this.locators.byText("OK");

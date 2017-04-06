@@ -23,6 +23,6 @@ public class SdkActivityIndicatorTests extends SdkBaseTest {
     @Test(dataProvider = "example")
     public void sdkActivityIndicatorTest(String example) throws Exception {
         this.mainPage.navigateTo(example);
-        this.mainPage.find.byText("Modify Busy property").click();
+        this.mainPage.wait.waitForVisible(this.locators.byText("Modify Busy property")).click();
     }
 }
