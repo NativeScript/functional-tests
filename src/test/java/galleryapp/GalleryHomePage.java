@@ -43,11 +43,20 @@ public class GalleryHomePage extends BasePageExtended {
                 this.context.navigationManager.setMainPage(page);
                 this.context.navigationManager.setHomePageLocator(context.locators.byText(page));
             }
-        } else {
+        } else if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion >= 10) {
             this.context.navigationManager.setNavigation((p) -> {
                 UIElement el = this.find.byLocator(By.xpath("//" + this.getMainContainerItemsNameAsString() + "[@label='" + p + "']"));
                 if (el != null) {
                     el.tap();
+                    this.navigationManager.setCurrentPage(p);
+                }
+            });
+
+        } else {
+            this.context.navigationManager.setNavigation((p) -> {
+                UIElement el = this.find.byLocator(By.id(p));
+                if (el != null) {
+                    el.click();
                     this.navigationManager.setCurrentPage(p);
                 }
             });
