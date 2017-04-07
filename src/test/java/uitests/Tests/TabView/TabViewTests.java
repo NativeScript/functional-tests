@@ -36,12 +36,17 @@ public class TabViewTests extends TabViewBaseTest {
         this.assertImagesResults();
     }
 
-//    @Test(groups = {"android", "ios"})
-//    public void tabView_03_font() throws Exception {
-//        GalleryHomePage.loaded();
-//        GalleryHomePage.navigateTo("tabfont");
-//        FontTabPage.loaded();
-//        // TODO: Assert
-//        FontTabPage.navigateBack();
-//    }
+    @Test(groups = {"android", "ios"})
+    public void tabView_03_font() throws Exception {
+        this.homePageExtended.navigateTo("text-transform");
+        this.compareScreens(5);
+
+        this.homePageExtended.find.byText("apply").tap();
+        this.compareScreens(5);
+
+        this.homePageExtended.find.byText("reset").tap();
+        this.compareScreens(5);
+
+        this.assertImagesResults();
+    }
 }
