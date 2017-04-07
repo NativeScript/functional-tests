@@ -1,5 +1,2 @@
-*.iml
-.idea/
 test-output
 target*/
-
