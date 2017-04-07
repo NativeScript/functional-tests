@@ -2,6 +2,7 @@ package animations.Tests.Animations;
 
 import animations.Screens.DemoPage;
 import animations.Tests.AnimationsBaseTest;
+import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.find.Wait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -33,6 +34,11 @@ public class AnimationsTests extends AnimationsBaseTest {
 
     @Test(groups = {"android", "ios"}, dataProvider = "demo")
     public void animations(String demo) throws Exception {
+        // Just to reset  the view because opacity demo is not visible
+        if (demo == "opacity" && this.settings.platform == PlatformType.Android) {
+            this.app.restart();
+        }
+
         this.demoPage.navigateTo(demo);
 
         this.demoPage.loaded();

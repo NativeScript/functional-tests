@@ -90,10 +90,12 @@ public class LoginFormPage extends MobileTest {
             }
         }
 
-        this.assertScreen(this.settings.defaultTimeout, 1.0);
+        this.compareScreens(this.settings.defaultTimeout, 1.0);
 
         errorDialog.ok();
         this.waitForLoginForm(true);
+
+        this.assertImagesResults();
     }
 
     @Test(groups = {"android", "ios"})

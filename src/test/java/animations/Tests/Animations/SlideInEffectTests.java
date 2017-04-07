@@ -13,7 +13,7 @@ public class SlideInEffectTests extends AnimationsBaseTest {
 
     @BeforeClass(alwaysRun = true)
     public void beforeSlideInEffectTestsClass() {
-        this.demoPage = new DemoPage("", this.context);
+        this.demoPage = new DemoPage(slideInEffects, this.context);
     }
 
     @Test(groups = {"android", "ios"})
