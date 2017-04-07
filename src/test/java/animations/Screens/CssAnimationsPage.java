@@ -36,11 +36,6 @@ public class CssAnimationsPage extends BasePageExtended {
             scrollableListObject.setRetriesCount(3);
 
             this.context.navigationManager.setScrollToRectangleMethod((p) -> scrollableListObject.scrollTo(p));
-            if (page != null && !page.isEmpty()) {
-                this.context.navigationManager.navigateTo(page);
-                this.context.navigationManager.setMainPage(page);
-                this.context.navigationManager.setHomePageLocator(context.locators.byText(page));
-            }
         } else {
             this.context.navigationManager.setNavigation((p) -> {
                 UIElement el = this.find.byLocator(By.xpath("//" + this.getMainContainerItemsNameAsString() + "[@label='" + p + "']"));
@@ -49,6 +44,12 @@ public class CssAnimationsPage extends BasePageExtended {
                     this.navigationManager.setCurrentPage(p);
                 }
             });
+        }
+
+        if (page != null && !page.isEmpty()) {
+            this.context.navigationManager.navigateTo(page);
+            this.context.navigationManager.setMainPage(page);
+            this.context.navigationManager.setHomePageLocator(context.locators.byText(page));
         }
     }
 
