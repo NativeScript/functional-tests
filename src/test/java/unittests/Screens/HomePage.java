@@ -8,7 +8,7 @@ import org.testng.Assert;
 public class HomePage extends BasePage {
 
     private static final String strCompleted = "ALL TESTS COMPLETE";
-    private static final String strNotFailed = "0 failed";
+    private static final String strNotFailed = "OK, 0 failed";
 
     public HomePage() {
         super();
@@ -19,7 +19,7 @@ public class HomePage extends BasePage {
     }
 
     private By locatorNotFailed() {
-        return this.locators.byText(strNotFailed, true, false);
+        return this.locators.byText(strNotFailed, false, false);
     }
 
     public boolean waitForTestsToComplete() {
@@ -49,8 +49,8 @@ public class HomePage extends BasePage {
 
         this.log.logScreen("unittests", "Final Screen: ", 80 * 4, 60 * 4);
 
-        UIElement noFailed = this.wait.waitForVisible(this.locatorNotFailed(), 3, false);
-        if (noFailed != null) {
+        UIElement notFailed = this.wait.waitForVisible(this.locatorNotFailed(), 3, false);
+        if (notFailed != null) {
             this.log.info("\'" + strNotFailed + "\' found!");
             result = true;
         } else {

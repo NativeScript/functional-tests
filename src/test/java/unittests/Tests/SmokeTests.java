@@ -1,8 +1,8 @@
 package unittests.Tests;
 
-import functional.tests.core.mobile.basetest.MobileTest;
 import functional.tests.core.enums.DeviceType;
 import functional.tests.core.enums.PlatformType;
+import functional.tests.core.mobile.basetest.MobileTest;
 import functional.tests.core.utils.OSUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -23,7 +23,7 @@ public class SmokeTests extends MobileTest {
 
         boolean result = homePage.waitForTestsToComplete();
 
-        HashMap<Double, String> paths = new HashMap<Double, String>();
+        HashMap<Double, String> paths = new HashMap<>();
         paths.put(4.2, "/mnt/sdcard/Documents/test-results.xml");
         paths.put(5.0, "/storage/sdcard/Documents/test-results.xml");
         paths.put(6.0, "/storage/emulated/0/Documents/test-results.xml");
