@@ -1,5 +1,6 @@
 package sdkexamples.Tests;
 
+import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.find.Wait;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -28,7 +29,11 @@ public class SdkWebViewTests extends SdkBaseTest {
     public void sdkWebViewTest(String example) throws Exception {
         this.mainPage.navigateTo(example);
         Wait.sleep(10000);
-        this.context.getDevice().assertLogContains("WebView finished loading");
-        this.log.logScreen(example);
+        if (this.settings.platform == PlatformType.Android) {
+            this.context.getDevice().assertLogContains("WebView finished loading");
+            this.log.logScreen(example);
+        } else {
+            this.assertScreen(20);
+        }
     }
 }
