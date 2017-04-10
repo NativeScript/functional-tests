@@ -36,9 +36,11 @@ public class SdkWebViewTests extends SdkBaseTest {
             this.context.getDevice().assertLogContains("WebView finished loading");
             this.log.logScreen(example);
         } else {
-            UIRectangle doneBtn = new UIRectangle(new Rectangle(17, 25, 200, 200), this.context);
-            doneBtn.tap();
-            doneBtn.tap();
+            if (example == pageWebViewCode && this.settings.platform == PlatformType.iOS) {
+                UIRectangle doneBtn = new UIRectangle(new Rectangle(17, 25, 200, 200), this.context);
+                doneBtn.tap();
+                doneBtn.tap();
+            }
             this.assertScreen(20);
         }
     }
