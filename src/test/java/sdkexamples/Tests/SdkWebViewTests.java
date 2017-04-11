@@ -40,8 +40,8 @@ public class SdkWebViewTests extends SdkBaseTest {
                 UIRectangle doneBtn = new UIRectangle(new Rectangle(17, 25, 200, 200), this.context);
                 doneBtn.tap();
                 doneBtn.tap();
+                this.assertScreen(20);
             }
-            this.assertScreen(20);
         }
     }
 }
