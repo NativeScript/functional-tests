@@ -20,7 +20,7 @@ public class HomePage extends BasePage {
 
     private List<UIElement> listViewItems() {
         Assert.assertNotNull(this.listView());
-        return this.find.elementsByLocator(this.locators.listViewItemsLocator());
+        return this.wait.forVisibleElements(this.locators.listViewItemsLocator(), 5, true);
     }
 
     private UIElement listTabItem() {
