@@ -50,4 +50,14 @@
             <package name="testsappng.Tests.ListView"/>
         </packages>
     </test>
+    <test name="ListPicker">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="testsappng.Tests.ListPicker"/>
+        </packages>
+    </test>
 </suite>
