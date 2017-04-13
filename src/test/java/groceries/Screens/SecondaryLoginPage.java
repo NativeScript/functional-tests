@@ -1,9 +1,9 @@
 package groceries.Screens;
 
-import functional.tests.core.mobile.basepage.BasePage;
-import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.exceptions.AppiumException;
+import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.element.UIElement;
 import org.openqa.selenium.By;
 
 public class SecondaryLoginPage extends BasePage {
@@ -31,7 +31,7 @@ public class SecondaryLoginPage extends BasePage {
 
     public ErrorDialog ok() {
         this.log.info("Click on ok button in error dialog.");
-        this.find.byLocator(btnOkLocator()).click();
+        this.wait.waitForVisible(btnOkLocator(), 3, false).click();
 
         return new ErrorDialog(this.context);
     }
