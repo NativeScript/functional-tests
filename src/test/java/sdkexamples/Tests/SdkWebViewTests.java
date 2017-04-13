@@ -36,14 +36,13 @@ public class SdkWebViewTests extends SdkBaseTest {
 
         Wait.sleep(10000);
         if (example == pageWebViewCode) {
-            By locator = this.locators.labelLocator();
             if (this.settings.platform == PlatformType.iOS) {
                 UIRectangle doneBtn = new UIRectangle(new Rectangle(17, 25, 200, 200), this.context);
                 doneBtn.tap();
                 doneBtn.tap();
             }
 
-            Assert.isTrue(this.wait.waitForVisible(locator).getText().contains("WebView finished loading"));
+           this.wait.waitForVisible(this.locators.byText("WebView finished loading",false,false),true);
         }
 
         this.log.logScreen(example);
