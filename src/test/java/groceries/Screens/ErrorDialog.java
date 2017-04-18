@@ -17,4 +17,8 @@ public class ErrorDialog {
     public void ok() {
         this.context.find.byLocator(btnOk()).click();
     }
+
+    public void waitToAppear() {
+        this.context.wait.waitForVisible(this.context.locators.byText("Unfortunately, an error occurred", false, false), 5, true);
+    }
 }

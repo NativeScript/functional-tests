@@ -31,9 +31,15 @@ public class SecondaryLoginPage extends BasePage {
 
     public ErrorDialog ok() {
         this.log.info("Click on ok button in error dialog.");
-        this.wait.waitForVisible(btnOkLocator(), 3, false).click();
+        this.wait.waitForVisible(btnOkLocator(), 3, false).tap();
 
-        return new ErrorDialog(this.context);
+        ErrorDialog errorDialog = new ErrorDialog(this.context);
+
+        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 10) {
+            errorDialog.waitToAppear();
+        }
+
+        return errorDialog;
     }
 
     public void signUp() {
@@ -48,10 +54,9 @@ public class SecondaryLoginPage extends BasePage {
     }
 
     public void showForgotPasswordDialog() {
+        this.btnForgotPassword().tap();
         if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 10) {
-            this.btnForgotPassword().click();
-        } else {
-            this.btnForgotPassword().tap();
+            this.wait.waitForVisible(this.locators.byText("Enter the email", false, false), 5, true);
         }
     }
 

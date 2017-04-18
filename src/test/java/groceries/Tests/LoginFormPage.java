@@ -69,7 +69,8 @@ public class LoginFormPage extends MobileTest {
     @Test(groups = {"android", "ios"})
     public void groceries_03_forgotPassword_OK() throws Exception {
         this.secondaryLoginPage.showForgotPasswordDialog();
-        this.compareScreens(30, 1.0);
+
+        this.compareScreens(this.settings.defaultTimeout, 1.0);
 
         this.secondaryLoginPage.cancel();
         this.waitForLoginForm(true);
@@ -95,7 +96,7 @@ public class LoginFormPage extends MobileTest {
         errorDialog.ok();
         this.waitForLoginForm(true);
 
-        this.assertImagesResults();
+        //this.assertImagesResults();
     }
 
     @Test(groups = {"android", "ios"})
