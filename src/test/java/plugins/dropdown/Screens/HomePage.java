@@ -10,6 +10,18 @@ public class HomePage extends BasePage {
         super();
     }
 
+    public UIElement myHint() {
+        return this.find.byText("My Hint");
+    }
+
+    public UIElement itemZero() {
+        return this.find.byText("Item 0");
+    }
+
+    public UIElement itemThree() {
+        return this.find.byText("Item 3");
+    }
+
     public UIElement twentyOne() {
         return this.find.byText("21");
     }
@@ -33,7 +45,7 @@ public class HomePage extends BasePage {
     }
 
     public void loaded() {
-        if (this.itemFifteen() != null) {
+        if (this.myHint() != null) {
             this.log.info("DropDown app loaded.");
         } else {
             Assert.fail("DropDown app NOT loaded.");

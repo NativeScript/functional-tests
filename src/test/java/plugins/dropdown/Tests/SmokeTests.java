@@ -13,12 +13,12 @@ public class SmokeTests extends MobileTest {
     public void dropDown() throws Exception {
         HomePage homePage = new HomePage();
         homePage.loaded();
-        homePage.tapFifteenItem();
+        homePage.myHint().tap();
         if (this.settings.platform == PlatformType.Android) {
             Wait.sleep(5);
-            homePage.itemTwentyOne();
-            homePage.tapTwentyOne();
-            Assert.assertNotNull(homePage.twentyOne());
+            homePage.itemZero();
+            homePage.itemThree().tap();
+            Assert.assertNotNull(homePage.itemThree());
         }
         this.log.logScreen(this.context.getTestName(), this.context.getTestName());
     }
