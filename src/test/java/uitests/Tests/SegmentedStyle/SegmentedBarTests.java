@@ -16,7 +16,7 @@ public class SegmentedBarTests extends MobileTest {
 
     @Test(groups = {"android", "ios"})
     public void segmentedBar_01() throws Exception {
-        this.compareElements(this.segmentedBarPage.segmentedBar1(), 2, 0.1);
+        this.compareElements(this.segmentedBarPage.segmentedBar1(), 5, 0.1);
 
         this.assertImagesResults();
     }
@@ -24,7 +24,7 @@ public class SegmentedBarTests extends MobileTest {
     @Test(groups = {"android", "ios"})
     public void segmentedBar_02_clean() throws Exception {
         this.segmentedBarPage.tapGoToCleanPageBtn();
-        this.compareElements(this.segmentedBarPage.segmentedBar1(), 2, 0.1);
+        this.compareElements(this.segmentedBarPage.segmentedBar1(), 5, 0.1);
 
         this.assertImagesResults();
     }
@@ -32,7 +32,7 @@ public class SegmentedBarTests extends MobileTest {
     @Test(groups = {"android", "ios"})
     public void segmentedBar_03() throws Exception {
         this.segmentedBarPage.tapGoToPreviousPageBtn();
-        this.compareElements(this.segmentedBarPage.segmentedBar1(), 2, 0.1);
+        this.compareElements(this.segmentedBarPage.segmentedBar1(), 5, 0.1);
 
         this.assertImagesResults();
     }
