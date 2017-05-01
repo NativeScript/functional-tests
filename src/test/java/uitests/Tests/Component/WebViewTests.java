@@ -1,29 +1,23 @@
 package uitests.Tests.Component;
 
-import functional.tests.core.mobile.element.UIElement;
-import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.basetest.MobileTest;
+import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import uitests.Screens.HomePageExtended;
+import uitests.Screens.Components.WebViewBasePage;
 
 public class WebViewTests extends MobileTest {
 
+    private WebViewBasePage webViewBasePage;
+
+    @BeforeClass(alwaysRun = true)
+    public void beforeStylesTestsClass() {
+        this.webViewBasePage = new WebViewBasePage(this.context);
+    }
+
     @Test(groups = {"android", "ios"})
     public void webView_01() throws Exception {
-        String webView = "webview";
-        String webTest = "webtest";
-        if (this.settings.platformVersion >= 7 && this.settings.platform == PlatformType.Android) {
-            webView = "WEBVIEW";
-        }
-        HomePageExtended homePage = new HomePageExtended(webView, this.context);
-        UIElement element = this.find.byTextContains(webTest);
-        homePage.navigateTo(element);
-        if (this.settings.platform == PlatformType.Android) {
-            homePage.wait.waitForVisible(this.locators.webViewLocator(), 6, true);
-        } else if (this.settings.platform == PlatformType.iOS) {
-            homePage.find.byLocator(this.locators.labelLocator());
-        }
-
+        this.webViewBasePage.navToPage("webtest");
         double tolerance = 0.1;
         if (this.settings.platformVersion == 4.2) {
             tolerance = 11;
@@ -32,12 +26,27 @@ public class WebViewTests extends MobileTest {
         this.assertImagesResults();
     }
 
-//    @Test(groups = {"android", "ios"})
-//    public void webView_02() throws Exception {
-//        GalleryHomePage.homePageLoaded();
-//        GalleryHomePage.navigateTo("webview");
-//        WebViewPage.homePageLoaded();
-//        ImageVerification.waitForScreen(  0.01, this.settings.shortTimeout);
-//        WebViewPage.navigateBack();
-//    }
+    @Test(groups = {"android", "ios"})
+    public void webView_03_query() throws Exception {
+        this.webViewBasePage.navToPage("query");
+        Assert.assertNotNull(this.webViewBasePage.srcWebView());
+
+        this.webViewBasePage.tapRelativeBtn();
+        Assert.assertNotNull(this.webViewBasePage.strResult());
+        Assert.assertNotNull(this.webViewBasePage.strFooBar());
+        Assert.assertNotNull(this.webViewBasePage.strUrlTypeRelative());
+
+        this.webViewBasePage.tapAbsoluteBtn();
+        Assert.assertNotNull(this.webViewBasePage.strResult());
+        Assert.assertNotNull(this.webViewBasePage.strFooBar());
+        Assert.assertNotNull(this.webViewBasePage.strUrlTypeAbsolute());
+
+        this.webViewBasePage.tapFileBtn();
+        Assert.assertNotNull(this.webViewBasePage.strResult());
+        Assert.assertNotNull(this.webViewBasePage.strFooBar());
+        Assert.assertNotNull(this.webViewBasePage.strUrlTypeFilePrefix());
+
+        this.webViewBasePage.tapStringBtn();
+        Assert.assertNotNull(this.webViewBasePage.str());
+    }
 }
