@@ -49,8 +49,16 @@ public class DialogsPage extends HomePageExtended {
         this.log.info("Tap on 'login' button.");
     }
 
-    public void tapPromptBtn() {
-        this.find.byText("prompt").click();
+    public void tapPromptTextBtn() {
+        this.find.byText("promptText").click();
+    }
+
+    public void tapPromptPassBtn() {
+        this.find.byText("promptPass").click();
+    }
+
+    public void tapPromptEmailBtn() {
+        this.find.byText("promptEmail").click();
     }
 
     public void tapOkBtn() {
