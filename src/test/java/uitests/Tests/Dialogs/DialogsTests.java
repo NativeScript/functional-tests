@@ -77,7 +77,7 @@ public class DialogsTests extends MobileTest {
         this.device.assertLogContains("### Result: true");
     }
 
-    //this.log.n
+    // Login
     @Test(groups = {"android", "ios"})
     public void dialogs_41_loginIgnore() throws Exception {
         this.dialogsPage.tapLoginBtn();
@@ -102,26 +102,46 @@ public class DialogsTests extends MobileTest {
         this.device.assertLogContains("### Result: true, UserName: John, Password: Reese");
     }
 
-    // Prompt
+    // Prompt Text
     @Test(groups = {"android", "ios"})
-    public void dialogs_51_promptIgnore() throws Exception {
-        this.dialogsPage.tapPromptBtn();
+    public void dialogs_51_promptTextIgnore() throws Exception {
+        this.dialogsPage.tapPromptTextBtn();
         this.dialogsPage.tapIgnoreBtn();
         Assert.assertEquals(this.dialogsPage.label().getText(), DialogsPage.name0);
         this.device.assertLogContains("### Result: undefined, Text: John Reese");
     }
 
     @Test(groups = {"android", "ios"})
-    public void dialogs_52_promptCancel() throws Exception {
-        this.dialogsPage.tapLoginBtn();
+    public void dialogs_52_promptTextCancel() throws Exception {
+        this.dialogsPage.tapPromptTextBtn();
         this.dialogsPage.tapCancelBtn();
         Assert.assertEquals(this.dialogsPage.label().getText(), DialogsPage.name0);
         this.device.assertLogContains("### Result: false, UserName: John, Password: Reese");
     }
 
     @Test(groups = {"android", "ios"})
-    public void dialogs_53_promptOk() throws Exception {
-        this.dialogsPage.tapLoginBtn();
+    public void dialogs_53_promptTextOk() throws Exception {
+        this.dialogsPage.tapPromptTextBtn();
+        this.dialogsPage.tapOkBtn();
+        Assert.assertEquals(this.dialogsPage.label().getText(), DialogsPage.name1);
+        this.device.assertLogContains("### Result: true, UserName: John, Password: Reese");
+    }
+
+    // Prompt Pass
+    @Test(groups = {"android", "ios"})
+    public void dialogs_54_promptPassOk() throws Exception {
+        this.dialogsPage.tapPromptPassBtn();
+
+        this.dialogsPage.tapOkBtn();
+        Assert.assertEquals(this.dialogsPage.label().getText(), DialogsPage.name1);
+        this.device.assertLogContains("### Result: true, UserName: John, Password: Reese");
+    }
+
+    // Prompt Email
+    @Test(groups = {"android", "ios"})
+    public void dialogs_55_promptEmailOk() throws Exception {
+        this.dialogsPage.tapPromptEmailBtn();
+
         this.dialogsPage.tapOkBtn();
         Assert.assertEquals(this.dialogsPage.label().getText(), DialogsPage.name1);
         this.device.assertLogContains("### Result: true, UserName: John, Password: Reese");

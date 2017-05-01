@@ -2,7 +2,6 @@ package uitests.Screens.Components;
 
 import functional.tests.core.mobile.basetest.MobileContext;
 import functional.tests.core.mobile.element.UIElement;
-import org.testng.Assert;
 import uitests.Screens.HomePageExtended;
 
 public class WebViewBasePage extends HomePageExtended {
