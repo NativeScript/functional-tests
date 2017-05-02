@@ -41,9 +41,10 @@ public class ListViewTest extends UIBaseTests {
     @Test(groups = {"android", "ios"})
     public void listViewRotate() throws Exception {
         this.homePageExtended.navigateTo("images-template");
+        this.device.rotate(ScreenOrientation.LANDSCAPE);
+        this.compareScreens(5);
         this.device.rotate(ScreenOrientation.PORTRAIT);
         this.compareScreens(5);
-        this.device.rotate(ScreenOrientation.LANDSCAPE);
         this.assertImagesResults();
     }
 }

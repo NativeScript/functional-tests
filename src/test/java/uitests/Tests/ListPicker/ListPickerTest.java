@@ -17,9 +17,11 @@ public class ListPickerTest extends UIBaseTests {
     @Test(groups = {"android", "ios"})
     public void listPicker_issue_2895() throws Exception {
         this.homePageExtended.navigateTo("issue_2895");
+        this.context.wait.waitForVisible(this.locators.byText("Toggle visibility")).tap();
+        this.device.rotate(ScreenOrientation.LANDSCAPE);
+        this.compareScreens(5);
         this.device.rotate(ScreenOrientation.PORTRAIT);
         this.compareScreens(5);
-        this.device.rotate(ScreenOrientation.LANDSCAPE);
         this.assertImagesResults();
     }
 }
