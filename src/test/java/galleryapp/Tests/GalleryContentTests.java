@@ -1,9 +1,13 @@
 package galleryapp.Tests;
 
+import functional.tests.core.enums.PlatformType;
+import functional.tests.core.mobile.element.UIRectangle;
 import galleryapp.GalleryBaseTest;
 import galleryapp.Screens.TabViewPage;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import java.awt.*;
 
 public class GalleryContentTests extends GalleryBaseTest {
     private TabViewPage tabViewPage;
@@ -32,6 +36,13 @@ public class GalleryContentTests extends GalleryBaseTest {
         if (this.settings.platformVersion >= 4.3) {
             this.compareScreens(this.settings.defaultTimeout, tolerance);
         }
+
+        if (this.settings.platform == PlatformType.iOS) {
+            UIRectangle rect = new UIRectangle(new Rectangle(10, 13, 57, 30), this.context);
+            rect.tap();
+            this.context.navigationManager.updatePagesOnNavigateBack();
+        }
+
         this.assertImagesResults();
     }
 
