@@ -1990,11 +1990,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>functional.tests.core</groupId>
-            <artifactId>functional.tests.core</artifactId>
-            <version>0.0.5</version>
-        </dependency>
-        <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>6.10</version>
