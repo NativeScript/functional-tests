@@ -30,20 +30,24 @@ public class PickerPage_Android extends BasePage {
     public void pickImages(int imageCount) {
 
         By listViewItemsLocator = By.xpath("//android.widget.ListView/*");
-        if (this.settings.platformVersion.toString().contains("4.")) {
-            UIElement viewButton = this.find.byLocator(By.className("android.widget.ImageButton"));
-            viewButton.tap(1, Settings.DEFAULT_TAP_DURATION);
-            this.log.info("Tap view button.");
-            UIElement listViewButton = this.find.byText("List view");
-            listViewButton.tap(1, Settings.DEFAULT_TAP_DURATION);
-            this.log.info("Tap list view button.");
-            listViewItemsLocator = By.xpath("//android.widget.ListView/*");
-        }
-        if (this.settings.platformVersion.toString().contains("5.")) {
-            listViewItemsLocator = By.xpath("//android.widget.GridView/*");
-        }
-        if (this.settings.platformVersion.toString().contains("6.")) {
-            // TODO: Implement it!
+        UIElement download = this.find.byText("Download");
+        if (download == null) {
+            if (this.settings.platformVersion.toString().contains("4.")) {
+                UIElement viewButton = this.find.byLocator(By.className("android.widget.TextView"));
+                viewButton.tap(1, Settings.DEFAULT_TAP_DURATION);
+                this.log.info("Tap view button.");
+                UIElement listViewButton = this.find.byText("List view");
+                listViewButton.tap(1, Settings.DEFAULT_TAP_DURATION);
+                this.log.info("Tap list view button.");
+                listViewItemsLocator = By.xpath("//android.widget.ListView/*");
+            } else if (this.settings.platformVersion.toString().contains("5.")) {
+                openStorage("SDCARD");
+            } else if (this.settings.platformVersion.toString().contains("6.")) {
+                openStorage("Internal storage");
+            }
+
+            download = this.find.byText("Download");
+            download.tap();
         }
 
         Wait.sleep(2000);
@@ -59,10 +63,26 @@ public class PickerPage_Android extends BasePage {
         }
 
         if (imageCount > 1) {
-            if ((this.settings.platformVersion.toString().contains("5.")) || (this.settings.platformVersion.toString().contains("4."))) {
+            if ((this.settings.platformVersion.toString().contains("5.")) || (this.settings.platformVersion.toString().contains("4.")) || (this.settings.platformVersion.toString().contains("6."))) {
                 UIElement openButton = this.find.byText("Open", this.settings.shortTimeout);
                 openButton.click();
             }
         }
+    }
+
+    public void openStorage(String storageLocation) {
+        UIElement storage = this.find.byText(storageLocation, this.settings.shortTimeout);
+        if (storage == null) {
+            UIElement downloads = this.find.byText("Downloads");
+            downloads.tap();
+            UIElement moreOptions = this.find.byText("More options");
+            moreOptions.tap();
+            UIElement sdCardkShow = this.find.byText("Show SD card");
+            sdCardkShow.tap();
+            UIElement showRoot = this.find.byText("Show roots");
+            showRoot.tap();
+            storage = this.find.byText(storageLocation);
+        }
+        storage.tap();
     }
 }
