@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import java.util.List;
 
 public class PickerPage_Android extends BasePage {
+    public Double platformVersion = this.settings.platformVersion;
 
     public PickerPage_Android(MobileContext context) {
         super(context);
@@ -29,20 +30,19 @@ public class PickerPage_Android extends BasePage {
 
     public void pickImages(int imageCount) {
 
-        By listViewItemsLocator = By.xpath("//android.widget.ListView/*");
+        By listViewItemsLocator = this.locators.listViewItemsLocator();
         UIElement download = this.find.byText("Download");
         if (download == null) {
-            if (this.settings.platformVersion.toString().contains("4.")) {
-                UIElement viewButton = this.find.byLocator(By.className("android.widget.TextView"));
-                viewButton.tap(1, Settings.DEFAULT_TAP_DURATION);
+            if (platformVersion >= 4 && platformVersion < 5) {
+                UIElement viewButton = this.find.byLocator(this.context.locators.textViewLocator());
+                viewButton.tap(1);
                 this.log.info("Tap view button.");
                 UIElement listViewButton = this.find.byText("List view");
-                listViewButton.tap(1, Settings.DEFAULT_TAP_DURATION);
+                listViewButton.tap(1);
                 this.log.info("Tap list view button.");
-                listViewItemsLocator = By.xpath("//android.widget.ListView/*");
-            } else if (this.settings.platformVersion.toString().contains("5.")) {
+            } else if (platformVersion >= 5 && platformVersion < 6) {
                 openStorage("SDCARD");
-            } else if (this.settings.platformVersion.toString().contains("6.")) {
+            } else if (platformVersion >= 6) {
                 openStorage("Internal storage");
             }
 
@@ -54,7 +54,7 @@ public class PickerPage_Android extends BasePage {
         List<UIElement> listViewItems = this.find.elementsByLocator(listViewItemsLocator);
         this.log.info("ListView items count: " + String.valueOf(listViewItems.size()));
         for (int i = 0; i < imageCount; i++) {
-            if (this.settings.platformVersion.toString().contains("4.")) {
+            if (platformVersion >= 4 && platformVersion < 5) {
                 listViewItems.get(i).tap(1, Settings.DEFAULT_TAP_DURATION * 5);
             } else {
                 listViewItems.get(i).tap(1, Settings.DEFAULT_TAP_DURATION * 3);
@@ -63,7 +63,7 @@ public class PickerPage_Android extends BasePage {
         }
 
         if (imageCount > 1) {
-            if ((this.settings.platformVersion.toString().contains("5.")) || (this.settings.platformVersion.toString().contains("4.")) || (this.settings.platformVersion.toString().contains("6."))) {
+            if (platformVersion >= 4) {
                 UIElement openButton = this.find.byText("Open", this.settings.shortTimeout);
                 openButton.click();
             }

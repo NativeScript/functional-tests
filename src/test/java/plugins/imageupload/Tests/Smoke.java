@@ -20,7 +20,7 @@ public class Smoke extends MobileTest {
 
     @Test(groups = {"android"})
     public void initGallery() throws Exception {
-        if (this.settings.platformVersion.toString().contains("6.")) {
+        if (this.settings.platformVersion >= 6) {
             sdCardBasePath = "/sdcard/";
         }
         // Ensure page is loaded, file push fails if you try to push too early
@@ -47,7 +47,7 @@ public class Smoke extends MobileTest {
             pickerPage_iOS.loaded();
             pickerPage_iOS.pickImages("Camera Roll", 1);
             this.homePage.loaded();
-            this.homePage.wait.waitForVisible(this.locators.byText("IMG_0001.JPG"), false);
+            this.homePage.wait.waitForVisible(this.locators.byText("Test3.png"), true);
         }
 
         this.log.logScreen("imagepicker_single", "ImagePicker: Single Item");
@@ -70,9 +70,7 @@ public class Smoke extends MobileTest {
             pickerPage_iOS.loaded();
             pickerPage_iOS.pickImages("Camera Roll", 3);
             homePage.loaded();
-            this.homePage.wait.waitForVisible(this.locators.byText("IMG_0001.JPG"), false);
-            this.homePage.wait.waitForVisible(this.locators.byText("IMG_0002.JPG"), false);
-            this.homePage.wait.waitForVisible(this.locators.byText("IMG_0003.JPG"), false);
+            this.homePage.wait.waitForVisible(this.locators.byText("Test2.png"), true);
         }
         this.log.logScreen("imagepicker_multiple", "ImagePicker: Multiple Item");
     }
