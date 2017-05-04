@@ -116,7 +116,7 @@ public class DialogsTests extends MobileTest {
         this.dialogsPage.tapPromptTextBtn();
         this.dialogsPage.tapCancelBtn();
         Assert.assertEquals(this.dialogsPage.label().getText(), DialogsPage.name0);
-        this.device.assertLogContains("### Result: false, UserName: John, Password: Reese");
+        this.device.assertLogContains("### Result: false, Text: John Reese");
     }
 
     @Test(groups = {"android", "ios"})
@@ -124,7 +124,7 @@ public class DialogsTests extends MobileTest {
         this.dialogsPage.tapPromptTextBtn();
         this.dialogsPage.tapOkBtn();
         Assert.assertEquals(this.dialogsPage.label().getText(), DialogsPage.name1);
-        this.device.assertLogContains("### Result: true, UserName: John, Password: Reese");
+        this.device.assertLogContains("### Result: true, Text: John Reese");
     }
 
     // Prompt Pass
