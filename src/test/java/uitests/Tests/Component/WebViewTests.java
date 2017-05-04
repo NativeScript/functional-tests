@@ -27,7 +27,7 @@ public class WebViewTests extends MobileTest {
     }
 
     @Test(groups = {"android", "ios"})
-    public void webView_03_query() throws Exception {
+    public void webView_02_query() throws Exception {
         this.webViewBasePage.navToPage("query");
         Assert.assertNotNull(this.webViewBasePage.srcWebView());
 

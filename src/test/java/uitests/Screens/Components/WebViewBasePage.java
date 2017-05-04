@@ -42,19 +42,19 @@ public class WebViewBasePage extends HomePageExtended {
     }
 
     public UIElement strFooBar() {
-        return this.find.byText("foo: bar");
+        return this.find.byTextContains("foo: bar");
     }
 
     public UIElement strUrlTypeRelative() {
-        return this.find.byText("urlType: relative");
+        return this.find.byTextContains("urlType: relative");
     }
 
     public UIElement strUrlTypeAbsolute() {
-        return this.find.byText("urlType: absolute");
+        return this.find.byTextContains("urlType: absolute");
     }
 
     public UIElement strUrlTypeFilePrefix() {
-        return this.find.byText("urlType: filePrefix");
+        return this.find.byTextContains("urlType: filePrefix");
     }
 
     public UIElement str() {
