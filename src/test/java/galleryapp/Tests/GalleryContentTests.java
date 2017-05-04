@@ -27,15 +27,9 @@ public class GalleryContentTests extends GalleryBaseTest {
 
     @Test(groups = {"android", "ios"})
     public void content_02_webview() throws Exception {
-        double tolerance = 35.0;
         this.homePage.navigateTo("WebView", null);
-        if (this.settings.platformVersion >= 4.3) {
-            this.compareScreens(this.settings.defaultTimeout, tolerance);
-        }
 
-        this.compareScreens(this.settings.defaultTimeout);
-
-        this.assertImagesResults();
+        this.assertScreen(this.settings.defaultTimeout, 35);
     }
 
     @Test(groups = {"android", "ios"})
