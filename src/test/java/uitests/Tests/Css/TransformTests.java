@@ -1,6 +1,5 @@
 package uitests.Tests.Css;
 
-import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uitests.Screens.TransformPage;
@@ -16,16 +15,16 @@ public class TransformTests extends CssBaseTest {
 
     @Test(groups = {"android", "ios"})
     public void transform_01() throws Exception {
-        this.compareScreens("none", 5);
+        this.compareScreens("none", 15);
 
         this.transformPage.tapChangeBtn();
-        this.compareScreens("capitalize", 5);
+        this.compareScreens("capitalize", 15);
 
         this.transformPage.tapChangeBtn();
-        this.compareScreens("uppercase", 5);
+        this.compareScreens("uppercase", 15);
 
         this.transformPage.tapChangeBtn();
-        this.compareScreens("lowercase", 5);
+        this.compareScreens("lowercase", 15);
         this.assertImagesResults();
     }
 
@@ -43,4 +42,15 @@ public class TransformTests extends CssBaseTest {
         this.compareScreens("upper_case", 5);
         this.assertImagesResults();
     }
+
+    // TODO: Uncomment after fix
+//    @Test(groups = {"android"})
+//    public void transform_03_autoCorrect() throws Exception {
+//        this.transformPage.navigateTo("transform");
+//        this.wait.waitForVisible(this.locators.byText("textField textField")).tap();
+//        this.wait.waitForVisible(this.locators.byText("text field")).tap();
+//
+//        this.compareScreens("auto_correct", 5);
+//        this.assertImagesResults();
+//    }
 }

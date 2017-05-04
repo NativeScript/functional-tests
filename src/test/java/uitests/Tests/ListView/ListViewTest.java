@@ -18,7 +18,7 @@ public class ListViewTest extends UIBaseTests {
     @Test(groups = {"android", "ios"})
     public void listViewItemsTemplate_01() throws Exception {
         this.homePageExtended.navigateTo("list-view-templates");
-        UIElement scroll = this.homePageExtended.wait.waitForVisible(this.locators.byText("SCROLL", true, false), 5, true);
+        UIElement scroll = this.homePageExtended.wait.waitForVisible(this.locators.byText("SCROLL", false, false), 5, true);
         this.compareScreens(10, 0.30);
 
         scroll.tap();
