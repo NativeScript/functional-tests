@@ -31,6 +31,10 @@ public class ApplicationTests extends MobileTest {
 
     @Test(groups = {"android", "ios"})
     public void application_02_suspend_resume() throws Exception {
+        if (this.settings.platform == PlatformType.Android && this.settings.isRealDevice && this.settings.platformVersion == 4.3) {
+            return;
+        }
+
         this.log.info("Run the application in background.");
         this.app.runInBackground(2);
         this.wait.waitForVisible(this.locators.byText("Run"), 15, true);
