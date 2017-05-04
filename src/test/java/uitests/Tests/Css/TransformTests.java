@@ -6,6 +6,7 @@ import uitests.Screens.TransformPage;
 
 public class TransformTests extends CssBaseTest {
 
+    private static final int waitCount = 25;
     private TransformPage transformPage;
 
     @BeforeClass(alwaysRun = true)
@@ -15,16 +16,17 @@ public class TransformTests extends CssBaseTest {
 
     @Test(groups = {"android", "ios"})
     public void transform_01() throws Exception {
-        this.compareScreens("none", 15);
+
+        this.compareScreens("none", waitCount);
 
         this.transformPage.tapChangeBtn();
-        this.compareScreens("capitalize", 15);
+        this.compareScreens("capitalize", waitCount);
 
         this.transformPage.tapChangeBtn();
-        this.compareScreens("uppercase", 15);
+        this.compareScreens("uppercase", waitCount);
 
         this.transformPage.tapChangeBtn();
-        this.compareScreens("lowercase", 15);
+        this.compareScreens("lowercase", waitCount);
         this.assertImagesResults();
     }
 
@@ -39,7 +41,7 @@ public class TransformTests extends CssBaseTest {
 
         // Change text
         this.transformPage.tapChangeTextBtn();
-        this.compareScreens("upper_case", 5);
+        this.compareScreens("upper_case", waitCount);
         this.assertImagesResults();
     }
 

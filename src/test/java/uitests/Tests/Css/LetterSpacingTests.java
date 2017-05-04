@@ -7,6 +7,6 @@ public class LetterSpacingTests extends CssBaseTest {
     @Test(groups = {"android", "ios"})
     public void letterSpacing_01() throws Exception {
         this.cssBasePage.navigateTo("spacing");
-        this.assertScreen(10);
+        this.assertScreen(20);
     }
 }
