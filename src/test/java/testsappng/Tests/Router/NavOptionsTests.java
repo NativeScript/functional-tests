@@ -74,7 +74,7 @@ public class NavOptionsTests extends TestsAppNgBase {
             tollerance = 19;
         }
 
-        this.navOptionsPage.pageTrasnitions();
+        this.navOptionsPage.pageTransitions();
 
         this.compareScreens(13, tollerance);
 

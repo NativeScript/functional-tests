@@ -6,9 +6,9 @@ import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.find.Wait;
 
 public class NavOptionsPage extends HomePage {
-    public static String framStackString = "frameStack";
+    public static String frameStackString = "frameStack";
     public static String navOptionsPage = "nav-options";
-    public static String pageTransitions = "page-trasnitions";
+    public static String pageTransitions = "page-transitions";
 
     public NavOptionsPage(MobileContext context) {
         super(navOptionsPage, context);
@@ -25,11 +25,11 @@ public class NavOptionsPage extends HomePage {
         this.log.info("Click on clear-history");
     }
 
-    public void pageTrasnitions() {
+    public void pageTransitions() {
         Wait.sleep(2000);
 
         UIElement element = this.wait.waitForVisible(this.locators.byText(pageTransitions));
-        this.log.info("pageTrasnitions isDisplayed " + element.isDisplayed());
+        this.log.info("pageTransitions isDisplayed " + element.isDisplayed());
         this.navigationManager.setCurrentPage(pageTransitions);
         element.tap();
         this.log.info("Click on " + pageTransitions);
@@ -57,7 +57,7 @@ public class NavOptionsPage extends HomePage {
 
     public void waitForFrameStackLabelToLoad() {
         Wait.sleep(10000);
-        this.wait.waitForVisible(this.locators.byText(framStackString, false, false), 10, false);
+        this.wait.waitForVisible(this.locators.byText(frameStackString, false, false), 10, false);
     }
 
     public void waitForPageTransitionToLoadToLoad() {
