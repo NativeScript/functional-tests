@@ -29,24 +29,31 @@ public class WebViewTests extends MobileTest {
     @Test(groups = {"android", "ios"})
     public void webView_02_query() throws Exception {
         this.webViewBasePage.navToPage("query");
-        Assert.assertNotNull(this.webViewBasePage.srcWebView());
+        if (this.settings.platformVersion <= 4.3) {
+            this.webViewBasePage.tapRelativeBtn();
+            this.webViewBasePage.tapAbsoluteBtn();
+            this.webViewBasePage.tapFileBtn();
+            this.webViewBasePage.tapStringBtn();
+        } else {
+            Assert.assertNotNull(this.webViewBasePage.srcWebView());
 
-        this.webViewBasePage.tapRelativeBtn();
-        Assert.assertNotNull(this.webViewBasePage.strResult());
-        Assert.assertNotNull(this.webViewBasePage.strFooBar());
-        Assert.assertNotNull(this.webViewBasePage.strUrlTypeRelative());
+            this.webViewBasePage.tapRelativeBtn();
+            Assert.assertNotNull(this.webViewBasePage.strResult());
+            Assert.assertNotNull(this.webViewBasePage.strFooBar());
+            Assert.assertNotNull(this.webViewBasePage.strUrlTypeRelative());
 
-        this.webViewBasePage.tapAbsoluteBtn();
-        Assert.assertNotNull(this.webViewBasePage.strResult());
-        Assert.assertNotNull(this.webViewBasePage.strFooBar());
-        Assert.assertNotNull(this.webViewBasePage.strUrlTypeAbsolute());
+            this.webViewBasePage.tapAbsoluteBtn();
+            Assert.assertNotNull(this.webViewBasePage.strResult());
+            Assert.assertNotNull(this.webViewBasePage.strFooBar());
+            Assert.assertNotNull(this.webViewBasePage.strUrlTypeAbsolute());
 
-        this.webViewBasePage.tapFileBtn();
-        Assert.assertNotNull(this.webViewBasePage.strResult());
-        Assert.assertNotNull(this.webViewBasePage.strFooBar());
-        Assert.assertNotNull(this.webViewBasePage.strUrlTypeFilePrefix());
+            this.webViewBasePage.tapFileBtn();
+            Assert.assertNotNull(this.webViewBasePage.strResult());
+            Assert.assertNotNull(this.webViewBasePage.strFooBar());
+            Assert.assertNotNull(this.webViewBasePage.strUrlTypeFilePrefix());
 
-        this.webViewBasePage.tapStringBtn();
-        Assert.assertNotNull(this.webViewBasePage.str());
+            this.webViewBasePage.tapStringBtn();
+            Assert.assertNotNull(this.webViewBasePage.str());
+        }
     }
 }
