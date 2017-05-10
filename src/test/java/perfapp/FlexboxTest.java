@@ -1,5 +1,6 @@
 package perfapp;
 
+import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.element.UIRectangle;
 import functional.tests.core.mobile.find.Wait;
 import org.openqa.selenium.By;
@@ -30,7 +31,13 @@ public class FlexboxTest extends PerformanceBaseTest {
     public void beforeFlexboxTestlass() {
         this.performanceBasePage = new PerformanceBasePage(PerformanceBaseTest.flexbox, this.context);
         this.performanceBasePage.navigateTo(PerformanceBaseTest.flexbox);
-        this.play = new UIRectangle(this.context.find.byText("Play").getUIRectangle(), this.context);
+
+        By locator = this.locators.byText("Play");
+        if (this.settings.platform == PlatformType.Android) {
+            locator = By.className("android.support.v7.widget.LinearLayoutCompat");
+        }
+
+        this.play = new UIRectangle(this.context.wait.waitForVisible(locator).getUIRectangle(), this.context);
     }
 
     @Test(dataProvider = "example")
