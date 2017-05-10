@@ -1,4 +1,4 @@
-package uitests.Screens.Performance;
+package perfapp;
 
 import functional.tests.core.mobile.basepage.BasePageExtended;
 import functional.tests.core.mobile.basetest.MobileContext;

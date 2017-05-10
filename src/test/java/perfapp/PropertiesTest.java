@@ -1,4 +1,4 @@
-package uitests.Tests.Performance;
+package perfapp;
 
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.element.UIElement;
@@ -12,21 +12,23 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class PropertiesPerfTest extends PerformanceBaseTest {
+public class PropertiesTest extends PerformanceBaseTest {
 
-    private Map<String, ArrayList<String>> memoryValues;
+    private Map<String, ArrayList<String>> perfValues;
+    private final String header = "date,scenario,10,100,1000,10000,1000000";
 
     @BeforeClass(alwaysRun = true)
     public void beforePropertiesPerfTestClass() {
+        this.performanceBasePage = new PerformanceBasePage(PerformanceBaseTest.properties, this.context);
         this.performanceBasePage.navigateTo(PerformanceBaseTest.properties);
     }
 
     @BeforeMethod(alwaysRun = true)
     public void beforeMPropertiesPerfTestMethod() {
-        this.memoryValues = new HashMap<String, ArrayList<String>>();
+        this.perfValues = new HashMap<String, ArrayList<String>>();
     }
 
-    @Test(groups = {"android"})
+    @Test()
     public void properties_performance() throws Exception {
         if (this.settings.platform == PlatformType.Android) {
             this.wait.waitForVisible(this.locators.buttonLocator()).tap();
@@ -54,15 +56,13 @@ public class PropertiesPerfTest extends PerformanceBaseTest {
     }
 
     private void logResults() {
-        String logFullName = PerformanceBaseTest.getLogFullFileName(this.context);
-
         long dateTimeNow = System.currentTimeMillis();
         StringBuilder sb = new StringBuilder();
-        for (String key : this.memoryValues.keySet()) {
-            sb.append(String.format("%s,%s,%s%s", dateTimeNow, key, String.join(",", this.memoryValues.get(key)), System.lineSeparator()));
+        for (String key : this.perfValues.keySet()) {
+            sb.append(String.format("%s,%s,%s%s", dateTimeNow, key, String.join(",", this.perfValues.get(key)), System.lineSeparator()));
         }
 
-        PerformanceBaseTest.logPerformanceToCsv(logFullName, sb.toString());
+        perfapp.PerformanceBaseTest.logPerformanceToCsv(this.context, sb.toString(), this.header);
     }
 
     private void parseResults(String text) {
@@ -78,7 +78,7 @@ public class PropertiesPerfTest extends PerformanceBaseTest {
                 intValues.add(values[i].trim());
             }
 
-            this.memoryValues.put(key, intValues);
+            this.perfValues.put(key, intValues);
         }
     }
 }

@@ -1,24 +1,29 @@
 package uitests.Tests.Performance;
 
+import functional.tests.core.mobile.basetest.MobileTest;
 import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.mobile.find.Wait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import perfapp.PerformanceBaseTest;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class MemoryTest extends PerformanceBaseTest {
+public class MemoryTest extends MobileTest {
 
     private static final int tollerance = 6000000;
     private final ArrayList<Double> memoryInfos = new ArrayList<>();
+    private final String memoryLeaks = "memory-leaks";
+    private PerformanceBasePage performanceBasePage;
 
     @BeforeClass(alwaysRun = true)
     public void beforeMemoryTestsBaseClass() {
-        this.performanceBasePage.navigateTo(PerformanceBaseTest.memoryTests);
-        this.performanceBasePage.context.navigationManager.setMainPage(PerformanceBaseTest.memoryTests);
+        this.performanceBasePage = new PerformanceBasePage(memoryLeaks, this.context);
+        this.performanceBasePage.navigateTo(memoryLeaks);
+        this.performanceBasePage.context.navigationManager.setMainPage(memoryLeaks);
     }
 
     @BeforeMethod(alwaysRun = true)

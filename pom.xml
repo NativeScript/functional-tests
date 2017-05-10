@@ -1986,6 +1986,21 @@
             </properties>
         </profile>
 
+        <!--perf-app tests profiles-->
+        <profile>
+            <id>perfapp.dev.ipad2.ios10</id>
+            <properties>
+                <app.config>perfapp/perfapp.dev.ipad2.ios10.properties</app.config>
+                <testsuite>perfapp</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>perfapp.dev.nexus5.api23</id>
+            <properties>
+                <app.config>perfapp/perfapp.dev.nexus5.api23.properties</app.config>
+                <testsuite>perfapp</testsuite>
+            </properties>
+        </profile>
     </profiles>
 
     <dependencies>

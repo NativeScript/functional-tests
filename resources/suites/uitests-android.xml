@@ -150,4 +150,14 @@
             <package name="uitests.Tests.Page"/>
         </packages>
     </test>
+    <test name="UI Tests - Memory Leaks">
+        <groups>
+            <run>
+                <include name="android"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.Performance.MemoryTest"/>
+        </packages>
+    </test>
 </suite>

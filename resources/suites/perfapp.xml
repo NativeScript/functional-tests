@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TodoMVC Tests" verbose="1">
+    <test name="PerfApp Tests">
+        <classes>
+            <class name="perfapp.FlexboxTest"/>
+            <class name="perfapp.PropertiesTest"/>
+        </classes>
+    </test>
+</suite>
