@@ -15,19 +15,11 @@ public class HomePage extends BasePage {
     }
 
     private By pickSingleLocator() {
-        if (this.settings.platform == PlatformType.Android) {
-            return this.locators.findByTextLocator("Pick Single", true);
-        } else {
-            return By.id("Pick Single");
-        }
+        return this.locators.findByTextLocator("Pick & Upload Single Image", true);
     }
 
     private By pickMultipleLocator() {
-        if (this.settings.platform == PlatformType.Android) {
-            return this.locators.findByTextLocator("Pick Multiple", true);
-        } else {
-            return By.id("Pick Multiple");
-        }
+        return this.locators.findByTextLocator("Pick & Upload Multiple Images", true);
     }
 
     private UIElement pickSingleButton() {
@@ -60,6 +52,16 @@ public class HomePage extends BasePage {
      **/
     public void pickMultipleImages() {
         this.pickMultipleButton().tap(1, Settings.DEFAULT_TAP_DURATION);
+        if (this.settings.platformVersion.toString().contains("6.")) {
+            UIElement allow = this.find.byText("Allow");
+            allow.tap();
+        }
+        else if (this.settings.platform == PlatformType.iOS) {
+            UIElement ok = this.find.byText("OK");
+            if(ok != null) {
+                ok.tap();
+            }
+        }
         this.log.info("Tap pick multiple.");
     }
 }

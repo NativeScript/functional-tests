@@ -1600,42 +1600,42 @@
             <id>plugin.imageupload.emu.default.api19</id>
             <properties>
                 <app.config>plugins/plugin.imageupload.emu.default.api19.properties</app.config>
-                <testsuite>plugins-imageupload</testsuite>
+                <testsuite>plugins-imageupload-android</testsuite>
             </properties>
         </profile>
         <profile>
             <id>plugin.imageupload.emu.default.api22</id>
             <properties>
                 <app.config>plugins/plugin.imageupload.emu.default.api22.properties</app.config>
-                <testsuite>plugins-imageupload</testsuite>
+                <testsuite>plugins-imageupload-android</testsuite>
             </properties>
         </profile>
         <profile>
             <id>plugin.imageupload.emu.default.api23</id>
             <properties>
                 <app.config>plugins/plugin.imageupload.emu.default.api23.properties</app.config>
-                <testsuite>plugins-imageupload</testsuite>
+                <testsuite>plugins-imageupload-android</testsuite>
             </properties>
         </profile>
         <profile>
             <id>plugin.imageupload.sim.iphone5.ios81</id>
             <properties>
                 <app.config>plugins/plugin.imageupload.sim.iphone5.ios81.properties</app.config>
-                <testsuite>plugins-imageupload</testsuite>
+                <testsuite>plugins-imageupload-ios</testsuite>
             </properties>
         </profile>
         <profile>
             <id>plugin.imageupload.sim.iphone6.ios91</id>
             <properties>
                 <app.config>plugins/plugin.imageupload.sim.iphone6.ios91.properties</app.config>
-                <testsuite>plugins-imageupload</testsuite>
+                <testsuite>plugins-imageupload-ios</testsuite>
             </properties>
         </profile>
         <profile>
             <id>plugin.imageupload.sim.iphone7.ios100</id>
             <properties>
                 <app.config>plugins/plugin.imageupload.sim.iphone7.ios100.properties</app.config>
-                <testsuite>plugins-imageupload</testsuite>
+                <testsuite>plugins-imageupload-ios</testsuite>
             </properties>
         </profile>
 

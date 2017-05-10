@@ -2,6 +2,7 @@ package plugins.imageupload.Tests;
 
 import functional.tests.core.mobile.basetest.MobileTest;
 import functional.tests.core.enums.PlatformType;
+import functional.tests.core.mobile.find.Wait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import plugins.imageupload.Screens.HomePage;
@@ -19,28 +20,15 @@ public class Smoke extends MobileTest {
 
     @Test(groups = {"android"})
     public void initGallery() throws Exception {
+        if (this.settings.platformVersion >= 6) {
+            sdCardBasePath = "/sdcard/";
+        }
         // Ensure page is loaded, file push fails if you try to push too early
         this.homePage.loaded();
-
         this.log.info("Push sample images on device.");
-
-        this.device.pushFile("pictures/7392261.jpeg", sdCardBasePath + "Pictures/pic1.jpeg");
-        this.device.pushFile("pictures/7392261.jpeg", sdCardBasePath + "Pictures/pic2.jpeg");
-        this.device.pushFile("pictures/7392261.jpeg", sdCardBasePath + "Pictures/pic3.jpeg");
         this.device.pushFile("pictures/7392261.jpeg", sdCardBasePath + "Download/pic1.jpeg");
         this.device.pushFile("pictures/7392261.jpeg", sdCardBasePath + "Download/pic2.jpeg");
         this.device.pushFile("pictures/7392261.jpeg", sdCardBasePath + "Download/pic3.jpeg");
-        this.device.pushFile("pictures/7392261.jpeg", sdCardBasePath + "DCIM/pic1.jpeg");
-        this.device.pushFile("pictures/7392261.jpeg", sdCardBasePath + "DCIM/pic2.jpeg");
-        this.device.pushFile("pictures/7392261.jpeg", sdCardBasePath + "DCIM/pic3.jpeg");
-
-        this.context.client.stopDriver();
-        this.context.server.stopServer();
-        this.device.stop();
-        this.device.start();
-        this.context.server.initServer();
-        this.context.client.initDriver();
-
         this.homePage.loaded();
         this.log.logScreen("imagepicker_home", "ImagePicker: Home SdkPage");
     }
@@ -51,16 +39,15 @@ public class Smoke extends MobileTest {
 
         if (this.settings.platform == PlatformType.Android) {
             PickerPage_Android pickerPage_android = new PickerPage_Android(this.context);
-            pickerPage_android.loaded();
             pickerPage_android.pickImages(1);
             this.homePage.loaded();
-            this.homePage.wait.waitForVisible(this.locators.byText("/storage/sdcard/"), false);
+            this.homePage.wait.waitForVisible(this.locators.byText("Test2.png"), true);
         } else if (this.settings.platform == PlatformType.iOS) {
             PickerPage_iOS pickerPage_iOS = new PickerPage_iOS(this.context);
             pickerPage_iOS.loaded();
             pickerPage_iOS.pickImages("Camera Roll", 1);
             this.homePage.loaded();
-            this.homePage.wait.waitForVisible(this.locators.byText("IMG_0001.JPG"), false);
+            this.homePage.wait.waitForVisible(this.locators.byText("Test3.png"), true);
         }
 
         this.log.logScreen("imagepicker_single", "ImagePicker: Single Item");
@@ -77,15 +64,13 @@ public class Smoke extends MobileTest {
             pickerPage_android.loaded();
             pickerPage_android.pickImages(2);
             homePage.loaded();
-            this.homePage.wait.waitForVisible(this.locators.byText("/storage/sdcard/"), false);
+            this.homePage.wait.waitForVisible(this.locators.byText("Test1.png"), true);
         } else if (this.settings.platform == PlatformType.iOS) {
             PickerPage_iOS pickerPage_iOS = new PickerPage_iOS(this.context);
             pickerPage_iOS.loaded();
             pickerPage_iOS.pickImages("Camera Roll", 3);
             homePage.loaded();
-            this.homePage.wait.waitForVisible(this.locators.byText("IMG_0001.JPG"), false);
-            this.homePage.wait.waitForVisible(this.locators.byText("IMG_0002.JPG"), false);
-            this.homePage.wait.waitForVisible(this.locators.byText("IMG_0003.JPG"), false);
+            this.homePage.wait.waitForVisible(this.locators.byText("Test2.png"), true);
         }
         this.log.logScreen("imagepicker_multiple", "ImagePicker: Multiple Item");
     }

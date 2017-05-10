@@ -1,6 +1,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Plugins-ImageUpload" verbose="1">
     <test name="SmokeTests">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
         <classes>
             <class name="plugins.imageupload.Tests.Smoke"/>
         </classes>

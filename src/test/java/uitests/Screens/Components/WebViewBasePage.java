@@ -38,7 +38,7 @@ public class WebViewBasePage extends HomePageExtended {
     }
 
     public UIElement strResult() {
-        return this.find.byText("Result");
+        return this.find.byTextContains("Result");
     }
 
     public UIElement strFooBar() {
