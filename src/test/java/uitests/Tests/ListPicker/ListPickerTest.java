@@ -1,5 +1,6 @@
 package uitests.Tests.ListPicker;
 
+import functional.tests.core.enums.PlatformType;
 import org.openqa.selenium.ScreenOrientation;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -16,6 +17,9 @@ public class ListPickerTest extends UIBaseTests {
 
     @Test(groups = {"android", "ios"})
     public void listPicker_issue_2895() throws Exception {
+        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion <10){
+            return;
+        }
         this.homePageExtended.navigateTo("issue_2895");
         this.context.wait.waitForVisible(this.locators.byText("Toggle visibility")).tap();
         this.device.rotate(ScreenOrientation.LANDSCAPE);

@@ -1,5 +1,6 @@
 package uitests.Tests.ListView;
 
+import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.element.UIElement;
 import org.openqa.selenium.ScreenOrientation;
 import org.testng.annotations.BeforeClass;
@@ -34,6 +35,9 @@ public class ListViewTest extends UIBaseTests {
 
     @Test(groups = {"android", "ios"})
     public void listViewRotate() throws Exception {
+        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 10) {
+            return;
+        }
         this.homePageExtended.navigateTo("images-template");
         this.compareScreens(5);
         this.device.rotate(ScreenOrientation.LANDSCAPE);
