@@ -15,7 +15,7 @@ import java.util.Map;
 public class PropertiesTest extends PerformanceBaseTest {
 
     private Map<String, ArrayList<String>> perfValues;
-    private final String header = "date,scenario,10,100,1000,10000,1000000";
+    private final String additionalHeader = "0,100,1000,10000,1000000";
 
     @BeforeClass(alwaysRun = true)
     public void beforePropertiesPerfTestClass() {
@@ -56,13 +56,12 @@ public class PropertiesTest extends PerformanceBaseTest {
     }
 
     private void logResults() {
-        long dateTimeNow = System.currentTimeMillis();
         StringBuilder sb = new StringBuilder();
         for (String key : this.perfValues.keySet()) {
-            sb.append(String.format("%s,%s,%s%s", dateTimeNow, key, String.join(",", this.perfValues.get(key)), System.lineSeparator()));
+            PerformanceBaseTest.writeLine(sb, this.context, key, String.join(",", this.perfValues.get(key)));
         }
 
-        perfapp.PerformanceBaseTest.logPerformanceToCsv(this.context, sb.toString(), this.header);
+        perfapp.PerformanceBaseTest.logPerformanceToCsv(this.context, sb.toString(), PerformanceBaseTest.writeHeader(this.additionalHeader));
     }
 
     private void parseResults(String text) {

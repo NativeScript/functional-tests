@@ -1,66 +1,71 @@
 package perfapp;
 
 import functional.tests.core.enums.PlatformType;
-import functional.tests.core.mobile.element.UIRectangle;
-import functional.tests.core.mobile.find.Wait;
+import functional.tests.core.mobile.element.UIElement;
 import org.openqa.selenium.By;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.awt.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class FlexboxTest extends PerformanceBaseTest {
 
-    final String header = "date,scenario,executing-time";
+    private final String additionalHeader = "Executing Time";
+    private final Map<String, UIElement> tabs = new HashMap<>();
 
     private StringBuilder sb = new StringBuilder();
-    private UIRectangle play;
+    private UIElement play;
+    private UIElement result;
+    private By listElementLocator;
 
     @DataProvider(name = "example")
     public Object[][] data() {
         return new Object[][]{
-                {"flex-grid", "1"},
-                {"grid", "2"},
-                {"flex-stack", "3"},
-                {"stack", "4"},
+                {"flex-grid"},
+                {"grid"},
+                {"flex-stack"},
+                {"stack"},
         };
     }
 
     @BeforeClass(alwaysRun = true)
-    public void beforeFlexboxTestlass() {
+    public void beforeFlexboxTestClass() {
         this.performanceBasePage = new PerformanceBasePage(PerformanceBaseTest.flexbox, this.context);
         this.performanceBasePage.navigateTo(PerformanceBaseTest.flexbox);
 
-        By locator = this.locators.byText("Play");
+        By playLocator = this.locators.byText("Play");
+        By resultLocator = By.xpath("//" + this.uiElements.navigationBarLocator() + "/" + this.uiElements.staticTextLocator());
+        this.listElementLocator = this.locators.scrollViewLocator();
         if (this.settings.platform == PlatformType.Android) {
-            locator = By.className("android.support.v7.widget.LinearLayoutCompat");
+            playLocator = By.className(this.uiElements.linearLayoutCompatLocator());
+            resultLocator = this.locators.textViewLocator();
+            this.listElementLocator = By.xpath(this.uiElements.scrollViewLocator() + "//" + this.uiElements.imageLocator());
         }
 
-        this.play = new UIRectangle(this.context.wait.waitForVisible(locator).getUIRectangle(), this.context);
+        this.play = this.context.find.byLocator(playLocator);
+        this.result = this.context.find.byLocator(resultLocator);
+
+        this.tabs.put("flex-grid", this.find.byText("flex-grid"));
+        this.tabs.put("grid", this.find.byText("grid"));
+        this.tabs.put("flex-stack", this.find.byText("flex-stack"));
+        this.tabs.put("stack", this.find.byText("stack"));
     }
 
     @Test(dataProvider = "example")
-    public void properties_performance(String example, String number) throws Exception {
-        this.tapOnExample(example, Integer.parseInt(number));
+    public void flex_grid_stack_performance(String example) throws Exception {
+        this.tabs.get(example).tap();
         this.play.tap();
-        Wait.sleep(1000);
-        this.context.wait.waitForVisible(this.locators.scrollViewLocator(), 5, false);
+        this.context.wait.waitForVisible(this.listElementLocator, 5, false);
 
-        String value = this.context.find.byLocator(By.xpath("//" + this.uiElements.navigationBarLocator() + "/" + this.uiElements.staticTextLocator())).getText();
+        String value = this.result.getText();
 
         this.logResults(example, value);
     }
 
     private void logResults(String example, String value) {
-        long dateTimeNow = System.currentTimeMillis();
-        this.sb.append(String.format("%s,%s,%s", dateTimeNow, example, value));
-        PerformanceBaseTest.logPerformanceToCsv(this.context, this.sb.toString(), this.header);
-    }
-
-    private void tapOnExample(String example, int number) {
-        int width = this.device.getWindowSize().width / 4 * number - 10;
-        UIRectangle rect = new UIRectangle(new Rectangle(width, this.device.getWindowSize().height, (int) (this.device.getWindowSize().width / 4), 50), this.context);
-        rect.tap();
+        PerformanceBaseTest.writeLine(this.sb, this.context, example, value);
+        PerformanceBaseTest.logPerformanceToCsv(this.context, this.sb.toString(), PerformanceBaseTest.writeHeader(this.additionalHeader));
     }
 }
