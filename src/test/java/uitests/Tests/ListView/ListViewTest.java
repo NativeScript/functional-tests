@@ -18,6 +18,10 @@ public class ListViewTest extends UIBaseTests {
 
     @Test(groups = {"android", "ios"})
     public void listViewItemsTemplate_01() throws Exception {
+        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 10) {
+            this.log.warn("This test is not executing for iOS 9");
+            return;
+        }
         this.homePageExtended.navigateTo("list-view-templates");
         UIElement scroll = this.homePageExtended.wait.waitForVisible(this.locators.byText("SCROLL", false, false), 5, true);
         this.compareScreens(10, 0.30);
@@ -36,6 +40,7 @@ public class ListViewTest extends UIBaseTests {
     @Test(groups = {"android", "ios"})
     public void listViewRotate() throws Exception {
         if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 10) {
+            this.log.warn("This test is not executing for iOS 9");
             return;
         }
         this.homePageExtended.navigateTo("images-template");
