@@ -67,5 +67,7 @@ public class FlexboxTest extends PerformanceBaseTest {
     private void logResults(String example, String value) {
         PerformanceBaseTest.writeLine(this.sb, this.context, example, value);
         PerformanceBaseTest.logPerformanceToCsv(this.context, this.sb.toString(), PerformanceBaseTest.writeHeader(this.additionalHeader));
+        sb.delete(0, sb.length());
+        sb.setLength(1);
     }
 }
