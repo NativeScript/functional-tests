@@ -1286,6 +1286,13 @@
 
         <!--template-helloworldng profiles-->
         <profile>
+            <id>template.helloworldng.dev.nexus5.api23</id>
+            <properties>
+                <app.config>templates/template.helloworldng.dev.nexus5.api23.properties</app.config>
+                <testsuite>templates-helloworldng</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>template.helloworldng.emu.default.api19</id>
             <properties>
                 <app.config>templates/template.helloworldng.emu.default.api19.properties</app.config>
