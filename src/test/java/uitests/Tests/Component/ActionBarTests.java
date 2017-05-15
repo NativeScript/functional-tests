@@ -168,4 +168,40 @@ public class ActionBarTests extends MobileTest {
 
         this.assertImagesResults();
     }
+
+
+    @Test(groups = {"android", "ios"})
+    public void modalHideActionBar_4141() throws Exception {
+        this.actionBarPage.navigateTo("modalHiddenActBar");
+        this.compareScreens(3);
+
+        this.actionBarPage.find.byText("Open Modal").tap();
+        this.compareScreens(3);
+
+        this.actionBarPage.find.byText("Close").tap();
+        this.compareScreens(3);
+
+        this.actionBarPage.find.byText("Go Back").tap();
+        this.compareScreens(3);
+
+        this.assertImagesResults();
+    }
+
+
+    @Test(groups = {"android", "ios"})
+    public void modalHideActionBar_4157() throws Exception {
+        this.actionBarPage.navigateTo("modalShownActBar");
+        this.compareScreens(3);
+
+        this.actionBarPage.find.byText("Open Modal").tap();
+        this.compareScreens(3);
+
+        this.actionBarPage.find.byText("Close").tap();
+        this.compareScreens(3);
+
+        this.actionBarPage.find.byText("Go Back").tap();
+        this.compareScreens(3);
+
+        this.assertImagesResults();
+    }
 }
