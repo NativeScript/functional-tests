@@ -10,12 +10,16 @@ public class HomePage extends BasePage {
         super();
     }
 
-    public UIElement listView() {
+    private UIElement listView() {
         return this.find.byLocator(this.locators.listViewLocator());
     }
 
+    public void tapOnItem(String itemText) {
+        this.find.byText(itemText).tap();
+    }
+
     public void loaded() {
-        Assert.assertNotNull(listView());
-        this.log.info("Hello-World-NG home page loaded.");
+        Assert.assertNotNull(this.listView());
+        this.log.info("HelloWorldNG home page loaded.");
     }
 }
