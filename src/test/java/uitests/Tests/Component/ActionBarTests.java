@@ -181,8 +181,7 @@ public class ActionBarTests extends MobileTest {
         this.actionBarPage.find.byText("Close").tap();
         this.compareScreens(3);
 
-        this.actionBarPage.find.byText("Go Back").tap();
-        this.compareScreens(3);
+        this.context.navigationManager.navigateBack(this.actionBarPage.find.byText("Go Back"));
 
         this.assertImagesResults();
     }
@@ -199,8 +198,7 @@ public class ActionBarTests extends MobileTest {
         this.actionBarPage.find.byText("Close").tap();
         this.compareScreens(3);
 
-        this.actionBarPage.find.byText("Go Back").tap();
-        this.compareScreens(3);
+       this.context.navigationManager.navigateBack(this.actionBarPage.find.byText("Go Back"));
 
         this.assertImagesResults();
     }
