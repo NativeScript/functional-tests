@@ -44,4 +44,17 @@ public class ApplicationTests extends MobileTest {
             this.device.assertLogContains("#2# ResumeEvent");
         }
     }
+
+    @Test(groups = {"android", "ios"})
+    public void tabview_with_scrollview_4022() throws Exception {
+        this.context.navigationManager.navigateTo("tabview-with-scrollview_4022");
+        this.context.find.byText("Tab 2").tap();
+        this.log.info("Run the application in background.");
+        this.app.runInBackground(5);
+        this.context.wait.waitForVisible(this.locators.byText("Tab 1")).tap();
+        this.context.wait.waitForVisible(this.locators.byText("Tab 2")).tap();
+        this.context.wait.waitForVisible(this.locators.byText("Tab 3")).tap();
+
+        this.assertScreen(5);
+    }
 }
