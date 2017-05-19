@@ -47,7 +47,7 @@ public class ApplicationTests extends MobileTest {
 
     @Test(groups = {"android", "ios"})
     public void tabview_with_scrollview_4022() throws Exception {
-        this.context.navigationManager.navigateTo("tabview-with-scrollview_4022");
+        this.context.navigationManager.navigateTo("issues/tabview-with-scrollview_4022");
         this.context.find.byText("Tab 2").tap();
         this.log.info("Run the application in background.");
         this.app.runInBackground(5);
