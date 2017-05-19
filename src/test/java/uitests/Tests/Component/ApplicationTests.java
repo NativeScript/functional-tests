@@ -5,6 +5,7 @@ import functional.tests.core.mobile.basetest.MobileTest;
 import functional.tests.core.mobile.find.Wait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import uitests.Screens.UITestsBasePage;
 
 public class ApplicationTests extends MobileTest {
 
@@ -47,7 +48,9 @@ public class ApplicationTests extends MobileTest {
 
     @Test(groups = {"android", "ios"})
     public void tabview_with_scrollview_4022() throws Exception {
-        this.context.navigationManager.navigateTo("issues/tabview-with-scrollview_4022");
+        UITestsBasePage basePage = new UITestsBasePage("issues", this.context);
+        basePage.navigateTo("issues");
+        basePage.navigateTo("tabview-with-scrollview_4022");
         this.context.find.byText("Tab 2").tap();
         this.log.info("Run the application in background.");
         this.app.runInBackground(5);
