@@ -196,7 +196,7 @@ public class CssCommonTests extends CssBaseTest {
 
     @Test(groups = {"android", "ios"})
     public void secured_text_field_4135() throws Exception {
-        this.cssBasePage.navToPage("secured-text-field-4135");
+        this.cssBasePage.navToPage("secured-text-field");
         this.assertScreen();
     }
 }
