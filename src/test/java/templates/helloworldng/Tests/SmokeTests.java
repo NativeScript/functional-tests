@@ -2,6 +2,7 @@ package templates.helloworldng.Tests;
 
 import functional.tests.core.mobile.basetest.MobileTest;
 import io.appium.java_client.SwipeElementDirection;
+import org.springframework.util.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import templates.helloworldng.Screens.HomePage;
@@ -14,6 +15,8 @@ public class SmokeTests extends MobileTest {
     private String itemFirst = "Ter Stegen";
     private String itemLast = "Masip";
     private String itemToTap = "Umtiti";
+    private String number = "23. ";
+    private String position = "Defender";
 
     @BeforeClass(alwaysRun = true)
     public void beforeSmokeTestsClass() {
@@ -38,7 +41,9 @@ public class SmokeTests extends MobileTest {
         this.homePage.loaded();
         this.homePage.tapOnItem(itemToTap);
         this.itemDetailPage.loaded();
-        // this.assertScreen();
+        Assert.notNull(this.itemDetailPage.player(itemToTap));
+        Assert.notNull(this.itemDetailPage.player(number));
+        Assert.notNull(this.itemDetailPage.player(position));
     }
 
     @Test(groups = {"android", "ios"})

@@ -14,6 +14,10 @@ public class ItemDetailPage extends BasePage {
         return this.find.byText("Details");
     }
 
+    public UIElement player(String player) {
+        return this.find.byText(player);
+    }
+
     public void loaded() {
         Assert.assertNotNull(this.title());
         this.log.info("HelloWorldNG item detail page loaded.");
