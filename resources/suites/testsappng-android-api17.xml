@@ -20,6 +20,16 @@
             <package name="testsappng.Tests.Router"/>
         </packages>
     </test>
+    <test name="Layz Router Tests">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="testsappng.Tests.Router.LazyRouterTest"/>
+        </packages>
+    </test>
     <test name="Binding Tests">
         <groups>
             <run>
