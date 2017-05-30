@@ -17,8 +17,6 @@ public class SdkButtonTests extends SdkBaseTest {
     @DataProvider(name = "example")
     public Object[][] data() {
         return new Object[][]{
-                {"Text"},
-                {"Binding text"}
         };
     }
 
@@ -28,10 +26,5 @@ public class SdkButtonTests extends SdkBaseTest {
         this.mainPage.find.byText("Tap me!").click();
         this.mainPage.log.logScreen(pageButtonTap);
         this.mainPage.find.byText("OK").click();
-    }
-
-    @Test(dataProvider = "example")
-    public void sdkButtonTest(String example) throws Exception {
-        this.mainPage.navigateTo(example);
     }
 }
