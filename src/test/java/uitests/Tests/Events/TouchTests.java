@@ -1,11 +1,11 @@
-package uitests.Tests.PagesEvents;
+package uitests.Tests.Events;
 
 import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.find.Wait;
 import org.testng.annotations.Test;
 
-public class TouchTests extends PagesEventsBaseTest {
+public class TouchTests extends EventsBaseTest {
 
     @Test(groups = {"android", "ios"})
     public void touch_01_pinch() throws Exception {

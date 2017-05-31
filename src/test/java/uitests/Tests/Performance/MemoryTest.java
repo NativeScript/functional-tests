@@ -17,11 +17,12 @@ public class MemoryTest extends MobileTest {
     private static final int tollerance = 6000000;
     private final ArrayList<Double> memoryInfos = new ArrayList<>();
     private final String memoryLeaks = "memory-leaks";
+    private final String perfTestPage = "perf";
     private PerformanceBasePage performanceBasePage;
 
     @BeforeClass(alwaysRun = true)
     public void beforeMemoryTestsBaseClass() {
-        this.performanceBasePage = new PerformanceBasePage(memoryLeaks, this.context);
+        this.performanceBasePage = new PerformanceBasePage(perfTestPage, this.context);
         this.performanceBasePage.navigateTo(memoryLeaks);
         this.performanceBasePage.context.navigationManager.setMainPage(memoryLeaks);
     }

@@ -1,5 +1,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="UI Tests" verbose="1">
+    <test name="UI Tests - Button">
+        <groups>
+            <run>
+                <include name="android"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.Button"/>
+        </packages>
+    </test>
     <test name="UI Tests - Components">
         <groups>
             <run>
@@ -77,7 +87,7 @@
             </run>
         </groups>
         <packages>
-            <package name="uitests.Tests.PagesEvents"/>
+            <package name="uitests.Tests.Events"/>
         </packages>
     </test>
     <test name="UI Tests - Segmented Style">
@@ -98,6 +108,16 @@
         </groups>
         <packages>
             <package name="uitests.Tests.TabView"/>
+        </packages>
+    </test>
+    <test name="UI Tests - Tab Field">
+        <groups>
+            <run>
+                <include name="android"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.TextField"/>
         </packages>
     </test>
     <test name="UI Tests - TimePicker">

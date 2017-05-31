@@ -1,15 +1,14 @@
-package uitests.Tests.PagesEvents;
+package uitests.Tests.Events;
 
 import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
-import functional.tests.core.enums.Position;
 import io.appium.java_client.SwipeElementDirection;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uitests.Screens.GesturesPage;
 
-public class GesturesTests extends PagesEventsBaseTest {
+public class GesturesTests extends EventsBaseTest {
 
     private GesturesPage gesturesPage;
 

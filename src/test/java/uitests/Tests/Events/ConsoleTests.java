@@ -1,10 +1,9 @@
-package uitests.Tests.PagesEvents;
+package uitests.Tests.Events;
 
 import functional.tests.core.enums.PlatformType;
-import functional.tests.core.mobile.find.Locators;
 import org.testng.annotations.Test;
 
-public class ConsoleTests extends PagesEventsBaseTest {
+public class ConsoleTests extends EventsBaseTest {
 
     @Test(groups = {"android", "ios"})
     public void console_01() throws Exception {

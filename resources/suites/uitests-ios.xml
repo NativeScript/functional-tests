@@ -10,6 +10,16 @@
             <package name="uitests.Tests.Component"/>
         </packages>
     </test>
+    <test name="UI Tests - Button">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.Button"/>
+        </packages>
+    </test>
     <test name="UI Tests - Dialogs">
         <groups>
             <run>
@@ -97,7 +107,7 @@
             </run>
         </groups>
         <packages>
-            <package name="uitests.Tests.PagesEvents"/>
+            <package name="uitests.Tests.Events"/>
         </packages>
     </test>
     <test name="UI Tests - Segmented Style">
@@ -118,6 +128,16 @@
         </groups>
         <packages>
             <package name="uitests.Tests.TabView"/>
+        </packages>
+    </test>
+    <test name="UI Tests - Text Field">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.TextField"/>
         </packages>
     </test>
     <test name="UI Tests - TimePicker">

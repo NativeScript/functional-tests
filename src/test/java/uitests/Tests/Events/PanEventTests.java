@@ -1,12 +1,11 @@
-package uitests.Tests.PagesEvents;
+package uitests.Tests.Events;
 
-import functional.tests.core.settings.Settings;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uitests.Screens.PanEventPage;
 
-public class PanEventTests extends PagesEventsBaseTest {
+public class PanEventTests extends EventsBaseTest {
     private PanEventPage panEventPage;
 
     @BeforeClass(alwaysRun = true)

@@ -53,7 +53,7 @@ public class BackgroundPage {
     }
 
     public void tapBtn(String button) {
-        this.find.byText(button).click();
+        this.cssBasePage.wait.waitForVisible(this.cssBasePage.locators.byText(button)).click();
         this.cssBasePage.log.info("Tap on \'" + button + "\' button.");
     }
 
