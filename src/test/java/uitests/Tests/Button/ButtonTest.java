@@ -15,7 +15,7 @@ public class ButtonTest extends UIBaseTests {
     }
 
     @Test(groups = {"android", "ios"})
-    public void secured_text_field_4135() throws Exception {
+    public void btn_wrap_text_alignment_4266() throws Exception {
         this.homePageExtended.navigateTo("btn-wrap-text-alignment-4266");
         this.assertScreen();
     }
