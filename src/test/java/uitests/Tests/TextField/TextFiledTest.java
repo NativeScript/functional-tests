@@ -19,11 +19,27 @@ public class TextFiledTest extends UIBaseTests {
         this.homePageExtended.navigateTo("secured-text-field");
         this.assertScreen();
     }
-
+    
     @Test(groups = {"android", "ios"})
     public void max_length() throws Exception {
-        this.homePageExtended.navigateTo("smax-length");
-        this.assertScreen();
+        this.homePageExtended.navigateTo("max-length");
+        this.compareScreens();
+        this.setText(0, "test");
+        this.setText(1, "test");
+        this.setText(2, "test");
+        this.setText(3, "test");
+        this.compareScreens();
+        this.assertImagesResults();
+    }
+
+    private void setText(int index, String text) {
+        UIElement textField = this.getTextField(index);
+        textField.tap();
+        textField.setText(text);
+    }
+
+    private UIElement getTextField(int index) {
+        return this.find.elementsByLocator(this.locators.textFieldLocator()).get(index);
     }
 
     @Test(groups = {"android", "ios"})
