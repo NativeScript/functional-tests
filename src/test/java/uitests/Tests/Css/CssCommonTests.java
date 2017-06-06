@@ -74,22 +74,6 @@ public class CssCommonTests extends CssBaseTest {
     }
 
     @Test(groups = {"android", "ios"})
-    public void text_field_border_09() throws Exception {
-        this.cssBasePage.navToPage("text-field-border");
-        this.compareScreens(compareScreens, 0.9);
-
-        this.assertImagesResults();
-    }
-
-    @Test(groups = {"android", "ios"})
-    public void text_view_border_10() throws Exception {
-        this.cssBasePage.navToPage("text-view-border");
-        this.compareScreens(compareScreens, 0.8);
-
-        this.assertImagesResults();
-    }
-
-    @Test(groups = {"android", "ios"})
     public void image_border_11() throws Exception {
         this.cssBasePage.navToPage("image-border");
         this.compareScreens(compareScreens, 0.3);
@@ -136,31 +120,6 @@ public class CssCommonTests extends CssBaseTest {
         btn.tap();
         this.compareScreens(compareScreens, 5);
 
-        this.assertImagesResults();
-    }
-
-    @Test(groups = {"android", "ios"})
-    public void cssListPicker() throws Exception {
-        this.cssBasePage.navigateTo("list-picker");
-        this.compareScreens(10);
-        if (this.settings.platform == PlatformType.Android) {
-            this.wait.waitForVisible(this.locators.byText("name1", false, false), 2, false)
-                    .dragAndDrop(20, -200, 0);
-        } else {
-            this.wait.waitForVisible(this.locators.byText("name0", false, false), 2, false)
-                    .scrollInElementToElement(SwipeElementDirection.DOWN, Position.FromCenter, ((CssCommonTests) this).locators.byText("name3"), 10, 5);
-        }
-
-        this.compareScreens(10);
-        this.assertImagesResults();
-    }
-
-    @Test(groups = {"android", "ios"})
-    public void textView_hint_text_color() throws Exception {
-        this.cssBasePage.navigateTo("textview-hint-color");
-        this.compareScreens(3);
-        this.cssBasePage.find.byLocator(this.locators.byText("Change text and color")).tap();
-        this.compareScreens(3);
         this.assertImagesResults();
     }
 

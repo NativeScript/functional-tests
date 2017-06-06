@@ -197,7 +197,6 @@ public class IssuesTestsCommon extends IssuesBaseTest {
     @Test(groups = {"android, ios"})
     public void issue_1639_customComponents() throws Exception {
         this.issuesBasePage.navToPage("1639");
-
         this.compareScreens(5);
 
         this.assertImagesResults();
@@ -206,7 +205,6 @@ public class IssuesTestsCommon extends IssuesBaseTest {
     @Test(groups = {"android, ios"})
     public void issue_3354_ios_hint() throws Exception {
         this.issuesBasePage.navToPage("3354-ios");
-
         this.compareScreens(5);
 
         this.assertImagesResults();
