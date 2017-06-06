@@ -74,14 +74,6 @@ public class CssCommonTests extends CssBaseTest {
     }
 
     @Test(groups = {"android", "ios"})
-    public void button_border_08() throws Exception {
-        this.cssBasePage.navToPage("button-border");
-        this.compareScreens(compareScreens, 0.3);
-
-        this.assertImagesResults();
-    }
-
-    @Test(groups = {"android", "ios"})
     public void text_field_border_09() throws Exception {
         this.cssBasePage.navToPage("text-field-border");
         this.compareScreens(compareScreens, 0.9);

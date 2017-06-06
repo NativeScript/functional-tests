@@ -19,4 +19,16 @@ public class TextFiledTest extends UIBaseTests {
         this.homePageExtended.navigateTo("secured-text-field");
         this.assertScreen();
     }
+
+    @Test(groups = {"android", "ios"})
+    public void max_length() throws Exception {
+        this.homePageExtended.navigateTo("smax-length");
+        this.assertScreen();
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void text_field_border() throws Exception {
+        this.homePageExtended.navigateTo("text-field-border");
+        this.assertScreen();
+    }
 }

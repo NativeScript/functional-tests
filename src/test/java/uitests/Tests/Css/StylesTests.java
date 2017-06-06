@@ -15,13 +15,6 @@ public class StylesTests extends MobileTest {
     }
 
     @Test(groups = {"android", "ios"})
-    public void styles_01() throws Exception {
-        this.cssBasePage.navigateTo("styles");
-        this.compareScreens(this.settings.shortTimeout, 0.01);
-        this.assertImagesResults();
-    }
-
-    @Test(groups = {"android", "ios"})
     public void styles_02_radius() throws Exception {
         this.cssBasePage.navigateTo("radius");
         this.compareScreens(this.settings.shortTimeout, 1.5);

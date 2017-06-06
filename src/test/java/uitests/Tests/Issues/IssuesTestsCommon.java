@@ -203,6 +203,15 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         this.assertImagesResults();
     }
 
+    @Test(groups = {"android, ios"})
+    public void issue_3354_ios_hint() throws Exception {
+        this.issuesBasePage.navToPage("3354-ios");
+
+        this.compareScreens(5);
+
+        this.assertImagesResults();
+    }
+
     private void hideKeyBoard() {
         if (this.settings.platform != PlatformType.iOS) {
             if (this.settings.platformVersion == 4.4) {
