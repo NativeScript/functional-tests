@@ -11,7 +11,7 @@ public class TextFiledTest extends UIBaseTests {
 
     @BeforeClass(alwaysRun = true)
     public void beforeTextFiledTestClass() {
-        this.homePageExtended = new HomePageExtended("textfield", this.context);
+        this.homePageExtended = new HomePageExtended("text-field", this.context);
     }
 
     @Test(groups = {"android", "ios"})
