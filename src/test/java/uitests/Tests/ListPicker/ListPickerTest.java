@@ -34,7 +34,7 @@ public class ListPickerTest extends UIBaseTests {
 
     @Test(groups = {"android", "ios"})
     public void cssListPicker() throws Exception {
-        this.homePageExtended.navigateTo("list-picker");
+        this.homePageExtended.navigateTo(this.find.byText("list-picker"));
         this.compareScreens(10);
         if (this.settings.platform == PlatformType.Android) {
             this.wait.waitForVisible(this.locators.byText("name1", false, false), 2, false)
