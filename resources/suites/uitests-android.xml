@@ -110,7 +110,7 @@
             <package name="uitests.Tests.TabView"/>
         </packages>
     </test>
-    <test name="UI Tests - Tab Field">
+    <test name="UI Tests - Text Field">
         <groups>
             <run>
                 <include name="android"/>
