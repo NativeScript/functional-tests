@@ -39,7 +39,6 @@ public class TextFiledTest extends UIBaseTests {
 
     private void setText(int index, String text) {
         UIElement textField = this.getTextField(index);
-        textField.tap();
         textField.sendKeys(text);
     }
 
