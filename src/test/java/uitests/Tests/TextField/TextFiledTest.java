@@ -18,21 +18,21 @@ public class TextFiledTest extends UIBaseTests {
     @Test(groups = {"android", "ios"})
     public void secured_text_field_4135() throws Exception {
         this.homePageExtended.navigateTo("secured-text-field");
-        this.assertScreen();
+        this.assertScreen(5);
     }
     
     @Test(groups = {"android", "ios"})
     public void max_length() throws Exception {
         this.homePageExtended.navigateTo("max-length");
-        this.compareScreens();
+        this.compareScreens(5);
         this.setText(0, "test");
         this.setText(1, "test");
         this.setText(2, "test");
         this.setText(3, "test");
         this.setText(4, "test");
-        this.compareScreens();
+        this.compareScreens(5);
         this.homePageExtended.find.byText("Revert to initial state").tap();
-        this.compareScreens();
+        this.compareScreens(5);
 
         this.assertImagesResults();
     }
@@ -49,6 +49,6 @@ public class TextFiledTest extends UIBaseTests {
     @Test(groups = {"android", "ios"})
     public void text_field_border() throws Exception {
         this.homePageExtended.navigateTo("text-field-border");
-        this.assertScreen();
+        this.assertScreen(5);
     }
 }
