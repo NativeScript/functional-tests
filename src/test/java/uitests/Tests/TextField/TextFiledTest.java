@@ -29,18 +29,22 @@ public class TextFiledTest extends UIBaseTests {
         this.setText(1, "test");
         this.setText(2, "test");
         this.setText(3, "test");
+        this.setText(4, "test");
         this.compareScreens();
+        this.homePageExtended.find.byText("Revert to initial state").tap();
+        this.compareScreens();
+
         this.assertImagesResults();
     }
 
     private void setText(int index, String text) {
         UIElement textField = this.getTextField(index);
         textField.tap();
-        textField.setText(text);
+        textField.sendKeys(text);
     }
 
     private UIElement getTextField(int index) {
-        return this.find.elementsByLocator(this.locators.textFieldLocator()).get(index);
+        return this.find.elementsByLocator(this.locators.editTextLocator()).get(index);
     }
 
     @Test(groups = {"android", "ios"})
