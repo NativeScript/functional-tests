@@ -1,6 +1,8 @@
 package uitests.Tests.TextField;
 
+import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.element.UIElement;
+import org.openqa.selenium.By;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uitests.Screens.HomePageExtended;
@@ -20,7 +22,7 @@ public class TextFiledTest extends UIBaseTests {
         this.homePageExtended.navigateTo("secured-text-field");
         this.assertScreen(5);
     }
-    
+
     @Test(groups = {"android", "ios"})
     public void max_length() throws Exception {
         this.homePageExtended.navigateTo("max-length");
@@ -29,7 +31,11 @@ public class TextFiledTest extends UIBaseTests {
         this.setText(1, "test");
         this.setText(2, "test");
         this.setText(3, "test");
-        this.setText(4, "test");
+        if (this.settings.platform == PlatformType.Android) {
+            this.setText(4, "test");
+        } else {
+            this.homePageExtended.find.byLocator(By.className("XCUIElementTypeSecureTextField"));
+        }
         this.compareScreens(5);
         this.homePageExtended.find.byText("Revert to initial state").tap();
         this.compareScreens(5);
@@ -43,7 +49,7 @@ public class TextFiledTest extends UIBaseTests {
     }
 
     private UIElement getTextField(int index) {
-        return this.find.elementsByLocator(this.locators.editTextLocator()).get(index);
+        return this.wait.forVisibleElements(this.locators.editTextLocator(), 2, true).get(index);
     }
 
     @Test(groups = {"android", "ios"})
