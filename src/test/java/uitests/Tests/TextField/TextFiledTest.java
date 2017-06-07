@@ -34,12 +34,13 @@ public class TextFiledTest extends UIBaseTests {
         if (this.settings.platform == PlatformType.Android) {
             this.setText(4, "test");
         } else {
-            this.homePageExtended.find.byLocator(By.className("XCUIElementTypeSecureTextField"));
+            this.homePageExtended.find.byLocator(By.className(this.uiElements.secureTextField()));
         }
         this.compareScreens(5);
         this.homePageExtended.find.byText("Revert to initial state").tap();
         this.compareScreens(5);
 
+        this.homePageExtended.hideKeyboard();
         this.assertImagesResults();
     }
 
