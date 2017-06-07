@@ -21,5 +21,13 @@ public class TextViewTest extends UIBaseTests {
 
         this.assertImagesResults();
     }
-
+    
+    @Test(groups = {"android", "ios"})
+    public void textView_hint_text_color() throws Exception {
+        this.homePageExtended.navigateTo("text-view-hint-color");
+        this.compareScreens(3);
+        this.homePageExtended.find.byLocator(this.locators.byText("Change text and color")).tap();
+        this.compareScreens(3);
+        this.assertImagesResults();
+    }
 }
