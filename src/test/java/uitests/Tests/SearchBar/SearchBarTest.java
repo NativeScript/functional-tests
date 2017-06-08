@@ -23,11 +23,13 @@ public class SearchBarTest extends UIBaseTests {
         this.setText(0, "test");
         this.setText(1, "test");
         this.setText(2, "test");
+        this.setText(3, "test");
         this.compareScreens();
 
         this.clearSearchBar(0);
         this.clearSearchBar(1);
         this.clearSearchBar(2);
+        this.clearSearchBar(3);
         this.compareScreens();
 
         this.homePageExtended.navigateBack(this.find.byText("Go Back"));

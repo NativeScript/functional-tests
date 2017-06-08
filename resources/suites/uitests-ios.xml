@@ -120,6 +120,16 @@
             <package name="uitests.Tests.SegmentedStyle"/>
         </packages>
     </test>
+    <test name="UI Tests - SearchBar">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.SearchBar"/>
+        </packages>
+    </test>
     <test name="UI Tests - Tab view">
         <groups>
             <run>
@@ -138,6 +148,16 @@
         </groups>
         <packages>
             <package name="uitests.Tests.TextField"/>
+        </packages>
+    </test>
+    <test name="UI Tests - Text View">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.TextView"/>
         </packages>
     </test>
     <test name="UI Tests - TimePicker">
