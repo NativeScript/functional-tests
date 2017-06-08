@@ -1,10 +1,7 @@
 package uitests.Tests.Css;
 
 import functional.tests.core.enums.DeviceType;
-import functional.tests.core.enums.PlatformType;
-import functional.tests.core.enums.Position;
 import functional.tests.core.mobile.element.UIElement;
-import io.appium.java_client.SwipeElementDirection;
 import org.testng.annotations.Test;
 
 public class CssCommonTests extends CssBaseTest {
@@ -128,20 +125,5 @@ public class CssCommonTests extends CssBaseTest {
         this.cssBasePage.navToPage("pixels");
         this.cssBasePage.wait.waitForVisible(this.locators.byText("Button", true, false), 6, true);
         this.assertScreen();
-    }
-
-    @Test(groups = {"android", "ios"})
-    public void hint_text_color() throws Exception {
-        this.cssBasePage.navToPage("hint-text-color");
-        this.wait.waitForVisible(this.locators.byText("set text")).tap();
-        this.compareScreens(3);
-        this.wait.waitForVisible(this.locators.byText("reset text")).tap();
-        this.compareScreens(3);
-        this.wait.waitForVisible(this.locators.byText("reset style")).tap();
-        this.compareScreens(3);
-        this.wait.waitForVisible(this.locators.byText("set text")).tap();
-        this.compareScreens(3);
-
-        this.assertImagesResults();
     }
 }

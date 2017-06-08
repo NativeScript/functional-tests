@@ -1,19 +1,8 @@
 package uitests.Tests.Button;
 
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import uitests.Screens.HomePageExtended;
-import uitests.Tests.UIBaseTests;
 
-public class ButtonTest extends UIBaseTests {
-
-    private final int compareScreens = 5;
-    public HomePageExtended homePageExtended;
-
-    @BeforeClass(alwaysRun = true)
-    public void beforeButtonTestClass() {
-        this.homePageExtended = new HomePageExtended("button", this.context);
-    }
+public class ButtonTest extends ButtonBaseTest {
 
     @Test(groups = {"android", "ios"})
     public void btn_wrap_text_alignment_4266() throws Exception {
