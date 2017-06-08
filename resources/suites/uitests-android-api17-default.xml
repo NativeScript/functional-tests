@@ -33,7 +33,7 @@
     <test name="UI Tests - Layouts">
         <groups>
             <run>
-                <include name="ios"/>
+                <include name="android"/>
             </run>
         </groups>
         <packages>
@@ -43,7 +43,7 @@
     <test name="UI Tests - ListView">
         <groups>
             <run>
-                <include name="ios"/>
+                <include name="android"/>
             </run>
         </groups>
         <packages>
@@ -53,7 +53,7 @@
     <test name="UI Tests - ListPicker">
         <groups>
             <run>
-                <include name="ios"/>
+                <include name="android"/>
             </run>
         </groups>
         <packages>
@@ -63,7 +63,7 @@
     <test name="UI Tests - Flexbox">
         <groups>
             <run>
-                <include name="ios"/>
+                <include name="android"/>
             </run>
         </groups>
         <packages>

@@ -22,12 +22,17 @@ public class ButtonTest extends UIBaseTests {
     }
 
     @Test(groups = {"android", "ios"})
+    public void btn_wrap_text_alignment_4287() throws Exception {
+        this.homePageExtended.navigateTo("issue-4287");
+        this.assertScreen(this.compareScreens);
+    }
+
+    @Test(groups = {"android", "ios"})
     public void styles_01() throws Exception {
         this.homePageExtended.navigateTo("styles");
         this.compareScreens(this.compareScreens, 0.01);
         this.assertImagesResults();
     }
-
 
     @Test(groups = {"android", "ios"})
     public void button_border_08() throws Exception {
