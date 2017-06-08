@@ -1,15 +1,14 @@
-package uitests.Tests.Css;
+package uitests.Tests.Button;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import uitests.Screens.BackgroundPage;
 
-public class BackgroundTests extends CssBaseTest {
+public class BackgroundTests extends ButtonBaseTest {
     private BackgroundPage backgroundPage;
 
     @BeforeClass(alwaysRun = true)
     public void beforeBackgroundTestsClass() {
-        this.backgroundPage = new BackgroundPage(this.cssBasePage);
+        this.backgroundPage = new BackgroundPage(this.homePageExtended);
     }
 
     // Background
@@ -32,7 +31,7 @@ public class BackgroundTests extends CssBaseTest {
 
         this.assertImagesResults();
 
-        this.cssBasePage.navigateBack();
+        this.homePageExtended.navigateBack();
     }
 
     // Border
@@ -51,7 +50,7 @@ public class BackgroundTests extends CssBaseTest {
     public void background_23_border() throws Exception {
         this.executeScenario("23");
 
-        this.cssBasePage.navigateBack();
+        this.homePageExtended.navigateBack();
     }
 
     // Repeat
@@ -91,7 +90,7 @@ public class BackgroundTests extends CssBaseTest {
     public void background_44_position() throws Exception {
         this.executeScenario("44");
 
-        this.cssBasePage.navigateBack();
+        this.homePageExtended.navigateBack();
     }
 
     @Test(groups = {"android", "ios"})
@@ -120,7 +119,7 @@ public class BackgroundTests extends CssBaseTest {
     public void background_49_position() throws Exception {
         this.executeScenario("49");
 
-        this.cssBasePage.navigateBack();
+        this.homePageExtended.navigateBack();
     }
 
     @Test(groups = {"android", "ios"})
@@ -139,7 +138,7 @@ public class BackgroundTests extends CssBaseTest {
     public void background_52_position() throws Exception {
         this.executeScenario("52");
 
-        this.cssBasePage.navigateBack();
+        this.homePageExtended.navigateBack();
     }
 
     // Size
@@ -164,7 +163,7 @@ public class BackgroundTests extends CssBaseTest {
     public void background_64_size() throws Exception {
         this.executeScenario("64");
 
-        this.cssBasePage.navigateBack();
+        this.homePageExtended.navigateBack();
     }
 
     // All

@@ -2,7 +2,6 @@ package uitests.Tests.TextField;
 
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.element.UIElement;
-import org.openqa.selenium.By;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uitests.Screens.HomePageExtended;
@@ -34,7 +33,7 @@ public class TextFiledTest extends UIBaseTests {
         if (this.settings.platform == PlatformType.Android) {
             this.setText(4, "test");
         } else {
-            this.homePageExtended.find.byLocator(By.className(this.uiElements.secureTextField()));
+            //this.homePageExtended.find.byLocator(By.className(this.uiElements.secureTextField()));
         }
         this.compareScreens(5);
         this.homePageExtended.find.byText("Revert to initial state").tap();
