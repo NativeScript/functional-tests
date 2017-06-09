@@ -23,7 +23,7 @@ public class StylesTests extends MobileTest {
 
     @Test(groups = {"android", "ios"})
     public void styles_03_views() throws Exception {
-        this.cssBasePage.navigateTo("switch");
+        this.cssBasePage.navigateTo("progress-switch");
         this.compareScreens(this.settings.shortTimeout, 0.01);
         this.assertImagesResults();
     }
