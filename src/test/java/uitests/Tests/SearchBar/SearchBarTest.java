@@ -30,9 +30,8 @@ public class SearchBarTest extends UIBaseTests {
         this.clearSearchBar(1);
         this.clearSearchBar(2);
         this.clearSearchBar(3);
-        this.compareScreens();
-
         this.homePageExtended.navigateBack(this.find.byText("Go Back"));
+        this.compareScreens();
 
         this.assertImagesResults();
     }

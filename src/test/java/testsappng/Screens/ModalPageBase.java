@@ -7,6 +7,7 @@ public class ModalPageBase extends HomePage {
     public static final String BTN_MAIN_PAGE = "Modals";
     public static final String BTN_MODAL_NAME = "modal";
     public static final String BTN_MODAL_ON_PUSH_NAME = "modal(onPush)";
+    public static final String BTN_MODAL_LAZY = "modal(lazy)";
     public static final String BTN_SHOW_COMPONENT = "show component";
     public static final String BTN_SHOW_COMPONENT_ASYNC = "show component (async)";
 
