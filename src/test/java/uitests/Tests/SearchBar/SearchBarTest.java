@@ -1,5 +1,6 @@
 package uitests.Tests.SearchBar;
 
+import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.element.UIElement;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -31,8 +32,11 @@ public class SearchBarTest extends UIBaseTests {
         this.clearSearchBar(2);
         this.clearSearchBar(3);
         this.compareScreens();
-        this.homePageExtended.navigateBack(this.find.byText("Go Back"));
-
+        if ( this.settings.platform == PlatformType.iOS) {
+            this.homePageExtended.navigateBack(this.find.byText("Go Back"));
+        }else{
+            this.homePageExtended.navigateBack(this.find.byLocator(this.locators.imageButtonLocator()));
+        }
         this.assertImagesResults();
     }
 
