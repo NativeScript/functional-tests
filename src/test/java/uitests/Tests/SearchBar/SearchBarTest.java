@@ -19,7 +19,8 @@ public class SearchBarTest extends UIBaseTests {
     @Test(groups = {"android", "ios"})
     public void issue_4147() throws Exception {
         this.homePageExtended.navigateTo("issue-4147");
-        this.compareScreens();
+        this.wait.forVisibleElements(this.locators.searchBoxLocator(), 2, true);
+        this.compareScreens(5);
 
         this.setText(0, "test");
         this.setText(1, "test");
@@ -32,9 +33,9 @@ public class SearchBarTest extends UIBaseTests {
         this.clearSearchBar(2);
         this.clearSearchBar(3);
         this.compareScreens(5);
-        if ( this.settings.platform == PlatformType.iOS) {
+        if (this.settings.platform == PlatformType.iOS) {
             this.homePageExtended.navigateBack(this.find.byText("Go Back"));
-        }else{
+        } else {
             this.homePageExtended.navigateBack(this.find.byLocator(this.locators.imageButtonLocator()));
         }
         this.assertImagesResults();
