@@ -23,9 +23,11 @@ public class ModalTests extends ModalsBaseTest {
 
     @Test(groups = {"android", "ios"})
     public void modalDialogLazy() throws Exception {
-        this.modalPageBase.wait.waitForVisible(this.locators.byText(ModalPageBase.BTN_MODAL_LAZY)).tap();
+        this.modalPageBase.navigateTo(ModalPageBase.BTN_MODAL_LAZY);
         this.compareScreens(5);
-        this.modalPageBase.wait.waitForVisible(this.locators.byText("Crazy Lazy Modal")).tap();
+        this.modalPageBase.wait.waitForVisible(this.locators.byText(ModalPageBase.BTN_LOAD_MODAL)).tap();
+        this.compareScreens(5);
+        this.modalPageBase.wait.waitForVisible(this.locators.byText("Close Lazy Modal")).tap();
         this.compareScreens(5);
         this.assertScreen();
     }

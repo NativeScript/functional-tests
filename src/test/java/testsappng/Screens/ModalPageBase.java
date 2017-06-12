@@ -10,6 +10,7 @@ public class ModalPageBase extends HomePage {
     public static final String BTN_MODAL_LAZY = "modal(lazy)";
     public static final String BTN_SHOW_COMPONENT = "show component";
     public static final String BTN_SHOW_COMPONENT_ASYNC = "show component (async)";
+    public static final String BTN_LOAD_MODAL = "Load modal!";
 
     public ModalPageBase(MobileContext context) {
         super("", context);
