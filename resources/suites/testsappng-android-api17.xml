@@ -53,11 +53,21 @@
     <test name="Modals Tests">
         <groups>
             <run>
-                <include name="ios"/>
+                <include name="android"/>
             </run>
         </groups>
         <packages>
             <package name="testsappng.Tests.Modals"/>
+        </packages>
+    </test>
+    <test name="SegmentedBar">
+        <groups>
+            <run>
+                <include name="android"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="testsappng.Tests.SegmentedBar"/>
         </packages>
     </test>
 </suite>

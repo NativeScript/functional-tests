@@ -70,4 +70,14 @@
             <package name="testsappng.Tests.ListPicker"/>
         </packages>
     </test>
+    <test name="SegmentedBar">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="testsappng.Tests.SegmentedBar"/>
+        </packages>
+    </test>
 </suite>
