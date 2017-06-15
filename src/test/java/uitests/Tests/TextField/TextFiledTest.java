@@ -24,6 +24,11 @@ public class TextFiledTest extends UIBaseTests {
 
     @Test(groups = {"android", "ios"})
     public void max_length() throws Exception {
+        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 10) {
+            this.log.error("This test is not executed for iOS 9");
+            return;
+        }
+
         this.homePageExtended.navigateTo("max-length");
         this.compareScreens(5);
         this.setText(0, "test");
