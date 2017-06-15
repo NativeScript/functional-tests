@@ -27,7 +27,7 @@ public class ModalTests extends ModalsBaseTest {
         this.compareScreens(5);
         this.modalPageBase.wait.waitForVisible(this.locators.byText(ModalPageBase.BTN_LOAD_MODAL)).tap();
         this.compareScreens(5);
-        this.modalPageBase.wait.waitForVisible(this.locators.byText("Close Lazy Modal"), 3, true).tap();
+        this.modalPageBase.wait.waitForVisible(this.locators.byText("closeModal"), 5, true).tap();
         this.compareScreens(5);
         this.assertScreen();
     }
