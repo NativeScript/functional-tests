@@ -53,9 +53,8 @@ public class ListViewTests extends TestsAppNgBase {
         this.listViewBasePage.wait.waitForVisible(this.locators.byText("item one", false, false), 15, false);
         this.compareScreens("listViewNestedTempalet_04", 20, 0.3);
 
-        this.listViewBasePage.wait.waitForVisible(this.locators.byText("navigate")).tap();
-        UIElement backBtn = this.listViewBasePage.wait.waitForVisible(this.locators.byText("GO TO SECOND"), 5, true);
-        backBtn.tap();
+        this.listViewBasePage.navigateTo(this.listViewBasePage.wait.waitForVisible(this.locators.byText("navigate")));
+        this.listViewBasePage.navigateTo(this.listViewBasePage.wait.waitForVisible(this.locators.byText("GO TO SECOND"), 5, true));
         this.compareScreens(20, 0.3);
 
         this.assertImagesResults();

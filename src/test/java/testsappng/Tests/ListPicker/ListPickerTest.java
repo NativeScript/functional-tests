@@ -1,21 +1,23 @@
 package testsappng.Tests.ListPicker;
 
+import functional.tests.core.mobile.element.UIElement;
 import org.openqa.selenium.ScreenOrientation;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import testsappng.Screens.ListViewBasePage;
+import testsappng.Screens.HomePage;
 import testsappng.TestsAppNgBase;
 
-public class ListPickerTests extends TestsAppNgBase {
+public class ListPickerTest extends TestsAppNgBase {
 
-    public final static String LIST_VIEW_EXAMPLE = "ListPicker";
+    public final static String LIST_PICKER_EXAMPLE = "ListPicker";
 
-    protected ListViewBasePage listViewBasePage;
+    protected HomePage homePage;
 
     @BeforeClass(alwaysRun = true)
-    public void beforeListViewTestClass() throws Exception {
-        this.listViewBasePage = new ListViewBasePage(ListPickerTests.LIST_VIEW_EXAMPLE, this.context);
-        this.listViewBasePage.navigateTo(ListPickerTests.LIST_VIEW_EXAMPLE);
+    public void beforeListPickerTestClass() throws Exception {
+        this.homePage = new HomePage(ListPickerTest.LIST_PICKER_EXAMPLE, this.context);
+        UIElement listPicker = this.context.wait.waitForVisible(this.locators.byText(ListPickerTest.LIST_PICKER_EXAMPLE), 3, true);
+        this.homePage.navigateTo(listPicker, "list-picker-test-page");
     }
 
     @Test(groups = {"android", "ios"})
