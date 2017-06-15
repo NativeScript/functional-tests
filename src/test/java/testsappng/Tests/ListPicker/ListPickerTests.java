@@ -1,4 +1,4 @@
-package testsappng.ListPicker;
+package testsappng.Tests.ListPicker;
 
 import org.openqa.selenium.ScreenOrientation;
 import org.testng.annotations.BeforeClass;
