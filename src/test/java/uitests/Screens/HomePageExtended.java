@@ -1,24 +1,33 @@
 package uitests.Screens;
 
+import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.basepage.BasePageExtended;
 import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.mobile.basetest.MobileSetupManager;
+import functional.tests.core.mobile.basetest.MobileTest;
 import functional.tests.core.mobile.element.UIElement;
-import functional.tests.core.enums.PlatformType;
+import org.testng.Assert;
 
 public class HomePageExtended extends BasePageExtended {
 
     public HomePageExtended(String mainPage, MobileContext context) {
         super(mainPage, context);
-        this.uiTestsHomePageloaded(mainPage);
+        this.uiTestsHomePageLoaded(mainPage);
     }
 
     public HomePageExtended(String testPage, String waitForElement, MobileContext context) {
         super(testPage, context);
-        this.uiTestsHomePageloaded(waitForElement);
+        this.uiTestsHomePageLoaded(waitForElement);
     }
 
-    public void uiTestsHomePageloaded(String element) {
-        UIElement btnElement = this.find.byText(element);
+    public void uiTestsHomePageLoaded(String element) {
+        UIElement btnElement = this.wait.waitForVisible(this.locators.byText(element));
+        if (btnElement == null) {
+            this.context.log.logScreen(this.context.getTestName() + "_fail", "OnNavigateTo_" + element);
+            this.app.restart();
+            Assert.fail("Could resolve navigate to");
+        }
+
         boolean hasNavigated = this.navigateTo(btnElement, element);
 
         if (hasNavigated) {
