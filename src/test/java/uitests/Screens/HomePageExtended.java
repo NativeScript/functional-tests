@@ -25,7 +25,7 @@ public class HomePageExtended extends BasePageExtended {
         if (btnElement == null) {
             this.context.log.logScreen(this.context.getTestName() + "_fail", "OnNavigateTo_" + element);
             this.app.restart();
-            Assert.fail("Could resolve navigate to");
+            Assert.fail("Couldn't resolve navigate to " + element);
         }
 
         boolean hasNavigated = this.navigateTo(btnElement, element);
