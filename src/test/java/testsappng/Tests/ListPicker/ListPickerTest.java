@@ -1,5 +1,6 @@
 package testsappng.Tests.ListPicker;
 
+import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.element.UIElement;
 import org.openqa.selenium.ScreenOrientation;
 import org.testng.annotations.BeforeClass;
@@ -27,6 +28,9 @@ public class ListPickerTest extends TestsAppNgBase {
 
     @Test(groups = {"android", "ios"})
     public void listPickerRotate_02() throws Exception {
+        if(this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 10){
+            this.log.warn("This test is not executing against iOS 9 because of appium!!!");
+        }
         this.context.device.rotate(ScreenOrientation.LANDSCAPE);
         this.compareScreens(5);
         this.context.device.rotate(ScreenOrientation.PORTRAIT);
