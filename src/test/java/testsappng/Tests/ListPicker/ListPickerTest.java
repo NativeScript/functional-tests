@@ -30,6 +30,7 @@ public class ListPickerTest extends TestsAppNgBase {
     public void listPickerRotate_02() throws Exception {
         if(this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 10){
             this.log.warn("This test is not executing against iOS 9 because of appium!!!");
+            return;
         }
         this.context.device.rotate(ScreenOrientation.LANDSCAPE);
         this.compareScreens(5);
