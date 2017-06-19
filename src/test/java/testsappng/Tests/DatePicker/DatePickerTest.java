@@ -14,11 +14,11 @@ public class DatePickerTest extends TestsAppNgBase {
     }
 
     @Test(groups = {"android", "ios"})
-    public void issue_324() throws Exception {
-        this.homePage.navigateTo("issue-324");
-        this.compareScreens(3);
+    public void issue_649() throws Exception {
+        this.homePage.navigateTo("issue-649");
+        this.compareScreens(5);
         this.homePage.find.byText("with scroll").tap();
-        this.compareScreens(3);
+        this.compareScreens(5);
         this.assertImagesResults();
     }
 }
