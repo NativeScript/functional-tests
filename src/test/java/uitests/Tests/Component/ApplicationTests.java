@@ -11,9 +11,9 @@ public class ApplicationTests extends MobileTest {
 
     @Test(groups = {"android", "ios"})
     public void application_01_launch_resume() throws Exception {
+        this.app.restart();
+        Wait.sleep(3000);
         if (this.settings.platform == PlatformType.Android) {
-            this.app.restart();
-            Wait.sleep(3000);
             this.context.getDevice().assertLogContains("### Launched application with:");
             this.log.info("The log contains '### Launched application with:'");
 
