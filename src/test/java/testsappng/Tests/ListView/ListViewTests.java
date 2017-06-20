@@ -1,6 +1,5 @@
 package testsappng.Tests.ListView;
 
-import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -14,6 +13,7 @@ public class ListViewTests extends TestsAppNgBase {
     public final static String LIST_VIEW_CUSTOM_TEMPLATE = "ListViewCustomTemplate";
     public final static String LIST_VIEW_ASYNC_PIPE = "ListViewAsyncPipe";
     public final static String LIST_VIEW_NESTED_TEMPLATE = "NestedTemplate";
+    public final static String LIST_VIEW_MULTIPLE_TEMPLATES = "MultipleTemplates";
 
     protected ListViewBasePage listViewBasePage;
 
@@ -58,6 +58,13 @@ public class ListViewTests extends TestsAppNgBase {
         this.compareScreens(20, 0.3);
 
         this.assertImagesResults();
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void listViewMultipleTemplates_05() throws Exception {
+        this.listViewBasePage.navigateTo(ListViewTests.LIST_VIEW_MULTIPLE_TEMPLATES);
+        this.listViewBasePage.wait.waitForVisible(this.locators.byText("index: data item 11", false, false), 15, false);
+        this.assertScreen(20, 0.3);
     }
 
     private void compareImages(int timeOut, double percentTolerance) throws Exception {

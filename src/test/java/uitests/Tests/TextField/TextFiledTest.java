@@ -30,7 +30,7 @@ public class TextFiledTest extends UIBaseTests {
         }
 
         this.homePageExtended.navigateTo("max-length");
-        this.compareScreens(5);
+        this.compareScreens(8);
         this.setText(0, "test");
         this.setText(1, "test");
         this.setText(2, "test");
@@ -40,9 +40,9 @@ public class TextFiledTest extends UIBaseTests {
         } else {
             //this.homePageExtended.find.byLocator(By.className(this.uiElements.secureTextField()));
         }
-        this.compareScreens(5);
+        this.compareScreens(8);
         this.homePageExtended.find.byText("Revert to initial state").tap();
-        this.compareScreens(5);
+        this.compareScreens(8);
 
         this.homePageExtended.hideKeyboard();
         this.assertImagesResults();
