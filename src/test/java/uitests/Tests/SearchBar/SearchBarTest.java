@@ -21,7 +21,11 @@ public class SearchBarTest extends UIBaseTests {
         this.homePageExtended.navigateTo("issue-4147");
         this.wait.forVisibleElements(this.locators.searchBoxLocator(), 2, true);
         this.compareScreens(5);
-
+        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 10) {
+            this.log.warn("This test is disabled for iOS under 10");
+            this.assertImagesResults();
+            return;
+        }
         this.setText(0, "test");
         this.setText(1, "test");
         this.setText(2, "test");
