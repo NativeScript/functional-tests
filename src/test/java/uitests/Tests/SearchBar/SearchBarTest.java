@@ -18,9 +18,10 @@ public class SearchBarTest extends UIBaseTests {
 
     @Test(groups = {"android", "ios"})
     public void issue_4147() throws Exception {
+        final int waitTime = 15;
         this.homePageExtended.navigateTo("issue-4147");
         this.wait.forVisibleElements(this.locators.searchBoxLocator(), 2, true);
-        this.compareScreens(5);
+        this.compareScreens(waitTime);
         if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 10) {
             this.log.warn("This test is disabled for iOS under 10");
             this.assertImagesResults();
@@ -30,13 +31,13 @@ public class SearchBarTest extends UIBaseTests {
         this.setText(1, "test");
         this.setText(2, "test");
         this.setText(3, "test");
-        this.compareScreens(5);
+        this.compareScreens(waitTime);
 
         this.clearSearchBar(0);
         this.clearSearchBar(1);
         this.clearSearchBar(2);
         this.clearSearchBar(3);
-        this.compareScreens(5);
+        this.compareScreens(waitTime);
         this.app.hideKeyboard();
         if (this.settings.platform == PlatformType.iOS) {
             this.homePageExtended.navigateBack(this.find.byText("Go Back"));

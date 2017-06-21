@@ -24,6 +24,7 @@ public class TextFiledTest extends UIBaseTests {
 
     @Test(groups = {"android", "ios"})
     public void max_length() throws Exception {
+        final int waitTime = 15;
         if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 10) {
             this.log.error("This test is not executed for iOS 9");
             return;
@@ -40,9 +41,9 @@ public class TextFiledTest extends UIBaseTests {
         } else {
             //this.homePageExtended.find.byLocator(By.className(this.uiElements.secureTextField()));
         }
-        this.compareScreens(8);
+        this.compareScreens(waitTime);
         this.homePageExtended.find.byText("Revert to initial state").tap();
-        this.compareScreens(8);
+        this.compareScreens(waitTime);
 
         this.homePageExtended.hideKeyboard();
         this.assertImagesResults();
