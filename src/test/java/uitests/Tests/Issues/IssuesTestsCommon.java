@@ -4,9 +4,13 @@ import functional.tests.core.enums.ClickType;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.mobile.find.Wait;
+import functional.tests.core.utils.OSUtils;
 import io.appium.java_client.SwipeElementDirection;
 import org.openqa.selenium.ScreenOrientation;
 import org.testng.annotations.Test;
+
+import java.awt.*;
+import java.awt.event.KeyEvent;
 
 public class IssuesTestsCommon extends IssuesBaseTest {
 
@@ -208,6 +212,35 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         this.compareScreens(5);
 
         this.assertImagesResults();
+    }
+
+    @Test(groups = {"android, ios"})
+    public void issue_4283_internet_sharing() throws Exception {
+
+        Robot robot = new Robot();
+        robot.setAutoDelay(3000);
+        robot.setAutoWaitForIdle(true);
+
+        //OSUtils.runProcess("osascript -e 'activate application \"Simulator\"'");
+        OSUtils.runProcess("osascript -e 'activate application \"Simulator\"' 'set frontmost to true'");
+        this.sendShareInternetKeys(robot);
+        this.compareScreens(5);
+
+        robot.delay(1000);
+        this.sendShareInternetKeys(robot);
+        this.compareScreens(5);
+
+        this.assertImagesResults();
+
+    }
+
+    private void sendShareInternetKeys(Robot robot) {
+        this.log.info("send key cmd + y");
+        robot.keyPress(KeyEvent.VK_META);
+        robot.keyPress(KeyEvent.VK_Y);
+        robot.delay(100);
+        robot.keyRelease(KeyEvent.VK_META);
+        robot.keyRelease(KeyEvent.VK_Y);
     }
 
     private void hideKeyBoard() {
