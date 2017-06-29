@@ -31,17 +31,17 @@ public class TextFiledTest extends UIBaseTests {
         }
 
         this.homePageExtended.navigateTo("max-length");
-        this.compareScreens(8);
+        this.compareScreens(waitTime);
+
         this.setText(0, "test");
         this.setText(1, "test");
         this.setText(2, "test");
         this.setText(3, "test");
         if (this.settings.platform == PlatformType.Android) {
             this.setText(4, "test");
-        } else {
-            //this.homePageExtended.find.byLocator(By.className(this.uiElements.secureTextField()));
         }
         this.compareScreens(waitTime);
+
         this.homePageExtended.find.byText("Revert to initial state").tap();
         this.compareScreens(waitTime);
 
