@@ -17,51 +17,51 @@ public class SmokeTests extends MobileTest {
         HomePage homePage = new HomePage();
 
         // Allow tests to access photos, media, and files on the device
-        if (this.settings.platform == PlatformType.Android && this.settings.platformVersion >= 6.0) {
-            homePage.find.byText("Allow").click();
-        }
+//        if (this.settings.platform == PlatformType.Android && this.settings.platformVersion >= 6.0) {
+//            homePage.find.byText("Allow").click();
+//        }
 
         boolean result = homePage.waitForTestsToComplete();
 
-        HashMap<Double, String> paths = new HashMap<>();
-        paths.put(4.2, "/mnt/sdcard/Documents/test-results.xml");
-        paths.put(5.0, "/storage/sdcard/Documents/test-results.xml");
-        paths.put(6.0, "/storage/emulated/0/Documents/test-results.xml");
-
-        try {
-            String pathTestResults;
-            if (this.settings.platformVersion == 4.2) {
-                pathTestResults = paths.get(4.2).toString();
-            } else if (this.settings.platformVersion >= 6.0) {
-                pathTestResults = paths.get(6.0).toString();
-            } else {
-                pathTestResults = paths.get(5.0).toString();
-            }
-
-            if (this.settings.platform == PlatformType.Android) {
-                this.device.pullFile(pathTestResults, null);
-            }
-
-            // TODO(vchimev): Refactor this code.
-            if (this.settings.deviceType == DeviceType.Simulator) {
-                String resultFileRow = OSUtils.runProcess("find ~/Library/Developer/CoreSimulator/Devices/" +
-                        this.settings.deviceId + " -name test-results.xml");
-                String[] rowList = resultFileRow.split("\\r?\\n");
-                String resultFile = resultFileRow;
-                for (String rowLine : rowList) {
-                    if (rowLine.contains("CoreSimulator")) {
-                        resultFile = rowLine.trim();
-                    }
-                }
-                OSUtils.runProcess("cp " + resultFile + " " + this.settings.baseLogDir);
-            }
-            if (this.settings.deviceType == DeviceType.iOS) {
-                // TODO: Find some way to get logs.
-            }
-        } catch (Exception e) {
-            this.log.fatal("Failed to get JUnit tests result file!");
-            this.log.fatal(e.getMessage());
-        }
+//        HashMap<Double, String> paths = new HashMap<>();
+//        paths.put(4.2, "/mnt/sdcard/Documents/test-results.xml");
+//        paths.put(5.0, "/storage/sdcard/Documents/test-results.xml");
+//        paths.put(6.0, "/storage/emulated/0/Documents/test-results.xml");
+//
+//        try {
+//            String pathTestResults;
+//            if (this.settings.platformVersion == 4.2) {
+//                pathTestResults = paths.get(4.2).toString();
+//            } else if (this.settings.platformVersion >= 6.0) {
+//                pathTestResults = paths.get(6.0).toString();
+//            } else {
+//                pathTestResults = paths.get(5.0).toString();
+//            }
+//
+//            if (this.settings.platform == PlatformType.Android) {
+//                this.device.pullFile(pathTestResults, null);
+//            }
+//
+//            // TODO(vchimev): Refactor this code.
+//            if (this.settings.deviceType == DeviceType.Simulator) {
+//                String resultFileRow = OSUtils.runProcess("find ~/Library/Developer/CoreSimulator/Devices/" +
+//                        this.settings.deviceId + " -name test-results.xml");
+//                String[] rowList = resultFileRow.split("\\r?\\n");
+//                String resultFile = resultFileRow;
+//                for (String rowLine : rowList) {
+//                    if (rowLine.contains("CoreSimulator")) {
+//                        resultFile = rowLine.trim();
+//                    }
+//                }
+//                OSUtils.runProcess("cp " + resultFile + " " + this.settings.baseLogDir);
+//            }
+//            if (this.settings.deviceType == DeviceType.iOS) {
+//                // TODO: Find some way to get logs.
+//            }
+//        } catch (Exception e) {
+//            this.log.fatal("Failed to get JUnit tests result file!");
+//            this.log.fatal(e.getMessage());
+//        }
 
         Assert.assertTrue(result, "There are failing unit tests!");
     }
