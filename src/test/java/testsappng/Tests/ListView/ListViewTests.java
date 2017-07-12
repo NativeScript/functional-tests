@@ -60,12 +60,12 @@ public class ListViewTests extends TestsAppNgBase {
         this.assertImagesResults();
     }
 
-    @Test(groups = {"android", "ios"})
-    public void listViewMultipleTemplates_05() throws Exception {
-        this.listViewBasePage.navigateTo(ListViewTests.LIST_VIEW_MULTIPLE_TEMPLATES);
-        this.listViewBasePage.wait.waitForVisible(this.locators.byText("index: data item 11", false, false), 15, false);
-        this.assertScreen(20, 0.3);
-    }
+//    @Test(groups = {"android", "ios"})
+//    public void listViewMultipleTemplates_05() throws Exception {
+//        this.listViewBasePage.navigateTo(ListViewTests.LIST_VIEW_MULTIPLE_TEMPLATES);
+//        this.listViewBasePage.wait.waitForVisible(this.locators.byText("index: data item 11", false, false), 15, false);
+//        this.assertScreen(20, 0.3);
+//    }
 
     private void compareImages(int timeOut, double percentTolerance) throws Exception {
         if (checkIfAndoridAndApiLevel24()) {
