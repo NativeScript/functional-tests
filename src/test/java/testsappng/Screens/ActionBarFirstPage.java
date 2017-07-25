@@ -6,6 +6,7 @@ import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.helpers.NavigationManager;
 import org.openqa.selenium.By;
+import org.testng.Assert;
 
 public class ActionBarFirstPage extends BasePageExtended {
     public static final String actionBarOne = "ActionBar1";
@@ -15,6 +16,7 @@ public class ActionBarFirstPage extends BasePageExtended {
         UIElement btnElement = this.wait.waitForVisible(this.locators.byText(actionBarOne, false, false), 4, true);
         this.navigateTo(btnElement, actionBarOne);
         this.navigationManager.setMainPage(actionBarOne);
+        this.loadedActionBarFirstPage();
     }
 
     public ActionBarFirstPage(MobileContext context, NavigationManager navigationManager) {
@@ -82,13 +84,11 @@ public class ActionBarFirstPage extends BasePageExtended {
         return this.find.byTextContains("delete tap");
     }
 
-    public Boolean loadedActionBarFirstPage() {
+    public void loadedActionBarFirstPage() {
         if (this.title() != null) {
-            this.log.info("ActionBar First homePageLoaded.");
-            return true;
+            this.log.info("ActionBar First Page Loaded.");
         } else {
-            this.log.error("ActionBar First NOT homePageLoaded.");
-            return false;
+            Assert.fail("ActionBar First Page NOT Loaded.");
         }
     }
 
