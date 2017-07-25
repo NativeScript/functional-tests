@@ -126,4 +126,16 @@ public class CssCommonTests extends CssBaseTest {
         this.cssBasePage.wait.waitForVisible(this.locators.byText("Button", true, false), 6, true);
         this.assertScreen();
     }
+
+    @Test(groups = {"android", "ios"})
+    public void non_uniform_raadius() throws Exception {
+        this.cssBasePage.navToPage("non-uniform-radius");
+        this.assertScreen(10);
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void missing_background_image() throws Exception {
+        this.cssBasePage.navToPage("missing-background-image");
+        this.assertScreen(10);
+    }
 }

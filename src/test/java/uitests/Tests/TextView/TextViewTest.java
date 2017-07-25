@@ -30,4 +30,20 @@ public class TextViewTest extends UIBaseTests {
         this.compareScreens(3);
         this.assertImagesResults();
     }
+
+
+    @Test(groups = {"android", "ios"})
+    public void hint_text_color() throws Exception {
+        this.homePageExtended.navigateTo("hint-text-color");
+        this.wait.waitForVisible(this.locators.byText("set text")).tap();
+        this.compareScreens(3);
+        this.wait.waitForVisible(this.locators.byText("reset text")).tap();
+        this.compareScreens(3);
+        this.wait.waitForVisible(this.locators.byText("reset style")).tap();
+        this.compareScreens(3);
+        this.wait.waitForVisible(this.locators.byText("set text")).tap();
+        this.compareScreens(3);
+
+        this.assertImagesResults();
+    }
 }

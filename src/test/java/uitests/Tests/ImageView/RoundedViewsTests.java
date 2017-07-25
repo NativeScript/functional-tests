@@ -33,4 +33,22 @@ public class RoundedViewsTests extends MobileTest {
 
         this.assertImagesResults();
     }
+
+    @Test(groups = {"android", "ios"})
+    public void mode_matrix() throws Exception {
+        this.homePageExtended.navigateTo("mode-matrix");
+        this.assertScreen(10);
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void stretch_modes() throws Exception {
+        this.homePageExtended.navigateTo("stretch-modes");
+        this.assertScreen(10);
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void missing_image() throws Exception {
+        this.homePageExtended.navigateTo("missing-image");
+        this.assertScreen(10);
+    }
 }
