@@ -32,7 +32,7 @@ public class FontsWeight extends MobileTest {
         };
     }
 
-    @Test(dataProvider = "example")
+     @Test(dataProvider = "example", groups = {"android", "ios"})
     public void fontsWeight(String example) throws Exception {
         this.fontPage.navigateTo(example);
         this.assertScreen(5);
