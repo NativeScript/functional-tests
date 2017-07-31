@@ -198,7 +198,7 @@ public class ActionBarTests extends MobileTest {
         this.actionBarPage.find.byText("Close").tap();
         this.compareScreens(3);
 
-       this.context.navigationManager.navigateBack(this.actionBarPage.find.byText("Go Back"));
+        this.context.navigationManager.navigateBack(this.actionBarPage.find.byText("Go Back"));
 
         this.assertImagesResults();
     }
@@ -219,6 +219,15 @@ public class ActionBarTests extends MobileTest {
 
         this.context.navigationManager.navigateBack(this.actionBarPage.find.byText("Go Back"));
 
+        this.assertImagesResults();
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void flat_action_bar() throws Exception {
+        this.actionBarPage.navigateTo("flat");
+        this.compareScreens(5);
+        this.actionBarPage.wait.waitForVisible(this.locators.byText("change flat property")).tap();
+        this.compareScreens(5);
         this.assertImagesResults();
     }
 }
