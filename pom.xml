@@ -78,6 +78,13 @@
                 <testsuite>animations</testsuite>
             </properties>
         </profile>
+        <profile>
+            <id>animations.sim.iphone7.ios110</id>
+            <properties>
+                <app.config>animations/animations.sim.iphone7.ios110.properties</app.config>
+                <testsuite>animations</testsuite>
+            </properties>
+        </profile>
 
         <!--uitests profiles-->
         <profile>
@@ -116,37 +123,9 @@
             </properties>
         </profile>
         <profile>
-            <id>uitests.emu.arm.api17</id>
-            <properties>
-                <app.config>uitests/uitests.emu.arm.api17.properties</app.config>
-                <testsuite>uitests-android-arm</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>uitests.emu.default.api17-dialogs</id>
-            <properties>
-                <app.config>uitests/uitests.emu.default.api17.properties</app.config>
-                <testsuite>uitests-android-dialogs</testsuite>
-            </properties>
-        </profile>
-        <profile>
             <id>uitests.emu.default.api17</id>
             <properties>
                 <app.config>uitests/uitests.emu.default.api17.properties</app.config>
-                <testsuite>uitests-android-api17-default</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>uitests.emu.arm.api18</id>
-            <properties>
-                <app.config>uitests/uitests.emu.arm.api18.properties</app.config>
-                <testsuite>uitests-android</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>uitests.emu.arm.api19</id>
-            <properties>
-                <app.config>uitests/uitests.emu.arm.api19.properties</app.config>
                 <testsuite>uitests-android</testsuite>
             </properties>
         </profile>
@@ -200,6 +179,13 @@
             </properties>
         </profile>
         <profile>
+            <id>uitests.emu.google.api26</id>
+            <properties>
+                <app.config>uitests/uitests.emu.google.api26.properties</app.config>
+                <testsuite>uitests-android</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>uitests.sim.iphone6splus.ios91</id>
             <properties>
                 <app.config>uitests/uitests.sim.iphone6splus.ios91.properties</app.config>
@@ -214,6 +200,13 @@
             </properties>
         </profile>
         <profile>
+            <id>uitests.sim.iphone7.ios110</id>
+            <properties>
+                <app.config>uitests/uitests.sim.iphone7.ios110.properties</app.config>
+                <testsuite>uitests-ios</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>uitests.dev.ipad2.ios10</id>
             <properties>
                 <app.config>uitests/uitests.dev.ipad2.ios10.properties</app.config>
@@ -221,93 +214,7 @@
             </properties>
         </profile>
 
-        <!--todomvc profiles-->
-        <profile>
-            <id>todomvc.emu.default.api17</id>
-            <properties>
-                <app.config>todomvc/todomvc.emu.default.api17.properties</app.config>
-                <testsuite>todomvc</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>todomvc.emu.default.api18</id>
-            <properties>
-                <app.config>todomvc/todomvc.emu.default.api18.properties</app.config>
-                <testsuite>todomvc</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>todomvc.emu.arm.api19</id>
-            <properties>
-                <app.config>todomvc/todomvc.emu.arm.api19.properties</app.config>
-                <testsuite>todomvc</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>todomvc.emu.arm.api18</id>
-            <properties>
-                <app.config>todomvc/todomvc.emu.arm.api18.properties</app.config>
-                <testsuite>todomvc</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>todomvc.emu.default.api19</id>
-            <properties>
-                <app.config>todomvc/todomvc.emu.default.api19.properties</app.config>
-                <testsuite>todomvc</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>todomvc.emu.default.api21</id>
-            <properties>
-                <app.config>todomvc/todomvc.emu.default.api21.properties</app.config>
-                <testsuite>todomvc</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>todomvc.emu.default.api22</id>
-            <properties>
-                <app.config>todomvc/todomvc.emu.default.api22.properties</app.config>
-                <testsuite>todomvc</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>todomvc.emu.default.api23</id>
-            <properties>
-                <app.config>todomvc/todomvc.emu.default.api23.properties</app.config>
-                <testsuite>todomvc</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>todomvc.emu.default.api24</id>
-            <properties>
-                <app.config>todomvc/todomvc.emu.default.api24.properties</app.config>
-                <testsuite>todomvc</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>todomvc.sim.iphone6splus.ios91</id>
-            <properties>
-                <app.config>todomvc/todomvc.sim.iphone6splus.ios91.properties</app.config>
-                <testsuite>todomvc-ios</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>todomvc.sim.iphone7.ios100</id>
-            <properties>
-                <app.config>todomvc/todomvc.sim.iphone7.ios100.properties</app.config>
-                <testsuite>todomvc-ios</testsuite>
-            </properties>
-        </profile>
-
         <!--testsappng profiles-->
-        <profile>
-            <id>testsappng.emu.arm.api17</id>
-            <properties>
-                <app.config>testsappng/testsappng.emu.arm.api17.properties</app.config>
-                <testsuite>testsappng-android-modals</testsuite>
-            </properties>
-        </profile>
         <profile>
             <id>testsappng.emu.default.api17</id>
             <properties>
@@ -358,6 +265,20 @@
             </properties>
         </profile>
         <profile>
+            <id>testsappng.emu.google.api25</id>
+            <properties>
+                <app.config>testsappng/testsappng.emu.google.api25.properties</app.config>
+                <testsuite>testsappng-android</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>testsappng.emu.google.api26</id>
+            <properties>
+                <app.config>testsappng/testsappng.emu.google.api26.properties</app.config>
+                <testsuite>testsappng-android</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>testsappng.sim.iphone6splus.ios91</id>
             <properties>
                 <app.config>testsappng/testsappng.sim.iphone6splus.ios91.properties</app.config>
@@ -368,6 +289,13 @@
             <id>testsappng.sim.iphone7.ios100</id>
             <properties>
                 <app.config>testsappng/testsappng.sim.iphone7.ios100.properties</app.config>
+                <testsuite>testsappng-ios</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>testsappng.sim.iphone7.ios110</id>
+            <properties>
+                <app.config>testsappng/testsappng.sim.iphone7.ios110.properties</app.config>
                 <testsuite>testsappng-ios</testsuite>
             </properties>
         </profile>
@@ -439,6 +367,13 @@
             <id>testsapptransitions.sim.iphone7.ios100</id>
             <properties>
                 <app.config>testsapptransitions/testsapptransitions.sim.iphone7.ios100.properties</app.config>
+                <testsuite>testsapptransitions-ios</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>testsapptransitions.sim.iphone7.ios110</id>
+            <properties>
+                <app.config>testsapptransitions/testsapptransitions.sim.iphone7.ios110.properties</app.config>
                 <testsuite>testsapptransitions-ios</testsuite>
             </properties>
         </profile>
@@ -550,6 +485,13 @@
             </properties>
         </profile>
         <profile>
+            <id>unittests.emu.google.api26</id>
+            <properties>
+                <app.config>unittests/unittests.emu.google.api26.properties</app.config>
+                <testsuite>unittests</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>unittests.sim.iphone5s.ios84</id>
             <properties>
                 <app.config>unittests/unittests.sim.iphone5s.ios84.properties</app.config>
@@ -570,36 +512,26 @@
                 <testsuite>unittests</testsuite>
             </properties>
         </profile>
-
-        <!--perf tests profiles-->
         <profile>
-            <id>perf.app.size</id>
+            <id>unittests.sim.iphone7.ios110</id>
             <properties>
-                <app.config>cuteness/cuteness.emu.default.api19.properties</app.config>
-                <testsuite>perf-app-size</testsuite>
+                <app.config>unittests/unittests.sim.iphone7.ios110.properties</app.config>
+                <testsuite>unittests</testsuite>
             </properties>
         </profile>
 
         <!--cuteness profiles-->
-
         <profile>
-            <id>cuteness.emu.default.api24-custom</id>
+            <id>cuteness.activities.emu.default.api19</id>
             <properties>
-                <app.config>cuteness/cuteness.emu.default.api24-custom.properties</app.config>
-                <testsuite>cuteness-android-custom</testsuite>
+                <app.config>cuteness/cuteness.activities.emu.default.api19.properties</app.config>
+                <testsuite>cuteness-activities</testsuite>
             </properties>
         </profile>
         <profile>
             <id>cuteness.activities.emu.default.api23</id>
             <properties>
                 <app.config>cuteness/cuteness.activities.emu.default.api23.properties</app.config>
-                <testsuite>cuteness-activities</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>cuteness.activities.emu.default.api19</id>
-            <properties>
-                <app.config>cuteness/cuteness.activities.emu.default.api19.properties</app.config>
                 <testsuite>cuteness-activities</testsuite>
             </properties>
         </profile>
@@ -716,6 +648,13 @@
             </properties>
         </profile>
         <profile>
+            <id>cuteness.emu.google.api26</id>
+            <properties>
+                <app.config>cuteness/cuteness.emu.google.api26.properties</app.config>
+                <testsuite>cuteness-android</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>cuteness.sim.iphone6.ios91</id>
             <properties>
                 <app.config>cuteness/cuteness.sim.iphone6.ios91.properties</app.config>
@@ -729,6 +668,13 @@
                 <testsuite>cuteness-ios</testsuite>
             </properties>
         </profile>
+        <profile>
+            <id>cuteness.sim.iphone7.ios110</id>
+            <properties>
+                <app.config>cuteness/cuteness.sim.iphone7.ios110.properties</app.config>
+                <testsuite>cuteness-ios</testsuite>
+            </properties>
+        </profile>
 
         <!--groceries profiles-->
         <profile>
@@ -739,23 +685,9 @@
             </properties>
         </profile>
         <profile>
-            <id>groceries.emu.arm.api17</id>
-            <properties>
-                <app.config>groceries/groceries.emu.arm.api17.properties</app.config>
-                <testsuite>groceries-android</testsuite>
-            </properties>
-        </profile>
-        <profile>
             <id>groceries.emu.default.api18</id>
             <properties>
                 <app.config>groceries/groceries.emu.default.api18.properties</app.config>
-                <testsuite>groceries-android</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>groceries.emu.arm.api18</id>
-            <properties>
-                <app.config>groceries/groceries.emu.arm.api18.properties</app.config>
                 <testsuite>groceries-android</testsuite>
             </properties>
         </profile>
@@ -795,6 +727,20 @@
             </properties>
         </profile>
         <profile>
+            <id>groceries.emu.google.api25</id>
+            <properties>
+                <app.config>groceries/groceries.emu.google.api25.properties</app.config>
+                <testsuite>groceries-android</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>groceries.emu.google.api26</id>
+            <properties>
+                <app.config>groceries/groceries.emu.google.api26.properties</app.config>
+                <testsuite>groceries-android</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>groceries.dev.nexus5x.api24</id>
             <properties>
                 <app.config>groceries/groceries.dev.nexus5x.api24.properties</app.config>
@@ -815,7 +761,13 @@
                 <testsuite>groceries-ios</testsuite>
             </properties>
         </profile>
-
+        <profile>
+            <id>groceries.sim.iphone7.ios110</id>
+            <properties>
+                <app.config>groceries/groceries.sim.iphone7.ios110.properties</app.config>
+                <testsuite>groceries-ios</testsuite>
+            </properties>
+        </profile>
         <profile>
             <id>groceries.dev.ipad2.ios10</id>
             <properties>
@@ -823,8 +775,8 @@
                 <testsuite>groceries-ios</testsuite>
             </properties>
         </profile>
-        <!--galleryapp profiles-->
 
+        <!--galleryapp profiles-->
         <profile>
             <id>galleryapp.dev.asus.api18</id>
             <properties>
@@ -883,27 +835,6 @@
             </properties>
         </profile>
         <profile>
-            <id>galleryapp.emu.arm.api17</id>
-            <properties>
-                <app.config>galleryapp/galleryapp.emu.arm.api17.properties</app.config>
-                <testsuite>galleryapp</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>galleryapp.emu.arm.api18</id>
-            <properties>
-                <app.config>galleryapp/galleryapp.emu.arm.api18.properties</app.config>
-                <testsuite>galleryapp</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>galleryapp.emu.arm.api19</id>
-            <properties>
-                <app.config>galleryapp/galleryapp.emu.arm.api19.properties</app.config>
-                <testsuite>galleryapp</testsuite>
-            </properties>
-        </profile>
-        <profile>
             <id>galleryapp.emu.default.api17</id>
             <properties>
                 <app.config>galleryapp/galleryapp.emu.default.api17.properties</app.config>
@@ -953,6 +884,20 @@
             </properties>
         </profile>
         <profile>
+            <id>galleryapp.emu.google.api25</id>
+            <properties>
+                <app.config>galleryapp/galleryapp.emu.google.api25.properties</app.config>
+                <testsuite>galleryapp</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>galleryapp.emu.google.api26</id>
+            <properties>
+                <app.config>galleryapp/galleryapp.emu.google.api26.properties</app.config>
+                <testsuite>galleryapp</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>galleryapp.sim.iphone6.ios91</id>
             <properties>
                 <app.config>galleryapp/galleryapp.sim.iphone6.ios91.properties</app.config>
@@ -963,6 +908,13 @@
             <id>galleryapp.sim.iphone7.ios100</id>
             <properties>
                 <app.config>galleryapp/galleryapp.sim.iphone7.ios100.properties</app.config>
+                <testsuite>galleryapp</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>galleryapp.sim.iphone7.ios110</id>
+            <properties>
+                <app.config>galleryapp/galleryapp.sim.iphone7.ios110.properties</app.config>
                 <testsuite>galleryapp</testsuite>
             </properties>
         </profile>
@@ -1083,6 +1035,13 @@
             </properties>
         </profile>
         <profile>
+            <id>nativescriptdemo.emu.google.api26</id>
+            <properties>
+                <app.config>nativescriptdemo/nativescriptdemo.emu.google.api26.properties</app.config>
+                <testsuite>nativescriptdemo-android</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>nativescriptdemo.sim.iphone6.ios91</id>
             <properties>
                 <app.config>nativescriptdemo/nativescriptdemo.sim.iphone6.ios91.properties</app.config>
@@ -1097,12 +1056,20 @@
             </properties>
         </profile>
         <profile>
+            <id>nativescriptdemo.sim.iphone7.ios110</id>
+            <properties>
+                <app.config>nativescriptdemo/nativescriptdemo.sim.iphone7.ios110.properties</app.config>
+                <testsuite>nativescriptdemo-ios</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>nativescriptdemo.dev.ipad2.ios10</id>
             <properties>
                 <app.config>nativescriptdemo/nativescriptdemo.dev.ipad2.ios10.properties</app.config>
                 <testsuite>nativescriptdemo-ios</testsuite>
             </properties>
         </profile>
+
         <!--sdkexamples profiles-->
         <profile>
             <id>sdkexamples.dev.nexus5.api23</id>
@@ -1115,13 +1082,6 @@
             <id>sdkexamples.dev.nexus5x.api24</id>
             <properties>
                 <app.config>sdkexamples/sdkexamples.dev.nexus5x.api24.properties</app.config>
-                <testsuite>sdkexamples</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>sdkexamples.emu.arm.api19</id>
-            <properties>
-                <app.config>sdkexamples/sdkexamples.emu.arm.api19.properties</app.config>
                 <testsuite>sdkexamples</testsuite>
             </properties>
         </profile>
@@ -1168,6 +1128,20 @@
             </properties>
         </profile>
         <profile>
+            <id>sdkexamples.emu.google.api25</id>
+            <properties>
+                <app.config>sdkexamples/sdkexamples.emu.google.api25.properties</app.config>
+                <testsuite>sdkexamples</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>sdkexamples.emu.google.api24</id>
+            <properties>
+                <app.config>sdkexamples/sdkexamples.emu.google.api24.properties</app.config>
+                <testsuite>sdkexamples</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>sdkexamples.sim.iphone6.ios91</id>
             <properties>
                 <app.config>sdkexamples/sdkexamples.sim.iphone6.ios91.properties</app.config>
@@ -1178,6 +1152,13 @@
             <id>sdkexamples.sim.iphone7.ios100</id>
             <properties>
                 <app.config>sdkexamples/sdkexamples.sim.iphone7.ios100.properties</app.config>
+                <testsuite>sdkexamples</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>sdkexamples.sim.iphone7.ios110</id>
+            <properties>
+                <app.config>sdkexamples/sdkexamples.sim.iphone7.ios110.properties</app.config>
                 <testsuite>sdkexamples</testsuite>
             </properties>
         </profile>
@@ -1232,6 +1213,13 @@
                 <testsuite>templates-helloworld</testsuite>
             </properties>
         </profile>
+        <profile>
+            <id>template.helloworld.sim.iphone7.ios110</id>
+            <properties>
+                <app.config>templates/template.helloworld.sim.iphone7.ios110.properties</app.config>
+                <testsuite>templates-helloworld</testsuite>
+            </properties>
+        </profile>
 
         <!--template-helloworldts profiles-->
         <profile>
@@ -1280,6 +1268,13 @@
             <id>template.helloworldts.sim.iphone7.ios100</id>
             <properties>
                 <app.config>templates/template.helloworldts.sim.iphone7.ios100.properties</app.config>
+                <testsuite>templates-helloworldts</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template.helloworldts.sim.iphone7.ios110</id>
+            <properties>
+                <app.config>templates/template.helloworldts.sim.iphone7.ios110.properties</app.config>
                 <testsuite>templates-helloworldts</testsuite>
             </properties>
         </profile>
@@ -1341,34 +1336,11 @@
                 <testsuite>templates-helloworldng</testsuite>
             </properties>
         </profile>
-
-        <!-- error-activity profiles-->
         <profile>
-            <id>erroractivity.debug.emu.default.api19</id>
+            <id>template.helloworldng.sim.iphone7.ios110</id>
             <properties>
-                <app.config>erroractivity/erroractivity.debug.emu.default.api19.properties</app.config>
-                <testsuite>erroractivity-debug</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>erroractivity.debug.emu.default.api21</id>
-            <properties>
-                <app.config>erroractivity/erroractivity.debug.emu.default.api21.properties</app.config>
-                <testsuite>erroractivity-debug</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>erroractivity.debug.emu.default.api23</id>
-            <properties>
-                <app.config>erroractivity/erroractivity.debug.emu.default.api23.properties</app.config>
-                <testsuite>erroractivity-debug</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>erroractivity.release.emu.default.api23</id>
-            <properties>
-                <app.config>erroractivity/erroractivity.release.emu.default.api23.properties</app.config>
-                <testsuite>erroractivity-release</testsuite>
+                <app.config>templates/template.helloworldng.sim.iphone7.ios110.properties</app.config>
+                <testsuite>templates-helloworldng</testsuite>
             </properties>
         </profile>
 
