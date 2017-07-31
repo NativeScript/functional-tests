@@ -226,7 +226,7 @@ public class ActionBarTests extends MobileTest {
     public void flat_action_bar() throws Exception {
         this.actionBarPage.navigateTo("flat");
         this.compareScreens(5);
-        this.actionBarPage.wait.waitForVisible(this.locators.byText("change flat property")).tap();
+        this.actionBarPage.wait.waitForVisible(this.locators.byText("change flat propertygit ")).tap();
         this.compareScreens(5);
         this.assertImagesResults();
     }
