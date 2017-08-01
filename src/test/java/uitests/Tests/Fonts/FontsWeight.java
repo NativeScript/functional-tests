@@ -1,6 +1,5 @@
 package uitests.Tests.Fonts;
 
-import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.basetest.MobileTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -32,9 +31,9 @@ public class FontsWeight extends MobileTest {
         };
     }
 
-     @Test(dataProvider = "example", groups = {"android", "ios"})
+    @Test(dataProvider = "example", groups = {"android", "ios"})
     public void fontsWeight(String example) throws Exception {
         this.fontPage.navigateTo(example);
-        this.assertScreen(5);
+        this.assertScreen("fontsWeight_" + example, 5);
     }
 }
