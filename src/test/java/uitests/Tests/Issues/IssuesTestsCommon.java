@@ -234,6 +234,19 @@ public class IssuesTestsCommon extends IssuesBaseTest {
 
     }
 
+    @Test(groups = {"ios"})
+    public void issue_4450() throws Exception {
+        this.issuesBasePage.navToPage("4450");
+
+        this.wait.waitForVisible(this.locators.byText("set")).tap();
+        this.compareScreens(5);
+
+        this.find.byText("clear").tap();
+        this.compareScreens(5);
+
+        this.assertImagesResults();
+    }
+
     private void sendShareInternetKeys(Robot robot) {
         this.log.info("send key cmd + y");
         robot.keyPress(KeyEvent.VK_META);
