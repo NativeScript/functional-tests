@@ -15,4 +15,8 @@ public class CssBasePage extends HomePageExtended {
 
         return result;
     }
+
+    public void tapChangeBtn() {
+        this.find.byText("Change").tap();
+    }
 }
