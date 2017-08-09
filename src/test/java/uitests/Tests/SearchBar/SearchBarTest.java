@@ -47,6 +47,11 @@ public class SearchBarTest extends UIBaseTests {
         this.assertImagesResults();
     }
 
+    @Test(groups = {"android", "ios"})
+    public void search_bar() throws Exception {
+        this.homePageExtended.navigateTo(this.find.byText("search-bar"));
+    }
+
     private void setText(int index, String text) {
         UIElement searchBar = this.getSearchBar(index);
         searchBar.tap();
