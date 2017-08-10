@@ -50,6 +50,7 @@ public class SearchBarTest extends UIBaseTests {
     @Test(groups = {"android", "ios"})
     public void search_bar() throws Exception {
         this.homePageExtended.navigateTo(this.find.byText("search-bar"));
+        this.assertScreen(5);
     }
 
     private void setText(int index, String text) {

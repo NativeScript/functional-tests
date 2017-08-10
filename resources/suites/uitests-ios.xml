@@ -30,6 +30,26 @@
             <package name="uitests.Tests.Dialogs"/>
         </packages>
     </test>
+    <test name="UI Tests - DatePicker">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.DatePicker"/>
+        </packages>
+    </test>
+    <test name="UI Tests - Progress indicators">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.ProgressBar"/>
+        </packages>
+    </test>
     <test name="UI Tests - Css">
         <groups>
             <run>
