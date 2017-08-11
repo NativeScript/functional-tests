@@ -28,7 +28,7 @@ public class WebViewTests extends MobileTest {
 
     @Test(groups = {"android", "ios"})
     public void webView_02() throws Exception {
-        this.webViewBasePage.navToPage("webciew");
+        this.webViewBasePage.navToPage("webview");
         this.compareScreens(this.settings.defaultTimeout * 5, 10);
         this.assertImagesResults();
     }
@@ -64,3 +64,7 @@ public class WebViewTests extends MobileTest {
         }
     }
 }
+
+
+
+
