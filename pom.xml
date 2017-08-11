@@ -1038,7 +1038,7 @@
             <id>nativescriptdemo.emu.google.api26</id>
             <properties>
                 <app.config>nativescriptdemo/nativescriptdemo.emu.google.api26.properties</app.config>
-                <testsuite>nativescriptdemo-android</testsuite>
+                <testsuite>nativescriptdemo-android-noweb</testsuite>
             </properties>
         </profile>
         <profile>
