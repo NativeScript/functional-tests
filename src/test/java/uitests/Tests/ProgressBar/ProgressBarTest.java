@@ -22,9 +22,8 @@ public class ProgressBarTest extends UIBaseTests {
 
     @Test(groups = {"android", "ios"})
     public void progress_bar() throws Exception {
-        this.homePageExtended.navigateTo(this.find.byText("progress-bar"));
+        this.homePageExtended.navigateToMainPage();
+        this.homePageExtended.navigateTo(this.wait.waitForVisible(this.locators.byText("progress-bar")));
         this.assertScreen(10);
     }
-
-
 }
