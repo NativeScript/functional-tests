@@ -1,6 +1,7 @@
 package uitests.Tests.Component;
 
 import functional.tests.core.mobile.basetest.MobileTest;
+import functional.tests.core.mobile.element.UIElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -28,14 +29,16 @@ public class WebViewTests extends MobileTest {
 
     @Test(groups = {"android", "ios"})
     public void webView_02() throws Exception {
-        this.webViewBasePage.navToPage("webview");
-        this.compareScreens(this.settings.defaultTimeout * 5, 10);
-        this.assertImagesResults();
+        this.webViewBasePage.navigateToMainPage();
+        UIElement webViewButton = this.wait.waitForVisible(this.locators.byText("webview"));
+        this.webViewBasePage.navigateTo(webViewButton);
+        this.assertScreen(this.settings.defaultTimeout * 5, 10);
     }
 
     @Test(groups = {"android", "ios"})
     public void webView_02_query() throws Exception {
-        this.webViewBasePage.navToPage("query");
+        this.webViewBasePage.navigateBack();
+        this.webViewBasePage.navigateTo(this.wait.waitForVisible(this.locators.byText("query")));
         if (this.settings.platformVersion <= 4.3) {
             this.webViewBasePage.tapRelativeBtn();
             this.webViewBasePage.tapAbsoluteBtn();
@@ -64,7 +67,3 @@ public class WebViewTests extends MobileTest {
         }
     }
 }
-
-
-
-
