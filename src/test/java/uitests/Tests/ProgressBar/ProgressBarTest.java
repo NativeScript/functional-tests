@@ -17,7 +17,7 @@ public class ProgressBarTest extends UIBaseTests {
     @Test(groups = {"android", "ios"})
     public void activity_indicator() throws Exception {
         this.homePageExtended.navigateTo("activity-indicator");
-        this.assertScreen(10);
+        this.assertScreen(15,0.07);
     }
 
     @Test(groups = {"android", "ios"})
