@@ -23,12 +23,12 @@ public class CutenessSmokeTests extends MobileTest {
     @Test(groups = {"android", "ios"})
     public void cuteness_01_home() throws Exception {
         if (this.settings.platform == PlatformType.Android) {
-            this.compareScreens("homepage", this.settings.shortTimeout, 0.1);
+            this.compareScreens("homepage", this.settings.defaultTimeout, 0.1);
         } else if (this.settings.platform == PlatformType.iOS) {
             if (this.settings.platformVersion == 9) {
-                this.compareScreens("homepage", this.settings.shortTimeout, 2.5);
+                this.compareScreens("homepage", this.settings.defaultTimeout, 2.5);
             } else {
-                this.compareScreens("homepage", this.settings.shortTimeout, 0.5);
+                this.compareScreens("homepage", this.settings.defaultTimeout, 0.5);
             }
         }
         this.assertImagesResults();
