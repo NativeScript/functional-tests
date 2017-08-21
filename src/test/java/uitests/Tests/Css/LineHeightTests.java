@@ -7,11 +7,11 @@ public class LineHeightTests extends CssBaseTest {
     @Test(groups = {"android", "ios"})
     public void lineHeight_01() throws Exception {
         this.cssBasePage.navigateTo("line-height");
-        this.compareScreens();
+        this.compareScreens(5);
         this.cssBasePage.tapChangeBtn();
-        this.compareScreens();
+        this.compareScreens(5);
         this.cssBasePage.tapChangeBtn();
-        this.compareScreens();
+        this.compareScreens(5);
         this.assertImagesResults();
     }
 }
