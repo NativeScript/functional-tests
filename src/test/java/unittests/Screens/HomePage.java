@@ -24,12 +24,16 @@ public class HomePage extends BasePage {
 
     public boolean waitForTestsToComplete() {
 
-        // Timeout in minutes
-        int minutes = 5;
         boolean isAppRunning, result = false;
 
+        // Timeout
+        int expectedExecutionTime = 5 * 60 * 1000;
+        if (this.settings.deviceName.contains("iPad")) {
+            expectedExecutionTime *= 2;
+        }
+
         long startTime = System.currentTimeMillis();
-        while ((System.currentTimeMillis() - startTime) < minutes * 60 * 1000) {
+        while ((System.currentTimeMillis() - startTime) < expectedExecutionTime) {
 
             // isAppRunning() is implemented only for Android
             isAppRunning = this.context.getDevice().isAppRunning(this.settings.packageId);

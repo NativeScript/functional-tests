@@ -50,7 +50,6 @@ public class SearchBarTest extends UIBaseTests {
     @Test(groups = {"android", "ios"})
     public void search_bar() throws Exception {
         this.homePageExtended.navigateTo(this.find.byText("search-bar"));
-        this.homePageExtended.navigateBack();
         this.app.hideKeyboard();
 
         this.assertScreen(5);
