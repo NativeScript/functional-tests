@@ -49,6 +49,9 @@ public class SearchBarTest extends UIBaseTests {
 
     @Test(groups = {"android", "ios"})
     public void search_bar() throws Exception {
+        if (this.settings.platformVersion < 10 && this.settings.platform == PlatformType.iOS) {
+            return;
+        }
         this.homePageExtended.navigateTo(this.find.byText("search-bar"));
         this.app.hideKeyboard();
 
