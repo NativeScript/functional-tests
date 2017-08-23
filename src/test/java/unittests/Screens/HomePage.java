@@ -24,7 +24,7 @@ public class HomePage extends BasePage {
 
     public boolean waitForTestsToComplete() {
 
-        //boolean isAppRunning, result = false;
+        boolean isAppRunning, result = false;
 
         // Timeout
         int expectedExecutionTime = 5 * 60 * 1000;
