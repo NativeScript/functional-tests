@@ -65,7 +65,7 @@ public class SecondaryLoginPage extends BasePage {
         if (this.settings.platform == PlatformType.Android) {
             hideKeyboard();
         } else {
-            this.find.byLocator(this.locators.byText("Done")).click();
+            this.wait.waitForVisible(this.locators.byText("Toolbar Done Button")).click();
         }
     }
 
