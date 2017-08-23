@@ -24,7 +24,7 @@ public class HomePage extends BasePage {
 
     public boolean waitForTestsToComplete() {
 
-        boolean isAppRunning, result = false;
+        //boolean isAppRunning, result = false;
 
         // Timeout
         int expectedExecutionTime = 5 * 60 * 1000;
@@ -36,12 +36,12 @@ public class HomePage extends BasePage {
         while ((System.currentTimeMillis() - startTime) < expectedExecutionTime) {
 
             // isAppRunning() is implemented only for Android
-            isAppRunning = this.context.getDevice().isAppRunning(this.settings.packageId);
-            if (isAppRunning == false) {
-                String message = "App crashed!";
-                this.log.fatal(message);
-                Assert.fail(message);
-            }
+//            isAppRunning = this.context.getDevice().isAppRunning(this.settings.packageId);
+//            if (isAppRunning == false) {
+//                String message = "App crashed!";
+//                this.log.fatal(message);
+//                Assert.fail(message);
+//            }
 
             UIElement element = this.find.byLocator(this.locatorComplete(), 1);
 
