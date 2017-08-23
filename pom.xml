@@ -300,9 +300,9 @@
             </properties>
         </profile>
         <profile>
-            <id>testsappng.dev.iphone5s.ios10</id>
+            <id>testsappng.dev.iphone5s.ios11</id>
             <properties>
-                <app.config>testsappng/testsappng.dev.iphone5s.ios10.properties</app.config>
+                <app.config>testsappng/testsappng.dev.iphone5s.ios11.properties</app.config>
                 <testsuite>testsappng-ios</testsuite>
             </properties>
         </profile>
@@ -415,9 +415,9 @@
             </properties>
         </profile>
         <profile>
-            <id>unittests.dev.iphone5s.ios10</id>
+            <id>unittests.dev.iphone5s.ios11</id>
             <properties>
-                <app.config>unittests/unittests.dev.iphone5s.ios10.properties</app.config>
+                <app.config>unittests/unittests.dev.iphone5s.ios11.properties</app.config>
                 <testsuite>unittests</testsuite>
             </properties>
         </profile>
@@ -775,7 +775,7 @@
                 <testsuite>groceries-ios</testsuite>
             </properties>
         </profile>
-        
+
         <!--workers profiles-->
         <profile>
             <id>workers.emu.default.api19</id>
