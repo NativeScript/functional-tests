@@ -1,8 +1,8 @@
 package testsappng.Screens;
 
+import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.basetest.MobileContext;
 import functional.tests.core.mobile.element.UIElement;
-import functional.tests.core.enums.PlatformType;
 import org.openqa.selenium.By;
 
 public class ActionBarSecondPage extends HomePage {
@@ -73,7 +73,11 @@ public class ActionBarSecondPage extends HomePage {
             return this.find.byTextContains(" tap");
         }
         if (this.settings.platform == PlatformType.iOS) {
-            return this.find.elementsByLocator(this.locators.buttonLocator()).get(2);
+            int index = 2;
+            if (this.settings.platformVersion >= 11) {
+                index = 1;
+            }
+            return this.find.elementsByLocator(this.locators.buttonLocator()).get(index);
         } else {
             return null;
         }
