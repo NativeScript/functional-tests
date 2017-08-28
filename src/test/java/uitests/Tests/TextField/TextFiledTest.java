@@ -49,6 +49,20 @@ public class TextFiledTest extends UIBaseTests {
         this.assertImagesResults();
     }
 
+    @Test(groups = {"android", "ios"})
+    public void blur_focus_textView_TextField() throws Exception {
+        this.homePageExtended.navigateTo("focus-blur-events");
+        this.wait.waitForVisible(this.locators.textFieldLocator()).tap();
+        this.wait.waitForVisible(this.locators.textViewLocator()).tap();
+        this.compareScreens(5, 0.1);
+
+        this.wait.waitForVisible(this.locators.textFieldLocator()).tap();
+        this.wait.waitForVisible(this.locators.textViewLocator()).tap();
+        this.compareScreens(5, 0.1);
+
+        this.assertImagesResults();
+    }
+
     private void setText(int index, String text) {
         UIElement textField = this.getTextField(index);
         textField.sendKeys(text);

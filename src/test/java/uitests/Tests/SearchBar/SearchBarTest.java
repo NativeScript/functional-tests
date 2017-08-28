@@ -55,7 +55,7 @@ public class SearchBarTest extends UIBaseTests {
         this.homePageExtended.navigateTo(this.find.byText("search-bar"));
         this.app.hideKeyboard();
 
-        this.assertScreen(5);
+        this.assertScreen(10);
     }
 
     private void setText(int index, String text) {
