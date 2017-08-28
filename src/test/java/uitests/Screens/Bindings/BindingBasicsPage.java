@@ -30,6 +30,9 @@ public class BindingBasicsPage {
         int buttonIndex = 1;
         if (this.context.settings.platform == PlatformType.iOS) {
             buttonIndex = 3;
+            if (this.context.settings.platformVersion>=11){
+                buttonIndex =2;
+            }
         }
         return this.context.find.elementsByLocator(this.context.locators.buttonLocator()).get(buttonIndex);
     }
@@ -43,6 +46,9 @@ public class BindingBasicsPage {
         int buttonIndex = 2;
         if (this.context.settings.platform == PlatformType.iOS) {
             buttonIndex = 4;
+            if (this.context.settings.platformVersion>=11){
+                buttonIndex =3;
+            }
         }
         return this.context.find.elementsByLocator(this.context.locators.buttonLocator()).get(buttonIndex);
     }

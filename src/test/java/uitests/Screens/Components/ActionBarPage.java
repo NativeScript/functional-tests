@@ -1,8 +1,8 @@
 package uitests.Screens.Components;
 
+import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.basetest.MobileContext;
 import functional.tests.core.mobile.element.UIElement;
-import functional.tests.core.enums.PlatformType;
 import org.testng.Assert;
 import uitests.Screens.HomePageExtended;
 
@@ -46,7 +46,11 @@ public class ActionBarPage extends HomePageExtended {
         if (this.settings.platform == PlatformType.Android) {
             return this.find.byText("Green");
         } else {
-            return this.find.elementsByLocator(this.locators.buttonLocator()).get(2);
+            if (this.settings.platformVersion < 11) {
+                return this.find.elementsByLocator(this.locators.buttonLocator()).get(2);
+            }
+
+            return this.find.byText("Green");
         }
     }
 

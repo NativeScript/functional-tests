@@ -25,12 +25,21 @@ public class BindingTests extends MobileTest {
         this.bindingsBasePage.bindingBasicsPage.tapSetTextBtn();
 
         this.bindingsBasePage.bindingBasicsPage.tapOneWayBtn();
-        Assert.assertEquals(this.bindingsBasePage.bindingBasicsPage.editTextFieldOneWay().getText(), "Test");
-        Assert.assertEquals(this.bindingsBasePage.bindingBasicsPage.btnOneWay().getText().toLowerCase(), "oneway");
-
+        if (this.settings.platformVersion >=11 && this.settings.platform == PlatformType.iOS){
+            this.compareScreens(5);
+        }else {
+            Assert.assertEquals(this.bindingsBasePage.bindingBasicsPage.editTextFieldOneWay().getText(), "Test");
+            Assert.assertEquals(this.bindingsBasePage.bindingBasicsPage.btnOneWay().getText().toLowerCase(), "oneway");
+        }
         this.bindingsBasePage.bindingBasicsPage.tapTwoWayBtn();
-        Assert.assertEquals(this.bindingsBasePage.bindingBasicsPage.editTextFieldTwoWay().getText(), "Test");
-        Assert.assertEquals(this.bindingsBasePage.bindingBasicsPage.btnTwoWay().getText().toLowerCase(), "test");
+        if (this.settings.platformVersion >=11 && this.settings.platform == PlatformType.iOS){
+            this.compareScreens(5);
+        }else {
+            Assert.assertEquals(this.bindingsBasePage.bindingBasicsPage.editTextFieldTwoWay().getText(), "Test");
+            Assert.assertEquals(this.bindingsBasePage.bindingBasicsPage.btnTwoWay().getText().toLowerCase(), "test");
+        }
+
+        this.assertImagesResults();
     }
 
     @Test(groups = {"android", "ios"})
