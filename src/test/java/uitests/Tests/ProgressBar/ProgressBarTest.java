@@ -1,5 +1,6 @@
 package uitests.Tests.ProgressBar;
 
+import functional.tests.core.enums.PlatformType;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uitests.Screens.HomePageExtended;
@@ -17,7 +18,11 @@ public class ProgressBarTest extends UIBaseTests {
     @Test(groups = {"android", "ios"})
     public void activity_indicator() throws Exception {
         this.homePageExtended.navigateTo("activity-indicator");
-        this.assertScreen(15,0.07);
+        if (this.settings.platform == PlatformType.Android) {
+            this.assertScreen(15, 0.12);
+        } else {
+            this.assertScreen(15, 0.07);
+        }
     }
 
     @Test(groups = {"android", "ios"})
