@@ -46,7 +46,11 @@ public class ActionBarSecondTests extends TestsAppNgBase {
             Assert.assertNull(this.actionBarSecondPage.itemCustom());
         }
         if (this.settings.platform == PlatformType.iOS) {
-            Assert.assertEquals(this.find.elementsByLocator(this.locators.buttonLocator()).size(), 5);
+            int size = 5;
+            if (this.settings.platformVersion >= 11) {
+                size = 4;
+            }
+            Assert.assertEquals(this.find.elementsByLocator(this.locators.buttonLocator()).size(), 4);
         }
     }
 
