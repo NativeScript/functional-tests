@@ -1,6 +1,8 @@
 package uitests.Tests.TabView;
 
+import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.element.UIRectangle;
+import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 public class TabViewTests extends TabViewBaseTest {
@@ -45,6 +47,27 @@ public class TabViewTests extends TabViewBaseTest {
         this.compareScreens(5);
 
         this.homePageExtended.find.byText("reset").tap();
+        this.compareScreens(5);
+
+        this.assertImagesResults();
+    }
+
+
+    @Test(groups = {"android", "ios"})
+    public void tabView_icon_change() throws Exception {
+        this.homePageExtended.navigateTo("tab-view-icon-change");
+        By locator = this.context.locators.imageLocator();
+        int index = 1;
+        if (this.settings.platform == PlatformType.iOS) {
+            locator = this.context.locators.buttonLocator();
+            index = 2;
+        }
+        this.wait.waitForVisible(locator);
+
+        this.find.elementsByLocator(locator).get(index).tap();
+        this.compareScreens(5);
+        this.find.elementsByLocator(locator).get(index - 1).tap();
+
         this.compareScreens(5);
 
         this.assertImagesResults();
