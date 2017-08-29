@@ -54,7 +54,7 @@ public class TextFiledTest extends UIBaseTests {
         this.homePageExtended.navigateTo("focus-blur-events");
         UIElement textFieldLocator;// = this.locators.textFieldLocator();
         UIElement textViewLocator;// = this.locators.textViewLocator();
-        if (this.settings.platformVersion >= 7.0 && this.settings.platform == PlatformType.Android) {
+        if (this.settings.platform == PlatformType.Android) {
             textFieldLocator = this.find.elementsByLocator(this.locators.editTextLocator()).get(0);
             textViewLocator = this.find.elementsByLocator(this.locators.editTextLocator()).get(1);
         } else {
