@@ -57,7 +57,6 @@ public class TextFiledTest extends UIBaseTests {
         this.compareScreens(5, 0.1);
 
         this.wait.waitForVisible(this.locators.textFieldLocator()).tap();
-        this.wait.waitForVisible(this.locators.textViewLocator()).tap();
         this.compareScreens(5, 0.1);
 
         this.assertImagesResults();
