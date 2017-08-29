@@ -60,7 +60,11 @@ public class TabViewTests extends TabViewBaseTest {
         int index = 1;
         if (this.settings.platform == PlatformType.iOS) {
             locator = this.context.locators.buttonLocator();
-            index = 2;
+            if (this.settings.platformVersion >= 11) {
+                index = 2;
+            }else{
+                index = 3;
+            }
         }
         this.wait.waitForVisible(locator);
 
