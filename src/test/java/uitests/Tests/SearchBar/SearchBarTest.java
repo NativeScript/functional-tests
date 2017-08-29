@@ -37,8 +37,11 @@ public class SearchBarTest extends UIBaseTests {
         this.clearSearchBar(1);
         this.clearSearchBar(2);
         this.clearSearchBar(3);
-        this.compareScreens(waitTime);
+
         this.app.hideKeyboard();
+
+        this.compareScreens(waitTime);
+
         if (this.settings.platform == PlatformType.iOS) {
             this.homePageExtended.navigateBack(this.find.byText("Go Back"));
         } else {

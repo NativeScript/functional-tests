@@ -69,6 +69,7 @@ public class TextFiledTest extends UIBaseTests {
 
         textFieldLocator.tap();
         this.compareScreens(5, 0.1);
+        this.app.hideKeyboard();
 
         this.assertImagesResults();
     }
