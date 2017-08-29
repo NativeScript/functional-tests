@@ -1,9 +1,15 @@
 package uitests.Tests.TextView;
 
+import functional.tests.core.enums.PlatformType;
+import org.openqa.selenium.By;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uitests.Screens.HomePageExtended;
 import uitests.Tests.UIBaseTests;
+
+import java.util.List;
+
+import static org.aspectj.bridge.Version.text;
 
 public class TextViewTest extends UIBaseTests {
 
@@ -45,5 +51,45 @@ public class TextViewTest extends UIBaseTests {
         this.homePageExtended.find.byLocator(this.locators.byText("Change text and color")).tap();
         this.compareScreens(3);
         this.assertImagesResults();
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void textView_scrolling_4733() throws Exception {
+        this.homePageExtended.navigateTo("scrolling-and-sizing");
+        this.compareScreens(5);
+
+        By locator = this.locators.textViewLocator();
+        if (this.settings.platform == PlatformType.Android) {
+            locator = this.locators.editTextLocator();
+        }
+        List<functional.tests.core.mobile.element.UIElement> elements = this.find.elementsByLocator(locator);
+
+        this.typeText(elements,4);
+        this.typeText(elements,3);
+        this.typeText(elements,2);
+        this.typeText(elements,1);
+        this.typeText(elements,0);
+
+        this.app.hideKeyboard();
+        this.compareScreens(5);
+
+        this.assertImagesResults();
+    }
+
+    private void typeText( List<functional.tests.core.mobile.element.UIElement>  elements, int index){
+        String text = "testestesttestestestestestestesttestestestesteste\n" +
+                "testestesttestestestestestestesttestestestesteste\n" +
+                "testestesttestestestestestestesttestestestesteste\n" +
+                "testestesttestestestestestestesttestestestesteste";
+        if (this.settings.platform == PlatformType.Android){
+            elements.get(4).setText(text);
+            try {
+                this.app.hideKeyboard();
+                this.compareScreens(5);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
     }
 }
