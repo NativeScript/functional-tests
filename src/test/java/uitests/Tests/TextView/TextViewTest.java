@@ -9,8 +9,6 @@ import uitests.Tests.UIBaseTests;
 
 import java.util.List;
 
-import static org.aspectj.bridge.Version.text;
-
 public class TextViewTest extends UIBaseTests {
 
     public HomePageExtended homePageExtended;
@@ -64,11 +62,11 @@ public class TextViewTest extends UIBaseTests {
         }
         List<functional.tests.core.mobile.element.UIElement> elements = this.find.elementsByLocator(locator);
 
-        this.typeText(elements,4);
-        this.typeText(elements,3);
-        this.typeText(elements,2);
-        this.typeText(elements,1);
-        this.typeText(elements,0);
+        this.typeText(elements, 4);
+        this.typeText(elements, 3);
+        this.typeText(elements, 2);
+        this.typeText(elements, 1);
+        this.typeText(elements, 0);
 
         this.app.hideKeyboard();
         this.compareScreens(5);
@@ -76,13 +74,15 @@ public class TextViewTest extends UIBaseTests {
         this.assertImagesResults();
     }
 
-    private void typeText( List<functional.tests.core.mobile.element.UIElement>  elements, int index){
+    private void typeText(List<functional.tests.core.mobile.element.UIElement> elements, int index) {
         String text = "testestesttestestestestestestesttestestestesteste\n" +
                 "testestesttestestestestestestesttestestestesteste\n" +
                 "testestesttestestestestestestesttestestestesteste\n" +
                 "testestesttestestestestestestesttestestestesteste";
-        if (this.settings.platform == PlatformType.Android){
-            elements.get(4).setText(text);
+
+        elements.get(index).setText(text);
+
+        if (this.settings.platform == PlatformType.Android) {
             try {
                 this.app.hideKeyboard();
                 this.compareScreens(5);
