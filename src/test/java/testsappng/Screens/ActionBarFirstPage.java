@@ -32,23 +32,13 @@ public class ActionBarFirstPage extends BasePageExtended {
     }
 
     private UIElement itemShare() {
-        if (this.settings.platform == PlatformType.Android) {
-            this.wait.waitForVisible(this.locators.labelLocator());
-            return this.find.elementsByLocator(this.locators.labelLocator()).get(1);
-
-        }
-        if (this.settings.platform == PlatformType.iOS) {
-            return this.find.byLocator(By.id("Share"));
-        } else {
-            return null;
-        }
+        return this.find.byText("share");
     }
 
     private UIElement itemDelete() {
         if (this.settings.platform == PlatformType.Android) {
-            this.find.byLocator(this.locators.imageLocator()).click();
+            this.find.byText("More options").click();
         }
-
         return this.find.byText("delete");
     }
 
