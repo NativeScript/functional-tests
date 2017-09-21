@@ -27,7 +27,7 @@ public class SmokeTests extends MobileTest {
     @Test(groups = {"android", "ios"})
     public void test_01_home() throws Exception {
         this.homePage.loaded();
-        this.assertScreen();
+        this.assertScreen(this.settings.shortTimeout);
     }
 
     @Test(groups = {"android", "ios"})
