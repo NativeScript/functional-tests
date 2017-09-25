@@ -30,7 +30,7 @@ public class ActionBarSecondTests extends TestsAppNgBase {
     @Test(groups = {"android", "ios"})
     public void secondActionBar_01_tapItemTap() throws Exception {
         this.actionBarSecondPage.tapTapBtn();
-        Assert.assertEquals(getTextFromLabelTap().toLowerCase(), "1 tap");
+        this.assertScreen(3);
     }
 
     @Test(groups = {"android", "ios"})
@@ -45,13 +45,8 @@ public class ActionBarSecondTests extends TestsAppNgBase {
         if (this.settings.platform == PlatformType.Android) {
             Assert.assertNull(this.actionBarSecondPage.itemCustom());
         }
-        if (this.settings.platform == PlatformType.iOS) {
-            int size = 5;
-            if (this.settings.platformVersion >= 11) {
-                size = 4;
-            }
-            Assert.assertEquals(this.find.elementsByLocator(this.locators.buttonLocator()).size(), size);
-        }
+
+        this.assertScreen(5);
     }
 
     @Test(groups = {"android", "ios"})
@@ -65,16 +60,17 @@ public class ActionBarSecondTests extends TestsAppNgBase {
     public void secondActionBar_05_tapActionBarItems() throws Exception {
         this.actionBarSecondPage.tapTapBtn();
         this.actionBarSecondPage.tapTapBtn();
-        Assert.assertEquals(getTextFromLabelTap().toLowerCase(), "3 taps");
-
+        this.compareScreens(5);
         this.actionBarSecondPage.tapCustomItem();
-        Assert.assertEquals(getTextFromLabelCustom(), "3 custom taps");
-        this.log.logScreen(this.context.getTestName(), this.context.getTestName(), 320, 240);
+        this.compareScreens(5);
+
         if (this.settings.platform == PlatformType.Android) {
             this.actionBarSecondPage.navigateBack();
         }
         if (this.settings.platform == PlatformType.iOS) {
             this.actionBarSecondPage.tapBackItem();
         }
+
+        this.assertImagesResults();
     }
 }
