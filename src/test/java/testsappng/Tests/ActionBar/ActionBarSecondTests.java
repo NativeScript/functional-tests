@@ -30,7 +30,7 @@ public class ActionBarSecondTests extends TestsAppNgBase {
     @Test(groups = {"android", "ios"})
     public void secondActionBar_01_tapItemTap() throws Exception {
         this.actionBarSecondPage.tapTapBtn();
-        this.assertScreen(3);
+        this.assertScreen(3, 0.03);
     }
 
     @Test(groups = {"android", "ios"})
@@ -46,7 +46,7 @@ public class ActionBarSecondTests extends TestsAppNgBase {
             Assert.assertNull(this.actionBarSecondPage.itemCustom());
         }
 
-        this.assertScreen(5);
+        this.assertScreen(5, 0.03);
     }
 
     @Test(groups = {"android", "ios"})
@@ -60,9 +60,9 @@ public class ActionBarSecondTests extends TestsAppNgBase {
     public void secondActionBar_05_tapActionBarItems() throws Exception {
         this.actionBarSecondPage.tapTapBtn();
         this.actionBarSecondPage.tapTapBtn();
-        this.compareScreens(5);
+        this.compareScreens(5, 0.03);
         this.actionBarSecondPage.tapCustomItem();
-        this.compareScreens(5);
+        this.compareScreens(5, 0.03);
 
         if (this.settings.platform == PlatformType.Android) {
             this.actionBarSecondPage.navigateBack();
