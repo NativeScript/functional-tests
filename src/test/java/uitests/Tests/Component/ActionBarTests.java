@@ -190,13 +190,13 @@ public class ActionBarTests extends MobileTest {
     @Test(groups = {"android", "ios"})
     public void modalHideActionBar_4157() throws Exception {
         this.actionBarPage.navigateTo("modalShownActBar");
-        this.compareScreens(3);
+        this.compareScreens(10);
 
         this.actionBarPage.find.byText("Open Modal").tap();
-        this.compareScreens(3);
+        this.compareScreens(10);
 
         this.actionBarPage.find.byText("Close").tap();
-        this.compareScreens(3);
+        this.compareScreens(10);
 
         this.context.navigationManager.navigateBack(this.actionBarPage.find.byText("Go Back"));
 
