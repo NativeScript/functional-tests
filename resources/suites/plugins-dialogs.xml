@@ -1,8 +1,0 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Plugins-Dialogs" verbose="1">
-    <test name="SmokeTests">
-        <classes>
-            <class name="plugins.dialogs.Tests.SmokeTests"/>
-        </classes>
-    </test>
-</suite>

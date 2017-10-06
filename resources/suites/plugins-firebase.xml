@@ -1,8 +1,0 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Plugins-Firebase" verbose="1">
-    <test name="SmokeTests">
-        <classes>
-            <class name="plugins.firebase.Tests.Smoke"/>
-        </classes>
-    </test>
-</suite>
