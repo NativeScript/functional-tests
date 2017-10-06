@@ -65,9 +65,9 @@
             </properties>
         </profile>
         <profile>
-            <id>animations.sim.iphone6s.ios91</id>
+            <id>animations.sim.iphone6s.ios93</id>
             <properties>
-                <app.config>animations/animations.sim.iphone6s.ios91.properties</app.config>
+                <app.config>animations/animations.sim.iphone6s.ios93.properties</app.config>
                 <testsuite>animations</testsuite>
             </properties>
         </profile>
@@ -186,9 +186,9 @@
             </properties>
         </profile>
         <profile>
-            <id>uitests.sim.iphone6splus.ios91</id>
+            <id>uitests.sim.iphone6splus.ios93</id>
             <properties>
-                <app.config>uitests/uitests.sim.iphone6splus.ios91.properties</app.config>
+                <app.config>uitests/uitests.sim.iphone6splus.ios93.properties</app.config>
                 <testsuite>uitests-ios</testsuite>
             </properties>
         </profile>
@@ -279,9 +279,9 @@
             </properties>
         </profile>
         <profile>
-            <id>testsappng.sim.iphone6splus.ios91</id>
+            <id>testsappng.sim.iphone6splus.ios93</id>
             <properties>
-                <app.config>testsappng/testsappng.sim.iphone6splus.ios91.properties</app.config>
+                <app.config>testsappng/testsappng.sim.iphone6splus.ios93.properties</app.config>
                 <testsuite>testsappng-ios</testsuite>
             </properties>
         </profile>
@@ -357,9 +357,9 @@
             </properties>
         </profile>
         <profile>
-            <id>testsapptransitions.sim.iphone6splus.ios91</id>
+            <id>testsapptransitions.sim.iphone6splus.ios93</id>
             <properties>
-                <app.config>testsapptransitions/testsapptransitions.sim.iphone6splus.ios91.properties</app.config>
+                <app.config>testsapptransitions/testsapptransitions.sim.iphone6splus.ios93.properties</app.config>
                 <testsuite>testsapptransitions-ios</testsuite>
             </properties>
         </profile>
@@ -488,13 +488,6 @@
             <id>unittests.emu.google.api26</id>
             <properties>
                 <app.config>unittests/unittests.emu.google.api26.properties</app.config>
-                <testsuite>unittests</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>unittests.sim.iphone5s.ios84</id>
-            <properties>
-                <app.config>unittests/unittests.sim.iphone5s.ios84.properties</app.config>
                 <testsuite>unittests</testsuite>
             </properties>
         </profile>
@@ -655,9 +648,9 @@
             </properties>
         </profile>
         <profile>
-            <id>cuteness.sim.iphone6.ios91</id>
+            <id>cuteness.sim.iphone6.ios93</id>
             <properties>
-                <app.config>cuteness/cuteness.sim.iphone6.ios91.properties</app.config>
+                <app.config>cuteness/cuteness.sim.iphone6.ios93.properties</app.config>
                 <testsuite>cuteness-ios</testsuite>
             </properties>
         </profile>
@@ -748,9 +741,9 @@
             </properties>
         </profile>
         <profile>
-            <id>groceries.sim.iphone6.ios91</id>
+            <id>groceries.sim.iphone6.ios93</id>
             <properties>
-                <app.config>groceries/groceries.sim.iphone6.ios91.properties</app.config>
+                <app.config>groceries/groceries.sim.iphone6.ios93.properties</app.config>
                 <testsuite>groceries-ios</testsuite>
             </properties>
         </profile>
@@ -899,9 +892,9 @@
             </properties>
         </profile>
         <profile>
-            <id>nativescriptdemo.sim.iphone6.ios91</id>
+            <id>nativescriptdemo.sim.iphone6.ios93</id>
             <properties>
-                <app.config>nativescriptdemo/nativescriptdemo.sim.iphone6.ios91.properties</app.config>
+                <app.config>nativescriptdemo/nativescriptdemo.sim.iphone6.ios93.properties</app.config>
                 <testsuite>nativescriptdemo-ios</testsuite>
             </properties>
         </profile>
@@ -999,9 +992,9 @@
             </properties>
         </profile>
         <profile>
-            <id>sdkexamples.sim.iphone6.ios91</id>
+            <id>sdkexamples.sim.iphone6.ios93</id>
             <properties>
-                <app.config>sdkexamples/sdkexamples.sim.iphone6.ios91.properties</app.config>
+                <app.config>sdkexamples/sdkexamples.sim.iphone6.ios93.properties</app.config>
                 <testsuite>sdkexamples</testsuite>
             </properties>
         </profile>
@@ -1050,16 +1043,9 @@
             </properties>
         </profile>
         <profile>
-            <id>template.helloworld.sim.iphone5.ios81</id>
+            <id>template.helloworld.sim.iphone6.ios93</id>
             <properties>
-                <app.config>templates/template.helloworld.sim.iphone5.ios81.properties</app.config>
-                <testsuite>templates-helloworld</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>template.helloworld.sim.iphone6.ios91</id>
-            <properties>
-                <app.config>templates/template.helloworld.sim.iphone6.ios91.properties</app.config>
+                <app.config>templates/template.helloworld.sim.iphone6.ios93.properties</app.config>
                 <testsuite>templates-helloworld</testsuite>
             </properties>
         </profile>
@@ -1108,16 +1094,9 @@
             </properties>
         </profile>
         <profile>
-            <id>template.helloworldts.sim.iphone5.ios81</id>
+            <id>template.helloworldts.sim.iphone6.ios93</id>
             <properties>
-                <app.config>templates/template.helloworldts.sim.iphone5.ios81.properties</app.config>
-                <testsuite>templates-helloworldts</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>template.helloworldts.sim.iphone6.ios91</id>
-            <properties>
-                <app.config>templates/template.helloworldts.sim.iphone6.ios91.properties</app.config>
+                <app.config>templates/template.helloworldts.sim.iphone6.ios93.properties</app.config>
                 <testsuite>templates-helloworldts</testsuite>
             </properties>
         </profile>
@@ -1173,16 +1152,9 @@
             </properties>
         </profile>
         <profile>
-            <id>template.helloworldng.sim.iphone5.ios81</id>
+            <id>template.helloworldng.sim.iphone6.ios93</id>
             <properties>
-                <app.config>templates/template.helloworldng.sim.iphone5.ios81.properties</app.config>
-                <testsuite>templates-helloworldng</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>template.helloworldng.sim.iphone6.ios91</id>
-            <properties>
-                <app.config>templates/template.helloworldng.sim.iphone6.ios91.properties</app.config>
+                <app.config>templates/template.helloworldng.sim.iphone6.ios93.properties</app.config>
                 <testsuite>templates-helloworldng</testsuite>
             </properties>
         </profile>
