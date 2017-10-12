@@ -31,20 +31,7 @@ public class SdkMainPage extends BasePageExtended {
 
             this.context.navigationManager.setScrollToRectangleMethod((p) -> scrollableListObject.scrollTo(p));
         } else {
-            ScrollableListObject scrollableListObject = new ScrollableListObject(context) {
-                @Override
-                public String getMainContainerLocatorName() {
-                    return context.uiElementClass.listViewLocator();
-                }
-
-                @Override
-                public String getMainContainerItemsName() {
-                    return context.uiElementClass.staticTextLocator();
-                }
-            };
-
-            scrollableListObject.setSpecificElementLocator((p) -> By.xpath("//" + this.context.uiElementClass.staticTextLocator() + "[@value='" + p + "']"));
-            this.context.navigationManager.setScrollToRectangleMethod((p) -> scrollableListObject.scrollTo(p));
+            this.scrollTo(page, 10);
         }
 
         if (page != null && !page.isEmpty()) {
