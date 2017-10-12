@@ -31,7 +31,7 @@ public class SdkMainPage extends BasePageExtended {
 
             this.context.navigationManager.setScrollToRectangleMethod((p) -> scrollableListObject.scrollTo(p));
         } else {
-            this.scrollTo(page, 10);
+            this.scrollTo(page, 25);
         }
 
         if (page != null && !page.isEmpty()) {

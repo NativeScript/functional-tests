@@ -1,10 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="SDK Examples Tests" verbose="1">
-    <!--<test name="Smoke Tests">-->
-        <!--<classes>-->
-            <!--<class name="sdkexamples.SdkExamplesSmokeTests"/>-->
-        <!--</classes>-->
-    <!--</test>-->
     <test name="ActionBar">
         <classes>
             <class name="sdkexamples.Tests.SdkActionBarTests"/>
