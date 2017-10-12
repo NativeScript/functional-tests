@@ -1,6 +1,5 @@
 package sdkexamples.Tests;
 
-import functional.tests.core.mobile.find.Wait;
 import org.springframework.util.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -29,8 +28,10 @@ public class SdkWebViewTests extends SdkBaseTest {
     public void sdkWebViewTest(String example) throws Exception {
         this.mainPage.navigateTo(example);
         if (example == pageWebViewCode) {
-            Wait.sleep(10000);
-            this.wait.waitForVisible(this.locators.byText("WebView finished loading of", false, false), true);
+            this.wait.waitForVisible(this.locators.webViewLocator(), true);
+            if (this.settings.platformVersion != 5.0) {
+                this.wait.waitForVisible(this.locators.byText("WebView finished loading of", false, false), true);
+            }
         } else if (example == pageWebViewHtml) {
             Assert.notNull(this.find.byText("First WebView"));
         }
