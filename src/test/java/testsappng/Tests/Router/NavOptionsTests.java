@@ -32,12 +32,9 @@ public class NavOptionsTests extends TestsAppNgBase {
         this.clearHistoryAndUpdate("0", "1");
 
         if (this.settings.platform == PlatformType.Android) {
-            try {
-                this.navOptionsPage.navigateBack();
-            } catch (Exception ex) {
-                this.log.info("Failed to navigate: " + ex.getMessage());
-            }
-            this.compareScreens(10, 5);
+            // Navigate back should go to home screen
+            this.navOptionsPage.navigateBack();
+            this.wait.waitForVisible(this.locators.byText("Phone"), true);
 
             this.app.restart();
             this.navOptionsPage.homePageLoaded();
