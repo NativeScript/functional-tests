@@ -1050,6 +1050,13 @@
             </properties>
         </profile>
         <profile>
+            <id>template.helloworld.bundle.sim.iphone7.ios100</id>
+            <properties>
+                <app.config>templates/template.helloworld.bundle.sim.iphone7.ios100.properties</app.config>
+                <testsuite>templates-helloworld</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>template.helloworld.sim.iphone7.ios100</id>
             <properties>
                 <app.config>templates/template.helloworld.sim.iphone7.ios100.properties</app.config>
