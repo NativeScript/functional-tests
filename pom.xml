@@ -1166,6 +1166,13 @@
             </properties>
         </profile>
         <profile>
+            <id>template.helloworldng.bundle.sim.iphone7.ios100</id>
+            <properties>
+                <app.config>templates/template.helloworldng.bundle.sim.iphone7.ios100.properties</app.config>
+                <testsuite>templates-helloworldng</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>template.helloworldng.sim.iphone7.ios100</id>
             <properties>
                 <app.config>templates/template.helloworldng.sim.iphone7.ios100.properties</app.config>
