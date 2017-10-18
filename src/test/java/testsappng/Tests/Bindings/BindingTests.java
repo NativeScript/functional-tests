@@ -1,5 +1,6 @@
 package testsappng.Tests.Bindings;
 
+import functional.tests.core.enums.PlatformType;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -16,7 +17,7 @@ public class BindingTests extends TestsAppNgBase {
 
     @Test(groups = {"android", "ios"})
     public void binding_01() throws Exception {
-        if (this.settings.platformVersion >= 11.0) {
+        if (this.settings.platformVersion >= 11.0 || this.settings.platform == PlatformType.Android) {
             this.bindingPage.insertNewValues();
             this.bindingPage.getResults();
             Assert.assertTrue(this.bindingPage.compareResults("1", "0", "5"), "Binding is not working");
