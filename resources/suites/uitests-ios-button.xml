@@ -9,5 +9,5 @@
         <packages>
             <package name="uitests.Tests.Button"/>
         </packages>
-    </test
+    </test>
 </suite>
