@@ -1,8 +1,0 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Workers Tests" verbose="1">
-    <test name="Smoke Tests">
-        <classes>
-            <class name="workers.Tests.SmokeTests"/>
-        </classes>
-    </test>
-</suite>

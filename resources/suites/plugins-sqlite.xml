@@ -1,8 +1,0 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Plugins-Sqlite" verbose="1">
-    <test name="SmokeTests">
-        <classes>
-            <class name="plugins.sqlite.Tests.Smoke"/>
-        </classes>
-    </test>
-</suite>

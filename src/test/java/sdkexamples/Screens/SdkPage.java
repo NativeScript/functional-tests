@@ -25,23 +25,8 @@ public class SdkPage extends BasePageExtended {
             elements = this.find.elementsByLocator(this.locators.textFieldLocator());
         } else if (this.settings.platform == PlatformType.iOS) {
             elements = this.find.elementsByLocator(this.locators.labelLocator());
-//           this.log.info("~1~");
-//            for (UIElement element : elements) {
-//               this.log.info(element.getText());
-//            }
-//           this.log.info("~1~");
-//            for (int i = 0; i < elements.size(); i++) {
-//                if (elements.get(i).getText().isEmpty()){
-//                   this.log.info("~" + elements.get(i).getText());
-//                    elements.remove(i);
-//                }
-//            }
             elements.remove(0);
-//           this.log.info("~2~");
-//            for (UIElement element : elements) {
-//               this.log.info(element.getText());
-//            }
-//           this.log.info("~2~");
+
         }
         return elements;
     }

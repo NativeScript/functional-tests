@@ -1,8 +1,0 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="GridView Plugin" verbose="1">
-    <test name="SmokeTests">
-        <classes>
-            <class name="plugins.dropdown.Tests.SmokeTests"/>
-        </classes>
-    </test>
-</suite>

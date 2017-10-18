@@ -65,9 +65,9 @@
             </properties>
         </profile>
         <profile>
-            <id>animations.sim.iphone6s.ios91</id>
+            <id>animations.sim.iphone6s.ios93</id>
             <properties>
-                <app.config>animations/animations.sim.iphone6s.ios91.properties</app.config>
+                <app.config>animations/animations.sim.iphone6s.ios93.properties</app.config>
                 <testsuite>animations</testsuite>
             </properties>
         </profile>
@@ -186,9 +186,9 @@
             </properties>
         </profile>
         <profile>
-            <id>uitests.sim.iphone6splus.ios91</id>
+            <id>uitests.sim.iphone6splus.ios93</id>
             <properties>
-                <app.config>uitests/uitests.sim.iphone6splus.ios91.properties</app.config>
+                <app.config>uitests/uitests.sim.iphone6splus.ios93.properties</app.config>
                 <testsuite>uitests-ios</testsuite>
             </properties>
         </profile>
@@ -279,9 +279,9 @@
             </properties>
         </profile>
         <profile>
-            <id>testsappng.sim.iphone6splus.ios91</id>
+            <id>testsappng.sim.iphone6splus.ios93</id>
             <properties>
-                <app.config>testsappng/testsappng.sim.iphone6splus.ios91.properties</app.config>
+                <app.config>testsappng/testsappng.sim.iphone6splus.ios93.properties</app.config>
                 <testsuite>testsappng-ios</testsuite>
             </properties>
         </profile>
@@ -357,9 +357,9 @@
             </properties>
         </profile>
         <profile>
-            <id>testsapptransitions.sim.iphone6splus.ios91</id>
+            <id>testsapptransitions.sim.iphone6splus.ios93</id>
             <properties>
-                <app.config>testsapptransitions/testsapptransitions.sim.iphone6splus.ios91.properties</app.config>
+                <app.config>testsapptransitions/testsapptransitions.sim.iphone6splus.ios93.properties</app.config>
                 <testsuite>testsapptransitions-ios</testsuite>
             </properties>
         </profile>
@@ -488,13 +488,6 @@
             <id>unittests.emu.google.api26</id>
             <properties>
                 <app.config>unittests/unittests.emu.google.api26.properties</app.config>
-                <testsuite>unittests</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>unittests.sim.iphone5s.ios84</id>
-            <properties>
-                <app.config>unittests/unittests.sim.iphone5s.ios84.properties</app.config>
                 <testsuite>unittests</testsuite>
             </properties>
         </profile>
@@ -655,9 +648,9 @@
             </properties>
         </profile>
         <profile>
-            <id>cuteness.sim.iphone6.ios91</id>
+            <id>cuteness.sim.iphone6.ios93</id>
             <properties>
-                <app.config>cuteness/cuteness.sim.iphone6.ios91.properties</app.config>
+                <app.config>cuteness/cuteness.sim.iphone6.ios93.properties</app.config>
                 <testsuite>cuteness-ios</testsuite>
             </properties>
         </profile>
@@ -748,9 +741,9 @@
             </properties>
         </profile>
         <profile>
-            <id>groceries.sim.iphone6.ios91</id>
+            <id>groceries.sim.iphone6.ios93</id>
             <properties>
-                <app.config>groceries/groceries.sim.iphone6.ios91.properties</app.config>
+                <app.config>groceries/groceries.sim.iphone6.ios93.properties</app.config>
                 <testsuite>groceries-ios</testsuite>
             </properties>
         </profile>
@@ -899,9 +892,9 @@
             </properties>
         </profile>
         <profile>
-            <id>nativescriptdemo.sim.iphone6.ios91</id>
+            <id>nativescriptdemo.sim.iphone6.ios93</id>
             <properties>
-                <app.config>nativescriptdemo/nativescriptdemo.sim.iphone6.ios91.properties</app.config>
+                <app.config>nativescriptdemo/nativescriptdemo.sim.iphone6.ios93.properties</app.config>
                 <testsuite>nativescriptdemo-ios</testsuite>
             </properties>
         </profile>
@@ -999,9 +992,9 @@
             </properties>
         </profile>
         <profile>
-            <id>sdkexamples.sim.iphone6.ios91</id>
+            <id>sdkexamples.sim.iphone6.ios93</id>
             <properties>
-                <app.config>sdkexamples/sdkexamples.sim.iphone6.ios91.properties</app.config>
+                <app.config>sdkexamples/sdkexamples.sim.iphone6.ios93.properties</app.config>
                 <testsuite>sdkexamples</testsuite>
             </properties>
         </profile>
@@ -1050,16 +1043,16 @@
             </properties>
         </profile>
         <profile>
-            <id>template.helloworld.sim.iphone5.ios81</id>
+            <id>template.helloworld.sim.iphone6.ios93</id>
             <properties>
-                <app.config>templates/template.helloworld.sim.iphone5.ios81.properties</app.config>
+                <app.config>templates/template.helloworld.sim.iphone6.ios93.properties</app.config>
                 <testsuite>templates-helloworld</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template.helloworld.sim.iphone6.ios91</id>
+            <id>template.helloworld.bundle.sim.iphone7.ios100</id>
             <properties>
-                <app.config>templates/template.helloworld.sim.iphone6.ios91.properties</app.config>
+                <app.config>templates/template.helloworld.bundle.sim.iphone7.ios100.properties</app.config>
                 <testsuite>templates-helloworld</testsuite>
             </properties>
         </profile>
@@ -1108,16 +1101,9 @@
             </properties>
         </profile>
         <profile>
-            <id>template.helloworldts.sim.iphone5.ios81</id>
+            <id>template.helloworldts.sim.iphone6.ios93</id>
             <properties>
-                <app.config>templates/template.helloworldts.sim.iphone5.ios81.properties</app.config>
-                <testsuite>templates-helloworldts</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>template.helloworldts.sim.iphone6.ios91</id>
-            <properties>
-                <app.config>templates/template.helloworldts.sim.iphone6.ios91.properties</app.config>
+                <app.config>templates/template.helloworldts.sim.iphone6.ios93.properties</app.config>
                 <testsuite>templates-helloworldts</testsuite>
             </properties>
         </profile>
@@ -1173,16 +1159,16 @@
             </properties>
         </profile>
         <profile>
-            <id>template.helloworldng.sim.iphone5.ios81</id>
+            <id>template.helloworldng.sim.iphone6.ios93</id>
             <properties>
-                <app.config>templates/template.helloworldng.sim.iphone5.ios81.properties</app.config>
+                <app.config>templates/template.helloworldng.sim.iphone6.ios93.properties</app.config>
                 <testsuite>templates-helloworldng</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template.helloworldng.sim.iphone6.ios91</id>
+            <id>template.helloworldng.bundle.sim.iphone7.ios100</id>
             <properties>
-                <app.config>templates/template.helloworldng.sim.iphone6.ios91.properties</app.config>
+                <app.config>templates/template.helloworldng.bundle.sim.iphone7.ios100.properties</app.config>
                 <testsuite>templates-helloworldng</testsuite>
             </properties>
         </profile>
@@ -1198,627 +1184,6 @@
             <properties>
                 <app.config>templates/template.helloworldng.sim.iphone7.ios110.properties</app.config>
                 <testsuite>templates-helloworldng</testsuite>
-            </properties>
-        </profile>
-
-        <!--sqlite plugin profiles-->
-        <profile>
-            <id>plugin.sqlite.emu.default.api17</id>
-            <properties>
-                <app.config>plugins/plugin.sqlite.emu.default.api17.properties</app.config>
-                <testsuite>plugins-sqlite</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.sqlite.emu.default.api18</id>
-            <properties>
-                <app.config>plugins/plugin.sqlite.emu.default.api18.properties</app.config>
-                <testsuite>plugins-sqlite</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.sqlite.emu.default.api19</id>
-            <properties>
-                <app.config>plugins/plugin.sqlite.emu.default.api19.properties</app.config>
-                <testsuite>plugins-sqlite</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.sqlite.emu.default.api21</id>
-            <properties>
-                <app.config>plugins/plugin.sqlite.emu.default.api21.properties</app.config>
-                <testsuite>plugins-sqlite</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.sqlite.emu.default.api22</id>
-            <properties>
-                <app.config>plugins/plugin.sqlite.emu.default.api22.properties</app.config>
-                <testsuite>plugins-sqlite</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.sqlite.emu.default.api23</id>
-            <properties>
-                <app.config>plugins/plugin.sqlite.emu.default.api23.properties</app.config>
-                <testsuite>plugins-sqlite</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.sqlite.sim.iphone5s.ios84</id>
-            <properties>
-                <app.config>plugins/plugin.sqlite.sim.iphone5s.ios84.properties</app.config>
-                <testsuite>plugins-sqlite</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.sqlite.sim.iphone6.ios91</id>
-            <properties>
-                <app.config>plugins/plugin.sqlite.sim.iphone6.ios91.properties</app.config>
-                <testsuite>plugins-sqlite</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.sqlite.sim.iphone7.ios100</id>
-            <properties>
-                <app.config>plugins/plugin.sqlite.sim.iphone7.ios100.properties</app.config>
-                <testsuite>plugins-sqlite</testsuite>
-            </properties>
-        </profile>
-        <!--firebase plugin profiles-->
-        <profile>
-            <id>plugin.firebase.emu.default.api17</id>
-            <properties>
-                <app.config>plugins/plugin.firebase.emu.default.api17.properties</app.config>
-                <testsuite>plugins-firebase</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.firebase.emu.default.api18</id>
-            <properties>
-                <app.config>plugins/plugin.firebase.emu.default.api18.properties</app.config>
-                <testsuite>plugins-firebase</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.firebase.emu.default.api19</id>
-            <properties>
-                <app.config>plugins/plugin.firebase.emu.default.api19.properties</app.config>
-                <testsuite>plugins-firebase</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.firebase.emu.default.api21</id>
-            <properties>
-                <app.config>plugins/plugin.firebase.emu.default.api21.properties</app.config>
-                <testsuite>plugins-firebase</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.firebase.emu.default.api22</id>
-            <properties>
-                <app.config>plugins/plugin.firebase.emu.default.api22.properties</app.config>
-                <testsuite>plugins-firebase</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.firebase.emu.default.api23</id>
-            <properties>
-                <app.config>plugins/plugin.firebase.emu.default.api23.properties</app.config>
-                <testsuite>plugins-firebase</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.firebase.sim.iphone5s.ios84</id>
-            <properties>
-                <app.config>plugins/plugin.firebase.sim.iphone5s.ios84.properties</app.config>
-                <testsuite>plugins-firebase</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.firebase.sim.iphone6.ios91</id>
-            <properties>
-                <app.config>plugins/plugin.firebase.sim.iphone6.ios91.properties</app.config>
-                <testsuite>plugins-firebase</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.firebase.sim.iphone7.ios100</id>
-            <properties>
-                <app.config>plugins/plugin.firebase.sim.iphone7.ios100.properties</app.config>
-                <testsuite>plugins-firebase</testsuite>
-            </properties>
-        </profile>
-
-        <!--Geolocation Plugin-->
-        <profile>
-            <id>plugin.geolocation.emu.google.api19</id>
-            <properties>
-                <app.config>plugins/plugin.geolocation.emu.google.api19.properties</app.config>
-                <testsuite>plugins-geolocation-android</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.geolocation.emu.google.api21</id>
-            <properties>
-                <app.config>plugins/plugin.geolocation.emu.google.api21.properties</app.config>
-                <testsuite>plugins-geolocation-android</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.geolocation.emu.google.api22</id>
-            <properties>
-                <app.config>plugins/plugin.geolocation.emu.google.api22.properties</app.config>
-                <testsuite>plugins-geolocation-android</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.geolocation.emu.google.api23</id>
-            <properties>
-                <app.config>plugins/plugin.geolocation.emu.google.api23.properties</app.config>
-                <testsuite>plugins-geolocation-android</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.geolocation.sim.iphone6.ios91</id>
-            <properties>
-                <app.config>plugins/plugin.geolocation.sim.iphone6.ios91.properties</app.config>
-                <testsuite>plugins-geolocation-ios</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.geolocation.sim.iphone7.ios100</id>
-            <properties>
-                <app.config>plugins/plugin.geolocation.sim.iphone7.ios100.properties</app.config>
-                <testsuite>plugins-geolocation-ios</testsuite>
-            </properties>
-        </profile>
-
-        <!--push plugin profiles-->
-        <profile>
-            <id>plugin.push.emu.default.api17</id>
-            <properties>
-                <app.config>plugins/plugin.push.emu.default.api17.properties</app.config>
-                <testsuite>plugins-push</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.push.emu.default.api18</id>
-            <properties>
-                <app.config>plugins/plugin.push.emu.default.api18.properties</app.config>
-                <testsuite>plugins-push</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.push.emu.default.api19</id>
-            <properties>
-                <app.config>plugins/plugin.push.emu.default.api19.properties</app.config>
-                <testsuite>plugins-push</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.push.emu.default.api22</id>
-            <properties>
-                <app.config>plugins/plugin.push.emu.default.api22.properties</app.config>
-                <testsuite>plugins-push</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.push.emu.default.api23</id>
-            <properties>
-                <app.config>plugins/plugin.push.emu.default.api23.properties</app.config>
-                <testsuite>plugins-push</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.push.sim.iphone5.ios81</id>
-            <properties>
-                <app.config>plugins/plugin.push.sim.iphone5.ios81.properties</app.config>
-                <testsuite>plugins-push</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.push.sim.iphone6.ios91</id>
-            <properties>
-                <app.config>plugins/plugin.push.sim.iphone6.ios91.properties</app.config>
-                <testsuite>plugins-push</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.push.sim.iphone7.ios100</id>
-            <properties>
-                <app.config>plugins/plugin.push.sim.iphone7.ios100.properties</app.config>
-                <testsuite>plugins-push</testsuite>
-            </properties>
-        </profile>
-        <!--imageupload plugin profiles-->
-        <profile>
-            <id>plugin.imageupload.emu.default.api19</id>
-            <properties>
-                <app.config>plugins/plugin.imageupload.emu.default.api19.properties</app.config>
-                <testsuite>plugins-imageupload-android</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.imageupload.emu.default.api22</id>
-            <properties>
-                <app.config>plugins/plugin.imageupload.emu.default.api22.properties</app.config>
-                <testsuite>plugins-imageupload-android</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.imageupload.emu.default.api23</id>
-            <properties>
-                <app.config>plugins/plugin.imageupload.emu.default.api23.properties</app.config>
-                <testsuite>plugins-imageupload-android</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.imageupload.sim.iphone5.ios81</id>
-            <properties>
-                <app.config>plugins/plugin.imageupload.sim.iphone5.ios81.properties</app.config>
-                <testsuite>plugins-imageupload-ios</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.imageupload.sim.iphone6.ios91</id>
-            <properties>
-                <app.config>plugins/plugin.imageupload.sim.iphone6.ios91.properties</app.config>
-                <testsuite>plugins-imageupload-ios</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.imageupload.sim.iphone7.ios100</id>
-            <properties>
-                <app.config>plugins/plugin.imageupload.sim.iphone7.ios100.properties</app.config>
-                <testsuite>plugins-imageupload-ios</testsuite>
-            </properties>
-        </profile>
-
-        <!--barcodescanner plugin profiles-->
-        <profile>
-            <id>plugin.barcodescanner.emu.default.api19</id>
-            <properties>
-                <app.config>plugins/plugin.barcodescanner.emu.default.api19.properties</app.config>
-                <testsuite>plugins-barcodescanner</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.barcodescanner.emu.default.api22</id>
-            <properties>
-                <app.config>plugins/plugin.barcodescanner.emu.default.api22.properties</app.config>
-                <testsuite>plugins-barcodescanner</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.barcodescanner.emu.default.api23</id>
-            <properties>
-                <app.config>plugins/plugin.barcodescanner.emu.default.api23.properties</app.config>
-                <testsuite>plugins-barcodescanner</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.barcodescanner.nexus5x.api24</id>
-            <properties>
-                <app.config>plugins/plugin.barcodescanner.nexus5x.api24.properties</app.config>
-                <testsuite>plugins-barcodescanner</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.barcodescanner.sim.iphone5.ios81</id>
-            <properties>
-                <app.config>plugins/plugin.barcodescanner.sim.iphone5.ios81.properties</app.config>
-                <testsuite>plugins-barcodescanner</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.barcodescanner.sim.iphone6.ios91</id>
-            <properties>
-                <app.config>plugins/plugin.barcodescanner.sim.iphone6.ios91.properties</app.config>
-                <testsuite>plugins-barcodescanner</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.barcodescanner.sim.iphone7.ios100</id>
-            <properties>
-                <app.config>plugins/plugin.barcodescanner.sim.iphone7.ios100.properties</app.config>
-                <testsuite>plugins-barcodescanner</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.barcodescanner.dev.ipad2.ios10</id>
-            <properties>
-                <app.config>plugins/plugin.barcodescanner.dev.ipad2.ios10.properties</app.config>
-                <testsuite>plugins-barcodescanner</testsuite>
-            </properties>
-        </profile>
-
-        <!--AdMob Plugin-->
-        <profile>
-            <id>plugin.admob.emu.default.api23</id>
-            <properties>
-                <app.config>plugins/plugin.admob.emu.default.api23.properties</app.config>
-                <testsuite>plugins-admob</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.admob.sim.iphone6.ios91</id>
-            <properties>
-                <app.config>plugins/plugin.admob.sim.iphone6.ios91.properties</app.config>
-                <testsuite>plugins-admob</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.admob.sim.iphone7.ios100</id>
-            <properties>
-                <app.config>plugins/plugin.admob.sim.iphone7.ios100.properties</app.config>
-                <testsuite>plugins-admob</testsuite>
-            </properties>
-        </profile>
-
-        <!--DropDown Plugin-->
-        <profile>
-            <id>plugin.dropdown.emu.default.api19</id>
-            <properties>
-                <app.config>plugins/plugin.dropdown.emu.default.api19.properties</app.config>
-                <testsuite>plugins-dropdown</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.dropdown.emu.default.api23</id>
-            <properties>
-                <app.config>plugins/plugin.dropdown.emu.default.api23.properties</app.config>
-                <testsuite>plugins-dropdown</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.dropdown.sim.iphone5s.ios81</id>
-            <properties>
-                <app.config>plugins/plugin.dropdown.sim.iphone5s.ios81.properties</app.config>
-                <testsuite>plugins-dropdown</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.dropdown.sim.iphone6.ios91</id>
-            <properties>
-                <app.config>plugins/plugin.dropdown.sim.iphone6.ios91.properties</app.config>
-                <testsuite>plugins-dropdown</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.dropdown.sim.iphone7.ios100</id>
-            <properties>
-                <app.config>plugins/plugin.dropdown.sim.iphone7.ios100.properties</app.config>
-                <testsuite>plugins-dropdown</testsuite>
-            </properties>
-        </profile>
-
-        <!--socialshare plugin-->
-        <profile>
-            <id>plugin.socialshare.emu.default.api19</id>
-            <properties>
-                <app.config>plugins/plugin.socialshare.emu.default.api19.properties</app.config>
-                <testsuite>plugins-socialshare</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.socialshare.emu.default.api22</id>
-            <properties>
-                <app.config>plugins/plugin.socialshare.emu.default.api22.properties</app.config>
-                <testsuite>plugins-socialshare</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.socialshare.emu.default.api23</id>
-            <properties>
-                <app.config>plugins/plugin.socialshare.emu.default.api23.properties</app.config>
-                <testsuite>plugins-socialshare</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.socialshare.sim.iphone5.ios81</id>
-            <properties>
-                <app.config>plugins/plugin.socialshare.sim.iphone5.ios81.properties</app.config>
-                <testsuite>plugins-socialshare</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.socialshare.sim.iphone6.ios91</id>
-            <properties>
-                <app.config>plugins/plugin.socialshare.sim.iphone6.ios91.properties</app.config>
-                <testsuite>plugins-socialshare</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.socialshare.sim.iphone7.ios100</id>
-            <properties>
-                <app.config>plugins/plugin.socialshare.sim.iphone7.ios100.properties</app.config>
-                <testsuite>plugins-socialshare</testsuite>
-            </properties>
-        </profile>
-
-        <!--Dialogs Plugin-->
-        <profile>
-            <id>plugin.dialogs.emu.default.api19</id>
-            <properties>
-                <app.config>plugins/plugin.dialogs.emu.default.api19.properties</app.config>
-                <testsuite>plugins-dialogs</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.dialogs.emu.default.api22</id>
-            <properties>
-                <app.config>plugins/plugin.dialogs.emu.default.api22.properties</app.config>
-                <testsuite>plugins-dialogs</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.dialogs.emu.default.api23</id>
-            <properties>
-                <app.config>plugins/plugin.dialogs.emu.default.api23.properties</app.config>
-                <testsuite>plugins-dialogs</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.dialogs.sim.iphone5.ios81</id>
-            <properties>
-                <app.config>plugins/plugin.dialogs.sim.iphone5.ios81.properties</app.config>
-                <testsuite>plugins-dialogs</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.dialogs.sim.iphone6.ios91</id>
-            <properties>
-                <app.config>plugins/plugin.dialogs.sim.iphone6.ios91.properties</app.config>
-                <testsuite>plugins-dialogs</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.dialogs.sim.iphone7.ios100</id>
-            <properties>
-                <app.config>plugins/plugin.dialogs.sim.iphone7.ios100.properties</app.config>
-                <testsuite>plugins-dialogs</testsuite>
-            </properties>
-        </profile>
-
-        <!--Camera Plugin-->
-        <profile>
-            <id>plugin.cameramodule.emu.default.api19</id>
-            <properties>
-                <app.config>plugins/plugin.cameramodule.emu.default.api19.properties</app.config>
-                <testsuite>plugins-cameramodule</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.cameramodule.emu.default.api24</id>
-            <properties>
-                <app.config>plugins/plugin.cameramodule.emu.default.api24.properties</app.config>
-                <testsuite>plugins-cameramodule</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.cameramodule.dev.nexus5x.api24</id>
-            <properties>
-                <app.config>plugins/plugin.cameramodule.dev.nexus5x.api24.properties</app.config>
-                <testsuite>plugins-cameramodule</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.cameramodule.dev.iphone5s.ios10</id>
-            <properties>
-                <app.config>plugins/plugin.cameramodule.dev.iphone5s.ios10.properties</app.config>
-                <testsuite>plugins-cameramodule</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.cameramodule.dev.iphone7.ios100</id>
-            <properties>
-                <app.config>plugins/plugin.cameramodule.dev.iphone7.ios100.properties</app.config>
-                <testsuite>plugins-cameramodule</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.gridview.emu.default.api19</id>
-            <properties>
-                <app.config>plugins/plugin.gridview.emu.default.api19.properties</app.config>
-                <testsuite>plugins-gridview</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.gridview.emu.default.api23</id>
-            <properties>
-                <app.config>plugins/plugin.gridview.emu.default.api23.properties</app.config>
-                <testsuite>plugins-gridview</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.gridview.sim.iphone5s.ios81</id>
-            <properties>
-                <app.config>plugins/plugin.gridview.sim.iphone5s.ios81.properties</app.config>
-                <testsuite>plugins-gridview</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.gridview.sim.iphone6.ios91</id>
-            <properties>
-                <app.config>plugins/plugin.gridview.sim.iphone6.ios91.properties</app.config>
-                <testsuite>plugins-gridview</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.gridview.sim.iphone7.ios100</id>
-            <properties>
-                <app.config>plugins/plugin.gridview.sim.iphone7.ios100.properties</app.config>
-                <testsuite>plugins-gridview</testsuite>
-            </properties>
-        </profile>
-
-        <!--TouchID Plugin-->
-        <profile>
-            <id>plugin.touchid.sim.iphone5s.ios81</id>
-            <properties>
-                <app.config>plugins/plugin.touchid.sim.iphone5s.ios81.properties</app.config>
-                <testsuite>plugins-touchid</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.touchid.sim.iphone6.ios91</id>
-            <properties>
-                <app.config>plugins/plugin.touchid.sim.iphone6.ios91.properties</app.config>
-                <testsuite>plugins-touchid</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>plugin.touchid.sim.iphone7.ios100</id>
-            <properties>
-                <app.config>plugins/plugin.touchid.sim.iphone7.ios100.properties</app.config>
-                <testsuite>plugins-touchid</testsuite>
-            </properties>
-        </profile>
-
-        <!--pods-indicator profiles-->
-        <profile>
-            <id>pods.indicator.dev.iphone5s.ios10</id>
-            <properties>
-                <app.config>pods/pods.indicator.dev.iphone5s.ios10.properties</app.config>
-                <testsuite>pods-indicator</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>pods.indicator.sim.iphone6s.ios91</id>
-            <properties>
-                <app.config>pods/pods.indicator.sim.iphone6s.ios91.properties</app.config>
-                <testsuite>pods-indicator</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>pods.indicator.sim.iphone7.ios100</id>
-            <properties>
-                <app.config>pods/pods.indicator.sim.iphone7.ios100.properties</app.config>
-                <testsuite>pods-indicator</testsuite>
-            </properties>
-        </profile>
-
-        <!--pods-googlesdk profiles-->
-        <profile>
-            <id>pods.googlesdk.dev.iphone5s.ios10</id>
-            <properties>
-                <app.config>pods/pods.googlesdk.dev.iphone5s.ios10.properties</app.config>
-                <testsuite>pods-googlesdk</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>pods.googlesdk.sim.iphone6s.ios91</id>
-            <properties>
-                <app.config>pods/pods.googlesdk.sim.iphone6s.ios91.properties</app.config>
-                <testsuite>pods-googlesdk</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>pods.googlesdk.sim.iphone7.ios100</id>
-            <properties>
-                <app.config>pods/pods.googlesdk.sim.iphone7.ios100.properties</app.config>
-                <testsuite>pods-googlesdk</testsuite>
             </properties>
         </profile>
 
@@ -1862,9 +1227,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.19</version>
+                <version>2.20.1</version>
                 <configuration>
-                    <argLine>-Xms512m -Xmx512m</argLine>
+                    <argLine>-Xmx1024m -XX:MaxPermSize=512m -Dsun.zip.disableMemoryMapping=true</argLine>
                     <suiteXmlFiles>
                         <suiteXmlFile>resources/suites/${testsuite}.xml</suiteXmlFile>
                     </suiteXmlFiles>
