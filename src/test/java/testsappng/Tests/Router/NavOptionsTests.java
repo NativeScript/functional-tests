@@ -36,7 +36,9 @@ public class NavOptionsTests extends TestsAppNgBase {
             // Navigate back should go to home screen
             this.navOptionsPage.navigateBack();
             if (this.settings.platformVersion < 7.1) {
-                this.wait.waitForVisible(this.locators.byText("Phone"), true);
+                UIElement phone = this.wait.waitForVisible(this.locators.byText("Phone"), false);
+                UIElement people = this.wait.waitForVisible(this.locators.byText("People"), false);
+                Assert.assertTrue((phone != null) || (people != null), "Back button do not set app in background.");
             } else {
                 this.wait.waitForVisible(this.locators.byText("Chrome"), true);
             }
