@@ -1,0 +1,33 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="UI Tests" verbose="1">
+    <test name="UI Tests - Css">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.Css"/>
+        </packages>
+    </test>
+    <test name="UI Tests - Fonts">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.Fonts"/>
+        </packages>
+    </test>
+    <test name="UI Tests - Page">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.Page"/>
+        </packages>
+    </test>
+</suite>

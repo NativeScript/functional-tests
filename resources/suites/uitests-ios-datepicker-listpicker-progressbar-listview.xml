@@ -1,0 +1,53 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="UI Tests" verbose="1">
+    <test name="UI Tests - DatePicker">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.DatePicker"/>
+        </packages>
+    </test>
+    <test name="UI Tests - Progress indicators">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.ProgressBar"/>
+        </packages>
+    </test>
+    <test name="UI Tests - ListView">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.ListView"/>
+        </packages>
+    </test>
+    <test name="UI Tests - ListPicker">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.ListPicker"/>
+        </packages>
+    </test>
+    <test name="UI Tests - TimePicker">
+        <groups>
+            <run>
+                <include name="ios"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.TimePicker"/>
+        </packages>
+    </test>
+</suite>
