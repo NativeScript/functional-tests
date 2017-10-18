@@ -16,14 +16,18 @@ public class BindingTests extends TestsAppNgBase {
 
     @Test(groups = {"android", "ios"})
     public void binding_01() throws Exception {
-        this.bindingPage.insertNewValues();
-        this.bindingPage.getResults();
-        Assert.assertTrue(this.bindingPage.compareResults("1", "0", "5"), "Binding is not working");
+        if (this.settings.platformVersion >= 11.0) {
+            this.bindingPage.insertNewValues();
+            this.bindingPage.getResults();
+            Assert.assertTrue(this.bindingPage.compareResults("1", "0", "5"), "Binding is not working");
 
-        this.bindingPage.updateValuesFromCodeBehind();
-        this.bindingPage.getResults();
+            this.bindingPage.updateValuesFromCodeBehind();
+            this.bindingPage.getResults();
 
-        Assert.assertTrue(this.bindingPage.compareResults("0", "0", "0"), "Binding is not working from code behind!");
+            Assert.assertTrue(this.bindingPage.compareResults("0", "0", "0"), "Binding is not working from code behind!");
+        } else {
+            this.log.warn("This test will be skipped on iOS 10, because of https://github.com/facebook/WebDriverAgent/issues/703");
+        }
     }
 
 }
