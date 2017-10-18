@@ -1,6 +1,7 @@
 package sdkexamples.Tests;
 
-import org.springframework.util.Assert;
+
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import sdkexamples.SdkBaseTest;
@@ -26,9 +27,9 @@ public class SdkTabViewTests extends SdkBaseTest {
     public void sdkTabViewTest(String example) throws Exception {
         this.mainPage.navigateTo(example);
         if (example == "Basic TabView") {
-            Assert.notNull(this.mainPage.find.byText("NativeScript"));
+            Assert.assertNotNull(this.mainPage.find.byText("NativeScript"));
         } else if (example == "TabView items") {
-            Assert.notNull(this.mainPage.find.byText("TabView item with Icon"));
+            Assert.assertNotNull(this.mainPage.find.byText("TabView item with Icon"));
         }
     }
 }
