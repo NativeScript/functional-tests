@@ -110,11 +110,11 @@ public class MainPageTest extends MobileTest {
         if (this.settings.platform == PlatformType.Android) {
             this.compareElements("logOffDialog", this.mainPage.logScreen(), 5, 0.1);
         } else {
-            this.compareScreens(5, 0.1);
+            this.compareScreens(20, 0.1);
         }
 
         this.mainPage.tapOnLogOff();
-        this.compareScreens(20, 2.2);
+        this.compareScreens(30, 5.0);
 
         this.assertImagesResults();
     }
