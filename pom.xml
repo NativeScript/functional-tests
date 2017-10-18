@@ -985,9 +985,9 @@
             </properties>
         </profile>
         <profile>
-            <id>sdkexamples.emu.google.api24</id>
+            <id>sdkexamples.emu.google.api26</id>
             <properties>
-                <app.config>sdkexamples/sdkexamples.emu.google.api24.properties</app.config>
+                <app.config>sdkexamples/sdkexamples.emu.google.api26.properties</app.config>
                 <testsuite>sdkexamples</testsuite>
             </properties>
         </profile>
