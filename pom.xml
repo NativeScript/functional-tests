@@ -221,7 +221,7 @@
             </properties>
         </profile>
         <profile>
-            <id>uitests.sim.iphone7.ios110.date-picker.list-picker.progress-bar.list-view</id>
+            <id>uitests.sim.iphone7.ios110.datepicker.listpicker.progressbar.listview</id>
             <properties>
                 <app.config>uitests/uitests.sim.iphone7.ios110.properties</app.config>
                 <testsuite>uitests-ios-datepicker-listpicker-progressbar-listview</testsuite>
