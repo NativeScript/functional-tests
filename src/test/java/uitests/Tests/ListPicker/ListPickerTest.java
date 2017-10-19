@@ -28,7 +28,7 @@ public class ListPickerTest extends UIBaseTests {
         this.compareScreens(15);
         this.device.rotate(ScreenOrientation.PORTRAIT);
         this.compareScreens(15);
-        //this.assertImagesResults();
+        this.assertImagesResults();
     }
 
     @Test(groups = {"android", "ios"}, dependsOnMethods = {"listPicker_issue_2895"})
