@@ -258,7 +258,7 @@
         <profile>
             <id>uitests.sim.iphone7.ios110.pageevents</id>
             <properties>
-                <app.config>uitests/uitests.sim.iphone7.ios110.pageevents</app.config>
+                <app.config>uitests/uitests.sim.iphone7.ios110.properties</app.config>
                 <testsuite>uitests-ios-pageevents</testsuite>
             </properties>
         </profile>
