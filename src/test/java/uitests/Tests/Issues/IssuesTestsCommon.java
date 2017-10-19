@@ -193,7 +193,7 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         this.compareScreens(30, diff);
 
 
-        this.issuesBasePage.wait.waitForVisible(this.locators.byText("default layer speed")).tap();
+        this.issuesBasePage.wait.waitForVisible(this.locators.byText("default layer speed"), 5, true).tap();
 
         this.app.restart();
         this.context.navigationManager.resetNavigationMainPage();
