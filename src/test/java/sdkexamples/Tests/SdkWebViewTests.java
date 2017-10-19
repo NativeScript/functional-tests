@@ -32,7 +32,7 @@ public class SdkWebViewTests extends SdkBaseTest {
             if ((this.settings.platform == PlatformType.Android) && (this.settings.platformVersion >= 5.0)) {
                 this.wait.waitForVisible(this.locators.webViewLocator(), true);
             }
-            if (this.settings.platformVersion >= 5.0) {
+            if (this.settings.platformVersion > 5.0) {
                 this.wait.waitForVisible(this.locators.byText("WebView finished loading of", false, false), this.settings.defaultTimeout, true);
             }
         } else if (example.equalsIgnoreCase(pageWebViewHtml)) {
