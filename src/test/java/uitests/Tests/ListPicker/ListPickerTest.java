@@ -7,7 +7,6 @@ import org.openqa.selenium.ScreenOrientation;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uitests.Screens.HomePageExtended;
-import uitests.Tests.Css.CssCommonTests;
 import uitests.Tests.UIBaseTests;
 
 public class ListPickerTest extends UIBaseTests {
@@ -20,7 +19,7 @@ public class ListPickerTest extends UIBaseTests {
 
     @Test(groups = {"android", "ios"})
     public void listPicker_issue_2895() throws Exception {
-        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion <10){
+        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 10) {
             return;
         }
         this.homePageExtended.navigateTo("issue_2895");
@@ -29,12 +28,12 @@ public class ListPickerTest extends UIBaseTests {
         this.compareScreens(15);
         this.device.rotate(ScreenOrientation.PORTRAIT);
         this.compareScreens(15);
-        this.assertImagesResults();
+        //this.assertImagesResults();
     }
 
-    @Test(groups = {"android", "ios"})
-    public void cssListPicker() throws Exception {
-        this.homePageExtended.navigateTo(this.find.byText("list-picker"),"list-picker ");
+    @Test(groups = {"android", "ios"}, dependsOnMethods = {"listPicker_issue_2895"})
+    public void listPicker_css() throws Exception {
+        this.homePageExtended.navigateTo(this.find.byText("list-picker"), "list-picker ");
         this.compareScreens(10);
         if (this.settings.platform == PlatformType.Android) {
             this.wait.waitForVisible(this.locators.byText("name1", false, false), 2, false)

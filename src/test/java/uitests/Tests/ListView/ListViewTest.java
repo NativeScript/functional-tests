@@ -4,6 +4,7 @@ import functional.tests.core.enums.PlatformType;
 import functional.tests.core.extensions.ScrollableListObject;
 import functional.tests.core.mobile.element.UIElement;
 import io.appium.java_client.SwipeElementDirection;
+import org.openqa.selenium.By;
 import org.openqa.selenium.ScreenOrientation;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -25,15 +26,27 @@ public class ListViewTest extends UIBaseTests {
             return;
         }
         this.homePageExtended.navigateTo("list-view-templates");
-        UIElement scroll = this.homePageExtended.wait.waitForVisible(this.locators.byText("SCROLL", false, false), 5, true);
+
+        By scrollBtnLocator = this.locators.byText("SCROLL", false, false);
+
+        By item1Locator = this.locators.byText("item1");
+        By item99Locator = this.locators.byText("item99");
+
+        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion > 10) {
+            scrollBtnLocator = By.id("SCROLL");
+            item1Locator = By.id("item1");
+            item99Locator = By.id("item99");
+        }
+
+        UIElement scroll = this.homePageExtended.wait.waitForVisible(scrollBtnLocator, 5, true);
         this.compareScreens(10, 0.30);
 
         scroll.tap();
-        this.homePageExtended.wait.waitForNotVisible(this.locators.byText("item99", false, false), 3, true);
+        this.homePageExtended.wait.waitForNotVisible(item99Locator, 3, true);
         this.compareScreens(10);
 
         scroll.tap();
-        this.homePageExtended.wait.waitForNotVisible(this.locators.byText("item1", false, false), 3, true);
+        this.homePageExtended.wait.waitForNotVisible(item1Locator, 3, true);
         this.compareScreens(10);
 
         this.assertImagesResults();
