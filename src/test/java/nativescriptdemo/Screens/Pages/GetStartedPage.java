@@ -17,7 +17,7 @@ public class GetStartedPage extends BasePage {
     }
 
     public void loaded() {
-        UIElement element = this.wait.waitForVisible(this.getStartedLocator(), 5, false);
+        UIElement element = this.wait.waitForVisible(this.getStartedLocator(), this.settings.defaultTimeout, false);
         if (element != null) {
             this.log.info("Get Started page loaded.");
         } else {
