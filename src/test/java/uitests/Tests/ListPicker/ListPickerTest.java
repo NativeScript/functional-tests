@@ -33,6 +33,7 @@ public class ListPickerTest extends UIBaseTests {
 
     @Test(groups = {"android", "ios"}, dependsOnMethods = {"listPicker_issue_2895"})
     public void listPicker_css() throws Exception {
+        this.homePageExtended.navigateToMainPage();
         this.homePageExtended.navigateTo(this.find.byText("list-picker"), "list-picker ");
         this.compareScreens(10);
         if (this.settings.platform == PlatformType.Android) {
