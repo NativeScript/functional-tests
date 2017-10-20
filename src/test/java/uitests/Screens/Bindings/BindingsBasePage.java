@@ -14,7 +14,7 @@ public class BindingsBasePage extends BasePageExtended {
         super(BINDINGS, context);
         this.navigateToBindings();
         this.bindingBasicsPage = new BindingBasicsPage();
-        this.bindingXmlBasicsPage = new BindingXmlBasicsPage(this);
+        this.bindingXmlBasicsPage = new BindingXmlBasicsPage();
     }
 
     private void navigateToBindings() {
