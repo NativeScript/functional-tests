@@ -1,4 +1,4 @@
-package uitests.Tests.Events;
+package uitests.Tests.Gestures;
 
 import functional.tests.core.enums.PlatformType;
 import org.testng.annotations.Test;

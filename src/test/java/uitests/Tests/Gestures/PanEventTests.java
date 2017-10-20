@@ -1,4 +1,4 @@
-package uitests.Tests.Events;
+package uitests.Tests.Gestures;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;

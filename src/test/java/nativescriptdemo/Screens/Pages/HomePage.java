@@ -1,11 +1,10 @@
 package nativescriptdemo.Screens.Pages;
 
+import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.basepage.BasePage;
 import functional.tests.core.mobile.element.UIElement;
-import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.helpers.NavigationHelper;
 import io.appium.java_client.SwipeElementDirection;
-import io.appium.java_client.remote.AutomationName;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
@@ -16,21 +15,7 @@ public class HomePage extends BasePage {
 
     public HomePage() {
         super();
-        if (this.settings.deviceName.toLowerCase().contains("arm")) {
-            this.log.info("Arm device detected. Increase timeouts");
-            waitTimeOut = waitTimeOut * 3;
-        }
         this.getStartedPage = new GetStartedPage();
-    }
-
-    private UIElement btnSideDrawer() {
-        if (this.settings.platform == PlatformType.iOS) {
-            return this.find.byLocator(By.id("ic_menu_main"));
-        } else if (this.settings.platform == PlatformType.Android) {
-            return this.wait.waitForVisible(this.locators.imageButtonLocator());
-        } else {
-            return null;
-        }
     }
 
     public void load() {
@@ -42,8 +27,7 @@ public class HomePage extends BasePage {
     }
 
     public Boolean loaded() {
-        UIElement element = this.getMenuButton();
-
+        UIElement element = this.btnSideDrawer();
         if (element != null) {
             this.log.info("Home page loaded.");
             return true;
@@ -64,9 +48,15 @@ public class HomePage extends BasePage {
     }
 
     public void tapSideDrawer() {
-        this.btnSideDrawer().tap();
-        this.log.info("Tap on SideDrawer button.");
+        if (this.settings.platformVersion >= 11.0 && this.settings.platform == PlatformType.iOS) {
+            this.client.driver.swipe(10, 100, 200, 100, 250);
+            this.log.info("Open SideDrawer with swipe.");
+        } else {
+            this.btnSideDrawer().tap();
+            this.log.info("Tap on SideDrawer button.");
+        }
     }
+
 
     @Override
     public boolean navigateTo(String example) {
@@ -80,15 +70,17 @@ public class HomePage extends BasePage {
         return super.navigateTo(element);
     }
 
-    private UIElement getMenuButton() {
-        UIElement element;
-        if (this.settings.platform == PlatformType.Android) {
-            element = this.wait.waitForVisible(this.locators.imageButtonLocator(), waitTimeOut, false);
-        } else if (this.settings.platform == PlatformType.iOS) {
-            element = this.wait.waitForVisible(By.id("ic_menu_main"), waitTimeOut, false);
+    private UIElement btnSideDrawer() {
+        if (this.settings.platform == PlatformType.iOS) {
+            if (this.settings.platformVersion >= 11.0) {
+                return this.find.byLocator(By.id("ActionBar"));
+            } else {
+                return this.find.byLocator(By.id("ic_menu_main"));
+            }
+        } else if (this.settings.platform == PlatformType.Android) {
+            return this.wait.waitForVisible(this.locators.imageButtonLocator());
         } else {
-            element = null;
+            return null;
         }
-        return element;
     }
 }

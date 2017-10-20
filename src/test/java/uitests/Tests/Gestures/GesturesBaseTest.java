@@ -1,4 +1,4 @@
-package uitests.Tests.Events;
+package uitests.Tests.Gestures;
 
 import functional.tests.core.mobile.basetest.MobileTest;
 import org.testng.annotations.BeforeClass;
