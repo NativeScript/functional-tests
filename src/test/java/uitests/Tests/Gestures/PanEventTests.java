@@ -5,7 +5,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uitests.Screens.PanEventPage;
 
-public class PanEventTests extends EventsBaseTest {
+public class PanEventTests extends GesturesBaseTest {
     private PanEventPage panEventPage;
 
     @BeforeClass(alwaysRun = true)
