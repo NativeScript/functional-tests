@@ -6,6 +6,7 @@ import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.mobile.find.Wait;
 import functional.tests.core.utils.OSUtils;
 import io.appium.java_client.SwipeElementDirection;
+import org.openqa.selenium.By;
 import org.openqa.selenium.ScreenOrientation;
 import org.testng.annotations.Test;
 
@@ -168,33 +169,36 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         this.compareElements(navBar, 5, tollerance);
 
         this.issuesBasePage.find.byText("change speed to very slow").tap();
-        Wait.sleep(3);
 
-        UIElement el = this.find.byText("go to subPage");
+        By goToSubPageLocator = this.locators.byText("go to subPage");
+        if (this.settings.platformVersion > 10) {
+            goToSubPageLocator = By.id("go to subPage");
+        }
+        UIElement el = this.find.byLocator(goToSubPageLocator);
         this.issuesBasePage.navigateTo(el, ClickType.Click, "sub page");
         this.compareScreens(30, 1.00);
-        try {
-            this.issuesBasePage.navigateBack();
-        } catch (Exception e) {
-            UIElement subPage = this.issuesBasePage.wait.waitForVisible(this.locators.byText("SUB PAGE"), this.settings.defaultTimeout, false);
 
-            while (subPage.getUIRectangle().x > 0) {
-                subPage = this.issuesBasePage.wait.waitForVisible(this.locators.byText("SUB PAGE"));
-                this.log.info(subPage.getUIRectangle() + "; " + subPage.getUIRectangle().getX());
-            }
-
-            Wait.sleep(this.settings.defaultTimeout * 850);
-            this.issuesBasePage.navigateBack();
+        By locator = this.locators.byText("SUB PAGE");
+        if (this.settings.platformVersion > 10) {
+            locator = By.id("SUB PAGE");
         }
+
+        UIElement subPage = this.issuesBasePage.wait.waitForVisible(locator, this.settings.defaultTimeout, false);
+        this.log.info(subPage.getUIRectangle() + "; " + subPage.getUIRectangle().getX());
+        while (subPage.getUIRectangle().x > 0) {
+            subPage = this.issuesBasePage.wait.waitForVisible(locator);
+            this.log.info(subPage.getUIRectangle() + "; " + subPage.getUIRectangle().getX());
+        }
+
+        Wait.sleep(35000);
+        this.issuesBasePage.navigateBack();
         double diff = 0D;
         if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 10) {
             diff = 4.0D;
         }
         this.compareScreens(30, diff);
 
-
-        this.issuesBasePage.wait.waitForVisible(this.locators.byText("default layer speed"), 5, true).tap();
-
+        this.issuesBasePage.wait.waitForVisible(this.locators.byText("default layer speed"), 10, true).tap();
         this.app.restart();
         this.context.navigationManager.resetNavigationMainPage();
 
