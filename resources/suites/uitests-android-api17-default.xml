@@ -80,14 +80,14 @@
             <package name="uitests.Tests.ImageView"/>
         </packages>
     </test>
-    <test name="UI Tests - Page events">
+    <test name="UI Tests - Gestures">
         <groups>
             <run>
                 <include name="android"/>
             </run>
         </groups>
         <packages>
-            <package name="uitests.Tests.Events"/>
+            <package name="uitests.Tests.Gestures"/>
         </packages>
     </test>
     <test name="UI Tests - Segmented Style">
