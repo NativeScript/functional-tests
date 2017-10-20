@@ -256,10 +256,10 @@
             </properties>
         </profile>
         <profile>
-            <id>uitests.sim.iphone7.ios110.pageevents</id>
+            <id>uitests.sim.iphone7.ios110.gestures</id>
             <properties>
                 <app.config>uitests/uitests.sim.iphone7.ios110.properties</app.config>
-                <testsuite>uitests-ios-pageevents</testsuite>
+                <testsuite>uitests-ios-gestures</testsuite>
             </properties>
         </profile>
         <profile>

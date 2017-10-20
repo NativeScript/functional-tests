@@ -1,11 +1,11 @@
-package uitests.Tests.Events;
+package uitests.Tests.Gestures;
 
 import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.find.Wait;
 import org.testng.annotations.Test;
 
-public class TouchTests extends EventsBaseTest {
+public class TouchTests extends GesturesBaseTest {
 
     @Test(groups = {"android", "ios"})
     public void touch_01_pinch() throws Exception {

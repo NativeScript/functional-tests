@@ -1,9 +1,9 @@
-package uitests.Tests.Events;
+package uitests.Tests.Gestures;
 
 import functional.tests.core.enums.PlatformType;
 import org.testng.annotations.Test;
 
-public class ConsoleTests extends EventsBaseTest {
+public class ConsoleTests extends GesturesBaseTest {
 
     @Test(groups = {"android", "ios"})
     public void console_01() throws Exception {

@@ -1,4 +1,4 @@
-package uitests.Tests.Events;
+package uitests.Tests.Gestures;
 
 import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uitests.Screens.GesturesPage;
 
-public class GesturesTests extends EventsBaseTest {
+public class GesturesTests extends GesturesBaseTest {
 
     private GesturesPage gesturesPage;
 
