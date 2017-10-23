@@ -16,10 +16,12 @@ public class BindingXmlBasicsPage {
 
     public UIElement btnText() {
         int buttonIndex = 0;
-        if (this.context.settings.platform == PlatformType.iOS && this.context.settings.platformVersion <= 10) {
-            buttonIndex = 2;
-        } else {
-            buttonIndex = 1;
+        if (this.context.settings.platform == PlatformType.iOS) {
+            if (this.context.settings.platformVersion > 10) {
+                buttonIndex = 1;
+            } else {
+                buttonIndex = 2;
+            }
         }
         return this.context.find.elementsByLocator(this.context.locators.buttonLocator()).get(buttonIndex);
     }
