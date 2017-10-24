@@ -3,6 +3,7 @@ package uitests.Tests.ListPicker;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.enums.Position;
 import io.appium.java_client.SwipeElementDirection;
+import org.openqa.selenium.By;
 import org.openqa.selenium.ScreenOrientation;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -34,14 +35,14 @@ public class ListPickerTest extends UIBaseTests {
     @Test(groups = {"android", "ios"}, dependsOnMethods = {"listPicker_issue_2895"})
     public void listPicker_css() throws Exception {
         this.homePageExtended.navigateToMainPage();
-        this.homePageExtended.navigateTo(this.find.byText("list-picker"), "list-picker ");
+        this.homePageExtended.navigateTo(this.wait.waitForVisible(this.locators.byText("list-picker")), "list-picker ");
         this.compareScreens(10);
         if (this.settings.platform == PlatformType.Android) {
             this.wait.waitForVisible(this.locators.byText("name1", false, false), 2, false)
                     .dragAndDrop(20, -200, 0);
         } else {
-            this.wait.waitForVisible(this.locators.byText("name0", false, false), 2, false)
-                    .scrollInElementToElement(SwipeElementDirection.DOWN, Position.FromCenter, this.locators.byText("name3"), 10, 5);
+            this.wait.waitForVisible(By.id("name0"), 2, false)
+                    .scrollInElementToElement(SwipeElementDirection.DOWN, Position.FromCenter, By.id("name3"), 10, 5);
         }
 
         this.compareScreens(10);
