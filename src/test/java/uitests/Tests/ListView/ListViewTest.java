@@ -47,7 +47,7 @@ public class ListViewTest extends UIBaseTests {
 
         scroll.tap();
         this.homePageExtended.wait.waitForNotVisible(item1Locator, 3, true);
-        this.compareScreens(10);
+        this.compareScreens(10, 0.6);
 
         this.assertImagesResults();
     }
@@ -99,9 +99,10 @@ public class ListViewTest extends UIBaseTests {
 
         double tolerance = 0.28d;
         if (this.settings.platform == PlatformType.iOS) {
-            tolerance = 0.40d;
+            tolerance = 0.50d;
         }
-        this.assertScreen(2, tolerance);
+        this.compareScreens(10, tolerance);
+        this.assertImagesResults();
     }
 
     @Test(groups = {"android", "ios"})
