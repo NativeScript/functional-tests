@@ -192,11 +192,7 @@ public class IssuesTestsCommon extends IssuesBaseTest {
 
         Wait.sleep(35000);
         this.issuesBasePage.navigateBack();
-        double diff = 0D;
-        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 10) {
-            diff = 4.0D;
-        }
-        this.compareScreens(30, diff);
+        this.compareScreens(30, 4.0);
 
         this.issuesBasePage.wait.waitForVisible(this.locators.byText("default layer speed"), 10, true).tap();
         this.app.restart();
