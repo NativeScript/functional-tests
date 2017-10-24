@@ -263,6 +263,13 @@
             </properties>
         </profile>
         <profile>
+            <id>uitests.sim.iphoneX.ios110</id>
+            <properties>
+                <app.config>uitests/uitests.sim.iphoneX.ios110.properties</app.config>
+                <testsuite>uitests-ios</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>uitests.sim.iphone7.ios110.textfiled.textview.tabview.searchbar</id>
             <properties>
                 <app.config>uitests/uitests.sim.iphone7.ios110.properties</app.config>
