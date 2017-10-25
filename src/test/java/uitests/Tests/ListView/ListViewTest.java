@@ -43,7 +43,7 @@ public class ListViewTest extends UIBaseTests {
 
         scroll.tap();
         this.homePageExtended.wait.waitForNotVisible(item99Locator, 3, true);
-        this.compareScreens(10);
+        this.compareScreens(10, 0.6);
 
         scroll.tap();
         this.homePageExtended.wait.waitForNotVisible(item1Locator, 3, true);
