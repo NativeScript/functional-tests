@@ -71,7 +71,7 @@ public class ListViewTest extends UIBaseTests {
     public void cssListView_01() throws Exception {
         this.homePageExtended.navigateTo("csslv");
         this.compareScreens(this.settings.defaultTimeout, 0.25);
-
+        final String lastLocatorText = "NAME99";
         if (this.settings.platform == PlatformType.Android) {
             ScrollableListObject scrollableListObject = new ScrollableListObject(this.context) {
                 @Override
@@ -89,7 +89,7 @@ public class ListViewTest extends UIBaseTests {
                 }
             };
 
-            scrollableListObject.scrollTo("NAME99");
+            scrollableListObject.scrollTo(lastLocatorText);
         } else {
             this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
             this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
@@ -97,9 +97,14 @@ public class ListViewTest extends UIBaseTests {
             this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
         }
 
+        By lastItemLocator = this.locators.byText(lastLocatorText);
+        if (this.settings.platform == PlatformType.iOS) {
+            lastItemLocator = By.id(lastLocatorText);
+        }
+        this.wait.forVisibleElements(lastItemLocator, 5, true);
         double tolerance = 0.28d;
         if (this.settings.platform == PlatformType.iOS) {
-            tolerance = 0.50d;
+            tolerance = 0.60d;
         }
         this.compareScreens(10, tolerance);
         this.assertImagesResults();
