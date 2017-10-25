@@ -42,7 +42,7 @@ public class ListPickerTest extends UIBaseTests {
                     .dragAndDrop(20, -200, 0);
         } else {
             this.wait.waitForVisible(By.id("name0"), 2, false)
-                    .scrollInElementToElement(SwipeElementDirection.DOWN, Position.FromCenter, By.id("name3"), 10, 5);
+                    .scrollInElementToElement(SwipeElementDirection.DOWN, Position.FromCenter, By.id("name3"), 100, 5);
         }
 
         this.compareScreens(10);
