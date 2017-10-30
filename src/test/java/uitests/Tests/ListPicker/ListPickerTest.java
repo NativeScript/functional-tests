@@ -36,13 +36,14 @@ public class ListPickerTest extends UIBaseTests {
     public void listPicker_css() throws Exception {
         this.homePageExtended.navigateToMainPage();
         this.homePageExtended.navigateTo(this.wait.waitForVisible(this.locators.byText("list-picker")), "list-picker ");
-        this.compareScreens(10);
+        //this.compareScreens(10);
         if (this.settings.platform == PlatformType.Android) {
             this.wait.waitForVisible(this.locators.byText("name1", false, false), 2, false)
                     .dragAndDrop(20, -200, 0);
         } else {
-            this.wait.waitForVisible(By.id("name0"), 2, false)
-                    .scrollInElementToElement(SwipeElementDirection.DOWN, Position.FromCenter, By.id("name3"), 100, 5);
+
+            java.awt.Rectangle rect = this.wait.waitForVisible(By.className(this.uiElements.listPicker())).getUIRectangle();
+            this.gestures.scrollInRectangle(SwipeElementDirection.DOWN, rect, Position.FromCorner, 0, 50, 0);
         }
 
         this.compareScreens(10);
