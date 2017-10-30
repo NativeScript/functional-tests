@@ -1,9 +1,6 @@
 package uitests.Tests.ListPicker;
 
 import functional.tests.core.enums.PlatformType;
-import functional.tests.core.enums.Position;
-import io.appium.java_client.SwipeElementDirection;
-import org.openqa.selenium.By;
 import org.openqa.selenium.ScreenOrientation;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -36,17 +33,8 @@ public class ListPickerTest extends UIBaseTests {
     public void listPicker_css() throws Exception {
         this.homePageExtended.navigateToMainPage();
         this.homePageExtended.navigateTo(this.wait.waitForVisible(this.locators.byText("list-picker")), "list-picker ");
-        //this.compareScreens(10);
-        if (this.settings.platform == PlatformType.Android) {
-            this.wait.waitForVisible(this.locators.byText("name1", false, false), 2, false)
-                    .dragAndDrop(20, -200, 0);
-        } else {
-
-            java.awt.Rectangle rect = this.wait.waitForVisible(By.className(this.uiElements.listPicker())).getUIRectangle();
-            this.gestures.scrollInRectangle(SwipeElementDirection.DOWN, rect, Position.FromCorner, 0, 50, 0);
-        }
-
         this.compareScreens(10);
+        
         this.assertImagesResults();
     }
 }
