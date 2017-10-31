@@ -881,21 +881,21 @@
             <id>nativescriptdemo.dev.nexus5.api19</id>
             <properties>
                 <app.config>nativescriptdemo/nativescriptdemo.dev.nexus5.api19.properties</app.config>
-                <testsuite>nativescriptdemo-android</testsuite>
+                <testsuite>nativescriptdemo-android-noweb</testsuite>
             </properties>
         </profile>
         <profile>
             <id>nativescriptdemo.dev.nexus5.api21</id>
             <properties>
                 <app.config>nativescriptdemo/nativescriptdemo.dev.nexus5.api21.properties</app.config>
-                <testsuite>nativescriptdemo-android</testsuite>
+                <testsuite>nativescriptdemo-android-noweb</testsuite>
             </properties>
         </profile>
         <profile>
             <id>nativescriptdemo.dev.nexus5.api23</id>
             <properties>
                 <app.config>nativescriptdemo/nativescriptdemo.dev.nexus5.api23.properties</app.config>
-                <testsuite>nativescriptdemo-android</testsuite>
+                <testsuite>nativescriptdemo-android-noweb</testsuite>
             </properties>
         </profile>
         <profile>
