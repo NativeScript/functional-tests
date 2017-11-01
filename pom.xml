@@ -262,6 +262,8 @@
                 <testsuite>uitests-ios-gestures</testsuite>
             </properties>
         </profile>
+
+
         <profile>
             <id>uitests.sim.iphoneX.ios110</id>
             <properties>
@@ -269,6 +271,64 @@
                 <testsuite>uitests-ios</testsuite>
             </properties>
         </profile>
+        <profile>
+            <id>uitests.sim.iphoneX.ios110.components</id>
+            <properties>
+                <app.config>uitests/uitests.sim.iphoneX.ios110.properties</app.config>
+                <testsuite>uitests-ios-components</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>uitests.sim.iphoneX.ios110.button</id>
+            <properties>
+                <app.config>uitests/uitests.sim.iphoneX.ios110.properties</app.config>
+                <testsuite>uitests-ios-button</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>uitests.sim.iphoneX.ios110.datepicker.listpicker.progressbar.listview</id>
+            <properties>
+                <app.config>uitests/uitests.sim.iphoneX.ios110.properties</app.config>
+                <testsuite>uitests-ios-datepicker-listpicker-progressbar-listview</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>uitests.sim.iphoneX.ios110.dialogs</id>
+            <properties>
+                <app.config>uitests/uitests.sim.iphoneX.ios110.properties</app.config>
+                <testsuite>uitests-ios-dialogs</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>uitests.sim.iphoneX.ios110.flexbox</id>
+            <properties>
+                <app.config>uitests/uitests.sim.iphoneX.ios110.properties</app.config>
+                <testsuite>uitests-ios-flexbox</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>uitests.sim.iphoneX.ios110.issues</id>
+            <properties>
+                <app.config>uitests/uitests.sim.iphoneX.ios110.properties</app.config>
+                <testsuite>uitests-ios-issues</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>uitests.sim.iphoneX.ios110.layouts.segmentedstyle.imageview</id>
+            <properties>
+                <app.config>uitests/uitests.sim.iphoneX.ios110.properties</app.config>
+                <testsuite>uitests-ios-layouts-segmentedstyle-imageview</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>uitests.sim.iphoneX.ios110.gestures</id>
+            <properties>
+                <app.config>uitests/uitests.sim.iphoneX.ios110.properties</app.config>
+                <testsuite>uitests-ios-gestures</testsuite>
+            </properties>
+        </profile>
+
+
         <profile>
             <id>uitests.sim.iphone7.ios110.textfiled.textview.tabview.searchbar</id>
             <properties>
