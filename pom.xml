@@ -340,6 +340,13 @@
                 <testsuite>uitests-ios-gestures</testsuite>
             </properties>
         </profile>
+        <profile>
+            <id>uitests.sim.iphoneX.ios110.textfiled.textview.tabview.searchbar</id>
+            <properties>
+                <app.config>uitests/uitests.sim.iphoneX.ios110.properties</app.config>
+                <testsuite>uitests-ios-textfiled-textview-tabview-searchbar</testsuite>
+            </properties>
+        </profile>
 
         <profile>
             <id>uitests.dev.ipad2.ios10</id>
