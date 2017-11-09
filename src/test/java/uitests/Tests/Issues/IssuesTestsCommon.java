@@ -217,7 +217,7 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         this.assertImagesResults();
     }
 
-    @Test(groups = {"ios"})
+    //@Test(groups = {"ios"})
     public void issue_4283_internet_sharing() throws Exception {
 
         Robot robot = new Robot();
