@@ -2,6 +2,7 @@ package uitests.Tests.SearchBar;
 
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.element.UIElement;
+import io.appium.java_client.android.AndroidDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uitests.Screens.HomePageExtended;
@@ -59,6 +60,22 @@ public class SearchBarTest extends UIBaseTests {
         this.app.hideKeyboard();
 
         this.assertScreen(10);
+    }
+
+    @Test(groups = {"android"})
+    public void issue_5039() throws Exception {
+        this.homePageExtended.navigateTo("issue-5039");
+
+        this.setText(0, "apple");
+        ((AndroidDriver) this.client.driver).pressKeyCode(66);
+        this.compareScreens(5);
+
+        this.clearSearchBar(0);
+        this.setText(0, "apple");
+        ((AndroidDriver) this.client.driver).pressKeyCode(66);
+        this.compareScreens(5);
+
+        this.assertImagesResults();
     }
 
     private void setText(int index, String text) {
