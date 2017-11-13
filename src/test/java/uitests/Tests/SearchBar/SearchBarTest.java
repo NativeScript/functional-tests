@@ -74,7 +74,7 @@ public class SearchBarTest extends UIBaseTests {
         this.setText(0, "apple");
         ((AndroidDriver) this.client.driver).pressKeyCode(66);
         this.compareScreens(5);
-
+        this.app.hideKeyboard();
         this.assertImagesResults();
     }
 
