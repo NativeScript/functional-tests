@@ -557,13 +557,6 @@
             </properties>
         </profile>
         <profile>
-            <id>unittests.dev.iphone5s.ios11</id>
-            <properties>
-                <app.config>unittests/unittests.dev.iphone5s.ios11.properties</app.config>
-                <testsuite>unittests</testsuite>
-            </properties>
-        </profile>
-        <profile>
             <id>unittests.dev.ipad2.ios10</id>
             <properties>
                 <app.config>unittests/unittests.dev.ipad2.ios10.properties</app.config>
