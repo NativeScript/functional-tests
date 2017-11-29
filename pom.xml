@@ -550,9 +550,9 @@
             </properties>
         </profile>
         <profile>
-            <id>unittests.dev.iphone5.ios</id>
+            <id>unittests.dev.iphone5s.ios</id>
             <properties>
-                <app.config>unittests/unittests.dev.iphone5.ios.properties</app.config>
+                <app.config>unittests/unittests.dev.iphone5s.ios.properties</app.config>
                 <testsuite>unittests</testsuite>
             </properties>
         </profile>
