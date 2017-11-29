@@ -349,9 +349,9 @@
         </profile>
 
         <profile>
-            <id>uitests.dev.ipad2.ios10</id>
+            <id>uitests.dev.ipad2.ios</id>
             <properties>
-                <app.config>uitests/uitests.dev.ipad2.ios10.properties</app.config>
+                <app.config>uitests/uitests.dev.ipad2.ios.properties</app.config>
                 <testsuite>uitests-ios</testsuite>
             </properties>
         </profile>
