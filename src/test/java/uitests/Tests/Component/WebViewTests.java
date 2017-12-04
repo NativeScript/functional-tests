@@ -29,12 +29,14 @@ public class WebViewTests extends MobileTest {
 
     @Test(groups = {"android", "ios"})
     public void webView_02() throws Exception {
-        this.webViewBasePage.navigateTo("webview");
+        this.webViewBasePage.navigateToMainPage();
+        this.webViewBasePage.navigateTo(this.wait.waitForVisible(this.locators.byText("webview")),"webviewtest");
         this.assertScreen(this.settings.defaultTimeout * 5, 10);
     }
 
     @Test(groups = {"android", "ios"})
     public void webView_02_query() throws Exception {
+        this.webViewBasePage.navigateToMainPage();
         this.webViewBasePage.navigateTo(this.wait.waitForVisible(this.locators.byText("query")));
         if (this.settings.platformVersion <= 4.3) {
             this.webViewBasePage.tapRelativeBtn();
