@@ -797,6 +797,13 @@
             </properties>
         </profile>
         <profile>
+            <id>cuteness.emu.google.api26</id>
+            <properties>
+                <app.config>cuteness/cuteness.emu.google.api26.properties</app.config>
+                <testsuite>cuteness-android</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>cuteness.emu.google.api27</id>
             <properties>
                 <app.config>cuteness/cuteness.emu.google.api27.properties</app.config>
