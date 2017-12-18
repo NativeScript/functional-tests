@@ -2,7 +2,6 @@ package uitests.Screens.Components;
 
 import functional.tests.core.mobile.basetest.MobileContext;
 import functional.tests.core.mobile.element.UIElement;
-import org.testng.Assert;
 import uitests.Screens.HomePageExtended;
 
 public class WebViewBasePage extends HomePageExtended {
@@ -12,25 +11,25 @@ public class WebViewBasePage extends HomePageExtended {
     }
 
     public boolean navToPage(String page) {
-        boolean result = this.navigateTo(page);
-        this.wait.waitForNotVisible(this.locators.byText(page, true, false), 6, false);
+        boolean result = this.navigateTo(page, true);
+        this.wait.waitForNotVisible(this.locators.byText(page, false, false), 6, false);
         return result;
     }
 
     public void tapRelativeBtn() {
-        this.find.byText("rel").click();
+        this.wait.waitForVisible(this.locators.byText("rel")).click();
     }
 
     public void tapAbsoluteBtn() {
-        this.find.byText("abs").click();
+        this.wait.waitForVisible(this.locators.byText("abs")).click();
     }
 
     public void tapFileBtn() {
-        this.find.byText("file").click();
+        this.wait.waitForVisible(this.locators.byText("file")).click();
     }
 
     public void tapStringBtn() {
-        this.find.byText("str").click();
+        this.wait.waitForVisible(this.locators.byText("str")).click();
     }
 
     public UIElement srcWebView() {
@@ -38,7 +37,7 @@ public class WebViewBasePage extends HomePageExtended {
     }
 
     public UIElement strResult() {
-        return this.find.byTextContains("Result");
+        return this.wait.waitForVisible(this.locators.byText("Result", false, false));
     }
 
     public UIElement strFooBar() {
