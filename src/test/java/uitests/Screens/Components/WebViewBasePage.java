@@ -37,7 +37,7 @@ public class WebViewBasePage extends HomePageExtended {
     }
 
     public UIElement strResult() {
-        return this.wait.waitForVisible(this.locators.byText("Result", false, false));
+        return this.wait.waitForVisible(this.locators.byText("Result", false, false), 3, true);
     }
 
     public UIElement strFooBar() {
