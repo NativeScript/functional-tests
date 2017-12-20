@@ -1,7 +1,7 @@
 package uitests.Tests.Component;
 
+import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.basetest.MobileTest;
-import functional.tests.core.mobile.element.UIElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -30,7 +30,7 @@ public class WebViewTests extends MobileTest {
     @Test(groups = {"android", "ios"})
     public void webView_02() throws Exception {
         this.webViewBasePage.navigateToMainPage();
-        this.webViewBasePage.navigateTo(this.wait.waitForVisible(this.locators.byText("webview")),"webviewtest");
+        this.webViewBasePage.navigateTo(this.wait.waitForVisible(this.locators.byText("webview")), "webviewtest");
         this.assertScreen(this.settings.defaultTimeout * 5, 10);
     }
 
@@ -43,7 +43,7 @@ public class WebViewTests extends MobileTest {
             this.webViewBasePage.tapAbsoluteBtn();
             this.webViewBasePage.tapFileBtn();
             this.webViewBasePage.tapStringBtn();
-        } else {
+        } else if (this.context.settings.platform == PlatformType.Android) {
             Assert.assertNotNull(this.webViewBasePage.srcWebView());
 
             this.webViewBasePage.tapRelativeBtn();
@@ -63,6 +63,20 @@ public class WebViewTests extends MobileTest {
 
             this.webViewBasePage.tapStringBtn();
             Assert.assertNotNull(this.webViewBasePage.str());
+        } else if (this.context.settings.platform == PlatformType.iOS) {
+            this.webViewBasePage.srcWebView();
+
+            this.webViewBasePage.tapRelativeBtn();
+            this.compareScreens();
+
+            this.webViewBasePage.tapAbsoluteBtn();
+            this.compareScreens();
+
+            this.webViewBasePage.tapFileBtn();
+            this.compareScreens();
+
+            this.webViewBasePage.tapStringBtn();
+            this.compareScreens();
         }
     }
 }
