@@ -17,44 +17,38 @@ public class ConsoleTests extends GesturesBaseTest {
 
         this.device.assertLogContains("-1");
         this.device.assertLogContains("text");
-        this.device.assertLogContains("[object Object]"); // Object {name: "John", age: 34}
 
         if (this.settings.platform == PlatformType.Android) {
+            this.device.assertLogContains("{\"name\":\"John\",\"age\":34}"); // Object {name: "John", age: 34}
+            this.device.assertLogContains("-1 text {\"name\":\"John\",\"age\":34}"); // console.log(num, str, obj);
+            this.device.assertLogContains("[1,5,12.5,{\"name\":\"John\",\"age\":34},\"text\",42]"); // console.log([1, 5, 12.5, obj, str, 42]);
             this.device.assertLogContains("number: -1");
             this.device.assertLogContains("string: text");
-            this.device.assertLogContains("text -1.000000");
 
-            this.device.assertLogContains("0 not equals 1");
+            this.device.assertLogContains("Assertion failed:  false == true");
+            this.device.assertLogContains("Assertion failed:  empty string evalutes to 'false'");
             this.device.assertLogNotContains("1 equals 1");
 
-            this.device.assertLogContains("=== dump(): dumping members ===");
-            this.device.assertLogContains("=== dump(): object is 'null' ===");
-            // BaseDevice.assertLogContains("=== dump(): object is 'undefined' ===");
-            this.device.assertLogContains("=== dump(): dumping function and properties names ===");
-            this.device.assertLogContains("=== dump(): finished ===");
+            this.device.assertLogContains("==== object dump start ====");
+            this.device.assertLogContains("name: John");
+            this.device.assertLogContains("age: 34");
+            this.device.assertLogContains("==== object dump end ====");
 
-            this.device.assertLogContains("\"name\": \"John\",");
-            this.device.assertLogContains("\"age\": 34");
-            this.device.assertLogContains("\"abc\": \"Hello\",");
-            this.device.assertLogContains("\"circular\": \"#CR:[object Object]\""); // #CR:Object {name: "John", age: 34}
-
-            this.device.assertLogContains("\"view\": \"#CR:Button");
-            this.device.assertLogContains("constructor()");
-
-            this.device.assertLogContains("Stack Trace:");
+            this.device.assertLogContains("Trace: console.trace() called");
             this.device.assertLogContains("at pageLoaded");
             this.device.assertLogContains("console.time(Time):");
         } else if (this.settings.platform == PlatformType.iOS) {
-            this.device.assertLogContains("number: %i -1");
-            this.device.assertLogContains("string: %s text");
-            this.device.assertLogContains("%s %f text -1");
-
+            this.device.assertLogContains("[object Object]"); // Object {name: "John", age: 34}
+            this.device.assertLogContains("number: -1");
+            this.device.assertLogContains("string: text");
+            this.device.assertLogContains("text -1");
+            this.device.assertLogContains("[object Object]"); // Object {name: "John", age: 34}
             this.device.assertLogContains("CONSOLE LOG");
             this.device.assertLogContains("CONSOLE INFO");
             this.device.assertLogContains("CONSOLE WARN");
             this.device.assertLogContains("CONSOLE ERROR");
 
-            this.device.assertLogContains("%d not equals %d 0 1");
+            this.device.assertLogContains("0 not equals 1");
             this.device.assertLogNotContains("1 equals 1");
 
             this.device.assertLogContains("CONSOLE TRACE");
