@@ -32,6 +32,7 @@ public class ConsoleTests extends GesturesBaseTest {
             this.device.assertLogContains("==== object dump start ====");
             this.device.assertLogContains("name: \"John\"");
             this.device.assertLogContains("age: \"34\"");
+
             this.device.assertLogContains("==== object dump end ====");
 
             this.device.assertLogContains("Trace: console.trace() called");
