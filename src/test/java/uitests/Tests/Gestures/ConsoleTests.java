@@ -30,13 +30,13 @@ public class ConsoleTests extends GesturesBaseTest {
             this.device.assertLogNotContains("1 equals 1");
 
             this.device.assertLogContains("==== object dump start ====");
-            this.device.assertLogContains("name: John");
-            this.device.assertLogContains("age: 34");
+            this.device.assertLogContains("name: \"John\"");
+            this.device.assertLogContains("age: \"34\"");
             this.device.assertLogContains("==== object dump end ====");
 
             this.device.assertLogContains("Trace: console.trace() called");
             this.device.assertLogContains("at pageLoaded");
-            this.device.assertLogContains("console.time(Time):");
+            this.device.assertLogContains("Time:");
         } else if (this.settings.platform == PlatformType.iOS) {
             this.device.assertLogContains("[object Object]"); // Object {name: "John", age: 34}
             this.device.assertLogContains("number: -1");
