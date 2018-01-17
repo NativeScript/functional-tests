@@ -57,7 +57,7 @@ public class SideDrawerTests extends QsfBaseTest {
     public void test_05_sideDrawer_verifiedPlugins() throws Exception {
         this.homePage.tapSideDrawer();
         this.sideDrawer.tapVerifiedPlugins();
-        this.browser.handle("market.nativescript.org", "ExternalLins_VerifiedPlugins");
+        this.browser.handle("nativescript.org", "ExternalLins_VerifiedPlugins");
     }
 
     @Test(groups = {"android", "browser"})
