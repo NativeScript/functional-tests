@@ -40,7 +40,12 @@ public class SdkLocationModuleTests extends SdkBaseTest {
                 }
             }
 
-            this.mainPage.wait.waitForVisible(this.locators.byText("Start location", false, false), 6, true);
+            if (example == "Basic location") {
+                this.mainPage.wait.waitForVisible(this.locators.byText("Get current", false, false), 6, true);
+            }
+            if (example == "Monitoring location") {
+                this.mainPage.wait.waitForVisible(this.locators.byText("Start location", false, false), 6, true);
+            }
         } else {
             this.log.warn("This test runs only on Api25 Google API emulator!");
         }
