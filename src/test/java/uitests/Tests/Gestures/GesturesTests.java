@@ -113,7 +113,11 @@ public class GesturesTests extends GesturesBaseTest {
         this.gesturesPage.navigateToHandlers();
 
         this.homePageExtended.find.byText("Handlers as exports").tap();
-        this.device.assertLogContains("tapAction");
+        if (this.settings.platformVersion < 11 && this.settings.platform == PlatformType.iOS) {
+            this.assertScreen(5);
+        } else {
+            this.device.assertLogContains("tapAction");
+        }
     }
 
     @Test(groups = {"ios"})
