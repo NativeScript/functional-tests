@@ -25,16 +25,16 @@ public class BindingTests extends MobileTest {
         this.bindingsBasePage.bindingBasicsPage.tapSetTextBtn();
 
         this.bindingsBasePage.bindingBasicsPage.tapOneWayBtn();
-        if (this.settings.platformVersion >=11 && this.settings.platform == PlatformType.iOS){
+        if (this.settings.platform == PlatformType.iOS) {
             this.compareScreens(5);
-        }else {
+        } else {
             Assert.assertEquals(this.bindingsBasePage.bindingBasicsPage.editTextFieldOneWay().getText(), "Test");
             Assert.assertEquals(this.bindingsBasePage.bindingBasicsPage.btnOneWay().getText().toLowerCase(), "oneway");
         }
         this.bindingsBasePage.bindingBasicsPage.tapTwoWayBtn();
-        if (this.settings.platformVersion >=11 && this.settings.platform == PlatformType.iOS){
+        if (this.settings.platform == PlatformType.iOS) {
             this.compareScreens(5);
-        }else {
+        } else {
             Assert.assertEquals(this.bindingsBasePage.bindingBasicsPage.editTextFieldTwoWay().getText(), "Test");
             Assert.assertEquals(this.bindingsBasePage.bindingBasicsPage.btnTwoWay().getText().toLowerCase(), "test");
         }
@@ -49,16 +49,27 @@ public class BindingTests extends MobileTest {
         this.bindingsBasePage.navigateTo(element);
         this.bindingsBasePage.bindingXmlBasicsPage.loaded();
 
-        Assert.assertEquals(this.bindingsBasePage.bindingXmlBasicsPage.editTextField().getText(), "Text");
-        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion >= 10) {
-            Assert.assertEquals(this.bindingsBasePage.bindingXmlBasicsPage.btnText().getText(), null);
+        if (this.settings.platform == PlatformType.iOS) {
+            this.compareScreens(5);
         } else {
+            Assert.assertEquals(this.bindingsBasePage.bindingXmlBasicsPage.editTextField().getText(), "Text");
             Assert.assertEquals(this.bindingsBasePage.bindingXmlBasicsPage.btnText().getText(), "");
         }
+
         this.bindingsBasePage.bindingXmlBasicsPage.tapTextBtn();
-        Assert.assertEquals(this.bindingsBasePage.bindingXmlBasicsPage.btnText().getText().toLowerCase(), "text");
+        if (this.settings.platform == PlatformType.iOS) {
+            this.compareScreens(5);
+        } else {
+            Assert.assertEquals(this.bindingsBasePage.bindingXmlBasicsPage.btnText().getText().toLowerCase(), "text");
+        }
 
         this.bindingsBasePage.bindingXmlBasicsPage.tapBtn();
-        this.device.assertLogContains("### onTap event ###");
+        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion <= 10) {
+            this.compareScreens(5);
+        } else {
+            this.device.assertLogContains("### onTap event ###");
+        }
+
+        this.assertImagesResults();
     }
 }
