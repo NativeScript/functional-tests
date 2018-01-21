@@ -22,7 +22,7 @@ public class DialogsTests extends MobileTest {
     public void dialogs_11_alert() throws Exception {
         this.dialogsPage.tapAlertBtn();
         this.dialogsPage.tapOkBtn();
-        if (this.checkIfLowerThan11()) {
+        if (this.checkIfPlatformIsLowerThan11()) {
             assertScreen(5);
         } else {
             String name = this.dialogsPage.label().getText();
@@ -37,7 +37,7 @@ public class DialogsTests extends MobileTest {
     public void dialogs_21_actionClose() throws Exception {
         this.dialogsPage.tapActionBtn();
         this.dialogsPage.tapCloseBtn();
-        if (this.checkIfLowerThan11()) {
+        if (this.checkIfPlatformIsLowerThan11()) {
             assertScreen(5);
         } else {
             Assert.assertEquals(this.dialogsPage.label().getText(), DialogsPage.name0);
@@ -49,7 +49,7 @@ public class DialogsTests extends MobileTest {
     public void dialogs_22_actionNo() throws Exception {
         this.dialogsPage.tapActionBtn();
         this.dialogsPage.tapNoBtn();
-        if (this.checkIfLowerThan11()) {
+        if (this.checkIfPlatformIsLowerThan11()) {
             assertScreen(5);
         } else {
             Assert.assertEquals(this.dialogsPage.label().getText(), DialogsPage.name0);
@@ -61,7 +61,7 @@ public class DialogsTests extends MobileTest {
     public void dialogs_23_actionYes() throws Exception {
         this.dialogsPage.tapActionBtn();
         this.dialogsPage.tapYesBtn();
-        if (this.checkIfLowerThan11()) {
+        if (this.checkIfPlatformIsLowerThan11()) {
             assertScreen(5);
         } else {
             Assert.assertEquals(this.dialogsPage.label().getText(), DialogsPage.name1);
@@ -74,7 +74,7 @@ public class DialogsTests extends MobileTest {
     public void dialogs_31_confirmIgnore() throws Exception {
         this.dialogsPage.tapConfirmBtn();
         this.dialogsPage.tapIgnoreBtn();
-        if (this.checkIfLowerThan11()) {
+        if (this.checkIfPlatformIsLowerThan11()) {
             assertScreen(5);
         } else {
             Assert.assertEquals(this.dialogsPage.label().getText(), DialogsPage.name0);
@@ -86,7 +86,7 @@ public class DialogsTests extends MobileTest {
     public void dialogs_32_confirmNo() throws Exception {
         this.dialogsPage.tapConfirmBtn();
         this.dialogsPage.tapNoBtn();
-        if (this.checkIfLowerThan11()) {
+        if (this.checkIfPlatformIsLowerThan11()) {
             assertScreen(5);
         } else {
             Assert.assertEquals(this.dialogsPage.label().getText(), DialogsPage.name0);
@@ -98,7 +98,7 @@ public class DialogsTests extends MobileTest {
     public void dialogs_33_confirmYes() throws Exception {
         this.dialogsPage.tapConfirmBtn();
         this.dialogsPage.tapYesBtn();
-        if (this.checkIfLowerThan11()) {
+        if (this.checkIfPlatformIsLowerThan11()) {
             assertScreen(5);
         } else {
             Assert.assertEquals(this.dialogsPage.label().getText(), DialogsPage.name1);
@@ -111,7 +111,7 @@ public class DialogsTests extends MobileTest {
     public void dialogs_41_loginIgnore() throws Exception {
         this.dialogsPage.tapLoginBtn();
         this.dialogsPage.tapIgnoreBtn();
-        if (this.checkIfLowerThan11()) {
+        if (this.checkIfPlatformIsLowerThan11()) {
             assertScreen(5);
         } else {
             Assert.assertEquals(this.dialogsPage.label().getText(), DialogsPage.name0);
@@ -123,7 +123,7 @@ public class DialogsTests extends MobileTest {
     public void dialogs_42_loginCancel() throws Exception {
         this.dialogsPage.tapLoginBtn();
         this.dialogsPage.tapCancelBtn();
-        if (this.checkIfLowerThan11()) {
+        if (this.checkIfPlatformIsLowerThan11()) {
             assertScreen(5);
         } else {
             Assert.assertEquals(this.dialogsPage.label().getText(), DialogsPage.name0);
@@ -135,7 +135,7 @@ public class DialogsTests extends MobileTest {
     public void dialogs_43_loginOk() throws Exception {
         this.dialogsPage.tapLoginBtn();
         this.dialogsPage.tapOkBtn();
-        if (this.checkIfLowerThan11()) {
+        if (this.checkIfPlatformIsLowerThan11()) {
             assertScreen(5);
         } else {
             Assert.assertEquals(this.dialogsPage.label().getText(), DialogsPage.name1);
@@ -148,7 +148,7 @@ public class DialogsTests extends MobileTest {
     public void dialogs_51_promptTextIgnore() throws Exception {
         this.dialogsPage.tapPromptTextBtn();
         this.dialogsPage.tapIgnoreBtn();
-        if (this.checkIfLowerThan11()) {
+        if (this.checkIfPlatformIsLowerThan11()) {
             assertScreen(5);
         } else {
             Assert.assertEquals(this.dialogsPage.label().getText(), DialogsPage.name0);
@@ -160,7 +160,7 @@ public class DialogsTests extends MobileTest {
     public void dialogs_52_promptTextCancel() throws Exception {
         this.dialogsPage.tapPromptTextBtn();
         this.dialogsPage.tapCancelBtn();
-        if (this.checkIfLowerThan11()) {
+        if (this.checkIfPlatformIsLowerThan11()) {
             assertScreen(5);
         } else {
             Assert.assertEquals(this.dialogsPage.label().getText(), DialogsPage.name0);
@@ -172,7 +172,7 @@ public class DialogsTests extends MobileTest {
     public void dialogs_53_promptTextOk() throws Exception {
         this.dialogsPage.tapPromptTextBtn();
         this.dialogsPage.tapOkBtn();
-        if (this.checkIfLowerThan11()) {
+        if (this.checkIfPlatformIsLowerThan11()) {
             assertScreen(5);
         } else {
             Assert.assertEquals(this.dialogsPage.label().getText(), DialogsPage.name1);
@@ -200,7 +200,7 @@ public class DialogsTests extends MobileTest {
         this.device.assertLogContains("### Result: true, UserName: John, Password: Reese");
     }
 
-    private boolean checkIfLowerThan11() {
-        return this.settings.deviceType == DeviceType.iOS && this.settings.platformVersion < 11;
+    private boolean checkIfPlatformIsLowerThan11() {
+        return this.settings.deviceType == DeviceType.Simulator && this.settings.platformVersion < 11;
     }
 }
