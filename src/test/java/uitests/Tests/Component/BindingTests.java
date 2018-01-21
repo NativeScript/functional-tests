@@ -21,7 +21,6 @@ public class BindingTests extends MobileTest {
     public void binding_01_basics() throws Exception {
         UIElement btnBasics = this.bindingsBasePage.wait.waitForVisible(this.locators.byText("basics"));
         this.bindingsBasePage.navigateTo(btnBasics, "basics");
-        this.bindingsBasePage.bindingBasicsPage.loaded();
         this.bindingsBasePage.bindingBasicsPage.tapSetTextBtn();
 
         this.bindingsBasePage.bindingBasicsPage.tapOneWayBtn();
@@ -47,7 +46,6 @@ public class BindingTests extends MobileTest {
         this.bindingsBasePage.navigateToMainPage();
         UIElement element = this.find.byTextContains("xmlbasics");
         this.bindingsBasePage.navigateTo(element);
-        this.bindingsBasePage.bindingXmlBasicsPage.loaded();
 
         if (this.settings.platform == PlatformType.iOS) {
             this.compareScreens(5);
