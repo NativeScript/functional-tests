@@ -200,7 +200,8 @@ public class DialogsTests extends MobileTest {
         this.device.assertLogContains("### Result: true, UserName: John, Password: Reese");
     }
 
-    private boolean checkIfPlatformIsLowerThan11() {
-        return this.settings.deviceType == DeviceType.Simulator && this.settings.platformVersion < 11;
+    private boolean checkIfPlatformIsLowerThan11OriPhoneX() {
+        return this.settings.deviceType == DeviceType.Simulator && this.settings.platformVersion < 11
+                || this.settings.deviceName.toLowerCase().contains("X");
     }
 }
