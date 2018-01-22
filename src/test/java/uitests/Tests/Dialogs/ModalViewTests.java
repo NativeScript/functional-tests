@@ -1,5 +1,6 @@
 package uitests.Tests.Dialogs;
 
+import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.basetest.MobileTest;
 import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.mobile.helpers.NavigationHelper;
@@ -27,7 +28,11 @@ public class ModalViewTests extends MobileTest {
         this.waitForScreen(0.5);
 
         this.modalViewPage.tapLoginBtn();
-        Assert.assertEquals(this.modalViewPage.textView().getText(), "username/password");
+        if (this.checkIfPlatofrmVersionIsLowerThat11()) {
+            this.compareScreens(5);
+        } else {
+            Assert.assertEquals(this.modalViewPage.textView().getText(), "username/password");
+        }
         this.assertImagesResults();
     }
 
@@ -38,7 +43,11 @@ public class ModalViewTests extends MobileTest {
         this.waitForScreen(0.5);
 
         this.modalViewPage.tapLoginBtn();
-        Assert.assertEquals(this.modalViewPage.textView().getText(), "username/password");
+        if (this.checkIfPlatofrmVersionIsLowerThat11()) {
+            this.compareScreens(5);
+        } else {
+            Assert.assertEquals(this.modalViewPage.textView().getText(), "username/password");
+        }
         this.assertImagesResults();
     }
 
@@ -69,5 +78,9 @@ public class ModalViewTests extends MobileTest {
         }
 
         return el;
+    }
+
+    private boolean checkIfPlatofrmVersionIsLowerThat11() {
+        return this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 11;
     }
 }
