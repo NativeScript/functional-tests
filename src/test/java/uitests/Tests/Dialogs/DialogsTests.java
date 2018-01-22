@@ -123,7 +123,6 @@ public class DialogsTests extends MobileTest {
         this.dialogsPage.tapPromptTextBtn();
         this.dialogsPage.tapOkBtn();
         this.device.assertLogContains("### Result: true, Text: John Reese");
-
     }
 
     // Prompt Pass

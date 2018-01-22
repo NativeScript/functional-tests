@@ -28,7 +28,7 @@ public class ModalViewTests extends MobileTest {
         this.waitForScreen(0.5);
 
         this.modalViewPage.tapLoginBtn();
-        if (this.checkIfPlatofrmVersionIsLowerThat11()) {
+        if (this.checkIfPlatofrmVersionIsIsIOS()) {
             this.compareScreens(5);
         } else {
             Assert.assertEquals(this.modalViewPage.textView().getText(), "username/password");
@@ -43,7 +43,7 @@ public class ModalViewTests extends MobileTest {
         this.waitForScreen(0.5);
 
         this.modalViewPage.tapLoginBtn();
-        if (this.checkIfPlatofrmVersionIsLowerThat11()) {
+        if (this.checkIfPlatofrmVersionIsIsIOS()) {
             this.compareScreens(5);
         } else {
             Assert.assertEquals(this.modalViewPage.textView().getText(), "username/password");
@@ -80,7 +80,7 @@ public class ModalViewTests extends MobileTest {
         return el;
     }
 
-    private boolean checkIfPlatofrmVersionIsLowerThat11() {
-        return this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 11;
+    private boolean checkIfPlatofrmVersionIsIsIOS() {
+        return this.settings.platform == PlatformType.iOS ;
     }
 }
