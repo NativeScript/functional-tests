@@ -462,6 +462,13 @@
                 <testsuite>testsappng-ios</testsuite>
             </properties>
         </profile>
+        <profile>
+            <id>testsappng.sim.iphoneX.ios11</id>
+            <properties>
+                <app.config>testsappng/testsappng.sim.iphoneX.ios11.properties</app.config>
+                <testsuite>testsappng-ios</testsuite>
+            </properties>
+        </profile>
         <!--testsapptransitions profiles-->
         <profile>
             <id>testsapptransitions.emu.default.api17</id>
@@ -530,13 +537,6 @@
             <id>testsapptransitions.sim.iphone7.ios110</id>
             <properties>
                 <app.config>testsapptransitions/testsapptransitions.sim.iphone7.ios110.properties</app.config>
-                <testsuite>testsapptransitions-ios</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>testsappng.sim.iphoneX.ios11</id>
-            <properties>
-                <app.config>testsapptransitions/testsappng.sim.iphoneX.ios11.properties</app.config>
                 <testsuite>testsapptransitions-ios</testsuite>
             </properties>
         </profile>
