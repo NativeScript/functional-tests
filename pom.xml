@@ -533,6 +533,13 @@
                 <testsuite>testsapptransitions-ios</testsuite>
             </properties>
         </profile>
+        <profile>
+            <id>testsappng.sim.iphoneX.ios11</id>
+            <properties>
+                <app.config>testsapptransitions/testsappng.sim.iphoneX.ios11.properties</app.config>
+                <testsuite>testsapptransitions-ios</testsuite>
+            </properties>
+        </profile>
 
         <!--unittests profiles-->
         <profile>
@@ -1389,13 +1396,13 @@
     </profiles>
 
     <dependencies>
-        <dependency>
-            <groupId>functional.tests.core</groupId>
-            <artifactId>functional.tests.core</artifactId>
-            <version>0.0.5</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/functional.tests.core-0.0.5.jar</systemPath>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>functional.tests.core</groupId>-->
+            <!--<artifactId>functional.tests.core</artifactId>-->
+            <!--<version>0.0.5</version>-->
+            <!--<scope>system</scope>-->
+            <!--<systemPath>${project.basedir}/lib/functional.tests.core-0.0.5.jar</systemPath>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
