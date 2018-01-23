@@ -19,7 +19,7 @@ public class WhiteSpaceTests extends CssBaseTest {
         if (this.settings.platform == PlatformType.Android) {
             this.compareElements(this.whiteSpacePage.stackLayout(), 2, 3.0);
         } else {
-            this.compareElements(this.whiteSpacePage.stackLayout(), 2, 0.1);
+            this.compareElements(this.whiteSpacePage.stackLayout(), 2, 0.2);
         }
         this.assertImagesResults();
     }
@@ -30,7 +30,7 @@ public class WhiteSpaceTests extends CssBaseTest {
         if (this.settings.platform == PlatformType.Android) {
             this.compareElements(this.whiteSpacePage.stackLayout(), 3, 1.0);
         } else {
-            this.compareElements(this.whiteSpacePage.stackLayout(), 3, 0.1);
+            this.compareElements(this.whiteSpacePage.stackLayout(), 3, 0.2);
         }
         this.assertImagesResults();
     }
