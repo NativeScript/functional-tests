@@ -102,10 +102,18 @@ public class GesturesTests extends GesturesBaseTest {
         this.gesturesPage.navigateToGestures();
         UIElement tapElement = this.gesturesPage.lblTap();
         this.gesturesPage.tapStopBtn();
-        Assert.assertNotNull(this.homePageExtended.find.byText("Gestures detection disabled"), "Failed to disable gestures observer.");
+        if (this.settings.platformVersion < 11 && this.settings.platform == PlatformType.iOS) {
+            this.assertScreen(5);
+        } else {
+            Assert.assertNotNull(this.homePageExtended.find.byText("Gestures detection disabled"), "Failed to disable gestures observer.");
+        }
 
         tapElement.tap();
-        Assert.assertNull(this.homePageExtended.find.byText("Tap gesture detected"), "Tap gesture detected while gestures observer is disabled");
+        if (this.settings.platformVersion < 11 && this.settings.platform == PlatformType.iOS) {
+            this.assertScreen(5);
+        } else {
+            Assert.assertNull(this.homePageExtended.find.byText("Tap gesture detected"), "Tap gesture detected while gestures observer is disabled");
+        }
     }
 
     @Test(groups = {"android", "ios"})
