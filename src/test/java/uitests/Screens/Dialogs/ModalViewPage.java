@@ -65,7 +65,7 @@ public class ModalViewPage extends HomePageExtended {
         } else {
             Assert.fail("ModalView page NOT loaded.");
         }
-        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 11) {
+        if (this.settings.platform != PlatformType.iOS) {
             Assert.assertEquals(this.textView().getText(), "Anonymous");
         }
     }
