@@ -22,7 +22,7 @@ public class DialogsTests extends MobileTest {
     public void dialogs_11_alert() throws Exception {
         this.dialogsPage.tapAlertBtn();
         this.dialogsPage.tapOkBtn();
-        assertScreen(5);
+        this.assertScreen(5);
         this.device.assertLogContains("### Result: undefined");
     }
 
@@ -31,7 +31,7 @@ public class DialogsTests extends MobileTest {
     public void dialogs_21_actionClose() throws Exception {
         this.dialogsPage.tapActionBtn();
         this.dialogsPage.tapCloseBtn();
-        assertScreen(5);
+        this.assertScreen(5);
         this.device.assertLogContains("### Result: Close");
     }
 
@@ -39,7 +39,7 @@ public class DialogsTests extends MobileTest {
     public void dialogs_22_actionNo() throws Exception {
         this.dialogsPage.tapActionBtn();
         this.dialogsPage.tapNoBtn();
-        assertScreen(5);
+        this.assertScreen(5);
         this.device.assertLogContains("### Result: No");
     }
 
@@ -47,7 +47,7 @@ public class DialogsTests extends MobileTest {
     public void dialogs_23_actionYes() throws Exception {
         this.dialogsPage.tapActionBtn();
         this.dialogsPage.tapYesBtn();
-        assertScreen(5);
+        this.assertScreen(5);
         this.device.assertLogContains("### Result: Yes");
     }
 
@@ -56,7 +56,7 @@ public class DialogsTests extends MobileTest {
     public void dialogs_31_confirmIgnore() throws Exception {
         this.dialogsPage.tapConfirmBtn();
         this.dialogsPage.tapIgnoreBtn();
-        assertScreen(5);
+        this.assertScreen(5);
         this.device.assertLogContains("### Result: undefined");
     }
 
@@ -64,7 +64,7 @@ public class DialogsTests extends MobileTest {
     public void dialogs_32_confirmNo() throws Exception {
         this.dialogsPage.tapConfirmBtn();
         this.dialogsPage.tapNoBtn();
-        assertScreen(5);
+        this.assertScreen(5);
         this.device.assertLogContains("### Result: false");
     }
 
@@ -72,7 +72,7 @@ public class DialogsTests extends MobileTest {
     public void dialogs_33_confirmYes() throws Exception {
         this.dialogsPage.tapConfirmBtn();
         this.dialogsPage.tapYesBtn();
-        assertScreen(5);
+        this.assertScreen(5);
         this.device.assertLogContains("### Result: true");
     }
 
@@ -81,7 +81,7 @@ public class DialogsTests extends MobileTest {
     public void dialogs_41_loginIgnore() throws Exception {
         this.dialogsPage.tapLoginBtn();
         this.dialogsPage.tapIgnoreBtn();
-        assertScreen(5);
+        this.assertScreen(5);
         this.device.assertLogContains("### Result: undefined, UserName: John, Password: Reese");
     }
 
@@ -89,7 +89,7 @@ public class DialogsTests extends MobileTest {
     public void dialogs_42_loginCancel() throws Exception {
         this.dialogsPage.tapLoginBtn();
         this.dialogsPage.tapCancelBtn();
-        assertScreen(5);
+        this.assertScreen(5);
         this.device.assertLogContains("### Result: false, UserName: John, Password: Reese");
     }
 
@@ -97,7 +97,7 @@ public class DialogsTests extends MobileTest {
     public void dialogs_43_loginOk() throws Exception {
         this.dialogsPage.tapLoginBtn();
         this.dialogsPage.tapOkBtn();
-        assertScreen(5);
+        this.assertScreen(5);
         this.device.assertLogContains("### Result: true, UserName: John, Password: Reese");
     }
 
@@ -106,7 +106,7 @@ public class DialogsTests extends MobileTest {
     public void dialogs_51_promptTextIgnore() throws Exception {
         this.dialogsPage.tapPromptTextBtn();
         this.dialogsPage.tapIgnoreBtn();
-        assertScreen(5);
+        this.assertScreen(5);
         this.device.assertLogContains("### Result: undefined, Text: John Reese");
     }
 
@@ -114,7 +114,7 @@ public class DialogsTests extends MobileTest {
     public void dialogs_52_promptTextCancel() throws Exception {
         this.dialogsPage.tapPromptTextBtn();
         this.dialogsPage.tapCancelBtn();
-        assertScreen(5);
+        this.assertScreen(5);
         this.device.assertLogContains("### Result: false, Text: John Reese");
     }
 
@@ -122,6 +122,7 @@ public class DialogsTests extends MobileTest {
     public void dialogs_53_promptTextOk() throws Exception {
         this.dialogsPage.tapPromptTextBtn();
         this.dialogsPage.tapOkBtn();
+        this.assertScreen(5);
         this.device.assertLogContains("### Result: true, Text: John Reese");
     }
 
