@@ -10,7 +10,7 @@ public class TabViewTest extends TestsAppNgBase {
 
     @BeforeClass(alwaysRun = true)
     public void beforeClassTabVieWTests() throws Exception {
-        this.homePage = new HomePage("TabVieW", this.context);
+        this.homePage = new HomePage("TAB-VIEW", this.context);
     }
 
     @Test(groups = {"android", "ios"})
