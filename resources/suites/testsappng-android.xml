@@ -70,4 +70,14 @@
             <package name="testsappng.Tests.SegmentedBar"/>
         </packages>
     </test>
+    <test name="TabView">
+        <groups>
+            <run>
+                <include name="android"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="testsappng.Tests.TabView"/>
+        </packages>
+    </test>
 </suite>
