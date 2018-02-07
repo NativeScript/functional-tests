@@ -49,7 +49,7 @@ public class ConsoleTests extends GesturesBaseTest {
             this.device.assertLogContains("CONSOLE WARN");
             this.device.assertLogContains("CONSOLE ERROR");
 
-            this.device.assertLogContains("0 not equals 1");
+            this.device.assertLogContains("%d not equals %d 0 1");
             this.device.assertLogNotContains("1 equals 1");
 
             this.device.assertLogContains("CONSOLE TRACE");
