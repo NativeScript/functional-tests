@@ -62,7 +62,7 @@ public class TabViewTests extends TabViewBaseTest {
             locator = this.context.locators.buttonLocator();
             if (this.settings.platformVersion >= 11) {
                 index = 2;
-            }else{
+            } else {
                 index = 3;
             }
         }
@@ -74,6 +74,17 @@ public class TabViewTests extends TabViewBaseTest {
 
         this.compareScreens(5);
 
+        this.assertImagesResults();
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void tabView_bottom() throws Exception {
+        this.homePageExtended.navigateTo("tab-view-bottom-position");
+        this.compareScreens(5);
+        this.context.wait.waitForVisible(this.locators.byText("Second")).tap();
+        this.compareScreens(5);
+        this.context.wait.waitForVisible(this.locators.byText("First")).tap();
+        this.compareScreens(5);
         this.assertImagesResults();
     }
 }
