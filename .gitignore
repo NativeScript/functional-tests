@@ -6,3 +6,4 @@ out
 testapp
 instruments*
 reports*
+.DS_Store
