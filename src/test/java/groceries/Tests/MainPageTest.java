@@ -57,8 +57,6 @@ public class MainPageTest extends MobileTest {
     @Test(groups = {"android", "ios"})
     public void groceries_01_addItem() throws Exception {
         UIElement element = this.mainPage.insertItem(testText);
-        //this.compareScreens(20, 0.5);
-
         this.assertImagesResults();
     }
 
@@ -66,14 +64,8 @@ public class MainPageTest extends MobileTest {
     public void groceries_02_removeItem() throws Exception {
         GroceriesItem groceriesItem = this.mainPage.getGroceriesItem(0);
         groceriesItem.tapOnCheckBox();
-        ///this.compareElements(this.mainPage.getListViewItem(0), 5, 0.1);
         int listSize = this.mainPage.getListViewItems().size();
         groceriesItem.tapOnDeleteIcon();
-//        if (this.mainPage.getListViewItems() != null && this.mainPage.getListViewItems().size() > 0)
-//            if (this.waitForElement("groceries_02_removeItem", this.mainPage.getListViewItem(0), 10, 0.1)) {
-//                Assert.assertTrue(false, "The item " + testText + " ia not removed.");
-//            }
-
         Assert.assertTrue(listSize > this.mainPage.getListViewItems().size(), "The item is not successfully removed!!! ");
 
         this.assertImagesResults();
