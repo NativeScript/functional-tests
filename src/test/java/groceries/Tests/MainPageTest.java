@@ -1,9 +1,9 @@
 package groceries.Tests;
 
-import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.extensions.ExecutionOrder;
 import functional.tests.core.mobile.basetest.MobileTest;
+import functional.tests.core.mobile.element.UIElement;
 import groceries.Screens.*;
 import org.testng.Assert;
 import org.testng.ITestResult;
@@ -71,7 +71,7 @@ public class MainPageTest extends MobileTest {
         this.assertImagesResults();
     }
 
-    @Test(groups = {"android", "ios"}, dependsOnMethods = {"groceries_02_removeItem"})
+    @Test(groups = {"android", "ios"}, enabled = false, dependsOnMethods = {"groceries_02_removeItem"})
     public void groceries_03_restoreRemovedItem() throws Exception {
         GroceriesRecentItemsPage recent = this.mainPage.tapOnResent();
 
@@ -83,11 +83,7 @@ public class MainPageTest extends MobileTest {
         }
 
         recent.selectItem(0);
-        if (this.settings.platform != PlatformType.iOS) {
-            this.compareElements(recent.getListViewItems().get(0), 5, 0.5);
-        }
         this.mainPage = recent.tapOnDone();
-        this.compareElements(this.mainPage.getListViewItems().get(0), 5, 0.5);
 
         GroceriesItem groceriesItem = this.mainPage.getGroceriesItem(0);
         groceriesItem.tapOnCheckBox();

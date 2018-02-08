@@ -19,7 +19,6 @@ public class GroceriesRecentItemsPage extends BasePage {
     public UIElement selectItem(int index) {
         UIElement element = this.getListViewItems().get(index);
         element.click();
-
         return element;
     }
 
