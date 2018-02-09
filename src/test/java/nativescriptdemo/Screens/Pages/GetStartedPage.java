@@ -48,6 +48,14 @@ public class GetStartedPage extends BasePage {
             UIElement btnAllow = this.find.byText("Allow", this.settings.shortTimeout);
             if (btnAllow != null) {
                 btnAllow.tap();
+                this.log.info("Popup dialog handled!");
+            } else {
+                try {
+                    this.client.driver.switchTo().alert().accept();
+                    this.log.info("Popup dialog handled!");
+                } catch (Exception e) {
+                    this.log.info("Popup dialog not found.");
+                }
             }
         }
     }
