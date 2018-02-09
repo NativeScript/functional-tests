@@ -97,9 +97,9 @@ public class MainPageTest extends MobileTest {
     public void groceries_04_logOut() throws Exception {
         this.mainPage.tapOnMenu();
         if (this.settings.platform == PlatformType.Android) {
-            this.compareElements("logOffDialog", this.mainPage.logScreen(), 5, 0.1);
+            this.compareElements("logOffDialog", this.mainPage.logScreen(), 5, 0.5);
         } else {
-            this.compareScreens(20, 0.1);
+            this.compareScreens(20, 0.5);
         }
 
         this.mainPage.tapOnLogOff();
