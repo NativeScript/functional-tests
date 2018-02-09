@@ -62,6 +62,7 @@ public class MainPageTest extends MobileTest {
 
     @Test(groups = {"android", "ios"}, dependsOnMethods = {"groceries_01_addItem"})
     public void groceries_02_removeItem() throws Exception {
+        this.app.restart();
         GroceriesItem groceriesItem = this.mainPage.getGroceriesItem(0);
         groceriesItem.tapOnCheckBox();
         int listSize = this.mainPage.getListViewItems().size();
