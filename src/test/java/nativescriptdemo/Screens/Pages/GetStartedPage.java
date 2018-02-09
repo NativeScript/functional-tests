@@ -1,8 +1,8 @@
 package nativescriptdemo.Screens.Pages;
 
+import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.basepage.BasePage;
 import functional.tests.core.mobile.element.UIElement;
-import functional.tests.core.enums.PlatformType;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
@@ -36,6 +36,7 @@ public class GetStartedPage extends BasePage {
 
     public void tapGetStarted() {
         this.btnGetStarted().tap();
+        this.allowPermissions();
     }
 
     private By getStartedLocator() {
@@ -44,12 +45,7 @@ public class GetStartedPage extends BasePage {
 
     public void allowPermissions() {
         if (this.settings.platform == PlatformType.iOS) {
-            UIElement btnAllow;
-            if (this.settings.platformVersion < 10) {
-                btnAllow = this.wait.waitForVisible(By.id("OK"));
-            } else {
-                btnAllow = this.wait.waitForVisible(this.locators.byText("Allow", false, false));
-            }
+            UIElement btnAllow = this.find.byText("Allow", this.settings.shortTimeout);
             if (btnAllow != null) {
                 btnAllow.tap();
             }
