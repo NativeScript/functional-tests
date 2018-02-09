@@ -102,7 +102,7 @@ public class LoginFormPage extends MobileTest {
     @Test(groups = {"android", "ios"})
     public void groceries_05_signUp() throws Exception {
         this.secondaryLoginPage.signUp();
-        this.compareScreens(20, 0.1);
+        this.compareScreens(20, 0.5);
 
         this.secondaryLoginPage.backToLogin();
         this.waitForLoginForm(true);

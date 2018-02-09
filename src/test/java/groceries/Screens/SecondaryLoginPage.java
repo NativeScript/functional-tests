@@ -122,7 +122,7 @@ public class SecondaryLoginPage extends BasePage {
     }
 
     public UIElement getBtnSignup() {
-        return this.btnSignup = this.wait.waitForVisible(signupButtonLocator(), this.settings.defaultTimeout / 2, false);
+        return this.btnSignup = this.wait.waitForVisible(signupButtonLocator(), this.settings.shortTimeout, false);
     }
 
     public void tapSignUp() {
