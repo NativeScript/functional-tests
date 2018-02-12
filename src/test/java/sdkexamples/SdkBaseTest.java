@@ -31,7 +31,7 @@ public abstract class SdkBaseTest extends MobileTest {
             if (btnBack != null) {
                 this.mainPage.navigateBack(btnBack);
             } else {
-                this.client.driver.navigate().back();
+                this.mainPage.navigateBack();
             }
         } catch (Exception ex) {
             this.log.error(ex.getMessage());
