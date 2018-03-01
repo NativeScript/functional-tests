@@ -24,7 +24,7 @@ public class ConsoleTests extends GesturesBaseTest {
                     "  \"age\": 34\n" +
                     "}";
 
-            this.device.assertLogContains(johnObj); // Object {name: "John", age: 34}
+            //this.device.assertLogContains(johnObj); // Object {name: "John", age: 34}
             //this.device.assertLogContains("-1 text " + johnObj);
             //this.device.assertLogContains("[1,5,12.5, " + johnObj + ", text, 42]"); // console.log([1, 5, 12.5, obj, str, 42]);
             this.device.assertLogContains("number: -1");
