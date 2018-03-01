@@ -19,9 +19,14 @@ public class ConsoleTests extends GesturesBaseTest {
         this.device.assertLogContains("text");
 
         if (this.settings.platform == PlatformType.Android) {
-            this.device.assertLogContains("{\"name\":\"John\",\"age\":34}"); // Object {name: "John", age: 34}
-            this.device.assertLogContains("-1 text {\"name\":\"John\",\"age\":34}"); // console.log(num, str, obj);
-            this.device.assertLogContains("[1,5,12.5,{\"name\":\"John\",\"age\":34},\"text\",42]"); // console.log([1, 5, 12.5, obj, str, 42]);
+            final String johnObj = "{\n" +
+                    "  \"name\": \"John\",\n" +
+                    "  \"age\": 34\n" +
+                    "}";
+
+            this.device.assertLogContains(johnObj); // Object {name: "John", age: 34}
+            //this.device.assertLogContains("-1 text " + johnObj);
+            //this.device.assertLogContains("[1,5,12.5, " + johnObj + ", text, 42]"); // console.log([1, 5, 12.5, obj, str, 42]);
             this.device.assertLogContains("number: -1");
             this.device.assertLogContains("string: text");
 
