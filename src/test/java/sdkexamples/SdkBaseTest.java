@@ -30,8 +30,8 @@ public abstract class SdkBaseTest extends MobileTest {
             UIElement btnBack = this.mainPage.btnBack();
             if (btnBack != null) {
                 this.mainPage.navigateBack(btnBack);
-            }else {
-
+            } else {
+                this.mainPage.navigateBack();
             }
         } catch (Exception ex) {
             this.log.error(ex.getMessage());

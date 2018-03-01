@@ -49,7 +49,11 @@ public class SdkMainPage extends BasePageExtended {
         if (this.settings.platform == PlatformType.Android) {
             return this.find.byLocator(this.locators.imageButtonLocator(), 3);
         } else if (this.settings.platform == PlatformType.iOS) {
-            return this.find.byLocator(By.id("Back"));
+            if (this.settings.platformVersion < 11.0) {
+                return this.find.byLocator(By.id("Back"), this.settings.shortTimeout);
+            } else {
+                return null;
+            }
         } else {
             return null;
         }

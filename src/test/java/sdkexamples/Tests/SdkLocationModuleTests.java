@@ -37,6 +37,14 @@ public class SdkLocationModuleTests extends SdkBaseTest {
                 UIElement btn = this.mainPage.wait.waitForVisible(this.locators.byText("Allow"), 6, false);
                 if (btn != null) {
                     btn.tap();
+                    this.log.info("Handle popup by clicking allow.");
+                } else {
+                    try {
+                        this.client.driver.switchTo().alert().accept();
+                        this.log.info("Accept alert via driver.");
+                    } catch (Exception e) {
+                        this.log.info("No alert (or fail to accept it).");
+                    }
                 }
             }
 

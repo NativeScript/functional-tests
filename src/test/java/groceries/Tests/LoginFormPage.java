@@ -61,7 +61,11 @@ public class LoginFormPage extends MobileTest {
     @Test(groups = {"android", "ios"})
     public void groceries_02_login() throws Exception {
         this.loadLoginForm(true);
-        this.compareScreens(20, 0.8);
+        if (this.settings.platformVersion == 7.1) {
+            this.compareScreens(20, 1.2);
+        } else {
+            this.compareScreens(20, 0.8);
+        }
 
         this.assertImagesResults();
     }
@@ -102,7 +106,7 @@ public class LoginFormPage extends MobileTest {
     @Test(groups = {"android", "ios"})
     public void groceries_05_signUp() throws Exception {
         this.secondaryLoginPage.signUp();
-        this.compareScreens(20, 0.1);
+        this.compareScreens(20, 0.5);
 
         this.secondaryLoginPage.backToLogin();
         this.waitForLoginForm(true);

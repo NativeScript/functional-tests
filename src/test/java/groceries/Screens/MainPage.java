@@ -1,9 +1,9 @@
 package groceries.Screens;
 
+import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.basepage.BasePage;
 import functional.tests.core.mobile.basetest.MobileContext;
 import functional.tests.core.mobile.element.UIElement;
-import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.find.Wait;
 import org.openqa.selenium.By;
 
@@ -47,16 +47,17 @@ public class MainPage extends BasePage {
 
     public java.util.List<UIElement> getListViewItems() {
         try {
-            return this.find.elementsByLocator((this.locators.listViewItemsLocator()));
+            return this.find.elementsByLocator(this.locators.listViewItemsLocator(), this.settings.shortTimeout);
         } catch (Exception ex) {
             return null;
         }
     }
 
     public void clearList() {
-        int length = this.getListViewItems() != null ? this.getListViewItems().size() : 0;
+        java.util.List<UIElement> listItems = this.getListViewItems();
+        int length = listItems != null ? listItems.size() : 0;
         for (int i = length - 1; i > 0; i--) {
-            new GroceriesItem(this.getListViewItems().get(0).getUIRectangle(), this.context).tapOnDeleteIcon();
+            new GroceriesItem(listItems.get(0).getUIRectangle(), this.context).tapOnDeleteIcon();
         }
     }
 

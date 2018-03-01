@@ -1030,7 +1030,7 @@
             <id>nativescriptdemo.emu.default.api19</id>
             <properties>
                 <app.config>nativescriptdemo/nativescriptdemo.emu.default.api19.properties</app.config>
-                <testsuite>nativescriptdemo-android</testsuite>
+                <testsuite>nativescriptdemo-android-noweb</testsuite>
             </properties>
         </profile>
         <profile>
@@ -1044,7 +1044,7 @@
             <id>nativescriptdemo.emu.default.api22</id>
             <properties>
                 <app.config>nativescriptdemo/nativescriptdemo.emu.default.api22.properties</app.config>
-                <testsuite>nativescriptdemo-android</testsuite>
+                <testsuite>nativescriptdemo-android-noweb</testsuite>
             </properties>
         </profile>
         <profile>

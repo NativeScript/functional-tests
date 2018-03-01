@@ -15,7 +15,6 @@ public class QsfGeneralTests extends QsfBaseTest {
         this.getStartedPage.loaded();
         this.compareScreens("GetStartedPage", 3, 0.65);
         this.getStartedPage.tapGetStarted();
-        this.getStartedPage.allowPermissions();
         this.homePage.loaded();
         this.compareScreens("HomePage", 3, 1.5);
         this.assertImagesResults();
