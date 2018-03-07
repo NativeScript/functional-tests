@@ -21,12 +21,21 @@ public class ModalViewPage extends HomePageExtended {
         return this.find.byTextContains("Login (full-screen)");
     }
 
+    private UIElement btnStrechedPopup() {
+        return this.find.byTextContains("Login (pop-up-stretched)");
+    }
+
     public void tapPopUpBtn() {
         this.btnPopUp().tap();
         this.log.info("Tap on 'pop-up' button.");
     }
 
     public void tapFullScreenBtn() {
+        this.btnFullScreen().click();
+        this.log.info("Tap on 'full-screen' button.");
+    }
+
+    public void tapPopupStrechedBtn() {
         this.btnFullScreen().click();
         this.log.info("Tap on 'full-screen' button.");
     }

@@ -2,6 +2,8 @@ package uitests.Tests.Css;
 
 import functional.tests.core.enums.DeviceType;
 import functional.tests.core.mobile.element.UIElement;
+import functional.tests.core.mobile.element.UIRectangle;
+import io.appium.java_client.SwipeElementDirection;
 import org.testng.annotations.Test;
 
 public class CssCommonTests extends CssBaseTest {
@@ -27,6 +29,14 @@ public class CssCommonTests extends CssBaseTest {
     @Test(groups = {"android", "ios"})
     public void formattedText_01() throws Exception {
         this.cssBasePage.navToPage("formatted");
+        this.compareScreens(compareScreens, 0.5);
+
+        this.assertImagesResults();
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void styledFormattedText() throws Exception {
+        this.cssBasePage.navToPage("styled-formatted-text");
         this.compareScreens(compareScreens, 0.5);
 
         this.assertImagesResults();
@@ -137,5 +147,34 @@ public class CssCommonTests extends CssBaseTest {
     public void missing_background_image() throws Exception {
         this.cssBasePage.navToPage("missing-background-image");
         this.assertScreen(10);
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void backgroundshort_hand() throws Exception {
+        this.cssBasePage.navToPage("background-shorthand");
+        this.compareScreens(5);
+
+        UIRectangle btn = new UIRectangle(this.find.byText("a1").getUIRectangle(), this.context);
+        btn.extendRectangle(10,10,0,0);
+
+        for (int i = 0; i < 17; i++) {
+            btn.tap();
+            this.context.wait.wait(500);
+            this.compareScreens(5);
+        }
+
+        this.assertImagesResults();
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void combinators() throws Exception {
+        this.cssBasePage.navToPage("combinators");
+        this.compareScreens(5);
+
+        this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 600, 200);
+
+        this.compareScreens(5);
+
+        this.assertImagesResults();
     }
 }

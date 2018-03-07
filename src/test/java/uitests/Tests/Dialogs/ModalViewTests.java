@@ -70,6 +70,16 @@ public class ModalViewTests extends MobileTest {
         Assert.assertEquals(this.modalViewPage.textView().getText(), "undefined/undefined");
     }
 
+    @Test(groups = {"android", "ios"})
+    public void modalView_05_strechedPopup() throws Exception {
+        this.modalViewPage.tapPopupStrechedBtn();
+        this.modalViewPage.modalViewLoaded();
+        this.waitForScreen(0.5);
+
+        this.assertScreen(5);
+        this.assertImagesResults();
+    }
+
     private UIElement navigateBackIfElementNotExists(String text) {
         UIElement el = this.wait.waitForVisible(this.locators.byText(text));
         if (el == null) {
@@ -81,6 +91,6 @@ public class ModalViewTests extends MobileTest {
     }
 
     private boolean checkIfPlatofrmVersionIsIsIOS() {
-        return this.settings.platform == PlatformType.iOS ;
+        return this.settings.platform == PlatformType.iOS;
     }
 }
