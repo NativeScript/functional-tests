@@ -51,4 +51,10 @@ public class RoundedViewsTests extends MobileTest {
         this.homePageExtended.navigateTo("missing-image");
         this.assertScreen(10);
     }
+
+    @Test(groups = {"android", "ios"})
+    public void image_asset() throws Exception {
+        this.homePageExtended.navigateTo("image-asset");
+        this.assertScreen(10);
+    }
 }
