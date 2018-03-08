@@ -159,7 +159,6 @@ public class CssCommonTests extends CssBaseTest {
 
         for (int i = 0; i < 17; i++) {
             btn.tap();
-            this.context.wait.wait(500);
             this.compareScreens(5);
         }
 
