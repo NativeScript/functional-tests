@@ -74,11 +74,11 @@ public class ModalViewTests extends MobileTest {
     public void modalView_05_strechedPopup() throws Exception {
         this.modalViewPage.tapPopupStrechedBtn();
         this.modalViewPage.modalViewLoaded();
-        this.waitForScreen(0.5);
-
         this.assertScreen(5);
 
-        this.modalViewPage.navigateBack();
+        this.modalViewPage.tapLoginBtn();
+        this.assertScreen(5);
+
         this.assertImagesResults();
     }
 
