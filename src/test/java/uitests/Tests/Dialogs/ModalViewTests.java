@@ -25,7 +25,7 @@ public class ModalViewTests extends MobileTest {
     public void modalView_01_popUp() throws Exception {
         this.modalViewPage.tapPopUpBtn();
         this.modalViewPage.modalViewLoaded();
-        this.waitForScreen(0.5);
+        this.compareScreens(5,0.5);
 
         this.modalViewPage.tapLoginBtn();
         if (this.checkIfPlatofrmVersionIsIsIOS()) {
@@ -77,6 +77,8 @@ public class ModalViewTests extends MobileTest {
         this.waitForScreen(0.5);
 
         this.assertScreen(5);
+
+        this.modalViewPage.navigateBack();
         this.assertImagesResults();
     }
 
