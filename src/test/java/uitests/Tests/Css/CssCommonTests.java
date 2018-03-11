@@ -174,6 +174,9 @@ public class CssCommonTests extends CssBaseTest {
         this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 600, 200);
         this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 600, 200);
         this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 600, 200);
+        this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 600, 200);
+        this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 600, 200);
+
 
         this.compareScreens(5);
 
