@@ -1,6 +1,7 @@
 package uitests.Tests.Css;
 
 import functional.tests.core.enums.DeviceType;
+import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.mobile.element.UIRectangle;
 import io.appium.java_client.SwipeElementDirection;
@@ -155,7 +156,7 @@ public class CssCommonTests extends CssBaseTest {
         this.compareScreens(5);
 
         UIRectangle btn = new UIRectangle(this.find.byText("a1").getUIRectangle(), this.context);
-        btn.extendRectangle(10,10,0,0);
+        btn.extendRectangle(10, 10, 0, 0);
 
         for (int i = 0; i < 17; i++) {
             btn.tap();
@@ -179,6 +180,11 @@ public class CssCommonTests extends CssBaseTest {
         this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 600, 200);
         this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 600, 200);
 
+        if (this.settings.platform == PlatformType.Android) {
+            this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 600, 200);
+            this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 600, 200);
+            this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 600, 200);
+        }
 
         this.compareScreens(5);
 
