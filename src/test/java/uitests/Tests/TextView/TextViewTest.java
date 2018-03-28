@@ -68,8 +68,10 @@ public class TextViewTest extends UIBaseTests {
         this.typeText(elements, 1);
         this.typeText(elements, 0);
 
+
         this.app.hideKeyboard();
-        this.compareScreens(5);
+
+        this.compareScreens(15);
 
         this.assertImagesResults();
     }
@@ -80,7 +82,15 @@ public class TextViewTest extends UIBaseTests {
                 "testestesttestestestestestestesttestestestesteste\n" +
                 "testestesttestestestestestestesttestestestesteste";
 
-        elements.get(index).setText(text);
+        //change text for ios 10
+        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 11) {
+            text = "1111111111111111111111111111111111111111\n" +
+                    "1111111111111111111111111111111111111111\n" +
+                    "1111111111111111111111111111111111111111\n" +
+                    "1111111111111111111111111111111111111111";
+            }
+
+            elements.get(index).setText(text);
 
         if (this.settings.platform == PlatformType.Android) {
             try {
