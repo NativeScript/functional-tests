@@ -1210,7 +1210,13 @@
                 <testsuite>sdkexamples</testsuite>
             </properties>
         </profile>
-
+        <profile>
+            <id>sdkexamples.sim.iphoneX.ios110</id>
+            <properties>
+                <app.config>sdkexamples/sdkexamples.sim.iphoneX.ios110.properties</app.config>
+                <testsuite>sdkexamples</testsuite>
+            </properties>
+        </profile>
         <!--template-helloworld profiles-->
         <profile>
             <id>template.helloworld.emu.default.api19</id>
