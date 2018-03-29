@@ -67,11 +67,12 @@ public class TextViewTest extends UIBaseTests {
         this.typeText(elements, 2);
         this.typeText(elements, 1);
         this.typeText(elements, 0);
-
-
-        this.app.hideKeyboard();
-
-        this.compareScreens(15);
+        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 11) {
+            this.compareScreens(15, 1.2);
+        }else {
+            this.app.hideKeyboard();
+            this.compareScreens(15);
+        }
 
         this.assertImagesResults();
     }
