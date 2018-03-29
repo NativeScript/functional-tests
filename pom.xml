@@ -872,7 +872,13 @@
                 <testsuite>cuteness-ios</testsuite>
             </properties>
         </profile>
-
+        <profile>
+            <id>cuteness.sim.iphoneX.ios110</id>
+            <properties>
+                <app.config>cuteness/cuteness.sim.iphoneX.ios110.properties</app.config>
+                <testsuite>cuteness-ios</testsuite>
+            </properties>
+        </profile>
         <!--groceries profiles-->
         <profile>
             <id>groceries.emu.default.api17</id>
