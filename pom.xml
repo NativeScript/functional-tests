@@ -67,21 +67,21 @@
         <profile>
             <id>animations.emu.default.api25</id>
             <properties>
-                <app.config>animations/animations.emu.default.api25.properties</app.config>
+                <app.config>animations/animations.emu.google.api25.properties</app.config>
                 <testsuite>animations</testsuite>
             </properties>
         </profile>
         <profile>
             <id>animations.emu.default.api26</id>
             <properties>
-                <app.config>animations/animations.emu.default.api26.properties</app.config>
+                <app.config>animations/animations.emu.google.api26.properties</app.config>
                 <testsuite>animations</testsuite>
             </properties>
         </profile>
         <profile>
             <id>animations.emu.default.api27</id>
             <properties>
-                <app.config>animations/animations.emu.default.api27.properties</app.config>
+                <app.config>animations/animations.emu.google.api27.properties</app.config>
                 <testsuite>animations</testsuite>
             </properties>
         </profile>
