@@ -101,7 +101,10 @@ public class ListViewTest extends UIBaseTests {
         if (this.settings.platform == PlatformType.iOS) {
             lastItemLocator = By.id(lastLocatorText);
         }
-        this.wait.forVisibleElements(lastItemLocator, 5, true);
+        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion > 10) {
+
+            this.wait.forVisibleElements(lastItemLocator, 5, true);
+        }
         double tolerance = 0.28d;
         if (this.settings.platform == PlatformType.iOS) {
             tolerance = 0.60d;
