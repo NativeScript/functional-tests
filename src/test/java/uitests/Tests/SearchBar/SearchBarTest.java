@@ -11,7 +11,7 @@ import uitests.Tests.UIBaseTests;
 public class SearchBarTest extends UIBaseTests {
 
     public HomePageExtended homePageExtended;
-
+    private int maxPixelTolerance = 2147483647;
     @BeforeClass(alwaysRun = true)
     public void beforeSearchBarTestClass() {
         this.homePageExtended = new HomePageExtended("search-bar", this.context);
@@ -22,7 +22,19 @@ public class SearchBarTest extends UIBaseTests {
         final int waitTime = 15;
         this.homePageExtended.navigateTo("issue-4147");
         this.wait.forVisibleElements(this.locators.searchBoxLocator(), 2, true);
-        this.compareScreens(waitTime);
+        if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0) {
+
+            if(this.imageVerification.compareScreens("issue_4147_with_suggestions",5,0, this.maxPixelTolerance, 0.05))
+            {
+                this.assertScreen("issue_4147_with_suggestions",waitTime, 0.05);
+            }
+            else {
+                this.assertScreen("issue_4147_without_suggestions",waitTime, 0.05);
+            }
+        }
+        else {
+            this.compareScreens(waitTime);
+        }
         if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 10) {
             this.log.warn("This test is disabled for iOS under 10");
             this.assertImagesResults();
@@ -32,7 +44,19 @@ public class SearchBarTest extends UIBaseTests {
         this.setText(1, "test");
         this.setText(2, "test");
         this.setText(3, "test");
-        this.compareScreens(waitTime);
+        if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0) {
+
+            if(this.imageVerification.compareScreens("issue_4147_2_with_suggestions",waitTime,0, this.maxPixelTolerance, 0.05))
+            {
+                this.assertScreen("issue_4147_2_with_suggestions",waitTime, 0.05);
+            }
+            else {
+                this.assertScreen("issue_4147_2_without_suggestions",waitTime, 0.05);
+            }
+        }
+        else {
+            this.compareScreens(waitTime);
+        }
 
         this.clearSearchBar(0);
         this.clearSearchBar(1);
@@ -41,14 +65,24 @@ public class SearchBarTest extends UIBaseTests {
 
         this.app.hideKeyboard();
 
-        this.compareScreens(waitTime);
+        if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0) {
+            this.assertScreen("issue_4147_3",waitTime, 0.05);
+        }
+        else {
+            this.compareScreens(waitTime);
+        }
 
         if (this.settings.platform == PlatformType.iOS) {
             this.homePageExtended.navigateBack(this.find.byText("Go Back"));
         } else {
             this.homePageExtended.navigateBack(this.find.byLocator(this.locators.imageButtonLocator()));
         }
-        this.assertImagesResults();
+        if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0) {
+
+        }
+        else {
+            this.assertImagesResults();
+        }
     }
 
     @Test(groups = {"android", "ios"})
@@ -69,14 +103,45 @@ public class SearchBarTest extends UIBaseTests {
 
         this.setText(0, "apple");
         ((AndroidDriver) this.client.driver).pressKeyCode(66);
-        this.compareScreens(5);
+        if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0) {
+
+            if(this.imageVerification.compareScreens("issue_5039_with_suggestions",5,0, this.maxPixelTolerance, 0.05))
+            {
+                this.assertScreen("issue_5039_with_suggestions",5, 0.05);
+            }
+            else {
+                this.assertScreen("issue_5039_without_suggestions",5, 0.05);
+            }
+        }
+        else {
+            this.compareScreens(5);
+        }
+
 
         this.clearSearchBar(0);
         this.setText(0, "apple");
         ((AndroidDriver) this.client.driver).pressKeyCode(66);
-        this.compareScreens(5);
+
+        if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0) {
+
+            if(this.imageVerification.compareScreens("issue_5039_2_with_suggestions",5,0, this.maxPixelTolerance, 0.05))
+            {
+                this.assertScreen("issue_5039_2_with_suggestions",5, 0.05);
+            }
+            else {
+                this.assertScreen("issue_5039_2_without_suggestions",5, 0.05);
+            }
+        }
+        else {
+            this.compareScreens(5);
+        }
         this.app.hideKeyboard();
-        this.assertImagesResults();
+        if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0) {
+
+        }
+        else {
+            this.assertImagesResults();
+        }
     }
 
     private void setText(int index, String text) {

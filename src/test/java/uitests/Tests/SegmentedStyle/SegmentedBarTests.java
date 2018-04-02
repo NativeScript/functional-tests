@@ -37,7 +37,7 @@ public class SegmentedBarTests extends MobileTest {
         this.assertImagesResults();
     }
 
-    @Test(groups = {"android, ios"})
+    @Test(groups = {"android", "ios"})
     public void segmentedBar_issue_3137_segmentedBarRippleEffect() throws Exception {
         UIElement element = this.segmentedBarPage.segmentedBar2().findElement(this.locators.byText("Item 1"));
         element.pressAndHold();

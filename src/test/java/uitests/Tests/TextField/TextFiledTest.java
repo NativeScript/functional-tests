@@ -8,7 +8,7 @@ import uitests.Screens.HomePageExtended;
 import uitests.Tests.UIBaseTests;
 
 public class TextFiledTest extends UIBaseTests {
-
+    private int maxPixelTolerance = 2147483647;
     public HomePageExtended homePageExtended;
 
     @BeforeClass(alwaysRun = true)
@@ -64,14 +64,39 @@ public class TextFiledTest extends UIBaseTests {
 
         textFieldLocator.tap();
         textViewLocator.tap();
-
-        this.compareScreens(5, 0.1);
+        if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0) {
+            if(this.imageVerification.compareScreens("blur_focus_textView_TextField_with_suggestions",5,0, this.maxPixelTolerance, 0.1))
+            {
+                this.assertScreen("blur_focus_textView_TextField_with_suggestions",5, 0.1);
+            }
+            else {
+                this.assertScreen("blur_focus_textView_TextField_without_suggestions",5, 0.1);
+            }
+        }
+        else {
+            this.compareScreens(5, 0.1);
+        }
 
         textFieldLocator.tap();
-        this.compareScreens(5, 0.1);
-        this.app.hideKeyboard();
 
-        this.assertImagesResults();
+        if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0) {
+            if(this.imageVerification.compareScreens("blur_focus_textView_TextField_2_with_suggestions",5,0, this.maxPixelTolerance, 0.1))
+            {
+                this.assertScreen("blur_focus_textView_TextField_2_with_suggestions",5, 0.1);
+            }
+            else {
+                this.assertScreen("blur_focus_textView_TextField_2_without_suggestions",5, 0.1);
+            }
+            }
+        else {
+            this.compareScreens(5, 0.1);
+        }
+        this.app.hideKeyboard();
+        if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0) {
+        }
+        else{
+            this.assertImagesResults();
+        }
     }
 
     private void setText(int index, String text) {
