@@ -304,7 +304,8 @@ public class IssuesTestsCommon extends IssuesBaseTest {
             textField = this.find.byLocator(this.locators.textViewLocator());
         }
 
-        textField.sendKeys("11111");
+        textField.setText("11111");
+
         this.compareScreens(5);
         this.find.byText("clear text",false,5).tap();
         this.compareScreens(5);

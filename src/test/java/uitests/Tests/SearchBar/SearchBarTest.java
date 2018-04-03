@@ -22,19 +22,20 @@ public class SearchBarTest extends UIBaseTests {
         final int waitTime = 15;
         this.homePageExtended.navigateTo("issue-4147");
         this.wait.forVisibleElements(this.locators.searchBoxLocator(), 2, true);
-        if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0) {
+        if((this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0)||(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 8.0)) {
 
-            if(this.imageVerification.compareScreens("issue_4147_with_suggestions",5,0, this.maxPixelTolerance, 0.05))
+            if(this.imageVerification.compareScreens("issue_4147_without_suggestions",5,0, this.maxPixelTolerance, 0.05))
             {
-                this.assertScreen("issue_4147_with_suggestions",waitTime, 0.05);
+                this.assertScreen("issue_4147_without_suggestions",waitTime, 0.05);
             }
             else {
-                this.assertScreen("issue_4147_without_suggestions",waitTime, 0.05);
+                this.assertScreen("issue_4147_with_suggestions",waitTime, 0.05);
             }
         }
         else {
             this.compareScreens(waitTime);
         }
+
         if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 10) {
             this.log.warn("This test is disabled for iOS under 10");
             this.assertImagesResults();
@@ -54,7 +55,11 @@ public class SearchBarTest extends UIBaseTests {
                 this.assertScreen("issue_4147_2_without_suggestions",waitTime, 0.05);
             }
         }
-        else {
+        else if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 8.0) {
+            this.assertScreen("issue_4147_2",waitTime, 0.05);
+        }
+        else
+            {
             this.compareScreens(waitTime);
         }
 
@@ -65,7 +70,7 @@ public class SearchBarTest extends UIBaseTests {
 
         this.app.hideKeyboard();
 
-        if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0) {
+        if((this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0)||(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 8.0)) {
             this.assertScreen("issue_4147_3",waitTime, 0.05);
         }
         else {
