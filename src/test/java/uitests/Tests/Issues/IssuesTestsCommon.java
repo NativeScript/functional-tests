@@ -44,6 +44,10 @@ public class IssuesTestsCommon extends IssuesBaseTest {
             {
                 this.assertScreen("issue_2942_keyBoardFocusInListViewTemplate_with_suggestions",5, 0.05);
             }
+            else if(this.imageVerification.compareScreens("issue_2942_keyBoardFocusInListViewTemplate_with_suggestions_info",5,0, this.maxPixelTolerance, 0.05))
+            {
+                this.assertScreen("issue_2942_keyBoardFocusInListViewTemplate_with_suggestions_info",5, 0.05);
+            }
             else {
                 this.assertScreen("issue_2942_keyBoardFocusInListViewTemplate_without_suggestions",5, 0.05);
             }
@@ -123,6 +127,10 @@ public class IssuesTestsCommon extends IssuesBaseTest {
             {
                 this.assertScreen("issue_2942_keyBoardFocusInListViewTemplateLandScape_with_suggestions",5, 0.05);
             }
+            else if(this.imageVerification.compareScreens("issue_2942_keyBoardFocusInListViewTemplateLandScape_with_suggestions_info",5,0, this.maxPixelTolerance, 0.05))
+            {
+                this.assertScreen("issue_2942_keyBoardFocusInListViewTemplateLandScape_with_suggestions_info",5, 0.05);
+            }
             else {
                 this.assertScreen("issue_2942_keyBoardFocusInListViewTemplateLandScape_without_suggestions",5, 0.05);
             }
@@ -163,6 +171,14 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         this.compareScreens(2);
         this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 200, 200);
         this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 200, 200);
+        this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 200, 200);
+        this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 200, 200);
+        this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 200, 200);
+        this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 200, 200);
+        this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 200, 200);
+        this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 200, 200);
+        this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 200, 200);
+
         this.compareScreens(5);
 
         this.assertImagesResults();
@@ -213,7 +229,7 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         this.issuesBasePage.navToPage("3211");
         this.issuesBasePage.find.byText("alert me").tap();
         this.compareScreens(5);
-
+        this.find.byText("OK").click();
         this.assertImagesResults();
     }
 
@@ -278,6 +294,20 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         this.issuesBasePage.navToPage("3354-ios");
         this.compareScreens(5);
 
+        UIElement textField = null;
+        if(this.settings.platform==PlatformType.Android)
+        {
+            textField = this.find.byLocator(this.locators.editTextLocator());
+        }
+        else
+        {
+            textField = this.find.byLocator(this.locators.textViewLocator());
+        }
+
+        textField.sendKeys("11111");
+        this.compareScreens(5);
+        this.find.byText("clear text",false,5).tap();
+        this.compareScreens(5);
         this.assertImagesResults();
     }
 

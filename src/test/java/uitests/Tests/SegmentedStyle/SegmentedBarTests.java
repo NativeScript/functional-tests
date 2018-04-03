@@ -36,8 +36,8 @@ public class SegmentedBarTests extends MobileTest {
 
         this.assertImagesResults();
     }
-
-    @Test(groups = {"android", "ios"})
+    //remove for ios because press action is not supported anymore in ios
+    @Test(groups = {"android"})
     public void segmentedBar_issue_3137_segmentedBarRippleEffect() throws Exception {
         UIElement element = this.segmentedBarPage.segmentedBar2().findElement(this.locators.byText("Item 1"));
         element.pressAndHold();
