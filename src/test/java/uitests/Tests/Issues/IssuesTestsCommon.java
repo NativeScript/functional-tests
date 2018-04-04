@@ -307,8 +307,8 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         textField.setText("11111");
         if(this.settings.platform==PlatformType.Android)
         {
-            try {
-                this.wait(3000);
+            try{
+                Thread.sleep(3000);
                 this.client.driver.hideKeyboard();
             }
             catch (Exception e)
