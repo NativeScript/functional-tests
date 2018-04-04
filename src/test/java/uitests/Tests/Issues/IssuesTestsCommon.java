@@ -308,6 +308,7 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         if(this.settings.platform==PlatformType.Android)
         {
             try {
+                this.wait(3000);
                 this.client.driver.hideKeyboard();
             }
             catch (Exception e)
