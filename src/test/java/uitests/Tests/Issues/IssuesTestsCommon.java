@@ -307,14 +307,17 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         textField.setText("11111");
         if(this.settings.platform==PlatformType.Android)
         {
-            this.client.driver.hideKeyboard();
+            try {
+                this.client.driver.hideKeyboard();
+            }
+            catch (Exception e)
+            {
+
+            }
         }
         this.compareScreens(10);
         this.find.byText("clear text",false,5).tap();
-        if(this.settings.platform==PlatformType.Android)
-        {
-            this.client.driver.hideKeyboard();
-        }
+
         this.compareScreens(10);
         this.assertImagesResults();
     }
