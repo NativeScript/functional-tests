@@ -292,7 +292,12 @@ public class IssuesTestsCommon extends IssuesBaseTest {
     @Test(groups = {"android", "ios"})
     public void issue_3354_ios_hint() throws Exception {
         this.issuesBasePage.navToPage("3354-ios");
-        this.compareScreens(10);
+        if(this.settings.platform == PlatformType.iOS && (double)this.settings.platformVersion == 11.2) {
+            this.assertScreen("issue_3354_ios_hint",15, 0.02);
+        }
+        else {
+            this.compareScreens(10);
+        }
 
         UIElement textField = null;
         if(this.settings.platform==PlatformType.Android)
@@ -308,7 +313,7 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         if(this.settings.platform==PlatformType.Android)
         {
             try{
-                Thread.sleep(3000);
+                this.wait.sleep(3000);
                 this.client.driver.hideKeyboard();
             }
             catch (Exception e)
@@ -316,11 +321,32 @@ public class IssuesTestsCommon extends IssuesBaseTest {
 
             }
         }
-        this.compareScreens(15, 0.02);
-        this.find.byText("clear text",false,5).tap();
+        if(this.settings.platform == PlatformType.iOS && (double)this.settings.platformVersion == 11.2) {
 
-        this.compareScreens(15, 0.02);
-        this.assertImagesResults();
+            if(this.imageVerification.compareScreens("issue_3354_ios_hint_2_with_suggestions",15,0, this.maxPixelTolerance, 0.02))
+            {
+                this.assertScreen("issue_3354_ios_hint_2_with_suggestions",15, 0.02);
+            }
+            else {
+                this.assertScreen("issue_3354_ios_hint_2_without_suggestions",15, 0.02);
+            }
+        }
+        else {
+            this.compareScreens(15, 0.02);
+        }
+        this.find.byText("clear text",false,5).tap();
+        if(this.settings.platform == PlatformType.iOS && (double)this.settings.platformVersion == 11.2) {
+            this.assertScreen("issue_3354_ios_hint_3",15, 0.02);
+        }
+        else {
+            this.compareScreens(15, 0.02);
+        }
+        if(this.settings.platform == PlatformType.iOS && (double)this.settings.platformVersion == 11.2) {
+
+        }
+        else {
+            this.assertImagesResults();
+        }
     }
 
     //@Test(groups = {"ios"})
