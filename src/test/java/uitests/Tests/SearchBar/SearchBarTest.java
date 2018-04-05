@@ -112,7 +112,7 @@ public class SearchBarTest extends UIBaseTests {
 
         this.setText(0, "apple");
         ((AndroidDriver) this.client.driver).pressKeyCode(66);
-        if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0) {
+        if((this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0)||(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 8.0)) {
 
             if(this.imageVerification.compareScreens("issue_5039_with_suggestions",5,0, this.maxPixelTolerance, 0.05))
             {
@@ -131,7 +131,7 @@ public class SearchBarTest extends UIBaseTests {
         this.setText(0, "apple");
         ((AndroidDriver) this.client.driver).pressKeyCode(66);
 
-        if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0) {
+        if((this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0)||(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 8.0)) {
 
             if(this.imageVerification.compareScreens("issue_5039_2_with_suggestions",5,0, this.maxPixelTolerance, 0.05))
             {
@@ -145,7 +145,7 @@ public class SearchBarTest extends UIBaseTests {
             this.compareScreens(5);
         }
         this.app.hideKeyboard();
-        if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0) {
+        if((this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0)||(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 8.0)) {
 
         }
         else {
