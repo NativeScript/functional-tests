@@ -26,19 +26,14 @@ public class SdkLocationModuleTests extends SdkBaseTest {
     @Test(dataProvider = "example")
     public void sdkLocationModuleTest(String example) throws Exception {
         // This only works on Google API emulators (and it currently crash on Api26, no idea why)
-        if (this.settings.platformVersion == 7.1 || this.settings.platform == PlatformType.iOS) {
+        if((this.settings.platform == PlatformType.Android && this.settings.platformVersion != 8.0) || settings.platform == PlatformType.iOS) {
             this.mainPage.navigateTo(example);
-            if (this.settings.platformVersion <= 4.4 && this.settings.platform == PlatformType.Android) {
-                UIElement el = this.mainPage.wait.waitForVisible(this.locators.byText("RECENT LOCATION REQUESTS", false, false), 6, false);
-                if (el != null) {
-                    this.app.navigateBack();
-                }
-            } else if (example == "Basic location" && ((this.settings.platform == PlatformType.Android && this.settings.platformVersion > 5.1) || settings.platform == PlatformType.iOS)) {
+            if (example == "Basic location" && ((this.settings.platform == PlatformType.Android && this.settings.platformVersion > 5.1) || settings.platform == PlatformType.iOS)) {
                 UIElement btn = this.mainPage.wait.waitForVisible(this.locators.byText("Allow"), 6, false);
                 if (btn != null) {
                     btn.tap();
                     this.log.info("Handle popup by clicking allow.");
-                    UIElement okbtn = this.find.byText("Ok",false, 6);
+                    UIElement okbtn = this.find.byText("Ok", false, 6);
                     if (okbtn != null) {
                         okbtn.tap();
                         this.log.info("Handle popup by clicking ok.");
@@ -51,6 +46,12 @@ public class SdkLocationModuleTests extends SdkBaseTest {
                         this.log.info("No alert (or fail to accept it).");
                     }
                 }
+            } else if (example == "Basic location") {
+                UIElement okbtn = this.find.byText("Ok", false, 6);
+                if (okbtn != null) {
+                    okbtn.tap();
+                    this.log.info("Handle popup by clicking ok.");
+                }
             }
 
             if (example == "Basic location") {
@@ -59,8 +60,9 @@ public class SdkLocationModuleTests extends SdkBaseTest {
             if (example == "Monitoring location") {
                 this.mainPage.wait.waitForVisible(this.locators.byText("Start location monitoring", false, false), 6, true);
             }
-        } else {
-            this.log.warn("This test runs only on Api25 Google API emulator!");
         }
+        else {
+            this.log.warn("This test don't run on Api26 Google API emulator!");
+       }
     }
 }
