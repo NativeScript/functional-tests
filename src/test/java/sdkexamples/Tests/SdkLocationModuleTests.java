@@ -38,6 +38,11 @@ public class SdkLocationModuleTests extends SdkBaseTest {
                 if (btn != null) {
                     btn.tap();
                     this.log.info("Handle popup by clicking allow.");
+                    UIElement okbtn = this.find.byText("Ok",false, 6);
+                    if (okbtn != null) {
+                        okbtn.tap();
+                        this.log.info("Handle popup by clicking ok.");
+                    }
                 } else {
                     try {
                         this.client.driver.switchTo().alert().accept();
@@ -49,10 +54,10 @@ public class SdkLocationModuleTests extends SdkBaseTest {
             }
 
             if (example == "Basic location") {
-                this.mainPage.wait.waitForVisible(this.locators.byText("Get current", false, false), 6, true);
+                this.mainPage.wait.waitForVisible(this.locators.byText("Get current location", false, false), 6, true);
             }
             if (example == "Monitoring location") {
-                this.mainPage.wait.waitForVisible(this.locators.byText("Start location", false, false), 6, true);
+                this.mainPage.wait.waitForVisible(this.locators.byText("Start location monitoring", false, false), 6, true);
             }
         } else {
             this.log.warn("This test runs only on Api25 Google API emulator!");
