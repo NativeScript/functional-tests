@@ -228,8 +228,10 @@ public class IssuesTestsCommon extends IssuesBaseTest {
     public void issue_3211_btnBackgroundInsideDialogs() throws Exception {
         this.issuesBasePage.navToPage("3211");
         this.issuesBasePage.find.byText("alert me").tap();
+        this.wait.sleep(1500);
         this.compareScreens(5);
-        this.find.byText("OK").click();
+        this.find.byText("OK").tap();
+        this.wait.sleep(1500);
         this.assertImagesResults();
     }
 
