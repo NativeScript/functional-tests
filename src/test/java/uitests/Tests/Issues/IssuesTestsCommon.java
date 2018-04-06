@@ -168,7 +168,7 @@ public class IssuesTestsCommon extends IssuesBaseTest {
     @Test(groups = {"android", "ios"})
     public void issue_3007_clipPath() throws Exception {
         this.issuesBasePage.navToPage("3007");
-        this.compareScreens(2);
+        this.compareScreens(10);
         this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 200, 200);
         this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 200, 200);
         this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 200, 200);
