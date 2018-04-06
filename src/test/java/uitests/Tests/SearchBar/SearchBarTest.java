@@ -28,7 +28,7 @@ public class SearchBarTest extends UIBaseTests {
             {
                 this.assertScreen("issue_4147_without_suggestions",waitTime, 0.05);
             }
-            if(this.imageVerification.compareScreens("issue_4147_with_suggestions_info",5,0, this.maxPixelTolerance, 0.05)) {
+            else if(this.imageVerification.compareScreens("issue_4147_with_suggestions_info",5,0, this.maxPixelTolerance, 0.05)) {
                 this.assertScreen("issue_4147_with_suggestions_info",waitTime, 0.05);
             }
             else {
