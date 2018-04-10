@@ -114,16 +114,16 @@ public class SearchBarTest extends UIBaseTests {
         ((AndroidDriver) this.client.driver).pressKeyCode(66);
         if((this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0)||(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 8.0)) {
 
-            if(this.imageVerification.compareScreens("issue_5039_with_suggestions",5,0, this.maxPixelTolerance, 0.05))
+            if(this.imageVerification.compareScreens("issue_5039_with_suggestions",10,0, this.maxPixelTolerance, 0.05))
             {
-                this.assertScreen("issue_5039_with_suggestions",5, 0.05);
+                this.assertScreen("issue_5039_with_suggestions",10, 0.05);
             }
             else {
-                this.assertScreen("issue_5039_without_suggestions",5, 0.05);
+                this.assertScreen("issue_5039_without_suggestions",10, 0.05);
             }
         }
         else {
-            this.compareScreens(5);
+            this.compareScreens(10);
         }
 
 
@@ -133,16 +133,16 @@ public class SearchBarTest extends UIBaseTests {
 
         if((this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0)||(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 8.0)) {
 
-            if(this.imageVerification.compareScreens("issue_5039_2_with_suggestions",5,0, this.maxPixelTolerance, 0.05))
+            if(this.imageVerification.compareScreens("issue_5039_2_with_suggestions",10,0, this.maxPixelTolerance, 0.05))
             {
-                this.assertScreen("issue_5039_2_with_suggestions",5, 0.05);
+                this.assertScreen("issue_5039_2_with_suggestions",10, 0.05);
             }
             else {
-                this.assertScreen("issue_5039_2_without_suggestions",5, 0.05);
+                this.assertScreen("issue_5039_2_without_suggestions",10, 0.05);
             }
         }
         else {
-            this.compareScreens(5);
+            this.compareScreens(10);
         }
         this.app.hideKeyboard();
         if((this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0)||(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 8.0)) {
