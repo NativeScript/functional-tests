@@ -24,7 +24,7 @@ public class TextFiledTest extends UIBaseTests {
 
     @Test(groups = {"android", "ios"})
     public void max_length() throws Exception {
-        final int waitTime = 15;
+        final int waitTime = 25;
         if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 10) {
             this.log.error("This test is not executed for iOS 9");
             return;
