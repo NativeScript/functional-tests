@@ -22,7 +22,7 @@ public class SearchBarTest extends UIBaseTests {
         final int waitTime = 15;
         this.homePageExtended.navigateTo("issue-4147");
         this.wait.forVisibleElements(this.locators.searchBoxLocator(), 2, true);
-        if((this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0)||(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 8.0)) {
+        if((this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0)||(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 8.0)||(this.settings.platform == PlatformType.Android && this.settings.deviceName == "Nexus5x")) {
 
             if(this.imageVerification.compareScreens("issue_4147_without_suggestions",5,0, this.maxPixelTolerance, 0.05))
             {
@@ -48,7 +48,7 @@ public class SearchBarTest extends UIBaseTests {
         this.setText(1, "test");
         this.setText(2, "test");
         this.setText(3, "test");
-        if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0) {
+        if((this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0)) {
 
             if(this.imageVerification.compareScreens("issue_4147_2_with_suggestions",waitTime,0, this.maxPixelTolerance, 0.05))
             {
@@ -58,7 +58,7 @@ public class SearchBarTest extends UIBaseTests {
                 this.assertScreen("issue_4147_2_without_suggestions",waitTime, 0.05);
             }
         }
-        else if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 8.0) {
+        else if((this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 8.0)||(this.settings.platform == PlatformType.Android && this.settings.deviceName == "Nexus5x")) {
             this.assertScreen("issue_4147_2",waitTime, 0.05);
         }
         else
@@ -73,7 +73,7 @@ public class SearchBarTest extends UIBaseTests {
 
         this.app.hideKeyboard();
 
-        if((this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0)||(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 8.0)) {
+        if((this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0)||(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 8.0)||(this.settings.platform == PlatformType.Android && this.settings.deviceName == "Nexus5x")) {
             this.assertScreen("issue_4147_3",waitTime, 0.05);
         }
         else {
@@ -85,7 +85,7 @@ public class SearchBarTest extends UIBaseTests {
         } else {
             this.homePageExtended.navigateBack(this.find.byLocator(this.locators.imageButtonLocator()));
         }
-        if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0) {
+        if((this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0)||(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 8.0)||(this.settings.platform == PlatformType.Android && this.settings.deviceName == "Nexus5x")) {
 
         }
         else {
