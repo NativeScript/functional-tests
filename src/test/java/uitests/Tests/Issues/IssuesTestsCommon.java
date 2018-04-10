@@ -384,6 +384,48 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         this.assertImagesResults();
     }
 
+    @Test(groups = {"android", "ios"})
+    public void issue_3714() throws Exception {
+        this.issuesBasePage.navToPage("3714");
+
+        this.compareScreens(5);
+
+        this.wait.waitForVisible(this.locators.byText("testBtn")).tap();
+        this.compareScreens(5);
+        this.find.byText("OK", false,5).tap();
+        this.find.byText("testLabel", false,5).tap();
+        this.compareScreens(5);
+        this.find.byText("OK", false,5).tap();
+        this.find.byText("testStackLayout", false,5).tap();
+        this.compareScreens(5);
+        this.find.byText("OK", false,5).tap();
+        this.compareScreens(5);
+
+        this.find.byText("toggleUserInteraction", false,5).tap();
+
+        this.find.byText("testBtn", false,5).tap();
+        this.compareScreens(5);
+        this.find.byText("testLabel", false,5).tap();
+        this.compareScreens(5);
+        this.find.byText("testStackLayout", false,5).tap();
+        this.compareScreens(5);
+
+
+        this.find.byText("toggleUserInteraction", false,5).tap();
+
+        this.find.byText("testBtn", false,5).tap();
+        this.compareScreens(5);
+        this.find.byText("OK", false,5).tap();
+        this.find.byText("testLabel", false,5).tap();
+        this.compareScreens(5);
+        this.find.byText("OK", false,5).tap();
+        this.find.byText("testStackLayout", false,5).tap();
+        this.compareScreens(5);
+        this.find.byText("OK", false,5).tap();
+        this.compareScreens(5);
+
+        this.assertImagesResults();
+    }
     private void sendShareInternetKeys(Robot robot) {
         this.log.info("send key cmd + y");
         robot.keyPress(KeyEvent.VK_META);
