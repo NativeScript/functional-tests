@@ -6,7 +6,7 @@ import functional.tests.core.mobile.basetest.MobileTest;
 import functional.tests.core.mobile.device.android.Adb;
 import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.mobile.find.Wait;
-import io.appium.java_client.SwipeElementDirection;
+import functional.tests.core.enums.SwipeElementDirection;
 import io.appium.java_client.android.AndroidDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;

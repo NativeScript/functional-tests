@@ -1,10 +1,11 @@
 package nativescriptdemo.Screens.Pages;
 
 import functional.tests.core.enums.PlatformType;
+import functional.tests.core.enums.SwipeElementDirection;
 import functional.tests.core.mobile.basepage.BasePage;
 import functional.tests.core.mobile.element.UIElement;
+import functional.tests.core.mobile.gestures.Gestures;
 import functional.tests.core.mobile.helpers.NavigationHelper;
-import io.appium.java_client.SwipeElementDirection;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
@@ -49,7 +50,7 @@ public class HomePage extends BasePage {
 
     public void tapSideDrawer() {
         if (this.settings.platformVersion >= 11.0 && this.settings.platform == PlatformType.iOS) {
-            this.client.driver.swipe(10, 100, 200, 100, 250);
+            Gestures.scroll(250, 10, 100, 200, 100, this.settings, this.client);
             this.log.info("Open SideDrawer with swipe.");
         } else {
             this.btnSideDrawer().tap();

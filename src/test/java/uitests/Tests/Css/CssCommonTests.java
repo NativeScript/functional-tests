@@ -4,7 +4,7 @@ import functional.tests.core.enums.DeviceType;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.mobile.element.UIRectangle;
-import io.appium.java_client.SwipeElementDirection;
+import functional.tests.core.enums.SwipeElementDirection;
 import org.testng.annotations.Test;
 
 public class CssCommonTests extends CssBaseTest {

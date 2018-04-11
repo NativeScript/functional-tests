@@ -3,7 +3,7 @@ package uitests.Tests.ListView;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.extensions.ScrollableListObject;
 import functional.tests.core.mobile.element.UIElement;
-import io.appium.java_client.SwipeElementDirection;
+import functional.tests.core.enums.SwipeElementDirection;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ScreenOrientation;
 import org.testng.annotations.BeforeClass;

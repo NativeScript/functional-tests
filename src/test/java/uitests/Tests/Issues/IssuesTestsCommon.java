@@ -5,7 +5,7 @@ import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.mobile.find.Wait;
 import functional.tests.core.utils.OSUtils;
-import io.appium.java_client.SwipeElementDirection;
+import functional.tests.core.enums.SwipeElementDirection;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ScreenOrientation;
 import org.testng.annotations.Test;

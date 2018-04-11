@@ -2,7 +2,7 @@ package uitests.Tests.ScrollView;
 
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.element.UIElement;
-import io.appium.java_client.SwipeElementDirection;
+import functional.tests.core.enums.SwipeElementDirection;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uitests.Screens.HomePageExtended;
