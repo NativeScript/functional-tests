@@ -171,6 +171,77 @@
             </properties>
         </profile>
         <profile>
+            <id>uitests.emu.default.api19.components</id>
+            <properties>
+                <app.config>uitests/uitests.emu.default.api19.properties</app.config>
+                <testsuite>uitests-android-components</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>uitests.emu.default.api19.button</id>
+            <properties>
+                <app.config>uitests/uitests.emu.default.api19.properties</app.config>
+                <testsuite>uitests-android-button</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>uitests.emu.default.api19.datepicker.listpicker.progressbar.listview</id>
+            <properties>
+                <app.config>uitests/uitests.emu.default.api19.properties</app.config>
+                <testsuite>uitests-android-datepicker-listpicker-progressbar-listview</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>uitests.emu.default.api19.dialogs</id>
+            <properties>
+                <app.config>uitests/uitests.emu.default.api19.properties</app.config>
+                <testsuite>uitests-android-dialogs</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>uitests.emu.default.api19.flexbox</id>
+            <properties>
+                <app.config>uitests/uitests.emu.default.api19.properties</app.config>
+                <testsuite>uitests-android-flexbox</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>uitests.emu.default.api19.issues</id>
+            <properties>
+                <app.config>uitests/uitests.emu.default.api19.properties</app.config>
+                <testsuite>uitests-android-issues</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>uitests.emu.default.api19.layouts.segmentedstyle.imageview</id>
+            <properties>
+                <app.config>uitests/uitests.emu.default.api19.properties</app.config>
+                <testsuite>uitests-android-layouts-segmentedstyle-imageview</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>uitests.emu.default.api19.gestures</id>
+            <properties>
+                <app.config>uitests/uitests.emu.default.api19.properties</app.config>
+                <testsuite>uitests-android-gestures</testsuite>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>uitests.emu.default.api19.textfiled.textview.tabview.searchbar</id>
+            <properties>
+                <app.config>uitests/uitests.emu.default.api19.properties</app.config>
+                <testsuite>uitests-android-textfiled-textview-tabview-searchbar</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>uitests.emu.default.api19.css.fonts.page</id>
+            <properties>
+                <app.config>uitests/uitests.emu.default.api19.properties</app.config>
+                <testsuite>uitests-android-css-fonts-page</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>uitests.emu.default.api21</id>
             <properties>
                 <app.config>uitests/uitests.emu.default.api21.properties</app.config>
@@ -189,6 +260,77 @@
             <properties>
                 <app.config>uitests/uitests.emu.default.api23.properties</app.config>
                 <testsuite>uitests-android</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>uitests.emu.default.api23.components</id>
+            <properties>
+                <app.config>uitests/uitests.emu.default.api23.properties</app.config>
+                <testsuite>uitests-android-components</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>uitests.emu.default.api23.button</id>
+            <properties>
+                <app.config>uitests/uitests.emu.default.api23.properties</app.config>
+                <testsuite>uitests-android-button</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>uitests.emu.default.api23.datepicker.listpicker.progressbar.listview</id>
+            <properties>
+                <app.config>uitests/uitests.emu.default.api23.properties</app.config>
+                <testsuite>uitests-android-datepicker-listpicker-progressbar-listview</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>uitests.emu.default.api23.dialogs</id>
+            <properties>
+                <app.config>uitests/uitests.emu.default.api23.properties</app.config>
+                <testsuite>uitests-android-dialogs</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>uitests.emu.default.api23.flexbox</id>
+            <properties>
+                <app.config>uitests/uitests.emu.default.api23.properties</app.config>
+                <testsuite>uitests-android-flexbox</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>uitests.emu.default.api23.issues</id>
+            <properties>
+                <app.config>uitests/uitests.emu.default.api23.properties</app.config>
+                <testsuite>uitests-android-issues</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>uitests.emu.default.api23.layouts.segmentedstyle.imageview</id>
+            <properties>
+                <app.config>uitests/uitests.emu.default.api23.properties</app.config>
+                <testsuite>uitests-android-layouts-segmentedstyle-imageview</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>uitests.emu.default.api23.gestures</id>
+            <properties>
+                <app.config>uitests/uitests.emu.default.api23.properties</app.config>
+                <testsuite>uitests-android-gestures</testsuite>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>uitests.emu.default.api23.textfiled.textview.tabview.searchbar</id>
+            <properties>
+                <app.config>uitests/uitests.emu.default.api23.properties</app.config>
+                <testsuite>uitests-android-textfiled-textview-tabview-searchbar</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>uitests.emu.default.api23.css.fonts.page</id>
+            <properties>
+                <app.config>uitests/uitests.emu.default.api23.properties</app.config>
+                <testsuite>uitests-android-css-fonts-page</testsuite>
             </properties>
         </profile>
         <profile>
