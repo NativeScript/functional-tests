@@ -36,9 +36,9 @@ public class ApplicationTests extends MobileTest {
             return;
         }
 
-        Wait.sleep(5000);
+        Wait.sleep(8000);
         this.log.info("Run the application in background.");
-        this.app.runInBackground(5);
+        this.app.runInBackground(3);
         //this.wait.waitForVisible(this.locators.byText("Run"), 15, true);
         Wait.sleep(5000);
         this.context.getDevice().assertLogContains("#1# SuspendEvent");
