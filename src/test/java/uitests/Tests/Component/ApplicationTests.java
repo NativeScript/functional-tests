@@ -36,13 +36,12 @@ public class ApplicationTests extends MobileTest {
             return;
         }
 
-        this.device.cleanConsoleLog();
-        Wait.sleep(1000);
-        this.log.info("Run the application in background.");
-        this.app.runInBackground(2);
-        this.wait.waitForVisible(this.locators.byText("Run"), 15, true);
         Wait.sleep(5000);
-        this.device.assertLogContains("#1# SuspendEvent");
+        this.log.info("Run the application in background.");
+        this.app.runInBackground(5);
+        //this.wait.waitForVisible(this.locators.byText("Run"), 15, true);
+        Wait.sleep(5000);
+        this.context.getDevice().assertLogContains("#1# SuspendEvent");
         if (this.settings.platform != PlatformType.iOS && !this.settings.platformVersion.toString().startsWith("9")) {
             this.device.assertLogContains("#2# ResumeEvent");
         }
