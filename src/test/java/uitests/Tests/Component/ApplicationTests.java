@@ -36,6 +36,8 @@ public class ApplicationTests extends MobileTest {
             return;
         }
 
+        this.device.cleanConsoleLog();
+        Wait.sleep(1000);
         this.log.info("Run the application in background.");
         this.app.runInBackground(2);
         this.wait.waitForVisible(this.locators.byText("Run"), 15, true);
