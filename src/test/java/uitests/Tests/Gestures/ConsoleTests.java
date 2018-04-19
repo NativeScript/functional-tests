@@ -19,14 +19,14 @@ public class ConsoleTests extends GesturesBaseTest {
         this.device.assertLogContains("text");
 
         if (this.settings.platform == PlatformType.Android) {
-            final String johnObj = "{\n" +
-                    "  \"name\": \"John\",\n" +
-                    "  \"age\": 34\n" +
-                    "}";
+            this.device.assertLogContains("-1 text {");
+            this.device.assertLogContains("\"name\": \"John\",");
+            this.device.assertLogContains("\"age\": 34");
+            this.device.assertLogContains("[1, 5, 12.5, {"); // console.log([1, 5, 12.5, obj, str, 42]);
+            this.device.assertLogContains("\"name\": \"John\",");
+            this.device.assertLogContains("\"age\": 34");
+            this.device.assertLogContains("}, text, 42]");
 
-            //this.device.assertLogContains(johnObj); // Object {name: "John", age: 34}
-            //this.device.assertLogContains("-1 text " + johnObj);
-            //this.device.assertLogContains("[1,5,12.5, " + johnObj + ", text, 42]"); // console.log([1, 5, 12.5, obj, str, 42]);
             this.device.assertLogContains("number: -1");
             this.device.assertLogContains("string: text");
 
@@ -44,11 +44,56 @@ public class ConsoleTests extends GesturesBaseTest {
             this.device.assertLogContains("at pageLoaded");
             this.device.assertLogContains("Time:");
         } else if (this.settings.platform == PlatformType.iOS) {
-            this.device.assertLogContains("[object Object]"); // Object {name: "John", age: 34}
+            String johnObj="";
+            String johnObj2="";
+            if(this.settings.platformVersion>=11.0) {
+                johnObj = "{\n" +
+                        "  \"name\": \"John\",\n" +
+                        "  \"age\": 34\n" +
+                        "}";
+
+                johnObj2 = "[\n" +
+                        "  1,\n" +
+                        "  5,\n" +
+                        "  12.5,\n" +
+                        "  {\n" +
+                        "    \"name\": \"John\",\n" +
+                        "    \"age\": 34\n" +
+                        "  },\n" +
+                        "  \"text\",\n" +
+                        "  42\n" +
+                        "]";
+            }
+            else
+            {
+                johnObj = "{\n" +
+                        "\t  \"name\": \"John\",\n" +
+                        "\t  \"age\": 34\n" +
+                        "\t}";
+
+                johnObj2 = "[\n" +
+                        "\t  1,\n" +
+                        "\t  5,\n" +
+                        "\t  12.5,\n" +
+                        "\t  {\n" +
+                        "\t    \"name\": \"John\",\n" +
+                        "\t    \"age\": 34\n" +
+                        "\t  },\n" +
+                        "\t  \"text\",\n" +
+                        "\t  42\n" +
+                        "\t]";
+            }
+            this.device.assertLogContains(johnObj);
+            this.device.assertLogContains(johnObj2);
+            this.device.assertLogContains("==== object dump start ====");
+            this.device.assertLogContains("name: John");
+            this.device.assertLogContains("age: 34");
+            this.device.assertLogContains("==== object dump end ====");
+
             this.device.assertLogContains("number: -1");
             this.device.assertLogContains("string: text");
             this.device.assertLogContains("text -1");
-            this.device.assertLogContains("[object Object]"); // Object {name: "John", age: 34}
+
             this.device.assertLogContains("CONSOLE LOG");
             this.device.assertLogContains("CONSOLE INFO");
             this.device.assertLogContains("CONSOLE WARN");
