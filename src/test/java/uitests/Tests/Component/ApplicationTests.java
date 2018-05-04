@@ -37,7 +37,7 @@ public class ApplicationTests extends MobileTest {
         }
 
         this.log.info("Run the application in background.");
-        this.context.client.driver.runAppInBackground(2);
+        this.app.runInBackground(2);
         this.wait.waitForVisible(this.locators.byText("Run"), 15, true);
         this.context.getDevice().assertLogContains("#1# SuspendEvent");
         if (this.settings.platform != PlatformType.iOS && !this.settings.platformVersion.toString().startsWith("9")) {
