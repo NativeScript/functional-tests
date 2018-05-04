@@ -6,7 +6,7 @@ import functional.tests.core.mobile.basepage.BasePageExtended;
 import functional.tests.core.mobile.basetest.MobileContext;
 import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.mobile.helpers.NavigationHelper;
-import io.appium.java_client.SwipeElementDirection;
+import functional.tests.core.enums.SwipeElementDirection;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 

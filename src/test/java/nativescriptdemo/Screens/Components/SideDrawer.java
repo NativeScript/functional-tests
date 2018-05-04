@@ -3,7 +3,7 @@ package nativescriptdemo.Screens.Components;
 import functional.tests.core.mobile.basepage.BasePage;
 import functional.tests.core.mobile.basetest.MobileContext;
 import functional.tests.core.mobile.element.UIElement;
-import io.appium.java_client.SwipeElementDirection;
+import functional.tests.core.enums.SwipeElementDirection;
 import org.testng.Assert;
 
 public class SideDrawer extends BasePage {

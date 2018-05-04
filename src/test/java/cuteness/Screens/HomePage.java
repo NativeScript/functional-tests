@@ -53,7 +53,7 @@ public class HomePage extends BasePage {
     }
 
     public DetailsPage tapListView() {
-        this.listView().tap(1, Settings.DEFAULT_TAP_DURATION);
+        this.listView().tap();
         this.log.info("Tap at center of ListView.");
         return new DetailsPage();
     }

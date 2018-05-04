@@ -36,7 +36,7 @@ public class SdkWebViewTests extends SdkBaseTest {
                 this.wait.waitForVisible(this.locators.byText("WebView finished loading of", false, false), this.settings.defaultTimeout, true);
             }
         } else if (example.equalsIgnoreCase(pageWebViewHtml)) {
-            Assert.notNull(this.find.byText("First WebView"));
+            Assert.notNull(this.find.byText("First WebView"), "Failed to find WebView.");
         }
         this.log.logScreen(example);
     }

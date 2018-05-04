@@ -1,7 +1,7 @@
 package templates.helloworldng.Tests;
 
+import functional.tests.core.enums.SwipeElementDirection;
 import functional.tests.core.mobile.basetest.MobileTest;
-import io.appium.java_client.SwipeElementDirection;
 import org.springframework.util.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -41,9 +41,9 @@ public class SmokeTests extends MobileTest {
         this.homePage.loaded();
         this.homePage.tapOnItem(itemToTap);
         this.itemDetailPage.loaded();
-        Assert.notNull(this.itemDetailPage.player(itemToTap));
-        Assert.notNull(this.itemDetailPage.player(number));
-        Assert.notNull(this.itemDetailPage.player(position));
+        Assert.notNull(this.itemDetailPage.player(itemToTap), "itemToTap is null.");
+        Assert.notNull(this.itemDetailPage.player(number), "number is null.");
+        Assert.notNull(this.itemDetailPage.player(position), "position is null.");
     }
 
     @Test(groups = {"android", "ios"})

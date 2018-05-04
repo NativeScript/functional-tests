@@ -6,7 +6,7 @@ import cuteness.Screens.HomePage;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.find.Wait;
 import functional.tests.core.mobile.basetest.MobileTest;
-import io.appium.java_client.SwipeElementDirection;
+import functional.tests.core.enums.SwipeElementDirection;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 

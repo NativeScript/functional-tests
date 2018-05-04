@@ -1,7 +1,7 @@
 package sdkexamples.Tests;
 
-import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
+import functional.tests.core.mobile.element.UIElement;
 import org.openqa.selenium.By;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -28,24 +28,23 @@ public class SdkDialogsTests extends SdkBaseTest {
 
     @Test(dataProvider = "example")
     public void sdkDialogsTest(String example, String btn) throws Exception {
-        String dialogBtnName = example;
-        this.mainPage.navigateTo(dialogBtnName);
-        String buttonTitle = "Display " + dialogBtnName.replace("dialog", "Dialog");
+        this.mainPage.navigateTo(example);
+        String buttonTitle = "Display " + example.replace("dialog", "Dialog");
         this.mainPage.find.byText(buttonTitle).click();
 
         // Special handler forthis.log.n dialog on iOS8, keyboard needs to be hidden
         if ((this.settings.platform == PlatformType.iOS) && (this.settings.platformVersion.toString().contains("8."))) {
-            if (buttonTitle == "Login dialog") {
+            if (buttonTitle.equalsIgnoreCase("Login dialog")) {
                 this.mainPage.find.byLocator(By.id("return")).click();
                 this.mainPage.find.byLocator(By.id("return")).click();
             }
-            if (buttonTitle == "Prompt dialog") {
+            if (buttonTitle.equalsIgnoreCase("Prompt dialog")) {
                 this.mainPage.find.byLocator(By.id("return")).click();
             }
         }
 
         // Close dialogs
         UIElement btnSubmitDialog = this.find.byTextContains(btn);
-        btnSubmitDialog.tap(1, 1000);
+        btnSubmitDialog.tap();
     }
 }
