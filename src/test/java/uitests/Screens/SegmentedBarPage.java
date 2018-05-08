@@ -55,6 +55,7 @@ public class SegmentedBarPage extends HomePageExtended {
                 return this.find.elementsByLocator(this.locators.tabHostLocator());
             }
         } else {
+            this.wait.waitForVisible(this.locators.segmentedControlLocator(), 10, true);
             return this.find.elementsByLocator(this.locators.segmentedControlLocator());
         }
     }

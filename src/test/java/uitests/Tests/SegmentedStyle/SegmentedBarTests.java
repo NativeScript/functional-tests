@@ -23,7 +23,6 @@ public class SegmentedBarTests extends MobileTest {
         this.assertImagesResults();
     }
 
-    @Ignore("Temporary skipped because of issue with latest functional-tests-core.")
     @Test(groups = {"android", "ios"})
     public void segmentedBar_02_clean() throws Exception {
         this.segmentedBarPage.tapGoToCleanPageBtn();
@@ -32,7 +31,6 @@ public class SegmentedBarTests extends MobileTest {
         this.assertImagesResults();
     }
 
-    @Ignore("Temporary skipped because of issue with latest functional-tests-core.")
     @Test(groups = {"android", "ios"})
     public void segmentedBar_03() throws Exception {
         this.segmentedBarPage.tapGoToPreviousPageBtn();
