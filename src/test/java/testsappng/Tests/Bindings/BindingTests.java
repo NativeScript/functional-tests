@@ -22,7 +22,8 @@ public class BindingTests extends TestsAppNgBase {
         if (isIos()) {
             this.compareScreens(5);
         } else {
-            Assert.assertTrue(this.bindingPage.compareResults("1", "0", "5"), "Binding is not working");
+            Assert.assertTrue(this.bindingPage.compareResults("1", "0", "5"),
+                    "Binding is not working");
         }
         this.bindingPage.updateValuesFromCodeBehind();
         this.bindingPage.getResults();
@@ -31,7 +32,8 @@ public class BindingTests extends TestsAppNgBase {
             this.compareScreens(5);
             this.assertImagesResults();
         } else {
-            Assert.assertTrue(this.bindingPage.compareResults("0", "0", "0"), "Binding is not working from code behind!");
+            Assert.assertTrue(this.bindingPage.compareResults("0", "0", "0"),
+                    "Binding is not working from code behind!");
         }
     }
 

@@ -77,20 +77,14 @@ public class BindingPage extends HomePage {
     }
 
     public void insertNewValues() {
-        if (this.settings.platformVersion == 4.3 && !this.settings.isRealDevice) {
-            this.tfOneWayBinding().sendKeys("1");
-            this.tfTwoWayBinding().sendKeys("0");
-            this.tfCurlyBracket().sendKeys("3");
-        } else {
-            this.tfOneWayBinding().setText("1");
-            this.tfTwoWayBinding().setText("0");
-            this.tfCurlyBracket().setText("3");
-            try {
-                this.hideKeyboard();
-            } catch (Exception e) {
-                this.log.info("Failed to hide keyboard");
-                this.log.error(e.getMessage());
-            }
+        this.tfOneWayBinding().sendKeys("1");
+        this.tfTwoWayBinding().sendKeys("0");
+        this.tfCurlyBracket().sendKeys("3");
+        try {
+            this.hideKeyboard();
+        } catch (Exception e) {
+            this.log.info("Failed to hide keyboard");
+            this.log.error(e.getMessage());
         }
     }
 

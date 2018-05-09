@@ -69,7 +69,7 @@ public class NavOptionsTests extends TestsAppNgBase {
 
     @Test(groups = {"android", "ios"})
     public void navOption_03_pageTransition() throws Exception {
-        double tollerance = 6;
+        double tollerance = 7.5;
         if (this.settings.platform == PlatformType.Android) {
             this.navOptionsPage.resetNavigationToLastPage();
         } else {
@@ -80,7 +80,7 @@ public class NavOptionsTests extends TestsAppNgBase {
 
         this.navOptionsPage.pageTransitions();
 
-        this.compareScreens(13, tollerance);
+        this.compareScreens(15, tollerance);
 
         this.assertImagesResults();
     }
