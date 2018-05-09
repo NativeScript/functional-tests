@@ -16,6 +16,7 @@ public class AwesomeFontTest extends MobileTest {
         this.fontPage.navigateTo("awesome-3654");
     }
 
+    @Ignore("Ignore because of issue in slideBack()")
     @Test(groups = {"android", "ios"})
     public void fonts_01_awesomefont_3654() throws Exception {
         this.compareScreens(10);
