@@ -26,7 +26,7 @@ public class SdkLocationModuleTests extends SdkBaseTest {
     @Test(dataProvider = "example")
     public void sdkLocationModuleTest(String example) throws Exception {
         // This only works on Google API emulators (and it currently crash on Api26, no idea why)
-        if((this.settings.platform == PlatformType.Android && this.settings.platformVersion != 8.0)
+        if ((this.settings.platform == PlatformType.Android && this.settings.platformVersion != 8.0)
                 || settings.platform == PlatformType.iOS) {
             this.mainPage.navigateTo(example);
             if (example.equalsIgnoreCase("Basic location")
@@ -36,7 +36,7 @@ public class SdkLocationModuleTests extends SdkBaseTest {
                 if (btn != null) {
                     btn.tap();
                     this.log.info("Handle popup by clicking allow.");
-                    UIElement okbtn = this.find.byText("Ok", false, 6);
+                    UIElement okbtn = this.mainPage.wait.waitForVisible(this.locators.byText("Ok", false, false), 15, false);
                     if (okbtn != null) {
                         okbtn.tap();
                         this.log.info("Handle popup by clicking ok.");
@@ -50,7 +50,7 @@ public class SdkLocationModuleTests extends SdkBaseTest {
                     }
                 }
             } else if (example == "Basic location") {
-                UIElement okbtn = this.find.byText("Ok", false, 6);
+                UIElement okbtn = this.mainPage.wait.waitForVisible(this.locators.byText("Ok", false, false), 15, false);
                 if (okbtn != null) {
                     okbtn.tap();
                     this.log.info("Handle popup by clicking ok.");
@@ -58,14 +58,13 @@ public class SdkLocationModuleTests extends SdkBaseTest {
             }
 
             if (example == "Basic location") {
-                this.mainPage.wait.waitForVisible(this.locators.byText("Get current location", false, false), 6, true);
+                this.mainPage.wait.waitForVisible(this.locators.byText("Get current location", false, false), 15, true);
             }
             if (example == "Monitoring location") {
-                this.mainPage.wait.waitForVisible(this.locators.byText("Start location monitoring", false, false), 6, true);
+                this.mainPage.wait.waitForVisible(this.locators.byText("Start location monitoring", false, false), 15, true);
             }
-        }
-        else {
+        } else {
             this.log.warn("This test don't run on Api26 Google API emulator!");
-       }
+        }
     }
 }

@@ -1,6 +1,8 @@
 package sdkexamples.Tests;
 
 import functional.tests.core.enums.PlatformType;
+import functional.tests.core.mobile.element.UIElement;
+import org.openqa.selenium.By;
 import org.springframework.util.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -36,7 +38,9 @@ public class SdkWebViewTests extends SdkBaseTest {
                 this.wait.waitForVisible(this.locators.byText("WebView finished loading of", false, false), this.settings.defaultTimeout, true);
             }
         } else if (example.equalsIgnoreCase(pageWebViewHtml)) {
-            Assert.notNull(this.find.byText("First WebView"), "Failed to find WebView.");
+            By webViewLocator = this.locators.byText("First WebView", false, false);
+            UIElement webView = this.wait.waitForVisible(webViewLocator, 30, false);
+            Assert.notNull(webView, "Failed to find WebView.");
         }
         this.log.logScreen(example);
     }
