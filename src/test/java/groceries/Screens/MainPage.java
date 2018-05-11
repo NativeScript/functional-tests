@@ -22,7 +22,9 @@ public class MainPage extends BasePage {
         this.addItemTextEdit.tap();
         this.addItemTextEdit.sendKeys(text);
 
-        UIElement addBtn = this.find.elementsByLocator(this.locators.imageLocator()).get(1);
+        UIElement addBtn = this.wait
+                .forVisibleElements(this.locators.imageLocator(), 10, false)
+                .get(1);
         if (this.settings.platform == PlatformType.Android) {
             addBtn.click();
         } else {
@@ -33,11 +35,11 @@ public class MainPage extends BasePage {
         return this.getListViewItem(0);
     }
 
-    public UIElement textFieldAddAGroceryItem() {
-        return this.find.byLocator(this.textFiledAddAGroceryItemLocator());
+    private UIElement textFieldAddAGroceryItem() {
+        return this.wait.waitForVisible(this.textFiledAddAGroceryItemLocator());
     }
 
-    public UIElement getListViewItem(int index) {
+    private UIElement getListViewItem(int index) {
         return this.getListViewItems().get(index);
     }
 
@@ -47,7 +49,10 @@ public class MainPage extends BasePage {
 
     public java.util.List<UIElement> getListViewItems() {
         try {
-            return this.find.elementsByLocator(this.locators.listViewItemsLocator(), this.settings.shortTimeout);
+            return this.wait
+                    .forVisibleElements(
+                            this.locators.listViewItemsLocator(), this.settings.defaultTimeout, false
+                    );
         } catch (Exception ex) {
             return null;
         }
@@ -66,7 +71,7 @@ public class MainPage extends BasePage {
     }
 
     public GroceriesRecentItemsPage tapOnResent() {
-        this.find.byTextContains("Recent").tap();
+        this.wait.waitForVisible(this.locators.byText("Recent", false, false)).tap();
         this.wait.waitForVisible(this.doneLocator(), 1000, true);
 
         return new GroceriesRecentItemsPage();
@@ -76,7 +81,7 @@ public class MainPage extends BasePage {
         if (this.settings.platform == PlatformType.Android) {
             this.find.elementsByLocator(menuLocator()).get(0).click();
         } else {
-            this.find.byLocator(menuLocator()).click();
+            this.wait.waitForVisible(menuLocator()).click();
         }
     }
 
@@ -87,12 +92,12 @@ public class MainPage extends BasePage {
         if (this.settings.platform == PlatformType.Android) {
             button = this.find.elementsByLocator(this.btnLogOffLocator()).get(2);
         } else {
-            button = this.find.byLocator(this.btnLogOffLocator());
+            button = this.wait.waitForVisible(this.btnLogOffLocator());
         }
         button.tap();
     }
 
-    public By menuLocator() {
+    private By menuLocator() {
         if (this.settings.platform == PlatformType.iOS) {
             return By.id("menu");
         } else if (this.settings.platform == PlatformType.Android) {
@@ -103,7 +108,9 @@ public class MainPage extends BasePage {
     }
 
     public UIElement logScreen() {
-        return this.find.elementsByLocator(this.locators.frameLayoutLocator()).get(1);
+        return this.wait
+                .forVisibleElements(this.locators.frameLayoutLocator(), this.settings.defaultTimeout, true)
+                .get(1);
     }
 
     private By btnLogOffLocator() {
