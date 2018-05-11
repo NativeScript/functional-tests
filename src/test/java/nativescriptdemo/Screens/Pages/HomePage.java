@@ -74,9 +74,9 @@ public class HomePage extends BasePage {
     private UIElement btnSideDrawer() {
         if (this.settings.platform == PlatformType.iOS) {
             if (this.settings.platformVersion >= 11.0) {
-                return this.find.byLocator(By.id("ActionBar"));
+                return this.wait.waitForVisible(By.id("ActionBar"));
             } else {
-                return this.find.byLocator(By.id("ic_menu_main"));
+                return this.wait.waitForVisible(By.id("ic_menu_main"));
             }
         } else if (this.settings.platform == PlatformType.Android) {
             return this.wait.waitForVisible(this.locators.imageButtonLocator());

@@ -13,7 +13,7 @@ public class GetStartedPage extends BasePage {
     }
 
     private UIElement btnGetStarted() {
-        return this.find.byLocator(this.getStartedLocator());
+        return this.wait.waitForVisible(this.getStartedLocator());
     }
 
     public void loaded() {
