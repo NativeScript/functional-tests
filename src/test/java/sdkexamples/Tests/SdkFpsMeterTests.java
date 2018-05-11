@@ -25,7 +25,9 @@ public class SdkFpsMeterTests extends SdkBaseTest {
     @Test(dataProvider = "example")
     public void sdkFpsMeterTest(String example) throws Exception {
         if (this.settings.platform == PlatformType.Android) {
-            UIElement btn = this.find.elementsByLocator(this.locators.textViewLocator()).get(1);
+            UIElement btn = this.wait
+                    .forVisibleElements(this.locators.textViewLocator(), 30, false)
+                    .get(1);
             this.mainPage.navigateTo(btn);
         } else {
             this.mainPage.navigateTo(example);

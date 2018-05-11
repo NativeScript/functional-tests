@@ -26,9 +26,12 @@ public class SdkLocationModuleTests extends SdkBaseTest {
     @Test(dataProvider = "example")
     public void sdkLocationModuleTest(String example) throws Exception {
         // This only works on Google API emulators (and it currently crash on Api26, no idea why)
-        if((this.settings.platform == PlatformType.Android && this.settings.platformVersion != 8.0) || settings.platform == PlatformType.iOS) {
+        if((this.settings.platform == PlatformType.Android && this.settings.platformVersion != 8.0)
+                || settings.platform == PlatformType.iOS) {
             this.mainPage.navigateTo(example);
-            if (example == "Basic location" && ((this.settings.platform == PlatformType.Android && this.settings.platformVersion > 5.1) || settings.platform == PlatformType.iOS)) {
+            if (example.equalsIgnoreCase("Basic location")
+                    && ((this.settings.platform == PlatformType.Android && this.settings.platformVersion > 5.1)
+                    || settings.platform == PlatformType.iOS)) {
                 UIElement btn = this.mainPage.wait.waitForVisible(this.locators.byText("Allow"), 6, false);
                 if (btn != null) {
                     btn.tap();
