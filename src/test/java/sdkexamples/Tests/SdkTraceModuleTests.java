@@ -1,6 +1,6 @@
 package sdkexamples.Tests;
 
-import org.openqa.selenium.By;
+import functional.tests.core.mobile.element.UIElement;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import sdkexamples.SdkBaseTest;
@@ -20,17 +20,17 @@ public class SdkTraceModuleTests extends SdkBaseTest {
     @DataProvider(name = "example")
     public Object[][] data() {
         return new Object[][]{
-                {pageSpecific, this.mainPage.btnOkLocator()},
-                {pageCustom, null}
+                {pageSpecific},
+                {pageCustom}
         };
     }
 
-
     @Test(dataProvider = "example")
-    public void sdkTraceModuleTest(String example, By locator) throws Exception {
+    public void sdkTraceModuleTest(String example) {
         this.mainPage.navigateTo(example);
-        if (locator != null) {
-            this.find.byLocator(locator).tap();
+        UIElement alert = this.wait.waitForVisible(this.mainPage.btnOkLocator(), 30, false);
+        if (alert != null) {
+            alert.tap(500);
         }
     }
 }
