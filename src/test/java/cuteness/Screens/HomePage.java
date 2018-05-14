@@ -24,7 +24,7 @@ public class HomePage extends BasePage {
     }
 
     private UIElement listTabItem() {
-        return this.find.byText("List");
+        return this.wait.waitForVisible(this.locators.byText("List"));
     }
 
     public void loaded() {
@@ -33,7 +33,7 @@ public class HomePage extends BasePage {
     }
 
     private UIElement aboutTabItem() {
-        return this.find.byText("About");
+        return this.wait.waitForVisible(this.locators.byText("About"));
     }
 
     public HomePage gotoHomeTab() {

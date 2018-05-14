@@ -11,7 +11,8 @@ public class AboutPage extends BasePage {
     }
 
     private UIElement about() {
-        return this.find.byTextContains("Cuteness is a proof of concept app");
+        return this.wait.waitForVisible(
+                this.locators.byText("Cuteness is a proof of concept app", false, false));
     }
 
     public void loaded() {
