@@ -15,7 +15,7 @@ public class HomePage extends BasePage {
     }
 
     private UIElement listView() {
-        return this.find.byLocator(this.locators.listViewLocator());
+        return this.wait.waitForVisible(this.locators.listViewLocator());
     }
 
     private List<UIElement> listViewItems() {
