@@ -13,15 +13,15 @@ public class SideDrawer extends BasePage {
     }
 
     private UIElement home() {
-        return this.find.byText("Home");
+        return this.wait.waitForVisible(this.locators.byText("Home"));
     }
 
     private UIElement about() {
-        return this.find.byText("About");
+        return this.wait.waitForVisible(this.locators.byText("About"));
     }
 
     private UIElement gettingStarted() {
-        return this.find.byText("Getting started", false, 3);
+        return this.wait.waitForVisible(this.locators.byText("Getting started", false, false));
     }
 
     private UIElement source() {
@@ -33,15 +33,15 @@ public class SideDrawer extends BasePage {
     }
 
     private UIElement documentation() {
-        return this.find.byText("Documentation");
+        return this.wait.waitForVisible(this.locators.byText("Documentation"));
     }
 
     private UIElement productPage() {
-        return this.find.byText("Product page");
+        return this.wait.waitForVisible(this.locators.byText("Product page"));
     }
 
     private UIElement codeSamples() {
-        UIElement element = this.context.gestures.swipeInWindowToElement(SwipeElementDirection.DOWN, this.locators.byText("Code samples"), 1, 250, 100);
+        UIElement element = this.context.gestures.swipeInWindowToElement(SwipeElementDirection.DOWN, this.locators.byText("Code samples"), 1, 500, 500);
         return element;
     }
 
