@@ -11,7 +11,7 @@ public class DetailsPage extends BasePage {
     }
 
     private UIElement details() {
-        return this.wait.waitForVisible(this.locators.byText("comments"));
+        return this.wait.waitForVisible(this.locators.byText("comments", false, false));
     }
 
     public void loaded() {
