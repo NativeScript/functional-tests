@@ -22,9 +22,9 @@ public class SdkLabelTests extends SdkBaseTest {
     }
 
     @Test(dataProvider = "example")
-    public void sdkLabelTest(String example) throws Exception {
+    public void sdkLabelTest(String example) {
         this.mainPage.navigateTo(example);
-        UIElement element = this.mainPage.find.byText("Change label text");
+        UIElement element = this.mainPage.wait.waitForVisible(this.locators.byText("Change label text"));
         element.click();
         element.click();
     }
