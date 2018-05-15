@@ -37,7 +37,7 @@ public class SdkMainPage extends BasePageExtended {
         if (page != null && !page.isEmpty()) {
             this.context.navigationManager.navigateTo(page);
             this.context.navigationManager.setMainPage(page);
-            this.context.navigationManager.setHomePageLocator(context.locators.byText(page));
+            this.context.navigationManager.setHomePageLocator(context.locators.byText(page, true, false));
         }
     }
 
