@@ -56,17 +56,18 @@ public class NavOptionsPage extends HomePage {
     }
 
     public void waitForFrameStackLabelToLoad() {
-        Wait.sleep(10000);
-        this.wait.waitForVisible(this.locators.byText(frameStackString, false, false), 10, false);
+        Wait.sleep(20000);
+        this.wait.waitForVisible(this.locators.byText(frameStackString, false, false), 20, false);
     }
 
     public void waitForPageTransitionToLoadToLoad() {
-        Wait.sleep(10000);
-        this.wait.waitForVisible(this.locators.byText(pageTransitions), 10, false);
+        Wait.sleep(20000);
+        this.wait.waitForVisible(this.locators.byText(pageTransitions), 20, false);
     }
 
     public String getFrameStack() {
-        UIElement label = this.find.byTextContains("frameStack");
+        UIElement label =
+                this.wait.waitForVisible(this.locators.byText("frameStack", false, false));
         if (this.settings.platform == PlatformType.Android) {
             return label.getText();
         } else {
@@ -75,7 +76,8 @@ public class NavOptionsPage extends HomePage {
     }
 
     public String getLocationStack() {
-        UIElement label = this.find.byTextContains("locationStack");
+        UIElement label =
+                this.wait.waitForVisible(this.locators.byText("locationStack", false, false));
         if (this.settings.platform == PlatformType.Android) {
             return label.getText();
         } else {
@@ -84,6 +86,6 @@ public class NavOptionsPage extends HomePage {
     }
 
     public void navOptionsPageLoaded() {
-        this.find.byText(pageTransitions, 25);
+        this.wait.waitForVisible(this.locators.byText(pageTransitions));
     }
 }

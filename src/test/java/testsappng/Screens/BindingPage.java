@@ -77,9 +77,9 @@ public class BindingPage extends HomePage {
     }
 
     public void insertNewValues() {
-        this.tfOneWayBinding().sendKeys("1");
-        this.tfTwoWayBinding().sendKeys("0");
-        this.tfCurlyBracket().sendKeys("3");
+        this.tfOneWayBinding().sendKeys("1", true);
+        this.tfTwoWayBinding().sendKeys("0", true);
+        this.tfCurlyBracket().sendKeys("3", true);
         try {
             this.hideKeyboard();
         } catch (Exception e) {
