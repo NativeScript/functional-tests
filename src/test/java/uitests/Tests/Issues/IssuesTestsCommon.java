@@ -258,7 +258,7 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         }
         UIElement el = this.find.byLocator(goToSubPageLocator);
         this.issuesBasePage.navigateTo(el, ClickType.Click, "sub page");
-        this.compareScreens(30, 1.00);
+        this.compareScreens(60, 1.00);
 
         By locator = this.locators.byText("SUB PAGE");
         if (this.settings.platformVersion > 10) {
@@ -274,7 +274,7 @@ public class IssuesTestsCommon extends IssuesBaseTest {
 
         Wait.sleep(35000);
         this.issuesBasePage.navigateBack();
-        this.compareScreens(30, 4.0);
+        this.compareScreens(60, 4.0);
 
         this.issuesBasePage.wait.waitForVisible(this.locators.byText("default layer speed"), 10, true).tap();
         this.app.restart();
