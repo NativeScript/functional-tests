@@ -33,7 +33,7 @@ public class WebViewBasePage extends HomePageExtended {
     }
 
     public UIElement srcWebView() {
-        return this.find.byText("someUrl | pathToLocalFile | htmlString");
+        return this.wait.waitForVisible(this.locators.byText("someUrl | pathToLocalFile | htmlString"));
     }
 
     public UIElement strResult() {
