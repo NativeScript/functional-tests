@@ -17,6 +17,9 @@ public class BindingBasicsPage {
         int buttonIndex = 0;
         if (this.context.settings.platform == PlatformType.iOS) {
             buttonIndex = 2;
+            if (this.context.settings.platformVersion < 11) {
+                buttonIndex = 1;
+            }
         }
         return this.context.wait.forVisibleElements(this.context.locators.buttonLocator(), 3, true).get(buttonIndex);
     }
