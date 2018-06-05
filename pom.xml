@@ -362,6 +362,13 @@
             </properties>
         </profile>
         <profile>
+            <id>uitests.emu.google.apiP</id>
+            <properties>
+                <app.config>uitests/uitests.emu.google.apiP.properties</app.config>
+                <testsuite>uitests-android</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>uitests.sim.iphone6splus.ios93</id>
             <properties>
                 <app.config>uitests/uitests.sim.iphone6splus.ios93.properties</app.config>
