@@ -1413,92 +1413,92 @@
                 <testsuite>sdkexamples</testsuite>
             </properties>
         </profile>
-        <!--template-helloworld profiles-->
+        <!--template-hello-world profiles-->
         <profile>
-            <id>template-helloworld-js.emu.default.api23</id>
+            <id>template-hello-world-js.emu.default.api23</id>
             <properties>
-                <app.config>templates/template.helloworld.js.emu.default.api23.properties</app.config>
+                <app.config>templates/template-hello-world-js.emu.default.api23.properties</app.config>
                 <testsuite>templates-helloworld</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template-helloworld-js.emu.google.api26</id>
+            <id>template-hello-world-js.emu.google.api26</id>
             <properties>
-                <app.config>templates/template.helloworld.js.emu.google.api26.properties</app.config>
+                <app.config>templates/template-hello-world-js.emu.google.api26.properties</app.config>
                 <testsuite>templates-helloworld</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template-helloworld-js.sim.iphone7.ios110</id>
+            <id>template-hello-world-js.sim.iphone7.ios110</id>
             <properties>
-                <app.config>templates/template.helloworld.js.sim.iphone7.ios110.properties</app.config>
+                <app.config>templates/template-hello-world-js.sim.iphone7.ios110.properties</app.config>
                 <testsuite>templates-helloworld</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template-helloworld-js.sim.iphoneX.ios11</id>
+            <id>template-hello-world-js.sim.iphoneX.ios11</id>
             <properties>
-                <app.config>templates/template.helloworld.js.sim.iphoneX.ios11.properties</app.config>
+                <app.config>templates/template-hello-world-js.sim.iphoneX.ios11.properties</app.config>
                 <testsuite>templates-helloworld</testsuite>
             </properties>
         </profile>
 
-        <!--template-helloworldts profiles-->
+        <!--template-hello-worldts profiles-->
         <profile>
-            <id>template-helloworld-ts.emu.default.api23</id>
+            <id>template-hello-world-ts.emu.default.api23</id>
             <properties>
-                <app.config>templates/template.helloworld.ts.emu.default.api23.properties</app.config>
+                <app.config>templates/template-hello-world-ts.emu.default.api23.properties</app.config>
                 <testsuite>templates-helloworldts</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template-helloworld-ts.emu.google.api26</id>
+            <id>template-hello-world-ts.emu.google.api26</id>
             <properties>
-                <app.config>templates/template.helloworld.ts.emu.google.api26.properties</app.config>
+                <app.config>templates/template-hello-world-ts.emu.google.api26.properties</app.config>
                 <testsuite>templates-helloworldts</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template-helloworld-ts.sim.iphone7.ios110</id>
+            <id>template-hello-world-ts.sim.iphone7.ios110</id>
             <properties>
-                <app.config>templates/template.helloworld.ts.sim.iphone7.ios110.properties</app.config>
+                <app.config>templates/template-hello-world-ts.sim.iphone7.ios110.properties</app.config>
                 <testsuite>templates-helloworldts</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template-helloworld-ts.sim.iphoneX.ios11</id>
+            <id>template-hello-world-ts.sim.iphoneX.ios11</id>
             <properties>
-                <app.config>templates/template.helloworld.ts.sim.iphoneX.ios11.properties</app.config>
+                <app.config>templates/template-hello-world-ts.sim.iphoneX.ios11.properties</app.config>
                 <testsuite>templates-helloworldts</testsuite>
             </properties>
         </profile>
 
-        <!--template-helloworldng profiles-->
+        <!--template-hello-worldng profiles-->
         <profile>
-            <id>template-helloworld-ng.emu.default.api23</id>
+            <id>template-hello-world-ng.emu.default.api23</id>
             <properties>
-                <app.config>templates/template.helloworld.ng.emu.default.api23.properties</app.config>
+                <app.config>templates/template-hello-world-ng.emu.default.api23.properties</app.config>
                 <testsuite>templates-helloworldng</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template-helloworld-ng.emu.google.api26</id>
+            <id>template-hello-world-ng.emu.google.api26</id>
             <properties>
-                <app.config>templates/template.helloworld.ng.emu.google.api26.properties</app.config>
+                <app.config>templates/template-hello-world-ng.emu.google.api26.properties</app.config>
                 <testsuite>templates-helloworldng</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template-helloworld-ng.sim.iphone7.ios110</id>
+            <id>template-hello-world-ng.sim.iphone7.ios110</id>
             <properties>
-                <app.config>templates/template.helloworld.ng.sim.iphone7.ios110.properties</app.config>
+                <app.config>templates/template-hello-world-ng.sim.iphone7.ios110.properties</app.config>
                 <testsuite>templates-helloworldng</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template-helloworld-ng.sim.iphoneX.ios11</id>
+            <id>template-hello-world-ng.sim.iphoneX.ios11</id>
             <properties>
-                <app.config>templates/template.helloworld.ng.sim.iphoneX.ios11.properties</app.config>
+                <app.config>templates/template-hello-world-ng.sim.iphoneX.ios11.properties</app.config>
                 <testsuite>templates-helloworldng</testsuite>
             </properties>
         </profile>
