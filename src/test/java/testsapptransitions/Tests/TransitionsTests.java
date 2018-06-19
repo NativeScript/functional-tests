@@ -19,7 +19,9 @@ public class TransitionsTests extends TransitionsBaseTest {
     @Test(groups = {"android", "ios"})
     public void flipTransGoBackTest_01() throws Exception {
         this.compareTransitions(TransitionsPage.flipTransGoBack(), 250, 3000);
-        this.assertImagesResults();
+        if (this.settings.platform != PlatformType.iOS) {
+            this.assertImagesResults();
+        }
     }
 
     @Test(groups = {"android", "ios"})
