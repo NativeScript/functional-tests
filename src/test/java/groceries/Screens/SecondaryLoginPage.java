@@ -74,6 +74,9 @@ public class SecondaryLoginPage extends BasePage {
     }
 
     public void insertPassword(String text) {
+        if ((this.settings.platform == PlatformType.Android) && this.settings.platformVersion >= 8.0) {
+            this.passwordField().click();
+        }
         this.passwordField().setText(text);
         if (this.settings.platform == PlatformType.Android) {
             hideKeyboard();
