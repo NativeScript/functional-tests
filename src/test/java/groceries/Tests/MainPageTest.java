@@ -19,7 +19,11 @@ public class MainPageTest extends MobileTest {
     private MainPage mainPage;
 
     public String getUserName() {
-        return "tnstest" + this.settings.platformVersion.toString() + "@tns.com";
+        String userName = "tnstest" + this.settings.platformVersion.toString() + "@tns.com";
+        if ((this.settings.platform == PlatformType.iOS) && (this.settings.deviceName.toLowerCase().contains("x"))) {
+            userName = userName.replace("@", "x@");
+        }
+        return userName;
     }
 
     @BeforeClass(alwaysRun = true)
