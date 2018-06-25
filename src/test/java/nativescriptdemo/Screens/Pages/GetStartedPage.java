@@ -25,15 +25,6 @@ public class GetStartedPage extends BasePage {
         }
     }
 
-    public void unloaded() {
-        Boolean isVisible = this.wait.waitForNotVisible(this.getStartedLocator(), 5, true);
-        if (isVisible) {
-            Assert.fail("Get Started page NOT unloaded! Ils -lat is still visible.");
-        } else {
-            this.log.info("Get Started page unloaded. It is not visible.");
-        }
-    }
-
     public void tapGetStarted() {
         this.btnGetStarted().tap();
         this.allowPermissions();

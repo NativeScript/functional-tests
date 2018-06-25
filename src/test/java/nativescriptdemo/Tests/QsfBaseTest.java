@@ -16,7 +16,7 @@ public class QsfBaseTest extends MobileTest {
     public void beforeQsfBaseTestClass() {
         this.getStartedPage = new GetStartedPage();
         this.homePage = new HomePage();
-        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 10) {
+        if (this.settings.platform == PlatformType.iOS) {
             this.getStartedPage.allowPermissions();
         }
     }
