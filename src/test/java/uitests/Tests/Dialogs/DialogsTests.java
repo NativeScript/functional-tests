@@ -1,7 +1,6 @@
 package uitests.Tests.Dialogs;
 
 
-import functional.tests.core.enums.DeviceType;
 import functional.tests.core.mobile.basetest.MobileTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;

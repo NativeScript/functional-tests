@@ -32,15 +32,12 @@ public class SdkDialogsTests extends SdkBaseTest {
         String buttonTitle = "Display " + example.replace("dialog", "Dialog");
         this.mainPage.find.byText(buttonTitle).click();
 
-        // Special handler forthis.log.n dialog on iOS8, keyboard needs to be hidden
-        if ((this.settings.platform == PlatformType.iOS) && (this.settings.platformVersion.toString().contains("8."))) {
-            if (buttonTitle.equalsIgnoreCase("Login dialog")) {
-                this.mainPage.find.byLocator(By.id("return")).click();
-                this.mainPage.find.byLocator(By.id("return")).click();
-            }
-            if (buttonTitle.equalsIgnoreCase("Prompt dialog")) {
-                this.mainPage.find.byLocator(By.id("return")).click();
-            }
+        if (buttonTitle.equalsIgnoreCase("Login dialog")) {
+            this.mainPage.find.byLocator(By.id("return")).click();
+            this.mainPage.find.byLocator(By.id("return")).click();
+        }
+        if (buttonTitle.equalsIgnoreCase("Prompt dialog")) {
+            this.mainPage.find.byLocator(By.id("return")).click();
         }
 
         // Close dialogs

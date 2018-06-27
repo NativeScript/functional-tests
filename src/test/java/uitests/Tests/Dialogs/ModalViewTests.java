@@ -25,11 +25,11 @@ public class ModalViewTests extends MobileTest {
     public void modalView_01_popUp() throws Exception {
         this.modalViewPage.tapPopUpBtn();
         this.modalViewPage.modalViewLoaded();
-        this.compareScreens(5,0.5);
+        this.compareScreens(10,0.5);
 
         this.modalViewPage.tapLoginBtn();
         if (this.checkIfPlatofrmVersionIsIsIOS()) {
-            this.compareScreens(5);
+            this.compareScreens(10);
         } else {
             Assert.assertEquals(this.modalViewPage.textView().getText(), "username/password");
         }
