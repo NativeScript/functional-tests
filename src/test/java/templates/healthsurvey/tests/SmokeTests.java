@@ -1,9 +1,9 @@
 package templates.healthsurvey.tests;
 
 import functional.tests.core.mobile.basetest.MobileTest;
-import healthsurvey.pages.LoginPage;
-import healthsurvey.pages.RegisterPage;
-import healthsurvey.pages.WelcomePage;
+import templates.healthsurvey.pages.LoginPage;
+import templates.healthsurvey.pages.RegisterPage;
+import templates.healthsurvey.pages.WelcomePage;
 import org.testng.annotations.Test;
 
 public class SmokeTests extends MobileTest {

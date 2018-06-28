@@ -1,8 +1,8 @@
 package templates.drawernavigation.tests;
 
-import drawernavigation.pages.HomePage;
 import functional.tests.core.mobile.basetest.MobileTest;
 import org.testng.annotations.Test;
+import templates.drawernavigation.pages.HomePage;
 
 public class SmokeTests extends MobileTest {
 

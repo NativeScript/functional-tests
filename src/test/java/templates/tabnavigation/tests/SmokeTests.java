@@ -2,7 +2,7 @@ package templates.tabnavigation.tests;
 
 import functional.tests.core.mobile.basetest.MobileTest;
 import org.testng.annotations.Test;
-import tabnavigation.pages.HomePage;
+import templates.tabnavigation.pages.HomePage;
 
 public class SmokeTests extends MobileTest {
 

@@ -2,9 +2,9 @@ package templates.masterdetail.tests;
 
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.basetest.MobileTest;
-import masterdetail.pages.DetailsPage;
-import masterdetail.pages.EditPage;
-import masterdetail.pages.HomePage;
+import templates.masterdetail.pages.DetailsPage;
+import templates.masterdetail.pages.EditPage;
+import templates.masterdetail.pages.HomePage;
 import org.testng.annotations.Test;
 
 

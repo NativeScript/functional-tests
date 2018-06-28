@@ -2,9 +2,9 @@ package templates.masterdetailkinvey.tests;
 
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.basetest.MobileTest;
-import masterdetailkinvey.pages.DetailsPage;
-import masterdetailkinvey.pages.EditPage;
-import masterdetailkinvey.pages.HomePage;
+import templates.masterdetailkinvey.pages.DetailsPage;
+import templates.masterdetailkinvey.pages.EditPage;
+import templates.masterdetailkinvey.pages.HomePage;
 import org.testng.annotations.Test;
 
 

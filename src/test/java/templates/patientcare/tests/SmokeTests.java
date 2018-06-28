@@ -3,9 +3,9 @@ package templates.patientcare.tests;
 import functional.tests.core.mobile.basetest.MobileTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import patientcare.pages.CareContentPage;
-import patientcare.pages.LoginPage;
-import patientcare.pages.RegisterPage;
+import templates.patientcare.pages.CareContentPage;
+import templates.patientcare.pages.LoginPage;
+import templates.patientcare.pages.RegisterPage;
 
 public class SmokeTests extends MobileTest {
 
