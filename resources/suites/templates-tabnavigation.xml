@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Tab Navigation Template" verbose="1">
+    <test name="Smoke Tests">
+        <classes>
+            <class name="templates.tabnavigation.tests.SmokeTests"/>
+        </classes>
+    </test>
+</suite>
