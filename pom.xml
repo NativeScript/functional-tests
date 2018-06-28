@@ -72,7 +72,7 @@
             </properties>
         </profile>
         <profile>
-            <id>animations.emu.default.api26</id>
+            <id>animations.emu.google.api26</id>
             <properties>
                 <app.config>animations/animations.emu.google.api26.properties</app.config>
                 <testsuite>animations</testsuite>
@@ -1528,9 +1528,9 @@
             </properties>
         </profile>
         <profile>
-            <id>template-master-detail-js.emu.default.api26</id>
+            <id>template-master-detail-js.emu.google.api26</id>
             <properties>
-                <app.config>templates/masterdetail.js.emu.default.api26.properties</app.config>
+                <app.config>templates/masterdetail.js.emu.google.api26.properties</app.config>
                 <testsuite>templates-masterdetail</testsuite>
             </properties>
         </profile>
@@ -1559,9 +1559,9 @@
             </properties>
         </profile>
         <profile>
-            <id>template-master-detail-ts.emu.default.api26</id>
+            <id>template-master-detail-ts.emu.google.api26</id>
             <properties>
-                <app.config>templates/masterdetail.ts.emu.default.api26.properties</app.config>
+                <app.config>templates/masterdetail.ts.emu.google.api26.properties</app.config>
                 <testsuite>templates-masterdetail</testsuite>
             </properties>
         </profile>
@@ -1589,9 +1589,9 @@
             </properties>
         </profile>
         <profile>
-            <id>template-master-detail-ng.emu.default.api26</id>
+            <id>template-master-detail-ng.emu.google.api26</id>
             <properties>
-                <app.config>templates/masterdetail.ng.emu.default.api26.properties</app.config>
+                <app.config>templates/masterdetail.ng.emu.google.api26.properties</app.config>
                 <testsuite>templates-masterdetail</testsuite>
             </properties>
         </profile>
@@ -1619,9 +1619,9 @@
             </properties>
         </profile>
         <profile>
-            <id>template-master-detail-kinvey-ng.emu.default.api26</id>
+            <id>template-master-detail-kinvey-ng.emu.google.api26</id>
             <properties>
-                <app.config>templates/masterdetail.kinvey.ng.emu.default.api26.properties</app.config>
+                <app.config>templates/masterdetail.kinvey.ng.emu.google.api26.properties</app.config>
                 <testsuite>templates-masterdetailkinvey</testsuite>
             </properties>
         </profile>
@@ -1649,9 +1649,9 @@
             </properties>
         </profile>
         <profile>
-            <id>template-master-detail-kinvey-ts.emu.default.api26</id>
+            <id>template-master-detail-kinvey-ts.emu.google.api26</id>
             <properties>
-                <app.config>templates/masterdetail.kinvey.ts.emu.default.api26.properties</app.config>
+                <app.config>templates/masterdetail.kinvey.ts.emu.google.api26.properties</app.config>
                 <testsuite>templates-masterdetailkinvey</testsuite>
             </properties>
         </profile>
@@ -1679,9 +1679,9 @@
             </properties>
         </profile>
         <profile>
-            <id>template-master-detail-kinvey-js.emu.default.api26</id>
+            <id>template-master-detail-kinvey-js.emu.google.api26</id>
             <properties>
-                <app.config>templates/masterdetail.kinvey.js.emu.default.api26.properties</app.config>
+                <app.config>templates/masterdetail.kinvey.js.emu.google.api26.properties</app.config>
                 <testsuite>templates-masterdetailkinvey</testsuite>
             </properties>
         </profile>
@@ -1709,9 +1709,9 @@
             </properties>
         </profile>
         <profile>
-            <id>template-tabnavigation-js.emu.default.api26</id>
+            <id>template-tabnavigation-js.emu.google.api26</id>
             <properties>
-                <app.config>templates/tabnavigation.js.emu.default.api26.properties</app.config>
+                <app.config>templates/tabnavigation.js.emu.google.api26.properties</app.config>
                 <testsuite>templates-tabnavigation</testsuite>
             </properties>
         </profile>
@@ -1739,9 +1739,9 @@
             </properties>
         </profile>
         <profile>
-            <id>template-tabnavigation-ts.emu.default.api26</id>
+            <id>template-tabnavigation-ts.emu.google.api26</id>
             <properties>
-                <app.config>templates/tabnavigation.ts.emu.default.api26.properties</app.config>
+                <app.config>templates/tabnavigation.ts.emu.google.api26.properties</app.config>
                 <testsuite>templates-tabnavigation</testsuite>
             </properties>
         </profile>
@@ -1769,9 +1769,9 @@
             </properties>
         </profile>
         <profile>
-            <id>template-tabnavigation-ng.emu.default.api26</id>
+            <id>template-tabnavigation-ng.emu.google.api26</id>
             <properties>
-                <app.config>templates/tabnavigation.ng.emu.default.api26.properties</app.config>
+                <app.config>templates/tabnavigation.ng.emu.google.api26.properties</app.config>
                 <testsuite>templates-tabnavigation</testsuite>
             </properties>
         </profile>
@@ -1799,9 +1799,9 @@
             </properties>
         </profile>
         <profile>
-            <id>template-drawernavigation-js.emu.default.api26</id>
+            <id>template-drawernavigation-js.emu.google.api26</id>
             <properties>
-                <app.config>templates/drawernavigation.js.emu.default.api26.properties</app.config>
+                <app.config>templates/drawernavigation.js.emu.google.api26.properties</app.config>
                 <testsuite>templates-drawernavigation</testsuite>
             </properties>
         </profile>
@@ -1829,9 +1829,9 @@
             </properties>
         </profile>
         <profile>
-            <id>template-drawernavigation-ts.emu.default.api26</id>
+            <id>template-drawernavigation-ts.emu.google.api26</id>
             <properties>
-                <app.config>templates/drawernavigation.ts.emu.default.api26.properties</app.config>
+                <app.config>templates/drawernavigation.ts.emu.google.api26.properties</app.config>
                 <testsuite>templates-drawernavigation</testsuite>
             </properties>
         </profile>
@@ -1859,9 +1859,9 @@
             </properties>
         </profile>
         <profile>
-            <id>template-drawernavigation-ng.emu.default.api26</id>
+            <id>template-drawernavigation-ng.emu.google.api26</id>
             <properties>
-                <app.config>templates/drawernavigation.ng.emu.default.api26.properties</app.config>
+                <app.config>templates/drawernavigation.ng.emu.google.api26.properties</app.config>
                 <testsuite>templates-drawernavigation</testsuite>
             </properties>
         </profile>
@@ -1889,9 +1889,9 @@
             </properties>
         </profile>
         <profile>
-            <id>healthsurvey-ng.emu.default.api26</id>
+            <id>healthsurvey-ng.emu.google.api26</id>
             <properties>
-                <app.config>health-survey-ng/healthsurvey.emu.default.api26.properties</app.config>
+                <app.config>health-survey-ng/healthsurvey.emu.google.api26.properties</app.config>
                 <testsuite>templates-healthsurvey</testsuite>
             </properties>
         </profile>
@@ -1910,9 +1910,9 @@
             </properties>
         </profile>
         <profile>
-            <id>patientcare-ng.emu.default.api26</id>
+            <id>patientcare-ng.emu.google.api26</id>
             <properties>
-                <app.config>patient-care-ng/patientcare.emu.default.api26.properties</app.config>
+                <app.config>patient-care-ng/patientcare.emu.google.api26.properties</app.config>
                 <testsuite>templates-patientcare</testsuite>
             </properties>
         </profile>
