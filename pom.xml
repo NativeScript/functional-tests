@@ -1535,7 +1535,7 @@
             </properties>
         </profile>
         <profile>
-            <id>template-master-detail-js.sim.iphone7.ios11</id>
+            <id>template-master-detail-js.sim.iphone7.ios110</id>
             <properties>
                 <app.config>templates/masterdetail.js.sim.iphone7.ios11.properties</app.config>
                 <testsuite>templates-masterdetail</testsuite>
@@ -1566,7 +1566,7 @@
             </properties>
         </profile>
         <profile>
-            <id>template-master-detail-ts.sim.iphone7.ios11</id>
+            <id>template-master-detail-ts.sim.iphone7.ios110</id>
             <properties>
                 <app.config>templates/masterdetail.ts.sim.iphone7.ios11.properties</app.config>
                 <testsuite>templates-masterdetail</testsuite>
@@ -1596,7 +1596,7 @@
             </properties>
         </profile>
         <profile>
-            <id>template-master-detail-ng.sim.iphone7.ios11</id>
+            <id>template-master-detail-ng.sim.iphone7.ios110</id>
             <properties>
                 <app.config>templates/masterdetail.ng.sim.iphone7.ios11.properties</app.config>
                 <testsuite>templates-masterdetail</testsuite>
@@ -1626,7 +1626,7 @@
             </properties>
         </profile>
         <profile>
-            <id>template-master-detail-kinvey-ng.sim.iphone7.ios11</id>
+            <id>template-master-detail-kinvey-ng.sim.iphone7.ios110</id>
             <properties>
                 <app.config>templates/masterdetail.kinvey.ng.sim.iphone7.ios11.properties</app.config>
                 <testsuite>templates-masterdetailkinvey</testsuite>
@@ -1656,7 +1656,7 @@
             </properties>
         </profile>
         <profile>
-            <id>template-master-detail-kinvey-ts.sim.iphone7.ios11</id>
+            <id>template-master-detail-kinvey-ts.sim.iphone7.ios110</id>
             <properties>
                 <app.config>templates/masterdetail.kinvey.ts.sim.iphone7.ios11.properties</app.config>
                 <testsuite>templates-masterdetailkinvey</testsuite>
@@ -1686,7 +1686,7 @@
             </properties>
         </profile>
         <profile>
-            <id>template-master-detail-kinvey-js.sim.iphone7.ios11</id>
+            <id>template-master-detail-kinvey-js.sim.iphone7.ios110</id>
             <properties>
                 <app.config>templates/masterdetail.kinvey.js.sim.iphone7.ios11.properties</app.config>
                 <testsuite>templates-masterdetailkinvey</testsuite>
@@ -1716,7 +1716,7 @@
             </properties>
         </profile>
         <profile>
-            <id>template-tabnavigation-js.sim.iphone7.ios11</id>
+            <id>template-tabnavigation-js.sim.iphone7.ios110</id>
             <properties>
                 <app.config>templates/tabnavigation.js.sim.iphone7.ios11.properties</app.config>
                 <testsuite>templates-tabnavigation</testsuite>
@@ -1746,7 +1746,7 @@
             </properties>
         </profile>
         <profile>
-            <id>template-tabnavigation-ts.sim.iphone7.ios11</id>
+            <id>template-tabnavigation-ts.sim.iphone7.ios110</id>
             <properties>
                 <app.config>templates/tabnavigation.ts.sim.iphone7.ios11.properties</app.config>
                 <testsuite>templates-tabnavigation</testsuite>
@@ -1776,7 +1776,7 @@
             </properties>
         </profile>
         <profile>
-            <id>template-tabnavigation-ng.sim.iphone7.ios11</id>
+            <id>template-tabnavigation-ng.sim.iphone7.ios110</id>
             <properties>
                 <app.config>templates/tabnavigation.ng.sim.iphone7.ios11.properties</app.config>
                 <testsuite>templates-tabnavigation</testsuite>
@@ -1806,7 +1806,7 @@
             </properties>
         </profile>
         <profile>
-            <id>template-drawernavigation-js.sim.iphone7.ios11</id>
+            <id>template-drawernavigation-js.sim.iphone7.ios110</id>
             <properties>
                 <app.config>templates/drawernavigation.js.sim.iphone7.ios11.properties</app.config>
                 <testsuite>templates-drawernavigation</testsuite>
@@ -1836,7 +1836,7 @@
             </properties>
         </profile>
         <profile>
-            <id>template-drawernavigation-ts.sim.iphone7.ios11</id>
+            <id>template-drawernavigation-ts.sim.iphone7.ios110</id>
             <properties>
                 <app.config>templates/drawernavigation.ts.sim.iphone7.ios11.properties</app.config>
                 <testsuite>templates-drawernavigation</testsuite>
@@ -1866,7 +1866,7 @@
             </properties>
         </profile>
         <profile>
-            <id>template-drawernavigation-ng.sim.iphone7.ios11</id>
+            <id>template-drawernavigation-ng.sim.iphone7.ios110</id>
             <properties>
                 <app.config>templates/drawernavigation.ng.sim.iphone7.ios11.properties</app.config>
                 <testsuite>templates-drawernavigation</testsuite>
@@ -1896,7 +1896,7 @@
             </properties>
         </profile>
         <profile>
-            <id>healthsurvey-ng.sim.iphone7.ios11</id>
+            <id>healthsurvey-ng.sim.iphone7.ios110</id>
             <properties>
                 <app.config>health-survey-ng/healthsurvey.sim.iphone7.ios11.properties</app.config>
                 <testsuite>templates-healthsurvey</testsuite>
@@ -1917,7 +1917,7 @@
             </properties>
         </profile>
         <profile>
-            <id>patientcare-ng.sim.iphone7.ios11</id>
+            <id>patientcare-ng.sim.iphone7.ios110</id>
             <properties>
                 <app.config>patient-care-ng/patientcare.sim.iphone7.ios11.properties</app.config>
                 <testsuite>templates-patientcare</testsuite>
