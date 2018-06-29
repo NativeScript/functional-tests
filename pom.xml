@@ -1884,7 +1884,7 @@
         <profile>
             <id>template-health-survey-ng.emu.default.api23</id>
             <properties>
-                <app.config>health-survey-ng/healthsurvey.emu.default.api23.properties</app.config>
+                <app.config>templates/healthsurvey.emu.default.api23.properties</app.config>
                 <testsuite>healthsurvey</testsuite>
             </properties>
         </profile>
