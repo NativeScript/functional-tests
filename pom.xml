@@ -1891,49 +1891,49 @@
         <profile>
             <id>template-health-survey-ng.emu.google.api26</id>
             <properties>
-                <app.config>health-survey-ng/healthsurvey.emu.google.api26.properties</app.config>
+                <app.config>templates/healthsurvey.emu.google.api26.properties</app.config>
                 <testsuite>templates-healthsurvey</testsuite>
             </properties>
         </profile>
         <profile>
             <id>template-health-survey-ng.sim.iphone7.ios110</id>
             <properties>
-                <app.config>health-survey-ng/healthsurvey.sim.iphone7.ios11.properties</app.config>
+                <app.config>templates/healthsurvey.sim.iphone7.ios11.properties</app.config>
                 <testsuite>templates-healthsurvey</testsuite>
             </properties>
         </profile>
         <profile>
             <id>template-health-survey-ng.sim.iphoneX.ios110</id>
             <properties>
-                <app.config>health-survey-ng/healthsurvey.sim.iphoneX.ios11.properties</app.config>
+                <app.config>templates/healthsurvey.sim.iphoneX.ios11.properties</app.config>
                 <testsuite>templates-healthsurvey</testsuite>
             </properties>
         </profile>
         <profile>
             <id>template-patient-care-ng.emu.default.api23</id>
             <properties>
-                <app.config>patient-care-ng/patientcare.emu.default.api23.properties</app.config>
+                <app.config>templates/patientcare.emu.default.api23.properties</app.config>
                 <testsuite>templates-patientcare</testsuite>
             </properties>
         </profile>
         <profile>
             <id>template-patient-care-ng.emu.google.api26</id>
             <properties>
-                <app.config>patient-care-ng/patientcare.emu.google.api26.properties</app.config>
+                <app.config>templates/patientcare.emu.google.api26.properties</app.config>
                 <testsuite>templates-patientcare</testsuite>
             </properties>
         </profile>
         <profile>
             <id>template-patient-care-ng.sim.iphone7.ios110</id>
             <properties>
-                <app.config>patient-care-ng/patientcare.sim.iphone7.ios11.properties</app.config>
+                <app.config>templates/patientcare.sim.iphone7.ios11.properties</app.config>
                 <testsuite>templates-patientcare</testsuite>
             </properties>
         </profile>
         <profile>
             <id>template-patient-care-ng.sim.iphoneX.ios110</id>
             <properties>
-                <app.config>patient-care-ng/patientcare.sim.iphoneX.ios11.properties</app.config>
+                <app.config>templates/patientcare.sim.iphoneX.ios11.properties</app.config>
                 <testsuite>templates-patientcare</testsuite>
             </properties>
         </profile>
