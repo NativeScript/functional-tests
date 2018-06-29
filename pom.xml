@@ -1702,28 +1702,28 @@
 
         <!-- Tab Navigation JS App Profiles-->
         <profile>
-            <id>template-tabnavigation-js.emu.default.api23</id>
+            <id>template-tab-navigation-js.emu.default.api23</id>
             <properties>
                 <app.config>templates/tabnavigation.js.emu.default.api23.properties</app.config>
                 <testsuite>templates-tabnavigation</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template-tabnavigation-js.emu.google.api26</id>
+            <id>template-tab-navigation-js.emu.google.api26</id>
             <properties>
                 <app.config>templates/tabnavigation.js.emu.google.api26.properties</app.config>
                 <testsuite>templates-tabnavigation</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template-tabnavigation-js.sim.iphone7.ios110</id>
+            <id>template-tab-navigation-js.sim.iphone7.ios110</id>
             <properties>
                 <app.config>templates/tabnavigation.js.sim.iphone7.ios11.properties</app.config>
                 <testsuite>templates-tabnavigation</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template-tabnavigation-js.sim.iphoneX.ios11</id>
+            <id>template-tab-navigation-js.sim.iphoneX.ios11</id>
             <properties>
                 <app.config>templates/tabnavigation.js.sim.iphoneX.ios11.properties</app.config>
                 <testsuite>templates-tabnavigation</testsuite>
@@ -1732,28 +1732,28 @@
 
         <!-- Tab Navigation TS App Profiles-->
         <profile>
-            <id>template-tabnavigation-ts.emu.default.api23</id>
+            <id>template-tab-navigation-ts.emu.default.api23</id>
             <properties>
                 <app.config>templates/tabnavigation.ts.emu.default.api23.properties</app.config>
                 <testsuite>templates-tabnavigation</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template-tabnavigation-ts.emu.google.api26</id>
+            <id>template-tab-navigation-ts.emu.google.api26</id>
             <properties>
                 <app.config>templates/tabnavigation.ts.emu.google.api26.properties</app.config>
                 <testsuite>templates-tabnavigation</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template-tabnavigation-ts.sim.iphone7.ios110</id>
+            <id>template-tab-navigation-ts.sim.iphone7.ios110</id>
             <properties>
                 <app.config>templates/tabnavigation.ts.sim.iphone7.ios11.properties</app.config>
                 <testsuite>templates-tabnavigation</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template-tabnavigation-ts.sim.iphoneX.ios11</id>
+            <id>template-tab-navigation-ts.sim.iphoneX.ios11</id>
             <properties>
                 <app.config>templates/tabnavigation.ts.sim.iphoneX.ios11.properties</app.config>
                 <testsuite>templates-tabnavigation</testsuite>
@@ -1762,28 +1762,28 @@
 
         <!-- Tab Navigation NG App Profiles-->
         <profile>
-            <id>template-tabnavigation-ng.emu.default.api23</id>
+            <id>template-tab-navigation-ng.emu.default.api23</id>
             <properties>
                 <app.config>templates/tabnavigation.ng.emu.default.api23.properties</app.config>
                 <testsuite>templates-tabnavigation</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template-tabnavigation-ng.emu.google.api26</id>
+            <id>template-tab-navigation-ng.emu.google.api26</id>
             <properties>
                 <app.config>templates/tabnavigation.ng.emu.google.api26.properties</app.config>
                 <testsuite>templates-tabnavigation</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template-tabnavigation-ng.sim.iphone7.ios110</id>
+            <id>template-tab-navigation-ng.sim.iphone7.ios110</id>
             <properties>
                 <app.config>templates/tabnavigation.ng.sim.iphone7.ios11.properties</app.config>
                 <testsuite>templates-tabnavigation</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template-tabnavigation-ng.sim.iphoneX.ios11</id>
+            <id>template-tab-navigation-ng.sim.iphoneX.ios11</id>
             <properties>
                 <app.config>templates/tabnavigation.ng.sim.iphoneX.ios11.properties</app.config>
                 <testsuite>templates-tabnavigation</testsuite>
@@ -1792,28 +1792,28 @@
 
         <!-- Drawer Navigation JS App Profiles-->
         <profile>
-            <id>template-drawernavigation-js.emu.default.api23</id>
+            <id>template-drawer-navigation-js.emu.default.api23</id>
             <properties>
                 <app.config>templates/drawernavigation.js.emu.default.api23.properties</app.config>
                 <testsuite>templates-drawernavigation</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template-drawernavigation-js.emu.google.api26</id>
+            <id>template-drawer-navigation-js.emu.google.api26</id>
             <properties>
                 <app.config>templates/drawernavigation.js.emu.google.api26.properties</app.config>
                 <testsuite>templates-drawernavigation</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template-drawernavigation-js.sim.iphone7.ios110</id>
+            <id>template-drawer-navigation-js.sim.iphone7.ios110</id>
             <properties>
                 <app.config>templates/drawernavigation.js.sim.iphone7.ios11.properties</app.config>
                 <testsuite>templates-drawernavigation</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template-drawernavigation-js.sim.iphoneX.ios11</id>
+            <id>template-drawer-navigation-js.sim.iphoneX.ios11</id>
             <properties>
                 <app.config>templates/drawernavigation.js.sim.iphoneX.ios11.properties</app.config>
                 <testsuite>templates-drawernavigation</testsuite>
@@ -1822,28 +1822,28 @@
 
         <!-- Drawer Navigation TS App Profiles-->
         <profile>
-            <id>template-drawernavigation-ts.emu.default.api23</id>
+            <id>template-drawer-navigation-ts.emu.default.api23</id>
             <properties>
                 <app.config>templates/drawernavigation.ts.emu.default.api23.properties</app.config>
                 <testsuite>templates-drawernavigation</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template-drawernavigation-ts.emu.google.api26</id>
+            <id>template-drawer-navigation-ts.emu.google.api26</id>
             <properties>
                 <app.config>templates/drawernavigation.ts.emu.google.api26.properties</app.config>
                 <testsuite>templates-drawernavigation</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template-drawernavigation-ts.sim.iphone7.ios110</id>
+            <id>template-drawer-navigation-ts.sim.iphone7.ios110</id>
             <properties>
                 <app.config>templates/drawernavigation.ts.sim.iphone7.ios11.properties</app.config>
                 <testsuite>templates-drawernavigation</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template-drawernavigation-ts.sim.iphoneX.ios11</id>
+            <id>template-drawer-navigation-ts.sim.iphoneX.ios11</id>
             <properties>
                 <app.config>templates/drawernavigation.ts.sim.iphoneX.ios11.properties</app.config>
                 <testsuite>templates-drawernavigation</testsuite>
@@ -1852,28 +1852,28 @@
 
         <!-- Drawer Navigation NG App Profiles-->
         <profile>
-            <id>template-drawernavigation-ng.emu.default.api23</id>
+            <id>template-drawer-navigation-ng.emu.default.api23</id>
             <properties>
                 <app.config>templates/drawernavigation.ng.emu.default.api23.properties</app.config>
                 <testsuite>templates-drawernavigation</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template-drawernavigation-ng.emu.google.api26</id>
+            <id>template-drawer-navigation-ng.emu.google.api26</id>
             <properties>
                 <app.config>templates/drawernavigation.ng.emu.google.api26.properties</app.config>
                 <testsuite>templates-drawernavigation</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template-drawernavigation-ng.sim.iphone7.ios110</id>
+            <id>template-drawer-navigation-ng.sim.iphone7.ios110</id>
             <properties>
                 <app.config>templates/drawernavigation.ng.sim.iphone7.ios11.properties</app.config>
                 <testsuite>templates-drawernavigation</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template-drawernavigation-ng.sim.iphoneX.ios11</id>
+            <id>template-drawer-navigation-ng.sim.iphoneX.ios11</id>
             <properties>
                 <app.config>templates/drawernavigation.ng.sim.iphoneX.ios11.properties</app.config>
                 <testsuite>templates-drawernavigation</testsuite>
@@ -1882,44 +1882,58 @@
 
         <!-- Health Survey Profiles-->
         <profile>
-            <id>healthsurvey-ng.emu.default.api23</id>
+            <id>template-health-survey-ng.emu.default.api23</id>
             <properties>
                 <app.config>health-survey-ng/healthsurvey.emu.default.api23.properties</app.config>
                 <testsuite>healthsurvey</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>healthsurvey-ng.emu.google.api26</id>
+            <id>template-health-survey-ng.emu.google.api26</id>
             <properties>
                 <app.config>health-survey-ng/healthsurvey.emu.google.api26.properties</app.config>
                 <testsuite>templates-healthsurvey</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>healthsurvey-ng.sim.iphone7.ios110</id>
+            <id>template-health-survey-ng.sim.iphone7.ios110</id>
             <properties>
                 <app.config>health-survey-ng/healthsurvey.sim.iphone7.ios11.properties</app.config>
                 <testsuite>templates-healthsurvey</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>patientcare-ng.emu.default.api23</id>
+            <id>template-health-survey-ng.sim.iphoneX.ios110</id>
+            <properties>
+                <app.config>health-survey-ng/healthsurvey.sim.iphoneX.ios11.properties</app.config>
+                <testsuite>templates-healthsurvey</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-patient-care-ng.emu.default.api23</id>
             <properties>
                 <app.config>patient-care-ng/patientcare.emu.default.api23.properties</app.config>
                 <testsuite>templates-patientcare</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>patientcare-ng.emu.google.api26</id>
+            <id>template-patient-care-ng.emu.google.api26</id>
             <properties>
                 <app.config>patient-care-ng/patientcare.emu.google.api26.properties</app.config>
                 <testsuite>templates-patientcare</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>patientcare-ng.sim.iphone7.ios110</id>
+            <id>template-patient-care-ng.sim.iphone7.ios110</id>
             <properties>
                 <app.config>patient-care-ng/patientcare.sim.iphone7.ios11.properties</app.config>
+                <testsuite>templates-patientcare</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-patient-care-ng.sim.iphoneX.ios110</id>
+            <properties>
+                <app.config>patient-care-ng/patientcare.sim.iphoneX.ios11.properties</app.config>
                 <testsuite>templates-patientcare</testsuite>
             </properties>
         </profile>
