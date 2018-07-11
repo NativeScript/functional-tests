@@ -15,6 +15,11 @@
             <class name="sdkexamples.Tests.SdkAngularDirectivesTests"/>
         </classes>
     </test>
+    <test name="AngularRouting">
+        <classes>
+            <class name="sdkexamples.Tests.SdkAngularRoutingTests"/>
+        </classes>
+    </test>
     <test name="Animations">
         <classes>
             <class name="sdkexamples.Tests.SdkAnimationsTests"/>
@@ -33,6 +38,11 @@
     <test name="Button">
         <classes>
             <class name="sdkexamples.Tests.SdkButtonTests"/>
+        </classes>
+    </test>
+    <test name="Camera">
+        <classes>
+            <class name="sdkexamples.Tests.SdkCameraTests"/>
         </classes>
     </test>
     <test name="Color">
