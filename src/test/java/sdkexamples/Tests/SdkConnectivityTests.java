@@ -21,7 +21,7 @@ public class SdkConnectivityTests extends SdkBaseTest {
     }
 
     @Test(dataProvider = "example")
-    public void sdkConnectivityTest(String example) throws Exception {
+    public void sdkConnectivityTest(String example) {
         this.mainPage.navigateTo(example);
     }
 }

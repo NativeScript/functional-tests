@@ -21,7 +21,7 @@ public class SdkColorTests extends SdkBaseTest {
     }
 
     @Test(dataProvider = "example")
-    public void sdkColorTest(String example) throws Exception {
+    public void sdkColorTest(String example) {
         this.mainPage.navigateTo(example);
     }
 }
