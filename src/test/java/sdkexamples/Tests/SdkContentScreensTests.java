@@ -17,14 +17,14 @@ public class SdkContentScreensTests extends SdkBaseTest {
     @DataProvider(name = "example")
     public Object[][] data() {
         return new Object[][]{
-                {"Content page (auto hide/show image)"}
+                {"Content page (auto hide or show image)"}
         };
     }
 
     @Test(dataProvider = "example")
     public void sdkContentScreenTest(String example) {
         this.mainPage.navigateTo(example);
-        if (example.equalsIgnoreCase("Content page (auto hide/show image)")) {
+        if (example.equalsIgnoreCase("Content page (auto hide or show image)")) {
             this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 1000, 100);
             this.gestures.swipeInWindow(SwipeElementDirection.UP, 1000, 100);
         }

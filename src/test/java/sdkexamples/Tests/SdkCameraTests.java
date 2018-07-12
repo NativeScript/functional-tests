@@ -40,6 +40,14 @@ public class SdkCameraTests extends SdkBaseTest {
                 } else {
                     this.log.info("Permissions already granted!");
                 }
+            } else {
+                UIElement popup = this.wait.waitForVisible(this.locators.byText("OK"), this.settings.shortTimeout, false);
+                if (popup != null) {
+                    this.log.info("Grant permissions...");
+                    popup.tap();
+                } else {
+                    this.log.info("Permissions already granted!");
+                }
             }
 
             // Take photo
