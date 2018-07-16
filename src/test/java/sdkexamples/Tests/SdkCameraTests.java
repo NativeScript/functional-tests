@@ -27,9 +27,9 @@ public class SdkCameraTests extends SdkBaseTest {
     public void sdkCameraTest(String example) {
         this.mainPage.navigateTo(example);
         if (example.equalsIgnoreCase("Using Camera module")) {
-            // Get permissions
+            // Get permissions (this handle Android up to 6.0, after 6.0 permissions are required later).
             this.wait.waitForVisible(this.locators.byText("Request permissions")).tap();
-            if (this.settings.platform == PlatformType.Android) {
+            if (this.settings.platform == PlatformType.Android && this.settings.platformVersion != 7.0) {
                 UIElement popup = this.wait.waitForVisible(this.locators.byText("1 of 2"),
                         this.settings.shortTimeout, false);
                 if (popup != null) {
@@ -53,10 +53,34 @@ public class SdkCameraTests extends SdkBaseTest {
             // Take photo
             this.wait.waitForVisible(this.locators.byText("Take Photo")).tap();
             if (this.settings.platform == PlatformType.Android) {
-                this.wait.waitForVisible(By.id("Shutter button")).tap();
+                // Handle Android 7.0+
+                if (this.settings.platformVersion == 7.0) {
+                    UIElement popup = this.wait.waitForVisible(this.locators.byText("ALLOW"),
+                            this.settings.shortTimeout, false);
+                    if (popup != null) {
+                        this.log.info("Grant permissions...");
+                        popup.tap();
+                        this.wait.waitForVisible(this.locators.byText("NEXT")).tap();
+                    }
+                } else {
+                    this.log.info("Permissions already granted!");
+                }
+
+                By shutterButtonLocator = By.id("Shutter button");
+                By doneButtonLocator = By.id("com.android.camera:id/btn_done");
+                if (this.settings.platformVersion == 7.0) {
+                    shutterButtonLocator = By.id("com.android.camera2:id/shutter_button");
+                    doneButtonLocator = By.id("com.android.camera2:id/done_button");
+                }
+                if (this.settings.platformVersion == 7.1) {
+                    shutterButtonLocator = By.id("com.android.camera:id/shutter_button");
+                    doneButtonLocator = By.id("com.android.camera:id/btn_done");
+                }
+                this.wait.waitForVisible(shutterButtonLocator).tap();
                 this.log.info("Tap shutter button.");
-                this.wait.waitForVisible(By.id("com.android.camera:id/btn_done")).tap();
+                this.wait.waitForVisible(doneButtonLocator).tap();
                 this.log.info("Tap done button.");
+
             } else {
                 this.wait.waitForVisible(By.id("Moments")).tap();
                 this.wait.waitForVisible(By.xpath("//*[@name='PhotosGridView']//XCUIElementTypeCell[3]")).tap();
