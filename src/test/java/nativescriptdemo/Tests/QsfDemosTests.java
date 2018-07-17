@@ -48,7 +48,7 @@ public class QsfDemosTests extends QsfBaseTest {
         // Verify it is loaded
         By demoLocator = By.xpath("//*[@content-desc='ActionBar']//*[@text='" + example + "']");
         if (this.settings.platform == PlatformType.iOS) {
-            demoLocator = By.xpath("//*[@label='ActionBar']//*[@label='" + example + "']");
+            demoLocator = By.xpath("//*[@name='ActionBar']//*[@label='" + example + "']");
         }
         UIElement demoTitle = this.wait.waitForVisible(demoLocator, this.settings.shortTimeout, false);
         Assert.assertNotNull(demoTitle, demoTitle + "not loaded.");

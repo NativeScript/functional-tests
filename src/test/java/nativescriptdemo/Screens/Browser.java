@@ -22,19 +22,10 @@ public class Browser extends BasePage {
     private void loaded(String content) {
         UIElement element;
         if (this.settings.platform == PlatformType.Android) {
-            if (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 5.0) {
-                if (this.client.getDriver().getContextHandles().contains("WEBVIEW_com.android.browser")) {
-                    this.log.info("Browser loaded.");
-                    return;
-                }
-            }
             element = this.wait.waitForVisible(this.locators.byText(content, false, false), this.settings.defaultTimeout, false);
-        } else if (this.settings.platform == PlatformType.iOS) {
-            element = this.wait.waitForVisible(By.id("URL"), 6, true);
         } else {
-            element = null;
+            element = this.wait.waitForVisible(By.id("URL"), 6, true);
         }
-
         if (element != null) {
             this.log.info("Browser loaded.");
         } else {

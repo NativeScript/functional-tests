@@ -1,6 +1,5 @@
 package nativescriptdemo.Tests;
 
-import functional.tests.core.mobile.element.UIRectangle;
 import nativescriptdemo.Screens.Browser;
 import nativescriptdemo.Screens.Components.SideDrawer;
 import nativescriptdemo.Screens.Pages.AboutPage;
@@ -12,7 +11,6 @@ public class SideDrawerTests extends QsfBaseTest {
     private SideDrawer sideDrawer;
     private AboutPage aboutPage;
     private Browser browser;
-    private UIRectangle iosWebBackBtnRect;
 
     @BeforeClass(groups = {"android", "ios"})
     public void beforeQsfGeneralTestsClass() {
