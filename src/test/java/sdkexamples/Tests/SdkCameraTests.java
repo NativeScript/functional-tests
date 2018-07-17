@@ -2,7 +2,10 @@ package sdkexamples.Tests;
 
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.element.UIElement;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Point;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import sdkexamples.SdkBaseTest;
@@ -80,9 +83,13 @@ public class SdkCameraTests extends SdkBaseTest {
                 this.log.info("Tap shutter button.");
                 this.wait.waitForVisible(doneButtonLocator).tap();
                 this.log.info("Tap done button.");
-
             } else {
-                this.wait.waitForVisible(By.id("Moments")).tap();
+                if (this.settings.deviceName.toLowerCase().contains("x")) {
+                    Point p = this.wait.waitForVisible(By.id("Moments")).getCenter();
+                    new TouchAction(this.client.driver).tap(PointOption.point(p.x, p.y + 10)).perform();
+                } else {
+                    this.wait.waitForVisible(By.id("Moments")).tap();
+                }
                 this.wait.waitForVisible(By.xpath("//*[@name='PhotosGridView']//XCUIElementTypeCell[3]")).tap();
             }
 
