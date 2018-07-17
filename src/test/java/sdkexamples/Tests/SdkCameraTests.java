@@ -79,6 +79,19 @@ public class SdkCameraTests extends SdkBaseTest {
                     shutterButtonLocator = By.id("com.android.camera:id/shutter_button");
                     doneButtonLocator = By.id("com.android.camera:id/btn_done");
                 }
+                if (this.settings.platformVersion >= 27.0) {
+                    // Camera wants location permissions on Api27
+                    UIElement popup = this.wait.waitForVisible(this.locators.byText("ALLOW"), this.settings.shortTimeout, false);
+                    if (popup != null) {
+                        popup.tap();
+                    }
+                    popup = this.wait.waitForVisible(this.locators.byText("NEXT"), this.settings.shortTimeout, false);
+                    if (popup != null) {
+                        this.wait.waitForVisible(this.locators.byText("NEXT")).tap();
+                    }
+                    shutterButtonLocator = By.id("com.android.camera2:id/shutter_button");
+                    doneButtonLocator = By.id("com.android.camera2:id/done_button");
+                }
                 this.wait.waitForVisible(shutterButtonLocator).tap();
                 this.log.info("Tap shutter button.");
                 this.wait.waitForVisible(doneButtonLocator).tap();

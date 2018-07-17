@@ -63,7 +63,7 @@ public class HomePage extends BasePage {
     public boolean navigateTo(String example) {
         UIElement element;
         if (this.settings.platform == PlatformType.Android) {
-            element = this.gestures.swipeInWindowToElement(SwipeElementDirection.DOWN, this.locators.byText(example), 5, 250, 0);
+            element = this.gestures.swipeInWindowToElement(SwipeElementDirection.DOWN, this.locators.byText(example), 5, 250, 500);
         } else {
             element = NavigationHelper.scrollTo(example, this.context, 5);
         }
