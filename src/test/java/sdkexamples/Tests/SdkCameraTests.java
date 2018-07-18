@@ -33,17 +33,15 @@ public class SdkCameraTests extends SdkBaseTest {
             // Get permissions (this handle Android up to 6.0, after 6.0 permissions are required later).
             this.wait.waitForVisible(this.locators.byText("Request permissions")).tap();
             if (this.settings.platform == PlatformType.Android) {
-                if (this.settings.platformVersion != 7.0) {
-                    UIElement popup = this.wait.waitForVisible(this.locators.byText("1 of 2"),
-                            this.settings.shortTimeout, false);
-                    if (popup != null) {
-                        this.log.info("Grant permissions...");
-                        this.wait.waitForVisible(this.locators.byText("ALLOW")).tap();
-                        this.wait.waitForVisible(this.locators.byText("2 of 2"), true);
-                        this.wait.waitForVisible(this.locators.byText("ALLOW")).tap();
-                    } else {
-                        this.log.info("Permissions already granted!");
-                    }
+                UIElement popup = this.wait.waitForVisible(this.locators.byText("1 of 2"),
+                        this.settings.shortTimeout, false);
+                if (popup != null) {
+                    this.log.info("Grant permissions...");
+                    this.wait.waitForVisible(this.locators.byText("ALLOW")).tap();
+                    this.wait.waitForVisible(this.locators.byText("2 of 2"), true);
+                    this.wait.waitForVisible(this.locators.byText("ALLOW")).tap();
+                } else {
+                    this.log.info("Permissions already granted!");
                 }
             } else {
                 UIElement popup = this.wait.waitForVisible(this.locators.byText("OK"), this.settings.shortTimeout, false);
