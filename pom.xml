@@ -632,13 +632,6 @@
             </properties>
         </profile>
         <profile>
-            <id>testsappng.emu.google.api28</id>
-            <properties>
-                <app.config>testsappng/testsappng.emu.google.api28.properties</app.config>
-                <testsuite>testsappng-android</testsuite>
-            </properties>
-        </profile>
-        <profile>
             <id>testsappng.sim.iphone6splus.ios93</id>
             <properties>
                 <app.config>testsappng/testsappng.sim.iphone6splus.ios93.properties</app.config>
