@@ -1,6 +1,5 @@
 package sdkexamples.Tests;
 
-import com.oracle.tools.packager.Log;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.mobile.find.Wait;
@@ -32,7 +31,7 @@ public class SdkCameraTests extends SdkBaseTest {
     public void sdkCameraTest(String example) {
         this.mainPage.navigateTo(example);
         if (this.settings.platformVersion == 8.0) {
-            Log.info("Skip the test on Emulator-Api26-Google because of emu settings issues.");
+            this.log.info("Skip the test on Emulator-Api26-Google because of emu settings issues.");
         } else {
             if (example.equalsIgnoreCase("Using Camera module")) {
                 // Get permissions (this handle Android up to 6.0, after 6.0 permissions are required later).
