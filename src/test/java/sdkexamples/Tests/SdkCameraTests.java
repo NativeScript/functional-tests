@@ -37,7 +37,7 @@ public class SdkCameraTests extends SdkBaseTest {
     }
 
     private By doneButtonLocator() {
-        if (this.settings.platformVersion <= 8.0) {
+        if ((this.settings.platformVersion <= 8.0) && (this.settings.platformVersion != 7.0)) {
             return By.id("com.android.camera:id/btn_done");
         } else {
             return By.id("com.android.camera2:id/done_button");
