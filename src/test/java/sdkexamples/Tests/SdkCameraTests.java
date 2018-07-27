@@ -2,7 +2,6 @@ package sdkexamples.Tests;
 
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.element.UIElement;
-import functional.tests.core.mobile.find.Wait;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
@@ -27,87 +26,91 @@ public class SdkCameraTests extends SdkBaseTest {
         };
     }
 
+    private By shutterButtonLocator() {
+        if (this.settings.platformVersion < 7.0) {
+            return By.id("Shutter button");
+        } else if (this.settings.platformVersion == 7.1) {
+            return By.id("com.android.camera:id/shutter_button");
+        } else {
+            return By.id("com.android.camera2:id/shutter_button");
+        }
+    }
+
+    private By doneButtonLocator() {
+        if (this.settings.platformVersion < 7.1) {
+            return By.id("com.android.camera:id/btn_done");
+        } else {
+            return By.id("com.android.camera2:id/done_button");
+        }
+    }
+
+    private void handlePermissions() {
+        if (this.settings.platform == PlatformType.Android) {
+            UIElement popup = this.wait.waitForVisible(this.locators.byText("1 of 2"),
+                    this.settings.shortTimeout, false);
+            if (popup != null) {
+                this.log.info("Grant permissions...");
+                this.wait.waitForVisible(this.locators.byText("ALLOW")).tap();
+                this.wait.waitForVisible(this.locators.byText("2 of 2"), true);
+                this.wait.waitForVisible(this.locators.byText("ALLOW")).tap();
+            } else {
+                this.log.info("Permissions already granted!");
+            }
+        } else {
+            UIElement popup = this.wait.waitForVisible(this.locators.byText("OK"), this.settings.shortTimeout, false);
+            if (popup != null) {
+                this.log.info("Grant permissions...");
+                popup.tap();
+            } else {
+                this.log.info("Permissions already granted!");
+            }
+        }
+    }
+
+    private void handlePermissionsAfterTakePicture() {
+        // Handle Android 7.0+
+        if ((this.settings.platformVersion == 7.0) || (this.settings.platformVersion >= 27.0)) {
+            UIElement popup = this.wait.waitForVisible(this.locators.byText("ALLOW"),
+                    this.settings.shortTimeout, false);
+            if (popup != null) {
+                this.log.info("Grant permissions...");
+                popup.tap();
+                this.wait.waitForVisible(this.locators.byText("NEXT")).tap();
+            }
+        } else {
+            this.log.info("Permissions already granted!");
+        }
+    }
+
     @Test(dataProvider = "example", timeOut = 120 * 1000)
     public void sdkCameraTest(String example) {
         this.mainPage.navigateTo(example);
-        if (this.settings.platformVersion == 8.0) {
-            this.log.info("Skip the test on Emulator-Api26-Google because of emu settings issues.");
-        } else {
-            if (example.equalsIgnoreCase("Using Camera module")) {
-                // Get permissions (this handle Android up to 6.0, after 6.0 permissions are required later).
+        if (example.equalsIgnoreCase("Using Camera module")) {
+            if (this.settings.platformVersion == 8.0) {
+                this.log.info("Skip the test on Emulator-Api26-Google because of emu settings issues.");
+            } else {
+                // Request permissions
                 this.wait.waitForVisible(this.locators.byText("Request permissions")).tap();
-                if (this.settings.platform == PlatformType.Android) {
-                    UIElement popup = this.wait.waitForVisible(this.locators.byText("1 of 2"),
-                            this.settings.shortTimeout, false);
-                    if (popup != null) {
-                        this.log.info("Grant permissions...");
-                        this.wait.waitForVisible(this.locators.byText("ALLOW")).tap();
-                        this.wait.waitForVisible(this.locators.byText("2 of 2"), true);
-                        this.wait.waitForVisible(this.locators.byText("ALLOW")).tap();
-                    } else {
-                        this.log.info("Permissions already granted!");
-                    }
-                } else {
-                    Wait.sleep(3000);
-                    UIElement popup = this.wait.waitForVisible(this.locators.byText("OK"), this.settings.shortTimeout, false);
-                    if (popup != null) {
-                        this.log.info("Grant permissions...");
-                        popup.tap();
-                    } else {
-                        this.log.info("Permissions already granted!");
-                    }
-                    Wait.sleep(3000);
-                    popup = this.wait.waitForVisible(this.locators.byText("OK"), this.settings.shortTimeout, false);
-                    if (popup != null) {
-                        this.log.info("Grant permissions...");
-                        popup.tap();
-                    } else {
-                        this.log.info("Permissions already granted!");
-                    }
+                this.handlePermissions();
+                if (this.settings.platform == PlatformType.iOS) {
+                    // Permissions popup is displayed twice on iOS.
+                    this.handlePermissions();
                 }
 
                 // Take photo
                 this.wait.waitForVisible(this.locators.byText("Take Photo")).tap();
                 if (this.settings.platform == PlatformType.Android) {
-                    // Handle Android 7.0+
-                    if (this.settings.platformVersion == 7.0) {
-                        UIElement popup = this.wait.waitForVisible(this.locators.byText("ALLOW"),
-                                this.settings.shortTimeout, false);
-                        if (popup != null) {
-                            this.log.info("Grant permissions...");
-                            popup.tap();
-                            this.wait.waitForVisible(this.locators.byText("NEXT")).tap();
-                        }
-                    } else {
-                        this.log.info("Permissions already granted!");
+                    this.handlePermissionsAfterTakePicture();
+
+                    // Take phone do not work first time on Android
+                    if (this.settings.platform == PlatformType.Android) {
+                        this.app.navigateBack();
+                        this.wait.waitForVisible(this.locators.byText("Take Photo")).tap();
                     }
 
-                    By shutterButtonLocator = By.id("Shutter button");
-                    By doneButtonLocator = By.id("com.android.camera:id/btn_done");
-                    if (this.settings.platformVersion == 7.0) {
-                        shutterButtonLocator = By.id("com.android.camera2:id/shutter_button");
-                        doneButtonLocator = By.id("com.android.camera2:id/done_button");
-                    }
-                    if (this.settings.platformVersion == 7.1) {
-                        shutterButtonLocator = By.id("com.android.camera:id/shutter_button");
-                        doneButtonLocator = By.id("com.android.camera:id/btn_done");
-                    }
-                    if (this.settings.platformVersion >= 27.0) {
-                        // Camera wants location permissions on Api27
-                        UIElement popup = this.wait.waitForVisible(this.locators.byText("ALLOW"), this.settings.shortTimeout, false);
-                        if (popup != null) {
-                            popup.tap();
-                        }
-                        popup = this.wait.waitForVisible(this.locators.byText("NEXT"), this.settings.shortTimeout, false);
-                        if (popup != null) {
-                            this.wait.waitForVisible(this.locators.byText("NEXT")).tap();
-                        }
-                        shutterButtonLocator = By.id("com.android.camera2:id/shutter_button");
-                        doneButtonLocator = By.id("com.android.camera2:id/done_button");
-                    }
-                    this.wait.waitForVisible(shutterButtonLocator).tap();
+                    this.wait.waitForVisible(this.shutterButtonLocator()).tap();
                     this.log.info("Tap shutter button.");
-                    this.wait.waitForVisible(doneButtonLocator).tap();
+                    this.wait.waitForVisible(this.doneButtonLocator()).tap();
                     this.log.info("Tap done button.");
                 } else {
                     if (this.settings.deviceName.toLowerCase().contains("x")) {
@@ -123,7 +126,7 @@ public class SdkCameraTests extends SdkBaseTest {
                 this.wait.waitForVisible(this.locators.byText("Request permissions"), true);
                 this.wait.waitForVisible(this.locators.byText("Take Photo"), true);
                 if (this.settings.platform == PlatformType.Android) {
-                    // For unknown reason image is displayed only on Android.
+                    // Ignore iOS check because of https://github.com/NativeScript/NativeScript/issues/6114
                     this.wait.waitForVisible(this.locators.imageLocator(), true);
                 }
             }
