@@ -21,15 +21,14 @@ public class LoginPage extends BasePage {
     public void login(String user, String pass) {
         this.email().setText(user);
 
-        if (this.settings.platformVersion > 6.0) {
-            Wait.sleep(500);
-            ((AndroidDriver) this.client.driver).pressKeyCode(66);
-            Wait.sleep(500);
-            ((AndroidDriver) this.client.driver).pressKeyCode(66);
-            Wait.sleep(500);
-        }
-
         if (this.settings.platform == PlatformType.Android) {
+            if (this.settings.platformVersion > 6.0) {
+                Wait.sleep(500);
+                ((AndroidDriver) this.client.driver).pressKeyCode(66);
+                Wait.sleep(500);
+                ((AndroidDriver) this.client.driver).pressKeyCode(66);
+                Wait.sleep(500);
+            }
             this.sendEnterAndTypeText(pass);
             this.hideKeyboard();
         } else {
