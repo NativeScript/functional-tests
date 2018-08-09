@@ -26,6 +26,15 @@ public class RegisterPage extends BasePage {
 
         this.email().setText(email);
         if (this.settings.platform == PlatformType.Android) {
+
+            if (this.settings.platformVersion > 6.0) {
+                Wait.sleep(500);
+                ((AndroidDriver) this.client.driver).pressKeyCode(66);
+                Wait.sleep(500);
+                ((AndroidDriver) this.client.driver).pressKeyCode(66);
+                Wait.sleep(500);
+            }
+
             this.sendEnterAndTypeText(pass);
             this.sendEnterAndTypeText(pass);
 

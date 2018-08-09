@@ -5,7 +5,6 @@ import functional.tests.core.mobile.basepage.BasePage;
 import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.mobile.find.Wait;
 import io.appium.java_client.android.AndroidDriver;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
@@ -21,6 +20,14 @@ public class LoginPage extends BasePage {
 
     public void login(String user, String pass) {
         this.email().setText(user);
+
+        if (this.settings.platformVersion > 6.0) {
+            Wait.sleep(500);
+            ((AndroidDriver) this.client.driver).pressKeyCode(66);
+            Wait.sleep(500);
+            ((AndroidDriver) this.client.driver).pressKeyCode(66);
+            Wait.sleep(500);
+        }
 
         if (this.settings.platform == PlatformType.Android) {
             this.sendEnterAndTypeText(pass);
@@ -48,7 +55,7 @@ public class LoginPage extends BasePage {
 
     private UIElement loginButton() {
         if (this.settings.platform == PlatformType.Android) {
-            return this.find.byLocator(By.xpath("//android.widget.Button[@text='Login']"));
+            return this.find.byLocator(this.locators.findByTextLocator("android.widget.Button", "Login", true, false));
         } else {
             return this.find.elementsByLocator(this.locators.buttonLocator()).get(0);
         }
