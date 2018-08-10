@@ -8,6 +8,8 @@ import io.appium.java_client.android.AndroidDriver;
 import org.testng.Assert;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.List;
+
 public class LoginPage extends BasePage {
 
     public LoginPage() {
@@ -56,7 +58,8 @@ public class LoginPage extends BasePage {
         if (this.settings.platform == PlatformType.Android) {
             return this.find.byLocator(this.locators.findByTextLocator("android.widget.Button", "Login", true, false));
         } else {
-            return this.find.elementsByLocator(this.locators.buttonLocator()).get(0);
+            List<UIElement> list = this.find.elementsByLocator(this.locators.byText("Login"));
+            return list.get(list.size() - 1);
         }
     }
 
