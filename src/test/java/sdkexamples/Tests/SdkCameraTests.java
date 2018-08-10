@@ -2,6 +2,7 @@ package sdkexamples.Tests;
 
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.element.UIElement;
+import functional.tests.core.mobile.find.Wait;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
@@ -103,10 +104,10 @@ public class SdkCameraTests extends SdkBaseTest {
                     this.handlePermissionsAfterTakePicture();
 
                     // Take phone do not work first time on Android
-                    if (this.settings.platform == PlatformType.Android) {
-                        this.app.navigateBack();
-                        this.wait.waitForVisible(this.locators.byText("Take Photo")).tap();
-                    }
+                    Wait.sleep(1000);
+                    this.app.navigateBack();
+                    Wait.sleep(1000);
+                    this.wait.waitForVisible(this.locators.byText("Take Photo")).tap();
 
                     this.wait.waitForVisible(this.shutterButtonLocator()).tap();
                     this.log.info("Tap shutter button.");
