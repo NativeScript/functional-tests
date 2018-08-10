@@ -4,9 +4,14 @@ import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.basepage.BasePage;
 import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.mobile.find.Wait;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
 import org.testng.Assert;
+
+import java.time.Duration;
 
 public class RegisterPage extends BasePage {
 
@@ -20,11 +25,29 @@ public class RegisterPage extends BasePage {
     public CareContentPage register(String email, String pass, String firstName, String lastName) {
         this.email().setText(email);
         if (this.settings.platform == PlatformType.Android) {
+            if (this.settings.platformVersion > 6.0) {
+                Wait.sleep(500);
+                ((AndroidDriver) this.client.driver).pressKeyCode(66);
+                Wait.sleep(500);
+                ((AndroidDriver) this.client.driver).pressKeyCode(66);
+                Wait.sleep(500);
+            }
             this.sendEnterAndTypeText(pass);
             this.sendEnterAndTypeText(pass);
+
+            this.app.hideKeyboard();
+            Wait.sleep(500);
+
+            // Hack
+            new TouchAction(this.client.driver)
+                    .press(PointOption.point(240, 500))
+                    .waitAction(WaitOptions.waitOptions(Duration.ofMillis(1000)))
+                    .moveTo(PointOption.point(240, 100))
+                    .release()
+                    .perform();
+
             this.sendEnterAndTypeText(firstName);
             this.sendEnterAndTypeText(lastName);
-            this.app.hideKeyboard();
             Wait.sleep(10);
             this.setDate();
         } else {
