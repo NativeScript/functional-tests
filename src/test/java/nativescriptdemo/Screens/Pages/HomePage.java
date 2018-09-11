@@ -49,7 +49,7 @@ public class HomePage extends BasePage {
     }
 
     public void tapSideDrawer() {
-        if (this.settings.platformVersion >= 11.0 && this.settings.platform == PlatformType.iOS) {
+        if (this.settings.platform == PlatformType.iOS) {
             Gestures.scroll(250, 10, 100, 200, 100, this.settings, this.client);
             this.log.info("Open SideDrawer with swipe.");
         } else {
@@ -73,11 +73,7 @@ public class HomePage extends BasePage {
 
     private UIElement btnSideDrawer() {
         if (this.settings.platform == PlatformType.iOS) {
-            if (this.settings.platformVersion >= 11.0) {
-                return this.wait.waitForVisible(By.id("ActionBar"));
-            } else {
-                return this.wait.waitForVisible(By.id("ic_menu_main"));
-            }
+            return this.wait.waitForVisible(By.id("ActionBar"));
         } else if (this.settings.platform == PlatformType.Android) {
             return this.wait.waitForVisible(this.locators.imageButtonLocator());
         } else {
