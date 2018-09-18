@@ -112,6 +112,14 @@ public class LayoutsTests extends LayoutBaseTest {
         this.assertImagesResults();
     }
 
+    @Test(groups = {"android", "ios"})
+    public void stack_layouts_6059() throws Exception {
+        this.layoutsPage.navigateTo("stacklayout-6059");
+        this.compareScreens(5);
+
+        this.assertImagesResults();
+    }
+
     // Wrap
     @Test(groups = {"android", "ios"})
     public void layouts_41_wrap() throws Exception {
