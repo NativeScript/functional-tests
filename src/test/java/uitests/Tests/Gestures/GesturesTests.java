@@ -1,6 +1,5 @@
 package uitests.Tests.Gestures;
 
-import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.element.UIRectangle;
 import functional.tests.core.enums.SwipeElementDirection;
@@ -101,7 +100,7 @@ public class GesturesTests extends GesturesBaseTest {
     @Test(groups = {"android", "ios"})
     public void gestures_08_disconnectObserver() throws Exception {
         this.gesturesPage.navigateToGestures();
-        UIRectangle tapElement =  new UIRectangle(this.gesturesPage.lblTap().getUIRectangle());
+        UIRectangle tapElement = new UIRectangle(this.gesturesPage.lblTap().getUIRectangle());
         this.gesturesPage.tapStopBtn();
         if (this.settings.platformVersion < 11 && this.settings.platform == PlatformType.iOS) {
             this.assertScreen(5);
