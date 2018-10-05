@@ -6,9 +6,10 @@ import sdkexamples.SdkBaseTest;
 
 public class SdkModalPageTests extends SdkBaseTest {
 
-    private String page = "Modal page";
-    private final String modalPageExample = "Modal page example";
-    private final String modalPageNavigation = "Modal page navigation";
+    private String page = "Modal view";
+    private final String modalPageExample = "Modal view example";
+    private final String modalPageNavigation = "Modal view navigation";
+    private final String modalPageActionBar = "Modal view ActionBar";
 
     @Override
     protected String subMainPage() {
@@ -20,6 +21,7 @@ public class SdkModalPageTests extends SdkBaseTest {
         return new Object[][]{
                 {modalPageExample},
                 {modalPageNavigation},
+                {modalPageActionBar}
         };
     }
 
@@ -41,11 +43,11 @@ public class SdkModalPageTests extends SdkBaseTest {
         }
         if (example.equalsIgnoreCase(modalPageNavigation)) {
             this.wait.waitForVisible(this.locators.byText("SHOW MODAL")).tap();
-            this.wait.waitForVisible(this.locators.byText("First Modal Page"), true);
-            this.wait.waitForVisible(this.locators.byText("Next page")).tap();
-            this.wait.waitForVisible(this.locators.byText("Second Modal Page"), true);
+            this.wait.waitForVisible(this.locators.byText("First Modal View"), true);
+            this.wait.waitForVisible(this.locators.byText("Next", true, false)).tap();
+            this.wait.waitForVisible(this.locators.byText("Second Modal view"), true);
             this.wait.waitForVisible(this.locators.byText("Go Back")).tap();
-            this.wait.waitForVisible(this.locators.byText("First Modal Page"), true);
+            this.wait.waitForVisible(this.locators.byText("First Modal View"), true);
             this.wait.waitForVisible(this.locators.byText("CLOSE MODAL"), true).tap();
             this.wait.waitForVisible(this.locators.byText("SHOW MODAL"), true);
         }
