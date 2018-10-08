@@ -19,6 +19,9 @@ public class BindingTests extends MobileTest {
 
     @Test(groups = {"android", "ios"})
     public void binding_01_basics() throws Exception {
+        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 11) {
+            return;
+        }
         UIElement btnBasics = this.bindingsBasePage.wait.waitForVisible(this.locators.byText("basics"));
         this.bindingsBasePage.navigateTo(btnBasics, "basics");
         this.bindingsBasePage.bindingBasicsPage.tapSetTextBtn();
