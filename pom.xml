@@ -1117,6 +1117,13 @@
                 <testsuite>uitests-ios-textfiled-textview-tabview-searchbar</testsuite>
             </properties>
         </profile>
+        <profile>
+            <id>uitests.sim.iphoneX.ios12.css.fonts.page</id>
+            <properties>
+                <app.config>uitests/uitests.sim.iphoneX.ios12.properties</app.config>
+                <testsuite>uitests-ios-css-fonts-page</testsuite>
+            </properties>
+        </profile>
 
         <profile>
             <id>uitests.dev.ipad2.ios</id>
