@@ -1,8 +1,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="SDK Smoke Tests" verbose="1">
-    <test name="Slider">
+    <test name="TextField">
         <classes>
-            <class name="sdkexamples.Tests.SdkCameraTests"/>
+            <class name="sdkexamples.Tests.SdkTextFieldTests"/>
+        </classes>
+    </test>
+    <test name="TextView">
+        <classes>
+            <class name="sdkexamples.Tests.SdkTextViewTests"/>
         </classes>
     </test>
 </suite>
