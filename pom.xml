@@ -363,6 +363,13 @@
             </properties>
         </profile>
         <profile>
+            <id>uitests.emu.default.api24.layouts.segmentedstyle.imageview</id>
+            <properties>
+                <app.config>uitests/uitests.emu.default.api24.properties</app.config>
+                <testsuite>uitests-android-layouts-segmentedstyle-imageview</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>uitests.emu.default.api24.datepicker.listpicker.progressbar.listview</id>
             <properties>
                 <app.config>uitests/uitests.emu.default.api24.properties</app.config>
