@@ -33,9 +33,6 @@ public class SdkTextViewTests extends SdkBaseTest {
                     "This is very long text. This is very long text.";
             UIElement textField = null;
             if (this.settings.platform == PlatformType.Android) {
-                Wait.sleep(1000);
-                this.context.log.logScreen("Basic_TextView", "Screenshot on Basic TextView");
-                this.context.log.saveXmlTree("Basic_TextView_VisualTree.xml");
                 textField = this.mainPage.wait.waitForVisible(this.locators.editTextLocator(), this.settings.shortTimeout, true);
             } else {
                 textField = this.mainPage.find.byType("UIATextView");

@@ -1,5 +1,6 @@
 package sdkexamples.Tests;
 
+import functional.tests.core.enums.PlatformType;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import sdkexamples.SdkBaseTest;
@@ -22,7 +23,10 @@ public class SdkTextFieldTests extends SdkBaseTest {
     }
 
     @Test(dataProvider = "example")
-    public void sdkTextFieldTest(String example) throws Exception {
+    public void sdkTextFieldTest(String example) {
         this.mainPage.navigateTo(example);
+        if ((this.settings.platform == PlatformType.Android) && (this.settings.platformVersion <= 6.0)) {
+            this.app.hideKeyboard();
+        }
     }
 }
