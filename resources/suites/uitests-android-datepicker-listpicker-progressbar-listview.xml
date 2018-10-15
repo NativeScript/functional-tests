@@ -50,4 +50,9 @@
             <package name="uitests.Tests.TimePicker"/>
         </packages>
     </test>
+    <test name="ScrollView">
+        <packages>
+            <package name="uitests.Tests.ScrollView"/>
+        </packages>
+    </test>
 </suite>
