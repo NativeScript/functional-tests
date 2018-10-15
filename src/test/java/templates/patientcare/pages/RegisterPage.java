@@ -1,7 +1,9 @@
 package templates.patientcare.pages;
 
+import com.google.common.collect.ImmutableMap;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.basepage.BasePage;
+import functional.tests.core.mobile.device.android.Adb;
 import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.mobile.find.Wait;
 import io.appium.java_client.TouchAction;
@@ -12,6 +14,9 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 
 import java.time.Duration;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
 public class RegisterPage extends BasePage {
 
@@ -25,6 +30,7 @@ public class RegisterPage extends BasePage {
     public CareContentPage register(String email, String pass, String firstName, String lastName) {
         this.email().setText(email);
         if (this.settings.platform == PlatformType.Android) {
+            // Handle keyboard
             if (this.settings.platformVersion > 6.0) {
                 Wait.sleep(500);
                 ((AndroidDriver) this.client.driver).pressKeyCode(66);
@@ -32,6 +38,7 @@ public class RegisterPage extends BasePage {
                 ((AndroidDriver) this.client.driver).pressKeyCode(66);
                 Wait.sleep(500);
             }
+
             this.sendEnterAndTypeText(pass);
             this.sendEnterAndTypeText(pass);
 
@@ -48,7 +55,10 @@ public class RegisterPage extends BasePage {
 
             this.sendEnterAndTypeText(firstName);
             this.sendEnterAndTypeText(lastName);
-            Wait.sleep(10);
+
+            this.app.hideKeyboard();
+            Wait.sleep(500);
+
             this.setDate();
         } else {
             this.find.byText("Enter password").setText(pass);
@@ -82,7 +92,17 @@ public class RegisterPage extends BasePage {
             Wait.sleep(20);
             ((AndroidDriver) this.client.driver).pressKeyCode(66);
             Wait.sleep(20);
-            this.client.driver.getKeyboard().sendKeys(text);
+
+            List<String> args = Arrays.asList(
+                    "text",
+                    "\"" + text + "\""
+            );
+            Map<String, Object> sendTextCmd = ImmutableMap.of(
+                    "command", "input",
+                    "args", args
+            );
+            this.client.driver.executeScript("mobile: shell", sendTextCmd);
+
             Wait.sleep(20);
         } else {
             this.client.driver.findElement(By.id("Next keyboard")).click();

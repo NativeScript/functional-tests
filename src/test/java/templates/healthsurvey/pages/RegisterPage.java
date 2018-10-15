@@ -1,5 +1,6 @@
 package templates.healthsurvey.pages;
 
+import com.google.common.collect.ImmutableMap;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.basepage.BasePage;
 import functional.tests.core.mobile.element.UIElement;
@@ -12,6 +13,9 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 
 import java.time.Duration;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
 public class RegisterPage extends BasePage {
 
@@ -51,6 +55,8 @@ public class RegisterPage extends BasePage {
 
             this.sendEnterAndTypeText(firstName);
             this.sendEnterAndTypeText(lastName);
+            this.app.hideKeyboard();
+            Wait.sleep(500);
             this.setDate();
             Wait.sleep(500);
         } else {
@@ -90,11 +96,21 @@ public class RegisterPage extends BasePage {
 
     private void sendEnterAndTypeText(String text) {
         if (this.settings.platform == PlatformType.Android) {
-            Wait.sleep(250);
+            Wait.sleep(20);
             ((AndroidDriver) this.client.driver).pressKeyCode(66);
-            Wait.sleep(250);
-            this.client.driver.getKeyboard().sendKeys(text);
-            Wait.sleep(250);
+            Wait.sleep(20);
+
+            List<String> args = Arrays.asList(
+                    "text",
+                    "\"" + text + "\""
+            );
+            Map<String, Object> sendTextCmd = ImmutableMap.of(
+                    "command", "input",
+                    "args", args
+            );
+            this.client.driver.executeScript("mobile: shell", sendTextCmd);
+
+            Wait.sleep(20);
         } else {
             this.wait.waitForVisible(By.id("Next keyboard")).click();
         }

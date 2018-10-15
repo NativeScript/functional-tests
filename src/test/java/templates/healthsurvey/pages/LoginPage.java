@@ -1,5 +1,6 @@
 package templates.healthsurvey.pages;
 
+import com.google.common.collect.ImmutableMap;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.basepage.BasePage;
 import functional.tests.core.mobile.element.UIElement;
@@ -8,7 +9,9 @@ import io.appium.java_client.android.AndroidDriver;
 import org.testng.Assert;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 public class LoginPage extends BasePage {
 
@@ -68,7 +71,17 @@ public class LoginPage extends BasePage {
             Wait.sleep(20);
             ((AndroidDriver) this.client.driver).pressKeyCode(66);
             Wait.sleep(20);
-            this.client.driver.getKeyboard().sendKeys(text);
+
+            List<String> args = Arrays.asList(
+                    "text",
+                    "\"" + text + "\""
+            );
+            Map<String, Object> sendTextCmd = ImmutableMap.of(
+                    "command", "input",
+                    "args", args
+            );
+            this.client.driver.executeScript("mobile: shell", sendTextCmd);
+
             Wait.sleep(20);
         } else {
             throw new NotImplementedException();
