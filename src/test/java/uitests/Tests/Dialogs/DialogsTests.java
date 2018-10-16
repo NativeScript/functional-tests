@@ -1,6 +1,5 @@
 package uitests.Tests.Dialogs;
 
-
 import functional.tests.core.mobile.basetest.MobileTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -125,23 +124,73 @@ public class DialogsTests extends MobileTest {
         this.device.assertLogContains("### Result: true, Text: John Reese");
     }
 
-    // Prompt Pass
-    //@Test(groups = {"android", "ios"})
+
+    @Test(groups = {"android", "ios"})
     public void dialogs_54_promptPassOk() throws Exception {
         this.dialogsPage.tapPromptPassBtn();
 
         this.dialogsPage.tapOkBtn();
-        Assert.assertEquals(this.dialogsPage.label().getText(), DialogsPage.name1);
-        this.device.assertLogContains("### Result: true, UserName: John, Password: Reese");
+        Assert.assertTrue(this.find.byText(DialogsPage.name1,false, 2) != null);
     }
 
     // Prompt Email
-    // @Test(groups = {"android", "ios"})
+    @Test(groups = {"android", "ios"})
     public void dialogs_55_promptEmailOk() throws Exception {
         this.dialogsPage.tapPromptEmailBtn();
 
         this.dialogsPage.tapOkBtn();
-        Assert.assertEquals(this.dialogsPage.label().getText(), DialogsPage.name1);
-        this.device.assertLogContains("### Result: true, UserName: John, Password: Reese");
+        Assert.assertTrue(this.find.byText(DialogsPage.name1,false, 2) != null);
     }
+
+//    Cannot simulate user input
+//    @Test(groups = {"ios"})
+//    public void dialogs_promptCapitalizationNone() {
+//        UIElement btnShowDialog = this.find.byText("promptCapitalizationNone");
+//        btnShowDialog.click();
+//        String text = "prompt Capitalization None";
+//        this.setText(text);
+//        this.dialogsPage.tapOkBtn();
+//
+//        Assert.assertEquals(this.dialogsPage.label().getText(), text.toLowerCase());
+//    }
+//
+//
+//    @Test(groups = {"ios"})
+//    public void dialogs_promptCapitalizationAll() {
+//        UIElement btnShowDialog = this.find.byText("promptCapitalizationAll");
+//        btnShowDialog.click();
+//        String text = "prompt Capitalization all";
+//        this.setText(text);
+//        this.dialogsPage.tapOkBtn();
+//
+//        Assert.assertEquals(this.dialogsPage.label().getText(), text.toUpperCase());
+//    }
+//
+//
+//    @Test(groups = {"ios"})
+//    public void dialogs_promptCapitalizationSentences() throws Exception {
+//        UIElement btnShowDialog = this.find.byText("promptCapitalizationAll");
+//        btnShowDialog.click();
+//        String text = "prompt. capitalization. sentences";
+//        this.setText(text);
+//        this.dialogsPage.tapOkBtn();
+//
+//        Assert.assertEquals(this.dialogsPage.label().getText(), "Prompt. Capitalization. Sentences");
+//    }
+//
+//    @Test(groups = {"ios"})
+//    public void dialogs_promptCapitalizationWords() throws Exception {
+//        UIElement btnShowDialog = this.find.byText("promptCapitalizationWords");
+//        btnShowDialog.click();
+//        String text = "prompt Capitalization words";
+//        this.setText(text);
+//        this.dialogsPage.tapOkBtn();
+//
+//        Assert.assertEquals(this.dialogsPage.label().getText(), "Prompt Capitalization Words");
+//    }
+//
+//    private void setText(String text) {
+//        UIElement textField = this.find.byLocator(By.xpath("//XCUIElementTypeAlert[@name=\"Name\"]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther"));
+//        textField.setText(text);
+//    }
 }
