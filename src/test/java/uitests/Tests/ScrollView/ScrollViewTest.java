@@ -62,6 +62,7 @@ public class ScrollViewTest extends UIBaseTests {
         this.device.rotate(ScreenOrientation.PORTRAIT);
 
         this.assertImagesResults();
+        this.homePageExtended.getNavigationManager().slideBack();
     }
 
     @Test(groups = {"ios"})
@@ -75,6 +76,7 @@ public class ScrollViewTest extends UIBaseTests {
         this.device.rotate(ScreenOrientation.PORTRAIT);
 
         this.assertImagesResults();
+        this.homePageExtended.getNavigationManager().slideBack();
     }
 
     @Test(groups = {"ios"})
@@ -88,6 +90,7 @@ public class ScrollViewTest extends UIBaseTests {
         this.device.rotate(ScreenOrientation.PORTRAIT);
 
         this.assertImagesResults();
+        this.homePageExtended.getNavigationManager().slideBack();
     }
 
     @Test(groups = {"ios"})
@@ -101,6 +104,7 @@ public class ScrollViewTest extends UIBaseTests {
         this.device.rotate(ScreenOrientation.PORTRAIT);
 
         this.assertImagesResults();
+        this.homePageExtended.getNavigationManager().slideBack();
     }
 
     public void swipeToBottom(java.util.List<UIElement> elements, int index) {
