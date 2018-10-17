@@ -3,6 +3,7 @@ package uitests.Tests.ScrollView;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.SwipeElementDirection;
+import org.openqa.selenium.ScreenOrientation;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uitests.Screens.HomePageExtended;
@@ -54,6 +55,12 @@ public class ScrollViewTest extends UIBaseTests {
     public void safe_area_images() throws Exception {
         this.homePageExtended.navigateTo("safe-area-images");
         this.compareScreens(5);
+
+        this.device.rotate(ScreenOrientation.LANDSCAPE);
+        this.compareScreens(5);
+
+        this.device.rotate(ScreenOrientation.PORTRAIT);
+
         this.assertImagesResults();
     }
 
@@ -61,6 +68,12 @@ public class ScrollViewTest extends UIBaseTests {
     public void safe_area_images_overflow() throws Exception {
         this.homePageExtended.navigateTo("safe-area-images-overflow");
         this.compareScreens(5);
+
+        this.device.rotate(ScreenOrientation.LANDSCAPE);
+        this.compareScreens(5);
+
+        this.device.rotate(ScreenOrientation.PORTRAIT);
+
         this.assertImagesResults();
     }
 
@@ -68,6 +81,12 @@ public class ScrollViewTest extends UIBaseTests {
     public void safe_area_images_root_element() throws Exception {
         this.homePageExtended.navigateTo("safe-area-root-element");
         this.compareScreens(5);
+
+        this.device.rotate(ScreenOrientation.LANDSCAPE);
+        this.compareScreens(5);
+
+        this.device.rotate(ScreenOrientation.PORTRAIT);
+
         this.assertImagesResults();
     }
 
@@ -75,6 +94,12 @@ public class ScrollViewTest extends UIBaseTests {
     public void safe_area_images_sub_element() throws Exception {
         this.homePageExtended.navigateTo("safe-area-sub-element");
         this.compareScreens(5);
+
+        this.device.rotate(ScreenOrientation.LANDSCAPE);
+        this.compareScreens(5);
+
+        this.device.rotate(ScreenOrientation.PORTRAIT);
+
         this.assertImagesResults();
     }
 
