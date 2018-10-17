@@ -50,6 +50,34 @@ public class ScrollViewTest extends UIBaseTests {
         this.assertImagesResults();
     }
 
+    @Test(groups = {"ios"})
+    public void safe_area_images() throws Exception {
+        this.homePageExtended.navigateTo("safe-area-images");
+        this.compareScreens(5);
+        this.assertImagesResults();
+    }
+
+    @Test(groups = {"ios"})
+    public void safe_area_images_overflow() throws Exception {
+        this.homePageExtended.navigateTo("safe-area-images-overflow");
+        this.compareScreens(5);
+        this.assertImagesResults();
+    }
+
+    @Test(groups = {"ios"})
+    public void safe_area_images_root_element() throws Exception {
+        this.homePageExtended.navigateTo("safe-area-root-element");
+        this.compareScreens(5);
+        this.assertImagesResults();
+    }
+
+    @Test(groups = {"ios"})
+    public void safe_area_images_sub_element() throws Exception {
+        this.homePageExtended.navigateTo("safe-area-sub-element");
+        this.compareScreens(5);
+        this.assertImagesResults();
+    }
+
     public void swipeToBottom(java.util.List<UIElement> elements, int index) {
         if (this.settings.platform == PlatformType.Android) {
             elements.get(index).findElement(this.locators.viewGroupLocator()).swipeInElement(SwipeElementDirection.UP, 100, 100);
