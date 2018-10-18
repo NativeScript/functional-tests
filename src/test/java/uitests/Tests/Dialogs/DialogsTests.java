@@ -169,7 +169,7 @@ public class DialogsTests extends MobileTest {
 //
 //    @Test(groups = {"ios"})
 //    public void dialogs_promptCapitalizationSentences() throws Exception {
-//        UIElement btnShowDialog = this.find.byText("promptCapitalizationAll");
+//        UIElement btnShowDialog = this.find.byText("prompt CapitalizationAll");
 //        btnShowDialog.click();
 //        String text = "prompt. capitalization. sentences";
 //        this.setText(text);
