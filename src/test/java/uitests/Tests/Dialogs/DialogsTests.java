@@ -1,6 +1,5 @@
 package uitests.Tests.Dialogs;
 
-import com.oracle.tools.packager.Log;
 import functional.tests.core.mobile.basetest.MobileTest;
 import functional.tests.core.mobile.element.UIElement;
 import org.openqa.selenium.By;
@@ -217,9 +216,9 @@ public class DialogsTests extends MobileTest {
             UIElement shiftKey = this.wait.waitForVisible(By.id("shift"), this.settings.shortTimeout, true);
             Boolean isKeyboardUpperCase = this.isKeyboardUpperCase();
             if ((isCharUpperCase && isKeyboardUpperCase) || (!isCharUpperCase && !isKeyboardUpperCase)) {
-                Log.info("Keyboard state is ok.");
+                this.log.info("Keyboard state is ok.");
             } else {
-                Log.info("Switch upper/lower case state.");
+                this.log.info("Switch upper/lower case state.");
                 shiftKey.tap();
             }
 
