@@ -92,21 +92,27 @@ public class SdkCameraTests extends SdkBaseTest {
             } else {
                 // Request permissions
                 this.wait.waitForVisible(this.locators.byText("Request permissions")).tap();
+                this.log.logScreen("after request permissions", "after request permissions");
                 this.handlePermissions();
+                this.log.logScreen("after request permissions are handled", "after request permissions are handled");
                 if (this.settings.platform == PlatformType.iOS) {
                     // Permissions popup is displayed twice on iOS.
                     this.handlePermissions();
                 }
 
                 // Take photo
+                this.log.logScreen("before first 'Take Photo'", "before first 'Take Photo'");
                 this.wait.waitForVisible(this.locators.byText("Take Photo")).tap();
+                this.log.logScreen("after first 'Take Photo'", "after first 'Take Photo'");
                 if (this.settings.platform == PlatformType.Android) {
                     this.handlePermissionsAfterTakePicture();
 
                     // Take phone do not work first time on Android
+                    this.log.logScreen("before navigate back", "before navigate back");
                     Wait.sleep(1000);
                     this.client.driver.navigate().back();
                     Wait.sleep(1000);
+                    this.log.logScreen("after navigate back", "after navigate back");
                     this.wait.waitForVisible(this.locators.byText("Take Photo")).tap();
 
                     this.wait.waitForVisible(this.shutterButtonLocator()).tap();
