@@ -145,7 +145,7 @@ public class DialogsTests extends MobileTest {
         this.dialogsPage.tapOkBtn();
         Assert.assertNotNull(this.find.byText(DialogsPage.name1, false, 2));
     }
-    
+
     @Test(groups = {"ios"})
     public void dialogs_promptCapitalizationNone() {
         UIElement btnShowDialog = this.find.byText("promptCapitalizationNone");
