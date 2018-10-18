@@ -106,7 +106,7 @@ public class SdkCameraTests extends SdkBaseTest {
                     // Take phone do not work first time on Android
                     Wait.sleep(1000);
                     this.app.navigateBack();
-                    Wait.sleep(1000);
+                    Wait.sleep(5000);
                     this.wait.waitForVisible(this.locators.byText("Take Photo")).tap();
 
                     this.wait.waitForVisible(this.shutterButtonLocator()).tap();

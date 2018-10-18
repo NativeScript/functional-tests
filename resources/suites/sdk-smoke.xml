@@ -2,12 +2,7 @@
 <suite name="SDK Smoke Tests" verbose="1">
     <test name="TextField">
         <classes>
-            <class name="sdkexamples.Tests.SdkTextFieldTests"/>
-        </classes>
-    </test>
-    <test name="TextView">
-        <classes>
-            <class name="sdkexamples.Tests.SdkTextViewTests"/>
+            <class name="sdkexamples.Tests.SdkCameraTests"/>
         </classes>
     </test>
 </suite>
