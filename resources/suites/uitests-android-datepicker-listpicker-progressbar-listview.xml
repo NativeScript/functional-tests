@@ -51,6 +51,11 @@
         </packages>
     </test>
     <test name="ScrollView">
+        <groups>
+            <run>
+                <include name="android"/>
+            </run>
+        </groups>
         <packages>
             <package name="uitests.Tests.ScrollView"/>
         </packages>
