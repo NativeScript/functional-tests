@@ -2,10 +2,10 @@ package uitests.Tests.Issues;
 
 import functional.tests.core.enums.ClickType;
 import functional.tests.core.enums.PlatformType;
+import functional.tests.core.enums.SwipeElementDirection;
 import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.mobile.find.Wait;
 import functional.tests.core.utils.OSUtils;
-import functional.tests.core.enums.SwipeElementDirection;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ScreenOrientation;
 import org.testng.annotations.Test;
@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
+@SuppressWarnings("groupsTestNG")
 public class IssuesTestsCommon extends IssuesBaseTest {
 
     private int compareScreens = 10;
@@ -38,77 +39,53 @@ public class IssuesTestsCommon extends IssuesBaseTest {
     public void issue_2942_keyBoardFocusInListViewTemplate() throws Exception {
         this.issuesBasePage.navToPage("2942");
         this.find.byTextContains("Click me 1st").tap();
-        if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0) {
+        if (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) {
 
-            if(this.imageVerification.compareScreens("issue_2942_keyBoardFocusInListViewTemplate_with_suggestions",5,0, this.maxPixelTolerance, 0.05))
-            {
-                this.assertScreen("issue_2942_keyBoardFocusInListViewTemplate_with_suggestions",5, 0.05);
+            if (this.imageVerification.compareScreens("issue_2942_keyBoardFocusInListViewTemplate_with_suggestions", 5, 0, this.maxPixelTolerance, 0.05)) {
+                this.assertScreen("issue_2942_keyBoardFocusInListViewTemplate_with_suggestions", 5, 0.05);
+            } else if (this.imageVerification.compareScreens("issue_2942_keyBoardFocusInListViewTemplate_with_suggestions_info", 5, 0, this.maxPixelTolerance, 0.05)) {
+                this.assertScreen("issue_2942_keyBoardFocusInListViewTemplate_with_suggestions_info", 5, 0.05);
+            } else {
+                this.assertScreen("issue_2942_keyBoardFocusInListViewTemplate_without_suggestions", 5, 0.05);
             }
-            else if(this.imageVerification.compareScreens("issue_2942_keyBoardFocusInListViewTemplate_with_suggestions_info",5,0, this.maxPixelTolerance, 0.05))
-            {
-                this.assertScreen("issue_2942_keyBoardFocusInListViewTemplate_with_suggestions_info",5, 0.05);
-            }
-            else {
-                this.assertScreen("issue_2942_keyBoardFocusInListViewTemplate_without_suggestions",5, 0.05);
-            }
-        }
-        else {
+        } else {
             this.compareScreens(15, 0.22);
         }
         UIElement textFieldSecond = this.find.byTextContains("Click me 2nd");
         textFieldSecond.tap();
-        if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0) {
+        if (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) {
 
-            if(this.imageVerification.compareScreens("issue_2942_keyBoardFocusInListViewTemplate_2",5,0, this.maxPixelTolerance, 0.05))
-            {
-                this.assertScreen("issue_2942_keyBoardFocusInListViewTemplate_2",5, 0.05);
+            if (this.imageVerification.compareScreens("issue_2942_keyBoardFocusInListViewTemplate_2", 5, 0, this.maxPixelTolerance, 0.05)) {
+                this.assertScreen("issue_2942_keyBoardFocusInListViewTemplate_2", 5, 0.05);
+            } else {
+                this.assertScreen("issue_2942_keyBoardFocusInListViewTemplate_without_suggestions", 5, 0.05);
             }
-            else {
-                this.assertScreen("issue_2942_keyBoardFocusInListViewTemplate_without_suggestions",5, 0.05);
-            }
-        }
-        else {
+        } else {
             this.compareScreens(15, 0.40);
         }
 
 
-        UIElement btn3rd = null;
+        UIElement btn3rd;
         if (this.settings.platform == PlatformType.Android) {
             btn3rd = this.find.byTextContains("3rd");
             btn3rd.tap();
-            if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0) {
+            if (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) {
 
-                if(this.imageVerification.compareScreens("issue_2942_keyBoardFocusInListViewTemplate_3",5,0, this.maxPixelTolerance, 0.05))
-                {
-                    this.assertScreen("issue_2942_keyBoardFocusInListViewTemplate_3",5, 0.05);
+                if (this.imageVerification.compareScreens("issue_2942_keyBoardFocusInListViewTemplate_3", 5, 0, this.maxPixelTolerance, 0.05)) {
+                    this.assertScreen("issue_2942_keyBoardFocusInListViewTemplate_3", 5, 0.05);
+                } else {
+                    this.assertScreen("issue_2942_keyBoardFocusInListViewTemplate_without_suggestions", 5, 0.05);
                 }
-                else {
-                    this.assertScreen("issue_2942_keyBoardFocusInListViewTemplate_without_suggestions",5, 0.05);
-                }
-            }
-            else {
+            } else {
                 this.compareScreens(15, 0.20);
             }
         }
 
-        if (this.settings.isRealDevice) {
-            textFieldSecond.tap();
-            Wait.sleep(3000);
-            textFieldSecond.sendKeys("3");
-            this.compareScreens(15, 0.03);
-
-            if (this.settings.platform == PlatformType.Android) {
-                btn3rd.tap();
-            }
-        }
-        if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0) {
-            //nothing here
-        }
-        else{
+        if (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) {
+            this.log.info("Skip image verification.");
+        } else {
             this.assertImagesResults();
         }
-
-
     }
 
     // appium issue cannot click on element on landscape mode
@@ -121,37 +98,31 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         this.issuesBasePage.navToPage("2942");
         this.client.getDriver().rotate(ScreenOrientation.LANDSCAPE);
         this.find.byTextContains("Click me 1st").tap();
-        if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0) {
+        if (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) {
 
-            if(this.imageVerification.compareScreens("issue_2942_keyBoardFocusInListViewTemplateLandScape_with_suggestions",5,0, this.maxPixelTolerance, 0.05))
-            {
-                this.assertScreen("issue_2942_keyBoardFocusInListViewTemplateLandScape_with_suggestions",5, 0.05);
+            if (this.imageVerification.compareScreens("issue_2942_keyBoardFocusInListViewTemplateLandScape_with_suggestions", 5, 0, this.maxPixelTolerance, 0.05)) {
+                this.assertScreen("issue_2942_keyBoardFocusInListViewTemplateLandScape_with_suggestions", 5, 0.05);
+            } else if (this.imageVerification.compareScreens("issue_2942_keyBoardFocusInListViewTemplateLandScape_with_suggestions_info", 5, 0, this.maxPixelTolerance, 0.05)) {
+                this.assertScreen("issue_2942_keyBoardFocusInListViewTemplateLandScape_with_suggestions_info", 5, 0.05);
+            } else {
+                this.assertScreen("issue_2942_keyBoardFocusInListViewTemplateLandScape_without_suggestions", 5, 0.05);
             }
-            else if(this.imageVerification.compareScreens("issue_2942_keyBoardFocusInListViewTemplateLandScape_with_suggestions_info",5,0, this.maxPixelTolerance, 0.05))
-            {
-                this.assertScreen("issue_2942_keyBoardFocusInListViewTemplateLandScape_with_suggestions_info",5, 0.05);
-            }
-            else {
-                this.assertScreen("issue_2942_keyBoardFocusInListViewTemplateLandScape_without_suggestions",5, 0.05);
-            }
-        }
-        else {
+        } else {
             this.compareScreens(15, 0.05);
         }
         this.hideKeyBoard();
         UIElement textFieldSecond = this.find.byTextContains("Click me 2nd");
         textFieldSecond.tap();
-        if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0) {
-            this.assertScreen("issue_2942_keyBoardFocusInListViewTemplateLandScape_2",5, 0.05);
-        }
-        else {
+        if (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) {
+            this.assertScreen("issue_2942_keyBoardFocusInListViewTemplateLandScape_2", 5, 0.05);
+        } else {
             this.compareScreens(15, 0.05);
         }
         this.hideKeyBoard();
         this.client.getDriver().rotate(ScreenOrientation.PORTRAIT);
-        if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0) {
-        }
-        else {
+        if (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) {
+            this.log.info("Skip image verification.");
+        } else {
             this.assertImagesResults();
         }
     }
@@ -228,10 +199,10 @@ public class IssuesTestsCommon extends IssuesBaseTest {
     public void issue_3211_btnBackgroundInsideDialogs() throws Exception {
         this.issuesBasePage.navToPage("3211");
         this.issuesBasePage.find.byText("alert me").tap();
-        this.wait.sleep(1500);
+        Wait.sleep(1500);
         this.compareScreens(5);
         this.find.byText("OK").tap();
-        this.wait.sleep(1500);
+        Wait.sleep(1500);
         this.assertImagesResults();
     }
 
@@ -294,64 +265,52 @@ public class IssuesTestsCommon extends IssuesBaseTest {
     @Test(groups = {"android", "ios"})
     public void issue_3354_ios_hint() throws Exception {
         this.issuesBasePage.navToPage("3354-ios");
-        if(this.settings.platform == PlatformType.iOS && (double)this.settings.platformVersion == 11.2) {
-            this.assertScreen("issue_3354_ios_hint",15, 0.02);
-        }
-        else {
+        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion == 11.2) {
+            this.assertScreen("issue_3354_ios_hint", 15, 0.02);
+        } else {
             this.compareScreens(10);
         }
 
-        UIElement textField = null;
-        if(this.settings.platform==PlatformType.Android)
-        {
+        UIElement textField;
+        if (this.settings.platform == PlatformType.Android) {
             textField = this.find.byLocator(this.locators.editTextLocator());
-        }
-        else
-        {
+        } else {
             textField = this.find.byLocator(this.locators.textViewLocator());
         }
 
         textField.setText("11111");
-        if(this.settings.platform==PlatformType.Android)
-        {
-            try{
-                this.wait.sleep(3000);
+        if (this.settings.platform == PlatformType.Android) {
+            try {
+                Wait.sleep(3000);
                 this.client.driver.hideKeyboard();
-            }
-            catch (Exception e)
-            {
-
+            } catch (Exception e) {
+                this.log.info("Failed to hide keyboard.");
             }
         }
-        if(this.settings.platform == PlatformType.iOS && (double)this.settings.platformVersion == 11.2) {
+        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion == 11.2) {
 
-            if(this.imageVerification.compareScreens("issue_3354_ios_hint_2_with_suggestions",15,0, this.maxPixelTolerance, 0.02))
-            {
-                this.assertScreen("issue_3354_ios_hint_2_with_suggestions",15, 0.02);
+            if (this.imageVerification.compareScreens("issue_3354_ios_hint_2_with_suggestions", 15, 0, this.maxPixelTolerance, 0.02)) {
+                this.assertScreen("issue_3354_ios_hint_2_with_suggestions", 15, 0.02);
+            } else {
+                this.assertScreen("issue_3354_ios_hint_2_without_suggestions", 15, 0.02);
             }
-            else {
-                this.assertScreen("issue_3354_ios_hint_2_without_suggestions",15, 0.02);
-            }
-        }
-        else {
+        } else {
             this.compareScreens(15, 0.02);
         }
-        this.find.byText("clear text",false,5).tap();
-        if(this.settings.platform == PlatformType.iOS && (double)this.settings.platformVersion == 11.2) {
-            this.assertScreen("issue_3354_ios_hint_3",15, 0.02);
-        }
-        else {
+        this.find.byText("clear text", false, 5).tap();
+        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion == 11.2) {
+            this.assertScreen("issue_3354_ios_hint_3", 15, 0.02);
+        } else {
             this.compareScreens(15, 0.02);
         }
-        if(this.settings.platform == PlatformType.iOS && (double)this.settings.platformVersion == 11.2) {
-
-        }
-        else {
+        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion == 11.2) {
+            this.log.info("Skip image verification.");
+        } else {
             this.assertImagesResults();
         }
     }
 
-    //@Test(groups = {"ios"})
+    @Test(enabled = false, groups = {"ios"})
     public void issue_4283_internet_sharing() throws Exception {
 
         Robot robot = new Robot();
@@ -392,40 +351,41 @@ public class IssuesTestsCommon extends IssuesBaseTest {
 
         this.wait.waitForVisible(this.locators.byText("testBtn")).tap();
         this.compareScreens(5);
-        this.find.byText("OK", false,5).tap();
-        this.find.byText("testLabel", false,5).tap();
+        this.find.byText("OK", false, 5).tap();
+        this.find.byText("testLabel", false, 5).tap();
         this.compareScreens(5);
-        this.find.byText("OK", false,5).tap();
-        this.find.byText("testStackLayout", false,5).tap();
+        this.find.byText("OK", false, 5).tap();
+        this.find.byText("testStackLayout", false, 5).tap();
         this.compareScreens(5);
-        this.find.byText("OK", false,5).tap();
-        this.compareScreens(5);
-
-        this.find.byText("toggleUserInteraction", false,5).tap();
-
-        this.find.byText("testBtn", false,5).tap();
-        this.compareScreens(5);
-        this.find.byText("testLabel", false,5).tap();
-        this.compareScreens(5);
-        this.find.byText("testStackLayout", false,5).tap();
+        this.find.byText("OK", false, 5).tap();
         this.compareScreens(5);
 
+        this.find.byText("toggleUserInteraction", false, 5).tap();
 
-        this.find.byText("toggleUserInteraction", false,5).tap();
+        this.find.byText("testBtn", false, 5).tap();
+        this.compareScreens(5);
+        this.find.byText("testLabel", false, 5).tap();
+        this.compareScreens(5);
+        this.find.byText("testStackLayout", false, 5).tap();
+        this.compareScreens(5);
 
-        this.find.byText("testBtn", false,5).tap();
+
+        this.find.byText("toggleUserInteraction", false, 5).tap();
+
+        this.find.byText("testBtn", false, 5).tap();
         this.compareScreens(5);
-        this.find.byText("OK", false,5).tap();
-        this.find.byText("testLabel", false,5).tap();
+        this.find.byText("OK", false, 5).tap();
+        this.find.byText("testLabel", false, 5).tap();
         this.compareScreens(5);
-        this.find.byText("OK", false,5).tap();
-        this.find.byText("testStackLayout", false,5).tap();
+        this.find.byText("OK", false, 5).tap();
+        this.find.byText("testStackLayout", false, 5).tap();
         this.compareScreens(5);
-        this.find.byText("OK", false,5).tap();
+        this.find.byText("OK", false, 5).tap();
         this.compareScreens(5);
 
         this.assertImagesResults();
     }
+
     private void sendShareInternetKeys(Robot robot) {
         this.log.info("send key cmd + y");
         robot.keyPress(KeyEvent.VK_META);

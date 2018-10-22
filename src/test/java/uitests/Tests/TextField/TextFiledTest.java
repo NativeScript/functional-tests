@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import uitests.Screens.HomePageExtended;
 import uitests.Tests.UIBaseTests;
 
+@SuppressWarnings("groupsTestNG")
 public class TextFiledTest extends UIBaseTests {
     private int maxPixelTolerance = 2147483647;
     public HomePageExtended homePageExtended;
@@ -52,8 +53,8 @@ public class TextFiledTest extends UIBaseTests {
     @Test(groups = {"android", "ios"})
     public void blur_focus_textView_TextField() throws Exception {
         this.homePageExtended.navigateTo("focus-blur-events");
-        UIElement textFieldLocator;// = this.locators.textFieldLocator();
-        UIElement textViewLocator;// = this.locators.textViewLocator();
+        UIElement textFieldLocator;
+        UIElement textViewLocator;
         if (this.settings.platform == PlatformType.Android) {
             textFieldLocator = this.find.elementsByLocator(this.locators.editTextLocator()).get(0);
             textViewLocator = this.find.elementsByLocator(this.locators.editTextLocator()).get(1);
@@ -64,37 +65,31 @@ public class TextFiledTest extends UIBaseTests {
 
         textFieldLocator.tap();
         textViewLocator.tap();
-        if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0) {
-            if(this.imageVerification.compareScreens("blur_focus_textView_TextField_with_suggestions",5,0, this.maxPixelTolerance, 0.1))
-            {
-                this.assertScreen("blur_focus_textView_TextField_with_suggestions",5, 0.1);
+        if (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) {
+            if (this.imageVerification.compareScreens("blur_focus_textView_TextField_with_suggestions", 5, 0, this.maxPixelTolerance, 0.1)) {
+                this.assertScreen("blur_focus_textView_TextField_with_suggestions", 5, 0.1);
+            } else {
+                this.assertScreen("blur_focus_textView_TextField_without_suggestions", 5, 0.1);
             }
-            else {
-                this.assertScreen("blur_focus_textView_TextField_without_suggestions",5, 0.1);
-            }
-        }
-        else {
-            this.compareScreens(5, 0.1);
+        } else {
+            this.compareScreens(5, 0.1, true);
         }
 
         textFieldLocator.tap();
 
-        if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0) {
-            if(this.imageVerification.compareScreens("blur_focus_textView_TextField_2_with_suggestions",5,0, this.maxPixelTolerance, 0.1))
-            {
-                this.assertScreen("blur_focus_textView_TextField_2_with_suggestions",5, 0.1);
+        if (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) {
+            if (this.imageVerification.compareScreens("blur_focus_textView_TextField_2_with_suggestions", 5, 0, this.maxPixelTolerance, 0.1)) {
+                this.assertScreen("blur_focus_textView_TextField_2_with_suggestions", 5, 0.1);
+            } else {
+                this.assertScreen("blur_focus_textView_TextField_2_without_suggestions", 5, 0.1);
             }
-            else {
-                this.assertScreen("blur_focus_textView_TextField_2_without_suggestions",5, 0.1);
-            }
-            }
-        else {
-            this.compareScreens(5, 0.1);
+        } else {
+            this.compareScreens(5, 0.1, true);
         }
         this.app.hideKeyboard();
-        if(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0) {
-        }
-        else{
+        if (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) {
+            this.log.info("Ignore image verification.");
+        } else {
             this.assertImagesResults();
         }
     }
