@@ -21,7 +21,12 @@ public class DialogsPage extends HomePageExtended {
         if (this.settings.platform == PlatformType.Android) {
             return this.find.elementsByLocator(this.locators.labelLocator()).get(1);
         } else if (this.settings.platform == PlatformType.iOS) {
-            return this.find.byLocator(this.locators.labelLocator());
+            if (this.settings.deviceName.contains("X")) {
+                return this.find.elementsByLocator(this.locators.labelLocator()).get(1);
+            } else {
+                return this.find.byLocator(this.locators.labelLocator());
+            }
+
         } else {
             return null;
         }
