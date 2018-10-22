@@ -1,8 +1,9 @@
 package uitests.Screens.Dialogs;
 
+import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.basetest.MobileContext;
 import functional.tests.core.mobile.element.UIElement;
-import functional.tests.core.enums.PlatformType;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import uitests.Screens.HomePageExtended;
 
@@ -24,12 +25,19 @@ public class DialogsPage extends HomePageExtended {
             if (this.settings.deviceName.contains("X")) {
                 return this.find.elementsByLocator(this.locators.labelLocator()).get(1);
             } else {
-                return this.find.byLocator(this.locators.labelLocator());
+                if (this.settings.platformVersion < 11) {
+                    return this.find.byLocator(By.xpath("//XCUIElementTypeStaticText"));
+                } else {
+                    return this.find.byLocator(this.locators.labelLocator());
+                }
             }
-
         } else {
             return null;
         }
+    }
+
+    public String getLabelText() {
+        return this.label().getText();
     }
 
     public void tapActionBtn() {

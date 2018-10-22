@@ -154,7 +154,7 @@ public class DialogsTests extends MobileTest {
         this.setText(text);
         Assert.assertFalse(this.isKeyboardUpperCase(), "After capital letter state of keyboard should be reset to lower case.");
         this.dialogsPage.tapOkBtn();
-        Assert.assertEquals(this.dialogsPage.label().getText(), text);
+        Assert.assertEquals(this.dialogsPage.getLabelText(), text);
     }
 
 
@@ -167,7 +167,7 @@ public class DialogsTests extends MobileTest {
         this.setText(text);
         Assert.assertTrue(this.isKeyboardUpperCase(), "After small letter state of keyboard should be reset to upper case.");
         this.dialogsPage.tapOkBtn();
-        Assert.assertEquals(this.dialogsPage.label().getText(), text);
+        Assert.assertEquals(this.dialogsPage.getLabelText(), text);
     }
 
 
@@ -183,7 +183,7 @@ public class DialogsTests extends MobileTest {
         this.setText(text2);
         Assert.assertTrue(this.isKeyboardUpperCase(), "Keyboard should be upper case for new sentence.");
         this.dialogsPage.tapOkBtn();
-        Assert.assertEquals(this.dialogsPage.label().getText(), text1 + text2);
+        Assert.assertEquals(this.dialogsPage.getLabelText(), text1 + text2);
     }
 
     @Test(groups = {"ios"})
@@ -198,7 +198,7 @@ public class DialogsTests extends MobileTest {
         this.setText(text2);
         Assert.assertTrue(this.isKeyboardUpperCase(), "Keyboard should be upper case for new word.");
         this.dialogsPage.tapOkBtn();
-        Assert.assertEquals(this.dialogsPage.label().getText(), text1 + text2);
+        Assert.assertEquals(this.dialogsPage.getLabelText(), text1 + text2);
     }
 
     private Boolean isKeyboardUpperCase() {
