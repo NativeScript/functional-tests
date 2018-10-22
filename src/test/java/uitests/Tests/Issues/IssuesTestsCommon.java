@@ -54,7 +54,6 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         UIElement textFieldSecond = this.find.byTextContains("Click me 2nd");
         textFieldSecond.tap();
         if (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) {
-
             if (this.imageVerification.compareScreens("issue_2942_keyBoardFocusInListViewTemplate_2", 5, 0, this.maxPixelTolerance, 0.05)) {
                 this.assertScreen("issue_2942_keyBoardFocusInListViewTemplate_2", 5, 0.05);
             } else {
@@ -88,7 +87,6 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         }
     }
 
-    // appium issue cannot click on element on landscape mode
     @Test(groups = {"android"})
     public void issue_2942_keyBoardFocusInListViewTemplateLandScape() throws Exception {
         if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 10) {
@@ -99,7 +97,6 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         this.client.getDriver().rotate(ScreenOrientation.LANDSCAPE);
         this.find.byTextContains("Click me 1st").tap();
         if (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) {
-
             if (this.imageVerification.compareScreens("issue_2942_keyBoardFocusInListViewTemplateLandScape_with_suggestions", 5, 0, this.maxPixelTolerance, 0.05)) {
                 this.assertScreen("issue_2942_keyBoardFocusInListViewTemplateLandScape_with_suggestions", 5, 0.05);
             } else if (this.imageVerification.compareScreens("issue_2942_keyBoardFocusInListViewTemplateLandScape_with_suggestions_info", 5, 0, this.maxPixelTolerance, 0.05)) {
@@ -108,7 +105,7 @@ public class IssuesTestsCommon extends IssuesBaseTest {
                 this.assertScreen("issue_2942_keyBoardFocusInListViewTemplateLandScape_without_suggestions", 5, 0.05);
             }
         } else {
-            this.compareScreens(15, 0.05);
+            this.compareScreens(15, 0.05, true);
         }
         this.hideKeyBoard();
         UIElement textFieldSecond = this.find.byTextContains("Click me 2nd");
@@ -116,7 +113,7 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         if (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) {
             this.assertScreen("issue_2942_keyBoardFocusInListViewTemplateLandScape_2", 5, 0.05);
         } else {
-            this.compareScreens(15, 0.05);
+            this.compareScreens(15, 0.05, true);
         }
         this.hideKeyBoard();
         this.client.getDriver().rotate(ScreenOrientation.PORTRAIT);
