@@ -265,7 +265,7 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion == 11.2) {
             this.assertScreen("issue_3354_ios_hint", 15, 0.02);
         } else {
-            this.compareScreens(10);
+            this.compareScreens(10, 0.02, true);
         }
 
         UIElement textField;
@@ -285,20 +285,19 @@ public class IssuesTestsCommon extends IssuesBaseTest {
             }
         }
         if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion == 11.2) {
-
             if (this.imageVerification.compareScreens("issue_3354_ios_hint_2_with_suggestions", 15, 0, this.maxPixelTolerance, 0.02)) {
                 this.assertScreen("issue_3354_ios_hint_2_with_suggestions", 15, 0.02);
             } else {
                 this.assertScreen("issue_3354_ios_hint_2_without_suggestions", 15, 0.02);
             }
         } else {
-            this.compareScreens(15, 0.02);
+            this.compareScreens(15, 0.02, true);
         }
         this.find.byText("clear text", false, 5).tap();
         if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion == 11.2) {
             this.assertScreen("issue_3354_ios_hint_3", 15, 0.02);
         } else {
-            this.compareScreens(15, 0.02);
+            this.compareScreens(15, 0.02, true);
         }
         if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion == 11.2) {
             this.log.info("Skip image verification.");

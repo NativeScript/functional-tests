@@ -2,16 +2,19 @@ package uitests.Tests.SearchBar;
 
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.element.UIElement;
+import functional.tests.core.mobile.find.Wait;
 import io.appium.java_client.android.AndroidDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uitests.Screens.HomePageExtended;
 import uitests.Tests.UIBaseTests;
 
+@SuppressWarnings("groupsTestNG")
 public class SearchBarTest extends UIBaseTests {
 
     public HomePageExtended homePageExtended;
     private int maxPixelTolerance = 2147483647;
+
     @BeforeClass(alwaysRun = true)
     public void beforeSearchBarTestClass() {
         this.homePageExtended = new HomePageExtended("search-bar", this.context);
@@ -22,20 +25,15 @@ public class SearchBarTest extends UIBaseTests {
         final int waitTime = 15;
         this.homePageExtended.navigateTo("issue-4147");
         this.wait.forVisibleElements(this.locators.searchBoxLocator(), 2, true);
-        if((this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0)||(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 8.0)||(this.settings.platform == PlatformType.Android && this.settings.deviceName == "Nexus5x")) {
-
-            if(this.imageVerification.compareScreens("issue_4147_without_suggestions",5,0, this.maxPixelTolerance, 0.05))
-            {
-                this.assertScreen("issue_4147_without_suggestions",waitTime, 0.05);
+        if ((this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) || (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 8.0)) {
+            if (this.imageVerification.compareScreens("issue_4147_without_suggestions", 5, 0, this.maxPixelTolerance, 0.05)) {
+                this.assertScreen("issue_4147_without_suggestions", waitTime, 0.05);
+            } else if (this.imageVerification.compareScreens("issue_4147_with_suggestions_info", 5, 0, this.maxPixelTolerance, 0.05)) {
+                this.assertScreen("issue_4147_with_suggestions_info", waitTime, 0.05);
+            } else {
+                this.assertScreen("issue_4147_with_suggestions", waitTime, 0.05);
             }
-            else if(this.imageVerification.compareScreens("issue_4147_with_suggestions_info",5,0, this.maxPixelTolerance, 0.05)) {
-                this.assertScreen("issue_4147_with_suggestions_info",waitTime, 0.05);
-            }
-            else {
-                this.assertScreen("issue_4147_with_suggestions",waitTime, 0.05);
-            }
-        }
-        else {
+        } else {
             this.compareScreens(waitTime);
         }
 
@@ -48,21 +46,16 @@ public class SearchBarTest extends UIBaseTests {
         this.setText(1, "test");
         this.setText(2, "test");
         this.setText(3, "test");
-        if((this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0)) {
+        if ((this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0)) {
 
-            if(this.imageVerification.compareScreens("issue_4147_2_with_suggestions",waitTime,0, this.maxPixelTolerance, 0.05))
-            {
-                this.assertScreen("issue_4147_2_with_suggestions",waitTime, 0.05);
+            if (this.imageVerification.compareScreens("issue_4147_2_with_suggestions", waitTime, 0, this.maxPixelTolerance, 0.05)) {
+                this.assertScreen("issue_4147_2_with_suggestions", waitTime, 0.05);
+            } else {
+                this.assertScreen("issue_4147_2_without_suggestions", waitTime, 0.05);
             }
-            else {
-                this.assertScreen("issue_4147_2_without_suggestions",waitTime, 0.05);
-            }
-        }
-        else if((this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 8.0)||(this.settings.platform == PlatformType.Android && this.settings.deviceName == "Nexus5x")) {
-            this.assertScreen("issue_4147_2",waitTime, 0.05);
-        }
-        else
-            {
+        } else if ((this.settings.platform == PlatformType.Android && this.settings.platformVersion == 8.0)) {
+            this.assertScreen("issue_4147_2", waitTime, 0.05);
+        } else {
             this.compareScreens(waitTime);
         }
 
@@ -73,10 +66,9 @@ public class SearchBarTest extends UIBaseTests {
 
         this.app.hideKeyboard();
 
-        if((this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0)||(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 8.0)||(this.settings.platform == PlatformType.Android && this.settings.deviceName == "Nexus5x")) {
-            this.assertScreen("issue_4147_3",waitTime, 0.05);
-        }
-        else {
+        if ((this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) || (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 8.0)) {
+            this.assertScreen("issue_4147_3", waitTime, 0.05);
+        } else {
             this.compareScreens(waitTime);
         }
 
@@ -85,10 +77,9 @@ public class SearchBarTest extends UIBaseTests {
         } else {
             this.homePageExtended.navigateBack(this.find.byLocator(this.locators.imageButtonLocator()));
         }
-        if((this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0)||(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 8.0)||(this.settings.platform == PlatformType.Android && this.settings.deviceName == "Nexus5x")) {
-
-        }
-        else {
+        if ((this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) || (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 8.0)) {
+            this.log.info("Skip image verification.");
+        } else {
             this.assertImagesResults();
         }
     }
@@ -100,7 +91,7 @@ public class SearchBarTest extends UIBaseTests {
         }
         this.homePageExtended.navigateToMainPage();
         this.homePageExtended.navigateTo(this.find.byText("search-bar"));
-        this.wait.sleep(3000);
+        Wait.sleep(3000);
         this.app.hideKeyboard();
 
         this.assertScreen(10);
@@ -112,17 +103,14 @@ public class SearchBarTest extends UIBaseTests {
 
         this.setText(0, "apple");
         ((AndroidDriver) this.client.driver).pressKeyCode(66);
-        if((this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0)||(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 8.0)) {
+        if ((this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) || (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 8.0)) {
 
-            if(this.imageVerification.compareScreens("issue_5039_with_suggestions",10,0, this.maxPixelTolerance, 0.05))
-            {
-                this.assertScreen("issue_5039_with_suggestions",10, 0.05);
+            if (this.imageVerification.compareScreens("issue_5039_with_suggestions", 10, 0, this.maxPixelTolerance, 0.05)) {
+                this.assertScreen("issue_5039_with_suggestions", 10, 0.05);
+            } else {
+                this.assertScreen("issue_5039_without_suggestions", 10, 0.05);
             }
-            else {
-                this.assertScreen("issue_5039_without_suggestions",10, 0.05);
-            }
-        }
-        else {
+        } else {
             this.compareScreens(10);
         }
 
@@ -131,24 +119,19 @@ public class SearchBarTest extends UIBaseTests {
         this.setText(0, "apple");
         ((AndroidDriver) this.client.driver).pressKeyCode(66);
 
-        if((this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0)||(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 8.0)) {
-
-            if(this.imageVerification.compareScreens("issue_5039_2_with_suggestions",10,0, this.maxPixelTolerance, 0.05))
-            {
-                this.assertScreen("issue_5039_2_with_suggestions",10, 0.05);
+        if ((this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) || (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 8.0)) {
+            if (this.imageVerification.compareScreens("issue_5039_2_with_suggestions", 10, 0, this.maxPixelTolerance, 0.05)) {
+                this.assertScreen("issue_5039_2_with_suggestions", 10, 0.05);
+            } else {
+                this.assertScreen("issue_5039_2_without_suggestions", 10, 0.05);
             }
-            else {
-                this.assertScreen("issue_5039_2_without_suggestions",10, 0.05);
-            }
-        }
-        else {
+        } else {
             this.compareScreens(10);
         }
         this.app.hideKeyboard();
-        if((this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 27.0)||(this.settings.platform == PlatformType.Android && (double)this.settings.platformVersion == 8.0)) {
-
-        }
-        else {
+        if ((this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) || (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 8.0)) {
+            this.log.info("Skip image verification.");
+        } else {
             this.assertImagesResults();
         }
     }
