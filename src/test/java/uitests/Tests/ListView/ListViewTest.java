@@ -59,11 +59,11 @@ public class ListViewTest extends UIBaseTests {
             return;
         }
         this.homePageExtended.navigateTo("images-template");
-        this.compareScreens(5);
+        this.compareScreens(15);
         this.device.rotate(ScreenOrientation.LANDSCAPE);
-        this.compareScreens(5);
+        this.compareScreens(15);
         this.device.rotate(ScreenOrientation.PORTRAIT);
-        this.compareScreens(5);
+        this.compareScreens(15);
         this.assertImagesResults();
     }
 
@@ -72,30 +72,11 @@ public class ListViewTest extends UIBaseTests {
         this.homePageExtended.navigateTo("csslv");
         this.compareScreens(this.settings.defaultTimeout, 0.25);
         final String lastLocatorText = "NAME99";
-        if (this.settings.platform == PlatformType.Android) {
-            ScrollableListObject scrollableListObject = new ScrollableListObject(this.context) {
-                @Override
-                public String getMainContainerLocatorName() {
-                    return context.uiElementClass.listViewLocator();
-                }
 
-                @Override
-                public String getMainContainerItemsName() {
-                    if (settings.platform == PlatformType.Android) {
-                        return context.uiElementClass.textViewLocator();
-                    } else {
-                        return context.uiElementClass.cellLocator();
-                    }
-                }
-            };
-
-            scrollableListObject.scrollTo(lastLocatorText);
-        } else {
-            this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
-            this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
-            this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
-            this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
-        }
+        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
+        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
+        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
+        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
 
         By lastItemLocator = this.locators.byText(lastLocatorText);
         if (this.settings.platform == PlatformType.iOS) {
