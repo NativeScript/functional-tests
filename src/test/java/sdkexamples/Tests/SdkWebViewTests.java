@@ -35,13 +35,16 @@ public class SdkWebViewTests extends SdkBaseTest {
     public void sdkWebViewTest(String example) {
         this.mainPage.navigateTo(example);
         if (example.equalsIgnoreCase(pageWebViewCode)) {
-            // Check default example
-            By locator = this.locators.byText("WebView finished loading", false, false);
-            UIElement loaded = this.wait.waitForVisible(locator, this.settings.defaultTimeout, false);
-            Assert.notNull(loaded, "Failed to find label showing site is loaded!");
-            UIElement docsSiteContent = this.find.byTextContains("NativeScript Documentation");
-            Assert.notNull(docsSiteContent, "{N} Docs site not loaded!");
-            log.info("{N} Docs website loaded!");
+            // Appium crash on get page source -> find by text contains do not work (may be caused by appium@1.9.1).
+            if (this.settings.platformVersion > 5.0) {
+                // Check default example
+                By locator = this.locators.byText("WebView finished loading", false, false);
+                UIElement loaded = this.wait.waitForVisible(locator, this.settings.defaultTimeout, false);
+                Assert.notNull(loaded, "Failed to find label showing site is loaded!");
+                UIElement docsSiteContent = this.find.byTextContains("NativeScript Documentation");
+                Assert.notNull(docsSiteContent, "{N} Docs site not loaded!");
+                log.info("{N} Docs website loaded!");
+            }
 
             // Navigate to not existing page.
             log.info("Navigate to http://no.site");
@@ -58,7 +61,7 @@ public class SdkWebViewTests extends SdkBaseTest {
             if (this.settings.platform == PlatformType.iOS) {
                 ((IOSDriver) this.client.driver).hideKeyboard(HideKeyboardStrategy.PRESS_KEY, "Done");
                 Wait.sleep(3000);
-                docsSiteContent = this.find.byTextContains("NativeScript Documentation");
+                UIElement docsSiteContent = this.find.byTextContains("NativeScript Documentation");
                 Assert.notNull(docsSiteContent, "{N} Docs site not loaded!");
             }
         } else if (example.equalsIgnoreCase(pageWebViewHtml)) {
