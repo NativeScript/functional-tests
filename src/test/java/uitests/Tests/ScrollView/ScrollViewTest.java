@@ -1,8 +1,8 @@
 package uitests.Tests.ScrollView;
 
 import functional.tests.core.enums.PlatformType;
-import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.SwipeElementDirection;
+import functional.tests.core.mobile.element.UIElement;
 import org.openqa.selenium.ScreenOrientation;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -108,7 +108,7 @@ public class ScrollViewTest extends UIBaseTests {
     }
 
     public void swipeToBottom(java.util.List<UIElement> elements, int index) {
-        if (this.settings.platform == PlatformType.Android) {
+        if ((this.settings.platform == PlatformType.Android) && (this.settings.platformVersion != 4.4)) {
             elements.get(index).findElement(this.locators.viewGroupLocator()).swipeInElement(SwipeElementDirection.UP, 100, 100);
         } else {
             elements.get(index).swipeInElement(SwipeElementDirection.DOWN, 700, 200);
@@ -116,11 +116,10 @@ public class ScrollViewTest extends UIBaseTests {
     }
 
     public void swipeToTop(java.util.List<UIElement> elements, int index) {
-        if (this.settings.platform == PlatformType.Android) {
+        if ((this.settings.platform == PlatformType.Android) && (this.settings.platformVersion != 4.4)) {
             elements.get(index).findElement(this.locators.viewGroupLocator()).swipeInElement(SwipeElementDirection.UP, 100, 100);
         } else {
             elements.get(index).swipeInElement(SwipeElementDirection.DOWN, 700, 200);
-
         }
     }
 }
