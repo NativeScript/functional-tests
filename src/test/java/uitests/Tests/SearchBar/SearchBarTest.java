@@ -56,7 +56,7 @@ public class SearchBarTest extends UIBaseTests {
         } else if ((this.settings.platform == PlatformType.Android && this.settings.platformVersion == 8.0)) {
             this.assertScreen("issue_4147_2", waitTime, 0.05);
         } else {
-            this.compareScreens(waitTime);
+            this.compareScreens(waitTime,0.05);
         }
 
         this.clearSearchBar(0);

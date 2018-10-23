@@ -40,7 +40,6 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         this.issuesBasePage.navToPage("2942");
         this.find.byTextContains("Click me 1st").tap();
         if (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) {
-
             if (this.imageVerification.compareScreens("issue_2942_keyBoardFocusInListViewTemplate_with_suggestions", 5, 0, this.maxPixelTolerance, 0.05)) {
                 this.assertScreen("issue_2942_keyBoardFocusInListViewTemplate_with_suggestions", 5, 0.05);
             } else if (this.imageVerification.compareScreens("issue_2942_keyBoardFocusInListViewTemplate_with_suggestions_info", 5, 0, this.maxPixelTolerance, 0.05)) {
@@ -209,14 +208,14 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         UIElement changeTranslucent = this.issuesBasePage.find.byText("changeTranslucent");
         changeTranslucent.tap();
 
-        double tollerance = 1D;
+        double tolerance = 1D;
         if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 10) {
-            tollerance = 3D;
+            tolerance = 3D;
         }
         UIElement navBar = this.issuesBasePage.find.byLocator(this.locators.navigationBarLocator());
-        this.compareElements(navBar, 5, tollerance);
+        this.compareElements(navBar, 5, tolerance);
         changeTranslucent.tap();
-        this.compareElements(navBar, 5, tollerance);
+        this.compareElements(navBar, 5, tolerance);
 
         this.issuesBasePage.find.byText("change speed to very slow").tap();
 
