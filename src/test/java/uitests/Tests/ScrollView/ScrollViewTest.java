@@ -34,7 +34,7 @@ public class ScrollViewTest extends UIBaseTests {
         this.swipeToBottom(elements, 3);
         this.swipeToBottom(elements, 4);
         this.swipeToBottom(elements, 4);
-        this.compareScreens(5, 0.015);
+        this.compareScreens(10, 0.015);
 
         this.swipeToTop(elements, 0);
         this.swipeToTop(elements, 0);
@@ -46,7 +46,7 @@ public class ScrollViewTest extends UIBaseTests {
         this.swipeToTop(elements, 3);
         this.swipeToTop(elements, 4);
         this.swipeToTop(elements, 4);
-        this.compareScreens(5, 0.015);
+        this.compareScreens(10, 0.015);
 
         this.assertImagesResults();
     }
