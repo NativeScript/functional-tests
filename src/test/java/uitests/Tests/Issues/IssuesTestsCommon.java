@@ -39,6 +39,13 @@ public class IssuesTestsCommon extends IssuesBaseTest {
     public void issue_2942_keyBoardFocusInListViewTemplate() throws Exception {
         this.issuesBasePage.navToPage("2942");
         this.find.byTextContains("Click me 1st").tap();
+
+        // Hack to handle keyboard popup dialog
+        if (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 8.0) {
+            this.client.driver.hideKeyboard();
+            this.find.byTextContains("Click me 1st").tap();
+        }
+
         if (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) {
             if (this.imageVerification.compareScreens("issue_2942_keyBoardFocusInListViewTemplate_with_suggestions", 5, 0, this.maxPixelTolerance, 0.05)) {
                 this.assertScreen("issue_2942_keyBoardFocusInListViewTemplate_with_suggestions", 5, 0.05);
