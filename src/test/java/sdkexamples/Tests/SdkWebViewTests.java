@@ -48,8 +48,10 @@ public class SdkWebViewTests extends SdkBaseTest {
 
             // Navigate to not existing page.
             log.info("Navigate to http://no.site");
-            this.find.byLocator(this.locators.editTextLocator()).setText("http://no.site");
-            this.find.byLocator(this.locators.editTextLocator()).tap();
+            UIElement edit = this.find.byLocator(this.locators.editTextLocator(), this.settings.defaultTimeout);
+            Assert.notNull(edit, "Can not find edit text to type url.");
+            edit.setText("http://no.site");
+            edit.tap();
 
             // On Android default not found page is displayed.
             if (this.settings.platform == PlatformType.Android) {
