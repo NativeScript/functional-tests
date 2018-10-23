@@ -1,5 +1,6 @@
 package sdkexamples.Tests;
 
+import functional.tests.core.enums.PlatformType;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import sdkexamples.SdkBaseTest;
@@ -25,6 +26,10 @@ public class SdkButtonTests extends SdkBaseTest {
         this.mainPage.navigateTo(pageButtonTap);
         this.mainPage.find.byText("Tap me!").click();
         this.mainPage.log.logScreen(pageButtonTap);
-        this.mainPage.find.byText("OK").click();
+        if ((this.settings.platform == PlatformType.iOS) && (this.settings.platformVersion < 10)) {
+            this.log.info("Auto accept alerts capability handles it automatically.");
+        } else {
+            this.mainPage.find.byText("OK").click();
+        }
     }
 }
