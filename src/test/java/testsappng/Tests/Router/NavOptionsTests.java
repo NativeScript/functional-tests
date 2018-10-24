@@ -9,6 +9,8 @@ import org.testng.annotations.Test;
 import testsappng.Screens.NavOptionsPage;
 import testsappng.TestsAppNgBase;
 
+import java.awt.*;
+
 public class NavOptionsTests extends TestsAppNgBase {
     protected NavOptionsPage navOptionsPage;
 
@@ -63,6 +65,8 @@ public class NavOptionsTests extends TestsAppNgBase {
         this.navOptionsPage.homePageLoaded();
     }
 
+    private Rectangle rect = new Rectangle();
+
     @Test(groups = {"android", "ios"})
     public void navOption_03_pageTransition() throws Exception {
         double tollerance = 7.5;
@@ -74,6 +78,7 @@ public class NavOptionsTests extends TestsAppNgBase {
             tollerance = 19;
         }
 
+        this.rect = this.navOptionsPage.getPageTransitionsBtn().getUIRectangle();
         this.navOptionsPage.pageTransitions();
 
         this.compareScreens(15, tollerance);
@@ -93,6 +98,21 @@ public class NavOptionsTests extends TestsAppNgBase {
         this.compareScreens(10, 2000, 6);
         this.navOptionsPage.navOptionsPageLoaded();
         this.assertImagesResults();
+        if (this.settings.platform == PlatformType.iOS) {
+//            long startTime = System.currentTimeMillis();
+//            Rectangle currentRect = this.navOptionsPage.getPageTransitionsBtn().getUIRectangle();
+//            this.log.info("Waiting for page-transition button current:" + currentRect.getX() + " expected: " + this.rect.getX());
+//            this.log.info("Waiting for page-transition button current:" + currentRect.getY() + " expected: " + this.rect.getY());
+//
+//            while ((currentRect.getX() != this.rect.getX()
+//                    || currentRect.getY() != this.rect.getY())
+//                    && System.currentTimeMillis() - startTime < 10000) {
+//                currentRect = this.navOptionsPage.getPageTransitionsBtn().getUIRectangle();
+//                this.log.info("Waiting for page-transition button current:" + currentRect.getX() + " expected: " + this.rect.getX());
+//                this.log.info("Waiting for page-transition button current:" + currentRect.getY() + " expected: " + this.rect.getY());
+//            }
+            this.wait(7000);
+        }
     }
 
     public void clearHistoryAndUpdate(String frameStack, String locationStack) {
