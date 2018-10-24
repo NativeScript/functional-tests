@@ -24,6 +24,7 @@ public class NavOptionsTests extends TestsAppNgBase {
         this.navOptionsPage.waitForPageTransitionToLoadToLoad();
         if (this.settings.platform == PlatformType.iOS) {
             this.navOptionsPage.backToMain();
+            this.navOptionsPage.getNavigationManager().resetNavigationMainPage();
         } else {
             this.navOptionsPage.navigateBack();
         }
@@ -102,21 +103,6 @@ public class NavOptionsTests extends TestsAppNgBase {
         this.compareScreens(10, 2000, 6);
         this.navOptionsPage.navOptionsPageLoaded();
         this.assertImagesResults();
-        if (this.settings.platform == PlatformType.iOS) {
-//            long startTime = System.currentTimeMillis();
-//            Rectangle currentRect = this.navOptionsPage.getPageTransitionsBtn().getUIRectangle();
-//            this.log.info("Waiting for page-transition button current:" + currentRect.getX() + " expected: " + this.rect.getX());
-//            this.log.info("Waiting for page-transition button current:" + currentRect.getY() + " expected: " + this.rect.getY());
-//
-//            while ((currentRect.getX() != this.rect.getX()
-//                    || currentRect.getY() != this.rect.getY())
-//                    && System.currentTimeMillis() - startTime < 10000) {
-//                currentRect = this.navOptionsPage.getPageTransitionsBtn().getUIRectangle();
-//                this.log.info("Waiting for page-transition button current:" + currentRect.getX() + " expected: " + this.rect.getX());
-//                this.log.info("Waiting for page-transition button current:" + currentRect.getY() + " expected: " + this.rect.getY());
-//            }
-            this.wait(7000);
-        }
     }
 
     public void clearHistoryAndUpdate(String frameStack, String locationStack) {

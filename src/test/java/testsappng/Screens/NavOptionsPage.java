@@ -46,7 +46,7 @@ public class NavOptionsPage extends HomePage {
     }
 
     public void backToMain() {
-        this.btnBackToMain().click();
+        this.btnBackToMain().tap();
         this.log.info("Click on btnBackToMain");
     }
 
