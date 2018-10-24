@@ -22,7 +22,11 @@ public class NavOptionsTests extends TestsAppNgBase {
     @AfterClass(alwaysRun = true)
     public void afterClassNavOptionsTests() throws Exception {
         this.navOptionsPage.waitForPageTransitionToLoadToLoad();
-        this.navOptionsPage.navigateBack();
+        if (this.settings.platform == PlatformType.iOS) {
+            this.navOptionsPage.backToMain();
+        } else {
+            this.navOptionsPage.navigateBack();
+        }
     }
 
     @Test(groups = {"android", "ios"})
