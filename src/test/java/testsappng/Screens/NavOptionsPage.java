@@ -28,11 +28,15 @@ public class NavOptionsPage extends HomePage {
     public void pageTransitions() {
         Wait.sleep(2000);
 
-        UIElement element = this.wait.waitForVisible(this.locators.byText(pageTransitions));
+        UIElement element = this.getPageTransitionsBtn();
         this.log.info("pageTransitions isDisplayed " + element.isDisplayed());
         this.navigationManager.setCurrentPage(pageTransitions);
         element.tap();
         this.log.info("Click on " + pageTransitions);
+    }
+
+    public UIElement getPageTransitionsBtn() {
+        return this.wait.waitForVisible(this.locators.byText(pageTransitions));
     }
 
     public void update() {
