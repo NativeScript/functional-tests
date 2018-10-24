@@ -20,7 +20,7 @@ public class BindingTests extends TestsAppNgBase {
         this.bindingPage.insertNewValues();
         this.bindingPage.getResults();
         if (isIos()) {
-            this.compareScreens(5);
+            this.compareScreens(5, 0.01);
         } else {
             Assert.assertTrue(this.bindingPage.compareResults("1", "0", "5"),
                     "Binding is not working");
