@@ -85,6 +85,9 @@ public class ListViewTest extends UIBaseTests {
         this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
         this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
         this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
+        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
+        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
+        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
 
         By lastItemLocator = this.locators.byText(lastLocatorText);
         if (this.settings.platform == PlatformType.iOS) {

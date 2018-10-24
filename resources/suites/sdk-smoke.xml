@@ -1,8 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="SDK Smoke Tests" verbose="1">
-    <test name="Button">
+    <test name="Dialogs">
         <classes>
-            <class name="sdkexamples.Tests.SdkButtonTests"/>
+            <class name="sdkexamples.Tests.SdkDialogsTests"/>
         </classes>
     </test>
 </suite>
