@@ -9,6 +9,8 @@ import org.testng.annotations.Test;
 import testsappng.Screens.NavOptionsPage;
 import testsappng.TestsAppNgBase;
 
+import java.awt.*;
+
 public class NavOptionsTests extends TestsAppNgBase {
     protected NavOptionsPage navOptionsPage;
 
@@ -22,6 +24,7 @@ public class NavOptionsTests extends TestsAppNgBase {
         this.navOptionsPage.waitForPageTransitionToLoadToLoad();
         if (this.settings.platform == PlatformType.iOS) {
             this.navOptionsPage.backToMain();
+            this.navOptionsPage.getNavigationManager().resetNavigationMainPage();
         } else {
             this.navOptionsPage.navigateBack();
         }
@@ -67,6 +70,8 @@ public class NavOptionsTests extends TestsAppNgBase {
         this.navOptionsPage.homePageLoaded();
     }
 
+    private Rectangle rect = new Rectangle();
+
     @Test(groups = {"android", "ios"})
     public void navOption_03_pageTransition() throws Exception {
         double tollerance = 7.5;
@@ -78,6 +83,7 @@ public class NavOptionsTests extends TestsAppNgBase {
             tollerance = 19;
         }
 
+        this.rect = this.navOptionsPage.getPageTransitionsBtn().getUIRectangle();
         this.navOptionsPage.pageTransitions();
 
         this.compareScreens(15, tollerance);
