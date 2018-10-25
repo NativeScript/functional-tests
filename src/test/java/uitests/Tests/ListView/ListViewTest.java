@@ -1,9 +1,8 @@
 package uitests.Tests.ListView;
 
 import functional.tests.core.enums.PlatformType;
-import functional.tests.core.extensions.ScrollableListObject;
-import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.enums.SwipeElementDirection;
+import functional.tests.core.mobile.element.UIElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ScreenOrientation;
 import org.testng.annotations.BeforeClass;
@@ -11,6 +10,7 @@ import org.testng.annotations.Test;
 import uitests.Screens.HomePageExtended;
 import uitests.Tests.UIBaseTests;
 
+@SuppressWarnings("groupsTestNG")
 public class ListViewTest extends UIBaseTests {
     private HomePageExtended homePageExtended;
 
@@ -73,21 +73,21 @@ public class ListViewTest extends UIBaseTests {
         this.compareScreens(this.settings.defaultTimeout, 0.25);
         final String lastLocatorText = "NAME99";
 
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 10);
+        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
+        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
+        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
+        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
+        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
+        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
+        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
+        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
+        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
+        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
+        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
+        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
+        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
+        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
+        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 1000);
 
         By lastItemLocator = this.locators.byText(lastLocatorText);
         if (this.settings.platform == PlatformType.iOS) {

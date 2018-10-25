@@ -26,10 +26,6 @@ public class SdkButtonTests extends SdkBaseTest {
         this.mainPage.navigateTo(pageButtonTap);
         this.mainPage.find.byText("Tap me!").click();
         this.mainPage.log.logScreen(pageButtonTap);
-        if ((this.settings.platform == PlatformType.iOS) && (this.settings.platformVersion < 10)) {
-            this.log.info("Auto accept alerts capability handles it automatically.");
-        } else {
-            this.mainPage.find.byText("OK").click();
-        }
+        this.mainPage.find.byText("OK").click();
     }
 }
