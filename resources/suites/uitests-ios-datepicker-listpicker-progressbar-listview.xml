@@ -60,4 +60,9 @@
             <package name="uitests.Tests.ScrollView"/>
         </packages>
     </test>
+    <test name="NestedFrames">
+        <packages>
+            <package name="uitests.Tests.NestedFrames"/>
+        </packages>
+    </test>
 </suite>
