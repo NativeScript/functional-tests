@@ -24,7 +24,7 @@ public class SmokeTests extends MobileTest {
     public void test_02_register() throws Exception {
         // Verify register page
         this.registerPage = this.homePage.register();
-        this.assertScreen("patientcare-register", this.settings.defaultTimeout, this.settings.defaultTimeout, 0.05);
+        this.assertScreen("patientcare-register", this.settings.defaultTimeout, 0.1);
 
         String email = String.format("nativescript_%s@telerik.com", System.currentTimeMillis());
         this.careContentPage = this.registerPage.register(email, "123", "N", "S");
