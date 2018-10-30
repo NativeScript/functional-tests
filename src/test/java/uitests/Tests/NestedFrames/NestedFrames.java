@@ -34,8 +34,10 @@ public class NestedFrames extends UIBaseTests {
     @Test(dataProvider = "example")
     public void nested_frames_test(String example) throws Exception {
         this.homePageExtended.navigateTo(example);
-        this.compareScreens(5);
+        this.compareScreens(example, 5);
         this.assertImagesResults();
         this.homePageExtended.getNavigationManager().slideBack();
     }
+
+
 }
