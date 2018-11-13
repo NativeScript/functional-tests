@@ -1652,6 +1652,14 @@
                 <testsuite>cuteness-ios</testsuite>
             </properties>
         </profile>
+        <profile>
+            <id>cuteness.sim.iphoneXR.ios12</id>
+            <properties>
+                <app.config>cuteness/cuteness.sim.iphoneXR.ios12.properties</app.config>
+                <testsuite>cuteness-ios</testsuite>
+            </properties>
+        </profile>
+
         <!--groceries profiles-->
         <profile>
             <id>groceries.emu.default.api17</id>
@@ -2648,6 +2656,13 @@
             <id>template-health-survey-ng.sim.iphoneX.ios11</id>
             <properties>
                 <app.config>templates/healthsurvey.sim.iphoneX.ios11.properties</app.config>
+                <testsuite>templates-healthsurvey</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-health-survey-ng.sim.iphoneXR.ios12</id>
+            <properties>
+                <app.config>templates/healthsurvey.sim.iphoneXR.ios12.properties</app.config>
                 <testsuite>templates-healthsurvey</testsuite>
             </properties>
         </profile>
