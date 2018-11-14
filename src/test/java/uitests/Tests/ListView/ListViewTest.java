@@ -2,6 +2,7 @@ package uitests.Tests.ListView;
 
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.enums.SwipeElementDirection;
+import functional.tests.core.extensions.ScrollableListObject;
 import functional.tests.core.mobile.element.UIElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ScreenOrientation;
@@ -73,21 +74,40 @@ public class ListViewTest extends UIBaseTests {
         this.compareScreens(this.settings.defaultTimeout, 0.25);
         final String lastLocatorText = "NAME99";
 
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
-        this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 1000);
+        if (this.settings.platform == PlatformType.Android) {
+            ScrollableListObject scrollableListObject = new ScrollableListObject(this.context) {
+                @Override
+                public String getMainContainerLocatorName() {
+                    return context.uiElementClass.listViewLocator();
+                }
+
+                @Override
+                public String getMainContainerItemsName() {
+                    if (settings.platform == PlatformType.Android) {
+                        return context.uiElementClass.textViewLocator();
+                    } else {
+                        return context.uiElementClass.cellLocator();
+                    }
+                }
+            };
+
+            scrollableListObject.scrollTo(lastLocatorText);
+        } else {
+            this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
+            this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
+            this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
+            this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
+            this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
+            this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
+            this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
+            this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
+            this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
+            this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
+            this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
+            this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
+            this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
+            this.context.gestures.swipeInWindow(SwipeElementDirection.DOWN, 700, 100);
+        }
 
         By lastItemLocator = this.locators.byText(lastLocatorText);
         if (this.settings.platform == PlatformType.iOS) {
