@@ -79,14 +79,14 @@
             </properties>
         </profile>
         <profile>
-            <id>animations.emu.default.api27</id>
+            <id>animations.emu.google.api27</id>
             <properties>
                 <app.config>animations/animations.emu.google.api27.properties</app.config>
                 <testsuite>animations</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>animations.emu.default.api28</id>
+            <id>animations.emu.google.api28</id>
             <properties>
                 <app.config>animations/animations.emu.google.api28.properties</app.config>
                 <testsuite>animations</testsuite>
@@ -1320,6 +1320,13 @@
             </properties>
         </profile>
         <profile>
+            <id>testsapptransitions.emu.google.api28</id>
+            <properties>
+                <app.config>testsapptransitions/testsapptransitions.emu.google.api28.properties</app.config>
+                <testsuite>testsapptransitions-android</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>testsapptransitions.sim.iphone6splus.ios93</id>
             <properties>
                 <app.config>testsapptransitions/testsapptransitions.sim.iphone6splus.ios93.properties</app.config>
@@ -1337,6 +1344,13 @@
             <id>testsapptransitions.sim.iphone7.ios110</id>
             <properties>
                 <app.config>testsapptransitions/testsapptransitions.sim.iphone7.ios110.properties</app.config>
+                <testsuite>testsapptransitions-ios</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>testsapptransitions.sim.iphoneXR.ios12</id>
+            <properties>
+                <app.config>testsapptransitions/testsapptransitions.sim.iphoneXR.ios12.properties</app.config>
                 <testsuite>testsapptransitions-ios</testsuite>
             </properties>
         </profile>
