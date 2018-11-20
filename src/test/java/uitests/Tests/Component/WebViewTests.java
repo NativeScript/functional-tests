@@ -31,7 +31,11 @@ public class WebViewTests extends MobileTest {
     public void webView_02() throws Exception {
         this.webViewBasePage.navigateToMainPage();
         this.webViewBasePage.navigateTo(this.wait.waitForVisible(this.locators.byText("webview")), "webviewtest");
-        this.assertScreen(this.settings.defaultTimeout * 5, 10);
+        double tolerance = 10.0;
+        if (this.context.settings.platform == PlatformType.Android) {
+            tolerance = 27.5;
+        }
+        this.assertScreen(this.settings.defaultTimeout * 5, tolerance);
     }
 
     @Test(groups = {"android", "ios"})
