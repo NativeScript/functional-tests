@@ -13,7 +13,7 @@ import uitests.Screens.Dialogs.ModalViewPage;
 public class ModalViewTests extends MobileTest {
     private ModalViewPage modalViewPage;
 
-    protected void waitForScreen(double tolerance) throws Exception {
+    private void waitForScreen(double tolerance) throws Exception {
         this.compareScreens(5, tolerance);
     }
 
@@ -84,7 +84,7 @@ public class ModalViewTests extends MobileTest {
     }
 
     @Test(groups = {"android", "ios"})
-    public void modalView_06_secondModalInCB() throws Exception {
+    public void modalView_06_secondModalInCB() {
         this.modalViewPage.tapSecondModalInCBBtn();
         this.modalViewPage.modalViewLoaded();
 
@@ -98,11 +98,16 @@ public class ModalViewTests extends MobileTest {
         Assert.assertNotNull(this.find.byText("username"), "Failed to find popup");
         this.modalViewPage.tapLoginBtn();
 
-        Assert.assertEquals(this.modalViewPage.textView().getText(), "Second/username/password");
+        String text = "Second/username/password";
+        if (this.settings.platform == PlatformType.iOS) {
+            this.wait.waitForVisible(this.locators.byText(text), this.settings.shortTimeout, true);
+        } else {
+            Assert.assertEquals(this.modalViewPage.textView().getText(), text);
+        }
     }
 
     @Test(groups = {"android"})
-    public void modalView_07_secondModalInTimer() throws Exception {
+    public void modalView_07_secondModalInTimer() {
         this.modalViewPage.tapSecondModalInTimerBtn();
         this.modalViewPage.modalViewLoaded();
 
