@@ -21,8 +21,16 @@ public class ModalViewPage extends HomePageExtended {
         return this.find.byTextContains("Login (full-screen)");
     }
 
-    private UIElement btnStrechedPopup() {
+    private UIElement btnStretchedPopup() {
         return this.find.byTextContains("Login (pop-up-stretched)");
+    }
+
+    private UIElement btnSecondModalInCBPopup() {
+        return this.find.byTextContains("Login (second modal in cb)");
+    }
+
+    private UIElement btnSecondModalInTimerPopup() {
+        return this.find.byTextContains("Login (second modal in timer)");
     }
 
     public void tapPopUpBtn() {
@@ -35,8 +43,18 @@ public class ModalViewPage extends HomePageExtended {
         this.log.info("Tap on 'full-screen' button.");
     }
 
-    public void tapPopupStrechedBtn() {
-        this.btnFullScreen().click();
+    public void tapPopupStretchedBtn() {
+        this.btnStretchedPopup().click();
+        this.log.info("Tap on 'full-screen' button.");
+    }
+
+    public void tapSecondModalInCBBtn() {
+        this.btnSecondModalInCBPopup().click();
+        this.log.info("Tap on 'full-screen' button.");
+    }
+
+    public void tapSecondModalInTimerBtn() {
+        this.btnSecondModalInTimerPopup().click();
         this.log.info("Tap on 'full-screen' button.");
     }
 
