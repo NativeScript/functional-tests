@@ -9,12 +9,13 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+@SuppressWarnings("groupsTestNG")
 public class QsfDemosTests extends QsfBaseTest {
 
     @AfterMethod(groups = {"android", "ios"})
     public void afterQsfDemosTest() {
         this.homePage.navigateBack();
-        if (this.homePage.loaded() == false) {
+        if (!this.homePage.loaded()) {
             Assert.fail("Home page NOT loaded");
         }
     }
@@ -54,7 +55,7 @@ public class QsfDemosTests extends QsfBaseTest {
         UIElement demoTitle = this.wait.waitForVisible(demoLocator, this.settings.shortTimeout, false);
         if (demoTitle == null) {
             this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 500, 500);
-            demoTitle = this.wait.waitForVisible(demoLocator, this.settings.shortTimeout, false);
+            demoTitle = this.find.byText(example, this.settings.shortTimeout);
         }
         Assert.assertNotNull(demoTitle, demoTitle + "not loaded.");
 
