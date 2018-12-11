@@ -1,6 +1,7 @@
 package nativescriptdemo.Tests;
 
 import functional.tests.core.enums.PlatformType;
+import functional.tests.core.enums.SwipeElementDirection;
 import functional.tests.core.mobile.element.UIElement;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -51,6 +52,10 @@ public class QsfDemosTests extends QsfBaseTest {
             demoLocator = By.xpath("//*[@name='ActionBar']//*[@label='" + example + "']");
         }
         UIElement demoTitle = this.wait.waitForVisible(demoLocator, this.settings.shortTimeout, false);
+        if (demoTitle == null) {
+            this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 500, 500);
+            demoTitle = this.wait.waitForVisible(demoLocator, this.settings.shortTimeout, false);
+        }
         Assert.assertNotNull(demoTitle, demoTitle + "not loaded.");
 
         // Log current screen
