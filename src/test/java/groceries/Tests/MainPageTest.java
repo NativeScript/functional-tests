@@ -3,7 +3,6 @@ package groceries.Tests;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.extensions.ExecutionOrder;
 import functional.tests.core.mobile.basetest.MobileTest;
-import functional.tests.core.mobile.element.UIElement;
 import groceries.Screens.*;
 import org.testng.Assert;
 import org.testng.ITestResult;
@@ -12,13 +11,13 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@SuppressWarnings("groupsTestNG")
 @Listeners(ExecutionOrder.class)
 public class MainPageTest extends MobileTest {
     private static final String PASSWORD = "password";
-    private static java.lang.String testText = "t123";
     private MainPage mainPage;
 
-    public String getUserName() {
+    private String getUserName() {
         String userName = "tnstest" + this.settings.platformVersion.toString() + "@tns.com";
         if ((this.settings.platform == PlatformType.iOS) && (this.settings.deviceName.toLowerCase().contains("x"))) {
             userName = userName.replace("@", "x@");
@@ -39,7 +38,7 @@ public class MainPageTest extends MobileTest {
         }
     }
 
-    public void loadGroceriesItemsPage() {
+    private void loadGroceriesItemsPage() {
         SecondaryLoginPage secondaryLoginPage = new SecondaryLoginPage();
         if (this.settings.platform == PlatformType.iOS) {
             if (!this.mainPage.loaded()) {
@@ -59,13 +58,13 @@ public class MainPageTest extends MobileTest {
     }
 
     @Test(groups = {"android", "ios"})
-    public void groceries_01_addItem() throws Exception {
-        UIElement element = this.mainPage.insertItem(testText);
+    public void groceries_01_addItem() {
+        this.mainPage.insertItem("t123");
         this.assertImagesResults();
     }
 
     @Test(groups = {"android", "ios"}, dependsOnMethods = {"groceries_01_addItem"})
-    public void groceries_02_removeItem() throws Exception {
+    public void groceries_02_removeItem() {
         GroceriesItem groceriesItem = this.mainPage.getGroceriesItem(0);
         groceriesItem.tapOnCheckBox();
         int listSize = this.mainPage.getListViewItems().size();
@@ -76,7 +75,7 @@ public class MainPageTest extends MobileTest {
     }
 
     @Test(groups = {"android", "ios"}, enabled = false, dependsOnMethods = {"groceries_02_removeItem"})
-    public void groceries_03_restoreRemovedItem() throws Exception {
+    public void groceries_03_restoreRemovedItem() {
         GroceriesRecentItemsPage recent = this.mainPage.tapOnResent();
 
         try {

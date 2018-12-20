@@ -3,7 +3,6 @@ package unittests.Screens;
 import functional.tests.core.mobile.basepage.BasePage;
 import functional.tests.core.mobile.element.UIElement;
 import org.openqa.selenium.By;
-import org.testng.Assert;
 
 public class HomePage extends BasePage {
 
@@ -34,17 +33,7 @@ public class HomePage extends BasePage {
 
         long startTime = System.currentTimeMillis();
         while ((System.currentTimeMillis() - startTime) < expectedExecutionTime) {
-
-            // isAppRunning() is implemented only for Android
-//            isAppRunning = this.context.getDevice().isAppRunning(this.settings.packageId);
-//            if (isAppRunning == false) {
-//                String message = "App crashed!";
-//                this.log.fatal(message);
-//                Assert.fail(message);
-//            }
-
             UIElement element = this.find.byLocator(this.locatorComplete(), 1);
-
             if (element != null) {
                 this.log.info("\'" + strCompleted + "\' found!");
                 break;

@@ -6,19 +6,20 @@ import org.testng.annotations.Test;
 import testsappng.Screens.ListViewBasePage;
 import testsappng.TestsAppNgBase;
 
+@SuppressWarnings("groupsTestNG")
 public class ListViewTests extends TestsAppNgBase {
 
-    public final static String LIST_VIEW_EXAMPLES_MAIN_VIEW_NAME = "ListViewExamples";
-    public final static String LIST_VIEW_EXAMPLE = "ListView";
-    public final static String LIST_VIEW_CUSTOM_TEMPLATE = "ListViewCustomTemplate";
-    public final static String LIST_VIEW_ASYNC_PIPE = "ListViewAsyncPipe";
-    public final static String LIST_VIEW_NESTED_TEMPLATE = "NestedTemplate";
-    public final static String LIST_VIEW_MULTIPLE_TEMPLATES = "MultipleTemplates";
+    private final static String LIST_VIEW_EXAMPLES_MAIN_VIEW_NAME = "ListViewExamples";
+    private final static String LIST_VIEW_EXAMPLE = "ListView";
+    private final static String LIST_VIEW_CUSTOM_TEMPLATE = "ListViewCustomTemplate";
+    private final static String LIST_VIEW_ASYNC_PIPE = "ListViewAsyncPipe";
+    private final static String LIST_VIEW_NESTED_TEMPLATE = "NestedTemplate";
+    private final static String LIST_VIEW_MULTIPLE_TEMPLATES = "MultipleTemplates";
 
-    protected ListViewBasePage listViewBasePage;
+    private ListViewBasePage listViewBasePage;
 
     @BeforeClass(alwaysRun = true)
-    public void beforeListViewTestClass() throws Exception {
+    public void beforeListViewTestClass() {
         this.listViewBasePage = new ListViewBasePage(ListViewTests.LIST_VIEW_EXAMPLES_MAIN_VIEW_NAME, this.context);
     }
 
@@ -43,8 +44,8 @@ public class ListViewTests extends TestsAppNgBase {
     @Test(groups = {"android", "ios"})
     public void listViewAsyncPipe_03() throws Exception {
         this.listViewBasePage.navigateTo(ListViewTests.LIST_VIEW_ASYNC_PIPE);
-        this.listViewBasePage.wait.waitForVisible(this.locators.byText("index: data item 11", false, false), 15, false);
-        this.assertScreen(20, 0.3);
+        this.listViewBasePage.wait.waitForVisible(this.locators.byText("index: data item 12", false, false), 30, false);
+        this.assertScreen(10, 0.3);
     }
 
     @Test(groups = {"android", "ios"})
