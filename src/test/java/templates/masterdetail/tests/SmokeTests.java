@@ -8,6 +8,7 @@ import templates.masterdetail.pages.HomePage;
 import org.testng.annotations.Test;
 
 
+@SuppressWarnings("groupsTestNG")
 public class SmokeTests extends MobileTest {
 
     @Test(description = "Verify home page looks OK.", groups = {"android", "ios"})
@@ -18,6 +19,7 @@ public class SmokeTests extends MobileTest {
 
     @Test(description = "Verify details page looks OK.", groups = {"android", "ios"})
     public void test_02_details_page_looks_ok() throws Exception {
+        // Navigate to details page
         HomePage homePage = new HomePage();
         if (this.settings.platform == PlatformType.Android) {
             homePage.navigate("BMW 5 Series");
@@ -26,6 +28,19 @@ public class SmokeTests extends MobileTest {
         }
         DetailsPage detailsPage = new DetailsPage();
         this.assertScreen("template-master-detail-details", this.settings.shortTimeout, 0.1);
+
+        // Navigate back
+        detailsPage.navigateBack();
+
+        // Navigate to details again
+        if (this.settings.platform == PlatformType.Android) {
+            homePage.navigate("BMW 5 Series");
+        } else {
+            homePage.navigate("Kia Sorento");
+        }
+        detailsPage = new DetailsPage();
+        this.assertScreen("template-master-detail-details", this.settings.shortTimeout, 0.1);
+
     }
 
     @Test(description = "Verify Edit page looks OK.", groups = {"android", "ios"})
