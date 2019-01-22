@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import templates.helloworldng.Screens.HomePage;
 import templates.helloworldng.Screens.ItemDetailPage;
 
+@SuppressWarnings("groupsTestNG")
 public class SmokeTests extends MobileTest {
 
     private HomePage homePage;
@@ -31,13 +32,14 @@ public class SmokeTests extends MobileTest {
     }
 
     @Test(groups = {"android", "ios"})
-    public void test_02_swipeDown() throws Exception {
+    public void test_02_swipeDown() {
         this.homePage.loaded();
         this.context.gestures.swipeInWindowToElement(SwipeElementDirection.DOWN, this.locators.byText(itemLast), 3, 250, 0);
     }
 
     @Test(groups = {"android", "ios"})
-    public void test_03_itemDetail() throws Exception {
+    public void test_03_itemDetail() {
+        this.context.gestures.swipeInWindowToElement(SwipeElementDirection.DOWN, this.locators.byText(itemToTap), 3, 250, 0);
         this.homePage.loaded();
         this.homePage.tapOnItem(itemToTap);
         this.itemDetailPage.loaded();
@@ -47,14 +49,14 @@ public class SmokeTests extends MobileTest {
     }
 
     @Test(groups = {"android", "ios"})
-    public void test_04_back() throws Exception {
+    public void test_04_back() {
         this.itemDetailPage.loaded();
         this.itemDetailPage.navigateBack();
         this.homePage.loaded();
     }
 
     @Test(groups = {"android", "ios"})
-    public void test_05_swipeUp() throws Exception {
+    public void test_05_swipeUp() {
         this.homePage.loaded();
         this.context.gestures.swipeInWindowToElement(SwipeElementDirection.UP, this.locators.byText(itemFirst), 3, 250, 0);
     }
