@@ -142,7 +142,15 @@ public class DialogsTests extends MobileTest {
         this.dialogsPage.tapPromptEmailBtn();
 
         this.dialogsPage.tapOkBtn();
-        Assert.assertNotNull(this.find.byText(DialogsPage.name1, false, 2));
+        Assert.assertNotNull(this.find.byText("john.reese@nativescript.org", false, 2));
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void dialogs_55_promptDecimal() {
+        this.dialogsPage.tapPromptDecimalBtn();
+
+        this.dialogsPage.tapOkBtn();
+        Assert.assertNotNull(this.find.byText("13.50", false, 2));
     }
 
     @Test(groups = {"ios"})

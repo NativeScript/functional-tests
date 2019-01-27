@@ -74,6 +74,10 @@ public class DialogsPage extends HomePageExtended {
         this.find.byText("promptEmail").click();
     }
 
+    public void tapPromptDecimalBtn() {
+        this.find.byText("promptDecimal").click();
+    }
+
     public void tapOkBtn() {
         this.find.byText("OK").click();
     }
