@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>functional.tests</groupId>
@@ -2184,6 +2184,154 @@
             </properties>
         </profile>
 
+        <!--template-blank profiles-->
+        <profile>
+            <id>template-blank-js.emu.default.api23</id>
+            <properties>
+                <app.config>templates/template.blank.js.emu.default.api23.properties</app.config>
+                <testsuite>templates-blank</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-blank-js.emu.google.api26</id>
+            <properties>
+                <app.config>templates/template.blank.js.emu.google.api26.properties</app.config>
+                <testsuite>templates-blank</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-blank-js.sim.iphone7.ios110</id>
+            <properties>
+                <app.config>templates/template.blank.js.sim.iphone7.ios110.properties</app.config>
+                <testsuite>templates-blank</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-blank-js.sim.iphoneX.ios11</id>
+            <properties>
+                <app.config>templates/template.blank.js.sim.iphoneX.ios11.properties</app.config>
+                <testsuite>templates-blank</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-blank-js.sim.iphoneXR.ios12</id>
+            <properties>
+                <app.config>templates/template.blank.js.sim.iphoneXR.ios12.properties</app.config>
+                <testsuite>templates-blank</testsuite>
+            </properties>
+        </profile>
+
+        <!--template-blank-ts profiles-->
+        <profile>
+            <id>template-blank-ts.emu.default.api23</id>
+            <properties>
+                <app.config>templates/template.blank.ts.emu.default.api23.properties</app.config>
+                <testsuite>templates-blank</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-blank-ts.emu.google.api26</id>
+            <properties>
+                <app.config>templates/template.blank.ts.emu.google.api26.properties</app.config>
+                <testsuite>templates-blank</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-blank-ts.sim.iphone7.ios110</id>
+            <properties>
+                <app.config>templates/template.blank.ts.sim.iphone7.ios110.properties</app.config>
+                <testsuite>templates-blank</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-blank-ts.sim.iphoneX.ios11</id>
+            <properties>
+                <app.config>templates/template.blank.ts.sim.iphoneX.ios11.properties</app.config>
+                <testsuite>templates-blank</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-blank-ts.sim.iphoneXR.ios12</id>
+            <properties>
+                <app.config>templates/template.blank.ts.sim.iphoneXR.ios12.properties</app.config>
+                <testsuite>templates-blank</testsuite>
+            </properties>
+        </profile>
+
+        <!--template-blank-ng profiles-->
+        <profile>
+            <id>template-blank-ng.emu.default.api23</id>
+            <properties>
+                <app.config>templates/template.blank.ng.emu.default.api23.properties</app.config>
+                <testsuite>templates-blank</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-blank-ng.emu.google.api26</id>
+            <properties>
+                <app.config>templates/template.blank.ng.emu.google.api26.properties</app.config>
+                <testsuite>templates-blank</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-blank-ng.sim.iphone7.ios110</id>
+            <properties>
+                <app.config>templates/template.blank.ng.sim.iphone7.ios110.properties</app.config>
+                <testsuite>templates-blank</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-blank-ng.sim.iphoneX.ios11</id>
+            <properties>
+                <app.config>templates/template.blank.ng.sim.iphoneX.ios11.properties</app.config>
+                <testsuite>templates-blank</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-blank-ng.sim.iphoneXR.ios12</id>
+            <properties>
+                <app.config>templates/template.blank.ng.sim.iphoneXR.ios12.properties</app.config>
+                <testsuite>templates-blank</testsuite>
+            </properties>
+        </profile>
+
+        <!--template-blank-vue profiles-->
+        <profile>
+            <id>template-blank-vue.emu.default.api23</id>
+            <properties>
+                <app.config>templates/template.blank.vue.emu.default.api23.properties</app.config>
+                <testsuite>templates-blank</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-blank-vue.emu.google.api26</id>
+            <properties>
+                <app.config>templates/template.blank.vue.emu.google.api26.properties</app.config>
+                <testsuite>templates-blank</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-blank-vue.sim.iphone7.ios110</id>
+            <properties>
+                <app.config>templates/template.blank.vue.sim.iphone7.ios110.properties</app.config>
+                <testsuite>templates-blank</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-blank-vue.sim.iphoneX.ios11</id>
+            <properties>
+                <app.config>templates/template.blank.vue.sim.iphoneX.ios11.properties</app.config>
+                <testsuite>templates-blank</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-blank-vue.sim.iphoneXR.ios12</id>
+            <properties>
+                <app.config>templates/template.blank.vue.sim.iphoneXR.ios12.properties</app.config>
+                <testsuite>templates-blank</testsuite>
+            </properties>
+        </profile>
+
         <!--perf-app tests profiles-->
         <profile>
             <id>perfapp.dev.ipad2.ios10</id>
@@ -2307,6 +2455,43 @@
             <id>template-master-detail-ng.sim.iphoneXR.ios12</id>
             <properties>
                 <app.config>templates/masterdetail.ng.sim.iphoneXR.ios12.properties</app.config>
+                <testsuite>templates-masterdetail</testsuite>
+            </properties>
+        </profile>
+
+        <!-- Master Detail Vue App Profiles-->
+        <profile>
+            <id>template-master-detail-vue.emu.default.api23</id>
+            <properties>
+                <app.config>templates/masterdetail.vue.emu.default.api23.properties</app.config>
+                <testsuite>templates-masterdetail</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-master-detail-vue.emu.google.api26</id>
+            <properties>
+                <app.config>templates/masterdetail.vue.emu.google.api26.properties</app.config>
+                <testsuite>templates-masterdetail</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-master-detail-vue.sim.iphone7.ios110</id>
+            <properties>
+                <app.config>templates/masterdetail.vue.sim.iphone7.ios11.properties</app.config>
+                <testsuite>templates-masterdetail</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-master-detail-vue.sim.iphoneX.ios11</id>
+            <properties>
+                <app.config>templates/masterdetail.vue.sim.iphoneX.ios11.properties</app.config>
+                <testsuite>templates-masterdetail</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-master-detail-vue.sim.iphoneXR.ios12</id>
+            <properties>
+                <app.config>templates/masterdetail.vue.sim.iphoneXR.ios12.properties</app.config>
                 <testsuite>templates-masterdetail</testsuite>
             </properties>
         </profile>
@@ -2782,8 +2967,11 @@
                                 </delete>
                                 <mkdir dir="${basedir}/target/surefire-reports/html">
                                 </mkdir>
-                                <xslt in="${basedir}/target/surefire-reports/testng-results.xml" style="${basedir}/resources/report/testng-results.xsl" out="${basedir}/target/surefire-reports/html/index.html">
-                                    <param expression="${basedir}/target/surefire-reports/html/" name="testNgXslt.outputDir"/>
+                                <xslt in="${basedir}/target/surefire-reports/testng-results.xml"
+                                      style="${basedir}/resources/report/testng-results.xsl"
+                                      out="${basedir}/target/surefire-reports/html/index.html">
+                                    <param expression="${basedir}/target/surefire-reports/html/"
+                                           name="testNgXslt.outputDir"/>
                                     <param expression="true" name="testNgXslt.sortTestCaseLinks"/>
                                     <param expression="FAIL,SKIP,PASS,BY_CLASS" name="testNgXslt.testDetailsFilter"/>
                                     <param expression="true" name="testNgXslt.showRuntimeTotals"/>

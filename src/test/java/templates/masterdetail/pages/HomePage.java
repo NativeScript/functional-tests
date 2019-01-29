@@ -8,7 +8,11 @@ public class HomePage extends BasePage {
 
     public HomePage() {
         super();
-        UIElement browse = this.wait.waitForVisible(this.locators.findByTextLocator("Browse", true));
+        String header = "Browse";
+        if (this.settings.testAppFileName.toLowerCase().contains("vue")) {
+            header = "Car List";
+        }
+        UIElement browse = this.wait.waitForVisible(this.locators.findByTextLocator(header, true));
         Assert.assertNotNull(browse, "Home page not loaded!");
         this.log.info("Home page loaded.");
     }

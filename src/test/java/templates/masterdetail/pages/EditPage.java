@@ -8,12 +8,16 @@ public class EditPage extends BasePage {
 
     public EditPage() {
         super();
-        UIElement edit = this.wait.waitForVisible(this.locators.findByTextLocator("Edit Car Details", true));
+        String header = "Edit Car Details";
+        if (this.settings.testAppFileName.toLowerCase().contains("vue")) {
+            header = "Cancel";
+        }
+        UIElement edit = this.wait.waitForVisible(this.locators.findByTextLocator(header, true));
         Assert.assertNotNull(edit, "Edit page not loaded!");
         this.log.info("Edit page loaded.");
     }
 
-    public void tapButton(String name){
+    public void tapButton(String name) {
         this.find.byText(name).tap();
         this.log.info("Button pressed: " + name);
     }
