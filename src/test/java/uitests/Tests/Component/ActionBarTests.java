@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import uitests.Screens.Components.ActionBarPage;
 
 
+@SuppressWarnings("groupsTestNG")
 public class ActionBarTests extends MobileTest {
     private ActionBarPage actionBarPage;
 
@@ -26,7 +27,7 @@ public class ActionBarTests extends MobileTest {
     }
 
     @Test(groups = {"android", "ios"})
-    public void actionBar_01() throws Exception {
+    public void actionBar_01() {
         this.actionBarPage.navigateTo("actStyle");
         this.verifyElement(this.actionBarPage.actionBar());
 
@@ -34,7 +35,7 @@ public class ActionBarTests extends MobileTest {
     }
 
     @Test(groups = {"android", "ios"})
-    public void actionBar_02_clean() throws Exception {
+    public void actionBar_02_clean() {
         this.actionBarPage.tapActionItem();
         this.verifyElement(this.actionBarPage.actionBar());
 
@@ -50,7 +51,7 @@ public class ActionBarTests extends MobileTest {
     }
 
     @Test(groups = {"android", "ios"})
-    public void actionBar_11_systemIcons() throws Exception {
+    public void actionBar_11_systemIcons() {
         this.actionBarPage.navigateTo("actIcons");
         this.actionBarPage.loaded();
         this.verifyElement(this.actionBarPage.actionBar());
@@ -78,7 +79,7 @@ public class ActionBarTests extends MobileTest {
     public void actionBar_21_actionView() throws Exception {
         this.actionBarPage.navigateTo("actView");
 
-        if (this.settings.automationName == "UIAutomator2") {
+        if (this.settings.automationName.equals("UIAutomator2")) {
             this.compareScreens(3);
         } else {
             this.verifyElement(this.actionBarPage.actionBar());
@@ -227,6 +228,20 @@ public class ActionBarTests extends MobileTest {
         this.actionBarPage.navigateTo("flat");
         this.compareScreens(5);
         this.actionBarPage.wait.waitForVisible(this.locators.byText("change flat property")).tap();
+        this.compareScreens(5);
+        this.assertImagesResults();
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void flat_tab_action_bar() throws Exception {
+        this.actionBarPage.navigateTo("flat-tab");
+        this.compareScreens(5);
+        this.assertImagesResults();
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void flat_scrollview_action_bar() throws Exception {
+        this.actionBarPage.navigateTo("flat-scrollview");
         this.compareScreens(5);
         this.assertImagesResults();
     }

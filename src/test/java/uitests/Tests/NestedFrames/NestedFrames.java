@@ -17,17 +17,26 @@ public class NestedFrames extends UIBaseTests {
     @DataProvider(name = "example")
     public Object[][] data() {
         return new Object[][]{
+                {"full-screen-n-n"},
                 {"full-screen-n-y"},
+                {"full-screen-n-y-flat"},
                 {"full-screen-y-n"},
+                {"full-screen-y-n-flat"},
                 {"full-screen-y-y"},
+                {"full-screen-y-y-flat"},
                 {"mid-screen-n-n"},
                 {"mid-screen-n-y"},
+                {"mid-screen-n-y-flat"},
                 {"mid-screen-y-n"},
+                {"mid-screen-y-n-flat"},
                 {"mid-screen-y-y"},
+                {"mid-screen-y-y-flat"},
                 {"tab-y-y"},
+                {"tab-y-y-flat"},
                 {"tab-n-y"},
+                {"tab-n-y-flat"},
                 {"tab-y-n"},
-                {"tab-n-n"}
+                {"tab-y-n-flat"}
         };
     }
 
