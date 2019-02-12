@@ -2900,6 +2900,96 @@
                 <testsuite>templates-patientcare</testsuite>
             </properties>
         </profile>
+
+        <!-- Enterprise Auth JS App Profiles-->
+        <profile>
+            <id>template-enterprise-auth-js.emu.default.api23</id>
+            <properties>
+                <app.config>templates/enterpriseauth.js.emu.default.api23.properties</app.config>
+                <testsuite>templates-enterpriseauth</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-enterprise-auth-js.emu.google.api26</id>
+            <properties>
+                <app.config>templates/enterpriseauth.js.emu.google.api26.properties</app.config>
+                <testsuite>templates-enterpriseauth</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-enterprise-auth-js.sim.iphone7.ios110</id>
+            <properties>
+                <app.config>templates/enterpriseauth.js.sim.iphone7.ios11.properties</app.config>
+                <testsuite>templates-enterpriseauth</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-enterprise-auth-js.sim.iphoneXR.ios12</id>
+            <properties>
+                <app.config>templates/enterpriseauth.js.sim.iphoneXR.ios12.properties</app.config>
+                <testsuite>templates-enterpriseauth</testsuite>
+            </properties>
+        </profile>
+
+        <!-- Enterprise Auth TS App Profiles-->
+        <profile>
+            <id>template-enterprise-auth-ts.emu.default.api23</id>
+            <properties>
+                <app.config>templates/enterpriseauth.ts.emu.default.api23.properties</app.config>
+                <testsuite>templates-enterpriseauth</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-enterprise-auth-ts.emu.google.api26</id>
+            <properties>
+                <app.config>templates/enterpriseauth.ts.emu.google.api26.properties</app.config>
+                <testsuite>templates-enterpriseauth</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-enterprise-auth-ts.sim.iphone7.ios110</id>
+            <properties>
+                <app.config>templates/enterpriseauth.ts.sim.iphone7.ios11.properties</app.config>
+                <testsuite>templates-enterpriseauth</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-enterprise-auth-ts.sim.iphoneXR.ios12</id>
+            <properties>
+                <app.config>templates/enterpriseauth.ts.sim.iphoneXR.ios12.properties</app.config>
+                <testsuite>templates-enterpriseauth</testsuite>
+            </properties>
+        </profile>
+
+        <!-- Enterprise Auth NG App Profiles-->
+        <profile>
+            <id>template-enterprise-auth-ng.emu.default.api23</id>
+            <properties>
+                <app.config>templates/enterpriseauth.ng.emu.default.api23.properties</app.config>
+                <testsuite>templates-enterpriseauth</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-enterprise-auth-ng.emu.google.api26</id>
+            <properties>
+                <app.config>templates/enterpriseauth.ng.emu.google.api26.properties</app.config>
+                <testsuite>templates-enterpriseauth</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-enterprise-auth-ng.sim.iphone7.ios110</id>
+            <properties>
+                <app.config>templates/enterpriseauth.ng.sim.iphone7.ios11.properties</app.config>
+                <testsuite>templates-enterpriseauth</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-enterprise-auth-ng.sim.iphoneXR.ios12</id>
+            <properties>
+                <app.config>templates/enterpriseauth.ng.sim.iphoneXR.ios12.properties</app.config>
+                <testsuite>templates-enterpriseauth</testsuite>
+            </properties>
+        </profile>
     </profiles>
 
     <dependencies>

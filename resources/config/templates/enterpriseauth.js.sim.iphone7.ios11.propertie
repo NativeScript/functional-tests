@@ -1,0 +1,7 @@
+platformName=iOS
+deviceName=iPhone 7 110
+platformVersion=11.2
+testAppName=template-enterprise-auth-js.app
+testAppArchive=template-enterprise-auth-js.tgz
+deviceType=Simulator
+simulatorType=iPhone 7
