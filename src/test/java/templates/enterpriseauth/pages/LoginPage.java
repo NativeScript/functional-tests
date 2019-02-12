@@ -18,6 +18,16 @@ public class LoginPage extends BasePage {
 
     public void login(String userName, String userPass) {
         loginButton().click();
+
+        // Handle Api26
+        if (this.settings.platform == PlatformType.Android){
+            UIElement accept = this.find.byText("ACCEPT & CONTINUE", true, this.settings.shortTimeout);
+            if (accept != null){
+                accept.click();
+                this.find.byText("NO THANKS", true, this.settings.shortTimeout).click();
+            }
+        }
+
         UIElement userEditText = this.find.byLocator(this.locators.editTextLocator());
         UIElement nextButton = this.find.byText("Next");
         Wait.sleep(1000);
