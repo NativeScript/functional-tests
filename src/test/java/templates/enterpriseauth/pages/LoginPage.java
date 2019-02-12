@@ -23,16 +23,16 @@ public class LoginPage extends BasePage {
         Wait.sleep(1000);
         this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 1000);
         Wait.sleep(1000);
-        userEditText.sendKeys(userName);
+        userEditText.setText(userName);
         Wait.sleep(1000);
         this.app.hideKeyboard();
         nextButton.click();
         this.app.hideKeyboard();
         Wait.sleep(1000);
         if (this.settings.platform == PlatformType.Android) {
-            this.find.byLocator(this.locators.editTextLocator()).sendKeys(userPass);
+            this.find.byLocator(this.locators.editTextLocator()).setText(userPass);
         } else {
-            this.find.byLocator(By.className("XCUIElementTypeSecureTextField")).sendKeys(userPass);
+            this.find.byLocator(By.className("XCUIElementTypeSecureTextField")).setText(userPass);
         }
         this.app.hideKeyboard();
         Wait.sleep(1000);
