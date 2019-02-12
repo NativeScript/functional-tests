@@ -26,16 +26,18 @@ public class LoginPage extends BasePage {
         userEditText.setText(userName);
         Wait.sleep(1000);
         this.app.hideKeyboard();
-        nextButton.click();
-        this.app.hideKeyboard();
         Wait.sleep(1000);
+        nextButton.click();
+        Wait.sleep(3000);
+        UIElement passBox;
         if (this.settings.platform == PlatformType.Android) {
-            this.find.byLocator(this.locators.editTextLocator()).setText(userPass);
+             passBox = this.find.byLocator(this.locators.editTextLocator());
         } else {
-            this.find.byLocator(By.className("XCUIElementTypeSecureTextField")).setText(userPass);
+            passBox = this.find.byLocator(By.className("XCUIElementTypeSecureTextField"));
         }
         this.app.hideKeyboard();
         Wait.sleep(1000);
+        passBox.setText(userPass);
         this.find.byText("Sign in").click();
         this.find.byText("Yes", false, this.settings.defaultTimeout).click();
     }
