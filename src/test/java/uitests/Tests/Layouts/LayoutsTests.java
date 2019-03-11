@@ -1,5 +1,8 @@
 package uitests.Tests.Layouts;
 
+import functional.tests.core.mobile.element.UIElement;
+import functional.tests.core.mobile.element.UIRectangle;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class LayoutsTests extends LayoutBaseTest {
@@ -160,5 +163,52 @@ public class LayoutsTests extends LayoutBaseTest {
         this.waitForScreen(0.1);
 
         this.assertImagesResults();
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void passThroughParent() throws Exception {
+        this.layoutsPage.navigateTo("passThroughParent");
+        this.assertScreen(5);
+
+        String onWrapLayoutResult = "on outer wrap layout tap";
+        String buttonTapResult = "on button tap";
+
+        // First layout
+        assertAction("onOuterWrapLayoutTap", onWrapLayoutResult);
+        assertAction("stackLayout1", onWrapLayoutResult);
+        assertAction("label1", onWrapLayoutResult);
+        assertAction("onUserInteractionDisabledThrowTap1", onWrapLayoutResult);
+        assertAction("onDisabledThrowTap1", onWrapLayoutResult);
+        assertAction("btn1", buttonTapResult);
+
+        // Second layout
+        assertAction("stackLayout2", onWrapLayoutResult);
+        assertAction("label2", onWrapLayoutResult);
+        assertAction("stackLayout3", onWrapLayoutResult);
+        assertAction("label3", onWrapLayoutResult);
+        assertAction("onUserInteractionDisabledThrowTap2", onWrapLayoutResult);
+        assertAction("onDisabledThrowTap2", onWrapLayoutResult);
+        assertAction("btn2", buttonTapResult);
+
+
+        this.assertImagesResults();
+    }
+
+    @Test(groups = {"android"})
+    public void stacklayout_6059() throws Exception {
+        this.layoutsPage.navigateTo("stacklayout-6059");
+        this.assertScreen(5);
+    }
+
+    private void assertAction(String buttonId, String expectedText) {
+        UIElement btn = this.context.find.byText(buttonId);
+        UIRectangle uiRectangle = new UIRectangle(btn.getUIRectangle(), this.context);
+        uiRectangle.tap();
+
+        UIElement result = this.context.find.byText("result");
+        String resultText = result.getText();
+        Assert.assertEquals(resultText, expectedText);
+        UIElement clearTextBtn = this.context.find.byText("clearResult");
+        clearTextBtn.tap();
     }
 }

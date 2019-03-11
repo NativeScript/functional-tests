@@ -1,6 +1,8 @@
 package uitests.Tests.TabView;
 
 import functional.tests.core.enums.PlatformType;
+import functional.tests.core.enums.SwipeElementDirection;
+import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.mobile.element.UIRectangle;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
@@ -62,7 +64,7 @@ public class TabViewTests extends TabViewBaseTest {
             locator = this.context.locators.buttonLocator();
             if (this.settings.platformVersion >= 11) {
                 index = 2;
-            }else{
+            } else {
                 index = 3;
             }
         }
@@ -72,6 +74,82 @@ public class TabViewTests extends TabViewBaseTest {
         this.compareScreens(5);
         this.find.elementsByLocator(locator).get(index - 1).tap();
 
+        this.compareScreens(5);
+
+        this.assertImagesResults();
+    }
+
+    @Test(groups = {"android"})
+    public void tabView_disable_swipe_android() throws Exception {
+        this.homePageExtended.navigateTo("tab-view-android-swipe");
+        this.context.gestures.swipeInWindow(SwipeElementDirection.RIGHT, 200);
+        this.context.gestures.swipeInWindow(SwipeElementDirection.RIGHT, 200);
+        this.context.gestures.swipeInWindow(SwipeElementDirection.RIGHT, 200);
+
+        this.compareScreens(5);
+        this.assertImagesResults();
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void tab_view_tab_text_font_size() throws Exception {
+        this.homePageExtended.navigateTo("tab-view-tab-text-font-size");
+        this.compareScreens(5);
+
+        UIElement tab2 = this.context.find.byText("tab2");
+        tab2.tap();
+        this.compareScreens(5);
+
+        UIElement tab3 = this.context.find.byText("tab3");
+        tab3.tap();
+        this.compareScreens(5);
+
+        this.assertImagesResults();
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void tab_view_icon_title_placement() throws Exception {
+        this.homePageExtended.navigateTo("tab-view-icon-title-placement");
+        this.compareScreens(5);
+
+        UIElement second = this.context.find.byText("Second");
+        second.tap();
+        this.compareScreens(5);
+
+        UIElement first = this.context.find.byText("First");
+        first.tap();
+        this.compareScreens(5);
+
+        this.assertImagesResults();
+    }
+
+
+    @Test(groups = {"android", "ios"})
+    public void issue_5470() throws Exception {
+        this.homePageExtended.navigateTo("issue-5470");
+        this.compareScreens(5);
+
+        UIElement second = this.context.find.byText("tab1");
+        second.tap();
+        this.compareScreens(5);
+
+        UIElement first = this.context.find.byText("tab2");
+        first.tap();
+        this.compareScreens(5);
+
+        this.assertImagesResults();
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void tab_view_bottom_position() throws Exception {
+        this.homePageExtended.navigateTo("tab-view-bottom-position");
+        this.compareScreens(5);
+
+        UIElement second = this.context.find.byText("Second");
+        second.tap();
+        this.compareScreens(5);
+
+        UIElement first = this.context.find.byText("First");
+        first.tap();
         this.compareScreens(5);
 
         this.assertImagesResults();

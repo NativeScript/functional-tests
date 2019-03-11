@@ -107,6 +107,33 @@ public class ScrollViewTest extends UIBaseTests {
         this.homePageExtended.getNavigationManager().slideBack();
     }
 
+    @Test(groups = {"ios"})
+    public void layout_outside_scroll() throws Exception {
+        this.homePageExtended.navigateTo("layout-outside-scroll");
+        this.compareScreens(5);
+
+        UIElement scrollToBottomBtn = this.context.find.byText("scrollToBottom");
+        scrollToBottomBtn.tap();
+
+        this.context.find.byText("changeVisibilityBottom");
+        this.compareScreens(5);
+
+        this.context.find.byText("scrollToTop");
+        this.compareScreens(5);
+
+        this.context.find.byText("changeVisibilityTop");
+        this.compareScreens(5);
+
+        scrollToBottomBtn.tap();
+        this.compareScreens(5);
+
+        this.context.find.byText("scrollToTop");
+        this.compareScreens(5);
+
+        this.assertImagesResults();
+
+    }
+
     public void swipeToBottom(java.util.List<UIElement> elements, int index) {
         if ((this.settings.platform == PlatformType.Android) && (this.settings.platformVersion != 4.4)) {
             elements.get(index).findElement(this.locators.viewGroupLocator()).swipeInElement(SwipeElementDirection.UP, 100, 100);

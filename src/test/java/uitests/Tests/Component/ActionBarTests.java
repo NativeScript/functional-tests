@@ -245,4 +245,32 @@ public class ActionBarTests extends MobileTest {
         this.compareScreens(5);
         this.assertImagesResults();
     }
+
+    @Test(groups = { "ios"})
+    public void flat_tab_opaque_bar() throws Exception {
+        this.actionBarPage.navigateTo("flat-tab-opaque-bar");
+        this.compareScreens(5);
+        this.assertImagesResults();
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void flat_layout() throws Exception {
+        this.actionBarPage.navigateTo("flat-layout");
+        this.compareScreens(5);
+        this.assertImagesResults();
+    }
+
+//    @Test(groups = {"android", "ios"})
+//    public void actLocalIcons() throws Exception {
+//        this.actionBarPage.navigateTo("actLocalIcons");
+//        this.compareScreens(5);
+//        this.assertImagesResults();
+//    }
+//
+//    @Test(groups = {"android", "ios"})
+//    public void actResIcons() throws Exception {
+//        this.actionBarPage.navigateTo("actResIcons");
+//        this.compareScreens(5);
+//        this.assertImagesResults();
+//    }
 }
