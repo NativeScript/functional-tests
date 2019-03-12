@@ -194,12 +194,6 @@ public class LayoutsTests extends LayoutBaseTest {
         this.assertImagesResults();
     }
 
-    @Test(groups = {"android"})
-    public void stacklayout_6059() throws Exception {
-        this.layoutsPage.navigateTo("stacklayout-6059");
-        this.assertScreen(5);
-    }
-
     private void assertAction(String buttonId, String expectedText) {
         UIElement btn = this.context.find.byText(buttonId);
         UIRectangle uiRectangle = new UIRectangle(btn.getUIRectangle(), this.context);
