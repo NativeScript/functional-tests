@@ -199,7 +199,7 @@ public class LayoutsTests extends LayoutBaseTest {
         UIRectangle uiRectangle = new UIRectangle(btn.getUIRectangle(), this.context);
         uiRectangle.tap();
 
-        UIElement result = this.context.find.byText("result");
+        UIElement result = this.context.find.byText(expectedText);
         String resultText = result.getText();
         Assert.assertEquals(resultText, expectedText);
         UIElement clearTextBtn = this.context.find.byText("clearResult");
