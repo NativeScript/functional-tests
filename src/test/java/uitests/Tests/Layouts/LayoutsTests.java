@@ -168,17 +168,18 @@ public class LayoutsTests extends LayoutBaseTest {
     @Test(groups = {"android", "ios"})
     public void passThroughParent() throws Exception {
         this.layoutsPage.navigateTo("passThroughParent");
-        this.assertScreen(5);
+//        this.assertScreen(5);
 
         String onWrapLayoutResult = "on outer wrap layout tap";
         String buttonTapResult = "on button tap";
+        String none = "none";
 
         // First layout
         assertAction("onOuterWrapLayoutTap", onWrapLayoutResult);
         assertAction("stackLayout1", onWrapLayoutResult);
         assertAction("label1", onWrapLayoutResult);
         assertAction("onUserInteractionDisabledThrowTap1", onWrapLayoutResult);
-        assertAction("onDisabledThrowTap1", onWrapLayoutResult);
+        assertAction("onDisabledThrowTap1", none);
         assertAction("btn1", buttonTapResult);
 
         // Second layout
@@ -187,11 +188,8 @@ public class LayoutsTests extends LayoutBaseTest {
         assertAction("stackLayout3", onWrapLayoutResult);
         assertAction("label3", onWrapLayoutResult);
         assertAction("onUserInteractionDisabledThrowTap2", onWrapLayoutResult);
-        assertAction("onDisabledThrowTap2", onWrapLayoutResult);
+        assertAction("onDisabledThrowTap2", none);
         assertAction("btn2", buttonTapResult);
-
-
-        this.assertImagesResults();
     }
 
     private void assertAction(String buttonId, String expectedText) {
@@ -202,6 +200,7 @@ public class LayoutsTests extends LayoutBaseTest {
         UIElement result = this.context.find.byText(expectedText);
         String resultText = result.getText();
         Assert.assertEquals(resultText, expectedText);
+
         UIElement clearTextBtn = this.context.find.byText("clearResult");
         clearTextBtn.tap();
     }

@@ -397,6 +397,7 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         openFileBtn.tap();
         this.compareScreens(5);
         this.issuesBasePage.navigateBack();
+        this.issuesBasePage.navigateBack();
 
         this.assertImagesResults();
     }
