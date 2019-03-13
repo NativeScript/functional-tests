@@ -7,6 +7,8 @@ import functional.tests.core.mobile.element.UIRectangle;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class TabViewTests extends TabViewBaseTest {
 
     @Test(groups = {"android", "ios"})
@@ -95,11 +97,11 @@ public class TabViewTests extends TabViewBaseTest {
         this.homePageExtended.navigateTo("tab-view-tab-text-font-size");
         this.compareScreens(5);
 
-        UIElement tab2 = this.context.find.byText("tab2");
+        UIElement tab2 = this.context.find.byText("Second");
         tab2.tap();
         this.compareScreens(5);
 
-        UIElement tab3 = this.context.find.byText("tab3");
+        UIElement tab3 = this.context.find.byText("First");
         tab3.tap();
         this.compareScreens(5);
 
@@ -111,12 +113,15 @@ public class TabViewTests extends TabViewBaseTest {
         this.homePageExtended.navigateTo("tab-view-icon-title-placement");
         this.compareScreens(5);
 
-        UIElement second = this.context.find.byText("Second");
-        second.tap();
+        List<UIElement> tabsWithText = this.context.find.elementsByLocator(this.locators.byText("Title",false,false));
+        tabsWithText.get(1).tap();
         this.compareScreens(5);
 
-        UIElement first = this.context.find.byText("First");
-        first.tap();
+        tabsWithText.get(0).tap();
+        this.compareScreens(5);
+
+        List<UIElement> middleTabView = this.context.find.elementsByLocator(this.locators.imageLocator());
+        middleTabView.get(1).tap();
         this.compareScreens(5);
 
         this.assertImagesResults();
@@ -128,11 +133,11 @@ public class TabViewTests extends TabViewBaseTest {
         this.homePageExtended.navigateTo("issue-5470");
         this.compareScreens(5);
 
-        UIElement second = this.context.find.byText("tab1");
+        UIElement second = this.context.find.byText("Tab2");
         second.tap();
         this.compareScreens(5);
 
-        UIElement first = this.context.find.byText("tab2");
+        UIElement first = this.context.find.byText("Tab1");
         first.tap();
         this.compareScreens(5);
 

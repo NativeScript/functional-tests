@@ -170,8 +170,8 @@ public class LayoutsTests extends LayoutBaseTest {
         this.layoutsPage.navigateTo("passThroughParent");
 //        this.assertScreen(5);
 
-        String onWrapLayoutResult = "on outer wrap layout tap";
-        String buttonTapResult = "on button tap";
+        String onWrapLayoutResult = "onOuterWrapLayoutTap";
+        String buttonTapResult = "onButtonTap";
         String none = "none";
 
         // First layout
