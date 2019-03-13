@@ -113,7 +113,7 @@ public class TabViewTests extends TabViewBaseTest {
         this.homePageExtended.navigateTo("tab-view-icon-title-placement");
         this.compareScreens(5);
 
-        List<UIElement> tabsWithText = this.context.find.elementsByLocator(this.locators.byText("Title",false,false));
+        List<UIElement> tabsWithText = this.context.find.elementsByLocator(this.locators.byText("Title", false, false));
         tabsWithText.get(1).tap();
         this.compareScreens(5);
 
@@ -121,7 +121,7 @@ public class TabViewTests extends TabViewBaseTest {
         this.compareScreens(5);
 
         List<UIElement> middleTabView = this.context.find.elementsByLocator(this.locators.imageLocator());
-        middleTabView.get(1).tap();
+        middleTabView.get(middleTabView.size() - 1).tap();
         this.compareScreens(5);
 
         this.assertImagesResults();
