@@ -285,7 +285,7 @@ public class ActionBarTests extends MobileTest {
         uiRectangle.tap();
         this.compareScreens(5);
 
-        UIRectangle goClearPage = new UIRectangle(this.context.find.byText("goToClearedPage").getUIRectangle(), this.context);
+        UIRectangle goClearPage = new UIRectangle(this.context.wait.waitForVisible(this.locators.byText("goToClearedPage")).getUIRectangle(), this.context);
         goClearPage.tap();
         this.compareScreens(5);
 
