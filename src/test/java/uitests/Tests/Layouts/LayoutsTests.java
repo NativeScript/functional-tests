@@ -219,7 +219,7 @@ public class LayoutsTests extends LayoutBaseTest {
         UIRectangle uiRectangle = new UIRectangle(rect, this.context);
 
         if (this.settings.platform == PlatformType.iOS) {
-            uiRectangle.extendRectangle(rect.width / 2, rect.y, 0, 0);
+            uiRectangle.extendRectangle(rect.width / 2, 5, 0, 0);
         }
         uiRectangle.tap();
 
