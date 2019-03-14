@@ -61,8 +61,9 @@ public class ScrollViewTest extends UIBaseTests {
 
         this.device.rotate(ScreenOrientation.PORTRAIT);
 
-        this.assertImagesResults();
         this.homePageExtended.getNavigationManager().slideBack();
+
+        this.assertImagesResults();
     }
 
     @Test(groups = {"ios"})
@@ -75,8 +76,9 @@ public class ScrollViewTest extends UIBaseTests {
 
         this.device.rotate(ScreenOrientation.PORTRAIT);
 
-        this.assertImagesResults();
         this.homePageExtended.getNavigationManager().slideBack();
+
+        this.assertImagesResults();
     }
 
     @Test(groups = {"ios"})
@@ -89,8 +91,9 @@ public class ScrollViewTest extends UIBaseTests {
 
         this.device.rotate(ScreenOrientation.PORTRAIT);
 
-        this.assertImagesResults();
         this.homePageExtended.getNavigationManager().slideBack();
+
+        this.assertImagesResults();
     }
 
     @Test(groups = {"ios"})
@@ -103,8 +106,9 @@ public class ScrollViewTest extends UIBaseTests {
 
         this.device.rotate(ScreenOrientation.PORTRAIT);
 
-        this.assertImagesResults();
         this.homePageExtended.getNavigationManager().slideBack();
+
+        this.assertImagesResults();
     }
 
     @Test(groups = {"ios"})

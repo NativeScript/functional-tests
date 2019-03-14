@@ -204,6 +204,10 @@ public class LayoutsTests extends LayoutBaseTest {
         }
 
         assertAction("btn2", buttonTapResult);
+
+        if (this.settings.platform == PlatformType.iOS){
+            this.context.navigationManager.slideBack();
+        }
     }
 
     private void assertAction(String buttonId, String expectedText) {
