@@ -1,5 +1,6 @@
 package uitests.Tests.Layouts;
 
+import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.mobile.element.UIRectangle;
 import org.testng.Assert;
@@ -179,6 +180,13 @@ public class LayoutsTests extends LayoutBaseTest {
         assertAction("stackLayout1", onWrapLayoutResult);
         assertAction("label1", onWrapLayoutResult);
         assertAction("onUserInteractionDisabledThrowTap1", onWrapLayoutResult);
+
+        if (this.settings.platform == PlatformType.Android) {
+            assertAction("onDisabledThrowTap1", none);
+        } else {
+            assertAction("onDisabledThrowTap1", onWrapLayoutResult);
+        }
+
         assertAction("onDisabledThrowTap1", none);
         assertAction("btn1", buttonTapResult);
 
@@ -188,7 +196,13 @@ public class LayoutsTests extends LayoutBaseTest {
         assertAction("stackLayout3", onWrapLayoutResult);
         assertAction("label3", onWrapLayoutResult);
         assertAction("onUserInteractionDisabledThrowTap2", onWrapLayoutResult);
-        assertAction("onDisabledThrowTap2", none);
+
+        if (this.settings.platform == PlatformType.Android) {
+            assertAction("onDisabledThrowTap2", none);
+        } else {
+            assertAction("onDisabledThrowTap2", onWrapLayoutResult);
+        }
+
         assertAction("btn2", buttonTapResult);
     }
 
