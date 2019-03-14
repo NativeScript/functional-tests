@@ -113,16 +113,28 @@ public class TabViewTests extends TabViewBaseTest {
         this.homePageExtended.navigateTo("tab-view-icon-title-placement");
         this.compareScreens(5);
 
-        List<UIElement> tabsWithText = this.context.find.elementsByLocator(this.locators.byText("Title", false, false));
-        tabsWithText.get(1).tap();
-        this.compareScreens(5);
+        if (this.settings.platform == PlatformType.Android) {
+            List<UIElement> tabsWithText = this.context.find.elementsByLocator(this.locators.byText("Title", false, false));
+            tabsWithText.get(1).tap();
+            this.compareScreens(5);
 
-        tabsWithText.get(0).tap();
-        this.compareScreens(5);
+            tabsWithText.get(0).tap();
+            this.compareScreens(5);
 
-        List<UIElement> middleTabView = this.context.find.elementsByLocator(this.locators.imageLocator());
-        middleTabView.get(middleTabView.size() - 1).tap();
-        this.compareScreens(5);
+            List<UIElement> middleTabView = this.context.find.elementsByLocator(this.locators.imageLocator());
+            middleTabView.get(middleTabView.size() - 1).tap();
+            this.compareScreens(5);
+        } else {
+            List<UIElement> tabItems = this.context.find.elementsByLocator(By.xpath("*//XCUIElementTypeTabBar/XCUIElementTypeButton"));
+            tabItems.get(1).tap();
+            this.compareScreens(5);
+
+            tabItems.get(0).tap();
+            this.compareScreens(5);
+
+            tabItems.get(tabItems.size() - 1).tap();
+            this.compareScreens(5);
+        }
 
         this.assertImagesResults();
     }

@@ -169,7 +169,7 @@ public class LayoutsTests extends LayoutBaseTest {
     @Test(groups = {"android", "ios"})
     public void passThroughParent() throws Exception {
         this.layoutsPage.navigateTo("passThroughParent");
-//        this.assertScreen(5);
+        this.assertScreen(5);
 
         String onWrapLayoutResult = "onOuterWrapLayoutTapResult";
         String buttonTapResult = "onButtonTapResult";
