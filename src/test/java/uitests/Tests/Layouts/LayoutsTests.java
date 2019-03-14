@@ -6,6 +6,8 @@ import functional.tests.core.mobile.element.UIRectangle;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.awt.*;
+
 public class LayoutsTests extends LayoutBaseTest {
 
     @Test(groups = {"android", "ios"})
@@ -205,14 +207,20 @@ public class LayoutsTests extends LayoutBaseTest {
 
         assertAction("btn2", buttonTapResult);
 
-        if (this.settings.platform == PlatformType.iOS){
+        if (this.settings.platform == PlatformType.iOS) {
             this.context.navigationManager.slideBack();
         }
     }
 
     private void assertAction(String buttonId, String expectedText) {
         UIElement btn = this.context.find.byText(buttonId);
-        UIRectangle uiRectangle = new UIRectangle(btn.getUIRectangle(), this.context);
+
+        Rectangle rect = btn.getUIRectangle();
+        UIRectangle uiRectangle = new UIRectangle(rect, this.context);
+
+        if (this.settings.platform == PlatformType.iOS) {
+            uiRectangle.extendRectangle(rect.width / 2, rect.y, 0, 0);
+        }
         uiRectangle.tap();
 
         UIElement result = this.context.find.byText(expectedText);
