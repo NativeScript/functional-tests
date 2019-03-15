@@ -171,7 +171,7 @@ public class LayoutsTests extends LayoutBaseTest {
     @Test(groups = {"android", "ios"})
     public void passThroughParent() throws Exception {
         this.layoutsPage.navigateTo("passThroughParent");
-        this.assertScreen(5);
+        //this.assertScreen(5);
 
         String onWrapLayoutResult = "onOuterWrapLayoutTapResult";
         String buttonTapResult = "onButtonTapResult";
@@ -189,7 +189,6 @@ public class LayoutsTests extends LayoutBaseTest {
             assertAction("onDisabledThrowTap1", onWrapLayoutResult);
         }
 
-        assertAction("onDisabledThrowTap1", none);
         assertAction("btn1", buttonTapResult);
 
         // Second layout
@@ -212,6 +211,8 @@ public class LayoutsTests extends LayoutBaseTest {
         }
     }
 
+    private UIRectangle clearTextBtnRect;
+
     private void assertAction(String buttonId, String expectedText) {
         UIElement btn = this.context.find.byText(buttonId);
 
@@ -228,7 +229,11 @@ public class LayoutsTests extends LayoutBaseTest {
         String resultText = result.getText();
         Assert.assertEquals(resultText, expectedText);
 
-        UIElement clearTextBtn = this.context.find.byText("clearResult");
-        clearTextBtn.tap();
+        if (this.clearTextBtnRect == null) {
+            this.clearTextBtnRect = new UIRectangle(this.context.find.byText("clearResult").getUIRectangle(), this.context);
+            this.clearTextBtnRect.extendRectangle(5, 5, 0, 0);
+        }
+
+        this.clearTextBtnRect.tap();
     }
 }
