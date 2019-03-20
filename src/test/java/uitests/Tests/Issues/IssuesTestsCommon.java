@@ -396,7 +396,7 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         UIElement openFileBtn = this.context.find.byText("openFile");
         openFileBtn.tap();
         this.compareScreens(5);
-        this.issuesBasePage.navigateBack();
+        this.context.client.getDriver().navigate().back();
         this.issuesBasePage.navigateBack();
 
         this.assertImagesResults();
