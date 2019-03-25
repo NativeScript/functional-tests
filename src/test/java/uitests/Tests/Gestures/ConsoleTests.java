@@ -102,7 +102,7 @@ public class ConsoleTests extends GesturesBaseTest {
             this.device.assertLogContains("false == true");
 
             this.device.assertLogContains("CONSOLE TRACE");
-            this.device.assertLogContains("0: pageLoaded");
+            this.device.assertLogContains("1   pageLoaded");
         }
 
         this.device.assertLogContains("info");
