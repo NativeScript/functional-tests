@@ -45,7 +45,11 @@ public class SdkWebViewTests extends SdkBaseTest {
                 Assert.notNull(docsSiteContent, "{N} Docs site not loaded!");
                 log.info("{N} Docs website loaded!");
             }
-
+            UIElement stillLoading = this.find.byTextContains("WebView is still");
+            while (stillLoading != null) {
+                Wait.sleep(1000);
+                stillLoading = this.find.byTextContains("WebView is still");
+            }
             // Navigate to not existing page.
             log.info("Navigate to http://no.site");
             UIElement edit = this.find.byLocator(this.locators.editTextLocator(), this.settings.defaultTimeout);
@@ -56,8 +60,9 @@ public class SdkWebViewTests extends SdkBaseTest {
             // On Android default not found page is displayed.
             if (this.settings.platform == PlatformType.Android) {
                 ((AndroidDriver) this.client.driver).pressKeyCode(66);
-                UIElement notFoundMessage = this.find.byTextContains("Webpage not available");
-                Assert.notNull(notFoundMessage, "{N} Docs site not loaded!");
+                By locator = this.locators.byText("Webpage not available", false, false);
+                UIElement loaded = this.wait.waitForVisible(locator, this.settings.defaultTimeout, false);
+                Assert.notNull(loaded, "Default 'Not found page' not loaded!");
             }
             // On iOS old page is displayed
             if (this.settings.platform == PlatformType.iOS) {
