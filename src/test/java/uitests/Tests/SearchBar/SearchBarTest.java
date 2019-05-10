@@ -4,6 +4,8 @@ import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.mobile.find.Wait;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uitests.Screens.HomePageExtended;
@@ -56,7 +58,7 @@ public class SearchBarTest extends UIBaseTests {
         } else if ((this.settings.platform == PlatformType.Android && this.settings.platformVersion == 8.0)) {
             this.assertScreen("issue_4147_2", waitTime, 0.05);
         } else {
-            this.compareScreens(waitTime,0.05);
+            this.compareScreens(waitTime, 0.05);
         }
 
         this.clearSearchBar(0);
@@ -89,6 +91,11 @@ public class SearchBarTest extends UIBaseTests {
         if (this.settings.platformVersion < 10 && this.settings.platform == PlatformType.iOS) {
             return;
         }
+
+        if (this.settings.platformVersion == 27.0 || this.settings.platform == PlatformType.Android){
+            this.client.driver.navigate().back();
+        }
+
         this.homePageExtended.navigateToMainPage();
         this.homePageExtended.navigateTo(this.find.byText("search-bar"));
         Wait.sleep(3000);
@@ -102,7 +109,7 @@ public class SearchBarTest extends UIBaseTests {
         this.homePageExtended.navigateTo("issue-5039");
 
         this.setText(0, "apple");
-        ((AndroidDriver) this.client.driver).pressKeyCode(66);
+        ((AndroidDriver) this.client.driver).pressKeyCode(84);
         if ((this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) || (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 8.0)) {
 
             if (this.imageVerification.compareScreens("issue_5039_with_suggestions", 10, 0, this.maxPixelTolerance, 0.05)) {
@@ -117,7 +124,7 @@ public class SearchBarTest extends UIBaseTests {
 
         this.clearSearchBar(0);
         this.setText(0, "apple");
-        ((AndroidDriver) this.client.driver).pressKeyCode(66);
+        ((AndroidDriver) this.client.driver).pressKeyCode(84);
 
         if ((this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) || (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 8.0)) {
             if (this.imageVerification.compareScreens("issue_5039_2_with_suggestions", 10, 0, this.maxPixelTolerance, 0.05)) {
