@@ -109,7 +109,7 @@ public class SearchBarTest extends UIBaseTests {
         this.homePageExtended.navigateTo("issue-5039");
 
         this.setText(0, "apple");
-        ((AndroidDriver) this.client.driver).pressKeyCode(84);
+        ((AndroidDriver) this.client.driver).pressKeyCode(66);
         if ((this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) || (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 8.0)) {
 
             if (this.imageVerification.compareScreens("issue_5039_with_suggestions", 10, 0, this.maxPixelTolerance, 0.05)) {
@@ -124,7 +124,7 @@ public class SearchBarTest extends UIBaseTests {
 
         this.clearSearchBar(0);
         this.setText(0, "apple");
-        ((AndroidDriver) this.client.driver).pressKeyCode(84);
+        ((AndroidDriver) this.client.driver).pressKeyCode(66);
 
         if ((this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) || (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 8.0)) {
             if (this.imageVerification.compareScreens("issue_5039_2_with_suggestions", 10, 0, this.maxPixelTolerance, 0.05)) {
