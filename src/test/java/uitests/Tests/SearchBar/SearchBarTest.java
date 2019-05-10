@@ -4,8 +4,6 @@ import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.mobile.find.Wait;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.nativekey.AndroidKey;
-import io.appium.java_client.android.nativekey.KeyEvent;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uitests.Screens.HomePageExtended;
@@ -92,7 +90,7 @@ public class SearchBarTest extends UIBaseTests {
             return;
         }
 
-        if (this.settings.platformVersion == 27.0 || this.settings.platform == PlatformType.Android){
+        if (this.settings.platformVersion == 27.0 || this.settings.platform == PlatformType.Android) {
             this.client.driver.navigate().back();
         }
 
@@ -100,6 +98,10 @@ public class SearchBarTest extends UIBaseTests {
         this.homePageExtended.navigateTo(this.find.byText("search-bar"));
         Wait.sleep(3000);
         this.app.hideKeyboard();
+
+        if (this.settings.platformVersion >= 27.0 || this.settings.platform == PlatformType.Android) {
+            this.client.driver.navigate().back();
+        }
 
         this.assertScreen(10);
     }
