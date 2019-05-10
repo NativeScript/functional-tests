@@ -2741,13 +2741,6 @@
             </properties>
         </profile>
         <profile>
-            <id>template-drawer-navigation-js.sim.iphoneX.ios11</id>
-            <properties>
-                <app.config>templates/drawernavigation.js.sim.iphoneX.ios11.properties</app.config>
-                <testsuite>templates-drawernavigation</testsuite>
-            </properties>
-        </profile>
-        <profile>
             <id>template-drawer-navigation-js.sim.iphoneXR.ios12</id>
             <properties>
                 <app.config>templates/drawernavigation.js.sim.iphoneXR.ios12.properties</app.config>
@@ -2774,13 +2767,6 @@
             <id>template-drawer-navigation-ts.sim.iphone7.ios110</id>
             <properties>
                 <app.config>templates/drawernavigation.ts.sim.iphone7.ios11.properties</app.config>
-                <testsuite>templates-drawernavigation</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>template-drawer-navigation-ts.sim.iphoneX.ios11</id>
-            <properties>
-                <app.config>templates/drawernavigation.ts.sim.iphoneX.ios11.properties</app.config>
                 <testsuite>templates-drawernavigation</testsuite>
             </properties>
         </profile>
@@ -2815,16 +2801,39 @@
             </properties>
         </profile>
         <profile>
-            <id>template-drawer-navigation-ng.sim.iphoneX.ios11</id>
+            <id>template-drawer-navigation-ng.sim.iphoneXR.ios12</id>
             <properties>
-                <app.config>templates/drawernavigation.ng.sim.iphoneX.ios11.properties</app.config>
+                <app.config>templates/drawernavigation.ng.sim.iphoneXR.ios12.properties</app.config>
+                <testsuite>templates-drawernavigation</testsuite>
+            </properties>
+        </profile>
+
+        <!-- Drawer Navigation Vue App Profiles-->
+        <profile>
+            <id>template-drawer-navigation-vue.emu.default.api23</id>
+            <properties>
+                <app.config>templates/drawernavigation.vue.emu.default.api23.properties</app.config>
                 <testsuite>templates-drawernavigation</testsuite>
             </properties>
         </profile>
         <profile>
-            <id>template-drawer-navigation-ng.sim.iphoneXR.ios12</id>
+            <id>template-drawer-navigation-vue.emu.google.api26</id>
             <properties>
-                <app.config>templates/drawernavigation.ng.sim.iphoneXR.ios12.properties</app.config>
+                <app.config>templates/drawernavigation.vue.emu.google.api26.properties</app.config>
+                <testsuite>templates-drawernavigation</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-drawer-navigation-vue.sim.iphone7.ios110</id>
+            <properties>
+                <app.config>templates/drawernavigation.vue.sim.iphone7.ios11.properties</app.config>
+                <testsuite>templates-drawernavigation</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-drawer-navigation-vue.sim.iphoneXR.ios12</id>
+            <properties>
+                <app.config>templates/drawernavigation.vue.sim.iphoneXR.ios12.properties</app.config>
                 <testsuite>templates-drawernavigation</testsuite>
             </properties>
         </profile>
