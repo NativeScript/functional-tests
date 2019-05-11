@@ -90,7 +90,7 @@ public class SearchBarTest extends UIBaseTests {
             return;
         }
 
-        if (this.settings.platformVersion == 27.0 || this.settings.platform == PlatformType.Android) {
+        if (this.settings.platformVersion == 27.0 && this.settings.platform == PlatformType.Android) {
             this.client.driver.navigate().back();
         }
 
@@ -99,7 +99,7 @@ public class SearchBarTest extends UIBaseTests {
         Wait.sleep(3000);
         this.app.hideKeyboard();
 
-        if (this.settings.platformVersion >= 27.0 || this.settings.platform == PlatformType.Android) {
+        if (this.settings.platformVersion >= 27.0 && this.settings.platform == PlatformType.Android) {
             this.client.driver.navigate().back();
         }
 
