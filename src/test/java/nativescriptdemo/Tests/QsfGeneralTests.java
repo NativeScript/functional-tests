@@ -13,10 +13,10 @@ public class QsfGeneralTests extends QsfBaseTest {
     @Test(groups = {"android", "ios", "api19"})
     public void test_01_home() throws Exception {
         this.getStartedPage.loaded();
-        this.compareScreens("GetStartedPage", 3, 0.65);
+        this.compareScreens("GetStartedPage", 10, 0.65);
         this.getStartedPage.tapGetStarted();
         this.homePage.loaded();
-        this.compareScreens("HomePage", 3, 1.5);
+        this.compareScreens("HomePage", 10, 1.5);
         this.assertImagesResults();
     }
 
@@ -27,7 +27,7 @@ public class QsfGeneralTests extends QsfBaseTest {
         } else {
             this.app.runInBackground(10);
             Assert.assertTrue(this.homePage.loaded());
-            this.compareScreens("HomePage", 3, 1.5);
+            this.compareScreens("HomePage", 10, 1.5);
             this.assertImagesResults();
         }
     }
