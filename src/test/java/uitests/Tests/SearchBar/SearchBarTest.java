@@ -56,7 +56,7 @@ public class SearchBarTest extends UIBaseTests {
         } else if ((this.settings.platform == PlatformType.Android && this.settings.platformVersion == 8.0)) {
             this.assertScreen("issue_4147_2", waitTime, 0.05);
         } else {
-            this.compareScreens(waitTime, 0.05);
+            this.compareScreens(waitTime,0.05);
         }
 
         this.clearSearchBar(0);
@@ -89,19 +89,10 @@ public class SearchBarTest extends UIBaseTests {
         if (this.settings.platformVersion < 10 && this.settings.platform == PlatformType.iOS) {
             return;
         }
-
-        if (this.settings.platformVersion == 27.0 && this.settings.platform == PlatformType.Android) {
-            this.client.driver.navigate().back();
-        }
-
         this.homePageExtended.navigateToMainPage();
         this.homePageExtended.navigateTo(this.find.byText("search-bar"));
         Wait.sleep(3000);
         this.app.hideKeyboard();
-
-        if (this.settings.platformVersion >= 27.0 && this.settings.platform == PlatformType.Android) {
-            this.client.driver.navigate().back();
-        }
 
         this.assertScreen(10);
     }
