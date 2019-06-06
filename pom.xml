@@ -2331,7 +2331,7 @@
                 <testsuite>templates-blank</testsuite>
             </properties>
         </profile>
-        
+
         <!-- Master Detail JS App Profiles-->
         <profile>
             <id>template-master-detail-js.emu.default.api23</id>
