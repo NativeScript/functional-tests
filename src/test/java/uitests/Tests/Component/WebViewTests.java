@@ -16,7 +16,7 @@ public class WebViewTests extends MobileTest {
         this.webViewBasePage = new WebViewBasePage(this.context);
     }
 
-    @Test(groups = {"android", "ios"})
+    @Test(groups = {"android", "ios"}, enabled = false)
     public void webView_01() throws Exception {
         this.webViewBasePage.navToPage("webtest");
         double tolerance = 0.1;
@@ -38,7 +38,7 @@ public class WebViewTests extends MobileTest {
         this.assertScreen(this.settings.defaultTimeout * 5, tolerance);
     }
 
-    @Test(groups = {"android", "ios"})
+    @Test(groups = {"android", "ios"}, enabled = false)
     public void webView_02_query() throws Exception {
         this.webViewBasePage.navigateToMainPage();
         this.webViewBasePage.navigateTo(this.wait.waitForVisible(this.locators.byText("query")));

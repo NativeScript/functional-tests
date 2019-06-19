@@ -34,7 +34,7 @@ public class RoundedViewsTests extends MobileTest {
         this.assertImagesResults();
     }
 
-    @Test(groups = {"android", "ios"})
+    @Test(groups = {"android", "ios"}, enabled = false)
     public void mode_matrix() throws Exception {
         this.homePageExtended.navigateTo("mode-matrix");
         this.assertScreen(10);

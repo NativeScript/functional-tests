@@ -15,7 +15,7 @@ public class TabViewTests extends TabViewBaseTest {
         this.assertImagesResults();
     }
 
-    @Test(groups = {"android", "ios"})
+    @Test(groups = {"android", "ios"}, enabled = false)
     public void tabView_02_more() throws Exception {
         this.homePageExtended.navigateTo("tabmore");
 
