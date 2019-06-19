@@ -1,6 +1,6 @@
 # {N} Functional Tests 
 
-Project with tests for all NativeScript sample apps.
+Project with tests for NativeScript sample apps.
 
 Based on [NativeScript/functional-tests-core](https://github.com/NativeScript/functional-tests-core).
 
