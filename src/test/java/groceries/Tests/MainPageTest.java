@@ -51,27 +51,22 @@ public class MainPageTest extends MobileTest {
         if (secondaryLoginPage.loaded()) {
             secondaryLoginPage.login(getUserName(), PASSWORD);
         }
-
-        if (this.mainPage.loaded()) {
-            this.mainPage.clearList();
-        }
     }
 
     @Test(groups = {"android", "ios"})
     public void groceries_01_addItem() {
+        this.mainPage.clearList(0);
         this.mainPage.insertItem("t123");
-        this.assertImagesResults();
+        Assert.assertTrue(1 == this.mainPage.getListViewItems().size(), "The item is not successfully added!!! ");
     }
 
     @Test(groups = {"android", "ios"}, dependsOnMethods = {"groceries_01_addItem"})
     public void groceries_02_removeItem() {
+        this.mainPage.clearList(1);
         GroceriesItem groceriesItem = this.mainPage.getGroceriesItem(0);
         groceriesItem.tapOnCheckBox();
-        int listSize = this.mainPage.getListViewItems().size();
         groceriesItem.tapOnDeleteIcon();
-        Assert.assertTrue(listSize > this.mainPage.getListViewItems().size(), "The item is not successfully removed!!! ");
-
-        this.assertImagesResults();
+        Assert.assertTrue(0 == this.mainPage.getListViewItems().size(), "The item is not successfully removed!!! ");
     }
 
     @Test(groups = {"android", "ios"}, enabled = false, dependsOnMethods = {"groceries_02_removeItem"})
@@ -79,7 +74,7 @@ public class MainPageTest extends MobileTest {
         GroceriesRecentItemsPage recent = this.mainPage.tapOnResent();
 
         try {
-            this.mainPage.clearList();
+            this.mainPage.clearList(0);
             this.compareScreens("recent_items", 5, 0.1);
         } catch (Exception e) {
             this.log.info("Failed to remove deleted items");

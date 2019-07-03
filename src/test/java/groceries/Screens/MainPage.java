@@ -51,18 +51,20 @@ public class MainPage extends BasePage {
         try {
             return this.wait
                     .forVisibleElements(
-                            this.locators.listViewItemsLocator(), this.settings.defaultTimeout, false
+                            this.locators.listViewItemsLocator(), this.settings.shortTimeout, false
                     );
         } catch (Exception ex) {
             return null;
         }
     }
 
-    public void clearList() {
-        java.util.List<UIElement> listItems = this.getListViewItems();
-        int length = listItems != null ? listItems.size() : 0;
-        for (int i = length - 1; i > 0; i--) {
-            new GroceriesItem(listItems.get(0).getUIRectangle(), this.context).tapOnDeleteIcon();
+    public void clearList(int remaining) {
+        int listSize = this.getListViewItems().size();
+        while (listSize > remaining) {
+            GroceriesItem groceriesItem = this.getGroceriesItem(0);
+            groceriesItem.tapOnCheckBox();
+            groceriesItem.tapOnDeleteIcon();
+            listSize = this.getListViewItems().size();
         }
     }
 
