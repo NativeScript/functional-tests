@@ -125,7 +125,7 @@ public class SecondaryLoginPage extends BasePage {
     }
 
     public UIElement getBtnSignup() {
-        return this.btnSignup = this.wait.waitForVisible(signupButtonLocator(), this.settings.shortTimeout, false);
+        return this.btnSignup = this.wait.waitForVisible(signupButtonLocator(), 10, false);
     }
 
     public void tapSignUp() {
