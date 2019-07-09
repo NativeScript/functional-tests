@@ -2,6 +2,7 @@ package uitests.Tests.Issues;
 
 import functional.tests.core.enums.ClickType;
 import functional.tests.core.enums.PlatformType;
+import functional.tests.core.enums.Position;
 import functional.tests.core.enums.SwipeElementDirection;
 import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.mobile.find.Wait;
@@ -383,6 +384,75 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         this.find.byText("testStackLayout", false, 5).tap();
         this.compareScreens(5);
         this.find.byText("OK", false, 5).tap();
+        this.compareScreens(5);
+
+        this.assertImagesResults();
+    }
+
+
+    @Test(groups = {"android"})
+    public void issue_6895_open_file() throws Exception {
+        this.issuesBasePage.navToPage("open-file-6895");
+        UIElement openFileBtn = this.context.find.byText("openFile");
+        openFileBtn.tap();
+        this.compareScreens(5);
+        this.context.client.getDriver().navigate().back();
+        this.issuesBasePage.navigateBack();
+
+        this.assertImagesResults();
+    }
+
+    @Test(groups = {"ios", "android"})
+    public void ng_repo_1599() throws Exception {
+        this.issuesBasePage.navToPage("ng-repo-1599");
+
+        for (int i = 0; i < 10; i++) {
+            this.context.gestures.scrollInWindow(SwipeElementDirection.DOWN, Position.FromQuarter, 100);
+        }
+
+        this.compareScreens(5);
+
+        for (int i = 0; i < 10; i++) {
+            this.context.gestures.scrollInWindow(SwipeElementDirection.UP, Position.FromQuarter, 100);
+        }
+
+        this.compareScreens(5);
+
+        assertImagesResults();
+    }
+
+    @Test(groups = {"ios", "android"})
+    public void ng_repo_1626() throws Exception {
+        this.issuesBasePage.navToPage("ng-repo-1626");
+
+        for (int i = 0; i < 10; i++) {
+            this.context.gestures.scrollInWindow(SwipeElementDirection.DOWN, Position.FromQuarter, 100);
+        }
+
+        this.compareScreens(5);
+
+        for (int i = 0; i < 10; i++) {
+            this.context.gestures.scrollInWindow(SwipeElementDirection.UP, Position.FromQuarter, 100);
+        }
+
+        this.compareScreens(5);
+
+        this.assertImagesResults();
+    }
+
+    @Test(groups = {"ios"})
+    public void issue_6439() throws Exception {
+        this.issuesBasePage.navToPage("6439");
+        for (int i = 0; i < 10; i++) {
+            this.context.gestures.scrollInWindow(SwipeElementDirection.DOWN, Position.FromQuarter, 100);
+        }
+
+        this.compareScreens(5);
+
+        for (int i = 0; i < 10; i++) {
+            this.context.gestures.scrollInWindow(SwipeElementDirection.UP, Position.FromQuarter, 100);
+        }
+
         this.compareScreens(5);
 
         this.assertImagesResults();

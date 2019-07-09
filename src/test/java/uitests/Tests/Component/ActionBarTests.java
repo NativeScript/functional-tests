@@ -245,4 +245,53 @@ public class ActionBarTests extends MobileTest {
         this.compareScreens(5);
         this.assertImagesResults();
     }
+
+    @Test(groups = {"ios"})
+    public void flat_tab_opaque_bar() throws Exception {
+        this.actionBarPage.navigateTo("flat-tab-opaque-bar");
+        this.compareScreens(5);
+        this.assertImagesResults();
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void flat_layout() throws Exception {
+        this.actionBarPage.navigateTo("flat-layout");
+        this.compareScreens(5);
+        this.assertImagesResults();
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void actLocalIcons() throws Exception {
+        this.actionBarPage.navigateTo("actLocalIcons");
+        this.assertIconsHelper();
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void actResIcons() throws Exception {
+        this.actionBarPage.navigateTo("actResIcons");
+        this.assertIconsHelper();
+    }
+
+    private void assertIconsHelper() throws Exception {
+        this.compareScreens(5);
+
+        UIRectangle uiRectangle = new UIRectangle(this.context.find.byText("undefined").getUIRectangle(), this.context);
+        uiRectangle.tap();
+        this.compareScreens(5);
+
+        uiRectangle.tap();
+        this.compareScreens(5);
+
+        uiRectangle.tap();
+        this.compareScreens(5);
+
+        UIRectangle goClearPage = new UIRectangle(this.context.wait.waitForVisible(this.locators.byText("goToClearedPage")).getUIRectangle(), this.context);
+        goClearPage.tap();
+        this.compareScreens(5);
+
+        this.context.find.byText("ITEM").tap();
+        this.compareScreens(5);
+
+        this.assertImagesResults();
+    }
 }

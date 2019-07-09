@@ -61,8 +61,9 @@ public class ScrollViewTest extends UIBaseTests {
 
         this.device.rotate(ScreenOrientation.PORTRAIT);
 
-        this.assertImagesResults();
         this.homePageExtended.getNavigationManager().slideBack();
+
+        this.assertImagesResults();
     }
 
     @Test(groups = {"ios"})
@@ -75,8 +76,9 @@ public class ScrollViewTest extends UIBaseTests {
 
         this.device.rotate(ScreenOrientation.PORTRAIT);
 
-        this.assertImagesResults();
         this.homePageExtended.getNavigationManager().slideBack();
+
+        this.assertImagesResults();
     }
 
     @Test(groups = {"ios"})
@@ -89,8 +91,9 @@ public class ScrollViewTest extends UIBaseTests {
 
         this.device.rotate(ScreenOrientation.PORTRAIT);
 
-        this.assertImagesResults();
         this.homePageExtended.getNavigationManager().slideBack();
+
+        this.assertImagesResults();
     }
 
     @Test(groups = {"ios"})
@@ -103,8 +106,36 @@ public class ScrollViewTest extends UIBaseTests {
 
         this.device.rotate(ScreenOrientation.PORTRAIT);
 
-        this.assertImagesResults();
         this.homePageExtended.getNavigationManager().slideBack();
+
+        this.assertImagesResults();
+    }
+
+    @Test(groups = {"ios"})
+    public void layout_outside_scroll() throws Exception {
+        this.homePageExtended.navigateTo("layout-outside-scroll");
+        this.compareScreens(5);
+
+        UIElement scrollToBottomBtn = this.context.find.byText("scrollToBottom");
+        scrollToBottomBtn.tap();
+
+        this.context.find.byText("changeVisibilityBottom");
+        this.compareScreens(5);
+
+        this.context.find.byText("scrollToTop");
+        this.compareScreens(5);
+
+        this.context.find.byText("changeVisibilityTop");
+        this.compareScreens(5);
+
+        scrollToBottomBtn.tap();
+        this.compareScreens(5);
+
+        this.context.find.byText("scrollToTop");
+        this.compareScreens(5);
+
+        this.assertImagesResults();
+
     }
 
     public void swipeToBottom(java.util.List<UIElement> elements, int index) {

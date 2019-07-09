@@ -1,6 +1,12 @@
 package uitests.Tests.Layouts;
 
+import functional.tests.core.enums.PlatformType;
+import functional.tests.core.mobile.element.UIElement;
+import functional.tests.core.mobile.element.UIRectangle;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.awt.*;
 
 public class LayoutsTests extends LayoutBaseTest {
 
@@ -160,5 +166,74 @@ public class LayoutsTests extends LayoutBaseTest {
         this.waitForScreen(0.1);
 
         this.assertImagesResults();
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void passThroughParent() throws Exception {
+        this.layoutsPage.navigateTo("passThroughParent");
+        //this.assertScreen(5);
+
+        String onWrapLayoutResult = "onOuterWrapLayoutTapResult";
+        String buttonTapResult = "onButtonTapResult";
+        String none = "none";
+
+        // First layout
+        assertAction("onOuterWrapLayoutTap", onWrapLayoutResult);
+        assertAction("stackLayout1", onWrapLayoutResult);
+        assertAction("label1", onWrapLayoutResult);
+        assertAction("onUserInteractionDisabledThrowTap1", onWrapLayoutResult);
+
+        if (this.settings.platform == PlatformType.Android) {
+            assertAction("onDisabledThrowTap1", none);
+        } else {
+            assertAction("onDisabledThrowTap1", onWrapLayoutResult);
+        }
+
+        assertAction("btn1", buttonTapResult);
+
+        // Second layout
+        assertAction("stackLayout2", onWrapLayoutResult);
+        assertAction("label2", onWrapLayoutResult);
+        assertAction("stackLayout3", onWrapLayoutResult);
+        assertAction("label3", onWrapLayoutResult);
+        assertAction("onUserInteractionDisabledThrowTap2", onWrapLayoutResult);
+
+        if (this.settings.platform == PlatformType.Android) {
+            assertAction("onDisabledThrowTap2", none);
+        } else {
+            assertAction("onDisabledThrowTap2", onWrapLayoutResult);
+        }
+
+        assertAction("btn2", buttonTapResult);
+
+        if (this.settings.platform == PlatformType.iOS) {
+            this.context.navigationManager.slideBack();
+        }
+    }
+
+    private UIRectangle clearTextBtnRect;
+
+    private void assertAction(String buttonId, String expectedText) {
+        UIElement btn = this.context.find.byText(buttonId);
+
+        Rectangle rect = btn.getUIRectangle();
+        UIRectangle uiRectangle = new UIRectangle(rect, this.context);
+
+        if (this.settings.platform == PlatformType.iOS) {
+            int y = rect.y == 0 ? 100 : 5;
+            uiRectangle.extendRectangle(rect.width / 2, y, 0, 0);
+        }
+        uiRectangle.tap();
+
+        UIElement result = this.context.find.byText(expectedText);
+        String resultText = result.getText();
+        Assert.assertEquals(resultText, expectedText);
+
+        if (this.clearTextBtnRect == null) {
+            this.clearTextBtnRect = new UIRectangle(this.context.find.byText("clearResult").getUIRectangle(), this.context);
+            this.clearTextBtnRect.extendRectangle(5, 5, 0, 0);
+        }
+
+        this.clearTextBtnRect.tap();
     }
 }
