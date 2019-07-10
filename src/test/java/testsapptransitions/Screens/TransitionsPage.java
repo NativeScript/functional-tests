@@ -87,11 +87,11 @@ public class TransitionsPage extends BasePage {
     }
 
     private static String createButtonName(String firstArg, String secondArg, String additionaArg) {
-        if (additionaArg != null) {
-            return String.format("%s %s %s %s %s", firstArg, followSign, secondArg, plus, additionaArg);
-        } else {
+//        if (additionaArg != null) {
+//            return String.format("%s %s %s %s %s", firstArg, followSign, secondArg, plus, additionaArg);
+//        } else {
             return String.format("%s %s %s", firstArg, followSign, secondArg);
-        }
+//        }
     }
 
     public UIElement mainLayoutContainer() {
