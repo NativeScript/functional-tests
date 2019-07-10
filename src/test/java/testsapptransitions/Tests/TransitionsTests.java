@@ -97,28 +97,28 @@ public class TransitionsTests extends TransitionsBaseTest {
         this.assertImagesResults();
     }
 
-    @Test(groups = {"ios"})
-    public void noTransCurlTransCH_14() throws Exception {
-        this.compareTransitions(TransitionsPage.noTransSlideCurlTransCH(), 250, 3000);
-        this.assertImagesResults();
-    }
-
-    @Test(groups = {"ios"})
-    public void curlTransCurlTransCH_15() throws Exception {
-        int wait = 250;
-        int secondWait = 3000;
-        if (this.context.settings.platform == PlatformType.iOS && this.context.settings.platformVersion >= 10) {
-            wait = 100;
-            secondWait = 200;
-        }
-        this.compareTransitions(TransitionsPage.curlTransCurlTransCH(), wait, secondWait);
-        this.assertImagesResults();
-    }
-
-
-    @Test(groups = {"ios"})
-    public void slideCurlTransGoBack_16() throws Exception {
-        this.compareTransitions(TransitionsPage.slideCurlTransGoBack(), 250, 3000);
-        this.assertImagesResults();
-    }
+//    @Test(groups = {"ios"})
+//    public void noTransCurlTransCH_14() throws Exception {
+//        this.compareTransitions(TransitionsPage.noTransSlideCurlTransCH(), 250, 3000);
+//        this.assertImagesResults();
+//    }
+//
+//    @Test(groups = {"ios"})
+//    public void curlTransCurlTransCH_15() throws Exception {
+//        int wait = 250;
+//        int secondWait = 3000;
+//        if (this.context.settings.platform == PlatformType.iOS && this.context.settings.platformVersion >= 10) {
+//            wait = 100;
+//            secondWait = 200;
+//        }
+//        this.compareTransitions(TransitionsPage.curlTransCurlTransCH(), wait, secondWait);
+//        this.assertImagesResults();
+//    }
+//
+//
+//    @Test(groups = {"ios"})
+//    public void slideCurlTransGoBack_16() throws Exception {
+//        this.compareTransitions(TransitionsPage.slideCurlTransGoBack(), 250, 3000);
+//        this.assertImagesResults();
+//    }
 }
