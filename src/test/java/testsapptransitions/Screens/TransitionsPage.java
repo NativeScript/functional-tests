@@ -1,9 +1,9 @@
 package testsapptransitions.Screens;
 
+import functional.tests.core.enums.ClickType;
 import functional.tests.core.mobile.basepage.BasePage;
 import functional.tests.core.mobile.basetest.MobileContext;
 import functional.tests.core.mobile.element.UIElement;
-import functional.tests.core.enums.ClickType;
 import functional.tests.core.mobile.helpers.NavigationHelper;
 import org.openqa.selenium.Point;
 import org.testng.Assert;
@@ -27,71 +27,67 @@ public class TransitionsPage extends BasePage {
     }
 
     public static String flipTransGoBack() {
-        return createButtonName(flipTrans, goBack, null);
+        return createButtonName(flipTrans, goBack);
     }
 
     public static String noTransFlipTransCH() {
-        return createButtonName(noTrans, flipTrans, CH);
+        return createButtonName(noTrans, flipTrans);
     }
 
     public static String flipTransFlipTransCH() {
-        return createButtonName(flipTrans, flipTrans, CH);
+        return createButtonName(flipTrans, flipTrans);
     }
 
     public static String slideTransGoBack() {
-        return createButtonName(slideTrans, goBack, null);
+        return createButtonName(slideTrans, goBack);
     }
 
     public static String noTransSlideTransCH() {
-        return createButtonName(noTrans, slideTrans, CH);
+        return createButtonName(noTrans, slideTrans);
     }
 
     public static String slideTransSlideTransCH() {
-        return createButtonName(slideTrans, slideTrans, CH);
+        return createButtonName(slideTrans, slideTrans);
     }
 
     public static String fadeTransGoBack() {
-        return createButtonName(fadeTrans, goBack, null);
+        return createButtonName(fadeTrans, goBack);
     }
 
     public static String noTransFadeCH() {
-        return createButtonName(noTrans, fadeTrans, CH);
+        return createButtonName(noTrans, fadeTrans);
     }
 
     public static String fadeTransFadeTransCH() {
-        return createButtonName(fadeTrans, fadeTrans, CH);
+        return createButtonName(fadeTrans, fadeTrans);
     }
 
     public static String customTransGoBack() {
-        return createButtonName(customTrans, goBack, null);
+        return createButtonName(customTrans, goBack);
     }
 
     public static String noTransCustomTransCH() {
-        return createButtonName(noTrans, customTrans, CH);
+        return createButtonName(noTrans, customTrans);
     }
 
     public static String customTransCustomTransCH() {
-        return createButtonName(customTrans, customTrans, CH);
+        return createButtonName(customTrans, customTrans);
     }
 
     public static String slideCurlTransGoBack() {
-        return createButtonName(curlTrans, goBack, null);
+        return createButtonName(curlTrans, goBack);
     }
 
     public static String noTransSlideCurlTransCH() {
-        return createButtonName(noTrans, curlTrans, CH);
+        return createButtonName(noTrans, curlTrans);
     }
 
     public static String curlTransCurlTransCH() {
-        return createButtonName(curlTrans, curlTrans, CH);
+        return createButtonName(curlTrans, curlTrans);
     }
 
-    private static String createButtonName(String firstArg, String secondArg, String additionaArg) {
-//        if (additionaArg != null) {
-//            return String.format("%s %s %s %s %s", firstArg, followSign, secondArg, plus, additionaArg);
-//        } else {
-            return String.format("%s %s %s", firstArg, followSign, secondArg);
-//        }
+    private static String createButtonName(String firstArg, String secondArg) {
+        return String.format("%s %s %s", firstArg, followSign, secondArg);
     }
 
     public UIElement mainLayoutContainer() {
