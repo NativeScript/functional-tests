@@ -10,16 +10,7 @@
             <package name="uitests.Tests.SearchBar"/>
         </packages>
     </test>
-    <test name="UI Tests - Tab view">
-        <groups>
-            <run>
-                <include name="android"/>
-            </run>
-        </groups>
-        <packages>
-            <package name="uitests.Tests.TabView"/>
-        </packages>
-    </test>
+
     <test name="UI Tests - Text Field">
         <groups>
             <run>
