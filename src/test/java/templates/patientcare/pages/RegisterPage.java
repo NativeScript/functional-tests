@@ -3,11 +3,12 @@ package templates.patientcare.pages;
 import com.google.common.collect.ImmutableMap;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.basepage.BasePage;
-import functional.tests.core.mobile.device.android.Adb;
 import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.mobile.find.Wait;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
@@ -33,9 +34,9 @@ public class RegisterPage extends BasePage {
             // Handle keyboard
             if (this.settings.platformVersion > 6.0) {
                 Wait.sleep(500);
-                ((AndroidDriver) this.client.driver).pressKeyCode(66);
+                ((AndroidDriver) this.client.driver).pressKey(new KeyEvent(AndroidKey.ENTER));
                 Wait.sleep(500);
-                ((AndroidDriver) this.client.driver).pressKeyCode(66);
+                ((AndroidDriver) this.client.driver).pressKey(new KeyEvent(AndroidKey.ENTER));
                 Wait.sleep(500);
             }
 
@@ -90,7 +91,7 @@ public class RegisterPage extends BasePage {
     private void sendEnterAndTypeText(String text) {
         if (this.settings.platform == PlatformType.Android) {
             Wait.sleep(20);
-            ((AndroidDriver) this.client.driver).pressKeyCode(66);
+            ((AndroidDriver) this.client.driver).pressKey(new KeyEvent(AndroidKey.ENTER));
             Wait.sleep(20);
 
             List<String> args = Arrays.asList(
