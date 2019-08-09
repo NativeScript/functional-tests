@@ -13,8 +13,9 @@ Please read [this document](https://github.com/NativeScript/functional-tests-cor
 ## Install Dependencies
 
 Install [Functional Tests Core](https://github.com/NativeScript/functional-tests-core):
-- Download [functional.tests.core.jar](https://github.com/NativeScript/functional-tests-core/releases)
-- Place it in the `lib` folder and install it
+- Clone and build [functional-tests-core](https://github.com/NativeScript/functional-tests-core/)
+- Build it and place `functional.tests.core.jar` in the `lib` folder
+- Install it with this command:
 ```
 mvn install:install-file -Dfile=lib/functional.tests.core-0.0.5.jar -DgroupId=functional.tests.core -DartifactId=functional.tests.core -Dversion=0.0.5 -Dpackaging=jar
 ```
