@@ -1,15 +1,15 @@
 package templates.healthsurvey.tests;
 
 import functional.tests.core.mobile.basetest.MobileTest;
+import org.testng.annotations.Test;
 import templates.healthsurvey.pages.LoginPage;
 import templates.healthsurvey.pages.RegisterPage;
 import templates.healthsurvey.pages.WelcomePage;
-import org.testng.annotations.Test;
 
+@SuppressWarnings("groupsTestNG")
 public class SmokeTests extends MobileTest {
 
     private static LoginPage homePage;
-    private static RegisterPage registerPage;
     private static WelcomePage welcomePage;
 
     private String email;
@@ -24,7 +24,7 @@ public class SmokeTests extends MobileTest {
     @Test(description = "Verify login page looks OK.", groups = {"android", "ios"})
     public void test_02_register() throws Exception {
         // Verify register page
-        registerPage = homePage.register();
+        RegisterPage registerPage = homePage.register();
         this.assertScreen("healthsurvey-register", this.settings.defaultTimeout, 0.1);
 
         this.email = String.format("nativescript_%s@telerik.com", System.currentTimeMillis());

@@ -122,7 +122,7 @@ public class SdkCameraTests extends SdkBaseTest {
                 } else {
                     if (this.settings.deviceName.toLowerCase().contains("x")) {
                         Point p = this.wait.waitForVisible(By.id("Moments")).getCenter();
-                        new TouchAction(this.client.driver).tap(PointOption.point(p.x, p.y + 10)).perform();
+                        new TouchAction<>(this.client.driver).tap(PointOption.point(p.x, p.y + 10)).perform();
                     } else {
                         this.wait.waitForVisible(By.id("Moments")).tap();
                     }

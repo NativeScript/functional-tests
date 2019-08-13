@@ -9,6 +9,7 @@ import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
+import io.appium.java_client.remote.AutomationName;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
@@ -21,7 +22,7 @@ import java.util.Map;
 
 public class RegisterPage extends BasePage {
 
-    public RegisterPage() {
+    RegisterPage() {
         super();
         UIElement home = this.wait.waitForVisible(this.locators.findByTextLocator("Registration", true));
         Assert.assertNotNull(home, "Register page not loaded!");
@@ -33,7 +34,7 @@ public class RegisterPage extends BasePage {
         this.email().setText(email);
         if (this.settings.platform == PlatformType.Android) {
 
-            if (this.settings.platformVersion > 6.0) {
+            if (this.settings.automationName.equals(AutomationName.ANDROID_UIAUTOMATOR2)) {
                 Wait.sleep(500);
                 ((AndroidDriver) this.client.driver).pressKey(new KeyEvent(AndroidKey.ENTER));
                 Wait.sleep(500);
@@ -48,7 +49,7 @@ public class RegisterPage extends BasePage {
             Wait.sleep(500);
 
             // Hack
-            new TouchAction(this.client.driver)
+            new TouchAction<>(this.client.driver)
                     .press(PointOption.point(240, 500))
                     .waitAction(WaitOptions.waitOptions(Duration.ofMillis(1000)))
                     .moveTo(PointOption.point(240, 100))
