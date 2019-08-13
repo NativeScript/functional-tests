@@ -58,7 +58,7 @@ public class SearchBarTest extends UIBaseTests {
         } else if ((this.settings.platform == PlatformType.Android && this.settings.platformVersion == 8.0)) {
             this.assertScreen("issue_4147_2", waitTime, 0.05);
         } else {
-            this.compareScreens(waitTime,0.05);
+            this.compareScreens(waitTime, 0.05);
         }
 
         this.clearSearchBar(0);
@@ -86,25 +86,12 @@ public class SearchBarTest extends UIBaseTests {
         }
     }
 
-    @Test(groups = {"android", "ios"})
-    public void search_bar() throws Exception {
-        if (this.settings.platformVersion < 10 && this.settings.platform == PlatformType.iOS) {
-            return;
-        }
-        this.homePageExtended.navigateToMainPage();
-        this.homePageExtended.navigateTo(this.find.byText("search-bar"));
-        Wait.sleep(3000);
-        this.app.hideKeyboard();
-
-        this.assertScreen(10);
-    }
-
     @Test(groups = {"android"})
     public void issue_5039() throws Exception {
         this.homePageExtended.navigateTo("issue-5039");
 
         this.setText(0, "apple");
-        ((AndroidDriver) this.client.driver).pressKey(new KeyEvent(AndroidKey.ENTER));
+    ((AndroidDriver) this.client.driver).pressKey(new KeyEvent(AndroidKey.ENTER));
         if ((this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) || (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 8.0)) {
 
             if (this.imageVerification.compareScreens("issue_5039_with_suggestions", 10, 0, this.maxPixelTolerance, 0.05)) {
@@ -136,6 +123,19 @@ public class SearchBarTest extends UIBaseTests {
         } else {
             this.assertImagesResults();
         }
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void search_bar() throws Exception {
+        if (this.settings.platformVersion < 10 && this.settings.platform == PlatformType.iOS) {
+            return;
+        }
+        this.homePageExtended.navigateToMainPage();
+        this.homePageExtended.navigateTo(this.find.byText("search-bar", false, settings.shortTimeout));
+        Wait.sleep(3000);
+        this.app.hideKeyboard();
+
+        this.assertScreen(10);
     }
 
     private void setText(int index, String text) {
