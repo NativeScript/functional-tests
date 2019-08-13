@@ -9,7 +9,6 @@ import uitests.Tests.UIBaseTests;
 
 @SuppressWarnings("groupsTestNG")
 public class TextFiledTest extends UIBaseTests {
-    private int maxPixelTolerance = 2147483647;
     public HomePageExtended homePageExtended;
 
     @BeforeClass(alwaysRun = true)
@@ -65,8 +64,9 @@ public class TextFiledTest extends UIBaseTests {
 
         textFieldLocator.tap();
         textViewLocator.tap();
+        int maxPixelTolerance = 2147483647;
         if (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) {
-            if (this.imageVerification.compareScreens("blur_focus_textView_TextField_with_suggestions", 5, 0, this.maxPixelTolerance, 0.1)) {
+            if (this.imageVerification.compareScreens("blur_focus_textView_TextField_with_suggestions", 5, 0, maxPixelTolerance, 0.1)) {
                 this.assertScreen("blur_focus_textView_TextField_with_suggestions", 5, 0.1);
             } else {
                 this.assertScreen("blur_focus_textView_TextField_without_suggestions", 5, 0.1);
@@ -78,7 +78,7 @@ public class TextFiledTest extends UIBaseTests {
         textFieldLocator.tap();
 
         if (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) {
-            if (this.imageVerification.compareScreens("blur_focus_textView_TextField_2_with_suggestions", 5, 0, this.maxPixelTolerance, 0.1)) {
+            if (this.imageVerification.compareScreens("blur_focus_textView_TextField_2_with_suggestions", 5, 0, maxPixelTolerance, 0.1)) {
                 this.assertScreen("blur_focus_textView_TextField_2_with_suggestions", 5, 0.1);
             } else {
                 this.assertScreen("blur_focus_textView_TextField_2_without_suggestions", 5, 0.1);
