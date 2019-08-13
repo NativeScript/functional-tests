@@ -4,12 +4,13 @@ import cuteness.Screens.AboutPage;
 import cuteness.Screens.DetailsPage;
 import cuteness.Screens.HomePage;
 import functional.tests.core.enums.PlatformType;
-import functional.tests.core.mobile.find.Wait;
-import functional.tests.core.mobile.basetest.MobileTest;
 import functional.tests.core.enums.SwipeElementDirection;
+import functional.tests.core.mobile.basetest.MobileTest;
+import functional.tests.core.mobile.find.Wait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+@SuppressWarnings("groupsTestNG")
 public class CutenessSmokeTests extends MobileTest {
 
     protected HomePage homePage;
@@ -52,7 +53,7 @@ public class CutenessSmokeTests extends MobileTest {
     }
 
     @Test(groups = {"android", "ios"})
-    public void cuteness_10_home_page_swipe() throws Exception {
+    public void cuteness_10_home_page_swipe() {
         this.homePage.loaded();
         this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 300);
         this.gestures.swipeInWindow(SwipeElementDirection.DOWN, 200);
@@ -83,7 +84,7 @@ public class CutenessSmokeTests extends MobileTest {
     }
 
     @Test(groups = {"android", "ios"})
-    public void cuteness_21_navigation_home_details() throws Exception {
+    public void cuteness_21_navigation_home_details() {
         DetailsPage detailsPage = new DetailsPage();
         for (int i = 0; i < 3; i++) {
             if (this.settings.platform == PlatformType.Android) {
