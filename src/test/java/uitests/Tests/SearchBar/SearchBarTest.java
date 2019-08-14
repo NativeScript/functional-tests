@@ -106,7 +106,9 @@ public class SearchBarTest extends UIBaseTests {
 
         this.clearSearchBar(0);
         this.setText(0, "apple");
+        Wait.sleep(1000);
         ((AndroidDriver) this.client.driver).pressKey(new KeyEvent(AndroidKey.ENTER));
+        Wait.sleep(1000);
 
         if ((this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) || (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 8.0)) {
             if (this.imageVerification.compareScreens("issue_5039_2_with_suggestions", 10, 0, this.maxPixelTolerance, 0.05)) {
@@ -117,7 +119,9 @@ public class SearchBarTest extends UIBaseTests {
         } else {
             this.compareScreens(10);
         }
+        Wait.sleep(1000);
         this.app.hideKeyboard();
+        Wait.sleep(1000);
         if ((this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) || (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 8.0)) {
             this.log.info("Skip image verification.");
         } else {
@@ -130,7 +134,9 @@ public class SearchBarTest extends UIBaseTests {
         if (this.settings.platformVersion < 10 && this.settings.platform == PlatformType.iOS) {
             return;
         }
+        Wait.sleep(1000);
         this.homePageExtended.navigateToMainPage();
+        Wait.sleep(1000);
         this.homePageExtended.navigateTo(this.find.byText("search-bar", false, settings.shortTimeout));
         Wait.sleep(3000);
         this.app.hideKeyboard();

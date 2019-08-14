@@ -9,6 +9,7 @@ import uitests.Tests.UIBaseTests;
 
 import java.util.List;
 
+@SuppressWarnings("groupsTestNG")
 public class TextViewTest extends UIBaseTests {
 
     public HomePageExtended homePageExtended;
@@ -69,7 +70,7 @@ public class TextViewTest extends UIBaseTests {
         this.typeText(elements, 0);
         if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 11) {
             this.compareScreens(15, 2.2);
-        }else {
+        } else {
             this.app.hideKeyboard();
             this.compareScreens(15);
         }
@@ -89,9 +90,9 @@ public class TextViewTest extends UIBaseTests {
                     "1111111111111111111111111111111111111111\n" +
                     "1111111111111111111111111111111111111111\n" +
                     "1111111111111111111111111111111111111111";
-            }
+        }
 
-            elements.get(index).setText(text);
+        elements.get(index).setText(text);
 
         if (this.settings.platform == PlatformType.Android) {
             try {

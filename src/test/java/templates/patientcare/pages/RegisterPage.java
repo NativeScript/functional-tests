@@ -37,6 +37,11 @@ public class RegisterPage extends BasePage {
                 Wait.sleep(500);
                 ((AndroidDriver) this.client.driver).pressKey(new KeyEvent(AndroidKey.ENTER));
                 Wait.sleep(500);
+                if (settings.platformVersion > 6.0) {
+                    Wait.sleep(500);
+                    ((AndroidDriver) this.client.driver).pressKey(new KeyEvent(AndroidKey.ENTER));
+                    Wait.sleep(500);
+                }
             }
 
             this.sendEnterAndTypeText(pass);
