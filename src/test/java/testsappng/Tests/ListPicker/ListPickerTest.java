@@ -33,7 +33,7 @@ public class ListPickerTest extends TestsAppNgBase {
             return;
         }
         this.context.device.rotate(ScreenOrientation.LANDSCAPE);
-        this.compareScreens(5);
+        this.compareScreens(5, 1);
         this.context.device.rotate(ScreenOrientation.PORTRAIT);
         this.compareScreens(5);
         this.assertImagesResults();
