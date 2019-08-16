@@ -23,7 +23,7 @@ public class ListPickerTest extends UIBaseTests {
         this.homePageExtended.navigateTo("issue_2895");
         this.context.wait.waitForVisible(this.locators.byText("Toggle visibility")).tap();
         this.device.rotate(ScreenOrientation.LANDSCAPE);
-        this.compareScreens(15);
+        this.compareScreens(15, 0.5);
         this.device.rotate(ScreenOrientation.PORTRAIT);
         this.compareScreens(15);
         this.assertImagesResults();
@@ -34,7 +34,7 @@ public class ListPickerTest extends UIBaseTests {
         this.homePageExtended.navigateToMainPage();
         this.homePageExtended.navigateTo(this.wait.waitForVisible(this.locators.byText("list-picker")), "list-picker ");
         this.compareScreens(10);
-        
+
         this.assertImagesResults();
     }
 }
