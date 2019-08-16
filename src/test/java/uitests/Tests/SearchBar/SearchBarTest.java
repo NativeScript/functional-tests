@@ -134,7 +134,7 @@ public class SearchBarTest extends UIBaseTests {
         if (this.settings.platformVersion < 10 && this.settings.platform == PlatformType.iOS) {
             return;
         }
-        if (settings.platformVersion >= 8.0) {
+        if ((settings.platformVersion >= 8.0) && (this.settings.platform == PlatformType.Android)) {
             Wait.sleep(1000);
             this.client.driver.navigate().back();
         }
@@ -144,6 +144,7 @@ public class SearchBarTest extends UIBaseTests {
         this.homePageExtended.navigateTo(this.find.byText("search-bar", true, settings.shortTimeout));
         Wait.sleep(3000);
         this.app.hideKeyboard();
+
         this.assertScreen(10);
     }
 
