@@ -141,10 +141,9 @@ public class SearchBarTest extends UIBaseTests {
         Wait.sleep(1000);
         this.homePageExtended.navigateToMainPage();
         Wait.sleep(1000);
-        this.find.byText("search-bar", false, settings.shortTimeout).click();
+        this.homePageExtended.navigateTo(this.find.byText("search-bar", true, settings.shortTimeout));
         Wait.sleep(3000);
         this.app.hideKeyboard();
-
         this.assertScreen(10);
     }
 
