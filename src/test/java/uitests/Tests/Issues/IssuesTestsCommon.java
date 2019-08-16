@@ -162,10 +162,10 @@ public class IssuesTestsCommon extends IssuesBaseTest {
     public void issue_2661_actionBar_backGroundColor() throws Exception {
         this.issuesBasePage.navToPage("2661");
         this.issuesBasePage.navigateTo("Forward", false);
-        this.compareScreens(2);
+        this.compareScreens(5);
 
         this.issuesBasePage.navigateBack(this.find.byText("Back"));
-        this.compareScreens(2);
+        this.compareScreens(5);
 
         this.assertImagesResults();
     }
@@ -174,7 +174,7 @@ public class IssuesTestsCommon extends IssuesBaseTest {
     @Test(groups = {"android", "ios"})
     public void issue_3113_backGroundTransparent() throws Exception {
         this.issuesBasePage.navToPage("3113");
-        this.compareScreens(2);
+        this.compareScreens(5);
 
         this.assertImagesResults();
     }
