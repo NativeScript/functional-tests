@@ -23,7 +23,7 @@ public class ListPickerTest extends UIBaseTests {
         this.homePageExtended.navigateTo("issue_2895");
         this.context.wait.waitForVisible(this.locators.byText("Toggle visibility")).tap();
         this.device.rotate(ScreenOrientation.LANDSCAPE);
-        this.compareScreens(15, 0.5);
+        this.compareScreens(15, 1);
         this.device.rotate(ScreenOrientation.PORTRAIT);
         this.compareScreens(15);
         this.assertImagesResults();

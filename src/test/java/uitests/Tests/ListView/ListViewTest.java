@@ -62,7 +62,7 @@ public class ListViewTest extends UIBaseTests {
         this.homePageExtended.navigateTo("images-template");
         this.compareScreens(15);
         this.device.rotate(ScreenOrientation.LANDSCAPE);
-        this.compareScreens(15, 0.5);
+        this.compareScreens(15, 1);
         this.device.rotate(ScreenOrientation.PORTRAIT);
         this.compareScreens(15);
         this.assertImagesResults();
