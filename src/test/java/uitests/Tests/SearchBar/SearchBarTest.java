@@ -134,6 +134,10 @@ public class SearchBarTest extends UIBaseTests {
         if (this.settings.platformVersion < 10 && this.settings.platform == PlatformType.iOS) {
             return;
         }
+        if (settings.platformVersion >= 8.0) {
+            Wait.sleep(1000);
+            this.client.driver.navigate().back();
+        }
         Wait.sleep(1000);
         this.homePageExtended.navigateToMainPage();
         Wait.sleep(1000);
