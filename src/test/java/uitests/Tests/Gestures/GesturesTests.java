@@ -125,9 +125,7 @@ public class GesturesTests extends GesturesBaseTest {
         if (this.settings.platformVersion < 11 && this.settings.platform == PlatformType.iOS) {
             this.assertScreen(5);
         } else {
-            if (settings.platformVersion < 5.0) {
-                Wait.sleep(3000);
-            }
+            Wait.sleep(3000);
             this.device.assertLogContains("tapAction");
         }
     }
