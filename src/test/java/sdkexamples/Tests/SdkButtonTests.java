@@ -1,6 +1,5 @@
 package sdkexamples.Tests;
 
-import functional.tests.core.enums.PlatformType;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import sdkexamples.SdkBaseTest;
@@ -18,14 +17,19 @@ public class SdkButtonTests extends SdkBaseTest {
     @DataProvider(name = "example")
     public Object[][] data() {
         return new Object[][]{
+                {"Usage"},
+                {"Styling"}
         };
     }
 
-    @Test
-    public void sdkButtonTest_01_tap() throws Exception {
-        this.mainPage.navigateTo(pageButtonTap);
-        this.mainPage.find.byText("Tap me!").click();
-        this.mainPage.log.logScreen(pageButtonTap);
-        this.mainPage.find.byText("OK").click();
+    @Test(dataProvider = "example")
+    public void sdkButtonTest_01_tap(String example) throws Exception {
+        this.mainPage.navigateTo(example);
+        if(example == "Usage"){
+            this.mainPage.find.byText("Tap me!").click();
+            this.mainPage.log.logScreen(pageButtonTap);
+            this.mainPage.find.byText("OK").click();
+        }
+
     }
 }
