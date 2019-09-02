@@ -16,13 +16,13 @@ public class SdkActivityIndicatorTests extends SdkBaseTest {
     @DataProvider(name = "example")
     public Object[][] data() {
         return new Object[][]{
-                {"Set busy property"}
+                {"Usage"},
+                {"Styling"}
         };
     }
 
     @Test(dataProvider = "example")
     public void sdkActivityIndicatorTest(String example) throws Exception {
         this.mainPage.navigateTo(example);
-        this.mainPage.wait.waitForVisible(this.locators.byText("Modify Busy property")).click();
     }
 }
