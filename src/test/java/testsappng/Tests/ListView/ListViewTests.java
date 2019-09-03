@@ -44,7 +44,7 @@ public class ListViewTests extends TestsAppNgBase {
     @Test(groups = {"android", "ios"})
     public void listViewAsyncPipe_03() throws Exception {
         this.listViewBasePage.navigateTo(ListViewTests.LIST_VIEW_ASYNC_PIPE);
-        this.listViewBasePage.wait.waitForVisible(this.locators.byText("index: data item 12", false, false), 30, false);
+        this.listViewBasePage.wait.waitForVisible(this.locators.byText("index: data item 11", false, false), 30, false);
         this.assertScreen(10, 0.3);
     }
 
