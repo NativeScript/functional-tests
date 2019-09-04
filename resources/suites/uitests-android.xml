@@ -1,15 +1,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="UI Tests" verbose="1">
-    <test name="UI Tests - Button">
-        <groups>
-            <run>
-                <include name="android"/>
-            </run>
-        </groups>
-        <packages>
-            <package name="uitests.Tests.Button"/>
-        </packages>
-    </test>
+    <!--<test name="UI Tests - Button">-->
+        <!--<groups>-->
+            <!--<run>-->
+                <!--<include name="android"/>-->
+            <!--</run>-->
+        <!--</groups>-->
+        <!--<packages>-->
+            <!--<package name="uitests.Tests.Button"/>-->
+        <!--</packages>-->
+    <!--</test>-->
     <test name="UI Tests - Components">
         <groups>
             <run>
@@ -120,16 +120,6 @@
             <package name="uitests.Tests.SegmentedStyle"/>
         </packages>
     </test>
-    <test name="UI Tests - SearchBar">
-        <groups>
-            <run>
-                <include name="android"/>
-            </run>
-        </groups>
-        <packages>
-            <package name="uitests.Tests.SearchBar"/>
-        </packages>
-    </test>
     <test name="UI Tests - Tab view">
         <groups>
             <run>
@@ -208,6 +198,16 @@
         </groups>
         <packages>
             <package name="uitests.Tests.Performance.MemoryTest"/>
+        </packages>
+    </test>
+    <test name="UI Tests - SearchBar">
+        <groups>
+            <run>
+                <include name="android"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="uitests.Tests.SearchBar"/>
         </packages>
     </test>
 </suite>

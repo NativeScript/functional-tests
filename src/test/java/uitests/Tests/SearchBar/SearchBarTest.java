@@ -4,6 +4,8 @@ import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.mobile.find.Wait;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uitests.Screens.HomePageExtended;
@@ -56,7 +58,7 @@ public class SearchBarTest extends UIBaseTests {
         } else if ((this.settings.platform == PlatformType.Android && this.settings.platformVersion == 8.0)) {
             this.assertScreen("issue_4147_2", waitTime, 0.05);
         } else {
-            this.compareScreens(waitTime,0.05);
+            this.compareScreens(waitTime, 0.05);
         }
 
         this.clearSearchBar(0);
@@ -84,25 +86,12 @@ public class SearchBarTest extends UIBaseTests {
         }
     }
 
-    @Test(groups = {"android", "ios"})
-    public void search_bar() throws Exception {
-        if (this.settings.platformVersion < 10 && this.settings.platform == PlatformType.iOS) {
-            return;
-        }
-        this.homePageExtended.navigateToMainPage();
-        this.homePageExtended.navigateTo(this.find.byText("search-bar"));
-        Wait.sleep(3000);
-        this.app.hideKeyboard();
-
-        this.assertScreen(10);
-    }
-
     @Test(groups = {"android"})
     public void issue_5039() throws Exception {
         this.homePageExtended.navigateTo("issue-5039");
 
         this.setText(0, "apple");
-        ((AndroidDriver) this.client.driver).pressKeyCode(66);
+        ((AndroidDriver) this.client.driver).pressKey(new KeyEvent(AndroidKey.ENTER));
         if ((this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) || (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 8.0)) {
 
             if (this.imageVerification.compareScreens("issue_5039_with_suggestions", 10, 0, this.maxPixelTolerance, 0.05)) {
@@ -117,7 +106,9 @@ public class SearchBarTest extends UIBaseTests {
 
         this.clearSearchBar(0);
         this.setText(0, "apple");
-        ((AndroidDriver) this.client.driver).pressKeyCode(66);
+        Wait.sleep(1000);
+        ((AndroidDriver) this.client.driver).pressKey(new KeyEvent(AndroidKey.ENTER));
+        Wait.sleep(1000);
 
         if ((this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) || (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 8.0)) {
             if (this.imageVerification.compareScreens("issue_5039_2_with_suggestions", 10, 0, this.maxPixelTolerance, 0.05)) {
@@ -128,12 +119,33 @@ public class SearchBarTest extends UIBaseTests {
         } else {
             this.compareScreens(10);
         }
+        Wait.sleep(1000);
         this.app.hideKeyboard();
+        Wait.sleep(1000);
         if ((this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) || (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 8.0)) {
             this.log.info("Skip image verification.");
         } else {
             this.assertImagesResults();
         }
+    }
+
+    @Test(groups = {"android", "ios"})
+    public void search_bar() throws Exception {
+        if (this.settings.platformVersion < 10 && this.settings.platform == PlatformType.iOS) {
+            return;
+        }
+        if ((settings.platformVersion >= 8.0) && (this.settings.platform == PlatformType.Android)) {
+            Wait.sleep(1000);
+            this.client.driver.navigate().back();
+        }
+        Wait.sleep(1000);
+        this.homePageExtended.navigateToMainPage();
+        Wait.sleep(1000);
+        this.homePageExtended.navigateTo(this.find.byText("search-bar", true, settings.shortTimeout));
+        Wait.sleep(3000);
+        this.app.hideKeyboard();
+
+        this.assertScreen(10);
     }
 
     private void setText(int index, String text) {

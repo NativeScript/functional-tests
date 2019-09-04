@@ -61,6 +61,18 @@ public class SdkLocationModuleTests extends SdkBaseTest {
                 this.mainPage.wait.waitForVisible(this.locators.byText("Get current location", false, false), 15, true);
             }
             if (example == "Monitoring location") {
+                UIElement okbtn = this.mainPage.wait.waitForVisible(this.locators.byText("Ok", false, false), 15, false);
+                if (okbtn != null) {
+                    okbtn.tap();
+                    this.log.info("Handle popup by clicking ok.");
+                }
+                if(this.settings.platformVersion == 29.0){
+                    UIElement btn = this.mainPage.wait.waitForVisible(this.locators.byText("Allow only while using the app"), 6, false);
+                    if (btn != null) {
+                        btn.tap();
+                        this.log.info("Handle popup by clicking allow.");
+                    }
+                }
                 this.mainPage.wait.waitForVisible(this.locators.byText("Start location monitoring", false, false), 15, true);
             }
         } else {

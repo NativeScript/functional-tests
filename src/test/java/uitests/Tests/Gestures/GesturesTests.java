@@ -1,8 +1,9 @@
 package uitests.Tests.Gestures;
 
 import functional.tests.core.enums.PlatformType;
-import functional.tests.core.mobile.element.UIRectangle;
 import functional.tests.core.enums.SwipeElementDirection;
+import functional.tests.core.mobile.element.UIRectangle;
+import functional.tests.core.mobile.find.Wait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -124,6 +125,7 @@ public class GesturesTests extends GesturesBaseTest {
         if (this.settings.platformVersion < 11 && this.settings.platform == PlatformType.iOS) {
             this.assertScreen(5);
         } else {
+            Wait.sleep(3000);
             this.device.assertLogContains("tapAction");
         }
     }

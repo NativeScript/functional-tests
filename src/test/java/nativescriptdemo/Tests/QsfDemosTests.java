@@ -32,7 +32,6 @@ public class QsfDemosTests extends QsfBaseTest {
                 {"Pie series"},
                 {"Item layouts"},
                 {"Item reorder"},
-                {"Selection"},
                 {"Reservations"},
         };
     }

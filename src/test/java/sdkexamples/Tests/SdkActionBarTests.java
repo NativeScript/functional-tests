@@ -16,9 +16,8 @@ public class SdkActionBarTests extends SdkBaseTest {
     @DataProvider(name = "example")
     public Object[][] data() {
         return new Object[][]{
-                {"Action items"},
-                {"Navigation button"},
-                {"Title"}
+                {"Usage"},
+                {"Styling"}
         };
     }
 

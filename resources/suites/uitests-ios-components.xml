@@ -7,7 +7,7 @@
             </run>
         </groups>
         <packages>
-            <package name="uitests.Tests.Component"/>
+            <package name="uitests.Tests.Component"></package>
         </packages>
     </test>
 </suite>

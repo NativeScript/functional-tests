@@ -4,6 +4,8 @@ import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.mobile.find.Wait;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.HideKeyboardStrategy;
 import org.openqa.selenium.By;
@@ -59,7 +61,7 @@ public class SdkWebViewTests extends SdkBaseTest {
 
             // On Android default not found page is displayed.
             if (this.settings.platform == PlatformType.Android) {
-                ((AndroidDriver) this.client.driver).pressKeyCode(66);
+                ((AndroidDriver) this.client.driver).pressKey(new KeyEvent(AndroidKey.ENTER));
                 By locator = this.locators.byText("Webpage not available", false, false);
                 UIElement loaded = this.wait.waitForVisible(locator, this.settings.defaultTimeout, false);
                 Assert.notNull(loaded, "Default 'Not found page' not loaded!");

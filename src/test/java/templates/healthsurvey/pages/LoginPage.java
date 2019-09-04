@@ -6,6 +6,8 @@ import functional.tests.core.mobile.basepage.BasePage;
 import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.mobile.find.Wait;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 import org.testng.Assert;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
@@ -29,9 +31,9 @@ public class LoginPage extends BasePage {
         if (this.settings.platform == PlatformType.Android) {
             if (this.settings.platformVersion > 6.0) {
                 Wait.sleep(500);
-                ((AndroidDriver) this.client.driver).pressKeyCode(66);
+                ((AndroidDriver) this.client.driver).pressKey(new KeyEvent(AndroidKey.ENTER));
                 Wait.sleep(500);
-                ((AndroidDriver) this.client.driver).pressKeyCode(66);
+                ((AndroidDriver) this.client.driver).pressKey(new KeyEvent(AndroidKey.ENTER));
                 Wait.sleep(500);
             }
             this.sendEnterAndTypeText(pass);
@@ -69,7 +71,7 @@ public class LoginPage extends BasePage {
     private void sendEnterAndTypeText(String text) {
         if (this.settings.platform == PlatformType.Android) {
             Wait.sleep(20);
-            ((AndroidDriver) this.client.driver).pressKeyCode(66);
+            ((AndroidDriver) this.client.driver).pressKey(new KeyEvent(AndroidKey.ENTER));
             Wait.sleep(20);
 
             List<String> args = Arrays.asList(

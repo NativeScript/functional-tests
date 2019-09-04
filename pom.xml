@@ -93,6 +93,13 @@
             </properties>
         </profile>
         <profile>
+            <id>animations.emu.google.api29</id>
+            <properties>
+                <app.config>animations/animations.emu.google.api29.properties</app.config>
+                <testsuite>animations</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>animations.sim.iphone6s.ios93</id>
             <properties>
                 <app.config>animations/animations.sim.iphone6s.ios93.properties</app.config>
@@ -1309,6 +1316,13 @@
             </properties>
         </profile>
         <profile>
+            <id>testsappng.emu.google.api29</id>
+            <properties>
+                <app.config>testsappng/testsappng.emu.google.api29.properties</app.config>
+                <testsuite>testsappng-android</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>testsappng.sim.iphone6splus.ios93</id>
             <properties>
                 <app.config>testsappng/testsappng.sim.iphone6splus.ios93.properties</app.config>
@@ -1551,6 +1565,13 @@
             </properties>
         </profile>
         <profile>
+            <id>unittests.emu.google.api29</id>
+            <properties>
+                <app.config>unittests/unittests.emu.google.api29.properties</app.config>
+                <testsuite>unittests</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>unittests.sim.iphone6.ios93</id>
             <properties>
                 <app.config>unittests/unittests.sim.iphone6.ios93.properties</app.config>
@@ -1721,6 +1742,13 @@
             </properties>
         </profile>
         <profile>
+            <id>cuteness.emu.google.api29</id>
+            <properties>
+                <app.config>cuteness/cuteness.emu.google.api29.properties</app.config>
+                <testsuite>cuteness-android</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>cuteness.sim.iphone6.ios93</id>
             <properties>
                 <app.config>cuteness/cuteness.sim.iphone6.ios93.properties</app.config>
@@ -1831,6 +1859,13 @@
             <id>groceries.emu.google.api28</id>
             <properties>
                 <app.config>groceries/groceries.emu.google.api28.properties</app.config>
+                <testsuite>groceries-android</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>groceries.emu.google.api29</id>
+            <properties>
+                <app.config>groceries/groceries.emu.google.api29.properties</app.config>
                 <testsuite>groceries-android</testsuite>
             </properties>
         </profile>
@@ -1993,6 +2028,13 @@
             </properties>
         </profile>
         <profile>
+            <id>nativescriptdemo.emu.google.api29</id>
+            <properties>
+                <app.config>nativescriptdemo/nativescriptdemo.emu.google.api29.properties</app.config>
+                <testsuite>nativescriptdemo-android-noweb</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>nativescriptdemo.sim.iphone6.ios93</id>
             <properties>
                 <app.config>nativescriptdemo/nativescriptdemo.sim.iphone6.ios93.properties</app.config>
@@ -2117,6 +2159,13 @@
             <id>sdkexamples.emu.google.api28</id>
             <properties>
                 <app.config>sdkexamples/sdkexamples.emu.google.api28.properties</app.config>
+                <testsuite>sdkexamples</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>sdkexamples.emu.google.api29</id>
+            <properties>
+                <app.config>sdkexamples/sdkexamples.emu.google.api29.properties</app.config>
                 <testsuite>sdkexamples</testsuite>
             </properties>
         </profile>
