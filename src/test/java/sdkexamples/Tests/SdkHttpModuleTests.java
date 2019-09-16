@@ -17,7 +17,9 @@ public class SdkHttpModuleTests extends SdkBaseTest {
     public Object[][] data() {
         return new Object[][]{
                 {"HTTP POST"},
-                {"HTTP GET"}
+                {"HTTP GET"},
+                {"HTTP PUT"},
+                {"HTTP DELETE"}
         };
     }
 

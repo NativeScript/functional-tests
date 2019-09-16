@@ -16,7 +16,8 @@ public class SdkImageTests extends SdkBaseTest {
     @DataProvider(name = "example")
     public Object[][] data() {
         return new Object[][]{
-                {"Create Image"}
+                {"Usage"},
+                {"Styling"}
         };
     }
 

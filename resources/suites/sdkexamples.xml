@@ -1,210 +1,210 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="SDK Examples Tests" verbose="1">
-    <test name="ActionBar">
-        <classes>
-            <class name="sdkexamples.Tests.SdkActionBarTests"/>
-        </classes>
-    </test>
-    <test name="ActivityIndicator">
-        <classes>
-            <class name="sdkexamples.Tests.SdkActivityIndicatorTests"/>
-        </classes>
-    </test>
-    <test name="AngularDirectives">
-        <classes>
-            <class name="sdkexamples.Tests.SdkAngularDirectivesTests"/>
-        </classes>
-    </test>
-    <test name="AngularRouting">
-        <classes>
-            <class name="sdkexamples.Tests.SdkAngularRoutingTests"/>
-        </classes>
-    </test>
-    <test name="Animations">
-        <classes>
-            <class name="sdkexamples.Tests.SdkAnimationsTests"/>
-        </classes>
-    </test>
-    <test name="Application Settings">
-        <classes>
-            <class name="sdkexamples.Tests.SdkApplicationSettingsTests"/>
-        </classes>
-    </test>
-    <test name="Application">
-        <classes>
-            <class name="sdkexamples.Tests.SdkApplicationTests"/>
-        </classes>
-    </test>
-    <test name="Button">
-        <classes>
-            <class name="sdkexamples.Tests.SdkButtonTests"/>
-        </classes>
-    </test>
-    <test name="Camera">
-        <classes>
-            <class name="sdkexamples.Tests.SdkCameraTests"/>
-        </classes>
-    </test>
-    <test name="Color">
-        <classes>
-            <class name="sdkexamples.Tests.SdkColorTests"/>
-        </classes>
-    </test>
-    <test name="Connectivity">
-        <classes>
-            <class name="sdkexamples.Tests.SdkConnectivityTests"/>
-        </classes>
-    </test>
-    <test name="ContentScreens">
-        <classes>
-            <class name="sdkexamples.Tests.SdkContentScreensTests"/>
-        </classes>
-    </test>
-    <test name="DatePicker">
-        <classes>
-            <class name="sdkexamples.Tests.SdkDatePickerTests"/>
-        </classes>
-    </test>
-    <test name="Dialogs">
-        <classes>
-            <class name="sdkexamples.Tests.SdkDialogsTests"/>
-        </classes>
-    </test>
-    <test name="File Systems">
-        <classes>
-            <class name="sdkexamples.Tests.SdkFileSystemTests"/>
-        </classes>
-    </test>
-    <test name="Formatted String">
-        <classes>
-            <class name="sdkexamples.Tests.SdkFormattedStringTests"/>
-        </classes>
-    </test>
-    <test name="Fps Meter">
-        <classes>
-            <class name="sdkexamples.Tests.SdkFpsMeterTests"/>
-        </classes>
-    </test>
-    <test name="Gestures">
-        <classes>
-            <class name="sdkexamples.Tests.SdkGesturesTests"/>
-        </classes>
-    </test>
-    <test name="HtmlView">
-        <classes>
-            <class name="sdkexamples.Tests.SdkHtmlViewTests"/>
-        </classes>
-    </test>
-    <test name="Http Module">
-        <classes>
-            <class name="sdkexamples.Tests.SdkHttpModuleTests"/>
-        </classes>
-    </test>
-    <test name="Image">
-        <classes>
-            <class name="sdkexamples.Tests.SdkImageTests"/>
-        </classes>
-    </test>
-    <test name="Label">
-        <classes>
-            <class name="sdkexamples.Tests.SdkLabelTests"/>
-        </classes>
-    </test>
-    <test name="Layouts">
-        <classes>
-            <class name="sdkexamples.Tests.SdkLayotsTests"/>
-        </classes>
-    </test>
-    <test name="ListPicker">
-        <classes>
-            <class name="sdkexamples.Tests.SdkListPickerTests"/>
-        </classes>
-    </test>
-    <test name="ListView">
-        <classes>
-            <class name="sdkexamples.Tests.SdkListViewTests"/>
-        </classes>
-    </test>
-    <test name="Location Module">
-        <classes>
-            <class name="sdkexamples.Tests.SdkLocationModuleTests"/>
-        </classes>
-    </test>
-    <test name="Modal Page">
-        <classes>
-            <class name="sdkexamples.Tests.SdkModalPageTests"/>
-        </classes>
-    </test>
-    <test name="Platform Module">
-        <classes>
-            <class name="sdkexamples.Tests.SdkPlatformModuleTests"/>
-        </classes>
-    </test>
-    <test name="Progress">
-        <classes>
-            <class name="sdkexamples.Tests.SdkProgressTests"/>
-        </classes>
-    </test>
-    <test name="ScrollView">
-        <classes>
-            <class name="sdkexamples.Tests.SdkScrollViewTests"/>
-        </classes>
-    </test>
-    <test name="SearchBar">
-        <classes>
-            <class name="sdkexamples.Tests.SdkSearchBarTests"/>
-        </classes>
-    </test>
-    <test name="SegmentedBar">
-        <classes>
-            <class name="sdkexamples.Tests.SdkSegmentedBarTests"/>
-        </classes>
-    </test>
-    <test name="Slider">
-        <classes>
-            <class name="sdkexamples.Tests.SdkSliderTests"/>
-        </classes>
-    </test>
-    <test name="Style">
-        <classes>
-            <class name="sdkexamples.Tests.SdkStyleTests"/>
-        </classes>
-    </test>
-    <test name="Switch">
-        <classes>
-            <class name="sdkexamples.Tests.SdkSwitchTests"/>
-        </classes>
-    </test>
-    <test name="TabView">
-        <classes>
-            <class name="sdkexamples.Tests.SdkTabViewTests"/>
-        </classes>
-    </test>
-    <test name="TextField">
-        <classes>
-            <class name="sdkexamples.Tests.SdkTextFieldTests"/>
-        </classes>
-    </test>
-    <test name="TextView">
-        <classes>
-            <class name="sdkexamples.Tests.SdkTextViewTests"/>
-        </classes>
-    </test>
-    <test name="TimePicker">
-        <classes>
-            <class name="sdkexamples.Tests.SdkTimePickerTests"/>
-        </classes>
-    </test>
-    <test name="Timer Module">
-        <classes>
-            <class name="sdkexamples.Tests.SdkTimerModuleTests"/>
-        </classes>
-    </test>
-    <test name="Trace Module">
-        <classes>
-            <class name="sdkexamples.Tests.SdkTraceModuleTests"/>
-        </classes>
-    </test>
+    <!--<test name="ActionBar">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkActionBarTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="ActivityIndicator">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkActivityIndicatorTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="AngularDirectives">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkAngularDirectivesTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="AngularRouting">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkAngularRoutingTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="Animations">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkAnimationsTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="Application Settings">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkApplicationSettingsTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="Application">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkApplicationTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="Button">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkButtonTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="Camera">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkCameraTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="Color">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkColorTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="Connectivity">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkConnectivityTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="ContentScreens">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkContentScreensTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="DatePicker">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkDatePickerTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="Dialogs">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkDialogsTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="File Systems">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkFileSystemTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="Formatted String">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkFormattedStringTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="Fps Meter">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkFpsMeterTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="Gestures">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkGesturesTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="HtmlView">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkHtmlViewTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="Http Module">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkHttpModuleTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="Image">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkImageTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="Label">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkLabelTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="Layouts">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkLayotsTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="ListPicker">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkListPickerTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="ListView">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkListViewTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="Location Module">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkLocationModuleTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="Modal Page">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkModalPageTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="Platform Module">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkPlatformModuleTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="Progress">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkProgressTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="ScrollView">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkScrollViewTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="SearchBar">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkSearchBarTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="SegmentedBar">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkSegmentedBarTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="Slider">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkSliderTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="Style">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkStyleTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="Switch">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkSwitchTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="TabView">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkTabViewTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="TextField">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkTextFieldTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="TextView">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkTextViewTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="TimePicker">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkTimePickerTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="Timer Module">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkTimerModuleTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="Trace Module">-->
+        <!--<classes>-->
+            <!--<class name="sdkexamples.Tests.SdkTraceModuleTests"/>-->
+        <!--</classes>-->
+    <!--</test>-->
     <test name="WebView">
         <classes>
             <class name="sdkexamples.Tests.SdkWebViewTests"/>
