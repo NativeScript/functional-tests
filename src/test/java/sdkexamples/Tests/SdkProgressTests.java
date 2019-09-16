@@ -17,7 +17,8 @@ public class SdkProgressTests extends SdkBaseTest {
     public Object[][] data() {
         return new Object[][]{
                 {"Create Progress"},
-                {"Set up Progress"}
+                {"Set up Progress"},
+                {"Style Progress"}
         };
     }
 

@@ -18,7 +18,8 @@ public class SdkScrollViewTests extends SdkBaseTest {
         return new Object[][]{
                 {"Horizontal orientation"},
                 {"Vertical orientation"},
-                {"Scroll event"}
+                {"Scroll event"},
+                {"Enable/Disable scroll"}
         };
     }
 
