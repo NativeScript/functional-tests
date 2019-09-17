@@ -2840,6 +2840,43 @@
             </properties>
         </profile>
 
+        <!-- Tab Navigation Vue App Profiles-->
+        <profile>
+            <id>template-tab-navigation-vue.emu.default.api23</id>
+            <properties>
+                <app.config>templates/tabnavigation.vue.emu.default.api23.properties</app.config>
+                <testsuite>templates-tabnavigation</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-tab-navigation-vue.emu.google.api27</id>
+            <properties>
+                <app.config>templates/tabnavigation.vue.emu.google.api27.properties</app.config>
+                <testsuite>templates-tabnavigation</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-tab-navigation-vue.sim.iphone7.ios110</id>
+            <properties>
+                <app.config>templates/tabnavigation.vue.sim.iphone7.ios11.properties</app.config>
+                <testsuite>templates-tabnavigation</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-tab-navigation-vue.sim.iphoneX.ios11</id>
+            <properties>
+                <app.config>templates/tabnavigation.vue.sim.iphoneX.ios11.properties</app.config>
+                <testsuite>templates-tabnavigation</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-tab-navigation-vue.sim.iphoneXR.ios12</id>
+            <properties>
+                <app.config>templates/tabnavigation.vue.sim.iphoneXR.ios12.properties</app.config>
+                <testsuite>templates-tabnavigation</testsuite>
+            </properties>
+        </profile>
+
         <!-- Drawer Navigation JS App Profiles-->
         <profile>
             <id>template-drawer-navigation-js.emu.default.api23</id>
