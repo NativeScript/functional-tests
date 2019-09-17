@@ -1416,6 +1416,13 @@
             </properties>
         </profile>
         <profile>
+            <id>testsapptransitions.emu.google.api29</id>
+            <properties>
+                <app.config>testsapptransitions/testsapptransitions.emu.google.api29.properties</app.config>
+                <testsuite>testsapptransitions-android</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>testsapptransitions.emu.google.api28</id>
             <properties>
                 <app.config>testsapptransitions/testsapptransitions.emu.google.api28.properties</app.config>
