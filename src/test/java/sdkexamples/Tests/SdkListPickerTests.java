@@ -16,8 +16,8 @@ public class SdkListPickerTests extends SdkBaseTest {
     @DataProvider(name = "example")
     public Object[][] data() {
         return new Object[][]{
-                {"Create ListPicker"},
-                {"Use selected index"}
+                {"Usage"},
+                {"Styling"}
         };
     }
 

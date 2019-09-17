@@ -16,10 +16,9 @@ public class SdkListViewTests extends SdkBaseTest {
     @DataProvider(name = "example")
     public Object[][] data() {
         return new Object[][]{
-                {"Create ListView"},
-                {"Customize ListView"},
-                {"Update Child Component"},
-                {"Use async pipe"}
+                {"Usage"},
+                {"Styling"},
+                {"Tips and Tricks"}
         };
     }
 

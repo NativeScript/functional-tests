@@ -16,7 +16,7 @@ public class SdkFormattedStringTests extends SdkBaseTest {
     @DataProvider(name = "example")
     public Object[][] data() {
         return new Object[][]{
-                {"Create Formatted String"}
+                {"Usage"}
         };
     }
 
