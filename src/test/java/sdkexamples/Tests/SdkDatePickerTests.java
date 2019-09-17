@@ -16,7 +16,8 @@ public class SdkDatePickerTests extends SdkBaseTest {
     @DataProvider(name = "example")
     public Object[][] data() {
         return new Object[][]{
-                {"Configure DatePicker"}
+                {"Usage"},
+                {"Styling"}
         };
     }
 
