@@ -55,11 +55,6 @@
             <class name="sdkexamples.Tests.SdkConnectivityTests"/>
         </classes>
     </test>
-    <test name="ContentScreens">
-        <classes>
-            <class name="sdkexamples.Tests.SdkContentScreensTests"/>
-        </classes>
-    </test>
     <test name="DatePicker">
         <classes>
             <class name="sdkexamples.Tests.SdkDatePickerTests"/>
