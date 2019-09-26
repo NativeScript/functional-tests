@@ -134,6 +134,13 @@
                 <testsuite>animations</testsuite>
             </properties>
         </profile>
+        <profile>
+            <id>animations.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>animations/animations.sim.iphoneXR.ios13.properties</app.config>
+                <testsuite>animations</testsuite>
+            </properties>
+        </profile>
 
         <!--uitests profiles-->
         <profile>
@@ -749,7 +756,6 @@
         </profile>
 
 
-
         <profile>
             <id>uitests.emu.google.api29</id>
             <properties>
@@ -827,7 +833,6 @@
                 <testsuite>uitests-android-css-fonts-page</testsuite>
             </properties>
         </profile>
-
 
 
         <profile>
@@ -1364,6 +1369,13 @@
                 <testsuite>testsappng-ios</testsuite>
             </properties>
         </profile>
+        <profile>
+            <id>testsappng.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>testsappng/testsappng.sim.iphoneXR.ios13.properties</app.config>
+                <testsuite>testsappng-ios</testsuite>
+            </properties>
+        </profile>
 
         <!--testsapptransitions profiles-->
         <profile>
@@ -1454,6 +1466,13 @@
             <id>testsapptransitions.sim.iphoneXR.ios12</id>
             <properties>
                 <app.config>testsapptransitions/testsapptransitions.sim.iphoneXR.ios12.properties</app.config>
+                <testsuite>testsapptransitions-ios</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>testsapptransitions.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>testsapptransitions/testsapptransitions.sim.iphoneXR.ios13.properties</app.config>
                 <testsuite>testsapptransitions-ios</testsuite>
             </properties>
         </profile>
@@ -1790,6 +1809,13 @@
                 <testsuite>cuteness-ios</testsuite>
             </properties>
         </profile>
+        <profile>
+            <id>cuteness.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>cuteness/cuteness.sim.iphoneXR.ios13.properties</app.config>
+                <testsuite>cuteness-ios</testsuite>
+            </properties>
+        </profile>
 
         <!--groceries profiles-->
         <profile>
@@ -1915,6 +1941,13 @@
             <id>groceries.sim.iphoneXR.ios12</id>
             <properties>
                 <app.config>groceries/groceries.sim.iphoneXR.ios12.properties</app.config>
+                <testsuite>groceries-ios</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>groceries.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>groceries/groceries.sim.iphoneXR.ios13.properties</app.config>
                 <testsuite>groceries-ios</testsuite>
             </properties>
         </profile>
@@ -2084,6 +2117,13 @@
             </properties>
         </profile>
         <profile>
+            <id>nativescriptdemo.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>nativescriptdemo/nativescriptdemo.sim.iphoneXR.ios13.properties</app.config>
+                <testsuite>nativescriptdemo-ios</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>nativescriptdemo.dev.ipad2.ios10</id>
             <properties>
                 <app.config>nativescriptdemo/nativescriptdemo.dev.ipad2.ios10.properties</app.config>
@@ -2211,6 +2251,14 @@
                 <testsuite>sdkexamples</testsuite>
             </properties>
         </profile>
+        <profile>
+            <id>sdkexamples.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>sdkexamples/sdkexamples.sim.iphoneXR.ios13.properties</app.config>
+                <testsuite>sdkexamples</testsuite>
+            </properties>
+        </profile>
+
         <!--template-hello-world profiles-->
         <profile>
             <id>template-hello-world-js.emu.default.api23</id>
@@ -2244,6 +2292,13 @@
             <id>template-hello-world-js.sim.iphoneXR.ios12</id>
             <properties>
                 <app.config>templates/template.helloworld.js.sim.iphoneXR.ios12.properties</app.config>
+                <testsuite>templates-helloworld</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-hello-world-js.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>templates/template.helloworld.js.sim.iphoneXR.ios13.properties</app.config>
                 <testsuite>templates-helloworld</testsuite>
             </properties>
         </profile>
@@ -2284,6 +2339,13 @@
                 <testsuite>templates-helloworldts</testsuite>
             </properties>
         </profile>
+        <profile>
+            <id>template-hello-world-ts.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>templates/template.helloworld.ts.sim.iphoneXR.ios13.properties</app.config>
+                <testsuite>templates-helloworldts</testsuite>
+            </properties>
+        </profile>
 
         <!--template-hello-worldng profiles-->
         <profile>
@@ -2318,6 +2380,13 @@
             <id>template-hello-world-ng.sim.iphoneXR.ios12</id>
             <properties>
                 <app.config>templates/template.helloworld.ng.sim.iphoneXR.ios12.properties</app.config>
+                <testsuite>templates-helloworldng</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-hello-world-ng.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>templates/template.helloworld.ng.sim.iphoneXR.ios13.properties</app.config>
                 <testsuite>templates-helloworldng</testsuite>
             </properties>
         </profile>
@@ -2358,6 +2427,13 @@
                 <testsuite>templates-blank</testsuite>
             </properties>
         </profile>
+        <profile>
+            <id>template-blank-js.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>templates/template.blank.js.sim.iphoneXR.ios13.properties</app.config>
+                <testsuite>templates-blank</testsuite>
+            </properties>
+        </profile>
 
         <!--template-blank-ts profiles-->
         <profile>
@@ -2392,6 +2468,13 @@
             <id>template-blank-ts.sim.iphoneXR.ios12</id>
             <properties>
                 <app.config>templates/template.blank.ts.sim.iphoneXR.ios12.properties</app.config>
+                <testsuite>templates-blank</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-blank-ts.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>templates/template.blank.ts.sim.iphoneXR.ios13.properties</app.config>
                 <testsuite>templates-blank</testsuite>
             </properties>
         </profile>
@@ -2432,6 +2515,13 @@
                 <testsuite>templates-blank</testsuite>
             </properties>
         </profile>
+        <profile>
+            <id>template-blank-ng.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>templates/template.blank.ng.sim.iphoneXR.ios13.properties</app.config>
+                <testsuite>templates-blank</testsuite>
+            </properties>
+        </profile>
 
         <!--template-blank-vue profiles-->
         <profile>
@@ -2466,6 +2556,13 @@
             <id>template-blank-vue.sim.iphoneXR.ios12</id>
             <properties>
                 <app.config>templates/template.blank.vue.sim.iphoneXR.ios12.properties</app.config>
+                <testsuite>templates-blank</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-blank-vue.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>templates/template.blank.vue.sim.iphoneXR.ios13.properties</app.config>
                 <testsuite>templates-blank</testsuite>
             </properties>
         </profile>
@@ -2506,6 +2603,13 @@
                 <testsuite>templates-masterdetail</testsuite>
             </properties>
         </profile>
+        <profile>
+            <id>template-master-detail-js.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>templates/masterdetail.js.sim.iphoneXR.ios13.properties</app.config>
+                <testsuite>templates-masterdetail</testsuite>
+            </properties>
+        </profile>
 
         <!-- Master Detail TS App Profiles-->
         <profile>
@@ -2540,6 +2644,13 @@
             <id>template-master-detail-ts.sim.iphoneXR.ios12</id>
             <properties>
                 <app.config>templates/masterdetail.ts.sim.iphoneXR.ios12.properties</app.config>
+                <testsuite>templates-masterdetail</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-master-detail-ts.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>templates/masterdetail.ts.sim.iphoneXR.ios13.properties</app.config>
                 <testsuite>templates-masterdetail</testsuite>
             </properties>
         </profile>
@@ -2580,6 +2691,13 @@
                 <testsuite>templates-masterdetail</testsuite>
             </properties>
         </profile>
+        <profile>
+            <id>template-master-detail-ng.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>templates/masterdetail.ng.sim.iphoneXR.ios13.properties</app.config>
+                <testsuite>templates-masterdetail</testsuite>
+            </properties>
+        </profile>
 
         <!-- Master Detail Vue App Profiles-->
         <profile>
@@ -2614,6 +2732,13 @@
             <id>template-master-detail-vue.sim.iphoneXR.ios12</id>
             <properties>
                 <app.config>templates/masterdetail.vue.sim.iphoneXR.ios12.properties</app.config>
+                <testsuite>templates-masterdetail</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-master-detail-vue.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>templates/masterdetail.vue.sim.iphoneXR.ios13.properties</app.config>
                 <testsuite>templates-masterdetail</testsuite>
             </properties>
         </profile>
@@ -2654,6 +2779,13 @@
                 <testsuite>templates-masterdetailkinvey</testsuite>
             </properties>
         </profile>
+        <profile>
+            <id>template-master-detail-kinvey-ng.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>templates/masterdetail.kinvey.ng.sim.iphoneXR.ios13.properties</app.config>
+                <testsuite>templates-masterdetailkinvey</testsuite>
+            </properties>
+        </profile>
 
         <!-- Master Detail Kinvey TS App Profiles-->
         <profile>
@@ -2688,6 +2820,13 @@
             <id>template-master-detail-kinvey-ts.sim.iphoneXR.ios12</id>
             <properties>
                 <app.config>templates/masterdetail.kinvey.ts.sim.iphoneXR.ios12.properties</app.config>
+                <testsuite>templates-masterdetailkinvey</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-master-detail-kinvey-ts.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>templates/masterdetail.kinvey.ts.sim.iphoneXR.ios13.properties</app.config>
                 <testsuite>templates-masterdetailkinvey</testsuite>
             </properties>
         </profile>
@@ -2728,6 +2867,13 @@
                 <testsuite>templates-masterdetailkinvey</testsuite>
             </properties>
         </profile>
+        <profile>
+            <id>template-master-detail-kinvey-js.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>templates/masterdetail.kinvey.js.sim.iphoneXR.ios13.properties</app.config>
+                <testsuite>templates-masterdetailkinvey</testsuite>
+            </properties>
+        </profile>
 
         <!-- Tab Navigation JS App Profiles-->
         <profile>
@@ -2762,6 +2908,13 @@
             <id>template-tab-navigation-js.sim.iphoneXR.ios12</id>
             <properties>
                 <app.config>templates/tabnavigation.js.sim.iphoneXR.ios12.properties</app.config>
+                <testsuite>templates-tabnavigation</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-tab-navigation-js.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>templates/tabnavigation.js.sim.iphoneXR.ios13.properties</app.config>
                 <testsuite>templates-tabnavigation</testsuite>
             </properties>
         </profile>
@@ -2802,6 +2955,13 @@
                 <testsuite>templates-tabnavigation</testsuite>
             </properties>
         </profile>
+        <profile>
+            <id>template-tab-navigation-ts.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>templates/tabnavigation.ts.sim.iphoneXR.ios13.properties</app.config>
+                <testsuite>templates-tabnavigation</testsuite>
+            </properties>
+        </profile>
 
         <!-- Tab Navigation NG App Profiles-->
         <profile>
@@ -2836,6 +2996,13 @@
             <id>template-tab-navigation-ng.sim.iphoneXR.ios12</id>
             <properties>
                 <app.config>templates/tabnavigation.ng.sim.iphoneXR.ios12.properties</app.config>
+                <testsuite>templates-tabnavigation</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-tab-navigation-ng.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>templates/tabnavigation.ng.sim.iphoneXR.ios13.properties</app.config>
                 <testsuite>templates-tabnavigation</testsuite>
             </properties>
         </profile>
@@ -2876,6 +3043,13 @@
                 <testsuite>templates-tabnavigation</testsuite>
             </properties>
         </profile>
+        <profile>
+            <id>template-tab-navigation-vue.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>templates/tabnavigation.vue.sim.iphoneXR.ios13.properties</app.config>
+                <testsuite>templates-tabnavigation</testsuite>
+            </properties>
+        </profile>
 
         <!-- Drawer Navigation JS App Profiles-->
         <profile>
@@ -2903,6 +3077,13 @@
             <id>template-drawer-navigation-js.sim.iphoneXR.ios12</id>
             <properties>
                 <app.config>templates/drawernavigation.js.sim.iphoneXR.ios12.properties</app.config>
+                <testsuite>templates-drawernavigation</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-drawer-navigation-js.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>templates/drawernavigation.js.sim.iphoneXR.ios13.properties</app.config>
                 <testsuite>templates-drawernavigation</testsuite>
             </properties>
         </profile>
@@ -2936,6 +3117,13 @@
                 <testsuite>templates-drawernavigation</testsuite>
             </properties>
         </profile>
+        <profile>
+            <id>template-drawer-navigation-ts.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>templates/drawernavigation.ts.sim.iphoneXR.ios13.properties</app.config>
+                <testsuite>templates-drawernavigation</testsuite>
+            </properties>
+        </profile>
 
         <!-- Drawer Navigation NG App Profiles-->
         <profile>
@@ -2966,6 +3154,13 @@
                 <testsuite>templates-drawernavigation</testsuite>
             </properties>
         </profile>
+        <profile>
+            <id>template-drawer-navigation-ng.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>templates/drawernavigation.ng.sim.iphoneXR.ios13.properties</app.config>
+                <testsuite>templates-drawernavigation</testsuite>
+            </properties>
+        </profile>
 
         <!-- Drawer Navigation Vue App Profiles-->
         <profile>
@@ -2993,6 +3188,13 @@
             <id>template-drawer-navigation-vue.sim.iphoneXR.ios12</id>
             <properties>
                 <app.config>templates/drawernavigation.vue.sim.iphoneXR.ios12.properties</app.config>
+                <testsuite>templates-drawernavigation</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-drawer-navigation-vue.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>templates/drawernavigation.vue.sim.iphoneXR.ios13.properties</app.config>
                 <testsuite>templates-drawernavigation</testsuite>
             </properties>
         </profile>
@@ -3034,6 +3236,13 @@
             </properties>
         </profile>
         <profile>
+            <id>template-health-survey-ng.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>templates/healthsurvey.sim.iphoneXR.ios13.properties</app.config>
+                <testsuite>templates-healthsurvey</testsuite>
+            </properties>
+        </profile>
+        <profile>
             <id>template-patient-care-ng.emu.default.api23</id>
             <properties>
                 <app.config>templates/patientcare.emu.default.api23.properties</app.config>
@@ -3068,6 +3277,13 @@
                 <testsuite>templates-patientcare</testsuite>
             </properties>
         </profile>
+        <profile>
+            <id>template-patient-care-ng.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>templates/patientcare.sim.iphoneXR.ios13.properties</app.config>
+                <testsuite>templates-patientcare</testsuite>
+            </properties>
+        </profile>
 
         <!-- Enterprise Auth JS App Profiles-->
         <profile>
@@ -3095,6 +3311,13 @@
             <id>template-enterprise-auth-js.sim.iphoneXR.ios12</id>
             <properties>
                 <app.config>templates/enterpriseauth.js.sim.iphoneXR.ios12.properties</app.config>
+                <testsuite>templates-enterpriseauth</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-enterprise-auth-js.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>templates/enterpriseauth.js.sim.iphoneXR.ios13.properties</app.config>
                 <testsuite>templates-enterpriseauth</testsuite>
             </properties>
         </profile>
@@ -3128,6 +3351,13 @@
                 <testsuite>templates-enterpriseauth</testsuite>
             </properties>
         </profile>
+        <profile>
+            <id>template-enterprise-auth-ts.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>templates/enterpriseauth.ts.sim.iphoneXR.ios13.properties</app.config>
+                <testsuite>templates-enterpriseauth</testsuite>
+            </properties>
+        </profile>
 
         <!-- Enterprise Auth NG App Profiles-->
         <profile>
@@ -3155,6 +3385,13 @@
             <id>template-enterprise-auth-ng.sim.iphoneXR.ios12</id>
             <properties>
                 <app.config>templates/enterpriseauth.ng.sim.iphoneXR.ios12.properties</app.config>
+                <testsuite>templates-enterpriseauth</testsuite>
+            </properties>
+        </profile>
+        <profile>
+            <id>template-enterprise-auth-ng.sim.iphoneXR.ios13</id>
+            <properties>
+                <app.config>templates/enterpriseauth.ng.sim.iphoneXR.ios13.properties</app.config>
                 <testsuite>templates-enterpriseauth</testsuite>
             </properties>
         </profile>
