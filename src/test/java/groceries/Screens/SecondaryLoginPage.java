@@ -1,14 +1,13 @@
 package groceries.Screens;
 
 import functional.tests.core.enums.PlatformType;
-import functional.tests.core.exceptions.AppiumException;
 import functional.tests.core.mobile.basepage.BasePage;
 import functional.tests.core.mobile.element.UIElement;
 import org.openqa.selenium.By;
 
 public class SecondaryLoginPage extends BasePage {
-    public UIElement btnLogin;
-    public UIElement btnSignup;
+    private UIElement btnLogin;
+    private UIElement btnSignup;
 
     public SecondaryLoginPage() {
         super();
@@ -60,7 +59,7 @@ public class SecondaryLoginPage extends BasePage {
         }
     }
 
-    public void insertUserName(String text) {
+    private void insertUserName(String text) {
         this.userField().setText(text);
         if (this.settings.platform == PlatformType.Android) {
             hideKeyboard();
@@ -73,19 +72,23 @@ public class SecondaryLoginPage extends BasePage {
         }
     }
 
-    public void insertPassword(String text) {
+    private void insertPassword(String text) {
         if ((this.settings.platform == PlatformType.Android) && this.settings.platformVersion >= 8.0) {
             this.passwordField().click();
         }
         this.passwordField().setText(text);
         if (this.settings.platform == PlatformType.Android) {
             hideKeyboard();
-        } else {
-            this.find.byLocator(this.locators.byText("Done")).click();
+        } else if (this.settings.platform == PlatformType.iOS) {
+            if (this.settings.platformVersion < 13.0) {
+                this.find.byLocator(this.locators.byText("Done")).click();
+            } else {
+                this.find.byLocator(By.id("done")).click();
+            }
         }
     }
 
-    public UIElement userField() {
+    private UIElement userField() {
         if (this.settings.platform == PlatformType.iOS)
             return this.find.byLocator(userNameLocator());
         else {
@@ -93,7 +96,7 @@ public class SecondaryLoginPage extends BasePage {
         }
     }
 
-    public UIElement passwordField() {
+    private UIElement passwordField() {
         return this.find.byLocator(passwordLocator());
     }
 
@@ -112,11 +115,6 @@ public class SecondaryLoginPage extends BasePage {
         this.btnLogin = this.wait.waitForVisible(loginButtonLocator());
     }
 
-    public void unloaded() throws AppiumException {
-        this.wait.waitForNotVisible(signupButtonLocator(), this.settings.shortTimeout, false);
-        this.log.info("Groceries secondary login page not visible.");
-    }
-
     public ErrorDialog loginWithWrongName(String userName) {
         this.insertUserName(userName);
         this.btnLogin.click();
@@ -124,22 +122,18 @@ public class SecondaryLoginPage extends BasePage {
         return new ErrorDialog(this.context);
     }
 
-    public UIElement getBtnSignup() {
+    private UIElement getBtnSignup() {
         return this.btnSignup = this.wait.waitForVisible(signupButtonLocator(), 10, false);
     }
 
-    public void tapSignUp() {
-        this.btnSignup.click();
-    }
-
-    public UIElement btnForgotPassword() {
+    private UIElement btnForgotPassword() {
         if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 10) {
             return this.find.byLocator(By.id("Forgot password?"));
         }
         return this.find.byLocator(this.locators.byText("Forgot password?", false, false));
     }
 
-    public UIElement btnBackToLogin() {
+    private UIElement btnBackToLogin() {
         return this.find.byLocator(btnBackToLoginLocator());
     }
 
@@ -185,12 +179,7 @@ public class SecondaryLoginPage extends BasePage {
         if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 10) {
             return By.id(backToLogin);
         }
-
         return this.locators.byText(backToLogin, false, false);
-    }
-
-    private boolean checkIfPlatformIsIOS10() {
-        return this.settings.platform == PlatformType.iOS && this.settings.platformVersion >= 10;
     }
 }
 

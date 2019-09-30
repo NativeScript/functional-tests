@@ -101,11 +101,14 @@ public class MainPage extends BasePage {
 
     private By menuLocator() {
         if (this.settings.platform == PlatformType.iOS) {
-            return By.id("menu");
+            if (this.settings.platformVersion < 13.0) {
+                return By.id("menu");
+            } else {
+                return this.locators.imageLocator();
+            }
         } else if (this.settings.platform == PlatformType.Android) {
             return this.locators.imageLocator();
         }
-
         return null;
     }
 
@@ -129,7 +132,7 @@ public class MainPage extends BasePage {
         return this.locators.byText("Add a grocery", false, false);//.editTextLocator();
     }
 
-    public By doneLocator() {
+    private By doneLocator() {
         return this.locators.byText("Done", false, false);
     }
 }

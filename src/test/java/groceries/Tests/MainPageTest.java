@@ -57,7 +57,7 @@ public class MainPageTest extends MobileTest {
     public void groceries_01_addItem() {
         this.mainPage.clearList(0);
         this.mainPage.insertItem("t123");
-        Assert.assertTrue(1 == this.mainPage.getListViewItems().size(), "The item is not successfully added!!! ");
+        Assert.assertEquals(this.mainPage.getListViewItems().size(), 1, "The item is not successfully added!!! ");
     }
 
     @Test(groups = {"android", "ios"}, dependsOnMethods = {"groceries_01_addItem"})
@@ -66,7 +66,7 @@ public class MainPageTest extends MobileTest {
         GroceriesItem groceriesItem = this.mainPage.getGroceriesItem(0);
         groceriesItem.tapOnCheckBox();
         groceriesItem.tapOnDeleteIcon();
-        Assert.assertTrue(0 == this.mainPage.getListViewItems().size(), "The item is not successfully removed!!! ");
+        Assert.assertEquals(this.mainPage.getListViewItems().size(), 0, "The item is not successfully removed!!! ");
     }
 
     @Test(groups = {"android", "ios"}, enabled = false, dependsOnMethods = {"groceries_02_removeItem"})
