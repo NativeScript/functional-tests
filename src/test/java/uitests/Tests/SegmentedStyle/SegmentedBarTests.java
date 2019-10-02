@@ -20,14 +20,14 @@ public class SegmentedBarTests extends MobileTest {
         this.assertImagesResults();
     }
 
-    @Test(groups = {"android", "ios"})
+    @Test(enabled = false, groups = {"android", "ios"})
     public void segmentedBar_02_clean() throws Exception {
         this.segmentedBarPage.tapGoToCleanPageBtn();
         this.compareElements(this.segmentedBarPage.segmentedBar1(), 5, 0.1);
         this.assertImagesResults();
     }
 
-    @Test(groups = {"android", "ios"})
+    @Test(enabled = false, groups = {"android", "ios"})
     public void segmentedBar_03() throws Exception {
         this.segmentedBarPage.tapGoToPreviousPageBtn();
         this.compareElements(this.segmentedBarPage.segmentedBar1(), 5, 0.1);
@@ -35,7 +35,7 @@ public class SegmentedBarTests extends MobileTest {
     }
 
     //remove for ios because press action is not supported anymore in ios
-    @Test(groups = {"android"})
+    @Test(enabled = false, groups = {"android"})
     public void segmentedBar_issue_3137_segmentedBarRippleEffect() throws Exception {
         UIElement element = this.segmentedBarPage.segmentedBar2().findElement(this.locators.byText("Item 1"));
         element.pressAndHold();
