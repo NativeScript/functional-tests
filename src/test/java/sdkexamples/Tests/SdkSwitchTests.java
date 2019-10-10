@@ -16,9 +16,8 @@ public class SdkSwitchTests extends SdkBaseTest {
     @DataProvider(name = "example")
     public Object[][] data() {
         return new Object[][]{
-                {"Basic Switch"},
-                {"Disable Switch"},
-                {"Styling Switch"}
+                {"Usage"},
+                {"Styling"}
         };
     }
 
