@@ -18,19 +18,15 @@ public class SdkTabViewTests extends SdkBaseTest {
     @DataProvider(name = "example")
     public Object[][] data() {
         return new Object[][]{
-                {"Basics"},
-                {"Styling Tab View"}
+                {"Usage"},
+                {"Styling"},
+                {"Tips and Tricks"}
         };
     }
 
     @Test(dataProvider = "example")
     public void sdkTabViewTest(String example) {
         this.mainPage.navigateTo(example);
-        if (example.equals("Basics")) {
-            Assert.assertNotNull(this.mainPage.find.byText("First Tab"));
-        } else if (example.equals("Styling Tab View")) {
-            Assert.assertNotNull(this.mainPage.find.byText("first tab"));
-
-        }
+        Assert.assertNotNull(this.mainPage.find.byText("first tab"));
     }
 }

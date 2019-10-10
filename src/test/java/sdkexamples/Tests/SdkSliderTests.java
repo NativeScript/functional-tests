@@ -17,8 +17,8 @@ public class SdkSliderTests extends SdkBaseTest {
     @DataProvider(name = "example")
     public Object[][] data() {
         return new Object[][]{
-                {"Basic Slider"},
-                {"Access"}
+                {"Usage"},
+                {"Styling"}
         };
     }
 
