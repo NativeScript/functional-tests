@@ -16,9 +16,8 @@ public class SdkSearchBarTests extends SdkBaseTest {
     @DataProvider(name = "example")
     public Object[][] data() {
         return new Object[][]{
-                {"Basic SearchBar"},
-                {"Clear SearchBar"},
-                {"SearchBar binding"}
+                {"Usage"},
+                {"Styling"}
         };
     }
 

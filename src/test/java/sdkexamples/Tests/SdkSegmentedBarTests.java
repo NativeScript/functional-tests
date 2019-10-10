@@ -16,8 +16,8 @@ public class SdkSegmentedBarTests extends SdkBaseTest {
     @DataProvider(name = "example")
     public Object[][] data() {
         return new Object[][]{
-                {"Basic SegmentedBar"},
-                {"SegmentedBar view change"}
+                {"Usage"},
+                {"Styling"}
         };
     }
 

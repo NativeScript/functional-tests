@@ -16,9 +16,8 @@ public class SdkScrollViewTests extends SdkBaseTest {
     @DataProvider(name = "example")
     public Object[][] data() {
         return new Object[][]{
-                {"Horizontal orientation"},
-                {"Vertical orientation"},
-                {"Scroll event"}
+                {"Usage"},
+                {"Tips and Tricks"}
         };
     }
 

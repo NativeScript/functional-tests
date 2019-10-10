@@ -17,8 +17,8 @@ public class SdkTextFieldTests extends SdkBaseTest {
     @DataProvider(name = "example")
     public Object[][] data() {
         return new Object[][]{
-                {"Basic TextField"},
-                {"TextField binding"}
+                {"Usage"},
+                {"Styling"}
         };
     }
 
