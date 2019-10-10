@@ -27,6 +27,6 @@ public class SdkTabViewTests extends SdkBaseTest {
     @Test(dataProvider = "example")
     public void sdkTabViewTest(String example) {
         this.mainPage.navigateTo(example);
-        Assert.assertNotNull(this.mainPage.find.byText("first tab"));
+        Assert.assertNotNull(this.mainPage.find.byText("First Tab"));
     }
 }
