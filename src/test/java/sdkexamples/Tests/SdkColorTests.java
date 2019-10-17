@@ -16,7 +16,7 @@ public class SdkColorTests extends SdkBaseTest {
     @DataProvider(name = "example")
     public Object[][] data() {
         return new Object[][]{
-                {"Creating Colors"}
+                {"Usage"}
         };
     }
 

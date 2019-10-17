@@ -16,12 +16,12 @@ public class SdkTimePickerTests extends SdkBaseTest {
     @DataProvider(name = "example")
     public Object[][] data() {
         return new Object[][]{
-                {"Configure TimePicker"}
+                {"Usage"}
         };
     }
 
     @Test(dataProvider = "example")
-    public void sdkTimePickerTest(String example) throws Exception {
+    public void sdkTimePickerTest(String example) {
         this.mainPage.navigateTo(example);
     }
 }
