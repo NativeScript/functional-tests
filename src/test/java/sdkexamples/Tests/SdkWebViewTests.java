@@ -1,5 +1,6 @@
 package sdkexamples.Tests;
 
+import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.element.UIElement;
 import org.springframework.util.Assert;
 import org.testng.annotations.DataProvider;
@@ -31,8 +32,13 @@ public class SdkWebViewTests extends SdkBaseTest {
     public void sdkWebViewTest(String example) {
         this.mainPage.navigateTo(example);
         if (example.equalsIgnoreCase(pageViewViewUsage)) {
-            UIElement element = this.find.byText("Get Started");
-            Assert.notNull(element, "WebView with do not load {N} getting started.");
+            if (this.settings.platform == PlatformType.Android) {
+                UIElement element = this.find.byText("Get Started");
+                Assert.notNull(element, "WebView with {N} docs not loaded.");
+            } else {
+                UIElement element = this.find.byText("NativeScript Documentation");
+                Assert.notNull(element, "WebView with {N} docs not loaded.");
+            }
         } else if (example.equalsIgnoreCase(pageWebViewTips)) {
             UIElement element = this.find.byText("My First Heading");
             Assert.notNull(element, "Tips & Tricks web page not loaded.");
