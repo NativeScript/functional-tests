@@ -16,7 +16,7 @@ public class SdkConnectivityTests extends SdkBaseTest {
     @DataProvider(name = "example")
     public Object[][] data() {
         return new Object[][]{
-                {"Using Connectivity"}
+                {"Usage"}
         };
     }
 

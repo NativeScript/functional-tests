@@ -11,7 +11,6 @@ public class SdkWebViewTests extends SdkBaseTest {
 
     private final String pageViewViewUsage = "Usage";
     private final String pageWebViewTips = "Tips & Tricks";
-    private final String pageWebViewWithFile = "WebView with HTML File";
     protected String page = "WebView";
 
     @Override
@@ -23,8 +22,7 @@ public class SdkWebViewTests extends SdkBaseTest {
     public Object[][] data() {
         return new Object[][]{
                 {pageViewViewUsage},
-                {pageWebViewTips},
-                {pageWebViewWithFile}
+                {pageWebViewTips}
         };
     }
 
@@ -42,9 +40,6 @@ public class SdkWebViewTests extends SdkBaseTest {
         } else if (example.equalsIgnoreCase(pageWebViewTips)) {
             UIElement element = this.find.byText("My First Heading");
             Assert.notNull(element, "Tips & Tricks web page not loaded.");
-        } else if (example.equalsIgnoreCase(pageWebViewWithFile)) {
-            UIElement element = this.find.byText("First WebView");
-            Assert.notNull(element, "WebView from local file not loaded.");
         }
     }
 }
