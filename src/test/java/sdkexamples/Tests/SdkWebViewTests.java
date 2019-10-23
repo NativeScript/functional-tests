@@ -31,10 +31,12 @@ public class SdkWebViewTests extends SdkBaseTest {
         this.mainPage.navigateTo(example);
         if (example.equalsIgnoreCase(pageViewViewUsage)) {
             if (this.settings.platform == PlatformType.Android) {
-                UIElement element = this.find.byText("Get Started");
+                UIElement element = this.wait.waitForVisible(this.locators.byText("Get Started"), 10000,
+                        false);
                 Assert.notNull(element, "WebView with {N} docs not loaded.");
             } else {
-                UIElement element = this.find.byText("NativeScript Documentation");
+                UIElement element = this.wait.waitForVisible(this.locators.byText("NativeScript Documentation"),
+                        10000, false);
                 Assert.notNull(element, "WebView with {N} docs not loaded.");
             }
         } else if (example.equalsIgnoreCase(pageWebViewTips)) {
