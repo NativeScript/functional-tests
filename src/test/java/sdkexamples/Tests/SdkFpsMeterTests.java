@@ -18,7 +18,7 @@ public class SdkFpsMeterTests extends SdkBaseTest {
     @DataProvider(name = "example")
     public Object[][] data() {
         return new Object[][]{
-                {"FPS Meter usage"}
+                {"Usage"}
         };
     }
 
