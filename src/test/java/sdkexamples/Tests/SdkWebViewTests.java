@@ -33,13 +33,15 @@ public class SdkWebViewTests extends SdkBaseTest {
             if (this.settings.platform == PlatformType.Android && this.settings.platformVersion >= 5) {
                 UIElement element = this.find.byText("Get Started");
                 Assert.notNull(element, "WebView with {N} docs not loaded.");
-            } else {
+            } else if (this.settings.platform == PlatformType.iOS){
                 UIElement element = this.find.byText("NativeScript Documentation");
                 Assert.notNull(element, "WebView with {N} docs not loaded.");
             }
         } else if (example.equalsIgnoreCase(pageWebViewTips)) {
-            UIElement element = this.find.byText("My First Heading");
-            Assert.notNull(element, "Tips & Tricks web page not loaded.");
+            if (this.settings.platformVersion >= 5) {
+                UIElement element = this.find.byText("My First Heading");
+                Assert.notNull(element, "Tips & Tricks web page not loaded.");
+            }
         }
     }
 }
