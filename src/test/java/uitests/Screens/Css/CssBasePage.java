@@ -1,5 +1,6 @@
 package uitests.Screens.Css;
 
+import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.basetest.MobileContext;
 import uitests.Screens.HomePageExtended;
 
@@ -11,8 +12,9 @@ public class CssBasePage extends HomePageExtended {
 
     public boolean navToPage(String page) {
         boolean result = this.navigateTo(page);
-        this.wait.waitForNotVisible(this.locators.byText(page, true, false), 6, false);
-
+        if (this.settings.platform == PlatformType.Android) {
+            this.wait.waitForNotVisible(this.locators.byText(page, true, false), 6, false);
+        }
         return result;
     }
 

@@ -7,6 +7,7 @@ import functional.tests.core.mobile.element.UIRectangle;
 import functional.tests.core.enums.SwipeElementDirection;
 import org.testng.annotations.Test;
 
+@SuppressWarnings("groupsTestNG")
 public class CssCommonTests extends CssBaseTest {
 
     private int compareScreens = 10;
