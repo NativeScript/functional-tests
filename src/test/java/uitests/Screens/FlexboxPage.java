@@ -1,8 +1,9 @@
 package uitests.Screens;
 
-import functional.tests.core.mobile.basetest.MobileContext;
+import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.basetest.MobileContext;
 import functional.tests.core.mobile.element.UIElement;
+import io.appium.java_client.MobileBy;
 import org.testng.Assert;
 
 public class FlexboxPage extends HomePageExtended {
@@ -12,273 +13,282 @@ public class FlexboxPage extends HomePageExtended {
         this.loadedMainPage();
     }
 
-    public void loadedMainPage() {
-        UIElement element = this.find.byText("flexrepeat");
+    private void loadedMainPage() {
+        UIElement element = this.findElement("flexrepeat");
         if (element == null) {
             Assert.fail("Flexbox main page is NOT loaded!");
         }
     }
 
+    private UIElement findElement(String value) {
+        if (this.settings.platform == PlatformType.Android) {
+            return this.find.byText(value);
+        } else {
+            return this.find.byLocator(MobileBy.AccessibilityId(value));
+        }
+
+    }
+
     public UIElement btnFlexDirectionRow() {
-        return this.find.byText("flexDirection-row");
+        return this.findElement("flexDirection-row");
     }
 
     public UIElement btnFlexDirectionRowReverse() {
-        return this.find.byText("flexDirection-row-reverse");
+        return this.findElement("flexDirection-row-reverse");
     }
 
     public UIElement btnFlexDirectionColumn() {
-        return this.find.byText("flexDirection-column");
+        return this.findElement("flexDirection-column");
     }
 
     public UIElement btnFlexDirectionColumnReverse() {
-        return this.find.byText("flexDirection-column-reverse");
+        return this.findElement("flexDirection-column-reverse");
     }
 
     // FlexWrap
     public UIElement btnFlexNowrap() {
-        return this.find.byText("flexWrap-nowrap");
+        return this.findElement("flexWrap-nowrap");
     }
 
     public UIElement btnFlexWrap() {
-        return this.find.byText("flexWrap-wrap");
+        return this.findElement("flexWrap-wrap");
     }
 
     public UIElement btnFlexWrapReverse() {
-        return this.find.byText("flexWrap-wrap-reverse");
+        return this.findElement("flexWrap-wrap-reverse");
     }
 
     // JustifyContent
     public UIElement btnJustifyContentFlexStart() {
-        return this.find.byText("justifyContent-flex-start");
+        return this.findElement("justifyContent-flex-start");
     }
 
     public UIElement btnJustifyContentFlexEnd() {
-        return this.find.byText("justifyContent-flex-end");
+        return this.findElement("justifyContent-flex-end");
     }
 
     public UIElement btnJustifyContentCenter() {
-        return this.find.byText("justifyContent-center");
+        return this.findElement("justifyContent-center");
     }
 
     public UIElement btnJustifyContentSpaceBetween() {
-        return this.find.byText("justifyContent-space-between");
+        return this.findElement("justifyContent-space-between");
     }
 
     public UIElement btnJustifyContentSpaceAround() {
-        return this.find.byText("justifyContent-space-around");
+        return this.findElement("justifyContent-space-around");
     }
 
     // AlignItems
     public UIElement btnAlignItemsFlexStart() {
-        return this.find.byText("alignItems-flex-start");
+        return this.findElement("alignItems-flex-start");
     }
 
     public UIElement btnAlignItemsFlexEnd() {
-        return this.find.byText("alignItems-flex-end");
+        return this.findElement("alignItems-flex-end");
     }
 
     public UIElement btnAlignItemsCenter() {
-        return this.find.byText("alignItems-center");
+        return this.findElement("alignItems-center");
     }
 
     public UIElement btnAlignItemsBaseline() {
-        return this.find.byText("alignItems-baseline");
+        return this.findElement("alignItems-baseline");
     }
 
     public UIElement btnAlignItemsStretch() {
-        return this.find.byText("alignItems-stretch");
+        return this.findElement("alignItems-stretch");
     }
 
     // AlignContent
     public UIElement btnAlignContentFlexStart() {
-        return this.find.byText("alignContent-flex-start");
+        return this.findElement("alignContent-flex-start");
     }
 
     public UIElement btnAlignContentFlexEnd() {
-        return this.find.byText("alignContent-flex-end");
+        return this.findElement("alignContent-flex-end");
     }
 
     public UIElement btnAlignContentCenter() {
-        return this.find.byText("alignContent-center");
+        return this.findElement("alignContent-center");
     }
 
     public UIElement btnAlignContentSpaceBetween() {
-        return this.find.byText("alignContent-space-between");
+        return this.findElement("alignContent-space-between");
     }
 
     public UIElement btnAlignContentSpaceAround() {
-        return this.find.byText("alignContent-space-around");
+        return this.findElement("alignContent-space-around");
     }
 
     public UIElement btnAlignContentStretch() {
-        return this.find.byText("alignContent-stretch");
+        return this.findElement("alignContent-stretch");
     }
 
     // Order
     public UIElement btnOrderZero() {
-        return this.find.byText("order-0");
+        return this.findElement("order-0");
     }
 
     public UIElement btnOrderOne() {
-        return this.find.byText("order-1");
+        return this.findElement("order-1");
     }
 
     public UIElement btnOrderTwo() {
-        return this.find.byText("order-2");
+        return this.findElement("order-2");
     }
 
     public UIElement btnOrderThree() {
-        return this.find.byText("order-3");
+        return this.findElement("order-3");
     }
 
     public UIElement btnOrderFour() {
-        return this.find.byText("order-4");
+        return this.findElement("order-4");
     }
 
     // FlexGrow
     public UIElement btnFlexGrowZero() {
-        return this.find.byText("flexGrow-0");
+        return this.findElement("flexGrow-0");
     }
 
     public UIElement btnFlexGrowOne() {
-        return this.find.byText("flexGrow-1");
+        return this.findElement("flexGrow-1");
     }
 
     public UIElement btnFlexGrowTwo() {
-        return this.find.byText("flexGrow-2");
+        return this.findElement("flexGrow-2");
     }
 
     public UIElement btnFlexGrowThree() {
-        return this.find.byText("flexGrow-3");
+        return this.findElement("flexGrow-3");
     }
 
     public UIElement btnFlexGrowFour() {
-        return this.find.byText("flexGrow-4");
+        return this.findElement("flexGrow-4");
     }
 
     // FlexShrink
     public UIElement btnFlexShrinkZero() {
-        return this.find.byText("flexShrink-0");
+        return this.findElement("flexShrink-0");
     }
 
     public UIElement btnFlexShrinkOne() {
-        return this.find.byText("flexShrink-1");
+        return this.findElement("flexShrink-1");
     }
 
     public UIElement btnFlexShrinkTwo() {
-        return this.find.byText("flexShrink-2");
+        return this.findElement("flexShrink-2");
     }
 
     public UIElement btnFlexShrinkThree() {
-        return this.find.byText("flexShrink-3");
+        return this.findElement("flexShrink-3");
     }
 
     public UIElement btnFlexShrinkFour() {
-        return this.find.byText("flexShrink-4");
+        return this.findElement("flexShrink-4");
     }
 
     // AlignSelf
     public UIElement btnAlignSelfAuto() {
-        return this.find.byText("alignSelf-auto");
+        return this.findElement("alignSelf-auto");
     }
 
     public UIElement btnAlignSelfFlexStart() {
-        return this.find.byText("alignSelf-flex-start");
+        return this.findElement("alignSelf-flex-start");
     }
 
     public UIElement btnAlignSelfFlexEnd() {
-        return this.find.byText("alignSelf-flex-end");
+        return this.findElement("alignSelf-flex-end");
     }
 
     public UIElement btnAlignSelfCenter() {
-        return this.find.byText("alignSelf-center");
+        return this.findElement("alignSelf-center");
     }
 
     public UIElement btnAlignSelfBaseline() {
-        return this.find.byText("alignSelf-baseline");
+        return this.findElement("alignSelf-baseline");
     }
 
     public UIElement btnAlignSelfStretch() {
-        return this.find.byText("alignSelf-stretch");
+        return this.findElement("alignSelf-stretch");
     }
 
     // AlignSelf
     public UIElement btnFlexWrapBeforeTrue() {
-        return this.find.byText("flexWrapBefore-true");
+        return this.findElement("flexWrapBefore-true");
     }
 
     public UIElement btnFlexWrapBeforeFalse() {
-        return this.find.byText("flexWrapBefore-false");
+        return this.findElement("flexWrapBefore-false");
     }
 
     // Items
     public UIElement btnItemRowZero() {
-        return this.find.byText("itemRow-0");
+        return this.findElement("itemRow-0");
     }
 
     public UIElement btnItemRowReverseZero() {
-        return this.find.byText("itemRowReverse-0");
+        return this.findElement("itemRowReverse-0");
     }
 
     public UIElement btnItemColumnZero() {
-        return this.find.byText("itemColumn-0");
+        return this.findElement("itemColumn-0");
     }
 
     public UIElement btnItemColumnReverseZero() {
-        return this.find.byText("itemColumnReverse-0");
+        return this.findElement("itemColumnReverse-0");
     }
 
     public UIElement btnItemRowOne() {
-        return this.find.byText("itemRow-1");
+        return this.findElement("itemRow-1");
     }
 
     public UIElement btnItemRowReverseOne() {
-        return this.find.byText("itemRowReverse-1");
+        return this.findElement("itemRowReverse-1");
     }
 
     public UIElement btnItemColumnOne() {
-        return this.find.byText("itemColumn-1");
+        return this.findElement("itemColumn-1");
     }
 
     public UIElement btnItemColumnReverseOne() {
-        return this.find.byText("itemColumnReverse-1");
+        return this.findElement("itemColumnReverse-1");
     }
 
     // CSS
     public UIElement btnCssFlexFlow() {
-        return this.find.byText("flexFlow");
+        return this.findElement("flexFlow");
     }
 
     public UIElement btnCssOrder() {
-        return this.find.byText("o1");
+        return this.findElement("o1");
     }
 
     public UIElement btnCssFlexGrow() {
-        return this.find.byText("g1");
+        return this.findElement("g1");
     }
 
     public UIElement btnCssFlexShrink() {
-        return this.find.byText("s1");
+        return this.findElement("s1");
     }
 
     public UIElement btnCssAlignSelf() {
-        return this.find.byText("a1");
+        return this.findElement("a1");
     }
 
     public UIElement btnCssFlexZero() {
-        return this.find.byText("f0");
+        return this.findElement("f0");
     }
 
     public UIElement btnCssFlexOne() {
-        return this.find.byText("f1");
+        return this.findElement("f1");
     }
 
     public UIElement btnCssFlexTwo() {
-        return this.find.byText("f2");
+        return this.findElement("f2");
     }
 
     public UIElement container() {
-        return this.find.byText("container");
+        return this.findElement("container");
     }
 }

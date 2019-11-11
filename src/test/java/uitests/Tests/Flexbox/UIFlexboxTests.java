@@ -3,6 +3,7 @@ package uitests.Tests.Flexbox;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+@SuppressWarnings("groupsTestNG")
 public class UIFlexboxTests extends UIFlexboxBaseTest {
 
     @BeforeMethod(alwaysRun = true)
@@ -20,19 +21,19 @@ public class UIFlexboxTests extends UIFlexboxBaseTest {
     @Test(groups = {"android", "ios"})
     public void flexbox_10_flexDirection() throws Exception {
         // rowReverse
-        this.pageFlexbox.btnFlexDirectionRowReverse().tap();
+        this.pageFlexbox.btnFlexDirectionRowReverse().click();
         this.waitForScreen();
 
         // column
-        this.pageFlexbox.btnFlexDirectionColumn().tap();
+        this.pageFlexbox.btnFlexDirectionColumn().click();
         this.waitForScreen();
 
         // columnReverse
-        this.pageFlexbox.btnFlexDirectionColumnReverse().tap();
+        this.pageFlexbox.btnFlexDirectionColumnReverse().click();
         this.waitForScreen();
 
         // row
-        this.pageFlexbox.btnFlexDirectionRow().tap();
+        this.pageFlexbox.btnFlexDirectionRow().click();
         this.waitForScreen();
         this.assertImagesResults();
     }
@@ -41,15 +42,15 @@ public class UIFlexboxTests extends UIFlexboxBaseTest {
     @Test(groups = {"android", "ios"})
     public void flexbox_20_flexWrap() throws Exception {
         // wrap
-        this.pageFlexbox.btnFlexWrap().tap();
+        this.pageFlexbox.btnFlexWrap().click();
         this.waitForScreen();
 
         // wrapReverse
-        this.pageFlexbox.btnFlexWrapReverse().tap();
+        this.pageFlexbox.btnFlexWrapReverse().click();
         this.waitForScreen();
 
         // noWrap
-        this.pageFlexbox.btnFlexNowrap().tap();
+        this.pageFlexbox.btnFlexNowrap().click();
         this.waitForScreen();
         this.assertImagesResults();
     }
@@ -57,26 +58,26 @@ public class UIFlexboxTests extends UIFlexboxBaseTest {
     // JustifyContent
     @Test(groups = {"android", "ios"})
     public void flexbox_30_justifyContent() throws Exception {
-        this.pageFlexbox.btnFlexWrap().tap();
+        this.pageFlexbox.btnFlexWrap().click();
 
         // flexEnd
-        this.pageFlexbox.btnJustifyContentFlexEnd().tap();
+        this.pageFlexbox.btnJustifyContentFlexEnd().click();
         this.waitForScreen();
 
         // center
-        this.pageFlexbox.btnJustifyContentCenter().tap();
+        this.pageFlexbox.btnJustifyContentCenter().click();
         this.waitForScreen();
 
         // spaceBetween
-        this.pageFlexbox.btnJustifyContentSpaceBetween().tap();
+        this.pageFlexbox.btnJustifyContentSpaceBetween().click();
         this.waitForScreen();
 
         // spaceAround
-        this.pageFlexbox.btnJustifyContentSpaceAround().tap();
+        this.pageFlexbox.btnJustifyContentSpaceAround().click();
         this.waitForScreen();
 
         // flexStart
-        this.pageFlexbox.btnJustifyContentFlexStart().tap();
+        this.pageFlexbox.btnJustifyContentFlexStart().click();
         this.waitForScreen();
         this.assertImagesResults();
     }
@@ -84,26 +85,26 @@ public class UIFlexboxTests extends UIFlexboxBaseTest {
     // AlignItems
     @Test(groups = {"android", "ios"})
     public void flexbox_40_alignItems() throws Exception {
-        this.pageFlexbox.btnFlexWrap().tap();
+        this.pageFlexbox.btnFlexWrap().click();
 
         // flexStart
-        this.pageFlexbox.btnAlignItemsFlexStart().tap();
+        this.pageFlexbox.btnAlignItemsFlexStart().click();
         this.waitForScreen();
 
         // flexEnd
-        this.pageFlexbox.btnAlignItemsFlexEnd().tap();
+        this.pageFlexbox.btnAlignItemsFlexEnd().click();
         this.waitForScreen();
 
         // center
-        this.pageFlexbox.btnAlignItemsCenter().tap();
+        this.pageFlexbox.btnAlignItemsCenter().click();
         this.waitForScreen();
 
         // baseline
-        this.pageFlexbox.btnAlignItemsBaseline().tap();
+        this.pageFlexbox.btnAlignItemsBaseline().click();
         this.waitForScreen();
 
         // stretch
-        this.pageFlexbox.btnAlignItemsStretch().tap();
+        this.pageFlexbox.btnAlignItemsStretch().click();
         this.waitForScreen();
         this.assertImagesResults();
     }
@@ -111,30 +112,30 @@ public class UIFlexboxTests extends UIFlexboxBaseTest {
     // AlignContent
     @Test(groups = {"android", "ios"})
     public void flexbox_50_alignContent() throws Exception {
-        this.pageFlexbox.btnFlexWrap().tap();
+        this.pageFlexbox.btnFlexWrap().click();
 
         // flexStart
-        this.pageFlexbox.btnAlignContentFlexStart().tap();
+        this.pageFlexbox.btnAlignContentFlexStart().click();
         this.waitForScreen(DEFAULT_TOLERANCE);
 
         // flexEnd
-        this.pageFlexbox.btnAlignContentFlexEnd().tap();
+        this.pageFlexbox.btnAlignContentFlexEnd().click();
         this.waitForScreen(DEFAULT_TOLERANCE);
 
         // center
-        this.pageFlexbox.btnAlignContentCenter().tap();
+        this.pageFlexbox.btnAlignContentCenter().click();
         this.waitForScreen(DEFAULT_TOLERANCE);
 
         // spaceBetween
-        this.pageFlexbox.btnAlignContentSpaceBetween().tap();
+        this.pageFlexbox.btnAlignContentSpaceBetween().click();
         this.waitForScreen(DEFAULT_TOLERANCE);
 
         // spaceAround
-        this.pageFlexbox.btnAlignContentSpaceAround().tap();
+        this.pageFlexbox.btnAlignContentSpaceAround().click();
         this.waitForScreen(DEFAULT_TOLERANCE);
 
         // stretch
-        this.pageFlexbox.btnAlignContentStretch().tap();
+        this.pageFlexbox.btnAlignContentStretch().click();
         this.waitForScreen(DEFAULT_TOLERANCE);
         this.assertImagesResults();
     }
@@ -142,20 +143,20 @@ public class UIFlexboxTests extends UIFlexboxBaseTest {
     // Order
     @Test(groups = {"android", "ios"})
     public void flexbox_60_order() throws Exception {
-        this.pageFlexbox.btnFlexWrap().tap();
+        this.pageFlexbox.btnFlexWrap().click();
 
         // zero
-        this.pageFlexbox.btnItemRowReverseZero().tap();
-        this.pageFlexbox.btnOrderZero().tap();
+        this.pageFlexbox.btnItemRowReverseZero().click();
+        this.pageFlexbox.btnOrderZero().click();
         this.waitForScreen();
 
         // three
-        this.pageFlexbox.btnOrderThree().tap();
+        this.pageFlexbox.btnOrderThree().click();
         this.waitForScreen();
 
         // two
-        this.pageFlexbox.btnItemRowReverseOne().tap();
-        this.pageFlexbox.btnOrderTwo().tap();
+        this.pageFlexbox.btnItemRowReverseOne().click();
+        this.pageFlexbox.btnOrderTwo().click();
         this.waitForScreen();
         this.assertImagesResults();
     }
@@ -163,21 +164,21 @@ public class UIFlexboxTests extends UIFlexboxBaseTest {
     // FlexGrow
     @Test(groups = {"android", "ios"})
     public void flexbox_70_flexGrow() throws Exception {
-        this.pageFlexbox.btnFlexWrap().tap();
+        this.pageFlexbox.btnFlexWrap().click();
 
         // one
-        this.pageFlexbox.btnItemColumnReverseOne().tap();
-        this.pageFlexbox.btnFlexGrowOne().tap();
+        this.pageFlexbox.btnItemColumnReverseOne().click();
+        this.pageFlexbox.btnFlexGrowOne().click();
         this.waitForScreen();
 
         // two
-        this.pageFlexbox.btnItemColumnOne().tap();
-        this.pageFlexbox.btnFlexGrowTwo().tap();
+        this.pageFlexbox.btnItemColumnOne().click();
+        this.pageFlexbox.btnFlexGrowTwo().click();
         this.waitForScreen();
 
         // three
-        this.pageFlexbox.btnItemRowReverseOne().tap();
-        this.pageFlexbox.btnFlexGrowThree().tap();
+        this.pageFlexbox.btnItemRowReverseOne().click();
+        this.pageFlexbox.btnFlexGrowThree().click();
         this.waitForScreen();
         this.assertImagesResults();
     }
@@ -186,33 +187,33 @@ public class UIFlexboxTests extends UIFlexboxBaseTest {
     @Test(groups = {"android", "ios"})
     public void flexbox_80_flexShrink() throws Exception {
         // zero
-        this.pageFlexbox.btnItemColumnReverseOne().tap();
-        this.pageFlexbox.btnFlexShrinkZero().tap();
+        this.pageFlexbox.btnItemColumnReverseOne().click();
+        this.pageFlexbox.btnFlexShrinkZero().click();
         this.waitForScreen();
 
-        this.pageFlexbox.btnItemColumnReverseZero().tap();
-        this.pageFlexbox.btnFlexShrinkZero().tap();
+        this.pageFlexbox.btnItemColumnReverseZero().click();
+        this.pageFlexbox.btnFlexShrinkZero().click();
         this.waitForScreen();
 
-        this.pageFlexbox.btnItemRowReverseOne().tap();
-        this.pageFlexbox.btnFlexShrinkZero().tap();
+        this.pageFlexbox.btnItemRowReverseOne().click();
+        this.pageFlexbox.btnFlexShrinkZero().click();
         this.waitForScreen();
 
         // one
-        // this.pageFlexbox.btnItemRowReverseOne().tap();
-        this.pageFlexbox.btnFlexShrinkOne().tap();
-        this.pageFlexbox.btnItemColumnReverseZero().tap();
-        this.pageFlexbox.btnFlexShrinkOne().tap();
+        // this.pageFlexbox.btnItemRowReverseOne().click();
+        this.pageFlexbox.btnFlexShrinkOne().click();
+        this.pageFlexbox.btnItemColumnReverseZero().click();
+        this.pageFlexbox.btnFlexShrinkOne().click();
         this.waitForScreen();
 
         // two
-        this.pageFlexbox.btnItemColumnReverseZero().tap();
-        this.pageFlexbox.btnFlexShrinkTwo().tap();
+        this.pageFlexbox.btnItemColumnReverseZero().click();
+        this.pageFlexbox.btnFlexShrinkTwo().click();
         this.waitForScreen();
 
         // three
-        // this.pageFlexbox.btnItemColumnReverseZero().tap();
-        this.pageFlexbox.btnFlexShrinkThree().tap();
+        // this.pageFlexbox.btnItemColumnReverseZero().click();
+        this.pageFlexbox.btnFlexShrinkThree().click();
         this.waitForScreen();
         this.assertImagesResults();
     }
@@ -220,30 +221,30 @@ public class UIFlexboxTests extends UIFlexboxBaseTest {
     // AlignSelf
     @Test(groups = {"android", "ios"})
     public void flexbox_90_alignSelf() throws Exception {
-        this.pageFlexbox.btnItemColumnReverseZero().tap();
+        this.pageFlexbox.btnItemColumnReverseZero().click();
 
         // flexStart
-        this.pageFlexbox.btnAlignSelfFlexStart().tap();
+        this.pageFlexbox.btnAlignSelfFlexStart().click();
         this.waitForScreen();
 
         // flexEnd
-        this.pageFlexbox.btnAlignSelfFlexEnd().tap();
+        this.pageFlexbox.btnAlignSelfFlexEnd().click();
         this.waitForScreen();
 
         // center
-        this.pageFlexbox.btnAlignSelfCenter().tap();
+        this.pageFlexbox.btnAlignSelfCenter().click();
         this.waitForScreen();
 
         // baseline
-        this.pageFlexbox.btnAlignSelfBaseline().tap();
+        this.pageFlexbox.btnAlignSelfBaseline().click();
         this.waitForScreen();
 
         // stretch
-        this.pageFlexbox.btnAlignSelfStretch().tap();
+        this.pageFlexbox.btnAlignSelfStretch().click();
         this.waitForScreen();
 
         // auto
-        this.pageFlexbox.btnAlignSelfAuto().tap();
+        this.pageFlexbox.btnAlignSelfAuto().click();
         this.waitForScreen();
         this.assertImagesResults();
     }
@@ -251,22 +252,22 @@ public class UIFlexboxTests extends UIFlexboxBaseTest {
     // FlexWrapBefore
     @Test(groups = {"android", "ios"})
     public void flexbox_100_flexWrapBefore() throws Exception {
-        this.pageFlexbox.btnFlexWrap().tap();
+        this.pageFlexbox.btnFlexWrap().click();
 
         // true
-        this.pageFlexbox.btnItemColumnReverseZero().tap();
-        this.pageFlexbox.btnFlexWrapBeforeTrue().tap();
+        this.pageFlexbox.btnItemColumnReverseZero().click();
+        this.pageFlexbox.btnFlexWrapBeforeTrue().click();
         this.waitForScreen(DEFAULT_TOLERANCE);
 
         // true
-        this.pageFlexbox.btnItemRowOne().tap();
-        this.pageFlexbox.btnFlexWrapBeforeTrue().tap();
-        this.pageFlexbox.btnItemRowReverseOne().tap();
-        this.pageFlexbox.btnFlexWrapBeforeTrue().tap();
+        this.pageFlexbox.btnItemRowOne().click();
+        this.pageFlexbox.btnFlexWrapBeforeTrue().click();
+        this.pageFlexbox.btnItemRowReverseOne().click();
+        this.pageFlexbox.btnFlexWrapBeforeTrue().click();
         this.waitForScreen(DEFAULT_TOLERANCE);
 
         // false
-        this.pageFlexbox.btnFlexWrapBeforeFalse().tap();
+        this.pageFlexbox.btnFlexWrapBeforeFalse().click();
         this.waitForScreen(DEFAULT_TOLERANCE);
         this.assertImagesResults();
     }
