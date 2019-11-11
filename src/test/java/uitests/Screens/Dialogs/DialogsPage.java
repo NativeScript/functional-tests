@@ -3,6 +3,7 @@ package uitests.Screens.Dialogs;
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.basetest.MobileContext;
 import functional.tests.core.mobile.element.UIElement;
+import io.appium.java_client.MobileBy;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import uitests.Screens.HomePageExtended;
@@ -44,57 +45,91 @@ public class DialogsPage extends HomePageExtended {
     }
 
     public void tapActionBtn() {
-        this.find.byText("action").tap();
+        if (this.settings.platform == PlatformType.iOS) {
+            this.find.byLocator(MobileBy.AccessibilityId("action")).click();
+        } else {
+            this.find.byText("action").click();
+        }
     }
 
     public void tapAlertBtn() {
-        this.find.byText("alert").click();
+        if (this.settings.platform == PlatformType.iOS) {
+            this.find.byLocator(MobileBy.AccessibilityId("alert")).click();
+        } else {
+            this.find.byText("alert").click();
+        }
     }
 
     public void tapConfirmBtn() {
-        this.find.byText("confirm").click();
+        if (this.settings.platform == PlatformType.iOS) {
+            this.find.byLocator(MobileBy.AccessibilityId("confirm")).click();
+        } else {
+            this.find.byText("confirm").click();
+        }
     }
 
     public void tapLoginBtn() {
-        UIElement el = this.find.byText("login");
-        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion >= 10) {
-            el.tap();
+        if (this.settings.platform == PlatformType.iOS) {
+            this.find.byLocator(MobileBy.AccessibilityId("login")).click();
         } else {
-            el.click();
+            this.find.byText("login").click();
         }
         this.log.info("Tap on 'login' button.");
     }
 
     public void tapPromptTextBtn() {
-        this.find.byText("promptText").click();
+        if (this.settings.platform == PlatformType.iOS) {
+            this.find.byLocator(MobileBy.AccessibilityId("promptText")).click();
+        } else {
+            this.find.byText("promptText").click();
+        }
     }
 
     public void tapPromptPassBtn() {
-        this.find.byText("promptPass").click();
+        if (this.settings.platform == PlatformType.iOS) {
+            this.find.byLocator(MobileBy.AccessibilityId("promptPass")).click();
+        } else {
+            this.find.byText("promptPass").click();
+        }
     }
 
     public void tapPromptEmailBtn() {
-        this.find.byText("promptEmail").click();
+        if (this.settings.platform == PlatformType.iOS) {
+            this.find.byLocator(MobileBy.AccessibilityId("promptEmail")).click();
+        } else {
+            this.find.byText("promptEmail").click();
+        }
     }
 
     public void tapPromptDecimalBtn() {
-        this.find.byText("promptDecimal").click();
+        if (this.settings.platform == PlatformType.iOS) {
+            this.find.byLocator(MobileBy.AccessibilityId("promptDecimal")).click();
+        } else {
+            this.find.byText("promptDecimal").click();
+        }
     }
 
     public void tapOkBtn() {
-        this.find.byText("OK").click();
+        if (this.settings.platform == PlatformType.iOS) {
+            this.find.byLocator(MobileBy.AccessibilityId("OK")).tap();
+        } else {
+            this.find.byText("OK").tap();
+        }
     }
 
     public void tapCloseBtn() {
-        this.find.byText("Close").tap();
+        if (this.settings.platform == PlatformType.iOS) {
+            this.find.byLocator(MobileBy.AccessibilityId("Close")).tap();
+        } else {
+            this.find.byText("Close").tap();
+        }
     }
 
     public void tapCancelBtn() {
-        UIElement el = this.find.byText("Cancel");
-        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion >= 10) {
-            el.tap();
+        if (this.settings.platform == PlatformType.iOS) {
+            this.find.byLocator(MobileBy.AccessibilityId("Cancel")).click();
         } else {
-            el.click();
+            this.find.byText("Cancel").click();
         }
     }
 
@@ -103,24 +138,20 @@ public class DialogsPage extends HomePageExtended {
     }
 
     public void tapYesBtn() {
-        UIElement el = this.find.byText("Yes");
-        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion >= 10) {
-            el.tap();
+        if (this.settings.platform == PlatformType.iOS) {
+            this.find.byLocator(MobileBy.name("Yes")).tap();
         } else {
-            el.click();
+            this.find.byText("Yes").click();
         }
-
         this.log.info("Choose 'Yes' option.");
     }
 
     public void tapNoBtn() {
-        UIElement el = this.find.byText("No");
-        if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion >= 10) {
-            el.tap();
+        if (this.settings.platform == PlatformType.iOS) {
+            this.find.byLocator(MobileBy.name("No")).tap();
         } else {
-            el.click();
+            this.find.byText("No").click();
         }
-
         this.log.info("Choose 'No' option.");
     }
 
