@@ -9,7 +9,6 @@ import uitests.Screens.HomePageExtended;
 
 public class DialogsPage extends HomePageExtended {
 
-    public static final String name0 = "Harold Finch";
     public static final String name1 = "John Reese";
 
     public DialogsPage(String example, MobileContext context) {
@@ -23,7 +22,11 @@ public class DialogsPage extends HomePageExtended {
             return this.find.elementsByLocator(this.locators.labelLocator()).get(1);
         } else if (this.settings.platform == PlatformType.iOS) {
             if (this.settings.deviceName.contains("X")) {
-                return this.find.elementsByLocator(this.locators.labelLocator()).get(1);
+                if (this.settings.platformVersion < 13) {
+                    return this.find.elementsByLocator(this.locators.labelLocator()).get(1);
+                } else {
+                    return this.find.elementsByLocator(this.locators.labelLocator()).get(0);
+                }
             } else {
                 if (this.settings.platformVersion < 11) {
                     return this.find.byLocator(By.xpath("//XCUIElementTypeStaticText"));
@@ -121,7 +124,7 @@ public class DialogsPage extends HomePageExtended {
         this.log.info("Choose 'No' option.");
     }
 
-    public void basePageLoaded() {
+    private void basePageLoaded() {
         if (this.label() != null) {
             this.log.info("Modals page loaded.");
         } else {
