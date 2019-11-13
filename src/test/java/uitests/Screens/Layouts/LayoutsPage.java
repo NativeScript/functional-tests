@@ -1,8 +1,9 @@
 package uitests.Screens.Layouts;
 
+import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.basetest.MobileContext;
 import functional.tests.core.mobile.element.UIElement;
-import functional.tests.core.enums.PlatformType;
+import io.appium.java_client.MobileBy;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import uitests.Screens.HomePageExtended;
@@ -13,11 +14,14 @@ public class LayoutsPage extends HomePageExtended {
         this.basePageLoaded();
     }
 
-    public void basePageLoaded() {
-        UIElement element = this.find.byText("pwrap");
-        if (element == null) {
-            Assert.assertTrue(false, "LayoutsPage is not loaded");
+    private void basePageLoaded() {
+        UIElement element;
+        if (this.settings.platform == PlatformType.Android) {
+            element = this.find.byText("pwrap");
+        } else {
+            element = this.find.byLocator(MobileBy.AccessibilityId("pwrap"));
         }
+        Assert.assertNotNull(element, "LayoutsPage is not loaded");
     }
 
     // Legend:
@@ -48,10 +52,8 @@ public class LayoutsPage extends HomePageExtended {
     private UIElement findButton(String byText, String byName) {
         if (this.settings.platform == PlatformType.Android) {
             return this.find.byText(byText);
-        } else if (this.settings.platform == PlatformType.iOS) {
-            return this.find.byLocator(By.id(byName));
         } else {
-            return null;
+            return this.find.byLocator(By.id(byName));
         }
     }
 

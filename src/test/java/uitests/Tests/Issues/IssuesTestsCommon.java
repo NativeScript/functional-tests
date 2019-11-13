@@ -6,7 +6,6 @@ import functional.tests.core.enums.SwipeElementDirection;
 import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.mobile.find.Wait;
 import functional.tests.core.utils.OSUtils;
-import org.openqa.selenium.By;
 import org.openqa.selenium.ScreenOrientation;
 import org.testng.annotations.Test;
 
@@ -29,7 +28,6 @@ public class IssuesTestsCommon extends IssuesBaseTest {
     @Test(groups = {"android", "ios"})
     public void issue_2674() throws Exception {
         this.issuesBasePage.navToPage("2674");
-
         this.compareScreens(compareScreens, 5);
         this.assertImagesResults();
     }
@@ -37,12 +35,12 @@ public class IssuesTestsCommon extends IssuesBaseTest {
     @Test(groups = {"android", "ios"})
     public void issue_2942_keyBoardFocusInListViewTemplate() throws Exception {
         this.issuesBasePage.navToPage("2942");
-        this.find.byTextContains("Click me 1st").tap();
+        this.find.byTextContains("Click me 1st").click();
 
         // Hack to handle keyboard popup dialog
         if (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 8.0) {
             this.client.driver.hideKeyboard();
-            this.find.byTextContains("Click me 1st").tap();
+            this.find.byTextContains("Click me 1st").click();
         }
 
         if (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) {
@@ -57,7 +55,7 @@ public class IssuesTestsCommon extends IssuesBaseTest {
             this.compareScreens(15, 0.22);
         }
         UIElement textFieldSecond = this.find.byTextContains("Click me 2nd");
-        textFieldSecond.tap();
+        textFieldSecond.click();
         if (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) {
             if (this.imageVerification.compareScreens("issue_2942_keyBoardFocusInListViewTemplate_2", 5, 0, this.maxPixelTolerance, 0.05)) {
                 this.assertScreen("issue_2942_keyBoardFocusInListViewTemplate_2", 5, 0.05);
@@ -72,7 +70,7 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         UIElement btn3rd;
         if (this.settings.platform == PlatformType.Android) {
             btn3rd = this.find.byTextContains("3rd");
-            btn3rd.tap();
+            btn3rd.click();
             if (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) {
 
                 if (this.imageVerification.compareScreens("issue_2942_keyBoardFocusInListViewTemplate_3", 5, 0, this.maxPixelTolerance, 0.05)) {
@@ -100,7 +98,7 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         }
         this.issuesBasePage.navToPage("2942");
         this.client.getDriver().rotate(ScreenOrientation.LANDSCAPE);
-        this.find.byTextContains("Click me 1st").tap();
+        this.find.byTextContains("Click me 1st").click();
         if (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) {
             if (this.imageVerification.compareScreens("issue_2942_keyBoardFocusInListViewTemplateLandScape_with_suggestions", 5, 0, this.maxPixelTolerance, 0.05)) {
                 this.assertScreen("issue_2942_keyBoardFocusInListViewTemplateLandScape_with_suggestions", 5, 0.05);
@@ -114,7 +112,7 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         }
         this.hideKeyBoard();
         UIElement textFieldSecond = this.find.byTextContains("Click me 2nd");
-        textFieldSecond.tap();
+        textFieldSecond.click();
         if (this.settings.platform == PlatformType.Android && this.settings.platformVersion == 27.0) {
             this.assertScreen("issue_2942_keyBoardFocusInListViewTemplateLandScape_2", 5, 0.05);
         } else {
@@ -132,7 +130,7 @@ public class IssuesTestsCommon extends IssuesBaseTest {
     @Test(groups = {"android"})
     public void issue_2942_hideSoftKeyBoard() throws Exception {
         this.issuesBasePage.navToPage("2942");
-        this.find.byTextContains("hide keyboard").tap();
+        this.find.byTextContains("hide keyboard").click();
         this.compareScreens(15, 0.05);
 
         this.assertImagesResults();
@@ -162,10 +160,8 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         this.issuesBasePage.navToPage("2661");
         this.issuesBasePage.navigateTo("Forward", false);
         this.compareScreens(5);
-
-        this.issuesBasePage.navigateBack(this.find.byText("Back"));
+        this.issuesBasePage.navigateBack(this.issuesBasePage.findElement("Back"));
         this.compareScreens(5);
-
         this.assertImagesResults();
     }
 
@@ -181,9 +177,9 @@ public class IssuesTestsCommon extends IssuesBaseTest {
     @Test(groups = {"android", "ios"})
     public void issue_3164_btnBorderWidth() throws Exception {
         this.issuesBasePage.navToPage("3164");
-        this.issuesBasePage.find.byTextContains("1.").tap();
+        this.issuesBasePage.find.byTextContains("1.").click();
         this.compareScreens(5);
-        this.issuesBasePage.find.byTextContains("2.").tap();
+        this.issuesBasePage.find.byTextContains("2.").click();
         this.compareScreens(5);
 
         this.assertImagesResults();
@@ -200,10 +196,10 @@ public class IssuesTestsCommon extends IssuesBaseTest {
     @Test(groups = {"android", "ios"})
     public void issue_3211_btnBackgroundInsideDialogs() throws Exception {
         this.issuesBasePage.navToPage("3211");
-        this.issuesBasePage.find.byText("alert me").tap();
+        this.issuesBasePage.findElement("alert me").click();
         Wait.sleep(1500);
         this.compareScreens(5);
-        this.find.byText("OK").tap();
+        this.issuesBasePage.findElement("OK").click();
         Wait.sleep(1500);
         this.assertImagesResults();
     }
@@ -211,8 +207,8 @@ public class IssuesTestsCommon extends IssuesBaseTest {
     @Test(groups = {"ios"})
     public void issue_1657_ios_translucent() throws Exception {
         this.issuesBasePage.navToPage("1657-ios");
-        UIElement changeTranslucent = this.issuesBasePage.find.byText("changeTranslucent");
-        changeTranslucent.tap();
+        UIElement changeTranslucent = this.issuesBasePage.findElement("changeTranslucent");
+        changeTranslucent.click();
 
         double tolerance = 1D;
         if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion < 10) {
@@ -220,28 +216,19 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         }
         UIElement navBar = this.issuesBasePage.find.byLocator(this.locators.navigationBarLocator());
         this.compareElements(navBar, 5, tolerance);
-        changeTranslucent.tap();
+        changeTranslucent.click();
         this.compareElements(navBar, 5, tolerance);
 
-        this.issuesBasePage.find.byText("change speed to very slow").tap();
+        this.issuesBasePage.findElement("change speed to very slow").click();
 
-        By goToSubPageLocator = this.locators.byText("go to subPage");
-        if (this.settings.platformVersion > 10) {
-            goToSubPageLocator = By.id("go to subPage");
-        }
-        UIElement el = this.find.byLocator(goToSubPageLocator);
+        UIElement el = this.issuesBasePage.findElement("go to subPage");
         this.issuesBasePage.navigateTo(el, ClickType.Click, "sub page");
         this.compareScreens(60, 1.00);
 
-        By locator = this.locators.byText("SUB PAGE");
-        if (this.settings.platformVersion > 10) {
-            locator = By.id("SUB PAGE");
-        }
-
-        UIElement subPage = this.issuesBasePage.wait.waitForVisible(locator, this.settings.defaultTimeout, false);
+        UIElement subPage = this.issuesBasePage.findElement("SUB PAGE");
         this.log.info(subPage.getUIRectangle() + "; " + subPage.getUIRectangle().getX());
         while (subPage.getUIRectangle().x > 0) {
-            subPage = this.issuesBasePage.wait.waitForVisible(locator);
+            subPage = this.issuesBasePage.findElement("SUB PAGE");
             this.log.info(subPage.getUIRectangle() + "; " + subPage.getUIRectangle().getX());
         }
 
@@ -249,7 +236,7 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         this.issuesBasePage.navigateBack();
         this.compareScreens(60, 4.0);
 
-        this.issuesBasePage.wait.waitForVisible(this.locators.byText("default layer speed"), 10, true).tap();
+        this.issuesBasePage.findElement("default layer speed").click();
         this.app.restart();
         this.context.navigationManager.resetNavigationMainPage();
 
@@ -298,7 +285,7 @@ public class IssuesTestsCommon extends IssuesBaseTest {
         } else {
             this.compareScreens(15, 0.02, true);
         }
-        this.find.byText("clear text", false, 5).tap();
+        this.issuesBasePage.findElement("clear text").click();
         if (this.settings.platform == PlatformType.iOS && this.settings.platformVersion == 11.2) {
             this.assertScreen("issue_3354_ios_hint_3", 15, 0.02);
         } else {
@@ -334,13 +321,10 @@ public class IssuesTestsCommon extends IssuesBaseTest {
     @Test(groups = {"ios"})
     public void issue_4450() throws Exception {
         this.issuesBasePage.navToPage("4450");
-
-        this.wait.waitForVisible(this.locators.byText("set")).tap();
+        this.issuesBasePage.findElement("set").click();
         this.compareScreens(5);
-
-        this.find.byText("clear").tap();
+        this.issuesBasePage.findElement("clear").click();
         this.compareScreens(5);
-
         this.assertImagesResults();
     }
 
@@ -350,38 +334,38 @@ public class IssuesTestsCommon extends IssuesBaseTest {
 
         this.compareScreens(5);
 
-        this.wait.waitForVisible(this.locators.byText("testBtn")).tap();
+        this.issuesBasePage.findElement("testBtn").click();
         this.compareScreens(5);
-        this.find.byText("OK", false, 5).tap();
-        this.find.byText("testLabel", false, 5).tap();
+        this.issuesBasePage.findElement("OK").click();
+        this.issuesBasePage.findElement("testLabel").click();
         this.compareScreens(5);
-        this.find.byText("OK", false, 5).tap();
-        this.find.byText("testStackLayout", false, 5).tap();
+        this.issuesBasePage.findElement("OK").click();
+        this.issuesBasePage.findElement("testStackLayout").click();
         this.compareScreens(5);
-        this.find.byText("OK", false, 5).tap();
-        this.compareScreens(5);
-
-        this.find.byText("toggleUserInteraction", false, 5).tap();
-
-        this.find.byText("testBtn", false, 5).tap();
-        this.compareScreens(5);
-        this.find.byText("testLabel", false, 5).tap();
-        this.compareScreens(5);
-        this.find.byText("testStackLayout", false, 5).tap();
+        this.issuesBasePage.findElement("OK").click();
         this.compareScreens(5);
 
+        this.issuesBasePage.findElement("toggleUserInteraction").click();
 
-        this.find.byText("toggleUserInteraction", false, 5).tap();
+        this.issuesBasePage.findElement("testBtn").click();
+        this.compareScreens(5);
+        this.issuesBasePage.findElement("testLabel").click();
+        this.compareScreens(5);
+        this.issuesBasePage.findElement("testStackLayout").click();
+        this.compareScreens(5);
 
-        this.find.byText("testBtn", false, 5).tap();
+
+        this.issuesBasePage.findElement("toggleUserInteraction").click();
+
+        this.issuesBasePage.findElement("testBtn").click();
         this.compareScreens(5);
-        this.find.byText("OK", false, 5).tap();
-        this.find.byText("testLabel", false, 5).tap();
+        this.issuesBasePage.findElement("OK").click();
+        this.issuesBasePage.findElement("testLabel").click();
         this.compareScreens(5);
-        this.find.byText("OK", false, 5).tap();
-        this.find.byText("testStackLayout", false, 5).tap();
+        this.issuesBasePage.findElement("OK").click();
+        this.issuesBasePage.findElement("testStackLayout").click();
         this.compareScreens(5);
-        this.find.byText("OK", false, 5).tap();
+        this.issuesBasePage.findElement("OK").click();
         this.compareScreens(5);
 
         this.assertImagesResults();
@@ -401,7 +385,7 @@ public class IssuesTestsCommon extends IssuesBaseTest {
             if (this.settings.platformVersion == 4.4) {
                 UIElement element = this.issuesBasePage.wait.waitForVisible(this.locators.byText("Next"), 3, false);
                 if (element != null) {
-                    element.tap();
+                    element.click();
                 }
             }
             this.issuesBasePage.hideKeyboard();

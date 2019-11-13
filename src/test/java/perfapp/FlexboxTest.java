@@ -54,7 +54,7 @@ public class FlexboxTest extends PerformanceBaseTest {
     }
 
     @Test(dataProvider = "example")
-    public void flex_grid_stack_performance(String example) throws Exception {
+    public void flex_grid_stack_performance(String example) {
         this.tabs.get(example).tap();
         this.play.tap();
         this.context.wait.waitForVisible(this.listElementLocator, 5, false);

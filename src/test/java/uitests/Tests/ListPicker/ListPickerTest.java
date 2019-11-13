@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import uitests.Screens.HomePageExtended;
 import uitests.Tests.UIBaseTests;
 
+@SuppressWarnings("groupsTestNG")
 public class ListPickerTest extends UIBaseTests {
     private HomePageExtended homePageExtended;
 
@@ -21,7 +22,7 @@ public class ListPickerTest extends UIBaseTests {
             return;
         }
         this.homePageExtended.navigateTo("issue_2895");
-        this.context.wait.waitForVisible(this.locators.byText("Toggle visibility")).tap();
+        this.context.wait.waitForVisible(this.locators.byText("Toggle visibility")).click();
         this.device.rotate(ScreenOrientation.LANDSCAPE);
         this.compareScreens(15, 1);
         this.device.rotate(ScreenOrientation.PORTRAIT);
