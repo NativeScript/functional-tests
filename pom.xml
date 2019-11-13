@@ -242,14 +242,6 @@
             </properties>
         </profile>
         <profile>
-            <id>uitests.emu.default.api19.gestures</id>
-            <properties>
-                <app.config>uitests/uitests.emu.default.api19.properties</app.config>
-                <testsuite>uitests-android-gestures</testsuite>
-            </properties>
-        </profile>
-
-        <profile>
             <id>uitests.emu.default.api19.textfiled.textview.tabview.searchbar</id>
             <properties>
                 <app.config>uitests/uitests.emu.default.api19.properties</app.config>
@@ -327,14 +319,6 @@
             </properties>
         </profile>
         <profile>
-            <id>uitests.emu.default.api23.gestures</id>
-            <properties>
-                <app.config>uitests/uitests.emu.default.api23.properties</app.config>
-                <testsuite>uitests-android-gestures</testsuite>
-            </properties>
-        </profile>
-
-        <profile>
             <id>uitests.emu.default.api23.textfiled.textview.tabview.searchbar</id>
             <properties>
                 <app.config>uitests/uitests.emu.default.api23.properties</app.config>
@@ -399,14 +383,6 @@
             </properties>
         </profile>
         <profile>
-            <id>uitests.emu.default.api24.gestures</id>
-            <properties>
-                <app.config>uitests/uitests.emu.default.api24.properties</app.config>
-                <testsuite>uitests-android-gestures</testsuite>
-            </properties>
-        </profile>
-
-        <profile>
             <id>uitests.emu.default.api24.textfiled.textview.tabview.searchbar</id>
             <properties>
                 <app.config>uitests/uitests.emu.default.api24.properties</app.config>
@@ -468,13 +444,6 @@
             <properties>
                 <app.config>uitests/uitests.emu.google.api25.properties</app.config>
                 <testsuite>uitests-android-layouts-segmentedstyle-imageview</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>uitests.emu.google.api25.gestures</id>
-            <properties>
-                <app.config>uitests/uitests.emu.google.api25.properties</app.config>
-                <testsuite>uitests-android-gestures</testsuite>
             </properties>
         </profile>
         <profile>
@@ -542,14 +511,6 @@
             </properties>
         </profile>
         <profile>
-            <id>uitests.emu.google.api26.gestures</id>
-            <properties>
-                <app.config>uitests/uitests.emu.google.api26.properties</app.config>
-                <testsuite>uitests-android-gestures</testsuite>
-            </properties>
-        </profile>
-
-        <profile>
             <id>uitests.emu.google.api26.textfiled.textview.tabview.searchbar</id>
             <properties>
                 <app.config>uitests/uitests.emu.google.api26.properties</app.config>
@@ -611,13 +572,6 @@
             <properties>
                 <app.config>uitests/uitests.emu.google.api27.properties</app.config>
                 <testsuite>uitests-android-layouts-segmentedstyle-imageview</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>uitests.emu.google.api27.gestures</id>
-            <properties>
-                <app.config>uitests/uitests.emu.google.api27.properties</app.config>
-                <testsuite>uitests-android-gestures</testsuite>
             </properties>
         </profile>
         <profile>
@@ -685,13 +639,6 @@
             </properties>
         </profile>
         <profile>
-            <id>uitests.emu.google.api28.gestures</id>
-            <properties>
-                <app.config>uitests/uitests.emu.google.api28.properties</app.config>
-                <testsuite>uitests-android-gestures</testsuite>
-            </properties>
-        </profile>
-        <profile>
             <id>uitests.emu.google.api28.textfiled.textview.tabview.searchbar</id>
             <properties>
                 <app.config>uitests/uitests.emu.google.api28.properties</app.config>
@@ -754,13 +701,6 @@
             <properties>
                 <app.config>uitests/uitests.emu.google.api29.properties</app.config>
                 <testsuite>uitests-android-layouts-segmentedstyle-imageview</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>uitests.emu.google.api29.gestures</id>
-            <properties>
-                <app.config>uitests/uitests.emu.google.api29.properties</app.config>
-                <testsuite>uitests-android-gestures</testsuite>
             </properties>
         </profile>
         <profile>
@@ -837,13 +777,6 @@
             </properties>
         </profile>
         <profile>
-            <id>uitests.sim.iphone7.ios100.gestures</id>
-            <properties>
-                <app.config>uitests/uitests.sim.iphone7.ios100.properties</app.config>
-                <testsuite>uitests-ios-gestures</testsuite>
-            </properties>
-        </profile>
-        <profile>
             <id>uitests.sim.iphone7.ios100.textfiled.textview.tabview.searchbar</id>
             <properties>
                 <app.config>uitests/uitests.sim.iphone7.ios100.properties</app.config>
@@ -906,13 +839,6 @@
             <properties>
                 <app.config>uitests/uitests.sim.iphone7.ios110.properties</app.config>
                 <testsuite>uitests-ios-layouts-segmentedstyle-imageview</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>uitests.sim.iphone7.ios110.gestures</id>
-            <properties>
-                <app.config>uitests/uitests.sim.iphone7.ios110.properties</app.config>
-                <testsuite>uitests-ios-gestures</testsuite>
             </properties>
         </profile>
         <profile>
@@ -980,13 +906,6 @@
             </properties>
         </profile>
         <profile>
-            <id>uitests.sim.iphone7.ios12.gestures</id>
-            <properties>
-                <app.config>uitests/uitests.sim.iphone7.ios12.properties</app.config>
-                <testsuite>uitests-ios-gestures</testsuite>
-            </properties>
-        </profile>
-        <profile>
             <id>uitests.sim.iphone7.ios12.textfiled.textview.tabview.searchbar</id>
             <properties>
                 <app.config>uitests/uitests.sim.iphone7.ios12.properties</app.config>
@@ -1051,13 +970,6 @@
             </properties>
         </profile>
         <profile>
-            <id>uitests.sim.iphoneX.ios110.gestures</id>
-            <properties>
-                <app.config>uitests/uitests.sim.iphoneX.ios110.properties</app.config>
-                <testsuite>uitests-ios-gestures</testsuite>
-            </properties>
-        </profile>
-        <profile>
             <id>uitests.sim.iphoneX.ios110.textfiled.textview.tabview.searchbar</id>
             <properties>
                 <app.config>uitests/uitests.sim.iphoneX.ios110.properties</app.config>
@@ -1112,13 +1024,6 @@
             <properties>
                 <app.config>uitests/uitests.sim.iphoneX.ios12.properties</app.config>
                 <testsuite>uitests-ios-layouts-segmentedstyle-imageview</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>uitests.sim.iphoneX.ios12.gestures</id>
-            <properties>
-                <app.config>uitests/uitests.sim.iphoneX.ios12.properties</app.config>
-                <testsuite>uitests-ios-gestures</testsuite>
             </properties>
         </profile>
         <profile>
@@ -1182,13 +1087,6 @@
             <properties>
                 <app.config>uitests/uitests.sim.iphoneX.ios13.properties</app.config>
                 <testsuite>uitests-ios-layouts-segmentedstyle-imageview</testsuite>
-            </properties>
-        </profile>
-        <profile>
-            <id>uitests.sim.iphoneX.ios13.gestures</id>
-            <properties>
-                <app.config>uitests/uitests.sim.iphoneX.ios13.properties</app.config>
-                <testsuite>uitests-ios-gestures</testsuite>
             </properties>
         </profile>
         <profile>
