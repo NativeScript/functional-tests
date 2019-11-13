@@ -1,6 +1,7 @@
 package uitests.Screens.Issues;
 
 import functional.tests.core.mobile.basetest.MobileContext;
+import org.testng.Assert;
 import uitests.Screens.HomePageExtended;
 
 public class IssuesBasePage extends HomePageExtended {
@@ -9,11 +10,9 @@ public class IssuesBasePage extends HomePageExtended {
         super("issues", context);
     }
 
-    public boolean navToPage(String page) {
+    public void navToPage(String page) {
         this.navigateToMainPage();
-        this.wait.waitForNotVisible(this.locators.byText(page, true, false), 6, false);
         boolean result = this.navigateTo(page);
-
-        return result;
+        Assert.assertTrue(result, "Failed to navigate to " + page);
     }
 }

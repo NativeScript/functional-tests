@@ -22,7 +22,6 @@ public class IssuesTestsCommon extends IssuesBaseTest {
     @Test(groups = {"android", "ios"})
     public void issue_2911() throws Exception {
         this.issuesBasePage.navToPage("2911");
-
         this.compareScreens(compareScreens, 5);
         this.assertImagesResults();
     }
