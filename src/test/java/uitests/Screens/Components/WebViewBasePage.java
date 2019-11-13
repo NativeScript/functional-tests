@@ -1,7 +1,10 @@
 package uitests.Screens.Components;
 
+import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.basetest.MobileContext;
 import functional.tests.core.mobile.element.UIElement;
+import io.appium.java_client.MobileBy;
+import org.testng.Assert;
 import uitests.Screens.HomePageExtended;
 
 public class WebViewBasePage extends HomePageExtended {
@@ -10,34 +13,41 @@ public class WebViewBasePage extends HomePageExtended {
         super("webview", context);
     }
 
-    public boolean navToPage(String page) {
+    public void navToPage(String page) {
         boolean result = this.navigateTo(page, true);
-        this.wait.waitForNotVisible(this.locators.byText(page, false, false), 6, false);
-        return result;
+        Assert.assertTrue(result, String.format("Failed to navigate to %s page.", page));
+    }
+
+    private UIElement findElement(String text) {
+        if (this.settings.platform == PlatformType.Android) {
+            return this.findElement(text);
+        } else {
+            return this.wait.waitForVisible(MobileBy.AccessibilityId(text));
+        }
     }
 
     public void tapRelativeBtn() {
-        this.wait.waitForVisible(this.locators.byText("rel")).click();
+        this.findElement("rel").click();
     }
 
     public void tapAbsoluteBtn() {
-        this.wait.waitForVisible(this.locators.byText("abs")).click();
+        this.findElement("abs").click();
     }
 
     public void tapFileBtn() {
-        this.wait.waitForVisible(this.locators.byText("file")).click();
+        this.findElement("file").click();
     }
 
     public void tapStringBtn() {
-        this.wait.waitForVisible(this.locators.byText("str")).click();
+        this.findElement("str").click();
     }
 
     public UIElement srcWebView() {
-        return this.wait.waitForVisible(this.locators.byText("someUrl | pathToLocalFile | htmlString"));
+        return this.findElement("someUrl | pathToLocalFile | htmlString");
     }
 
     public UIElement strResult() {
-        return this.wait.waitForVisible(this.locators.byText("Result", false, false), 3, true);
+        return this.findElement("Result");
     }
 
     public UIElement strFooBar() {
