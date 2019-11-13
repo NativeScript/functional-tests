@@ -1,8 +1,0 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Templates-Enterprise-Auth" verbose="1">
-    <test name="Smoke Tests">
-        <classes>
-            <class name="templates.enterpriseauth.tests.SmokeTests"/>
-        </classes>
-    </test>
-</suite>

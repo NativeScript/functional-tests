@@ -1,8 +1,0 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Health Survey Template" verbose="1">
-    <test name="Smoke Tests">
-        <classes>
-            <class name="templates.healthsurvey.tests.SmokeTests"/>
-        </classes>
-    </test>
-</suite>
