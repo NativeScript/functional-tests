@@ -13,6 +13,7 @@ public class HtmlViewTests extends MobileTest {
     @Test(groups = {"android", "ios"})
     public void htmlView_01() throws Exception {
         this.homePage = new HomePageExtended("htmlview", this.context);
+        this.homePage.context.client.setWait(1);
         UIElement el = this.find.byTextContains("one");
         String htmlContent = el.getText();
         Assert.assertTrue(htmlContent.contains("one"));
