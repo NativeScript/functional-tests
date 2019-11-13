@@ -15,7 +15,6 @@ public class CssCommonTests extends CssBaseTest {
     @Test(groups = {"android", "ios"})
     public void zindex_01() throws Exception {
         this.cssBasePage.navToPage("zindex");
-
         this.compareScreens(compareScreens, 0.55);
         this.assertImagesResults();
     }
@@ -24,7 +23,6 @@ public class CssCommonTests extends CssBaseTest {
     public void padding_01() throws Exception {
         this.cssBasePage.navToPage("padding");
         this.compareScreens(compareScreens, 0.18);
-
         this.assertImagesResults();
     }
 
@@ -32,7 +30,6 @@ public class CssCommonTests extends CssBaseTest {
     public void formattedText_01() throws Exception {
         this.cssBasePage.navToPage("formatted");
         this.compareScreens(compareScreens, 0.5);
-
         this.assertImagesResults();
     }
 
@@ -40,7 +37,6 @@ public class CssCommonTests extends CssBaseTest {
     public void styledFormattedText() throws Exception {
         this.cssBasePage.navToPage("styled-formatted-text");
         this.compareScreens(compareScreens, 0.5);
-
         this.assertImagesResults();
     }
 
@@ -62,7 +58,6 @@ public class CssCommonTests extends CssBaseTest {
     public void transform_decoration_color_05() throws Exception {
         this.cssBasePage.navToPage("transform-decoration-color");
         this.compareScreens(10, 0.85);
-
         this.assertImagesResults();
     }
 
@@ -70,7 +65,6 @@ public class CssCommonTests extends CssBaseTest {
     public void layout_border_06() throws Exception {
         this.cssBasePage.navToPage("layout-border");
         this.compareScreens(compareScreens, 0.3);
-
         this.assertImagesResults();
     }
 
@@ -78,7 +72,6 @@ public class CssCommonTests extends CssBaseTest {
     public void label_border_07() throws Exception {
         this.cssBasePage.navToPage("label-border");
         this.compareScreens(compareScreens, 0.3);
-
         this.assertImagesResults();
     }
 
@@ -86,7 +79,6 @@ public class CssCommonTests extends CssBaseTest {
     public void image_border_11() throws Exception {
         this.cssBasePage.navToPage("image-border");
         this.compareScreens(compareScreens, 0.3);
-
         this.assertImagesResults();
     }
 
@@ -94,7 +86,6 @@ public class CssCommonTests extends CssBaseTest {
     public void layouts_border_overlap_12() throws Exception {
         this.cssBasePage.navToPage("layouts-border-overlap");
         this.compareScreens(compareScreens, 0.3);
-
         this.assertImagesResults();
     }
 
@@ -102,7 +93,6 @@ public class CssCommonTests extends CssBaseTest {
     public void measures_13() throws Exception {
         this.cssBasePage.navToPage("layouts-border-overlap");
         this.compareScreens(compareScreens, 0.3);
-
         this.assertImagesResults();
     }
 
@@ -116,7 +106,7 @@ public class CssCommonTests extends CssBaseTest {
     @Test(groups = {"android", "ios"})
     public void all_non_uniform_border_14() throws Exception {
         this.cssBasePage.navToPage("all-non-uniform-border");
-        this.cssBasePage.wait.waitForVisible(this.locators.byText("Button", true, false), 6, true);
+        this.cssBasePage.waitForElement("Button");
         this.compareScreens(compareScreens, 0.67);
         this.assertImagesResults();
     }
@@ -135,12 +125,12 @@ public class CssCommonTests extends CssBaseTest {
     @Test(groups = {"android", "ios"})
     public void pixels_perfect() throws Exception {
         this.cssBasePage.navToPage("pixels");
-        this.cssBasePage.wait.waitForVisible(this.locators.byText("Button", true, false), 6, true);
+        this.cssBasePage.waitForElement("Button");
         this.assertScreen();
     }
 
     @Test(groups = {"android", "ios"})
-    public void non_uniform_raadius() throws Exception {
+    public void non_uniform_radius() throws Exception {
         this.cssBasePage.navToPage("non-uniform-radius");
         this.assertScreen(10);
     }
@@ -188,7 +178,6 @@ public class CssCommonTests extends CssBaseTest {
         }
 
         this.compareScreens(5);
-
         this.assertImagesResults();
     }
 }
