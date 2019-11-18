@@ -2,9 +2,7 @@ package uitests.Tests.Component;
 
 import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.basetest.MobileTest;
-import functional.tests.core.mobile.element.UIElement;
 import functional.tests.core.mobile.find.Wait;
-import io.appium.java_client.MobileBy;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import uitests.Screens.UITestsBasePage;
@@ -52,21 +50,13 @@ public class ApplicationTests extends MobileTest {
         UITestsBasePage basePage = new UITestsBasePage("issues", this.context);
         basePage.navigateTo("issues");
         basePage.navigateTo("tabview-with-scrollview_4022");
-        findElement("Tab 2").click();
+        this.find.byText("Tab 2").click();
         this.log.info("Run the application in background.");
         this.app.runInBackground(5);
-        findElement("Tab 1").click();
-        findElement("Tab 2").click();
-        findElement("Tab 3").click();
+        this.find.byText("Tab 1").click();
+        this.find.byText("Tab 2").click();
+        this.find.byText("Tab 3").click();
 
         this.assertScreen(5);
-    }
-
-    private UIElement findElement(String text) {
-        if (this.settings.platform == PlatformType.Android) {
-            return this.findElement(text);
-        } else {
-            return this.wait.waitForVisible(MobileBy.AccessibilityId(text));
-        }
     }
 }

@@ -1,9 +1,7 @@
 package uitests.Screens.Components;
 
-import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.basetest.MobileContext;
 import functional.tests.core.mobile.element.UIElement;
-import io.appium.java_client.MobileBy;
 import org.testng.Assert;
 import uitests.Screens.HomePageExtended;
 
@@ -18,36 +16,28 @@ public class WebViewBasePage extends HomePageExtended {
         Assert.assertTrue(result, String.format("Failed to navigate to %s page.", page));
     }
 
-    private UIElement findElement(String text) {
-        if (this.settings.platform == PlatformType.Android) {
-            return this.findElement(text);
-        } else {
-            return this.wait.waitForVisible(MobileBy.AccessibilityId(text));
-        }
-    }
-
     public void tapRelativeBtn() {
-        this.findElement("rel").click();
+        this.find.byText("rel").click();
     }
 
     public void tapAbsoluteBtn() {
-        this.findElement("abs").click();
+        this.find.byText("abs").click();
     }
 
     public void tapFileBtn() {
-        this.findElement("file").click();
+        this.find.byText("file").click();
     }
 
     public void tapStringBtn() {
-        this.findElement("str").click();
+        this.find.byText("str").click();
     }
 
     public UIElement srcWebView() {
-        return this.findElement("someUrl | pathToLocalFile | htmlString");
+        return this.find.byText("someUrl | pathToLocalFile | htmlString");
     }
 
     public UIElement strResult() {
-        return this.findElement("Result");
+        return this.find.byText("Result");
     }
 
     public UIElement strFooBar() {
