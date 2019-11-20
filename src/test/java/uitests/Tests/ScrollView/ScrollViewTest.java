@@ -54,10 +54,10 @@ public class ScrollViewTest extends UIBaseTests {
     @Test(groups = {"ios"})
     public void safe_area_images() throws Exception {
         this.homePageExtended.navigateTo("safe-area-images");
-        this.compareScreens(5);
+        this.compareScreens(10);
 
         this.device.rotate(ScreenOrientation.LANDSCAPE);
-        this.compareScreens(5);
+        this.compareScreens(10);
 
         this.device.rotate(ScreenOrientation.PORTRAIT);
 
@@ -68,10 +68,10 @@ public class ScrollViewTest extends UIBaseTests {
     @Test(groups = {"ios"})
     public void safe_area_images_overflow() throws Exception {
         this.homePageExtended.navigateTo("safe-area-images-overflow");
-        this.compareScreens(5);
+        this.compareScreens(10);
 
         this.device.rotate(ScreenOrientation.LANDSCAPE);
-        this.compareScreens(5);
+        this.compareScreens(10);
 
         this.device.rotate(ScreenOrientation.PORTRAIT);
 
