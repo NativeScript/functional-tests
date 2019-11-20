@@ -1,5 +1,6 @@
 package uitests.Screens.Components;
 
+import functional.tests.core.enums.PlatformType;
 import functional.tests.core.mobile.basetest.MobileContext;
 import functional.tests.core.mobile.element.UIElement;
 import org.testng.Assert;
@@ -37,7 +38,11 @@ public class WebViewBasePage extends HomePageExtended {
     }
 
     public UIElement strResult() {
-        return this.find.byText("Result");
+        if ((this.settings.platform == PlatformType.Android) && (this.settings.platformVersion < 5.0)) {
+            return this.find.byText("Result Heading", 30);
+        } else {
+            return this.find.byText("Result", 30);
+        }
     }
 
     public UIElement strFooBar() {
