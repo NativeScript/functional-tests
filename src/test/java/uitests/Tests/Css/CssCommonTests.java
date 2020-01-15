@@ -95,14 +95,14 @@ public class CssCommonTests extends CssBaseTest {
         this.assertImagesResults();
     }
 
-    @Test(groups = {"android", "ios"}, enabled = false)
+    @Test(groups = {"android", "ios"})
     public void all_uniform_border_14() throws Exception {
         this.cssBasePage.navToPage("all-uniform-border");
         this.compareScreens(compareScreens, 0.67);
         this.assertImagesResults();
     }
 
-    @Test(groups = {"android", "ios"}, enabled = false)
+    @Test(groups = {"android", "ios"})
     public void all_non_uniform_border_14() throws Exception {
         this.cssBasePage.navToPage("all-non-uniform-border");
         this.cssBasePage.waitForElement("Button");

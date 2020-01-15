@@ -5,8 +5,6 @@ import functional.tests.core.mobile.basetest.MobileContext;
 import functional.tests.core.mobile.element.UIElement;
 import org.testng.Assert;
 
-import java.awt.*;
-
 public class SegmentedBarPage extends HomePageExtended {
 
     public SegmentedBarPage(MobileContext context) {
@@ -15,12 +13,7 @@ public class SegmentedBarPage extends HomePageExtended {
     }
 
     public UIElement segmentedBar1() {
-        UIElement element = this.getSegmentedBars().get(0);
-        Rectangle rect = this.getSegmentedBars().get(0).getUIRectangle();
-        this.log.info("Segmented bar 1 location: ");
-        this.log.info("x: " + rect.getX() + " y: " + rect.getY() + " width: " + rect.getWidth() + " height: " + rect.getHeight());
-
-        return element;
+        return this.getSegmentedBars().get(0);
     }
 
     public UIElement segmentedBar2() {
@@ -50,10 +43,8 @@ public class SegmentedBarPage extends HomePageExtended {
         if (this.settings.platform == PlatformType.Android) {
             if (this.settings.platformVersion >= 7) {
                 this.wait.waitForVisible(this.locators.tabWidgetLocator(), 6, true);
-                return this.find.elementsByLocator(this.locators.tabHostLocator());
-            } else {
-                return this.find.elementsByLocator(this.locators.tabHostLocator());
             }
+            return this.find.elementsByLocator(this.locators.tabHostLocator());
         } else {
             this.wait.waitForVisible(this.locators.segmentedControlLocator(), 10, true);
             return this.find.elementsByLocator(this.locators.segmentedControlLocator());
