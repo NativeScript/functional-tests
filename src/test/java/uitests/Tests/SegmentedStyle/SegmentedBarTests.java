@@ -16,7 +16,7 @@ public class SegmentedBarTests extends MobileTest {
 
     @Test(groups = {"android", "ios"})
     public void segmentedBar_01() throws Exception {
-        this.compareElements(this.segmentedBarPage.segmentedBar1(), 5, 0.1);
+        this.compareScreens();
         this.assertImagesResults();
     }
 
